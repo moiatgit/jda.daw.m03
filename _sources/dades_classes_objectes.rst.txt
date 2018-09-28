@@ -1,0 +1,30 @@
+Classes i Objectes
+------------------
+
+Hi ha encara una categoria de dades especial que no hem comentat fins ara
+però que és especialment important: les classes
+
+Molt resumidament, les *classes* són una agrupació de dades i codi associat a aquestes dades.
+
+Les dades que corresponen a una classe s'anomenen *objectes*.
+
+Es tracta d'uns conceptes molt importants que tractarem més endavant en
+profunditat i que justificaran el canvi de llenguatge de programació de
+Python a Java.
+
+De moment, en tindrem prou en saber que tant Python com Java són
+llenguatges orientats a objectes i que inicialment en farem servir classes i
+objectes sense adonar-nos.
+
+Per exemple, considera el següent codi:
+
+.. code-block:: python
+
+        import turtle               # turtle és un mòdul que conté la definició de la classe Turtle
+        tortuga = turtle.Pen()      # inicialitzem la variable tortuga amb un objecte retornat per Pen()
+        print(type(tortuga))        # resulta <class 'turtle.Turtle'>
+        tortuga.color('blue')       # demanem a l'objecte enmagatzemat a tortuga que canviï el seu color
+        tortuga.forward(100)        # demanem a la instància de Turtle que avanci 100 passes
+
+
+Paciència, de seguida hi arribarem!

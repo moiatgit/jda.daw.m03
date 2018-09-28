@@ -1,0 +1,43 @@
+################################
+Conversions entre tipus de dades
+################################
+
+Especialment entre els tipus de dades bàsiques, de vegades es poden fer
+conversions. Molts llenguatges accepten algunes conversions
+directament. Per exemple, el valor ``3`` seria de tipus enter. Es pot
+convertir a real sense perdre informació, passant a ser ``3.0``.
+
+Hi ha altres conversions que no són tan directes. Normalment perquè
+perden (o poden perdre) informació. Així, del real ``3.1`` passar-ho a
+enter suposaria perdre ``0.1`` de precisió. Com que de vegades no ens
+importarà perdre aquesta precisió o bé sabem que no hi ha tal pèrdua
+(ex. ``3.0`` no perdria gaire) el que ens permeten els llenguatges és
+forçar la conversió.
+
+Hi ha altres conversions que requereixen llenguatges més sofisticats o
+bé programes per fer-les. Per exemple, el string "1234" no és l'enter
+1234, però potser disposem del valor 1234 i el volem en forma de
+string, o per contra, el tenim com a string i li volem sumar-li un
+altre valor.
+
+Finalment hi ha tipus pels que no és tan fàcil de trobar alguna relació que requereixi remotament
+una conversió. Per exemple, convertir un booleà en un real. Així que si ens trobem amb la necessitat
+de fer-ho, probablement ens tocarà construir el programa que faci la conversió.
+
+Python ens ofereix una manera molt còmoda de convertir valors bàsics. Considera els exemples:
+
+.. code-block:: python
+
+    >>> str(123)
+    '123'
+    >>> str(123.456)
+    '123.456'
+    >>> float('123.456')
+    123.456
+    >>> int(123.456)
+    123
+    >>> int('123') == int(123.456)
+    True
+    >>> float(123)
+    123.0
+

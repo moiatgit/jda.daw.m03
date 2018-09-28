@@ -1,0 +1,7 @@
+######################################
+Fases de desenvolupament d’un programa
+######################################
+
+.. image:: _images/esquema_desenvolupament.png
+   :align: center
+

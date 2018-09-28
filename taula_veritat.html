@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Una mica de lògica binària &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Glossari de Python" href="glossari.html" />
+    <link rel="prev" title="Expressions" href="expressions.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="operadors.html">Operadors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Una mica de lògica binària</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="operadors_i_expressions.html">Operadors i expressions</a> &raquo;</li>
+        
+      <li>Una mica de lògica binària</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="una-mica-de-logica-binaria">
+<h1>Una mica de lògica binària<a class="headerlink" href="#una-mica-de-logica-binaria" title="Link permanent a aquest títol">¶</a></h1>
+<p>La taula de veritat dels operadors lògics bàsics és: (c: Cert/<em>True</em>, f:
+Fals/<em>False</em>)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="21%" />
+<col width="18%" />
+<col width="15%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A and B</th>
+<th class="head">A or B</th>
+<th class="head">not A</th>
+<th class="head">A xor B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>c</td>
+<td>c</td>
+<td>c</td>
+<td>c</td>
+<td>f</td>
+<td>f</td>
+</tr>
+<tr class="row-odd"><td>c</td>
+<td>f</td>
+<td>f</td>
+<td>c</td>
+<td>f</td>
+<td>c</td>
+</tr>
+<tr class="row-even"><td>f</td>
+<td>c</td>
+<td>f</td>
+<td>c</td>
+<td>c</td>
+<td>c</td>
+</tr>
+<tr class="row-odd"><td>f</td>
+<td>f</td>
+<td>f</td>
+<td>f</td>
+<td>c</td>
+<td>f</td>
+</tr>
+</tbody>
+</table>
+<p>Hi ha algunes equivalències lògiques que per nosaltres, els desenvolupadors, és important que
+tinguem molt per la ma:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span> <span class="pre">==</span> <span class="pre">B</span> <span class="pre">and</span> <span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">B</span> <span class="pre">==</span> <span class="pre">B</span> <span class="pre">or</span> <span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">xor</span> <span class="pre">B</span> <span class="pre">==</span> <span class="pre">B</span> <span class="pre">xor</span> <span class="pre">A</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">==</span> <span class="pre">not</span> <span class="pre">(not</span> <span class="pre">A)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">==</span> <span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">==</span> <span class="pre">False</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">==</span> <span class="pre">True</span></code> i <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">==</span> <span class="pre">A</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">==</span> <span class="pre">(A</span> <span class="pre">==</span> <span class="pre">True)</span> <span class="pre">==</span> <span class="pre">((A</span> <span class="pre">==</span> <span class="pre">True)</span> <span class="pre">==</span> <span class="pre">True)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(A</span> <span class="pre">and</span> <span class="pre">B)</span> <span class="pre">==</span> <span class="pre">not</span> <span class="pre">A</span> <span class="pre">or</span> <span class="pre">not</span> <span class="pre">B</span></code> i <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(A</span> <span class="pre">or</span> <span class="pre">B)</span> <span class="pre">==</span> <span class="pre">not</span> <span class="pre">A</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">B</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">(B</span> <span class="pre">or</span> <span class="pre">C)</span> <span class="pre">==</span> <span class="pre">(A</span> <span class="pre">and</span> <span class="pre">B)</span> <span class="pre">or</span> <span class="pre">(A</span> <span class="pre">and</span> <span class="pre">C)</span></code> i <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">(B</span> <span class="pre">and</span> <span class="pre">C)</span> <span class="pre">==</span> <span class="pre">(A</span> <span class="pre">or</span> <span class="pre">B)</span> <span class="pre">and</span> <span class="pre">(A</span> <span class="pre">or</span> <span class="pre">C)</span></code></li>
+</ul>
+<div class="section" id="juguem-una-mica">
+<h2>Juguem una mica<a class="headerlink" href="#juguem-una-mica" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-1-taules-de-veritat">
+<h3>Pràctica 1. taules de veritat<a class="headerlink" href="#practica-1-taules-de-veritat" title="Link permanent a aquest títol">¶</a></h3>
+<p>Construïu la taula de veritat de les següents expressions:</p>
+<ol class="arabic simple">
+<li>a and a and a</li>
+<li>a and not a</li>
+<li>a and b and c</li>
+<li>a or a</li>
+<li>(a or a) == a</li>
+<li>a or b or c</li>
+<li>a and (b or c)</li>
+<li>a xor (not b or c)</li>
+<li>a and (b or c or d) and (a xor c)</li>
+<li>a and (not a or b or c) and not c</li>
+<li>a and (b or (c xor not d))</li>
+<li>a xor (a xor b) xor (b xor a)</li>
+<li>not (not (not (not a or b) or b) or b) or c</li>
+</ol>
+</div>
+<div class="section" id="practica-2-simplificacio-d-expressions">
+<h3>Pràctica 2. Simplificació d’expressions<a class="headerlink" href="#practica-2-simplificacio-d-expressions" title="Link permanent a aquest títol">¶</a></h3>
+<p>Simplifiqueu al màxim les següents expressions</p>
+<p>Exemple: a and b or a ⇒ (a and b) or a ⇒ a</p>
+<ol class="arabic simple">
+<li>a and b or a and Cert</li>
+<li>Cert and a and b or Cert</li>
+<li>3 + 4 * a / 2 – 2 * a</li>
+<li>a + b + c &lt;= a + b + c – d</li>
+<li>(a + b &lt; 5 + 3) and (a + b &lt; 4)</li>
+<li>(a &lt; b) and (a &lt; c) and (b &lt; c)</li>
+<li>(a and b and c) or (b and a) or (b and c) or (a xor b xor c)</li>
+<li>(a and b) or (c xor d) or (e and not f)</li>
+</ol>
+</div>
+<div class="section" id="practica-3-construccio-d-expressions">
+<h3>Pràctica 3. Construcció d’expressions<a class="headerlink" href="#practica-3-construccio-d-expressions" title="Link permanent a aquest títol">¶</a></h3>
+<p>Construïu una expressió que:</p>
+<ol class="arabic simple">
+<li>sempre sigui certa</li>
+<li>sigui certa només quan a però no b</li>
+<li>sigui certa només quan plou però no fa sol</li>
+<li>sigui certa només quan l’edat sigui més gran o igual que 18</li>
+<li>sigui falsa només quan el radi sigui menor que 1</li>
+<li>sigui certa únicament quan la distància sigui major de 13 i menor que 21 (no inclosos)</li>
+<li>sigui falsa només si la quantitat és més gran o igual a 3 i més petita que 16, o bé sigui un nombre parell.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossari.html" class="btn btn-neutral float-right" title="Glossari de Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="expressions.html" class="btn btn-neutral" title="Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

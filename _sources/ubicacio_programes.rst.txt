@@ -1,0 +1,25 @@
+######################
+Què són els programes?
+######################
+
+*Algorisme*: seqüència de passes orientades a la realització d'una
+tasca o la resolució d'un problema.
+
+Depenent del context, en la vida quotidiana els algorismes es coneixen
+com receptes (passes per fregir un ou), instruccions (per posar la
+rentadora), mètodes de càlcul (passes per calcular l'arrel quadrada),
+etc.
+
+*Programa*: seqüència d’instruccions orientada a ser executada per un
+ordinador sobre un conjunt de dades per donar resposta a un problema
+determinat, més la corresponent documentació.
+
+.. image:: _images/esquema_programa.png
+   :align: center
+
+*Aplicació*: conjunt de programes relacionats més la corresponent documentació.
+
+*Sistema informàtic*: conjunt d'aplicacions, maquinari on s'executa,
+operadors, usuaris, polítiques de backup/seguretat/... que donen
+resposta a una necessitat complexa.
+

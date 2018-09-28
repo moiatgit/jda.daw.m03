@@ -1,0 +1,14 @@
+###########################
+Què és un sistema operatiu?
+###########################
+
+*Sistema operatiu*: conjunt de programes que actuen com a intermediari entre l’usuari o altres programes i els dispositius físics.
+
+Els SO s’encarreguen de:
+
+- Gestió de CPU
+
+- Gestió de memòria
+
+- Gestió de dispositius
+

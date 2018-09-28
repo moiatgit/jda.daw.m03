@@ -1,0 +1,13 @@
+#######################
+Operadors i expressions
+#######################
+
+Un cop hem vist dades, literals, variables i tipus de dades, passem a veure com podem jugar amb elles.
+
+.. toctree::
+    :maxdepth: 1
+
+    operadors.rst
+    expressions.rst
+    taula_veritat.rst
+

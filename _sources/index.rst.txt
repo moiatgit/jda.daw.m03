@@ -1,0 +1,54 @@
+############################
+Introducció a la programació
+############################
+
+Et dono la benvinguda a aquest curs de programació.
+
+Els continguts d'aquest curs estan dissenyats per a ser utilitzats com a suport per les classes
+del mòdul 3 *Programació* del cicles de grau superior *Desenvolupament d'Aplicacions Web*
+que estic impartint al centre `IES Joan d'Àustria <http://agora.xtec.cat/insjoandaustria/>`_.
+
+Els continguts d'aquest curs estan organitzats en els següents temes:
+
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    requeriments.rst
+    primer_contacte.rst
+    ritual_holamon.rst
+    la_tortuga.rst
+    ubicacio_programacio.rst
+    sistemes_numeracio.rst
+    dades.rst
+    operadors_i_expressions.rst
+
+    glossari.rst
+
+..  instruccions.rst
+..  condicionals.rst
+
+..    prg008.instruccions_es
+..    prg009.condicionals.exercicis
+..    prg009.condicionals
+..    prg010.recorreguts_numerics
+..    prg011.recorreguts_strings
+..    prg012.iteracions_mentre
+..    prg013.ruptura_iteracions
+..    prg014.arrays
+..    prg015.matrius
+..    prg016a.tads
+..    prg016.tads
+..    prg017.memoria_dinamica
+..    prg020.programacio_modular
+..    prg021.moduls_matrius
+..    prg022.recursivitat
+..    prg023.fitxers
+..    prg024.fitxers_I_text
+..    prg025.fitxers_II
+..    prg026.fitxers_III.posicions
+..    prg027.fitxers_IV
+..    prg028.fitxers_V
+..    prg099.exercicis_repas
+

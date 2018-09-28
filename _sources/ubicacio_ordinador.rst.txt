@@ -1,0 +1,7 @@
+####################
+Què és un ordinador?
+####################
+
+.. image:: _images/esquema_ordinador.png
+   :align: center
+

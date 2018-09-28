@@ -1,0 +1,15 @@
+#####################
+Sistemes de numeració
+#####################
+
+Fem un breu repàs de sistemes de numeració.
+
+.. toctree::
+    :maxdepth: 1
+
+    sistemes_numeracio_definicio.rst
+    sistemes_numeracio_conversions.rst
+    sistemes_numeracio_python.rst
+
+
+

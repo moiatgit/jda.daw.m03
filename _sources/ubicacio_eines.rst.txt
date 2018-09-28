@@ -1,0 +1,44 @@
+#########################
+Eines pel desenvolupament
+#########################
+
+Per desenvolupar programes informàtics, el que necessitem és
+essencialment un editor de text i els traductors del llenguatge de
+programació escollit.
+
+D'editors ens trobem una gran oferta (en molts casos d'ús gratuïts).
+Els més bàsics com ara el *bloc de notes* de MSWindows, ofereixen la
+possiblitat de crear, obrir, modificar text i guardar canvis. Els més
+sofisticats (alguns els anomenen super editors) com ara *vim* o
+*emacs*, permeten l'usuari, fins i tot, programar el seu funcionament.
+A més a més, alguns ofereixen versions pels principals sistemes
+operatius, de manera que el desenvolupador no hagi d'adaptar-se a un
+altre editor quan canvia de SO.
+
+Donat que és una eina bàsica en la que invertirem molt de temps, és molt
+important escollir-ne un que satisfaci al màxim les nostres necessitats.
+
+Quan ens passem molt de temps desenvolupant, comencem a trobar tasques
+repetitives, i de vegades complexes, que es poden automatitzar
+(depuració, refacció, control de versions, generació automàtica de
+codi, composició gràfica, etc.) Per portar-les a terme més àgilment i
+còmodament, els desenvolupadors creen nous programes que els
+simplifiquen la feina.  Amb la proliferació d'aquestes eines,
+apareixen inevitablement aplicacions que les agrupen. Són conegudes
+com a entorns de desenvolupament integrat (IDE)
+
+Els IDEs estan dissenyats per l'optimització en el desenvolupament de
+programari, però no pas per la optimització de l'aprenentatge del
+desenvolupament. Poden ajudar molt en la producció professional de
+programes, però poden resultar inadequats durant l'aprenentatge d'un
+nou llenguatge donat que, per la seva naturalesa, sovint oculten parts
+essencials del desenvolupament.
+
+Cal mencionar que molts desenvolupadors que treballen amb sistemes
+operatius basats en Unix consideren les eines de línia de comandes
+POSIX representen ja un IDE.  De fet, el consideren el millor IDE
+possible. Si és així, aquest IDE no pateix tant del problema de ser
+inadequat per l'aprenentatge, ja que el desenvolupador es veu *forçat*
+a fer seves les eines de manera incremental i conscient, a mida que
+les necessita.
+

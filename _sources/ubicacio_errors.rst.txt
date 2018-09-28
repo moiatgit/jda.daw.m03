@@ -1,0 +1,31 @@
+######
+Errors
+######
+
+Quan poden aparèixer els errors? a totes les fases, fins i tot abans
+de l’especificació del programa
+
+Com més tard es descobreixi l'error més cara resultarà la correcció
+
+Detecció dels errors
+
+- Durant l’elaboració de la següent fase
+
+- Durant la compilació
+
+- Durant les proves de programa
+
+- Durant les proves del sistema
+
+- Durant l’explotació del sistema (manteniment)
+
+
+.. important:: Una idea que pot ser contraintuïtiva: trobar errors **és bo!**
+
+     - És millor trobar-los nosaltres que el nostre client
+
+     - Si una companya et mostra un error, agraeix-li convidant-la a un café!
+
+Hi ha diferents mecanismes per trobar i eliminar errors. En aquest curs ens introduirem en un dels
+més potents fins la data: programarem les proves abans de codificar els nostres programes! És el que
+es coneix com a desenvolupament dirigit per proves (o TDD *Test Driven Development*)

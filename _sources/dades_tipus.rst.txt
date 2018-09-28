@@ -1,0 +1,85 @@
+##############
+Tipus de dades
+##############
+
+Com hem vist, el tipus de dada indica el rang de valors vàlid per una
+variable.
+
+Donat que per l'ordinador, tots els valors finalment es representen
+igual com a seqüències de 0 i 1, el tipus és qui indica com s'ha
+d'interpretar aquesta seqüència.
+
+Una imatge que pot ser útil per entendre el concepte de tipus és la de
+*motlle*. Si els valors emmagatzemats en memòria formen tot plegat una
+"massa" de 0 i 1, amb el *motlle* agafen una forma concreta.
+
+Una classificació, per força incompleta, dels tipus de dades pot ser
+la següent:
+
+.. image:: _images/tipusdedades.png
+   :align: center
+
+
+En Python, alguns dels tipus bàsics que més farem servir inicialment són:
+
+* ``int``: enter
+
+  Podem indicar valors literals enters directament com ara ``42`` o ``-3``. Seran interpretats en
+  base 10. Si volem fer servir una altra base, podem fer servir la notació que vam veure a la secció
+  :doc:`sistemes_numeracio_python`. Per exemple, ``0xf3a`` per indicar el valor en hexadecimal
+  ``F3A``.
+
+* ``float``: real
+
+   Separarem els decimals amb un punt en comptes d'una coma (sí, Python està en anglès)
+
+   Així, seran valors vàlids ``3.1415``, ``-2.00001`` i la notació ``4e-5`` que equival a 4
+   per 10 elevat a -5, o també ``0.00004``
+
+* ``str``: string (o cadena de text)
+
+   En Python, els strings han d'anar envoltats o de cometes simples o de cometes dobles. 
+
+   Els literals següents serien equivalents:
+
+   * "Adelita Ros"
+
+   * 'Adelita Ros'
+
+* ``bool``: booleà
+
+  Els valors de cert o fals, en Python s'escriuen ``True`` o ``False``. 
+
+
+Podem saber quin tipus de dades considera Python que és un literal, fent servir ``type()``. Per
+exemple:
+
+.. code-block:: python
+
+    >>> type(42)
+    <class 'int'>
+    >>> type('quaranta-dos')
+    <class 'str'>
+    >>> type(3.1416)
+    <class 'float'>
+    >>> type(True)
+    <class 'bool'>
+
+Juguem una mica
+===============
+
+Pràctica 1. Identifica literals
+-------------------------------
+
+Considera novament el següent codi:
+
+.. literalinclude:: _code/turtle_redandblue.py
+    :linenos:
+    :language: python
+
+Identifica els literals que fa servir i de quin tipus són segons la funció
+``type()``.
+
+**Pista**: n'hi ha sis!
+
+

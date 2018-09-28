@@ -1,0 +1,15 @@
+#####
+Dades
+#####
+
+A continuació coneixerem les *dada*, i els conceptes relacionats *tipus de dades* i *variables*.
+
+.. toctree::
+    :maxdepth: 1
+
+    dades_definicions.rst
+    dades_tipus.rst
+    dades_declaracio.rst
+    dades_conversio.rst
+    dades_classes_objectes.rst
+

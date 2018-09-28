@@ -1,0 +1,55 @@
+Tipus de llenguatges de programació
+-----------------------------------
+
+Hi ha milers de llenguatges de programació i la llista continua
+creixent. És probable que aviat hi hagi més que de llenguatges
+naturals!
+
+Com que no els podem tractar tots, ens conformarem amb estudiar
+algunes de les possibles classificacions a partir de les
+característiques que exhibeixen.
+
+Una primera classificació dels llenguatges de programació ja l'hem
+vista: compilat vs interpretat.
+
+Una altra classificació atén a si el llenguatge és de baix o alt
+nivell. Els primers són molt propers al codi màquina i els segons són
+més propers al llenguatge natural.
+
+Alguns llenguatges requereixen definir el tipus de les dades que
+manipulen, d'altres són més hàbils i proven d'esbrinar-ho per si
+mateixos. Per altres simplement totes les dades són del mateix tipus.
+Aquesta distinció permet classificar els llenguatges com a no tipats
+fins a fortament tipats.
+
+Finalment considerarem una altra característica molt particular: el
+*paradigma de programació* a que dóna resposta el llenguatge. Amb la
+paraula *paradigma* es fa referència a la manera en que s'entén la
+programació. Hi ha diversos paradigmes. Els més coneguts són:
+
+- imperatiu: els programes estan formats per instruccions que
+  indiquen com s'ha de fer a cada pas per a aconseguir l'objectiu.
+
+- declaratiu: els programes estan formats d'expressions que indiquen
+  què es vol aconseguir. Hi ha dues famílies principals: els
+  funcionals i els lògics. Els funcionals indiquen què es vol a partir
+  de fórmules o funcions, mentre que els lògics ho fan a partir
+  d'expressions lògiques.
+
+- orientat a objectes: molts el considerem una variant avançada del
+  paradigma imperatiu. Està, però, tan de moda actualment que seria
+  imperdonable no fer-ne esment en aquesta llista. La idea bàsica que
+  persegueix és la modelització de conceptes del "món real" com ara
+  cotxe, ascensor, etc amb l'objectiu de millorar la reutilització de
+  codi.
+
+
+En aquest curs treballarem bàsicament amb els llenguatges Python i Java. Tots dos són llenguatges
+d'alt nivell, fortament tipats i orientats a objectes. Tots dos llenguatges tenen una amplísima
+acceptació en el mercat laboral des de fa força anys.
+
+Python és considerat un llenguatge molt fàcil d'aprendre i aquesta és la raó principal que el fem
+servir per la primera part del curs.
+
+Java és sovint utilitzat per explicar els conceptes generals de l'orientació a objectes. Per aquesta
+raó el fem servir per la segona part del curs.
