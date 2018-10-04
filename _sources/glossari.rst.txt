@@ -8,6 +8,15 @@ apareixen als continguts d'aquest curs.
 .. glossary::
     :sorted:
 
+    len()
+        La funció ``len()`` ens permet saber el nombre d'elements que té un objecte com ara un
+        *string*.
+
+        .. code-block:: python
+
+            >>> len("Hola")
+            4
+
     type()
         La funció ``type()`` ens permet saber quin és el tipus d'un
         element.

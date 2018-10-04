@@ -1,0 +1,32 @@
+Juguem una mica
+===============
+
+Pràctica 1. Sobre l'assignació
+------------------------------
+
+Reconsidera els exemples d'assignació que hem vist:
+
+.. code-block:: python
+    :linenos:
+
+     i = 0
+     i = i + 1
+     ch = 'A'
+     str = 'Hello World!'
+     es_modificat = Fals
+     es_modificat = (x == y)
+
+Respon a les següents preguntes:
+
+#. Es podria intercanviar els elements a alguna de les assignacions?.
+   Per exemple, es podria fer ``0 = i`` en comptes de ``i = 0``?
+   Perquè?
+
+#. A la segona assignació, com es possible que ``i`` estigui a ambdós
+   llocs de la igualtat?
+
+#. Perquè hi ha tres iguals a la sisena assignació? Es podria fer amb menys? Es podrien intercanviar
+   com ara ``es_modificat == (x = y)?`` Perquè? Què és el que vol dir el valor final que contindrà
+   ``es_modificat`` (o més formalment, tindrà emmagatzemada la posició de memòria referenciada per
+   ``es_modificat``) quan sigui executada aquesta instrucció?
+

@@ -1,0 +1,44 @@
+####################
+Assignacions en Java
+####################
+
+L'assignació en Java és molt similar a la notació del pseudocodi. Ex.
+
+.. code-block:: java
+    :linenos:
+
+     i = 0;
+     i = i + 1;
+     ch = 'A';
+     es_modificat = false;
+     es_modificat = (x == y);
+     str = "Hello World!"
+
+**Nota**: els literals de tipus chr es representen en Java entre cometes
+simples (ex. 'A') mentre que els strings ho fan entre dobles (ex.
+"hola". Així, no és el mateix 'A' que "A" i el compilador es queixarà
+si posem les cometes equivocades.
+
+És important fer notar que, un cop definida en Java una variable amb un
+determinat tipus, en general no podrem assignar-li valors d'un altre tipus
+amb algunes excepcions.
+
+En alguns casos, hi ha conversions implícites com ara:
+
+.. code-block:: java
+
+    int valorPetit = 12;
+    long valorGran = valorPetit;    // L'assignació no perd informació
+
+També hi ha la possibilitat de realitzar el que s'anomena *cast* explícit
+quan estem assignant un valor de mida major a un de mida menor i es poden
+perdre dades:
+
+.. code-block:: java
+
+    long valorGran = 12;               // bé, no és tan gros
+    int valorPetit = (int) valorGran   // li diem que ignori els bytes superiors
+
+Finalment, a Orientació a Objectes existeix un concepte anomenat *polimorfisme* que
+permet que una variable sigi definida amb un tipus però que pugui ser-li
+assignat valors d'un tipus diferent però relacionat. Ja hi arribarem.

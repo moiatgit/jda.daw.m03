@@ -1,0 +1,55 @@
+######################
+Assignacions en Python
+######################
+
+Ja hem vist que en Python, la declaració de la variable és fa en el moment
+de l'assignació.
+
+L'assignació en Python també té un aspecte similar a la de pseudocodi.
+
+.. code-block:: python
+    :linenos:
+
+     i = 0
+     i = i + 1
+     ch = "A"
+     es_modificat = False
+     es_modificat = (x == y)
+     str = "Hello World!"
+
+
+Python no disposa del tipus caràcter. Un caràcter, per Python, és un
+string amb un sol caràcter. Per aquesta raó, en aquest llenguatge 'A'
+i "A" són equivalents. ::
+
+    >>> 'A' == "A"
+    True
+
+Recordem que l'assignació de Python suposa la declaració implícita de
+la variable quan aquesta apareix per primer cop. Python decideix el
+tipus a partir del tipus del valor assignat. Així, ``i = 3 + 6``
+definiria la variable ``i`` de tipus enter.
+
+Com que la declaració és implícita, Python permet fer una "redeclaració"
+de la variable amb un altre tipus. Cosa impensable en Java i generalment
+no acceptable en pseudocodi. Per exemple: ::
+
+    i = 3 + 6       # i és un enter amb valor 9
+    j = i + 1       # j és un enter amb valor 10
+    i = "hola"      # i és un string amb valor "hola"
+
+En tot cas, no és una pràctica massa recomanable fer canvis en el
+tipus de les variables ja que porta a confusió als programadors que
+hagin de revisar el nostre codi.
+
+Per poder saber quin és el tipus assignat a una variable, Python ens
+ofereix la utilitat ``type()``. Per exemple:
+
+.. code-block:: python
+
+    >>> i = 3 + 6
+    >>> type(i)
+    <type 'int'>
+    >>> i = "hola"
+    <type 'str'>
+
