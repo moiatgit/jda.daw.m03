@@ -99,7 +99,7 @@ Indica quina és l'expressió necessaria en Python per a aconseguir les següent
 
 #. ``FABADA`` de hexadecimal a octal (resulta ``76535332``)
 
-#  ``0b111111100000`` de binari a hexadecimal (resulta ``FE0``)
+#. ``0b111111100000`` de binari a hexadecimal (resulta ``FE0``)
 
 
 
