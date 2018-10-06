@@ -12,7 +12,7 @@ Reconsidera els exemples d'assignació que hem vist:
      i = 0
      i = i + 1
      ch = 'A'
-     str = 'Hello World!'
+     text = 'Hello World!'
      es_modificat = Fals
      es_modificat = (x == y)
 

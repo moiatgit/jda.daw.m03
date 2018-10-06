@@ -24,7 +24,7 @@ Alguns exemples en pseudocodi:
 .. code-block:: none
     :linenos:
 
-     llegir str               ** llegeix un string
+     llegir text              ** llegeix un string
      llegir resposta          ** llegeix la resposta a una pregunta
      llegir de f nouValor     ** llegeix del fitxer f un nou valor
      escriure "Hello World!"  ** escriu una salutació
@@ -36,7 +36,7 @@ La lectura també es pot representar així:
 .. code-block:: none
     :linenos:
 
-     str = llegir             ** llegeix un string
+     text = llegir            ** llegeix un string
      resposta = llegir        ** llegeix la resposta a una pregunta
      nouValor = llegir de f   ** llegeix del fitxer f un nou valor
 
@@ -63,7 +63,7 @@ Per llegir de l'entrada estàndard farem:
 
 .. code-block:: python
 
-    str = input()
+    text = input()
 
 ``input()`` és el que s'anomena una *funció*. Ja n'hem vist algunes, per
 exemple :doc:`dades_conversio`, i en veurem moltes més a mida que

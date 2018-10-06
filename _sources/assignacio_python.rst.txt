@@ -15,7 +15,7 @@ L'assignació en Python també té un aspecte similar a la de pseudocodi.
      ch = "A"
      es_modificat = False
      es_modificat = (x == y)
-     str = "Hello World!"
+     text = "Hello World!"
 
 
 Python no disposa del tipus caràcter. Un caràcter, per Python, és un

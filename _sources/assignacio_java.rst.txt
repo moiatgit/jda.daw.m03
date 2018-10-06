@@ -12,7 +12,7 @@ L'assignació en Java és molt similar a la notació del pseudocodi. Ex.
      ch = 'A';
      es_modificat = false;
      es_modificat = (x == y);
-     str = "Hello World!"
+     text = "Hello World!"
 
 **Nota**: els literals de tipus chr es representen en Java entre cometes
 simples (ex. 'A') mentre que els strings ho fan entre dobles (ex.

@@ -16,7 +16,7 @@ Exemples en pseudocodi:
      ch = 'A'
      es_modificat = Fals
      es_modificat = (x == y)
-     str = "Hello World!"
+     text = "Hello World!"
 
 És important veure la diferència que representa fer servir el nom de
 la variable abans o després del ``=``. Després de l'igual, el nom de

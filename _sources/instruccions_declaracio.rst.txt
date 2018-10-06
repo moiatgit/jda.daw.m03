@@ -47,7 +47,7 @@ En pseudocodi considerem els següents exemples de declaracions de variables: ::
 
     var resposta és caracter
 
-    var str és string
+    var text és string
 
     var es_modificat és booleà
 
@@ -67,7 +67,7 @@ Els exemples anteriors en Java tindrien el següent aspecte: ::
 
     char resposta;
 
-    String str;
+    String text;
 
     boolean es_modificat;
 
