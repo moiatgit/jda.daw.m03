@@ -480,3 +480,11 @@ La interacció podria ser similar al següent:
 - La teva solució, perquè es separin les paraules, requerirà que aparegui un
   espai extra al final de cada repetició (incloent la darrera!)
 
+- Recorda que ``input()`` retorna un valor de tipus *string*. Això et
+  requerirà convertir-ho si et cal un número. Torna a revisar
+  :doc:`dades_conversio` per més detalls.
+
+
+----
+
+*Ref. IP9.4*

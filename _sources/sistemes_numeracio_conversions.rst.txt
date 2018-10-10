@@ -44,3 +44,7 @@ Pràctica 1. Conversió
 ---------------------
 
 Quin és el corresponent del número F3A (hexadecimal) en octal? i en binari?
+
+----
+
+*Ref. IP6.2*

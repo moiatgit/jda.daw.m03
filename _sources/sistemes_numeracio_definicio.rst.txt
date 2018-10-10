@@ -41,3 +41,6 @@ Pràctica 2. Taula de bases
 
 Completa la taula de correspondències entre bases pels números (en decimal) del 16 al 32
 
+----
+
+*Ref. IP6.1*

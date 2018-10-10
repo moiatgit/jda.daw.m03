@@ -386,4 +386,42 @@ La interacció serà:
     2018
     Doncs Midori, diria que tens 20 o 21 anys
 
+Pràctica 7. una calculadora bàsica
+----------------------------------
+
+Desenvolupa una calculadora bàsica que demani a l’usuari dos operands i
+mostri el resultat de realitzar les operacions bàsiques (+ - * /) sobre
+els operands.
+
+Exemple d'interacció: ::
+
+    $ python3 calculadorabasica.py
+    Primer operand?
+    6
+    Segon operand?
+    2
+    6 + 2 = 8
+    6 - 2 = 4
+    6 * 2 = 12
+    6 / 2 = 3.0
+
+Pistes:
+
+* pots composar la resposta amb salts de línia concatenant el caràcter
+  ``'\n'``.
+
+  .. code-block:: python
+
+        >>> s = "hola" + "\n" + "adéu"
+        >>> missatge = "hola" + "\n" + "adéu"
+        >>> missatge
+        'hola\nadéu'
+        >>> print(missatge)
+        hola
+        adéu
+
+
+----
+
+*Ref. IP9.5*
 

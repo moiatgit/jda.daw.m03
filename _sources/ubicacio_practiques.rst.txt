@@ -59,3 +59,7 @@ Considera el següent codi:
 
 Què fa la línia 4? Creus que aquest és un comentari adequat?
 
+
+----
+
+*Ref. IP5.12*

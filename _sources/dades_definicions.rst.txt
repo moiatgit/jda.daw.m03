@@ -150,3 +150,8 @@ segons ``type()``
         >>> edat = 19
         >>> print(type(edat))
         <class 'int'>
+
+
+----
+
+*Ref. IP7.1*

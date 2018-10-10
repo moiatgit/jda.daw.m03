@@ -82,4 +82,6 @@ Identifica els literals que fa servir i de quin tipus són segons la funció
 
 **Pista**: n'hi ha sis!
 
+----
 
+*Ref. IP7.2*

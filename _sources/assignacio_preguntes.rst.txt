@@ -30,3 +30,7 @@ Respon a les següents preguntes:
    ``es_modificat`` (o més formalment, tindrà emmagatzemada la posició de memòria referenciada per
    ``es_modificat``) quan sigui executada aquesta instrucció?
 
+
+----
+
+*Ref. IP9.2.5*

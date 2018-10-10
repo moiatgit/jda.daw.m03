@@ -137,3 +137,8 @@ Ara que ja tens una idea, fes un repte. És a dir, codifica un programa que faci
 mòdul ``turtle``. Ensenya-li el resultat (no el codi) als companys i repta'ls per que l'intentin
 aconseguir.
 
+
+
+----
+
+*Ref. IP4*

@@ -135,3 +135,6 @@ Aconsegueix que el programa pugui ser executat de la següent manera:
 
     $ ~/programacio/practica.empresento/empresento.py
 
+----
+
+*Ref. IP3*

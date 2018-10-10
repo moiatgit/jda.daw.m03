@@ -94,3 +94,7 @@ g) (a + b + c == c) and a < b
 h) (a <> b) and (a + b == 2 * a)
 
 i) len('hola' + 'adéu') * len('oio')
+
+----
+
+*Ref. IP8.2*
