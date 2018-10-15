@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>L’alternativa simple &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="L’alternativa doble" href="condicionals_doble.html" />
+    <link rel="prev" title="Condicionals" href="condicionals.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="condicionals.html">Condicionals</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">L’alternativa simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_multiple.html">Alternativa múltiple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="condicionals.html">Condicionals</a> &raquo;</li>
+        
+      <li>L’alternativa simple</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="l-alternativa-simple">
+<h1>L’alternativa simple<a class="headerlink" href="#l-alternativa-simple" title="Link permanent a aquest títol">¶</a></h1>
+<p>«Si plou llavors treu el paraigües»</p>
+<p>En diagrama de flux la representarem com:</p>
+<img alt="_images/fluxalternativasimple.png" class="align-center" src="_images/fluxalternativasimple.png" />
+<p>En pseudocodi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Si «condició» Llavors
+    «instruccions»
+Fsi
+</pre></div>
+</div>
+<p>En Java:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if («condició») {
+    «instruccions»
+}
+</pre></div>
+</div>
+<p>En Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if «condició»:
+   «instruccions»
+</pre></div>
+</div>
+<p>Allà on diu:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">condició</span></code> hi col·locarem qualsevol expressió que retorni un valor
+booleà.</li>
+<li><code class="docutils literal notranslate"><span class="pre">instruccions</span></code> podem tenir una o més instruccions; depenent del
+llenguatge, fins i tot cap!</li>
+</ul>
+<p>Alguns elements a observar:</p>
+<ul>
+<li><p class="first">tant si la condició es compleix com sinó, s’executarà la següent
+instrucció que aparegui després de la boleta, el <code class="docutils literal notranslate"><span class="pre">fsi</span></code>,  la clau
+tancada <code class="docutils literal notranslate"><span class="pre">}</span></code> o al nivell de la indentació de <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+</li>
+<li><p class="first">el bloc d’instruccions a executar quan es compleix la condició, es troba
+delimitat per una caixa, entre <code class="docutils literal notranslate"><span class="pre">llavors</span></code> i <code class="docutils literal notranslate"><span class="pre">fsi</span></code>, entre claus <code class="docutils literal notranslate"><span class="pre">{}</span></code>
+o per la indentació (els espais davant <code class="docutils literal notranslate"><span class="pre">«instruccions»</span></code> a la versió
+Python.</p>
+</li>
+<li><p class="first">el sagnat o indentació només és forçada pel llenguatge Python. Tant
+pseudocodi com Java podrien fer sense ella. Això no vol dir que sigui
+voluntari: si vols que els teus programes s’entenguin, has
+d’indentar-los correctament.</p>
+<p>Per exemple, seria perfectament vàlid escriure el programa com:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if («condició») { «instruccio1»; «instruccio2»; «instruccio3»; }
+</pre></div>
+</div>
+<p>Seria, però, molt més incòmode de llegir pels desenvolupadors.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Hem de considerar la indentació com part de la
+documentació del codi. De la mateixa manera que sabem que
+hem de documentar, també hem d’indentar. Obligui el
+compilador o no.</p>
+</div>
+</li>
+</ul>
+<div class="section" id="com-provem-els-nostres-programes-amb-alternativa-simple">
+<h2>Com provem els nostres programes amb alternativa simple?<a class="headerlink" href="#com-provem-els-nostres-programes-amb-alternativa-simple" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per estar segurs que els nostres programes amb condicionals funcionen correctament, ens caldrà
+definir proves que passin per totes les diferents branques. Amb alternativa simple ens cal una prova
+quan es compleix la condició i una altra quan no.</p>
+<ul class="simple">
+<li>amb alternatives dobles, niuaments múltiples i alternatives múltiples,
+ens caldrà una prova que garanteixi el compliment de cada condició
+possible.</li>
+</ul>
+</div>
+<div class="section" id="juguem-una-mica">
+<h2>Juguem una mica<a class="headerlink" href="#juguem-una-mica" title="Link permanent a aquest títol">¶</a></h2>
+<p>A l’hora de desenvolupar els següents programes continuarem realitzant
+totes les passes que hem aprés en exercicis anteriors. En concret recorda:</p>
+<ol class="arabic simple">
+<li>Defineix una capçalera</li>
+<li>Simula una execució</li>
+<li>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
+l’entrada, càlcul i presentació dels resultats</li>
+<li>Resol cada subproblema. Si cal, decomposa’ls encara més.</li>
+<li>No oblidis afegir una prova per cada valor possible de les condicions
+dels condicionals!</li>
+</ol>
+<p>Els programes desenvolupats poden pressuposar que les dades que
+introdueixi l’usuari seran sempre del tipus correcte.
+Els programes hauran, però, de estar preparats perquè l’usuari pugui
+introduir valors incorrectes (per exemple, una edat negativa)</p>
+<p>Si algun dels problemes et resulta complicat d’entendre, potser t’ajudarà
+dibuixar-lo amb un diagrama de flux.</p>
+<div class="section" id="practica-1-si-ets-adult-llavors-ets-responsable">
+<h3>Pràctica 1. Si ets adult llavors ets responsable<a class="headerlink" href="#practica-1-si-ets-adult-llavors-ets-responsable" title="Link permanent a aquest títol">¶</a></h3>
+<p>Desenvolupa un programa que demani el nom i l’edat a l’usuari, i si
+és major de 18 anys li digui “Vostè ja pot anar a la presó!”.
+Finalment, sigui quina sigui l’edat de l’usuari el programa
+s’acomiadarà dient “Vagi amb compte «nom de l’usuari»!”.</p>
+<p>Exemples d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 preso.py
+Com es diu?
+Manel
+Quina edat té?
+17
+Vagi amb complte Manel
+$ python3 preso.py
+Com es diu?
+Anna
+Quina edat té?
+19
+Vostè ja pot anar a la presó!
+Vagi amb complte Anna
+</pre></div>
+</div>
+<p>El diagrama de flux podria tenir el següent aspecte:</p>
+<img alt="_images/fluxalternativasimpleexemple.png" class="align-center" src="_images/fluxalternativasimpleexemple.png" />
+<hr class="docutils" />
+<p><em>Ref. IP10.1</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="condicionals_doble.html" class="btn btn-neutral float-right" title="L’alternativa doble" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="condicionals.html" class="btn btn-neutral" title="Condicionals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

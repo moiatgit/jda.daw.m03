@@ -1,0 +1,132 @@
+################
+Niament múltiple
+################
+
+"Si plou treu el paraigües, si neva treu la caputxa, altrament
+deixa-ho tot a casa"
+
+En pseudocodi podem dir: ::
+
+    Si «condició1» Llavors
+       «instruccions1»
+    Sinó
+       Si «condició2» Llavors
+          «instruccions2»
+       Sinó
+          «instruccions3»
+        Fsi
+    Fsi
+
+És clar, les estructures condicionals són també instruccions i, com a
+tals, les podem posar allà on tingui sentit una instrucció. Per
+exemple, dins d'un bloc d'una altra condició.
+
+En programació, quan una estructura es troba dins d'una altra del
+mateix tipus és sol dir que les estructures es troben *niades*. És una
+mala traducció del terme anglès *nested* però no tenim al nostre
+idioma cap paraula que expressi amb precisió aquest concepte. En
+alguns llocs trobaràs que fan servir *imbricades*. Bé, el significat
+és molt més proper que el dels nius però tampoc no és precís.
+
+Evidentment, dins del bloc d'instruccions2 de l'exemple també hi
+podríem posar nous condicionals *ad infinitum*.
+
+Aquesta situació de tenir més d'una condició, però, és tant comuna que
+molts llenguatges ofereixen una manera més compacta d'expressar-les.
+
+En pseudocodi tindríem el codi equivalent ::
+
+    Si «condició1» Llavors
+       «instruccions1»
+    Sinó Si «condició2» Llavors
+       «instruccions2»
+    Sinó
+       «instruccions3»
+    Fsi
+
+Si et fixes, el nombre de ``Fsi`` és menor. També ho és l'amplada del
+text del codi (és clar, no cal tanta indentació)
+
+En Python tindrem: ::
+
+    if «condicio1»:
+       «instruccions1»
+    elif «condicio2»:
+       «instruccions2»
+    else:
+       «instruccions3»
+
+El Java no ens ofereix aquesta utilitat, però la podem simular jugant amb
+la indentació i amb un petit detall que no hem volgut emfatitzar
+[#clausopcionals]_: ::
+
+    if («condicio1») {
+        «instruccions1»
+    } else if («condicio2») {
+        «instruccions2»
+    } else {
+        «instruccions3»
+    }
+
+Ah! Si volem podem no indicar la condició ``Sinó`` encara que tinguem
+la ``Sinó Si``. Per exemple en Python és vàlid: ::
+
+    if «condicio1»:
+       «instruccions1»
+    elif «condicio2»:
+       «instruccions2»
+
+Juguem una mica
+===============
+
+Recorda que cal preparar una prova per cada branca dels condicionals.
+
+Pràctica 1. Mesos i anys
+------------------------
+
+Desenvolupa un programa que demani un mes i un any, i escrigui el mes
+anterior i el mes següent.
+
+Exemple d'interacció: ::
+
+    $ python3 mesosianys.py
+    Mes?
+    10
+    Any?
+    2003
+    Anterior 9/2003 i posterior 11/2003
+
+Pista: A l'hora de dissenyar les proves, considera els casos extrems. Per
+exemple, què passa quan és gener?
+
+
+Pràctica 2. Tres en ordre
+-------------------------
+
+Desenvolupa un programa que demani tres números i escrigui els tres
+números ordenats creixentment (de menor a major).
+
+Exemple d'interacció: ::
+
+    $ python3 tresenordre.py
+    Primer?
+    3
+    Segon?
+    4
+    Tercer?
+    2
+    2, 3 i 4
+
+Notes
+=====
+
+.. [#clausopcionals] En realitat les claus dels blocs en Java són
+    opcionals si només envolten una instrucció. Normalment s'aconsella
+    fer-ne ús sempre perquè evita cometre errors molt típics en
+    creure que una instrucció es troba dins o fora de la condició per
+    una mala indentació.
+
+----
+
+*Ref. IP10.3*
+

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Errors &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Alternativa múltiple &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Documentació" href="ubicacio_documentacio.html" />
-    <link rel="prev" title="Fases de desenvolupament d’un programa" href="ubicacio_fases.html" />
+    <link rel="next" title="Glossari de Python" href="glossari.html" />
+    <link rel="prev" title="Niament múltiple" href="condicionals_niament.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -88,26 +88,18 @@
 <li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_ordinador.html">Què és un ordinador?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_programes.html">Què són els programes?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_instruccions.html">Instruccions?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_dades.html">Has dit dades?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_so.html">Què és un sistema operatiu?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_llenguatge.html">Què és un llenguatge de programació?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_tipus_llenguatges.html">Tipus de llenguatges de programació</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_fases.html">Fases de desenvolupament d’un programa</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_documentacio.html">Documentació</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_eines.html">Eines pel desenvolupament</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_practiques.html">Practiquem</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="condicionals.html">Condicionals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="condicionals_simple.html">L’alternativa simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Alternativa múltiple</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
 </ul>
 
@@ -154,9 +146,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ubicacio_programacio.html">Ubicació de la programació</a> &raquo;</li>
+          <li><a href="condicionals.html">Condicionals</a> &raquo;</li>
         
-      <li>Errors</li>
+      <li>Alternativa múltiple</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,30 +181,75 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="errors">
-<h1>Errors<a class="headerlink" href="#errors" title="Link permanent a aquest títol">¶</a></h1>
-<p>Quan poden aparèixer els errors? a totes les fases, fins i tot abans
-de l’especificació del programa</p>
-<p>Com més tard es descobreixi l’error més cara resultarà la correcció</p>
-<p>Detecció dels errors</p>
-<ul class="simple">
-<li>Durant l’elaboració de la següent fase</li>
-<li>Durant la compilació</li>
-<li>Durant les proves de programa</li>
-<li>Durant les proves del sistema</li>
-<li>Durant l’explotació del sistema (manteniment)</li>
-</ul>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p>Una idea que pot ser contraintuïtiva: trobar errors <strong>és bo!</strong></p>
-<ul class="last simple">
-<li>És millor trobar-los nosaltres que el nostre client</li>
-<li>Si una companya et mostra un error, agraeix-li convidant-la a un café!</li>
-</ul>
+  <div class="section" id="alternativa-multiple">
+<h1>Alternativa múltiple<a class="headerlink" href="#alternativa-multiple" title="Link permanent a aquest títol">¶</a></h1>
+<p>Quan l’alternativa múltiple correspon a la comprovació dels diferents
+valors d’una mateixa expressió, ens trobem amb quelcom similar a:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Si «expressio» == «val1» Llavors
+    «instruccions 1»
+Sinó Si «expressio» == «val2» Llavors
+    «instruccions 2»
+«...»
+Sinó Si «expressio» == «valN» Llavors
+    «instruccions N»
+Sinó
+    «instruccions altrament»
+</pre></div>
 </div>
-<p>Hi ha diferents mecanismes per trobar i eliminar errors. En aquest curs ens introduirem en un dels
-més potents fins la data: programarem les proves abans de codificar els nostres programes! És el que
-es coneix com a desenvolupament dirigit per proves (o TDD <em>Test Driven Development</em>)</p>
+<p>Aquesta estructura es podria dibuixar en un diagrama de flux de la
+següent manera</p>
+<img alt="_images/fluxalternativamultiple.png" class="align-center" src="_images/fluxalternativamultiple.png" />
+<p>Fixa’t que l’aspecte del diagrama és lleugerament diferent al que
+sortiria si apliquéssim l’esquema que havíem vist fins ara. Aquest
+surt més… ample i curt!</p>
+<p>Alguns llenguatges permeten compactar aquest tipus de situacions amb
+una altra estructura de selecció.</p>
+<p>En pseudocodi tindríem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cas «expressió» sigui
+    val1: «instruccions 1»
+    val2: «instruccions 2»
+    ...
+    valN: «instruccions N»
+Altrament
+    «instruccions altrament»
+Fcas
+</pre></div>
+</div>
+<p>En el lloc dels valors, hi podem col·locar rangs de valors i fins i
+tot operadors, per exemple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cas</span> <span class="n">nombredefills</span> <span class="n">sigui</span>
+        <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">escriu</span> <span class="s2">&quot;error, no pots tenir menys que 0 fills!&quot;</span>
+          <span class="mi">0</span><span class="p">:</span> <span class="n">escriu</span> <span class="s2">&quot;tot el que t&#39;has estalviat en bolquers!&quot;</span>
+          <span class="mi">1</span><span class="p">:</span> <span class="n">escriu</span> <span class="s2">&quot;compte de no mimar-lo massa!&quot;</span>
+  <span class="o">&gt;</span><span class="mi">1</span> <span class="n">AND</span> <span class="o">&lt;</span><span class="mi">5</span><span class="p">:</span> <span class="n">escriu</span> <span class="s2">&quot;no t&#39;avorreixes a casa eh?&quot;</span>
+        <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span> <span class="n">escriu</span> <span class="s2">&quot;tu sí fas país!&quot;</span>
+</pre></div>
+</div>
+<p>Cal tenir en comptes que aquesta estructura s’executa des de la
+primera a la darrera condició. D’aquesta manera, tot i que
+s’acompleixi més d’un cas, només s’executarà el primer. Ex:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cas n sigui
+    == 0: escriure “n == 0”
+    &gt;=0 and &lt;=10: escriure “0&lt;= n &lt;=10”
+    &gt;= 10: escriure “n &gt;=10”
+FCas
+</pre></div>
+</div>
+<p>A l’exemple, quan n val 0 podria entrar al primer i al segon cas.
+Només ho farà al primer, però.</p>
+<p>Java ens ofereix una versió particular d’aquest, amb l’estructura
+<code class="docutils literal notranslate"><span class="pre">switch</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>switch («expressio») {
+    case val1: «instruccions 1»; break;
+    case val2: «instruccions 2»; break;
+    ...
+    case valN: «instruccions N»; break;
+    default: «instruccions altrament»
+}
+</pre></div>
+</div>
+<p>Python no ofereix aquesta estructura i haurem de fer servir el niament múltiple per resoldre aquest
+tipus de situacions.</p>
 </div>
 
 
@@ -224,10 +261,10 @@ es coneix com a desenvolupament dirigit per proves (o TDD <em>Test Driven Develo
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ubicacio_documentacio.html" class="btn btn-neutral float-right" title="Documentació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="glossari.html" class="btn btn-neutral float-right" title="Glossari de Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ubicacio_fases.html" class="btn btn-neutral" title="Fases de desenvolupament d’un programa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="condicionals_niament.html" class="btn btn-neutral" title="Niament múltiple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

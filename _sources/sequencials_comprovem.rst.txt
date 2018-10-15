@@ -188,7 +188,7 @@ Amb els corresponents fitxers de sortida:
         Com et dius?
         Hola Manel. M'encanta saber de tu
 
-    Sí, aquest està malament! És per veure alguna cosa fallant!
+Sí, aquest està malament! És per veure alguna cosa fallant!
 
 Ara, hauríem de fer una execució per cada prova, tal i com hem vist.
 
@@ -345,28 +345,7 @@ Comprova què escriu si demanem ``5`` en comptes de ``4``.
 
 Com sempre, crea les proves abans de codificar.
 
-Pràctica 5. Operacions bàsiques
--------------------------------
-
-Desenvolupa un programa anomenat ``operacionsbasiques.py``, que demani dos
-nombres i escrigui el resultat de sumar-los, restar el segon al primer,
-multiplicar-los i dividir el primer pel segon.
-
-La interacció seria quelcom similar a:
-
-.. code-block:: none
-
-    $ python3 operacionsbasiques.py
-    Primer número:
-    5
-    Segon número:
-    2
-    5 + 2 = 7
-    5 - 2 = 3
-    5 * 2 = 10
-    5 / 2 = 2.5
-
-Pràctica 6. l'edat aproximada de l'usuari
+Pràctica 5. l'edat aproximada de l'usuari
 -----------------------------------------
 
 Desenvolupa un programa anomenat ``edataproximada.py`` que demani el nom de l’usuari,
@@ -386,7 +365,7 @@ La interacció serà:
     2018
     Doncs Midori, diria que tens 20 o 21 anys
 
-Pràctica 7. una calculadora bàsica
+Pràctica 6. una calculadora bàsica
 ----------------------------------
 
 Desenvolupa una calculadora bàsica que demani a l’usuari dos operands i
@@ -404,6 +383,8 @@ Exemple d'interacció: ::
     6 - 2 = 4
     6 * 2 = 12
     6 / 2 = 3.0
+
+Fes servir un únic ``print()`` per mostrar el resultat final.
 
 Pistes:
 

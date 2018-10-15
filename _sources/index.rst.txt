@@ -24,10 +24,10 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     dades.rst
     operadors_i_expressions.rst
     instruccions.rst
+    condicionals.rst
 
     glossari.rst
 
-..  condicionals.rst
 
 ..    prg008.instruccions_es
 ..    prg009.condicionals.exercicis
