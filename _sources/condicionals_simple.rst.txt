@@ -80,15 +80,14 @@ totes les passes que hem aprés en exercicis anteriors. En concret recorda:
 
 1. Defineix una capçalera
 
-#. Simula una execució
+#. Simula una execució per cada branca
+
+#. Genera els fitxers d'entrada i sortida esperada per cada prova
 
 #. Decomposa el programa en, com a mínim tres subproblemes: obtenció de
    l'entrada, càlcul i presentació dels resultats
 
 #. Resol cada subproblema. Si cal, decomposa'ls encara més.
-
-#. No oblidis afegir una prova per cada valor possible de les condicions
-   dels condicionals!
 
 Els programes desenvolupats poden pressuposar que les dades que
 introdueixi l'usuari seran sempre del tipus correcte.
@@ -114,14 +113,14 @@ Exemples d'interacció: ::
     Manel
     Quina edat té?
     17
-    Vagi amb complte Manel
+    Vagi amb compte Manel
     $ python3 preso.py
     Com es diu?
     Anna
     Quina edat té?
     19
     Vostè ja pot anar a la presó!
-    Vagi amb complte Anna
+    Vagi amb compte Anna
 
 El diagrama de flux podria tenir el següent aspecte:
 
