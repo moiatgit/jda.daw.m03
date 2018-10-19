@@ -1,0 +1,703 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Millorem la prova &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Glossari de Python" href="glossari.html" />
+    <link rel="prev" title="Alternativa múltiple" href="condicionals_multiple.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="condicionals.html">Condicionals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="condicionals_simple.html">L’alternativa simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_multiple.html">Alternativa múltiple</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Millorem la prova</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="condicionals.html">Condicionals</a> &raquo;</li>
+        
+      <li>Millorem la prova</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="millorem-la-prova">
+<h1>Millorem la prova<a class="headerlink" href="#millorem-la-prova" title="Link permanent a aquest títol">¶</a></h1>
+<p>Abans de continuar, recapitulem com realitzem les proves dels nostres programes:</p>
+<ul class="simple">
+<li>dissenyem una simulació després de saber què necessitem fer i abans de començar a codificar</li>
+<li>escrivim uns fitxers d’entrada i sortida que contenen els elements de la simulació</li>
+<li>un cop escrit el codi del nostre programa, comprovem que amb les entrades definides obtenim les
+sortides esperades, tot fent servir la utilitat <code class="docutils literal notranslate"><span class="pre">diff</span></code> o el guió <a class="reference download internal" href="_downloads/test_py.sh" download=""><code class="xref download docutils literal notranslate"><span class="pre">test_py.sh</span></code></a>.</li>
+</ul>
+<p>Considera novament el programa <code class="docutils literal notranslate"><span class="pre">saludausuari.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="una-nova-versio">
+<h2>Una nova versió<a class="headerlink" href="#una-nova-versio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera la següent modificació del programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="hll"><span class="k">def</span> <span class="nf">saluda_usuari</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span><span class="hll">    <span class="sd">&quot;&quot;&quot; composa el missatge de salutació a partir del nom i el retorna.</span>
+</span><span class="hll"><span class="sd">        &gt;&gt;&gt; saluda_usuari(&#39;Manel&#39;)</span>
+</span><span class="hll"><span class="sd">        &quot;Hola Manel. M&#39;encanta saber de tu&quot;</span>
+</span><span class="hll"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span class="hll">    <span class="n">resultat</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+</span><span class="hll">    <span class="k">return</span> <span class="n">resultat</span>
+</span>
+
+<span class="c1"># Obtenció de l&#39;entrada</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="c1"># Composició del missatge</span>
+<span class="hll"><span class="n">missatge</span> <span class="o">=</span> <span class="n">saluda_usuari</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span>
+</span>
+<span class="c1"># Mostra el resultat</span>
+<span class="k">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+
+</pre></div>
+</td></tr></table></div>
+<p>En aquesta nova versió del nostre saludador d’usuaris, tenim unes quantes modificacions importants:</p>
+<ul>
+<li><p class="first">línia 24: en comptes de composar el missatge, assignem a <code class="docutils literal notranslate"><span class="pre">missatge</span></code> l’expressió <code class="docutils literal notranslate"><span class="pre">saluda_usuari(nom)</span></code></p>
+<p>Aquesta expressió és una <em>crida a una funció</em> anomenada <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code> que estem definint a
+la línia 10.</p>
+</li>
+<li><p class="first">línia 10: és la definició d’una funció</p>
+<p>De moment, una <em>funció</em> és un codi al que li donem un nom i les dades que necessita per realitzar
+el seu càlcul.</p>
+<p>En aquest cas, hem escollit <code class="docutils literal notranslate"><span class="pre">saluda_usuari</span></code> com a nom de la funció, doncs és el nom del
+programa.</p>
+<p>La funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code> necessita la variable <code class="docutils literal notranslate"><span class="pre">nom</span></code> per composar el missatge. Per aquesta
+raó <code class="docutils literal notranslate"><span class="pre">nom</span></code> apareix tant a la línia 10 com a la 24.</p>
+</li>
+<li><p class="first">línia 16: aquest és el punt en que la funció <em>retorna</em> el resultat de la composició. Ho podem
+entendre com que la funció <em>informa</em> al compilador que la variable <code class="docutils literal notranslate"><span class="pre">resultat</span></code> conté el missatge
+resultant.</p>
+</li>
+<li><p class="first">línies 11 a 14: es tracta d’un comentari que documenta la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code>.</p>
+</li>
+<li><p class="first">línies 11 a 16: aquest és el <em>cos</em> de la funció. Per indicar que tot forma part de la funció,
+fixat que totes les línies estan indentades.</p>
+</li>
+<li><p class="first">línies 12 i 13: es tracta d’una simulació d’execució. En aquest cas el que estem simulant, en
+comptes de ser una execució de tot el programa, ho és només de la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code></p>
+<p>Fixa’t que a la línia 12 apareix el <em>prompt</em> de la consola de Python. Fixa’t també que a la línia
+13, el resultat apareix entre cometes, doncs és com representa Python els strings.</p>
+<p>A aquestes simulacions se les anomena <em>doctest</em> o <em>proves dins de comentari</em>.</p>
+</li>
+</ul>
+<p>Si tornem a executar <code class="docutils literal notranslate"><span class="pre">test_py.sh</span></code> sobre <code class="docutils literal notranslate"><span class="pre">saludausuari.py</span></code> trobarem que passa totes les proves
+que superava la versió anterior. És a dir, fins on podem dir, la nova versió fa el mateix que
+l’anterior.</p>
+</div>
+<div class="section" id="comprovem-la-funcio-a-la-consola-de-python">
+<h2>Comprovem la funció a la consola de Python<a class="headerlink" href="#comprovem-la-funcio-a-la-consola-de-python" title="Link permanent a aquest títol">¶</a></h2>
+<p>Podem passar aquest codi a la consola de Python i fer la prova de la funció per nosaltres mateixos.
+Per exemple, entra en la consola i escriu el següent:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">saluda_nom</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="sd">&quot;&quot;&quot; composa el missatge de salutació a partir del nom i el retorna. &quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">resultat</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">resultat</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saluda_nom</span><span class="p">(</span><span class="s1">&#39;Manel&#39;</span><span class="p">)</span>
+<span class="go">&quot;Hola Manel. M&#39;encanta saber de tu&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">saluda_nom</span><span class="p">)</span>
+<span class="go">Help on function saluda_nom in module __main__:</span>
+
+<span class="go">saluda_nom(nom)</span>
+<span class="go">    composa el missatge de salutació a partir del nom i el retorna.</span>
+<span class="go">(END)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que no hem posat més que la primera línia de documentació de la nostra funció. És només per
+que no hagis de teclejar tant!</p>
+<p>A les línies 2, 3 i 4, després dels puntets que t’afegeix la consola, hauràs d’escriure uns espais
+inicials per indentar-les.</p>
+<p>Per indicar a la consola de Python que ja has finalitzat la definició de la funció, caldrà que facis
+un salt de línia en blanc (línia 5)</p>
+<p>A la línia 6 estem cridant la funció, tot passant-li el nom de l’usuari a saludar. La línia 7 ens la
+genera Python com a resultat de la crida. És el que esperàvem, no?</p>
+<p>Finalment, a la línia 8, i només com a curiositat de moment, podem veure que en fa Python de la
+documentació de la nostra funció. Si li demanem que ens ofereixi ajuda (<em>help</em>) sobre la funció,
+l’intèrpret ens mostra la documentació que li hem proporcionat.</p>
+</div>
+<div class="section" id="comprovem-doctest-automaticament">
+<h2>Comprovem <code class="docutils literal notranslate"><span class="pre">doctest</span></code> automàticament<a class="headerlink" href="#comprovem-doctest-automaticament" title="Link permanent a aquest títol">¶</a></h2>
+<p>Python ens ofereix una manera de comprovar que el test de la funció és correcte.</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll">$ python3 -m doctest -v saludausuari.py &lt; entrada1.txt | diff - sortida_esperada1.txt
+</span>3,14d2
+<span class="hll">&lt; Trying:
+</span><span class="hll">&lt;     saluda_usuari(&#39;Manel&#39;)
+</span><span class="hll">&lt; Expecting:
+</span><span class="hll">&lt;     &quot;Hola Manel. M&#39;encanta saber de tu&quot;
+</span>&lt; ok
+&lt; 1 items had no tests:
+&lt;     saludausuari
+&lt; 1 items passed all tests:
+&lt;    1 tests in saludausuari.saluda_usuari
+&lt; 1 tests in 2 items.
+<span class="hll">&lt; 1 passed and 0 failed.
+</span><span class="hll">&lt; Test passed.
+</span></pre></div>
+</td></tr></table></div>
+<p>Aquesta execució és molt similar a la que ja coneixíem:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 saludausuari.py &lt; entrada1.txt | diff - sortida_esperada1.txt
+</pre></div>
+</div>
+<p>En aquest cas, però, conté també els arguments <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span> <span class="pre">-v</span></code>. <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span></code> farà que Python
+comprovi els <em>doctest</em> que contingui el programa. Per altra banda <code class="docutils literal notranslate"><span class="pre">-v</span></code> farà que Python ens
+ofereixi un munt d’informació respecte les proves que realitzi.</p>
+<p>T’ho tradueixo al català per la teva comoditat:</p>
+<ul class="simple">
+<li>Línies 3 a 6: Estic intentant executar la prova de cridar la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari('Manel')</span></code> i
+espero que el seu resultat sigui <code class="docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Manel.</span> <span class="pre">M'encanta</span> <span class="pre">saber</span> <span class="pre">de</span> <span class="pre">tu&quot;</span></code>.</li>
+<li>Línia 13: S’ha superat una prova i no s’ha fallat cap</li>
+<li>Línia 14: S’han superat totes les proves</li>
+</ul>
+<p>És a dir, que tot ha anat bé!</p>
+<p>Podem afegir més d’un <code class="docutils literal notranslate"><span class="pre">doctest</span></code> a una funció. Per exemple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluda_usuari</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; composa el missatge de salutació a partir del nom i el retorna.</span>
+<span class="sd">        &gt;&gt;&gt; saluda_usuari(&#39;Manel&#39;)</span>
+<span class="sd">        &quot;Hola Manel. M&#39;encanta saber de tu&quot;</span>
+<span class="sd">        &gt;&gt;&gt; saluda_usuari(&#39;Anna&#39;)</span>
+<span class="sd">        &quot;Hola Anna. M&#39;encanta saber de tu&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</pre></div>
+</div>
+<p>En aquest cas, en executar-ho amb <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span></code> ens informarà que han estat dues les proves que
+s’han realitzat.</p>
+</div>
+<div class="section" id="resumim">
+<h2>Resumim<a class="headerlink" href="#resumim" title="Link permanent a aquest títol">¶</a></h2>
+<p>En resum:</p>
+<ul class="simple">
+<li>hem extret la part del codi del nostre programa que realitzava els càlculs i l’hem substituïda per
+la crida a una funció</li>
+<li>hem definit la funció amb el nom del nostre programa</li>
+<li>hem posat, entre parèntesis, els valors (o arguments) necessaris perquè la nostra funció pugui fer
+el que ha de fer</li>
+<li>hem documentat la funció, tot explicant què fa, què retorna i de quin tipus espera els seus arguments</li>
+<li>hem afegit uns comentaris especials, anomenats <code class="docutils literal notranslate"><span class="pre">doctest</span></code> que simulen l’execució de la funció a
+la consola de Python</li>
+<li>hem afegit el codi antic dins del bloc de la funció (indentat)</li>
+<li>hem finalitzat amb <code class="docutils literal notranslate"><span class="pre">return</span></code> a la nostra funció per indicar quin és el resultat de cridar-la.</li>
+<li>hem comprovat l’execució de la funció a la consola de Python</li>
+<li>hem substituït el codi original per una crida a la funció, tot passant-li els valors que requereix
+per fer el càlcul, amb el tipus adequat</li>
+<li>hem provat que el codi canviat continua passant les proves que ja teníem</li>
+<li>hem fet que Python comprovi automàticament la simulació de l’execució de la funció, amb els
+arguments <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span> <span class="pre">-v</span></code></li>
+</ul>
+<p>Hem fet moltes coses, oi? Ens caldrà una mica d’entrenament per tal de pair-les.</p>
+</div>
+<div class="section" id="juguem-una-mica">
+<h2>Juguem una mica<a class="headerlink" href="#juguem-una-mica" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les següents pràctiques et permetran entendre una mica millor la transformació que hem fet aquí.
+Caldrà que tornis a revisar el codi de vàries pràctiques anteriors.</p>
+<p>Et recomano que facis una còpia en comptes de modificar directament el codi antic. Per exemple, si
+tenies el codi anterior a la carpeta <code class="docutils literal notranslate"><span class="pre">nomsicornoms/</span></code>, pots fer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir nomsicognoms_v2
+$ cp -v nomsicognoms/* nomsicognoms_v2
+</pre></div>
+</div>
+<p>Fixa’t que mantindrem els fitxers de prova que ja teníem. Això ens permetrà comprovar que no hem
+trencat res amb els canvis.</p>
+<p>Tot i que són unes quantes, com que ja les tens fetes, et costarà molt poquet. Vinga!</p>
+<div class="section" id="practica-1-noms-i-cognoms-re-reloaded">
+<h3>Pràctica 1. Noms i cognoms (re-reloaded)<a class="headerlink" href="#practica-1-noms-i-cognoms-re-reloaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani a l’usuari el seu nom. Un cop obtingut,
+demanarà el seu cognom.  Finalment respondrà: <code class="docutils literal notranslate"><span class="pre">&quot;Ei</span> <span class="pre">«nom»,</span> <span class="pre">tinc</span> <span class="pre">una</span> <span class="pre">amiga</span>
+<span class="pre">que</span> <span class="pre">també</span> <span class="pre">és</span> <span class="pre">«cognom»&quot;</span></code>.</p>
+<p>Per fer-ho, recorda les passes:</p>
+<ol class="arabic">
+<li><p class="first">Defineix una funció que es digui com el programa <code class="docutils literal notranslate"><span class="pre">noms_i_cognoms()</span></code></p>
+<p>En aquest cas, la definició requerirà el nom i el cognom, ho farem de la següent manera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">noms_i_cognoms</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">cognoms</span><span class="p">):</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Documenta la funció (què fa?)</p>
+</li>
+<li><p class="first">Simula una execució com a <code class="docutils literal notranslate"><span class="pre">doctest</span></code></p>
+</li>
+<li><p class="first">Posa dins del bloc de la funció el codi que en la versió anterior feia la composició del missatge</p>
+</li>
+<li><p class="first">Retorna el resultat composat</p>
+</li>
+<li><p class="first">Modifica la part antiga que composava el missatge, de manera que ara cridi la funció que acabes
+de definir</p>
+</li>
+<li><p class="first">Passa les proves amb :download:<code class="docutils literal notranslate"><span class="pre">test_py.sh</span> <span class="pre">&lt;_recursos/test_py.sh</span></code></p>
+</li>
+<li><p class="first">Passa les proves amb <code class="docutils literal notranslate"><span class="pre">doctest</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 -m doctest -v nomsicognoms.py &lt; entrada1.txt | diff - sortida_esperada1.txt
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="practica-2-repetim-una-paraula-re-reloaded">
+<h3>Pràctica 2. Repetim una paraula (re-reloaded)<a class="headerlink" href="#practica-2-repetim-una-paraula-re-reloaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Nova versió d’aquesta pràctica. Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani a l’usuari una paraula i un número, i
+escrigui la paraula tants cops com digui el nombre.</p>
+<p>La interacció podria ser similar al següent:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 paraularepetida.py
+Diguem una paraula:
+namaste
+Diguem quants cops la vols:
+<span class="m">5</span>
+namaste namaste namaste namaste namaste
+</pre></div>
+</div>
+<p>En aquesta ocasió, toca prendre una decisió: on convertim les dades? És a dir, llegim el nombre de
+repeticions com a string, però l’hem de manipular com a enter!</p>
+<p>La decisió que prendrem és que la nova funció rebrà les dades ja convertides i retornarà un string.</p>
+<p>La funció es definirà com <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">paraula_repetida(paraula,</span> <span class="pre">cops)</span></code> i esperarà que <code class="docutils literal notranslate"><span class="pre">paraula</span></code> sigui
+un string, mentre que <code class="docutils literal notranslate"><span class="pre">cops</span></code> serà un enter.</p>
+<p>No oblidis afegir la documentació de la funció, incloent <code class="docutils literal notranslate"><span class="pre">doctest</span></code>!</p>
+</div>
+<div class="section" id="practica-3-el-quadrat-d-un-numero-re-loaded">
+<h3>Pràctica 3. El quadrat d’un número (re-loaded)<a class="headerlink" href="#practica-3-el-quadrat-d-un-numero-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa dins d’un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">quadratnum.py</span></code> que demani
+un número i escrigui el número al quadrat.</p>
+<p>La interacció podria ser similar al següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 quadratnum.py
+Donam un número:
+4
+El quadrat de 4 és 16
+</pre></div>
+</div>
+<p>Crea un mínim de dos jocs de prova <strong>abans</strong> de fer el programa!</p>
+<p>La funció es definirà com <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">quadrat_num(num)</span></code>, esperarà que <code class="docutils literal notranslate"><span class="pre">num</span></code> sigui un enter i retornarà
+el missatge composat.</p>
+</div>
+<div class="section" id="practica-4-la-meitat-d-un-numero-re-loaded">
+<h3>Pràctica 4. La meitat d’un número (re-loaded)<a class="headerlink" href="#practica-4-la-meitat-d-un-numero-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa dins d’un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">meitatnum.py</span></code> que demani
+un número i escrigui la meitat del número introduït.</p>
+<p>La interacció podria ser similar al següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 meitatnum.py
+Donam un número:
+4
+La meitat de 4 és 2.0
+</pre></div>
+</div>
+<p>En aquest cas, la funció es definirà com <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">meitat_num(num)</span></code> i esperarà que <code class="docutils literal notranslate"><span class="pre">num</span></code> sigui
+numèric (ex. <em>float</em>)</p>
+</div>
+<div class="section" id="practica-5-l-edat-aproximada-de-l-usuari-re-loaded">
+<h3>Pràctica 5. l’edat aproximada de l’usuari (re-loaded)<a class="headerlink" href="#practica-5-l-edat-aproximada-de-l-usuari-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa anomenat <code class="docutils literal notranslate"><span class="pre">edataproximada.py</span></code> que demani el nom de l’usuari,
+l’any actual i l’any de naixement, calculi d’edat que té
+l’usuari.</p>
+<p>En aquest cas, la funció rebrà tres paràmetres. La pots definir com <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">edat_aproximada(nom,</span>
+<span class="pre">any_neixement,</span> <span class="pre">any_actual)</span></code> i, per descomptat, <code class="docutils literal notranslate"><span class="pre">any_neixement</span></code> i <code class="docutils literal notranslate"><span class="pre">any_actual</span></code> seran enters.</p>
+</div>
+<div class="section" id="practica-6-una-calculadora-basica-re-loaded">
+<h3>Pràctica 6. una calculadora bàsica (re-loaded)<a class="headerlink" href="#practica-6-una-calculadora-basica-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa una calculadora bàsica que demani a l’usuari dos operands i
+mostri el resultat de realitzar les operacions bàsiques (+ - * /) sobre
+els operands.</p>
+<p>Nota: potser veus ara la raó per la qual només havies de fer servir un <code class="docutils literal notranslate"><span class="pre">print()</span></code> per mostrar el
+resultat final?</p>
+</div>
+<div class="section" id="practica-7-si-ets-adult-llavors-ets-responsable-re-loaded">
+<h3>Pràctica 7. Si ets adult llavors ets responsable (re-loaded)<a class="headerlink" href="#practica-7-si-ets-adult-llavors-ets-responsable-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Sí, també podem crear funcions per problemes amb condicionals.</p>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani el nom i l’edat a l’usuari, i si
+és major de 18 anys li digui “Vostè ja pot anar a la presó!”.
+Finalment, sigui quina sigui l’edat de l’usuari el programa
+s’acomiadarà dient “Vagi amb compte «nom de l’usuari»!”.</p>
+<p>Exemples d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 preso.py
+Com es diu?
+Manel
+Quina edat té?
+17
+Vagi amb complte Manel
+$ python3 preso.py
+Com es diu?
+Anna
+Quina edat té?
+19
+Vostè ja pot anar a la presó!
+Vagi amb complte Anna
+</pre></div>
+</div>
+<p>El diagrama de flux podria tenir el següent aspecte:</p>
+<img alt="_images/fluxalternativasimpleexemple.png" class="align-center" src="_images/fluxalternativasimpleexemple.png" />
+</div>
+<div class="section" id="practica-8-dos-en-ordre-re-loaded">
+<h3>Pràctica 8. Dos en ordre (re-loaded)<a class="headerlink" href="#practica-8-dos-en-ordre-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani dos números i escrigui els dos números
+ordenats creixentment (de menor a major). Per exemple, si els números són
+3 i 2, el resultat serà 2 3</p>
+<p>Indica amb un comentari, que passa si els dos números són iguals.</p>
+</div>
+<div class="section" id="practica-9-mesos-i-anys-re-loaded">
+<h3>Pràctica 9. Mesos i anys (re-loaded)<a class="headerlink" href="#practica-9-mesos-i-anys-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani un mes i un any, i escrigui el mes
+anterior i el mes següent.</p>
+</div>
+<div class="section" id="practica-10-tres-en-ordre-re-loaded">
+<h3>Pràctica 10. Tres en ordre (re-loaded)<a class="headerlink" href="#practica-10-tres-en-ordre-re-loaded" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et recordo l’enunciat:</p>
+<p>Desenvolupa un programa que demani tres números i escrigui els tres
+números ordenats creixentment (de menor a major).</p>
+<hr class="docutils" />
+<p><em>Ref. IP10.5</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="glossari.html" class="btn btn-neutral float-right" title="Glossari de Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="condicionals_multiple.html" class="btn btn-neutral" title="Alternativa múltiple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

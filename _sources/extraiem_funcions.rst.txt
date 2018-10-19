@@ -1,0 +1,430 @@
+#################
+Millorem la prova
+#################
+
+Abans de continuar, recapitulem com realitzem les proves dels nostres programes:
+
+* dissenyem una simulació després de saber què necessitem fer i abans de començar a codificar
+
+* escrivim uns fitxers d'entrada i sortida que contenen els elements de la simulació
+
+* un cop escrit el codi del nostre programa, comprovem que amb les entrades definides obtenim les
+  sortides esperades, tot fent servir la utilitat ``diff`` o el guió :download:`test_py.sh
+  <_recursos/test_py.sh>`.
+
+Considera novament el programa ``saludausuari.py``:
+
+.. literalinclude:: _code/saludausuari.py
+    :language: python
+    :linenos:
+
+Una nova versió
+===============
+
+Considera la següent modificació del programa:
+
+.. literalinclude:: _code/saludausuaridef.py
+    :language: python
+    :linenos:
+    :emphasize-lines: 10-16, 24
+
+
+En aquesta nova versió del nostre saludador d'usuaris, tenim unes quantes modificacions importants:
+
+* línia 24: en comptes de composar el missatge, assignem a ``missatge`` l'expressió ``saluda_usuari(nom)``
+
+  Aquesta expressió és una *crida a una funció* anomenada ``saluda_usuari()`` que estem definint a
+  la línia 10.
+
+* línia 10: és la definició d'una funció
+
+  De moment, una *funció* és un codi al que li donem un nom i les dades que necessita per realitzar
+  el seu càlcul.
+
+  En aquest cas, hem escollit ``saluda_usuari`` com a nom de la funció, doncs és el nom del
+  programa.
+
+  La funció ``saluda_usuari()`` necessita la variable ``nom`` per composar el missatge. Per aquesta
+  raó ``nom`` apareix tant a la línia 10 com a la 24.
+
+* línia 16: aquest és el punt en que la funció *retorna* el resultat de la composició. Ho podem
+  entendre com que la funció *informa* al compilador que la variable ``resultat`` conté el missatge
+  resultant.
+
+* línies 11 a 14: es tracta d'un comentari que documenta la funció ``saluda_usuari()``.
+
+* línies 11 a 16: aquest és el *cos* de la funció. Per indicar que tot forma part de la funció,
+  fixat que totes les línies estan indentades.
+
+* línies 12 i 13: es tracta d'una simulació d'execució. En aquest cas el que estem simulant, en
+  comptes de ser una execució de tot el programa, ho és només de la funció ``saluda_usuari()``
+
+  Fixa't que a la línia 12 apareix el *prompt* de la consola de Python. Fixa't també que a la línia
+  13, el resultat apareix entre cometes, doncs és com representa Python els strings.
+
+  A aquestes simulacions se les anomena *doctest* o *proves dins de comentari*.
+
+Si tornem a executar ``test_py.sh`` sobre ``saludausuari.py`` trobarem que passa totes les proves
+que superava la versió anterior. És a dir, fins on podem dir, la nova versió fa el mateix que
+l'anterior.
+
+Comprovem la funció a la consola de Python
+==========================================
+
+Podem passar aquest codi a la consola de Python i fer la prova de la funció per nosaltres mateixos.
+Per exemple, entra en la consola i escriu el següent:
+
+.. code-block:: python
+    :linenos:
+
+    >>> def saluda_nom(nom):
+    ...     """ composa el missatge de salutació a partir del nom i el retorna. """
+    ...     resultat = "Hola " + nom + ". M'encanta saber de tu"
+    ...     return resultat
+    ... 
+    >>> saluda_nom('Manel')
+    "Hola Manel. M'encanta saber de tu"
+    >>> help(saluda_nom)
+    Help on function saluda_nom in module __main__:
+
+    saluda_nom(nom)
+        composa el missatge de salutació a partir del nom i el retorna.
+    (END)
+
+Fixa't que no hem posat més que la primera línia de documentació de la nostra funció. És només per
+que no hagis de teclejar tant!
+
+A les línies 2, 3 i 4, després dels puntets que t'afegeix la consola, hauràs d'escriure uns espais
+inicials per indentar-les.
+
+Per indicar a la consola de Python que ja has finalitzat la definició de la funció, caldrà que facis
+un salt de línia en blanc (línia 5)
+
+A la línia 6 estem cridant la funció, tot passant-li el nom de l'usuari a saludar. La línia 7 ens la
+genera Python com a resultat de la crida. És el que esperàvem, no?
+
+Finalment, a la línia 8, i només com a curiositat de moment, podem veure que en fa Python de la
+documentació de la nostra funció. Si li demanem que ens ofereixi ajuda (*help*) sobre la funció,
+l'intèrpret ens mostra la documentació que li hem proporcionat.
+
+Comprovem ``doctest`` automàticament
+====================================
+
+Python ens ofereix una manera de comprovar que el test de la funció és correcte.
+
+.. code-block:: none
+    :linenos:
+    :emphasize-lines: 1, 3-6, 13, 14
+
+    $ python3 -m doctest -v saludausuari.py < entrada1.txt | diff - sortida_esperada1.txt 
+    3,14d2
+    < Trying:
+    <     saluda_usuari('Manel')
+    < Expecting:
+    <     "Hola Manel. M'encanta saber de tu"
+    < ok
+    < 1 items had no tests:
+    <     saludausuari
+    < 1 items passed all tests:
+    <    1 tests in saludausuari.saluda_usuari
+    < 1 tests in 2 items.
+    < 1 passed and 0 failed.
+    < Test passed.
+
+Aquesta execució és molt similar a la que ja coneixíem:
+
+.. code-block:: none
+
+    $ python3 saludausuari.py < entrada1.txt | diff - sortida_esperada1.txt 
+
+En aquest cas, però, conté també els arguments ``-m doctest -v``. ``-m doctest`` farà que Python
+comprovi els *doctest* que contingui el programa. Per altra banda ``-v`` farà que Python ens
+ofereixi un munt d'informació respecte les proves que realitzi.
+
+T'ho tradueixo al català per la teva comoditat:
+
+* Línies 3 a 6: Estic intentant executar la prova de cridar la funció ``saluda_usuari('Manel')`` i
+  espero que el seu resultat sigui ``"Hola Manel. M'encanta saber de tu"``.
+
+* Línia 13: S'ha superat una prova i no s'ha fallat cap
+
+* Línia 14: S'han superat totes les proves
+
+És a dir, que tot ha anat bé!
+
+Podem afegir més d'un ``doctest`` a una funció. Per exemple:
+
+.. code-block:: python
+
+    def saluda_usuari(nom):
+        """ composa el missatge de salutació a partir del nom i el retorna.
+            >>> saluda_usuari('Manel')
+            "Hola Manel. M'encanta saber de tu"
+            >>> saluda_usuari('Anna')
+            "Hola Anna. M'encanta saber de tu"
+        """
+        resultat = "Hola " + nom + ". M'encanta saber de tu"
+        return resultat
+
+En aquest cas, en executar-ho amb ``-m doctest`` ens informarà que han estat dues les proves que
+s'han realitzat.
+
+
+Resumim
+=======
+
+En resum:
+
+* hem extret la part del codi del nostre programa que realitzava els càlculs i l'hem substituïda per
+  la crida a una funció
+
+* hem definit la funció amb el nom del nostre programa
+
+* hem posat, entre parèntesis, els valors (o arguments) necessaris perquè la nostra funció pugui fer
+  el que ha de fer
+
+* hem documentat la funció, tot explicant què fa, què retorna i de quin tipus espera els seus arguments
+
+* hem afegit uns comentaris especials, anomenats ``doctest`` que simulen l'execució de la funció a
+  la consola de Python
+
+* hem afegit el codi antic dins del bloc de la funció (indentat)
+
+* hem finalitzat amb ``return`` a la nostra funció per indicar quin és el resultat de cridar-la.
+
+* hem comprovat l'execució de la funció a la consola de Python
+
+* hem substituït el codi original per una crida a la funció, tot passant-li els valors que requereix
+  per fer el càlcul, amb el tipus adequat
+
+* hem provat que el codi canviat continua passant les proves que ja teníem
+
+* hem fet que Python comprovi automàticament la simulació de l'execució de la funció, amb els
+  arguments ``-m doctest -v``
+
+Hem fet moltes coses, oi? Ens caldrà una mica d'entrenament per tal de pair-les.
+
+Juguem una mica
+===============
+
+Les següents pràctiques et permetran entendre una mica millor la transformació que hem fet aquí.
+Caldrà que tornis a revisar el codi de vàries pràctiques anteriors.
+
+Et recomano que facis una còpia en comptes de modificar directament el codi antic. Per exemple, si
+tenies el codi anterior a la carpeta ``nomsicornoms/``, pots fer:
+
+.. code-block:: bash
+
+    $ mkdir nomsicognoms_v2
+    $ cp -v nomsicognoms/* nomsicognoms_v2
+
+Fixa't que mantindrem els fitxers de prova que ja teníem. Això ens permetrà comprovar que no hem
+trencat res amb els canvis.
+
+Tot i que són unes quantes, com que ja les tens fetes, et costarà molt poquet. Vinga!
+
+Pràctica 1. Noms i cognoms (re-reloaded)
+----------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa que demani a l'usuari el seu nom. Un cop obtingut,
+demanarà el seu cognom.  Finalment respondrà: ``"Ei «nom», tinc una amiga
+que també és «cognom»"``.
+
+Per fer-ho, recorda les passes:
+
+1. Defineix una funció que es digui com el programa ``noms_i_cognoms()``
+
+   En aquest cas, la definició requerirà el nom i el cognom, ho farem de la següent manera:
+
+   .. code-block:: python
+
+        def noms_i_cognoms(nom, cognoms):
+
+#. Documenta la funció (què fa?)
+
+#. Simula una execució com a ``doctest``
+
+#. Posa dins del bloc de la funció el codi que en la versió anterior feia la composició del missatge
+
+#. Retorna el resultat composat
+
+#. Modifica la part antiga que composava el missatge, de manera que ara cridi la funció que acabes
+   de definir
+
+#. Passa les proves amb :download:``test_py.sh <_recursos/test_py.sh``
+
+#. Passa les proves amb ``doctest``:
+
+   .. code-block:: none
+
+        $ python3 -m doctest -v nomsicognoms.py < entrada1.txt | diff - sortida_esperada1.txt 
+
+
+Pràctica 2. Repetim una paraula (re-reloaded)
+---------------------------------------------
+
+Nova versió d'aquesta pràctica. Et recordo l'enunciat:
+
+Desenvolupa un programa que demani a l'usuari una paraula i un número, i
+escrigui la paraula tants cops com digui el nombre.
+
+La interacció podria ser similar al següent:
+
+.. code-block:: bash
+
+    $ python3 paraularepetida.py
+    Diguem una paraula:
+    namaste
+    Diguem quants cops la vols:
+    5
+    namaste namaste namaste namaste namaste
+
+En aquesta ocasió, toca prendre una decisió: on convertim les dades? És a dir, llegim el nombre de
+repeticions com a string, però l'hem de manipular com a enter!
+
+La decisió que prendrem és que la nova funció rebrà les dades ja convertides i retornarà un string.
+
+La funció es definirà com ``def paraula_repetida(paraula, cops)`` i esperarà que ``paraula`` sigui
+un string, mentre que ``cops`` serà un enter.
+
+No oblidis afegir la documentació de la funció, incloent ``doctest``!
+
+
+Pràctica 3. El quadrat d'un número (re-loaded)
+----------------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa dins d'un fitxer anomenat ``quadratnum.py`` que demani
+un número i escrigui el número al quadrat.
+
+La interacció podria ser similar al següent:
+
+.. code-block:: none
+
+    $ python3 quadratnum.py
+    Donam un número:
+    4
+    El quadrat de 4 és 16
+
+Crea un mínim de dos jocs de prova **abans** de fer el programa!
+
+La funció es definirà com ``def quadrat_num(num)``, esperarà que ``num`` sigui un enter i retornarà
+el missatge composat.
+
+
+Pràctica 4. La meitat d'un número (re-loaded)
+---------------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa dins d'un fitxer anomenat ``meitatnum.py`` que demani
+un número i escrigui la meitat del número introduït.
+
+La interacció podria ser similar al següent:
+
+.. code-block:: none
+
+    $ python3 meitatnum.py
+    Donam un número:
+    4
+    La meitat de 4 és 2.0
+
+En aquest cas, la funció es definirà com ``def meitat_num(num)`` i esperarà que ``num`` sigui
+numèric (ex. *float*)
+
+
+Pràctica 5. l'edat aproximada de l'usuari (re-loaded)
+-----------------------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa anomenat ``edataproximada.py`` que demani el nom de l'usuari,
+l'any actual i l'any de naixement, calculi d'edat que té
+l'usuari.
+
+En aquest cas, la funció rebrà tres paràmetres. La pots definir com ``def edat_aproximada(nom,
+any_neixement, any_actual)`` i, per descomptat, ``any_neixement`` i ``any_actual`` seran enters.
+
+Pràctica 6. una calculadora bàsica (re-loaded)
+----------------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa una calculadora bàsica que demani a l'usuari dos operands i
+mostri el resultat de realitzar les operacions bàsiques (+ - * /) sobre
+els operands.
+
+Nota: potser veus ara la raó per la qual només havies de fer servir un ``print()`` per mostrar el
+resultat final?
+
+Pràctica 7. Si ets adult llavors ets responsable (re-loaded)
+------------------------------------------------------------
+
+Sí, també podem crear funcions per problemes amb condicionals.
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa que demani el nom i l'edat a l'usuari, i si
+és major de 18 anys li digui “Vostè ja pot anar a la presó!”.
+Finalment, sigui quina sigui l'edat de l'usuari el programa
+s'acomiadarà dient “Vagi amb compte «nom de l'usuari»!”.
+
+Exemples d'interacció: ::
+
+    $ python3 preso.py
+    Com es diu?
+    Manel
+    Quina edat té?
+    17
+    Vagi amb complte Manel
+    $ python3 preso.py
+    Com es diu?
+    Anna
+    Quina edat té?
+    19
+    Vostè ja pot anar a la presó!
+    Vagi amb complte Anna
+
+El diagrama de flux podria tenir el següent aspecte:
+
+.. image:: _images/fluxalternativasimpleexemple.png
+   :align: center
+
+Pràctica 8. Dos en ordre (re-loaded)
+------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa que demani dos números i escrigui els dos números
+ordenats creixentment (de menor a major). Per exemple, si els números són
+3 i 2, el resultat serà 2 3
+
+Indica amb un comentari, que passa si els dos números són iguals.
+
+Pràctica 9. Mesos i anys (re-loaded)
+------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa que demani un mes i un any, i escrigui el mes
+anterior i el mes següent.
+
+
+
+Pràctica 10. Tres en ordre (re-loaded)
+--------------------------------------
+
+Et recordo l'enunciat:
+
+Desenvolupa un programa que demani tres números i escrigui els tres
+números ordenats creixentment (de menor a major).
+
+
+
+
+----
+
+*Ref. IP10.5*
