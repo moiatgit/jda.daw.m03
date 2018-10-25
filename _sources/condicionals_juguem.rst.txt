@@ -84,7 +84,7 @@ Exemple d'interacció: ::
     Sobren 48€
     $ python3 canvi.py
     Preu?
-    1'2
+    102
     Paga?
     100
     Falten 2€
