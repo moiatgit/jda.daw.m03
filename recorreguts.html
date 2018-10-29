@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Assignacions en pseudocodi &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Els recorreguts &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Assignacions en Java" href="assignacio_java.html" />
-    <link rel="prev" title="Instruccions d’assignació" href="instruccions_assignacio.html" />
+    <link rel="next" title="Recorreguts en pseudocodi" href="recorreguts.numerics.pseudocodi.html" />
+    <link rel="prev" title="Iteracions" href="iteracions.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -92,23 +92,16 @@
 <li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="instruccions_declaracio.html">Instruccions de declaració de variables</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="instruccions_assignacio.html">Instruccions d’assignació</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Assignacions en pseudocodi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="assignacio_java.html">Assignacions en Java</a></li>
-<li class="toctree-l3"><a class="reference internal" href="assignacio_python.html">Assignacions en Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="assignacio_diagrama.html">Diagrames de flux</a></li>
-<li class="toctree-l3"><a class="reference internal" href="assignacio_preguntes.html">Juguem una mica</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="instruccions_es.html">Entrada/Sortida</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequencials_juguem.html">Fem un programet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequencials_comprovem.html">Comprovem els programes</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="iteracions.html">Iteracions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Els recorreguts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts.numerics.pseudocodi.html">Recorreguts en pseudocodi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts.numerics.python.html">Recorreguts en Pyton</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
 </ul>
 
@@ -155,11 +148,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="instruccions.html">Instruccions seqüencials</a> &raquo;</li>
+          <li><a href="iteracions.html">Iteracions</a> &raquo;</li>
         
-          <li><a href="instruccions_assignacio.html">Instruccions d’assignació</a> &raquo;</li>
-        
-      <li>Assignacions en pseudocodi</li>
+      <li>Els recorreguts</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,31 +183,23 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="assignacions-en-pseudocodi">
-<h1>Assignacions en pseudocodi<a class="headerlink" href="#assignacions-en-pseudocodi" title="Link permanent a aquest títol">¶</a></h1>
-<p>La forma d’una instrucció d’assignació en pseudocodi és:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nom_variable</span> <span class="o">=</span> <span class="n">expressió</span>
-</pre></div>
+  <div class="section" id="els-recorreguts">
+<h1>Els recorreguts<a class="headerlink" href="#els-recorreguts" title="Link permanent a aquest títol">¶</a></h1>
+<p>Quan podem saber el nombre de cops que volem que s’executi un determinat
+codi, farem servir un tipus d’iteració que anomenarem <em>de recorregut</em>
+perquè recorrerem, de la primera a la última, totes les vegades que volem
+que s’executi el codi.</p>
+<p>Començarem veient recorreguts numèrics i tot seguit passarem a altres
+tipus de recorreguts més interessants.</p>
+<p>Veurem:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recorreguts.numerics.pseudocodi.html">Recorreguts en pseudocodi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recorreguts.numerics.python.html">Recorreguts en Pyton</a></li>
+</ul>
 </div>
-<p>Exemples en pseudocodi:</p>
-<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span> i = 0
- i = i + 1
- ch = &#39;A&#39;
- es_modificat = Fals
- es_modificat = (x == y)
- text = &quot;Hello World!&quot;
-</pre></div>
-</td></tr></table></div>
-<p>És important veure la diferència que representa fer servir el nom de
-la variable abans o després del <code class="docutils literal notranslate"><span class="pre">=</span></code>. Després de l’igual, el nom de
-la variable es substitueix pel seu valor. Abans de l’igual, però, el
-nom de la variable es substitueix per la posició de memòria on deixar
-el nou valor.</p>
+<hr class="docutils" />
+<p><em>Ref. IP11.1</em></p>
 </div>
 
 
@@ -228,10 +211,10 @@ el nou valor.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="assignacio_java.html" class="btn btn-neutral float-right" title="Assignacions en Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="recorreguts.numerics.pseudocodi.html" class="btn btn-neutral float-right" title="Recorreguts en pseudocodi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="instruccions_assignacio.html" class="btn btn-neutral" title="Instruccions d’assignació" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="iteracions.html" class="btn btn-neutral" title="Iteracions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

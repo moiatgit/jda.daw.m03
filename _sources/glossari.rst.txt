@@ -8,6 +8,16 @@ apareixen als continguts d'aquest curs.
 .. glossary::
     :sorted:
 
+    int()
+        La funció ``int()`` converteix a enter un valor.
+
+        .. code-block:: python
+
+            >>> int('123')
+            123
+            >>> int(123.456)
+            123
+
     len()
         La funció ``len()`` ens permet saber el nombre d'elements que té un objecte com ara un
         *string*.
@@ -25,3 +35,33 @@ apareixen als continguts d'aquest curs.
 
             >>> type(8)
             <class 'int'>
+
+    str.islower()
+        La funció ``islower()`` del tipus string, ens permet saber si aquest correspon lletres en minúscules.
+
+        .. code-block:: python
+
+            >>> "h".islower()
+            True
+            >>> "1".islower()
+            False
+
+    str.isupper()
+        La funció ``isupper()`` del tipus string, ens permet saber si aquest correspon lletres en minúscules.
+
+        .. code-block:: python
+
+            >>> "h".isupper()
+            False
+
+    str.isalpha()
+        La funció ``isalpha()`` del tipus string, ens permet saber si aquest correspon a lletres.
+
+        .. code-block:: python
+
+            >>> "!".isalpha()
+            False
+            >>> "1".isalpha()
+            False
+            >>> "H".isalpha()
+            True

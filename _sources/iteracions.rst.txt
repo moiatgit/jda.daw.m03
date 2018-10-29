@@ -1,0 +1,65 @@
+##########
+Iteracions
+##########
+
+Fem un petit repàs del que ja sabem programar amb els següents exercicis:
+
+Pràctica 1. els cinc primers
+============================
+
+Desenvolupa un programama que escrigui els cinc primers enters
+positius (0..4)
+
+Pràctica 2. els cent primers
+============================
+
+Desenvolupa un programama que escrigui els cent primers enters
+positius (0..99)
+
+Pràctica 3. els *n* primers
+===========================
+
+Desenvolupa un programama que demani a l'usuari un número enter n i
+escrigui els primers n enters positius.
+
+
+Amb el que sabem fins ara, el primer exercici és molt fàcil. El segon
+requereix una mica de paciència però també es pot fer (sort que no ens
+demana els 1000 primers, oi?) Però el tercer… simplement no el podem
+fer.
+
+Les instruccions de control condicional (ex.
+si…llavors…sinó…fsi) ens permeten canviar el flux d’execució,
+escollint diferents camins segons el resultat d’una expressió.  En tot
+cas, amb les estructures condicionals tota instrucció del programa es
+executada com a molt una vegada.
+
+De seguida en coneixerem d’estructures que ens permetran executar les
+mateixes instruccions més d’una vegada. A aquestes estructures les
+coneixem com a *estructures d'iteració* o també *bucles* o, en anglès
+*loops*.
+
+I és aquest el nou tema que treballarem!
+
+En distingirem dos tipus principals d'estructures iteratives:
+
+* els recorreguts: quan podem saber el nombre de cops que voldrem que es
+  repeteixin
+
+* les iteracions generals: quan el nombre de cops que volem que es
+  repeteixi un codi està en funció de quelcom que no podem preveure fins
+  que no executem el nostre codi.
+
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    recorreguts.rst
+
+..  iteracions.generals.rst
+
+
+----
+
+*Ref. IP11*
