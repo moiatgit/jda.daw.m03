@@ -287,19 +287,20 @@ aquesta raó, no ens serviran les proves que ja tenim de la versió anterior.</p
 <div class="section" id="practica-5-suma-fins-un-nombre">
 <h3>Pràctica 5. Suma fins un nombre<a class="headerlink" href="#practica-5-suma-fins-un-nombre" title="Link permanent a aquest títol">¶</a></h3>
 <p>Desenvolupa un programa que demani un número a l’usuari i escrigui la suma de tots els números entre
-l’introduït i el 1. Ex. si l’entrada és</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
-</pre></div>
-</div>
-<p>Com que 10 = 1 + 2 + 3 + 4, la sortida serà</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
-</pre></div>
-</div>
-<p>Una de les proves en <em>doctest</em> podria ser:</p>
+l’introduït i el 1.</p>
+<p>Et proposo les següents proves en <em>doctest</em>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suma_fins_un_nombre</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="go">10</span>
+<span class="go">&#39;1 + 2 + 3 + 4 = 10&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">suma_fins_un_nombre</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">suma_fins_un_nombre</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">&#39;error&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">suma_fins_un_nombre</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;error&#39;</span>
 </pre></div>
 </div>
+<p>Fixa’t que si s’introdueix 1, la sortida no mostra una suma. A més, el valor 0 i els negatius
+generan un error.</p>
 </div>
 <div class="section" id="practica-6-historic-d-edats">
 <h3>Pràctica 6. Històric d’edats<a class="headerlink" href="#practica-6-historic-d-edats" title="Link permanent a aquest títol">¶</a></h3>

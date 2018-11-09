@@ -136,21 +136,23 @@ Pràctica 5. Suma fins un nombre
 -------------------------------
 
 Desenvolupa un programa que demani un número a l’usuari i escrigui la suma de tots els números entre
-l’introduït i el 1. Ex. si l’entrada és ::
+l’introduït i el 1.
 
-    4
-
-Com que 10 = 1 + 2 + 3 + 4, la sortida serà ::
-
-    10
-
-Una de les proves en *doctest* podria ser:
+Et proposo les següents proves en *doctest*:
 
 .. code-block:: python
 
     >>> suma_fins_un_nombre(4)
-    10
+    '1 + 2 + 3 + 4 = 10'
+    >>> suma_fins_un_nombre(1)
+    '1'
+    >>> suma_fins_un_nombre(0)
+    'error'
+    >>> suma_fins_un_nombre(-1)
+    'error'
 
+Fixa't que si s'introdueix 1, la sortida no mostra una suma. A més, el valor 0 i els negatius
+generan un error.
 
 Pràctica 6. Històric d'edats
 ----------------------------
