@@ -77,7 +77,7 @@ Pràctica 1. Primers cent naturals en Python (re-loaded)
 -------------------------------------------------------
 
 Desenvolupa un programa que escrigui els primers 100 nombres naturals
-en ordre decreixent (un número per línia) en Python.
+en ordre creixent (un número per línia) en Python.
 
 **Nota**: no afegeixis cap simulació, ni fitxers de comprovació d'entrada sortida, ni *doctest*.
 
