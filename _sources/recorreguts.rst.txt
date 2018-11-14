@@ -18,8 +18,8 @@ Veurem:
 
     recorreguts.numerics.pseudocodi.rst
     recorreguts.numerics.python.rst
+    recorreguts.strings.rst
 
-..  recorreguts.strings.rst
 ..  recorreguts.sequencies.rst
 
 ----
