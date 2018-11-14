@@ -348,7 +348,7 @@ Desenvolupa un programa que escrigui el següent ::
     0123456789876543210.0123456789876543210
 
 Nota: Aquesta pràctica és opcional i, de presentar només dos triangles, s'hagués dit 'Bilal' en
-honor a l'estudiant que el va proposar.
+honor a l'estudiant que la va proposar.
 
 -----
 
