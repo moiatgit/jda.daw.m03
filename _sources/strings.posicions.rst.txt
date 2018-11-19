@@ -170,7 +170,7 @@ coincideix amb la penúltima.
     >>> segona_igual_penultima("aa")
     True
     >>> segona_igual_penultima("a")
-    True
+    False
     >>> segona_igual_penultima("")
     False
 
