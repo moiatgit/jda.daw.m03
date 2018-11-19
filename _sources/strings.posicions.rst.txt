@@ -149,7 +149,7 @@ consola:
     >>> "1".islower()       # el que no sigui lletra no pot tampoc estar en minúscules
     False
     >>> "A".isupper()       # és "A" una lletra en majúscules?
-    False
+    True
 
 Pràctica 5. La segona lletra és igual a la penúltima
 ----------------------------------------------------
