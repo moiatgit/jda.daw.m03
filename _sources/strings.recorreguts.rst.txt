@@ -1,35 +1,28 @@
-######################
-Recorreguts de strings
-######################
+###################### Recorreguts de strings ######################
 
-Ara que ja hem vist que els elements que composen un string poden se accedits individualment
-mitjançant la notació ``[index]``, passem a automatitzar l'accés.
+Ara que ja hem vist que els elements que composen un string poden se
+accedits individualment mitjançant la notació ``[index]``, passem a
+automatitzar l'accés.
 
 Considera el següent codi:
 
 .. code-block:: python
 
-    >>> nom = 'Ritchie'
-    >>> for i in range(0, len(nom), 1):
-    ...     print('nom[' + str(i) + '] -> ' + nom[i])
-    ...
-    nom[0] -> R
-    nom[1] -> i
-    nom[2] -> t
-    nom[3] -> c
-    nom[4] -> h
-    nom[5] -> i
-    nom[6] -> e
+    >>> nom = 'Ritchie' >>> for i in range(0, len(nom), 1): ...
+    print('nom[' + str(i) + '] -> ' + nom[i]) ...  nom[0] -> R nom[1] -> i
+    nom[2] -> t nom[3] -> c nom[4] -> h nom[5] -> i nom[6] -> e
 
 Què ha passat? Doncs que:
 
-* el bucle fa passar la variable ``i`` pels valors del 0 fins al nombre de lletras que té
-  ``Ritchie``, en aquest cas 7 (menys 1 recorda!)
+* el bucle fa passar la variable ``i`` pels valors del 0 fins al nombre de
+  lletras que té ``Ritchie``, en aquest cas 7 (menys 1 recorda!)
 
-* finalment mostrem el resultat d'indexar ``nom`` amb ``i`` per cada valor que pren aquesta última
+* finalment mostrem el resultat d'indexar ``nom`` amb ``i`` per cada valor
+  que pren aquesta última
 
-En resum, farem servir les tècniques que hem aprés a :doc:`recorreguts.numerics.python` per
-generar els índexos --les posicions-- que ens interessen dels strings.
+En resum, farem servir les tècniques que hem aprés a
+:doc:`recorreguts.numerics.python` per generar els índexos --les
+posicions-- que ens interessen dels strings.
 
 
 Pràctica 1. Separa lletres
@@ -316,9 +309,6 @@ Desenvolupa un programa que demani a l'usuari el seu nom i dibuixi amb aquest un
     ....E-E....
     ..E.v-v.E..
     E.v.a-a.v.E
-
-Desenvolupeu un programa en C que demani a l’usuari una paraula i
-dibuixi amb aquesta una figura com la del següent exemple
 
 ----
 
