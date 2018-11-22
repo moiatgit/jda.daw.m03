@@ -30,7 +30,7 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Glossari de Python" href="glossari.html" />
+    <link rel="next" title="Recorreguts de strings" href="strings.recorreguts.html" />
     <link rel="prev" title="Strings" href="recorreguts.strings.html" />
      
     <script src="_static/moiscripts.js"></script>
@@ -100,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="recorreguts.numerics.python.html">Recorreguts en Pyton</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="recorreguts.strings.html">Strings</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">String: seqüència de lletres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="strings.recorreguts.html">Recorreguts de strings</a></li>
 </ul>
 </li>
 </ul>
@@ -365,7 +366,7 @@ lletra?
 </ul>
 </div>
 <div class="section" id="practica-7-una-matricula-valida">
-<h3>Pràctica 7. una matrícula vàlida<a class="headerlink" href="#practica-7-una-matricula-valida" title="Link permanent a aquest títol">¶</a></h3>
+<h3>Pràctica 7. Una matrícula vàlida<a class="headerlink" href="#practica-7-una-matricula-valida" title="Link permanent a aquest títol">¶</a></h3>
 <p>Desenvolupa un programa que demani a l’usuari una matrícula i li digui si el que li ha introduït
 correspon a una matrícula vàlida en el format instaurat a partir de l’any 2000 a Espanya.</p>
 <p>Una matrícula vàlida està formada per quatre xifres seguides de tres lletres en majúscules de
@@ -385,6 +386,33 @@ l’alfabet espanyol, excepte les vocals “A”, “E”, “I”, “O”, “
 <span class="go">&#39;No vàlida&#39;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="practica-8-matricules-en-minuscules">
+<h3>Pràctica 8. Matrícules en minúscules<a class="headerlink" href="#practica-8-matricules-en-minuscules" title="Link permanent a aquest títol">¶</a></h3>
+<p>Desenvolupa una funció que rebi un string amb una matrícula vàlida i el retorni amb les lletres de
+la matrícula en minúscules.</p>
+<p>Fixa’t que no podem modificar un string un cop composat. Per exemple, no podem fer quelcom com ara:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;anna&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>         <span class="c1"># ERROR: intentem possar la primera en majúscules</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<p>Per poder fer això, ens cal composar un nou string amb les dades que ens interessi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">&#39;Anna&#39;</span>
+</pre></div>
+</div>
+<p>Els <em>doctest</em> que ha d’acomplir la teva funció és el següént:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;1234BCD&#39;</span><span class="p">)</span>
+<span class="go">&#39;1234bcd&#39;</span>
+</pre></div>
+</div>
+<p>En cas que el que li passem no sigui una matrícula vàlida, el resultat queda indefinit. És a dir, la
+funció pot comportar-se de la manera que vulgui, fins i tot, pot generar un error de l’estil
+<code class="docutils literal notranslate"><span class="pre">IndexError:</span> <span class="pre">string</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code></p>
 <hr class="docutils" />
 <p><em>Ref. IP11.1.3.1</em></p>
 </div>
@@ -400,7 +428,7 @@ l’alfabet espanyol, excepte les vocals “A”, “E”, “I”, “O”, “
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="glossari.html" class="btn btn-neutral float-right" title="Glossari de Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="strings.recorreguts.html" class="btn btn-neutral float-right" title="Recorreguts de strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="recorreguts.strings.html" class="btn btn-neutral" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

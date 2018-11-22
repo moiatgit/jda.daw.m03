@@ -30,8 +30,7 @@ Doncs bé, d'això va aquest nou tema!
     :titlesonly:
 
     strings.posicions.rst
-
-..  strings.recorreguts.rst
+    strings.recorreguts.rst
 
 -----
 

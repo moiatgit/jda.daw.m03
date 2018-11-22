@@ -206,7 +206,7 @@ Prepara, com a mínim, jocs de prova per les següents entrades:
 
 * "¿Comoooor?"
 
-Pràctica 7. una matrícula vàlida
+Pràctica 7. Una matrícula vàlida
 --------------------------------
 
 Desenvolupa un programa que demani a l'usuari una matrícula i li digui si el que li ha introduït
@@ -232,6 +232,41 @@ T'ofereixo alguns *doctest* per provar, però potser en voldràs afegir-ne algun
     >>> matricula_valida('123BCDF')
     'No vàlida'
 
+
+Pràctica 8. Matrícules en minúscules
+------------------------------------
+
+Desenvolupa una funció que rebi un string amb una matrícula vàlida i el retorni amb les lletres de
+la matrícula en minúscules.
+
+Fixa't que no podem modificar un string un cop composat. Per exemple, no podem fer quelcom com ara:
+
+.. code-block:: python
+
+    >>> s = 'anna'
+    >>> s[0] = s[0].upper()         # ERROR: intentem possar la primera en majúscules
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'str' object does not support item assignment
+
+Per poder fer això, ens cal composar un nou string amb les dades que ens interessi.
+
+.. code-block:: python
+
+    >>> s = s[0].upper() + s[1] + s[2] + s[3]
+    >>> s
+    'Anna'
+
+Els *doctest* que ha d'acomplir la teva funció és el següént:
+
+.. code-block:: python
+
+    >>> matricula_minuscula('1234BCD')
+    '1234bcd'
+
+En cas que el que li passem no sigui una matrícula vàlida, el resultat queda indefinit. És a dir, la
+funció pot comportar-se de la manera que vulgui, fins i tot, pot generar un error de l'estil
+``IndexError: string index out of range``
 
 
 ----

@@ -1,0 +1,325 @@
+######################
+Recorreguts de strings
+######################
+
+Ara que ja hem vist que els elements que composen un string poden se accedits individualment
+mitjançant la notació ``[index]``, passem a automatitzar l'accés.
+
+Considera el següent codi:
+
+.. code-block:: python
+
+    >>> nom = 'Ritchie'
+    >>> for i in range(0, len(nom), 1):
+    ...     print('nom[' + str(i) + '] -> ' + nom[i])
+    ...
+    nom[0] -> R
+    nom[1] -> i
+    nom[2] -> t
+    nom[3] -> c
+    nom[4] -> h
+    nom[5] -> i
+    nom[6] -> e
+
+Què ha passat? Doncs que:
+
+* el bucle fa passar la variable ``i`` pels valors del 0 fins al nombre de lletras que té
+  ``Ritchie``, en aquest cas 7 (menys 1 recorda!)
+
+* finalment mostrem el resultat d'indexar ``nom`` amb ``i`` per cada valor que pren aquesta última
+
+En resum, farem servir les tècniques que hem aprés a :doc:`recorreguts.numerics.python` per
+generar els índexos --les posicions-- que ens interessen dels strings.
+
+
+Pràctica 1. Separa lletres
+==========================
+
+Desenvolupa una funció que rebi un string i retorni un string amb cada lletra separada per un espai.
+
+Els *doctest*:
+
+.. code-block:: python
+
+    >>> separa_lletres('Ritchie')
+    'R i t c h i e'
+    >>> separa_lletres('')
+    ''
+
+
+Pràctica 2. Primera lletra en majúscules
+========================================
+
+Desenvolupa una funció que rebi un string i en retorni un altre igual, però amb la primera lletra en
+majúscules.
+
+.. code-block:: python
+
+    >>> primera_lletra_majúscules('anna María')
+    'Anna María'
+    >>> primera_lletra_majúscules('Anna María')
+    'Anna María'
+    >>> primera_lletra_majúscules('')
+    ''
+
+Pràctica 3. Comptant 'A's
+=========================
+
+Desenvolupa una funció que rebi un string i retorni el nombre de lletres ``A``, en majúscules o
+minúscules, que conté.
+
+.. code-block:: python
+
+    >>> compta_as('Anaximandro')
+    3
+    >>> compta_as('')
+    0
+
+Pràctica 4. Comptador de vocals
+===============================
+
+Desenvolupa una funció que rebi un string i retorni un altre que indiqui quantes ocurrències conté
+de cada vocal. Considerarem només vocals sense accentuar.
+
+.. code-block:: python
+
+    >>> compta_vocals('Anaximandro')
+    'a:3 e:0 i:1 o:1 u:0'
+    >>> compta_vocals('Supercalifrastilisticoespialidoso')
+    'a:3 e:2 i:6 o:3 u:1'
+    >>> compta_vocals('')
+    'a:0 e:0 i:0 o:0 u:0'
+
+
+Pràctica 5. Informe d'un nom
+============================
+
+Desenvolupa una funció que rebi un string amb el nom d'una persona i retorni un petit informe
+d'aquest. En concret informarà de quantes lletres té i quantes d'aquestes són vocals.
+
+En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuades: ``àèéíïòóúü``
+
+.. code-block:: python
+
+    >>> informa_nom('Eleftèria')
+    '9 lletres i 5 vocals'
+    >>> informa_nom('aàeèéiíïoòóuúü')
+    '9 lletres i 9 vocals'
+    >>> informa_nom('Anna Güell Abbas')     # els espais no compten com lletres!
+    '14 lletres i 6 vocals'
+
+**Pista**: Recordes ``isalpha()``?
+
+Pràctica 6. Inicials en majúscules
+==================================
+
+Desenvolupa una funció que rebi un string que contindrà el nom d'una persona i el retorni amb les
+inicials en majúscules i la resta en minúscules.
+
+.. code-block:: python
+
+    >>> majusculitza('anNa güeLL aBBas')
+    'Anna Güell Abbas'
+    >>> majusculitza('jesús tomás-dado vicents')    # compte amb el guió!
+    'Jesús Tomás-Dado Vicents'
+
+**Pista**: podem considerar que una paraula comença, o bé a l'inici del string, o després de quelcom
+que no sigui lletra (com ara un espai)
+
+Pots fer una versió avançada d'aquest exercici, fent que no torni en majúscules les lletres que
+apareixen soles. Considera el *doctest*:
+
+.. code-block:: python
+
+    >>> majusculitza('enric vidal i viu')           # la i està sola!
+    'Enric Vidal i Viu'
+
+
+Pràctica 7. El text transformat
+===============================
+
+Desenvolupa una funció que rebi un string amb un text i en retorni una transformació d'aquest segons les següents regles:
+
+* les vocals (les cinc sense accents) apareixeran en minúscules
+
+* les lletres no vocals apareixeran en majúscules
+
+* els nombres apareixeran entre parèntesis ``()``
+
+.. code-block:: python
+
+    >>> transforma('Avui faig 19 anys')
+    'aVui FaiG (1)(9) aNYS'
+
+Pràctica 8. El text del revés
+=============================
+
+Desenvolupa una funció que rebi un text i el retorni a l'inrevés.
+
+.. code-block:: python
+
+    >>> reves('tinc gana')
+    'anag cnit'
+
+Pràctica 9. Texts capicua
+=========================
+
+Desenvolupa una funció que rebi un text i retorni ``True`` quan aquest és capicua.
+
+.. code-block:: python
+
+    >>> es_capicua('Alondra')
+    False
+    >>> es_capicua('Anna')      # Fixa't que no distingeix majúscules!
+    True
+    >>> es_capicua('')
+    False
+    >>> es_capicua('a')         # Sí, comença i acaba igual!
+    True
+
+
+Pràctica 10. Texts coincidents
+==============================
+
+Desenvolupa una funció que rebi dos strings i retorni el nombre de lletres que coincideixen en
+posició en ambdós.
+
+>>> coincidencies('Ramón', 'Ratón')
+4
+>>> coincidencies('sabina', 'supina')
+4
+>>> coincidencies('Sabina', 'supina')   # distingeix majúscules de minúscules
+3
+>>> coincidencies('empty', 'buit')      # no cal que coincideixin en longitud
+1
+>>> coincidencies('', 'quelcom')        # amb una cadena buida no hi haurà coincidències
+0
+
+Pràctica 11. Desaccentua
+========================
+
+Desenvolupa una funció que desaccentuí el text que rep. En concret, les lletres que transformarà
+són:
+
+* à → a
+
+* è, é → e
+
+* í, ï → i
+
+* ò, ó → o
+
+* ú, ü → u
+
+* ç → c
+
+
+.. code-block:: python
+
+    >>> desaccentua('Desenvolupa una funció que desaccentuí el text que rep.')
+    'Desenvolupa una funcio que desaccentui el text que rep.'
+    >>> desaccentua('çàèéíïòóúü')
+    'caeeiioouu'
+
+Pràctica 12. Codifica bàsic
+===========================
+
+Cada lletra que trobem a un string té un codi, un nombre positiu.
+
+Podem accedir a aquest número a partir d'una lletra i també podem, a partir del número, obtenir la
+lletra que té associada. Considera la següent interacció:
+
+.. code-block:: python
+
+    >>> ord('a')
+    97
+    >>> chr(97)
+    'a'
+    >>> chr(ord('a')+1)
+    'b'
+    >>> ord('b')
+    98
+
+En aquesta ocasió, has de desenvolupar una funció que, donat un string, retorni un altre on cada
+lletra estigui reemplaçada per la seva següent dins de l'ordre indicat per ``ord()``, tenint en
+comptes que:
+
+* només codificarem les lletres entre la ``a`` i la ``z`` minúscules. La resta d'elements que
+  apareguin al text, es mantindran iguals.
+
+* la lletra ``z`` serà substituïda per la ``a``
+
+Considera els *doctest*:
+
+.. code-block:: python
+
+    >>> codifica_basic('hola')
+    'ipmb'
+    >>> codifica_basic('Cada lletra que trobem a un string té un codi, un nombre positiu.')
+    'Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.'
+    >>> codifica_basic('Dábale arroz a la zorra el abad')
+    'Dácbmf bsspa b mb apssb fm bcbe'
+
+Pràctica 13. Un triangle de lletres
+===================================
+
+Desenvolupa un programa que demani a l’usuari el seu nom.
+
+El programa dibuixarà el seu nom en forma de triangle.
+
+.. code-block:: none
+
+    $ python3 trianglelletres.py
+    nom?
+    Nemesio
+    N
+    N, e
+    N, e, m
+    N, e, m, e
+    N, e, m, e, s
+    N, e, m, e, s, i
+    N, e, m, e, s, i, o
+
+
+Pràctica 14. Un triangle de lletres invertit
+============================================
+
+Desenvolupa un programa que demani a l’usuari el seu nom.
+
+El programa dibuixarà el seu nom en forma de triangle invertit.
+
+.. code-block:: none
+
+    $ python3 trianglelletres.py
+    nom?
+    Romualda
+    a, d, l, a, u, m, o, R
+    d, l, a, u, m, o, R
+    l, a, u, m, o, R
+    a, u, m, o, R
+    u, m, o, R
+    m, o, R
+    o, R
+    R
+
+
+Pràctica 15. Una piràmide amb el nom
+====================================
+
+Desenvolupa un programa que demani a l'usuari el seu nom i dibuixi amb aquest una piràmide.
+
+.. code-block:: none
+
+    $ python3 piramitza.py
+    nom?
+    Eva
+    ....E-E....
+    ..E.v-v.E..
+    E.v.a-a.v.E
+
+Desenvolupeu un programa en C que demani a l’usuari una paraula i
+dibuixi amb aquesta una figura com la del següent exemple
+
+----
+
+*Ref. IP11.1.3.2*
