@@ -18,4 +18,9 @@ do
         exit 1
     fi
     python3 $1 < $fitxer_entrada | diff - $fitxer_sortida
+    if [[ "$?" != "0" ]];
+    then
+        echo "S'ha trobat un error amb la prova $fitxer_entrada"
+        exit 1
+    fi
 done
