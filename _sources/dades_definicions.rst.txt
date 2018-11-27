@@ -120,10 +120,7 @@ Pràctica 2. Noms per variables i constants
 Posa ara noms adequats per les variables i constants anteriors. En cas que les convencions marquin
 un nom diferent per Python i Java, indica les dues versions.
 
-Juguem una mica
-===============
-
-Pràctica 1. Identifica variables
+Pràctica 3. Identifica variables
 --------------------------------
 
 Considera novament el següent codi:
