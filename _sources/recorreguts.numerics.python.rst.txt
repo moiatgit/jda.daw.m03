@@ -290,7 +290,7 @@ comprovació.
 Pràctica 11. Rombos
 -------------------
 
-Desenvolupa un programa que escrigui el següent ::
+Desenvolupa un programa anomenat ``rombos.py`` que escrigui el següent ::
 
     .........9.........
     ........898........
@@ -319,7 +319,7 @@ Nota: Aquí tampoc s'espera que ho codifiquis amb instruccions de l'estil
     print("....45678987654....")
 
 En aquest exercici no cal fer *doctest* però sí fitxers externs de
-comprovació.
+comprovació anomenats ``entrada1.txt`` i ``sortida_esperada1.txt``
 
 Pràctica 12. Mega triangle 'Trilal'
 -----------------------------------
