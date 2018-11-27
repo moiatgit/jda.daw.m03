@@ -197,16 +197,21 @@ Pràctica 10. Texts coincidents
 Desenvolupa una funció que rebi dos strings i retorni el nombre de lletres que coincideixen en
 posició en ambdós.
 
->>> coincidencies('Ramón', 'Ratón')
-4
->>> coincidencies('sabina', 'supina')
-4
->>> coincidencies('Sabina', 'supina')   # distingeix majúscules de minúscules
-3
->>> coincidencies('empty', 'buit')      # no cal que coincideixin en longitud
-1
->>> coincidencies('', 'quelcom')        # amb una cadena buida no hi haurà coincidències
-0
+.. code-block:: python
+
+    >>> coincidencies('Ramón', 'Ratón')
+    4
+    >>> coincidencies('sabina', 'supina')
+    4
+    >>> coincidencies('Sabina', 'supina')   # distingeix majúscules de minúscules
+    3
+    >>> coincidencies('empty', 'buit')      # no cal que coincideixin en longitud
+    1
+    >>> coincidencies('', 'quelcom')        # amb una cadena buida no hi haurà coincidències
+    0
+
+Col·loca la funció en un programa anomenat ``textscoincidents.py`` que no cal que faci res en ser
+executat.
 
 Pràctica 11. Desaccentua
 ========================
@@ -233,6 +238,9 @@ són:
     'Desenvolupa una funcio que desaccentui el text que rep.'
     >>> desaccentua('çàèéíïòóúü')
     'caeeiioouu'
+
+Col·loca la funció en un programa anomenat ``desaccentua.py`` que no cal que faci res en ser
+executat.
 
 Pràctica 12. Codifica bàsic
 ===========================
@@ -272,6 +280,9 @@ Considera els *doctest*:
     'Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.'
     >>> codifica_basic('Dábale arroz a la zorra el abad')
     'Dácbmf bsspa b mb apssb fm bcbe'
+
+Col·loca la funció en un programa anomenat ``codificabasic.py`` que no cal que faci res en ser
+executat.
 
 Pràctica 13. Un triangle de lletres
 ===================================
@@ -329,6 +340,12 @@ Desenvolupa un programa que demani a l'usuari el seu nom i dibuixi amb aquest un
     ....E-E....
     ..E.v-v.E..
     E.v.a-a.v.E
+
+Crea dos jocs de prova, un amb el nom de l'exemple i l'altre amb el teu. Si et dius "Eva", fes
+servir el teu cognom.
+El teu programa ha de ser capaç de superar la prova amb :download:`test_py.sh
+<_recursos/test_py.sh>`.
+
 
 ----
 
