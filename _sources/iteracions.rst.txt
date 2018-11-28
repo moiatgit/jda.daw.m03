@@ -50,16 +50,26 @@ En distingirem dos tipus principals d'estructures iteratives:
   repeteixi un codi està en funció de quelcom que no podem preveure fins
   que no executem el nostre codi.
 
+Començarem pels recorreguts.
+
+Quan podem saber el nombre de cops que volem que s'executi un determinat
+codi, farem servir un tipus d'iteració que anomenarem *de recorregut*
+perquè recorrerem, de la primera a la última, totes les vegades que volem
+que s'executi el codi.
+
+Començarem veient recorreguts numèrics i tot seguit passarem a altres
+tipus de recorreguts més interessants.
+
+Veurem:
 
 .. toctree::
-    :titlesonly:
     :maxdepth: 1
+    :titlesonly:
 
-    recorreguts.rst
-
-..  iteracions.generals.rst
-
+    recorreguts.numerics.pseudocodi.rst
+    recorreguts.numerics.python.rst
 
 ----
 
-*Ref. IP11*
+*Ref. IP11* i *Ref. IP11.1*
+

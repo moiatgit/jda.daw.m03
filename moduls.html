@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mòduls &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Variables i paràmetres" href="variables.html" />
+    <link rel="prev" title="Programació Modular" href="programacio_modular.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mòduls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i paràmetres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+      <li>Mòduls</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="moduls">
+<h1>Mòduls<a class="headerlink" href="#moduls" title="Link permanent a aquest títol">¶</a></h1>
+<p>Considera el següent programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Programa que demana una paraula i una amplada per entrada estàndard i</span>
+<span class="sd">    escriu per sortida estàndard un quadrat de l&#39;amplada indicada format per</span>
+<span class="sd">    les lletres de la paraula introduïda.</span>
+
+<span class="sd">    Versió sense modular</span>
+
+
+<span class="sd">    $ python3 quadratparaula.py</span>
+<span class="sd">    paraula?</span>
+<span class="sd">    hola</span>
+<span class="sd">    amplada?</span>
+<span class="sd">    5</span>
+<span class="sd">    holah</span>
+<span class="sd">    olaho</span>
+<span class="sd">    lahol</span>
+<span class="sd">    ahola</span>
+<span class="sd">    holah</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># obté la paraula</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;paraula?&quot;</span><span class="p">)</span>
+<span class="n">paraula</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paraula</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>                                  <span class="c1"># comprova si la paraula és correcta</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;La paraula no pot ser buida&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># obté l&#39;amplada</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;amplada?&quot;</span><span class="p">)</span>
+    <span class="n">amplada_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">amplada_str</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">amplada_str</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span> <span class="c1"># comprova si l&#39;amplada és correcta</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;L&#39;amplada ha de ser un nombre enter major que 0&quot;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># conversió</span>
+        <span class="n">amplada</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">amplada_str</span><span class="p">)</span>
+
+        <span class="c1"># dibuixa les línies del quadrat</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># conté la posició de la lletra actual a escriure</span>
+        <span class="k">for</span> <span class="n">linia</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># dibuixa la línia a partir de la lletra actual</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">lletra</span> <span class="o">=</span> <span class="n">paraula</span><span class="p">[</span><span class="n">actual</span><span class="p">]</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">lletra</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="n">actual</span> <span class="o">=</span> <span class="p">(</span><span class="n">actual</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">paraula</span><span class="p">)</span>
+
+            <span class="c1"># salta líniea</span>
+            <span class="k">print</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Analitza bé el codi anterior i assegura’t que entens el seu funcionament.</p>
+<p>Fixa’t que els comentaris ens han permès dividir el problema en peces més petites.</p>
+<p>El que farem ara és convertir aquestes peces més petites en quelcom ja conegut per nosaltres
+<strong>funcions</strong>.</p>
+<p>Considera aquesta nova versió del programa anterior:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Programa que demana una paraula i una amplada per entrada estàndard i</span>
+<span class="sd">    escriu per sortida estàndard un quadrat de l&#39;amplada indicada format per</span>
+<span class="sd">    les lletres de la paraula introduïda.</span>
+
+<span class="sd">    Versió modular</span>
+
+
+<span class="sd">    $ python3 quadratparaula.py</span>
+<span class="sd">    paraula?</span>
+<span class="sd">    hola</span>
+<span class="sd">    amplada?</span>
+<span class="sd">    5</span>
+<span class="sd">    holah</span>
+<span class="sd">    olaho</span>
+<span class="sd">    lahol</span>
+<span class="sd">    ahola</span>
+<span class="sd">    holah</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">paraula_incorrecta</span><span class="p">(</span><span class="n">paraula</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Retorna True si la paraula no és correcta. És a dir, té una longitut insuficient.</span>
+
+<span class="sd">        &gt;&gt;&gt; paraula_incorrecta(&#39;hola&#39;)</span>
+<span class="sd">        False</span>
+<span class="sd">        &gt;&gt;&gt; paraula_incorrecta(&#39;&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span>  <span class="nb">len</span><span class="p">(</span><span class="n">paraula</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+
+
+<span class="k">def</span> <span class="nf">amplada_incorrecta</span><span class="p">(</span><span class="n">amplada_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Comprova si el string amplada_str conté un nombre enter positiu més</span>
+<span class="sd">        gran que 0. Retorna False si no és aixi.</span>
+
+<span class="sd">        &gt;&gt;&gt; amplada_incorrecta(&#39;-1&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; amplada_incorrecta(&#39;incorrecte&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; amplada_incorrecta(&#39;0&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; amplada_incorrecta(&#39;5&#39;)</span>
+<span class="sd">        False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">amplada_str</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">amplada_str</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">dibuixa_linies</span><span class="p">(</span><span class="n">paraula</span><span class="p">,</span> <span class="n">amplada</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; donada una paraula i una amplada, dibuixa un quadrat d&#39;amplada indicada format per les</span>
+<span class="sd">        lletres de la paraula.</span>
+
+<span class="sd">        Pressuposa que len(paraula) &gt; 0 i amplada &gt; 0</span>
+
+<span class="sd">        &gt;&gt;&gt; dibuixa_linies(&#39;hola&#39;, 5)</span>
+<span class="sd">        holah</span>
+<span class="sd">        olaho</span>
+<span class="sd">        lahol</span>
+<span class="sd">        ahola</span>
+<span class="sd">        holah</span>
+<span class="sd">        &gt;&gt;&gt; dibuixa_linies(&#39;hola&#39;, 1)</span>
+<span class="sd">        h</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># conté la posició de la lletra actual a escriure</span>
+    <span class="k">for</span> <span class="n">linia</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="n">dibuixa_linea</span><span class="p">(</span><span class="n">paraula</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="n">actual</span><span class="p">)</span>
+        <span class="c1"># salta líniea</span>
+        <span class="k">print</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">dibuixa_linea</span><span class="p">(</span><span class="n">paraula</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="n">actual</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; dibuixa una línea d&#39;amplada indicada formada per lletres de la paraula a partir de la posició</span>
+<span class="sd">        actual.</span>
+<span class="sd">        Finalment retorna la posició de la següent lletra a dibuixar</span>
+
+<span class="sd">        Pressuposa que len(paraula) &gt; 0, amplada &gt; 0 i 0 &gt;= actual &gt; amplada</span>
+
+<span class="sd">        &gt;&gt;&gt; dibuixa_linea(&#39;hola&#39;, 5, 2)</span>
+<span class="sd">        lahol3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">amplada</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">lletra</span> <span class="o">=</span> <span class="n">paraula</span><span class="p">[</span><span class="n">actual</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">lletra</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="p">(</span><span class="n">actual</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">paraula</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">actual</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Demana l&#39;entrada i, si és correcta, dibuixa la sortida. &quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;paraula?&quot;</span><span class="p">)</span>
+    <span class="n">paraula</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">paraula_incorrecta</span><span class="p">(</span><span class="n">paraula</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;La paraula no pot ser buida&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;amplada?&quot;</span><span class="p">)</span>
+        <span class="n">amplada_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">amplada_incorrecta</span><span class="p">(</span><span class="n">amplada_str</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;L&#39;amplada ha de ser un nombre enter major que 0&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dibuixa_linies</span><span class="p">(</span><span class="n">paraula</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">amplada_str</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Analitza aquesta nova versió i identifica les diferències respecte l’anterior.</p>
+<p>Fixa’t que han aparegut uns quants elements precedits de la paraula reservada <code class="docutils literal notranslate"><span class="pre">def</span></code>. Cinc en total.</p>
+<p>Les funcions són:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">paraula_incorrecta()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">amplada_incorrecta()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dibuixa_linies()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dibuixa_linia()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">main()</span></code></li>
+</ul>
+<p>Com sabem, les funcions es defineixen en Python fent servir la paraula reservada <code class="docutils literal notranslate"><span class="pre">def</span></code>. Per
+fer-les executar, simplement escrivim el seu nom i posem entre parèntesis les dades que li calguin.</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">main()</span></code> es defineix a la línia 88 i es crida a la 104 quan el valor de la
+variable <code class="docutils literal notranslate"><span class="pre">__name__</span></code> és <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, el que vol dir que hem executat aquest programa fent servir
+la comanda:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 quadratparaula.py
+</pre></div>
+</div>
+<p>La funció <code class="docutils literal notranslate"><span class="pre">main()</span></code> no espera cap dada entre els parèntesis, en canvi, la funció
+<code class="docutils literal notranslate"><span class="pre">dibuixa_linia()</span></code> n’espera 3.</p>
+<p>Una altra particularitat de <code class="docutils literal notranslate"><span class="pre">main()</span></code> és que no retorna cap valor. A aquest tipus de funcions li
+direm <strong>subrutines</strong> o <strong>procediments</strong>.</p>
+<p>Els procediments generalment es criden com una instrucció i, en Python, retornen el valor especial <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+<span class="go">hola</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valor_retornat</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+<span class="go">hola</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valor_retornat</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">valor_retornat</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>Quan la funció sí retorna un valor (per exemple <code class="docutils literal notranslate"><span class="pre">paraula_incorrecta()</span></code> retorna un booleà) se li
+diu simplement <strong>funció</strong>.</p>
+<p>Tot i que Python no distingeix entre procediments i funcions que retornen valors, conceptualment sí
+que hi ha una diferència. Per aquesta raó, sovint es fa servir la paraula <strong>mòdul</strong> per parlar tant
+de procediments com de funcions que retornen valors.</p>
+<p>Fixa’t que, un cop definit un mòdul, el pots fer servir dins de la definició d’un altre mòdul.</p>
+<p>Donat que les funcions es criden dins d’expressions, és possible que l’argument que rebin siguin el resultat de la crida a una altra funció. Això ho hem vist ja algun cop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;El major és &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;primer?</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;segon?</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)))))</span>
+<span class="go">primer?</span>
+<span class="go">4</span>
+<span class="go">segon?</span>
+<span class="go">6</span>
+<span class="go">El major és 6</span>
+</pre></div>
+</div>
+<p>Fixa’t en aquest, potser una mica enrevessat, exemple:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">print()</span></code> és un procediment que rep un string format com a resultat de l’expressió que té entre els parèntesis de la crida.</li>
+<li>L’expressió té dos strings concatenats amb l’operador <code class="docutils literal notranslate"><span class="pre">+</span></code>. El primer és el
+literal <code class="docutils literal notranslate"><span class="pre">'El</span> <span class="pre">major</span> <span class="pre">és</span> <span class="pre">'</span></code> i el segon es composa a partir d’una nova
+expressió.</li>
+<li>aquesta expressió es composa d’una crida a la funció <code class="docutils literal notranslate"><span class="pre">str()</span></code>. Aquesta funció converteix a string el que rep com a argument. Una nova expressió.</li>
+<li>el que rep <code class="docutils literal notranslate"><span class="pre">str()</span></code> és el resultat d’executar la funció <code class="docutils literal notranslate"><span class="pre">max()</span></code> ,que rep dos valors separats per coma.</li>
+<li>el primer valor que rep <code class="docutils literal notranslate"><span class="pre">max()</span></code> és el resultat de cridar a la funció <code class="docutils literal notranslate"><span class="pre">int()</span></code></li>
+<li>la funció <code class="docutils literal notranslate"><span class="pre">int()</span></code> rep el resultat de cridar la funció <code class="docutils literal notranslate"><span class="pre">input()</span></code></li>
+<li>la funció <code class="docutils literal notranslate"><span class="pre">input()</span></code> rep un string que mostrarà per sortida estàndard i retorna el valor que llegeixi de l’entrada estàndard</li>
+<li>un cop el primer <code class="docutils literal notranslate"><span class="pre">input()</span></code> retorna el valor llegit de l’entrada estàndard, <code class="docutils literal notranslate"><span class="pre">int()</span></code> el converteix a enter. Tot seguit, el segon <code class="docutils literal notranslate"><span class="pre">input()</span></code> és cridat per a poder oferir el valor al segon <code class="docutils literal notranslate"><span class="pre">int()</span></code>.</li>
+<li>Un cop totes dues crides a <code class="docutils literal notranslate"><span class="pre">int()</span></code> han retornat els seus valors convertits a enters, la funció <code class="docutils literal notranslate"><span class="pre">max()</span></code> és cridada amb aquests enters i pot retornar el seu resultat.</li>
+<li>El resultat de <code class="docutils literal notranslate"><span class="pre">max()</span></code> és recollit per <code class="docutils literal notranslate"><span class="pre">str()</span></code> que el retorna convertit a string.</li>
+<li>L’operador <code class="docutils literal notranslate"><span class="pre">+</span></code> disposa, per fi, dels dos strings per concatenar i retorna la composició total</li>
+<li>Ara <code class="docutils literal notranslate"><span class="pre">print()</span></code> pot, finalment, escriure el string resultant per sortida estàndard.</li>
+</ul>
+<div class="section" id="definicions">
+<h2>Definicions<a class="headerlink" href="#definicions" title="Link permanent a aquest títol">¶</a></h2>
+<p>A partir d’ara, doncs, farem servir els següents conceptes:</p>
+<ul>
+<li><p class="first"><strong>mòdul</strong>: agrupació de codi dins d’un nom seguit de zero o més paràmetres.</p>
+</li>
+<li><p class="first"><strong>paràmetre</strong>: cadascuna de les variables que apareixen entre parèntesis en la definició d’un mòdul.</p>
+</li>
+<li><p class="first"><strong>argument</strong>: cadascun dels valors que apareixen entre parèntesis en la crida a un mòdul.</p>
+</li>
+<li><p class="first"><strong>procediment</strong>: mòdul que no retorna cap valor.</p>
+<p>En Python és més precís dir que retorna el valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</li>
+<li><p class="first"><strong>funció</strong>: mòdul que retorna un valor</p>
+</li>
+<li><p class="first"><strong>crida</strong>: punt d’activació o execució d’un mòdul.</p>
+<p>En el cas d’un procediment, la crida es realitza en forma d’instrucció, sense recollir el valor
+resultant, que seria <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>En el cas d’una funció, la crida es realitza dins d’una expressió en la que es recull el valor
+resultant.</p>
+</li>
+</ul>
+<p>Les funcions es poden classificar en:</p>
+<ul class="simple">
+<li><strong>funcions pures</strong>: aquelles que la seva execució, a partir dels mateixos arguments, sempre donarà
+el mateix resultat i no té efectes secundaris.</li>
+<li><strong>funcions impures</strong>: aquelles per les que successives execucions amb els mateixos arguments poden
+donar lloc a resultats diferents o/i tenir efectes secundaris.</li>
+</ul>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">amplada_incorrecta()</span></code> sempre retornarà el mateix quan sigui cridada amb el valor
+<code class="docutils literal notranslate"><span class="pre">'5'</span></code> i, per molts cops que la cridem, no modificarà res. En canvi, la funció
+<code class="docutils literal notranslate"><span class="pre">dibuixa_linies()</span></code>, cada cop que és cridada pot canviar el valor resultant i, a més, té l’efecte
+secundari que apareix un nou text per la sortida estàndard.</p>
+</div>
+<div class="section" id="practica-1-classifiquem">
+<h2>Pràctica 1. Classifiquem<a class="headerlink" href="#practica-1-classifiquem" title="Link permanent a aquest títol">¶</a></h2>
+<p>Classifica els següents mòduls segons: <em>procediment</em>, <em>funció pura</em>, <em>funció impura</em>:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">int()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">main()</span></code> de l’exemple de <code class="docutils literal notranslate"><span class="pre">quadratparaula.py</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">print()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">input()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">dibuixa_linia()</span></code> de l’exemple de <code class="docutils literal notranslate"><span class="pre">quadratparaula.py</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">str()</span></code></li>
+</ul>
+</div>
+<div class="section" id="practica-2-triangles-revisitat">
+<h2>Pràctica 2. Triangles (revisitat)<a class="headerlink" href="#practica-2-triangles-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes la pràctica <em>Trangles</em> de la secció
+<a class="reference internal" href="recorreguts.numerics.python.html"><span class="doc">Recorreguts en Pyton</span></a>? Doncs toca tornar-la a fer.  Aquesta nova
+versió tindrà pràcticament la mateixa funcionalitat que l’anterior, però estarà
+codificada fent servir mòduls.</p>
+<p>Reescrivim l’enunciat per la teva comoditat. Fixa’t que afegeix una nova
+simulació per explicitar què ha de fer el programa en cas que el nombre rebut
+no sigui adequat.</p>
+<p>Desenvolupa un programa que demani un nombre enter positiu i dibuixi tants
+triangles com se li indiqui.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 triangles.py
+quants?
+2
+.........9.........
+........898........
+.......78987.......
+......6789876......
+.....567898765.....
+....45678987654....
+...3456789876543...
+..234567898765432..
+.12345678987654321.
+0123456789876543210
+.........9.........
+........898........
+.......78987.......
+......6789876......
+.....567898765.....
+....45678987654....
+...3456789876543...
+..234567898765432..
+.12345678987654321.
+0123456789876543210
+$ python3 triangles.py
+quants?
+0
+Ha de ser un enter major que 0
+</pre></div>
+</div>
+<p><strong>Pista</strong>: considera crear un mòdul per les següents parts:</p>
+<ul class="simple">
+<li>validació de l’entrada</li>
+<li>dibuixar els triangles</li>
+<li>dibuixar les línies</li>
+<li>dibuixar els punts d’una línia (els esquerres i els drets?)</li>
+<li>dibuixar els valors creixents fins el 9</li>
+<li>dibuixar els valors decreixents des del 8</li>
+<li>el mòdul principal <code class="docutils literal notranslate"><span class="pre">main()</span></code></li>
+</ul>
+<hr class="docutils" />
+<p><em>Ref. IP13.1</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="variables.html" class="btn btn-neutral float-right" title="Variables i paràmetres" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="programacio_modular.html" class="btn btn-neutral" title="Programació Modular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>
