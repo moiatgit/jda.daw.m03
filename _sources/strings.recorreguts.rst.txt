@@ -104,7 +104,7 @@ En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuade
     >>> informa_nom('Eleftèria')
     '9 lletres i 5 vocals'
     >>> informa_nom('aàeèéiíïoòóuúü')
-    '9 lletres i 9 vocals'
+    '14 lletres i 14 vocals'
     >>> informa_nom('Anna Güell Abbas')     # els espais no compten com lletres!
     '14 lletres i 6 vocals'
 
