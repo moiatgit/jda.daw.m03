@@ -3,7 +3,30 @@ Juguem amb el ``while``
 #######################
 
 
-Pràctica 1. Compta lletres
+Pràctica 1. El lloro
+====================
+
+Desenvolupa un programa que demani a l'usuari paraules i les repeteixi
+fins que l'usuari introdueixi "adéu".
+
+Considera la simulació:
+
+.. code-block:: none
+
+    python3 lloro.py
+    El lloro pregunta paraula:
+    hola
+    El lloro diu:
+    hola
+    El lloro pregunta paraula:
+    què tal?
+    El lloro diu:
+    què tal?
+    El lloro pregunta paraula:
+    adéu
+    Adéu
+
+Pràctica 2. Compta lletres
 ==========================
 
 Desenvolupa un programa que compti les lletres de totes les paraules que li
@@ -49,7 +72,7 @@ El teu programa respectarà les següents simulacions:
 
 **Nota**: fixa't que només compta lletres (ni nombres ni símbols).
 
-Pràctica 2. Matrícules vàlides
+Pràctica 3. Matrícules vàlides
 ==============================
 
 Desenvolupa un programa que validi matrícules fins que li indiquin prou.
@@ -71,7 +94,7 @@ El teu programa respectarà la següent simulació:
 *Pista*: Recorda que ja tens una funció que et diu si una matrícula és o no
 vàlida (:doc:`moduls_practica`)
 
-Pràctica 3. Informes de capicuïtat
+Pràctica 4. Informes de capicuïtat
 ==================================
 
 Desenvolupa un programa que indiqui la capicuïtat de les matrícules fins que li indiquin prou.
@@ -110,7 +133,128 @@ El teu programa respectarà les següents simulacions:
     prou
     Has introduït 1 matrícula vàlida; cap interessant.
 
-Pràctica 4. La calculadora recurrent
+Pràctica 5. L'ascensor continu
+==============================
+
+Recordes la pràctica de l'ascensor? (:doc:`condicionals_juguem`)
+
+En aquesta ocassió, oferirem un menú per interaccionar amb el nostre ascensor.
+Inicialment, l'ascensor es trobarà a la *planta baixa*.
+
+Una simulació d'interacció és:
+
+.. code-block:: none
+    :emphasize-lines: 9, 17, 26, 34, 43, 51, 60, 68, 77, 86, 94, 102
+
+    $ python3 ascensorcontinu.py
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    b
+    No pot pujar tant
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    No pot pujar tant
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    No pot baixar tant
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    No pot baixar tant
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    No pot baixar tant
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    b
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    x
+    Adéu
+
+
+
+
+
+Pràctica 6. La calculadora recurrent
 ====================================
 
 Desenvolupa una calculadora com la *calculadora senzilla* de
@@ -120,7 +264,6 @@ introduint peticions fins que li diguin prou.
 El teu programa respectarà les següents simulacions:
 
 .. code-block:: none
-    :linenos:
     :emphasize-lines: 4, 6, 8, 11, 13, 15, 18, 20, 22, 25, 27, 29, 32, 34, 36, 38, 44, 50, 52, 58, 60, 62, 68, 71, 74, 76, 79, 81, 83, 86
 
     $ python3 calculadoraiterativa.py
@@ -217,7 +360,7 @@ començar amb ``+`` i amb ``-``.
 **Pista**: si aquí no fas un conjunt de fitxers d'entrada/sortida per fer les
 proves, és que et sobra el temps!
 
-Pràctica 5. Rimes
+Pràctica 7. Rimes
 =================
 
 Desenvolupa un programa que vagi recollint frases mentre *rimin* amb la frase
@@ -238,7 +381,7 @@ Una simulació:
 
 **Pista**: probablement et caldrà guardar quelcom de cada iteració per la següent.
 
-Pràctica 6. Històries encadenades
+Pràctica 8. Històries encadenades
 =================================
 
 Programa ara un divertit joc infantil en el que cada frase hagi de començar per
@@ -259,7 +402,7 @@ El programa finalitzarà quan l'usuari s'equivoqui.
 
 **Fixat**: no considera majúscules/minúscules però si paraules completes.
 
-Pràctica 7. Lletra continguda
+Pràctica 9. Lletra continguda
 =============================
 
 Desenvolupa una funció que ens permeti saber si una lletra està continguda en
@@ -282,8 +425,8 @@ lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.
     -1
 
 
-Pràctica 8. Paraula continguda
-==============================
+Pràctica 10. Paraula continguda
+===============================
 
 Desenvolupa una funció que permeti saber si una paraula està continguda en una
 altra. La funció ens retornarà la posició de la primera lletra on comença la

@@ -187,8 +187,28 @@
             
   <div class="section" id="juguem-amb-el-while">
 <h1>Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#juguem-amb-el-while" title="Link permanent a aquest títol">¶</a></h1>
-<div class="section" id="practica-1-compta-lletres">
-<h2>Pràctica 1. Compta lletres<a class="headerlink" href="#practica-1-compta-lletres" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-1-el-lloro">
+<h2>Pràctica 1. El lloro<a class="headerlink" href="#practica-1-el-lloro" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani a l’usuari paraules i les repeteixi
+fins que l’usuari introdueixi «adéu».</p>
+<p>Considera la simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 lloro.py
+El lloro pregunta paraula:
+hola
+El lloro diu:
+hola
+El lloro pregunta paraula:
+què tal?
+El lloro diu:
+què tal?
+El lloro pregunta paraula:
+adéu
+Adéu
+</pre></div>
+</div>
+</div>
+<div class="section" id="practica-2-compta-lletres">
+<h2>Pràctica 2. Compta lletres<a class="headerlink" href="#practica-2-compta-lletres" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que compti les lletres de totes les paraules que li
 passin, fins que li diguin prou.</p>
 <p>El teu programa respectarà les següents simulacions:</p>
@@ -228,8 +248,8 @@ $ python3 comptalletres.py
 </div>
 <p><strong>Nota</strong>: fixa’t que només compta lletres (ni nombres ni símbols).</p>
 </div>
-<div class="section" id="practica-2-matricules-valides">
-<h2>Pràctica 2. Matrícules vàlides<a class="headerlink" href="#practica-2-matricules-valides" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-3-matricules-valides">
+<h2>Pràctica 3. Matrícules vàlides<a class="headerlink" href="#practica-3-matricules-valides" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que validi matrícules fins que li indiquin prou.</p>
 <p>El teu programa respectarà la següent simulació:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 validamatricules.py
@@ -245,8 +265,8 @@ prou
 <p><em>Pista</em>: Recorda que ja tens una funció que et diu si una matrícula és o no
 vàlida (<a class="reference internal" href="moduls_practica.html"><span class="doc">Juguem amb mòduls</span></a>)</p>
 </div>
-<div class="section" id="practica-3-informes-de-capicuitat">
-<h2>Pràctica 3. Informes de capicuïtat<a class="headerlink" href="#practica-3-informes-de-capicuitat" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-4-informes-de-capicuitat">
+<h2>Pràctica 4. Informes de capicuïtat<a class="headerlink" href="#practica-4-informes-de-capicuitat" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que indiqui la capicuïtat de les matrícules fins que li indiquin prou.</p>
 <p>El teu programa respectarà les següents simulacions:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 informescapicuitat.py
@@ -280,99 +300,125 @@ prou
 </span></pre></div>
 </div>
 </div>
-<div class="section" id="practica-4-la-calculadora-recurrent">
-<h2>Pràctica 4. La calculadora recurrent<a class="headerlink" href="#practica-4-la-calculadora-recurrent" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-5-l-ascensor-continu">
+<h2>Pràctica 5. L’ascensor continu<a class="headerlink" href="#practica-5-l-ascensor-continu" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes la pràctica de l’ascensor? (<a class="reference internal" href="condicionals_juguem.html"><span class="doc">Juguem amb condicionals</span></a>)</p>
+<p>En aquesta ocassió, oferirem un menú per interaccionar amb el nostre ascensor.
+Inicialment, l’ascensor es trobarà a la <em>planta baixa</em>.</p>
+<p>Una simulació d’interacció és:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 ascensorcontinu.py
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">b
+</span>No pot pujar tant
+Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>No pot pujar tant
+Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>No pot baixar tant
+Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>No pot baixar tant
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>No pot baixar tant
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">b
+</span>Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">x
+</span>Adéu
+</pre></div>
+</div>
+</div>
+<div class="section" id="practica-6-la-calculadora-recurrent">
+<h2>Pràctica 6. La calculadora recurrent<a class="headerlink" href="#practica-6-la-calculadora-recurrent" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una calculadora com la <em>calculadora senzilla</em> de
 <a class="reference internal" href="condicionals_juguem.html"><span class="doc">Juguem amb condicionals</span></a>. Aquest cop, però, el programa permetrà seguir
 introduint peticions fins que li diguin prou.</p>
 <p>El teu programa respectarà les següents simulacions:</p>
-<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 calculadoraiterativa.py
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 calculadoraiterativa.py
 Demana&#39;m que vols que calculi enters. Finalitza amb &quot;prou&quot;
 Primer operand?
 <span class="hll">4
@@ -460,14 +506,14 @@ Primer operand?
 <span class="hll">prou
 </span>ok
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Fixa’t que es considera un operand vàlid quan és un enter. Els enters poden
 començar amb <code class="docutils literal notranslate"><span class="pre">+</span></code> i amb <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
 <p><strong>Pista</strong>: si aquí no fas un conjunt de fitxers d’entrada/sortida per fer les
 proves, és que et sobra el temps!</p>
 </div>
-<div class="section" id="practica-5-rimes">
-<h2>Pràctica 5. Rimes<a class="headerlink" href="#practica-5-rimes" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-7-rimes">
+<h2>Pràctica 7. Rimes<a class="headerlink" href="#practica-7-rimes" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que vagi recollint frases mentre <em>rimin</em> amb la frase
 anterior. Es considera que dues frases rimen si acaben amb la mateixa lletra.</p>
 <p>Una simulació:</p>
@@ -482,8 +528,8 @@ m&#39;he cansat de rimar
 </div>
 <p><strong>Pista</strong>: probablement et caldrà guardar quelcom de cada iteració per la següent.</p>
 </div>
-<div class="section" id="practica-6-histories-encadenades">
-<h2>Pràctica 6. Històries encadenades<a class="headerlink" href="#practica-6-histories-encadenades" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-8-histories-encadenades">
+<h2>Pràctica 8. Històries encadenades<a class="headerlink" href="#practica-8-histories-encadenades" title="Link permanent a aquest títol">¶</a></h2>
 <p>Programa ara un divertit joc infantil en el que cada frase hagi de començar per
 la mateixa paraula amb que va acabar la frase anterior.</p>
 <p>El programa finalitzarà quan l’usuari s’equivoqui.</p>
@@ -498,8 +544,8 @@ Veritats com temples
 </div>
 <p><strong>Fixat</strong>: no considera majúscules/minúscules però si paraules completes.</p>
 </div>
-<div class="section" id="practica-7-lletra-continguda">
-<h2>Pràctica 7. Lletra continguda<a class="headerlink" href="#practica-7-lletra-continguda" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-9-lletra-continguda">
+<h2>Pràctica 9. Lletra continguda<a class="headerlink" href="#practica-9-lletra-continguda" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que ens permeti saber si una lletra està continguda en
 una paraula.  La funció ens retornarà la posició de la primera aparició de la
 lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.</p>
@@ -518,8 +564,8 @@ lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="practica-8-paraula-continguda">
-<h2>Pràctica 8. Paraula continguda<a class="headerlink" href="#practica-8-paraula-continguda" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="practica-10-paraula-continguda">
+<h2>Pràctica 10. Paraula continguda<a class="headerlink" href="#practica-10-paraula-continguda" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que permeti saber si una paraula està continguda en una
 altra. La funció ens retornarà la posició de la primera lletra on comença la
 paraula cercada dins de la segona paraula, o -1 si no es troba.</p>

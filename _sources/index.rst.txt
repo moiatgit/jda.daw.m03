@@ -34,7 +34,6 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
 ..  tuples.rst
 
 
-..    prg012.iteracions_mentre
 ..    prg013.ruptura_iteracions
 ..    prg014.arrays
 ..    prg015.matrius
