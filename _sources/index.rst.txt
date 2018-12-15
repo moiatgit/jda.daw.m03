@@ -28,10 +28,12 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     iteracions.rst
     strings.rst
     programacio_modular.rst
-
+    bucles_condicionals.rst
     glossari.rst
 
-..    tuples.rst
+..  tuples.rst
+
+
 ..    prg012.iteracions_mentre
 ..    prg013.ruptura_iteracions
 ..    prg014.arrays

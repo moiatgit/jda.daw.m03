@@ -49,7 +49,7 @@ Exemple d'interacció: ::
     $ python3 calculadorasenzilla.py
     Primer operand?
     4
-    Operador:
+    Operador?
     +
     Segon operand?
     5
@@ -57,7 +57,7 @@ Exemple d'interacció: ::
     $ python3 calculadorasenzilla.py
     Primer operand?
     4
-    Operador:
+    Operador?
     /
     Segon operand?
     0
@@ -65,7 +65,7 @@ Exemple d'interacció: ::
     $ python3 calculadorasenzilla.py
     Primer operand?
     4
-    Operador:
+    Operador?
     ^
     Segon operand?
     3

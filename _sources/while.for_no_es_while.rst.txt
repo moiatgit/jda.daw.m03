@@ -1,0 +1,52 @@
+################################################
+El ``for`` de Python, no pot emular el ``while``
+################################################
+
+En Python, el for requereix sempre ser un recorregut. Per tant, no podem definir-hi condicions
+arbitràries de finalització.
+
+Això no és cert en tots els llenguatges. Per exemple, en Java, el ``for`` és, en realitat, una
+versió compactada del ``while``.
+
+Per exemple, considera la traducció directa del codi anterior a Java:
+
+.. code-block:: python
+    :linenos:
+
+    int i=1;
+    while(i<5) {
+        System.out.println(i);
+        i += 1;
+    }
+
+    for(int i=1; i<5; i+=1) {
+        System.out.println(i);
+    }
+
+
+Però també permet:
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 10
+
+    boolean continuar = true;
+    int i=1;
+    while(continuar) {
+        System.out.println(i);
+        i += 1;
+        continuar = (i < 5);
+    }
+
+    continuar = true;
+    for(int i=1; continuar; i+=1) {
+        System.out.println(i);
+        continuar = (i < 5);
+    }
+
+
+----
+
+*Ref. IP14.3*
+

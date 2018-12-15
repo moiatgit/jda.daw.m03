@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cerca &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Bucles condicionals &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -29,7 +29,9 @@
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
-    <link rel="search" title="Cerca" href="#" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="El bucle while" href="while.visio_general.html" />
+    <link rel="prev" title="Juguem amb mòduls" href="moduls_practica.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -81,7 +83,7 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
@@ -95,7 +97,13 @@
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bucles condicionals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="while.visio_general.html">El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.recorreguts.html">Un <code class="docutils literal notranslate"><span class="pre">while</span></code> pot emular un <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.for_no_es_while.html">El <code class="docutils literal notranslate"><span class="pre">for</span></code> de Python, no pot emular el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.juguem.html">Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
 </ul>
 
@@ -142,7 +150,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li></li>
+      <li>Bucles condicionals</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,25 +183,64 @@
     
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="bucles-condicionals">
+<h1>Bucles condicionals<a class="headerlink" href="#bucles-condicionals" title="Link permanent a aquest títol">¶</a></h1>
+<p>Considera el següent procediment:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compta_entrada</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Aquest procediment va demanant nombres enters fins que li diuen prou.</span>
+<span class="sd">        En acabar, mostra quants s&#39;han introduït correctament &quot;&quot;&quot;</span>
+    <span class="n">quants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">entrada</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="hll">    <span class="k">while</span> <span class="n">entrada</span> <span class="o">!=</span> <span class="s1">&#39;prou&#39;</span><span class="p">:</span>
+</span>        <span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Introdueix un nombre o &quot;prou&quot; per finalitzar:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entrada</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">quants</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">entrada</span> <span class="o">!=</span> <span class="s1">&#39;prou&#39;</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No és un nombre enter vàlid&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Valor enters introduïts: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">quants</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Copia’l a un fitxer i executa’l.</p>
+<p>Què fa la línia 6?</p>
+<p>Descobrim el <code class="docutils literal notranslate"><span class="pre">while</span></code>!</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="while.visio_general.html">El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="while.recorreguts.html">Un <code class="docutils literal notranslate"><span class="pre">while</span></code> pot emular un <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="while.for_no_es_while.html">El <code class="docutils literal notranslate"><span class="pre">for</span></code> de Python, no pot emular el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="while.juguem.html">Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p><em>Ref. IP14</em></p>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
 
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="while.visio_general.html" class="btn btn-neutral float-right" title="El bucle while" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moduls_practica.html" class="btn btn-neutral" title="Juguem amb mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -233,7 +280,6 @@
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="_static/translations.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -244,12 +290,6 @@
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-  
 
      
 
@@ -268,7 +308,6 @@
 
 
   
-
 
 </body>
 </html>

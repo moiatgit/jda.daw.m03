@@ -1,0 +1,69 @@
+##################################
+Un ``while`` pot emular un ``for``
+##################################
+
+Considera els següents codis:
+
+.. code-block:: python
+    :linenos:
+
+    for i in range(1, 5, 1):
+        print(i)
+
+    i = 1
+    while i < 5:
+        print(i)
+        i += 1
+
+Els dos bucles tenen un resultat equivalent.
+
+Fixa't com ``while`` requereix explicitar:
+
+* la inicialització de la variable de recorregut: ``i = 1``
+
+* la condició de sortida: ``i < 5``
+
+* la modificació de la variable de recorregut: ``i += 1``
+
+Tot i que ``while`` pot funcionar com ``for``, és preferible que facis servir
+``for`` per recorreguts i ``while`` per la resta de bucles.
+
+
+Pràctica 1. Entre dos nombres amb ``while``
+===========================================
+
+Recupera el programa *Entre dos nombres* que vas desenvolupar a
+:doc:`recorreguts.numerics.python` (ens quedarem amb la primera versió,
+pràctica 2)
+
+Fes una nova versió, aquest cop amb ``while``. El teu nou programa haurà de
+passar les mateixes proves de la versió amb ``for``.
+
+
+Pràctica 2. Històric d'edats amb ``while``
+==========================================
+
+Recupera el programa *Històric d'edats* que vas desenvolupar a
+:doc:`recorreguts.numerics.python`.
+
+Fes una nova versió, aquest cop amb ``while``. El teu nou programa haurà de
+passar les mateixes proves de la versió amb ``for``.
+
+
+Pràctica 3. Un quadrat de nombres
+=================================
+
+Recupera el programa *Un quadrat de nombres* que vas desenvolupar a
+:doc:`recorreguts.numerics.python`.
+
+Fes una nova versió, aquest cop amb ``while``.
+
+Pràctica 4. (opcional) Més traduccions de ``for`` a ``while``
+=============================================================
+
+En cas que vulguis agafar més confiança amb el ``while``, et proposo que
+tradueixis la resta d'exercicis que has fet fins ara amb ``for``.
+
+----
+
+*Ref. IP14.2*

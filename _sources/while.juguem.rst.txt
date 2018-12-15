@@ -1,0 +1,313 @@
+#######################
+Juguem amb el ``while``
+#######################
+
+
+Pràctica 1. Compta lletres
+==========================
+
+Desenvolupa un programa que compti les lletres de totes les paraules que li
+passin, fins que li diguin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :emphasize-lines: 2, 7, 10, 15, 18, 21, 24, 27, 30, 32
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    hola
+    i
+    adéu
+    prou
+    Has introduït 9 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    hola
+    i
+    a10
+    prou
+    Has introduït 6 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+
+    prou
+    Has introduït 0 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    a!
+    prou
+    Has introduït 1 lletra
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    prou
+    Has introduït 0 lletres
+
+**Nota**: fixa't que només compta lletres (ni nombres ni símbols).
+
+Pràctica 2. Matrícules vàlides
+==============================
+
+Desenvolupa un programa que validi matrícules fins que li indiquin prou.
+
+El teu programa respectarà la següent simulació:
+
+.. code-block:: none
+    :emphasize-lines: 2, 8
+
+    $ python3 validamatricules.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCD
+    Vàlida
+    1234ACD
+    No vàlida
+    prou
+    Has introduït 1 matrícula vàlida
+
+*Pista*: Recorda que ja tens una funció que et diu si una matrícula és o no
+vàlida (:doc:`moduls_practica`)
+
+Pràctica 3. Informes de capicuïtat
+==================================
+
+Desenvolupa un programa que indiqui la capicuïtat de les matrícules fins que li indiquin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :emphasize-lines: 2, 14, 17, 21, 24, 28
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCB
+    Capicua de lletres
+    1221BCD
+    Capicua de números
+    1221ABC
+    Matrícula no vàlida
+    1221BCB
+    Capicua de lletres i números
+    1234BCD
+    Matrícula avorrida
+    prou
+    Has introduït 4 matrícules vàlides; 3 interessants.
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1221ABC
+    Matrícula no vàlida
+    prou
+    No has introduït cap matrícula vàlida.
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCD
+    Matrícula avorrida
+    prou
+    Has introduït 1 matrícula vàlida; cap interessant.
+
+Pràctica 4. La calculadora recurrent
+====================================
+
+Desenvolupa una calculadora com la *calculadora senzilla* de
+:doc:`condicionals_juguem`. Aquest cop, però, el programa permetrà seguir
+introduint peticions fins que li diguin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :linenos:
+    :emphasize-lines: 4, 6, 8, 11, 13, 15, 18, 20, 22, 25, 27, 29, 32, 34, 36, 38, 44, 50, 52, 58, 60, 62, 68, 71, 74, 76, 79, 81, 83, 86
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi enters. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    5
+    4 + 5 = 9
+    Primer operand?
+    4
+    Operador?
+    -
+    Segon operand?
+    5
+    4 - 5 = -1
+    Primer operand?
+    4
+    Operador?
+    *
+    Segon operand?
+    5
+    4 * 5 = 20
+    Primer operand?
+    4
+    Operador?
+    /
+    Segon operand?
+    0
+    No es pot dividir entre 0
+    Primer operand?
+    -3
+    Operador?
+    *
+    Segon operand?
+    +5
+    -3 * 5 = 15
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    1,5
+    L'operand no és un enter
+    Primer operand?
+    un
+    L'operand no és un enter
+    Primer operand?
+    1
+    Operador?
+    ^
+    Operador ^ no està disponible
+    Primer operand?
+    1
+    Operador?
+    +
+    Segon operand?
+    dos
+    L'operand no és un enter
+    Primer operand?
+    prou
+    ok
+
+Fixa't que es considera un operand vàlid quan és un enter. Els enters poden
+començar amb ``+`` i amb ``-``.
+
+**Pista**: si aquí no fas un conjunt de fitxers d'entrada/sortida per fer les
+proves, és que et sobra el temps!
+
+Pràctica 5. Rimes
+=================
+
+Desenvolupa un programa que vagi recollint frases mentre *rimin* amb la frase
+anterior. Es considera que dues frases rimen si acaben amb la mateixa lletra.
+
+Una simulació:
+
+.. code-block:: none
+    :emphasize-lines: 2,7
+
+    $ python3 rimes.py
+    Introdueix frases que rimin
+    Et dic hola
+    perquè mola
+    Així no et sents sola
+    m'he cansat de rimar
+    Has introduït 3 rimes
+
+**Pista**: probablement et caldrà guardar quelcom de cada iteració per la següent.
+
+Pràctica 6. Històries encadenades
+=================================
+
+Programa ara un divertit joc infantil en el que cada frase hagi de començar per
+la mateixa paraula amb que va acabar la frase anterior.
+
+El programa finalitzarà quan l'usuari s'equivoqui.
+
+.. code-block:: none
+    :emphasize-lines: 2, 7
+
+    $ pythonr3 historiesencadenades.py
+    Introdueix frases encadenades
+    Qui comença guanya
+    Guanya qui menteix
+    Menteix qui no diu veritat
+    Veritats com temples
+    Has introduït 3 frases encadenades
+
+**Fixat**: no considera majúscules/minúscules però si paraules completes.
+
+Pràctica 7. Lletra continguda
+=============================
+
+Desenvolupa una funció que ens permeti saber si una lletra està continguda en
+una paraula.  La funció ens retornarà la posició de la primera aparició de la
+lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.
+
+.. code-block:: python
+
+    >>> lletra_continguda('a', 'amic')
+    0
+    >>> lletra_continguda('c', 'amic')
+    3
+    >>> lletra_continguda('x', 'amic')
+    -1
+    >>> lletra_continguda('mi', 'amic')
+    -1
+    >>> lletra_continguda('', 'amic')
+    -1
+    >>> lletra_continguda('a', '')
+    -1
+
+
+Pràctica 8. Paraula continguda
+==============================
+
+Desenvolupa una funció que permeti saber si una paraula està continguda en una
+altra. La funció ens retornarà la posició de la primera lletra on comença la
+paraula cercada dins de la segona paraula, o -1 si no es troba.
+
+.. code-block:: python
+
+    >>> paraula_continguda('ana', 'banana')
+    1
+    >>> paraula_continguda('ana', 'campanada')
+    4
+    >>> paraula_continguda('ana', 'maduixa')
+    -1
+    >>> paraula_continguda('xat', 'maduixa')
+    -1
+    >>> paraula_continguda('', 'maduixa')
+    0
+    >>> paraula_continguda('ana', '')
+    -1
+
+*important*: un cop trobi la paraula la primera vegada, **no** continuarà
+recorrent la segona paraula.
+
+
+----
+
+*Ref. IP14.4*
