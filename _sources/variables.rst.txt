@@ -20,7 +20,7 @@ Per exemple, considera el següent codi en Python:
 
     la_meva_variable_global = 1
     def el_meu_modul(el_meu_parametre):
-        la_meva_variable_local = 10 + la_meva_variable_local
+        la_meva_variable_local = 10 + la_meva_variable_global
         return la_meva_variable_local + el_meu_parametre
 
     def main():
