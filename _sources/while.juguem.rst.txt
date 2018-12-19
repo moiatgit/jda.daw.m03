@@ -247,6 +247,15 @@ Una simulació d'interacció és:
         c: baixar un pis
         d: baixar dos pisos
         x: sortir de l’ascensor
+    f
+    No és una opció vàlida
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
     x
     Adéu
 
