@@ -74,11 +74,11 @@ conté una matrícula vàlida per la que las seva part alfanumèrica sigui capic
 
 .. code-block:: python
 
-    >>> matricula_capicua_numerica('1234BCB')
+    >>> matricula_capicua_alfanumerica('1234BCB')
     True
-    >>> matricula_capicua_numerica('1234BCD')
+    >>> matricula_capicua_alfanumerica('1234BCD')
     False
-    >>> matricula_capicua_numerica('1234BAB')   # no és matrícula vàlida!
+    >>> matricula_capicua_alfanumerica('1234BAB')   # no és matrícula vàlida!
     False
 
 Pràctica 4. Matrícula capicua numèrica
