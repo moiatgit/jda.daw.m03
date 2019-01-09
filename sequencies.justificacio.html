@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fases de desenvolupament d’un programa &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Necessitem seqüències &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Errors" href="ubicacio_errors.html" />
-    <link rel="prev" title="Tipus de llenguatges de programació" href="ubicacio_tipus_llenguatges.html" />
+    <link rel="next" title="Les seqüències en Python" href="sequencies.en_python.html" />
+    <link rel="prev" title="Seqüències" href="sequencies.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -88,21 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_ordinador.html">Què és un ordinador?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_programes.html">Què són els programes?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_instruccions.html">Instruccions?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_dades.html">Has dit dades?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_so.html">Què és un sistema operatiu?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_llenguatge.html">Què és un llenguatge de programació?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_tipus_llenguatges.html">Tipus de llenguatges de programació</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Fases de desenvolupament d’un programa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_errors.html">Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_documentacio.html">Documentació</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_eines.html">Eines pel desenvolupament</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ubicacio_practiques.html">Practiquem</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
@@ -112,7 +98,14 @@
 <li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sequencies.html">Seqüències</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Necessitem seqüències</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencies.en_python.html">Les seqüències en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencies.control_bucles.html">Control de bucles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencies.juguem.html">Pràctiquem amb les seqüències</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencies.el_penjat.html">El joc del penjat</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossari.html">Glossari de Python</a></li>
 </ul>
 
@@ -159,9 +152,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ubicacio_programacio.html">Ubicació de la programació</a> &raquo;</li>
+          <li><a href="sequencies.html">Seqüències</a> &raquo;</li>
         
-      <li>Fases de desenvolupament d’un programa</li>
+      <li>Necessitem seqüències</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,9 +187,110 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="fases-de-desenvolupament-dun-programa">
-<h1>Fases de desenvolupament d’un programa<a class="headerlink" href="#fases-de-desenvolupament-dun-programa" title="Link permanent a aquest títol">¶</a></h1>
-<img alt="_images/esquema_desenvolupament.png" class="align-center" src="_images/esquema_desenvolupament.png" />
+  <div class="section" id="necessitem-sequencies">
+<h1>Necessitem seqüències<a class="headerlink" href="#necessitem-sequencies" title="Link permanent a aquest títol">¶</a></h1>
+<p>Anem a veure si realment ens cal un nou tipus de dades.</p>
+<div class="section" id="practica-1-la-nota-mes-alta">
+<h2>Pràctica 1. La nota més alta<a class="headerlink" href="#practica-1-la-nota-mes-alta" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que vagi demanant les notes obtingudes pels
+estudiants de programació en el darrer examen (com a mínim dues) i indiqui
+quina és la nota més alta.</p>
+<p>El programa finalitzarà de recollir notes quan rebi la paraula <em>prou</em>.</p>
+<p>Finalment, el programa mostrarà quina ha estat la nota més alta.</p>
+<p>Considera la següent simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 notamesalta.py
+Introdueix les notes (prou per finalitzar)
+5
+1
+3
+9
+7
+9
+1
+8
+prou
+La nota més alta és 9
+
+$ python3 notamesalta.py
+8
+9
+prou
+La nota més alta és 9
+
+$ python3 notamesalta.py
+8
+prou
+Com a mínim calen dues notes
+</pre></div>
+</div>
+</div>
+<div class="section" id="practica-2-la-nota-mes-alta-revisitada">
+<h2>Pràctica 2. La nota més alta (revisitada)<a class="headerlink" href="#practica-2-la-nota-mes-alta-revisitada" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una nova versió del programa anterior.</p>
+<p>Aquest cop, el programa canviarà lleugerament el missatge de sortida, tot
+indicant les notes introduïdes, segons la simulació següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 notamesalta.py
+Introdueix les notes (prou per finalitzar)
+5
+1
+3
+9
+7
+9
+1
+8
+prou
+La nota més alta és 9 de les introduïdes: 5, 1, 3, 9, 7, 9, 1 i 8
+
+$ python3 notamesalta.py
+8
+9
+prou
+La nota més alta és 9 de les introduïdes: 8 i 9
+
+$ python3 notamesalta.py
+8
+prou
+Com a mínim calen dues notes
+</pre></div>
+</div>
+</div>
+<div class="section" id="practica-3-la-nota-mes-alta-impossible">
+<h2>Pràctica 3. La nota més alta (impossible?)<a class="headerlink" href="#practica-3-la-nota-mes-alta-impossible" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una nova versió del programa anterior.</p>
+<p>Aquest cop, el programa canviarà novament el missatge de sortida,
+tot indicant les notes introduïdes que no corresponen a la més alta,
+segons la simulació següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 notamesalta.py
+Introdueix les notes (prou per finalitzar)
+5
+1
+3
+9
+7
+9
+1
+8
+prou
+La nota més alta és 9. La resta de notes és: 5, 1, 3, 7, 1 i 8
+
+$ python3 notamesalta.py
+8
+9
+prou
+La nota més alta és 9. La resta de notes és: 8
+
+$ python3 notamesalta.py
+8
+prou
+Com a mínim calen dues notes
+</pre></div>
+</div>
+<p><strong>Pista</strong>: Si no veus clar com resoldre aquest problema, espera a aprendre
+sobre seqüències.</p>
+<hr class="docutils" />
+<p><em>Ref. IP15.2</em></p>
+</div>
 </div>
 
 
@@ -208,10 +302,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ubicacio_errors.html" class="btn btn-neutral float-right" title="Errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sequencies.en_python.html" class="btn btn-neutral float-right" title="Les seqüències en Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ubicacio_tipus_llenguatges.html" class="btn btn-neutral" title="Tipus de llenguatges de programació" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sequencies.html" class="btn btn-neutral" title="Seqüències" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

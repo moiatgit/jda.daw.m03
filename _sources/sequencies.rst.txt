@@ -1,0 +1,34 @@
+##########
+Seqüències
+##########
+
+Sabem que hi ha diferents tipus de dades. De moment, durant aquest curs hem treballat només amb un nombre
+força reduït, concretament enters, decimals, booleans, caràcters i strings.
+
+D'aquests tipus de dades, només els strings els podem considerar una agrupació de dades d'un altre
+tipus: caràcters.
+
+Com hem vist, un string és bàsicament una seqüència de caràcters que podem recórrer, per exemple,
+per cercar-hi un caràcter concret, extreure'n una part (*substring*), posar un o més caràcters a
+majúscules, minúscules, etc.
+
+Però, què passaria si ens interessés disposar de seqüències d'altres tipus que no siguin caràcters?
+Per exemple, imagina't si volem disposar d'una seqüència amb els noms dels alumnes d'una classe
+(strings) o de les notes obtingudes per aquests alumnes en una determinada prova (decimal).
+
+Els continguts d'aquesta secció es distribueixen en les següents entrades:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    sequencies.justificacio.rst
+    sequencies.en_python.rst
+    sequencies.control_bucles.rst
+    sequencies.juguem.rst
+    sequencies.el_penjat
+
+
+----
+
+*Ref. IP15*
