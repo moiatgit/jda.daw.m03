@@ -1,0 +1,123 @@
+#######
+Matrius
+#######
+
+Fins ara, hem considerat seqüències de valors d'una sola dimensió.
+Per exemple, hem vist una seqüència de les notes finals de diferents
+alumnes. Què passaria però si necessitéssim treballar amb més d'una
+nota per cada alumne?
+
+========= ======== ======== ========
+alumne     UF1      UF 2     UF 3
+========= ======== ======== ========
+Aina       6        7        9
+Tannoka    5        4        2
+Ruth       3        6        7
+========= ======== ======== ========
+
+Si et fixes, per representar aquestes dades necessitem:
+
+* una seqüència amb els noms dels estudiants
+
+* per cada estudiant, una seqüència amb les tres notes que ha obtingut
+
+La taula anterior la podem presentar en Python de la següent manera:
+
+.. code-block:: python
+    :linenos:
+
+    alumnes = ('Aina', 'Tannoka', 'Ruth')
+    notes = (
+        (8, 7, 9),
+        (5, 4, 2),
+        (3, 6, 7)
+    )
+    notes_ruth = notes[2]           # són (3, 6, 7)
+    print('Les notes de la Ruth són %s' % sequencia_maca(notes_ruth))
+    nota_ruth_UF1 = notes_ruth[0]   # és 3
+    print('La nota de la UF1 de la Ruth és %s' % nota_ruth_UF1)
+    nota_ruth_UF2 = notes[2][1]     # és 6
+    print('La nota de la UF2 de la Ruth és %s' % nota_ruth_UF2)
+    for i in range(0, len(notes), 1):
+        for j in range(0, len(notes[i]), 1):
+            if j > 0:
+                print(',', end='')
+            print(notes[i][j], end='')
+        print()
+    # Es mostra per sortida estàndard
+    # 8,7,9
+    # 5,4,2
+    # 3,6,7
+
+Fixa't què:
+
+* la Ruth es troba a la posició 2 de ``alumnes``, per tant les seves notes són 3, 6 i 7.
+
+* amb ``notes[2]`` de la línia 7 obtenim la seqüència ``(3, 6, 7)``
+
+* amb ``notes_ruth[0]`` de la línia 9 obtenim el valor ``3``
+
+* amb ``notes[2][1]`` a la línia 11 obtenim ``6``. Això és equivalent a ``notes_ruth[1]``
+
+
+
+Pràctica 1. Mostra les notes quan són tres
+==========================================
+
+Desenvolupa un procediment que rebi una tupla amb els noms dels estudiants i una taula amb les notes
+de tres unitats formatives, i mostri per sortida estàndard les notes de cada alumne en format csv
+(*comma separated values*)
+
+.. code-block:: python
+
+   >>> mostra_notes(('Aina', 'Tannoka', 'Ruth'), ((8, 7, 9), (5, 4, 2), (3, 6, 7)))
+   Alumne,UF1,UF2,UF3
+   Aina,8,7,9
+   Tannoka,5,4,2
+   Ruth,3,6,7
+
+Pràctica 2. Mostra les notes
+============================
+
+Desenvolupa una nova versió de ``mostra_notes()``. Aquest cop, el nombre d'unitats formatives no
+es coneix. Pot ser fins i tot zero!
+
+A banda del doctest de la versió anterior, aquesta haurà de satisfer també:
+
+.. code-block:: python
+    :linenos:
+
+    >>> mostra_notes(('Aina', 'Tannoka'), ((8, 7, 9, 10), (5, 4, 2, 1)))
+    Alumne,UF1,UF2,UF3,UF4
+    Aina,8,7,9,10
+    Tannoka,5,4,2,1
+
+    >>> mostra_notes(('Aina', 'Tannoka'), ((), ()))
+    Alumne
+    Aina
+    Tannoka
+
+Pràctica 3. Troba la nota de l'alumne
+=====================================
+
+Desenvolupa una funció que rebi el nom d'un alumne, el número de la unitat formativa (la primera és
+la 1), la llista de noms d'alumnes i la taula amb les seves notes. La funció retornarà el valor de
+la nota corresponent a la UF i l'alumne, o bé 0 si no es troba, ja sigui perquè l'alumne no hi és a
+la llista o perquè la UF no és vàlida o no està disponible.
+
+.. code-block:: python
+    :linenos:
+
+    >>> troba_nota('Ruth', 1, ('Aina', 'Tannoka', 'Ruth'), ((8, 7, 9), (5, 4, 2), (3, 6, 7)))
+    3
+    >>> troba_nota('Ruth', 0,  ('Aina', 'Tannoka', 'Ruth'), ((8, 7, 9), (5, 4, 2), (3, 6, 7)))
+    -1
+    >>> troba_nota('Ruth', 4,  ('Aina', 'Tannoka', 'Ruth'), ((8, 7, 9), (5, 4, 2), (3, 6, 7)))
+    -1
+    >>> troba_nota('Iris', 2,  ('Aina', 'Tannoka', 'Ruth'), ((8, 7, 9), (5, 4, 2), (3, 6, 7)))
+    -1
+
+
+----
+
+*Ref. IP15.6*

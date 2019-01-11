@@ -1,16 +1,15 @@
-#############################
-Pràctiquem amb les seqüències
-#############################
+#########################
+Juguem amb les seqüències
+#########################
 
-A continuació et proposo uns quants exercicis amb seqüències. Desenvolupant-los tots
-tindràs, no només una bona pràctica sinó que també et permetrà recopilar una bona quantitat de
-funcions que et seran útils per desenvolupar l'exercici més gros que t'he proposat fins ara
-:doc:`sequencies.el_penjat`.
+A continuació et proposo uns quants exercicis amb seqüències.
+
+Tot i que els exercicis han estat dissenyats per que els realitzis tots i en ordre, he remarcat amb
+una ☆ aquells que trobo imprescindibles per si tens greus restriccions de temps.
 
 
-
-Pràctica 1. Mostra una seqüència de notes en maco
-=================================================
+Pràctica 1. ☆ Mostra una seqüència de notes en maco
+===================================================
 
 Desenvolupa una funció que composi un string a partir d'una seqüència
 d'enters de manera llegible.
@@ -57,8 +56,8 @@ funcions ``ord()`` i ``chr()``)
     >>> tuple2str(())
     ''
 
-Pràctica 4. Afegir entrada a tupla si no hi és
-==============================================
+Pràctica 4. ☆ Afegir entrada a tupla si no hi és
+================================================
 
 Desenvolupa una funció que rebi una tupla i un valor, i que crei una nova tupla
 a partir de la tupla rebuda, més el valor en cas que aquest no hi fos.
@@ -71,8 +70,8 @@ a partir de la tupla rebuda, més el valor en cas que aquest no hi fos.
     (4, 3, 6, 5)
 
 
-Pràctica 5. Manteniment de notes
-================================
+Pràctica 5. ☆ Manteniment de notes
+==================================
 
 Desenvolupa un programa que ofereixi un entorn operatiu pel manteniment de les notes d'una classe.
 
@@ -169,8 +168,8 @@ La funció que desenvoluparà aquesta nova funcionalitat passarà els següents 
 Si ``n`` no correspon a un enter positiu, el programa respondrà com a la comanda ``afegeix n``.
 
 
-Pràctica 8. Insereix en ordre
-=============================
+Pràctica 8. ☆ Insereix en ordre
+===============================
 
 Desenvolupa una funció que rebi un valor enter i una tupla d'enters
 ordenats creixentment, i
@@ -238,8 +237,8 @@ valors repetits, conservant l'ordre relatiu dels elements.
     >>> elimina_repetits(())
     ()
 
-Pràctica 11. Suma de seqüències
-===============================
+Pràctica 11. ☆ Suma de seqüències
+=================================
 
 Desenvolupa una funció que rebi dues tuples d'enters i retorni una tupla amb la suma.
 
