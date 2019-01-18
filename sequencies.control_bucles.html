@@ -316,7 +316,7 @@ ofereixen algun tipus de mecanisme per a afegir-hi control.</p>
 <div class="section" id="continuem-el-bucle">
 <h2>Continuem el bucle<a class="headerlink" href="#continuem-el-bucle" title="Link permanent a aquest títol">¶</a></h2>
 <p>De vegades, el que volem no és finalitzar el bucle sinó passar a la següent iteració.</p>
-<p>Per exemple, si volem desenvolupar una funció que rebi una llista de paraules i que ens retorni
+<p>Per exemple, si volem desenvolupar una funció que rebi una seqüència de paraules i que ens retorni
 només aquelles que corresponguin a nombres enters, podríem resoldre-ho amb:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -343,28 +343,28 @@ només aquelles que corresponguin a nombres enters, podríem resoldre-ho amb:</p
 23
 24
 25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nomes_enters</span><span class="p">(</span><span class="n">valors</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; donada una llista de strings, retorna aquells que corresponguin a valors enters</span>
-<span class="sd">        (positius i negatius)</span>
+    <span class="sd">&quot;&quot;&quot; donada una seqüència de strings, retorna aquells que corresponguin a valors enters</span>
+<span class="sd">    (positius i negatius)</span>
 
-<span class="sd">        &gt;&gt;&gt; nomes_enters([&#39;un&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;+4&#39;, &#39;5.2&#39;])</span>
-<span class="sd">        [2, -3, 4]</span>
+<span class="sd">    &gt;&gt;&gt; nomes_enters((&#39;un&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;+4&#39;, &#39;5.2&#39;))</span>
+<span class="sd">    (2, -3, 4)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">valors</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">actual</span> <span class="o">=</span> <span class="n">valors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">actual</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
-            <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">))</span>
+            <span class="n">resultat</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">),</span> <span class="p">)</span>
 <span class="hll">            <span class="k">continue</span>
 </span>        <span class="k">if</span> <span class="n">actual</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">):</span>
             <span class="n">resta</span> <span class="o">=</span> <span class="n">substring</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">resta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resta</span><span class="p">))</span>
-<span class="hll">            <span class="k">continue</span>
+                <span class="n">resultat</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resta</span><span class="p">),</span> <span class="p">)</span>
+<span class="hll">                <span class="k">continue</span>
 </span>        <span class="k">if</span> <span class="n">actual</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
             <span class="n">resta</span> <span class="o">=</span> <span class="n">substring</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">resta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">))</span>
-<span class="hll">            <span class="k">continue</span>
+                <span class="n">resultat</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">),</span> <span class="p">)</span>
+<span class="hll">                <span class="k">continue</span>
 </span><span class="hll">        <span class="k">continue</span>
 </span>    <span class="k">return</span> <span class="n">resultat</span>
 </pre></div>

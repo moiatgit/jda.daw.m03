@@ -114,7 +114,7 @@ Continuem el bucle
 
 De vegades, el que volem no és finalitzar el bucle sinó passar a la següent iteració.
 
-Per exemple, si volem desenvolupar una funció que rebi una llista de paraules i que ens retorni
+Per exemple, si volem desenvolupar una funció que rebi una seqüència de paraules i que ens retorni
 només aquelles que corresponguin a nombres enters, podríem resoldre-ho amb:
 
 .. code-block:: python
@@ -122,30 +122,31 @@ només aquelles que corresponguin a nombres enters, podríem resoldre-ho amb:
     :emphasize-lines: 13, 18, 23, 24
 
     def nomes_enters(valors):
-        """ donada una llista de strings, retorna aquells que corresponguin a valors enters
-            (positius i negatius)
+        """ donada una seqüència de strings, retorna aquells que corresponguin a valors enters
+        (positius i negatius)
 
-            >>> nomes_enters(['un', '2', '-3', '+4', '5.2'])
-            [2, -3, 4]
+        >>> nomes_enters(('un', '2', '-3', '+4', '5.2'))
+        (2, -3, 4)
         """
-        resultat = []
+        resultat = ()
         for i in range(0, len(valors), 1):
             actual = valors[i]
             if actual.isdigit():
-                resultat.append(int(actual))
+                resultat += (int(actual), )
                 continue
             if actual.startswith('+'):
                 resta = substring(actual, 1, len(actual)-1)
                 if resta.isdigit():
-                    resultat.append(int(resta))
-                continue
+                    resultat += (int(resta), )
+                    continue
             if actual.startswith('-'):
                 resta = substring(actual, 1, len(actual)-1)
                 if resta.isdigit():
-                    resultat.append(int(actual))
-                continue
+                    resultat += (int(actual), )
+                    continue
             continue
         return resultat
+
 
 Fixat que:
 
