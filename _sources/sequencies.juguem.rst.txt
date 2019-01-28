@@ -135,8 +135,11 @@ Una simulació:
     $ python3 mantenimentnotes.py
     Manteniment de notes ('ajuda' per obtenir ajuda)
     > afegeix 5
+    fet
     > afegeix 4
+    fet
     > afegeix 10
+    fet
     > màxima?
     10
     > mínima?
