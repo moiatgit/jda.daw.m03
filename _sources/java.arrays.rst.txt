@@ -136,8 +136,6 @@ presentat ni els bucles! Si no et pots esperar, mira la classe `Arrays
 per més detalls. 
 
 
-.. rubric:: Exercicis
-
 Exercici 1. Notes maques en Java
 ================================
 

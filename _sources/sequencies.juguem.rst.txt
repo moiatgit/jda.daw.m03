@@ -168,7 +168,7 @@ La funció que desenvoluparà aquesta nova funcionalitat passarà els següents 
     >>> cerca_nota((1, 2, 3, 2, 3, 4, 3, 5, 3), 5)
     'Hi ha 1 nota amb valor 5 a la posició 7'
     >>> cerca_nota((1, 2, 3, 2, 3, 4, 3, 5, 3), 3)
-    'Hi ha 4 notes amb valor 3 a les posicions 2, 4 i 6'
+    'Hi ha 4 notes amb valor 3 a les posicions 2, 4, 6 i 8'
 
 Si ``n`` no correspon a un enter positiu, el programa respondrà com a la comanda ``afegeix n``.
 
