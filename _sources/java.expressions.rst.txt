@@ -1,0 +1,217 @@
+##########################
+Expressions i Instruccions
+##########################
+
+En aquesta secció veurem com dades i operadors s'ajunten per a construir
+*expressions*, com aquestes expressions permeten construir *instruccions* i
+finalment, com seqüències d'instruccions s'agrupen en *blocs*.
+
+Expressions
+===========
+
+Les *expressions* són seqüències de dades (variables, constants i literals), operadors i crides a
+funcions, ordenats respectant algunes regles sintàctiques molt bàsiques que, en ser avaluades,
+generen un valor resultant [#unsolvalor]_.
+
+Donat que els operadors tenen una precedència, els elements d'una expressió sempre s'avaluen en el
+mateix ordre. Si no ens interessa l'ordre de precedència *natural* o bé, ens interessa remarcar-ho,
+podem fer servir parèntesis ``()`` per definir l'ordre en que volem que s'avaluïn. Per exemple:
+
+.. code-block:: java
+
+    double resultat = 3.1 * 4.3 + Math.sqrt(64)
+    //     ^ inici de l'expressió
+    //                    ^ (1) primer càlcul (3.1 * 4.3)
+    //                            ^ (2) avaluació de l'arrel quadrada de 5.2
+    //                          ^ (3) suma
+    //              ^ (4) assignació
+
+Gràficament el podem representar com:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        expr -> a -> b -> c -> d;
+        expr [shape=box,label="resultat = 3.1 * 4.3 + Math.sqrt(64.0)"];
+        a [label="(1) 3.1 * 4.3 → 13.33"];
+        b [label="(2) Math.sqrt(64.0) → 8.0"];
+        c [label="(3) 13.33 + 8.0 → 21.33"];
+        d [label="(4) resultat = 21.33"];
+    }
+
+Podem explicitar l'ordre d'avaluació de l'expressió anterior amb els parèntesis:
+
+.. code-block:: java
+
+    double resultat = ( (3.1 * 4.3) + ( Math.sqrt(64.0) ) )
+
+I, per suposat, també podem alterar aquest ordre amb els parèntesis:
+
+.. code-block:: java
+
+    double resultat = ( 3.1 * (4.3 + ( Math.sqrt(64.0) ) ) )
+    //                             ^ la suma es calcularà abans que el producte!
+
+.. note::
+
+    Per afavorir la llegibilitat, és preferible que afegeixis parèntesis en expressions complexes.
+    Això permetrà que sigui més fàcil d'entendre per algun altre desenvolupador (potser tu un altre
+    dia) doncs no obligarà a haver de tenir present les regles de precedència.
+
+
+Instruccions
+============
+
+Una *instrucció* és una unitat completa d'execució. En Java, les instruccions acaben en punt i coma
+``;``.
+
+Les instruccions en Java poden ser d'expressió, de declaració i de control de flux.
+
+Les instruccions d'expressió es poden construir finalitzant amb un punt i coma alguna de les següents expressions:
+
+* expressions amb assignació
+
+  .. code-block:: java
+
+        a = 3;
+
+* expressions amb un operador unari d'increment o decrement (``++`` o ``--``)
+
+  .. code-block:: java
+
+        ++a;
+
+* una crida a una funció
+
+  .. code-block:: java
+
+        System.out.println("Hola Món!");
+
+* una expressió de creació d'objectes
+
+  .. code-block:: java
+
+        notesAlumne = new int[4];
+        //            ^ inici de l'expressió amb l'operador new
+
+Les instruccions de declaració són les declaren un element (com per exemple una variable):
+
+.. code-block:: java
+
+    int[] notesAlumne;
+
+Més endavant veurem altres tipus d'instruccions de declaració i les instruccions de control de flux
+(com ara els condidionals)
+
+
+Blocs
+=====
+
+Finalment, les instruccions s'agrupen en blocs. Un *bloc* d'instruccions està format per zero o més
+instruccions entre claus ``{}``.
+
+En alguns casos, quan el nombre d'instruccions del bloc és menor que dos, no és obligatori posar les
+claus. En tot cas, és **sempre** recomanable incloure-les per a afavorir la llegibilitat i
+mantenibilitat del nostre codi.
+
+Un cop tenim un bloc d'instruccions, aquest funciona en conjunt com si fos una única instrucció i,
+per exemple, pot formar part d'un bloc superior.
+
+Així, el bloc mínim seria ``{}`` (bloc amb zero instruccions).
+
+Per exemple:
+
+.. literalinclude:: /_code/HolaBlocs.java
+    :language: java
+
+Que, gràficament, el podríem representar com:
+
+.. graphviz::
+    :align: center
+
+    graph G {
+      node [shape=box];
+      subgraph clusterA {
+        subgraph clusterB {
+          a;
+          b;
+          a [label="Bloc 2"];
+          b [label="Bloc 3"];
+          label="Bloc 1";
+        }
+        label="Bloc 0";
+      }
+    }
+
+.. _exercici_expressionsambefectes:
+
+Exercici 1. Expressions amb efectes col·laterals
+================================================
+
+Considera si hi ha expressions que puguin alterar el valor d'algun element de la memòria (efecte
+col·lateral) o bé les expressions només retornen un valor i no modifiquen res amb independència de
+quants cops siguin executades.
+
+En cas que hagis arribat a la conclusió de que hi ha expressions amb efectes col·laterals, inclou al
+menys un exemple d'aquest tipus d'expressió. De la mateixa manera, si has arribat a la conclusió de
+que hi ha expressions sense efectes col·laterals, inclou al menys un exemple d'aquestes.
+
+.. _exercici_expressionsnorecomanables:
+
+Exercici 2. Expressions no recomanables
+=======================================
+
+Algunes expressions fan combinacions d'operadors d'una manera que resulta poc entenedora i pot
+arribar a embolicar. Per demostrar-t'ho, en aquest exercici et posaré a prova amb unes que no són
+del tot complexes.
+
+Indica quina sortida mostrarà el següent fragment de codi. **NO** facis trampa i contesta sense
+executar-ho!
+
+.. code-block:: java
+
+        int a = 1;
+        int b = 10 + a++;
+        int c = ++a + 100;
+        System.out.println("a:" + a);
+        System.out.println("b:" + b);
+        System.out.println("c:" + c);
+
+.. note::
+
+   En cas que aquest exercici t'hagi semblat *intuitiu*, planteja't la següent situació: has trobat
+   un error en el teu programa i l'has localitzat a una expressió amb una llarga barreja de versions
+   prefixes i postfixes de ``++`` i ``--`` sobre la mateixa variable.  Et toca corregir-lo i tens un
+   temps, com sol passar a la nostra professió, molt limitat per fer-ho.
+
+   En resum, i per la salut mental dels desenvolupadors que mantindran el teu codi: no barregis
+   aquests operadors!
+
+
+----
+
+.. [#unsolvalor] Idealment les expressions *només* haurien de retornar un valor, sense canviar res
+   en la resta de l'execució (ni tant sols escrivint a pantalla!). És a dir, sempre que s'avaluï una
+   mateixa expressió hauria de resultar el mateix.  El llenguatge Java, però, permet que les
+   expressions modifiquin l'estat del programa. Per exemple, l'assignació és un operador i pot
+   formar part d'una expressió.
+
+   Aquest punt forma part de la base del paradigma de la `programació funcional
+   <https://ca.wikipedia.org/wiki/Programaci%C3%B3_funcional>`_: la `inmmutabilitat
+   <https://en.wikipedia.org/wiki/Immutable_object>`_ per defecte. 
+   Els problemes que resolem en l'actualitat tendeixen a requerir una alta concurrència (les dades
+   poden ser modificades per més d'un fil d'execució) i, per tant, minimitzar els punts en els que
+   pot ser modificada una dada pot arribar a ser crucial a l'hora d'obtenir un programari fiable i
+   raonablement operatiu.
+   Tot i que la naturalessa de Java
+   (com de pràcticament la resta de llenguatges de programació dins del seu paradigma) no afavoreix
+   la inmutabilitat des del seu disseny, tampoc no la impedeix. Per aquesta raó, et recomano que
+   intentis minimitzar els elements mutables dels teus programes. En aquest curs, no sempre
+   explícitament, t'orientaré a programar en aquest sentit.
+
+
+
+----
+
+*Ref. 17.5*

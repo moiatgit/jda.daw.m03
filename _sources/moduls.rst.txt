@@ -171,6 +171,7 @@ Classifica els següents mòduls segons: *procediment*, *funció pura*, *funció
 
 * ``str()``
 
+.. _exercici_triangles_en_funcio_python:
 
 Pràctica 2. Triangles (revisitat)
 =================================

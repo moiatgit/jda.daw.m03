@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Expressions i Instruccions &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Strings en Java" href="java.strings.html" />
+    <link rel="prev" title="Operadors" href="java.operadors.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.operadors.html">Operadors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Expressions i Instruccions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.arrays.html">Seqüències</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
+        
+      <li>Expressions i Instruccions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="expressions-i-instruccions">
+<h1>Expressions i Instruccions<a class="headerlink" href="#expressions-i-instruccions" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció veurem com dades i operadors s’ajunten per a construir
+<em>expressions</em>, com aquestes expressions permeten construir <em>instruccions</em> i
+finalment, com seqüències d’instruccions s’agrupen en <em>blocs</em>.</p>
+<div class="section" id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les <em>expressions</em> són seqüències de dades (variables, constants i literals), operadors i crides a
+funcions, ordenats respectant algunes regles sintàctiques molt bàsiques que, en ser avaluades,
+generen un valor resultant<a class="footnote-reference" href="#unsolvalor" id="id1">[1]</a>.</p>
+<p>Donat que els operadors tenen una precedència, els elements d’una expressió sempre s’avaluen en el
+mateix ordre. Si no ens interessa l’ordre de precedència <em>natural</em> o bé, ens interessa remarcar-ho,
+podem fer servir parèntesis <code class="docutils literal notranslate"><span class="pre">()</span></code> per definir l’ordre en que volem que s’avaluïn. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">64</span><span class="o">)</span>
+<span class="c1">//     ^ inici de l&#39;expressió</span>
+<span class="c1">//                    ^ (1) primer càlcul (3.1 * 4.3)</span>
+<span class="c1">//                            ^ (2) avaluació de l&#39;arrel quadrada de 5.2</span>
+<span class="c1">//                          ^ (3) suma</span>
+<span class="c1">//              ^ (4) assignació</span>
+</pre></div>
+</div>
+<p>Gràficament el podem representar com:</p>
+<div align="center" class="align-center"><img src="_images/graphviz-a1ee5ae17e057cb0315301a0a43a32cb02a53691.png" alt="digraph {
+    expr -&gt; a -&gt; b -&gt; c -&gt; d;
+    expr [shape=box,label=&quot;resultat = 3.1 * 4.3 + Math.sqrt(64.0)&quot;];
+    a [label=&quot;(1) 3.1 * 4.3 → 13.33&quot;];
+    b [label=&quot;(2) Math.sqrt(64.0) → 8.0&quot;];
+    c [label=&quot;(3) 13.33 + 8.0 → 21.33&quot;];
+    d [label=&quot;(4) resultat = 21.33&quot;];
+}" />
+</div>
+<p>Podem explicitar l’ordre d’avaluació de l’expressió anterior amb els parèntesis:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span> <span class="o">(</span><span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span><span class="o">)</span> <span class="o">+</span> <span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mf">64.0</span><span class="o">)</span> <span class="o">)</span> <span class="o">)</span>
+</pre></div>
+</div>
+<p>I, per suposat, també podem alterar aquest ordre amb els parèntesis:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="o">(</span><span class="mf">4.3</span> <span class="o">+</span> <span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mf">64.0</span><span class="o">)</span> <span class="o">)</span> <span class="o">)</span> <span class="o">)</span>
+<span class="c1">//                             ^ la suma es calcularà abans que el producte!</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Per afavorir la llegibilitat, és preferible que afegeixis parèntesis en expressions complexes.
+Això permetrà que sigui més fàcil d’entendre per algun altre desenvolupador (potser tu un altre
+dia) doncs no obligarà a haver de tenir present les regles de precedència.</p>
+</div>
+</div>
+<div class="section" id="instruccions">
+<h2>Instruccions<a class="headerlink" href="#instruccions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Una <em>instrucció</em> és una unitat completa d’execució. En Java, les instruccions acaben en punt i coma
+<code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
+<p>Les instruccions en Java poden ser d’expressió, de declaració i de control de flux.</p>
+<p>Les instruccions d’expressió es poden construir finalitzant amb un punt i coma alguna de les següents expressions:</p>
+<ul>
+<li><p class="first">expressions amb assignació</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">expressions amb un operador unari d’increment o decrement (<code class="docutils literal notranslate"><span class="pre">++</span></code> o <code class="docutils literal notranslate"><span class="pre">--</span></code>)</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">a</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">una crida a una funció</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hola Món!&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">una expressió de creació d’objectes</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesAlumne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
+<span class="c1">//            ^ inici de l&#39;expressió amb l&#39;operador new</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Les instruccions de declaració són les declaren un element (com per exemple una variable):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesAlumne</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Més endavant veurem altres tipus d’instruccions de declaració i les instruccions de control de flux
+(com ara els condidionals)</p>
+</div>
+<div class="section" id="blocs">
+<h2>Blocs<a class="headerlink" href="#blocs" title="Link permanent a aquest títol">¶</a></h2>
+<p>Finalment, les instruccions s’agrupen en blocs. Un <em>bloc</em> d’instruccions està format per zero o més
+instruccions entre claus <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>En alguns casos, quan el nombre d’instruccions del bloc és menor que dos, no és obligatori posar les
+claus. En tot cas, és <strong>sempre</strong> recomanable incloure-les per a afavorir la llegibilitat i
+mantenibilitat del nostre codi.</p>
+<p>Un cop tenim un bloc d’instruccions, aquest funciona en conjunt com si fos una única instrucció i,
+per exemple, pot formar part d’un bloc superior.</p>
+<p>Així, el bloc mínim seria <code class="docutils literal notranslate"><span class="pre">{}</span></code> (bloc amb zero instruccions).</p>
+<p>Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaBlocs</span> <span class="o">{</span>                        <span class="c1">// inici bloc 0</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>    <span class="c1">// inici bloc 1</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>                       <span class="c1">// inici bloc 2</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;El valor &quot;</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; és parell&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>                                <span class="c1">// inici bloc 3</span>
+<span class="c1">//      ^ fin bloc 2</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;és senar&quot;</span><span class="o">);</span>
+        <span class="o">}</span>                                       <span class="c1">// fin bloc 3</span>
+    <span class="o">}</span>                                           <span class="c1">// fin bloc 1</span>
+<span class="o">}</span>                                               <span class="c1">// fin bloc 0</span>
+</pre></div>
+</div>
+<p>Que, gràficament, el podríem representar com:</p>
+<div align="center" class="align-center"><img src="_images/graphviz-e589af16f44a0b8840fe0805a1a300218728c54b.png" alt="graph G {
+  node [shape=box];
+  subgraph clusterA {
+    subgraph clusterB {
+      a;
+      b;
+      a [label=&quot;Bloc 2&quot;];
+      b [label=&quot;Bloc 3&quot;];
+      label=&quot;Bloc 1&quot;;
+    }
+    label=&quot;Bloc 0&quot;;
+  }
+}" />
+</div>
+</div>
+<div class="section" id="exercici-1-expressions-amb-efectes-collaterals">
+<span id="exercici-expressionsambefectes"></span><h2>Exercici 1. Expressions amb efectes col·laterals<a class="headerlink" href="#exercici-1-expressions-amb-efectes-collaterals" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera si hi ha expressions que puguin alterar el valor d’algun element de la memòria (efecte
+col·lateral) o bé les expressions només retornen un valor i no modifiquen res amb independència de
+quants cops siguin executades.</p>
+<p>En cas que hagis arribat a la conclusió de que hi ha expressions amb efectes col·laterals, inclou al
+menys un exemple d’aquest tipus d’expressió. De la mateixa manera, si has arribat a la conclusió de
+que hi ha expressions sense efectes col·laterals, inclou al menys un exemple d’aquestes.</p>
+</div>
+<div class="section" id="exercici-2-expressions-no-recomanables">
+<span id="exercici-expressionsnorecomanables"></span><h2>Exercici 2. Expressions no recomanables<a class="headerlink" href="#exercici-2-expressions-no-recomanables" title="Link permanent a aquest títol">¶</a></h2>
+<p>Algunes expressions fan combinacions d’operadors d’una manera que resulta poc entenedora i pot
+arribar a embolicar. Per demostrar-t’ho, en aquest exercici et posaré a prova amb unes que no són
+del tot complexes.</p>
+<p>Indica quina sortida mostrarà el següent fragment de codi. <strong>NO</strong> facis trampa i contesta sense
+executar-ho!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">a</span><span class="o">++;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="o">++</span><span class="n">a</span> <span class="o">+</span> <span class="mi">100</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a:&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;b:&quot;</span> <span class="o">+</span> <span class="n">b</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;c:&quot;</span> <span class="o">+</span> <span class="n">c</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>En cas que aquest exercici t’hagi semblat <em>intuitiu</em>, planteja’t la següent situació: has trobat
+un error en el teu programa i l’has localitzat a una expressió amb una llarga barreja de versions
+prefixes i postfixes de <code class="docutils literal notranslate"><span class="pre">++</span></code> i <code class="docutils literal notranslate"><span class="pre">--</span></code> sobre la mateixa variable.  Et toca corregir-lo i tens un
+temps, com sol passar a la nostra professió, molt limitat per fer-ho.</p>
+<p class="last">En resum, i per la salut mental dels desenvolupadors que mantindran el teu codi: no barregis
+aquests operadors!</p>
+</div>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="unsolvalor" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="first">Idealment les expressions <em>només</em> haurien de retornar un valor, sense canviar res
+en la resta de l’execució (ni tant sols escrivint a pantalla!). És a dir, sempre que s’avaluï una
+mateixa expressió hauria de resultar el mateix.  El llenguatge Java, però, permet que les
+expressions modifiquin l’estat del programa. Per exemple, l’assignació és un operador i pot
+formar part d’una expressió.</p>
+<p class="last">Aquest punt forma part de la base del paradigma de la <a class="reference external" href="https://ca.wikipedia.org/wiki/Programaci%C3%B3_funcional">programació funcional</a>: la <a class="reference external" href="https://en.wikipedia.org/wiki/Immutable_object">inmmutabilitat</a> per defecte.
+Els problemes que resolem en l’actualitat tendeixen a requerir una alta concurrència (les dades
+poden ser modificades per més d’un fil d’execució) i, per tant, minimitzar els punts en els que
+pot ser modificada una dada pot arribar a ser crucial a l’hora d’obtenir un programari fiable i
+raonablement operatiu.
+Tot i que la naturalessa de Java
+(com de pràcticament la resta de llenguatges de programació dins del seu paradigma) no afavoreix
+la inmutabilitat des del seu disseny, tampoc no la impedeix. Per aquesta raó, et recomano que
+intentis minimitzar els elements mutables dels teus programes. En aquest curs, no sempre
+explícitament, t’orientaré a programar en aquest sentit.</p>
+</td></tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><em>Ref. 17.5</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="java.strings.html" class="btn btn-neutral float-right" title="Strings en Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="java.operadors.html" class="btn btn-neutral" title="Operadors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

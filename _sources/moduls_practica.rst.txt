@@ -96,6 +96,8 @@ conté una matrícula vàlida per la que las seva part numèrica sigui un númer
     >>> matricula_capicua_numerica('1221ABC')   # no és matrícula vàlida!
     False
 
+.. _exercici_informe_capicuitat_python:
+
 Pràctica 5. Informe de "capicuïtat"
 ===================================
 

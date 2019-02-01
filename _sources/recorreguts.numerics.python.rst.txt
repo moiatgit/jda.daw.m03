@@ -120,6 +120,8 @@ Fixa't que el resultat és diferent al que havíem fet a la versió anterior.  P
 prova, en comptes de retornar els números en una línia cadascún, els separem amb un espai.  Per
 aquesta raó, no ens serviran les proves que ja tenim de la versió anterior.
 
+.. _exercici_entre_dos_nombres_python:
+
 Pràctica 4. Entre dos nombres (re-loaded encara un altre cop!)
 --------------------------------------------------------------
 
@@ -153,6 +155,8 @@ Et proposo les següents proves en *doctest*:
 
 Fixa't que si s'introdueix 1, la sortida no mostra una suma. A més, el valor 0 i els negatius
 generan un error.
+
+.. _exercici_historic_edats_python:
 
 Pràctica 6. Històric d'edats
 ----------------------------

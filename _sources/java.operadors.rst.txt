@@ -1,0 +1,195 @@
+#########
+Operadors
+#########
+
+En aquesta secció coneixeràs els operadors més habituals del llenguatge de programació Java.
+
+De fet, els operadors de Java ja els vam introduir a :doc:`operadors` quan
+coneixíem el concepte i vèiem l'aspecte en pseudocodi i en Python.
+
+Trobaràs una discussió completa dels operadors de Java a les pàgines del `tutorial oficial
+<https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html>`_. Aquí tractarem els que
+farem servir al llarg del curs (i probablement a la majoria dels nostres programes futurs).
+
+Els operadors aritmètics
+========================
+
+Els operadors aritmètics de Java no ens donaran gaire sorpresa. Aquí te'ls presento en ordre de
+precedència.
+
+* Multiplicatius: ``*`` (producte), ``/`` (divisió),  ``%`` (mòdul)
+
+* Aditius: ``+`` (suma), ``-`` (resta)
+
+Per tant, en una expressió com ara ``3 + 2 * 5`` la precedència farà que el resultat sigui
+equivalent a ``3 + (2 * 5)``.
+
+Recorda que el mòdul (``%``) és la resta de la divisió entera. Considera el següent programa:
+
+.. literalinclude:: /_code/DemoModul.java
+    :language: java
+
+
+Els operadors unaris
+====================
+
+Els operadors unaris tenen un únic operand, que apareix a continuació.
+
+* canvi de signe: ``-valor``
+
+  El valor ha de ser numèric. Si el nombre era positiu, passa a negatiu i viceversa.
+
+* increment i decrement: ``++var`` i ``--var``
+
+  La variable ``var`` veu incrementat/decrementat el seu valor. A continuació, el resultat és
+  retornat.
+
+  Aquests operadors tenen una versió postfixa amb la forma ``var++`` i ``var--``. La diferència amb
+  la versió prefixa és que, la postfixa retorna el valor original de var i després l'incrementa.
+
+* negació: ``!valor``
+
+  El valor ha de ser boolean. El resultat serà la negació.
+
+Tots els operadors unaris tenen precedència respecte els operadors aritmètics. Així, l'expressió:
+
+.. code-block:: java
+
+    int un, dos;
+    un = 1;
+    dos = -(++un + un * -2);
+    //      ^^ primer incrementa en 1 el valor de un
+    //                  ^ canvia el signe a 2
+    //                ^ multiplica un (que val 2) per -2. És a dir -4.
+    //           ^ suma un (que val 2) i -4, el que resulta en -2
+    //    ^ ara - disposa del valor a canviar de signe, el que resulta en 2
+
+.. caution::
+
+    Recorda que l'increment sobre la variable un es manté fora de l'expressió. Així, en l'exemple
+    anterior, tant ``un`` com ``dos`` valen ``2``.
+
+    És probable que t'hagi costat una mica d'entendre aquest exemple en una primera ullada. A mi
+    també! En general, no és una pràctica recomanable la de barregar operadors que provoquen canvis
+    amb aquells que no ho fan, doncs deixen un codi difícil d'entendre. És a dir, és preferible que
+    ``++var``, ``--var`` i ``var=expr`` apareguin sols en una única línia com a instrucció, sense
+    fer servir el seu valor de retorn.
+
+Els operadors d'assignació
+==========================
+
+L'operador d'assignació més bàsic és ``=`` permet assignar un valor a una variable. Ha aparegut ja
+en diferents exemples i, és molt semblant al d'altres llenguatges de programació com ara el C.
+
+Considera els següents exemples:
+
+.. code-block:: java
+
+    int un, dos;
+
+    un = 1;          // assigna 1 a la variable 1
+    dos = un + 1;    // assigna el resultat de l'expressió 1 + 1 a la variable dos
+    un = dos = 3;    // assigna el valor 3 a les variables dos i un
+
+Potser el més interessant és el darrer exemple. Donat que en Java, ``=`` és un operador, a banda de
+tenir *l'efecte secundàri* de modificar el valor d'una variable, retorna el valor assignat. Així
+l'expressió ``dos = 3`` assigna ``3`` a la variable ``dos`` i retorna el valor ``3``. Normalment amb
+aquest valor no en fem res (com a ``un = 1;`` però en aquest darrer exemple, el ``3`` apareix com a
+operand d'un altre ``=`` i és assignat novament a una variable (en aquest cas ``un``). Aquesta
+darrera expressió torna a valer ``3`` però ara ningú ja no la recull.
+
+Altres operadors d'assignació habituals, combinen l'operador bàsic amb algun altre operador binari.
+És tracta més d'una compactació de notació que d'operadors nous.  Entre els exemples més habituals
+hi trobem: ``+=``,  ``-=``, i ``*=``
+
+Per exemple:
+
+.. code-block:: java
+
+    int un, dos;
+    un = dos = 1;
+    dos += un;  // equival a dos = dos + 1;
+
+Els operadors d'assignació són els que menys precedència tenen. Així, en l'expressió:
+
+.. code-block:: none
+
+    var = expr;
+
+El primer que s'avaluarà serà sempre ``expr`` siguin quins siguin els operadors que hi hagi (fins i
+tot si són d'assignació com a ``a = b = c``).
+
+Els operadors d'igualtat
+========================
+
+Els operadors d'igualtat disponibles en Java pels tipus primitius són els habituals a molts altres llenguatges:
+
+* ``==``: igual a
+* ``!=``: diferent de
+* ``>``: més gran què
+* ``>=``: més gran o igual què
+* ``<``: menor què
+* ``<=``: més petit o igual què
+
+.. note::
+
+    En cas que no sigui un tipus primitiu, normalment no farem servir cap d'aquests operadors,
+    malgrat en alguns casos (ex. ``==``) pot tenir algun sentit.
+
+    A :doc:`strings` trobaràs com comparar dos strings.
+
+Els operadors lògics
+====================
+
+Java ofereix els operadors lògics habituals
+
+* ``&&``: *AND*. Si el primer operand avalua a fals, no s'avalua el segon operand.
+
+* ``||``: *OR*. Si el primer operand avalua a cert, no  s'avalua el segon operand.
+
+* ``?:``: L'operador condicional ternari. Té tres operands. Avalua el primer i si és cert avalua el
+  segon. Altrament avalua el tercer.
+
+  Exemple:
+
+  .. code-block:: java
+
+      int resultat = temperatura < 30 ? temperatura + 1 : 30;
+
+  Si ``temperatura`` s'avalua a menys de 30, retornarà ``temperatura + 1``, altrament retornarà
+  ``30``.
+
+
+
+.. _exercici_tipusioperadors:
+
+Exercici 2. Tipus i operadors
+=============================
+
+Per a cada operador de la següent llista, indica:
+
+* quants operands requereix
+
+* de quin tipus és cada operand
+
+* de quin tipus és el resultat
+
+Els operadors són:
+
+#. ``+``
+
+#. ``++i``
+
+#. ``a ? b : c``
+
+#. ``anyActual <= anyNeixement``
+
+#. ``edat = novaEdat``
+
+
+
+
+
+----
+
+*Ref 17.4*

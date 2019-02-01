@@ -1,0 +1,250 @@
+######
+Mòduls
+######
+
+Ara que ja coneixem com són les instruccions en Java, veiem com podem agrupar aquestes en
+mòduls, de manera que puguem tornar-les a executar en diferents contextos.
+
+En aquesta secció veuràs una simplificació de la manera de crear mòduls en Java, i deixarem la
+visió més general per quan coneguis un dels elements més distintius del paradigma orientat a
+objectes que implementa Java: les *classes*.
+
+Mòduls
+======
+
+Quan una o més instruccions tenen sentit amb petites variacions, en diferents parts de la nostra
+aplicació, en comptes de repetir-les (copiar, enganxar i modificar), podem agrupar-les en el que
+coneixem com *mòduls*.
+
+A Java ja hem vist un mòdul en tots els programes que hem treballat fins ara. Es deia ``main()``.
+
+Analitzem l'estructura bàsica del mòdul ``main()`` que ja coneixem:
+
+.. code-block:: java
+
+    public static void main(String[] args) { instruccions(); }
+
+Alguns dels elements que formen l'estructura anterior no els entendrem fins més
+endavant:
+
+* ``public``: indica la visibilitat del mòdul. De moment no cal que ho entenguem
+  i simplement ho podem posar als nostres mòduls, tot i que només és obligatori
+  a ``main()``.
+
+* ``static``: ho posarem a tots els nostres mòduls, de moment, per poder-los
+  cridar directament des de ``main()`` i entre ells.
+
+* ``void``: indica que aquest mòdul no retorna cap valor. És a dir, és un
+  *procediment*. Les funcions vindran indicades per quelcom diferent a ``void``:
+  el tipus del valor de retorn.
+
+* ``main``: és el nom d'aquest mòdul.
+
+* ``()``: els parèntesis marquen l'inici i el final dels paràmetres que espera rebre la funció i són
+  obligatòris en Java fins i tot si la funció no accepta cap paràmetre.
+
+* ``String[] args``: és el paràmetre que accepta el mòdul. Està format pel tipus ``String[]``
+  seguit del nom del paràmetre (en aquest cas ``args``). Les nostres funcions podrien no tenir cap
+  paràmetre, o bé acceptar-ne més d'un. En aquest cas, els separaríem amb ``,``. Cada paràmetre
+  pot ser d'un tipus diferent i dos paràmetres d'una mateixa funció no poden repetir el nom.
+
+Considera el següent exemple:
+
+.. literalinclude:: _code/DemoFuncio.java
+   :language: java
+   :linenos:
+
+Aquest codi defineix dos mòduls a banda de ``main()``:
+
+* ``suma()`` accepta dos enters i retorna un enter. És, per tant, una funció.
+  Fixa't en la instrucció ``return valor`` al final del seu bloc.
+
+* ``mostraResultatsSuma()`` accepta tres enters i no retorna res (és el que vol
+  dir ``void``). 
+  Fixa't que no té cap instrucció ``return``, tot i que podria
+  tenir-la (sense cap valor a continuació) com a darrera instrucció del bloc.
+
+  .. code-block:: java
+
+        public static void mostraResultatsSuma(int sumand1, int sumand2, int resultat) {
+            System.out.printf("%d + %d = %d%n", sumand1, sumand2, resultat);
+            return;
+        }
+
+Pots veure que abans de la definició de cada mòdul, apareix un comentari
+descrivint la finalitat d'aquest.  Tot i que no és un requeriment de Java, és de
+*bon ciutadà* descriure què fan aquells mòduls quan no és fàcil deduir-ho pel
+seu nom (no és el cas d'aquest exemple). Així, qui hagi de llegir el nostre codi
+més endavant, li serà més fàcil d'entendre'l i segurament ens odiarà menys.
+
+Finalment, des del codi de  ``main()``, apareixen dues crides als mòduls que acabem de definir.
+Tenen un aspecte diferent, doncs ``suma()`` és un mòdul que retorna un valor i, per recollir
+aquest, cal que aparegui en una expressió. En canvi, ``mostraResultatsSuma()`` no retorna cap
+resultat i la seva crida pot formar una instrucció per si mateixa.
+
+En cas que no ens interessés el resultat de ``suma()`` també podríem haver definit una funció amb
+simplement la seva crida (com em fet amb ``mostraResultatsSuma()``). En aquest cas no té gaire
+sentit doncs, a banda de calcular, la funció no té cap altre efecte. És a dir,
+és una *funció pura* com vam definir-les a :doc:`moduls`.
+
+Sobrecàrrega
+============
+
+.. _intro_lang_overloading:
+
+Una altra particularitat de les funcions de Java, que no presenten altres llenguatges com ara 
+Python, és que podem repetir el nom de la funció en un mateix programa. És el que s'anomena
+*overloading* o *sobrecàrrega*.  Funciona a condició que els arguments de les funcions que
+repeteixen nom, siguin diferents ja sigui en tipus o en nombre. No s'hi val, però, distingir per
+tipus de retorn.
+
+Per exemple, el següent codi mostra tres versions diferents de 
+la funció ``suma()``. Java escollirà la versió adequada a partir del tipus dels
+arguments que li passin:
+
+.. code-block:: java
+    :linenos:
+
+    class TestOverloading {
+        static int suma(int un, int dos) {
+            return un + dos;
+        }
+        static double suma(double un, double dos) {
+            return un + dos;
+        }
+        static String suma(String un, String dos) {
+            return "" + (Double.parseDouble(un) + Double.parseDouble(dos));
+        }
+        public static void main(String[] args) {
+            int resultatInt = suma(10, 2);
+            double resultatDouble = suma(10.01, 2.2);
+            String resultatString = suma("10.01", "2.2");
+            System.out.println("integer: " + resultatInt);
+            System.out.println("double : " + resultatDouble);
+            System.out.println("string : " + resultatString);
+        }
+    }
+
+Per aquesta raó, sovint trobaràs que a l'hora d'indicar quin mòdul hem de fer servir, ho farem tot
+detallant tant el seu nom com el tipus i ordre d'arguments. Per exemple, ``int suma(int,
+int)``. És el que es coneix com a *signatura* del mòdul.
+
+Arguments variables
+===================
+
+Finalment, Java ofereix la possibilitat de definir paràmetres variables. Per exemple, considera el
+següent mòdul que mostra per sortida estàndard els seus paràmetres enters:
+
+.. code-block:: java
+
+    public static void mostraEnters(int... valors) {
+        for (int i: valors) {
+            System.out.println("Valor " + i);
+        }
+    }
+
+Fixa't en els ``...`` després del tipus del paràmetre.
+
+Podem cridar a aquest mòdul amb diferent nombre de paràmetres. Per exemple:
+
+.. code-block:: java
+
+        mostraEnters(1, 2, 3, 4, 5);    // mostra els valors del 1 al 5 en l'ordre rebut
+        mostraEnters(1);                // mostra el valor 1
+        mostraEnters();                 // no mostra cap valor
+
+
+
+Exercici 1. Un string amb només dígits en Java?
+===============================================
+
+Recordes la funció ``isdigit()`` de Python?
+
+.. code-block:: python
+
+    >>> "123".isdigit()
+    True
+    >>> "-123".isdigit()
+    False
+
+
+Doncs resulta que el tipus ``String`` de Java no ens ofereix una de similar!
+Així que ens toca fer-la nosaltres.
+
+Desenvolupa la funció ``boolean isDigit(String)`` que, donat un String, et
+retorni cert si i només si el valor rebut correspon només a dígits.
+
+**Pista**: podem comparar caracters directament en Java:
+
+.. code-block:: none
+
+    jshell> '1' < '0'
+    $1 ==> false
+
+    jshell> '0' < '1'
+    $2 ==> true
+
+
+Exercici 2. Triangles en Java
+=============================
+
+Recordes l'exercici de :ref:`dibuixar triangles <exercici_triangles_en_funcio_python>`?
+
+Doncs et toca tornar-ho a desenvolupar; aquest cop, en Java.
+
+Considera les simulacions:
+
+.. code-block:: none
+
+    $ java Triangles
+    quants?
+    2
+    .........9.........
+    ........898........
+    .......78987.......
+    ......6789876......
+    .....567898765.....
+    ....45678987654....
+    ...3456789876543...
+    ..234567898765432..
+    .12345678987654321.
+    0123456789876543210
+    .........9.........
+    ........898........
+    .......78987.......
+    ......6789876......
+    .....567898765.....
+    ....45678987654....
+    ...3456789876543...
+    ..234567898765432..
+    .12345678987654321.
+    0123456789876543210
+
+    $ java Triangles
+    quants?
+    0
+    Ha de ser un enter major que 0
+
+    $ java Triangles
+    quants?
+    dos
+    Ha de ser un enter major que 0
+
+Exercici 3. Informe de "capicuitat" en Java
+===========================================
+
+Recordes l'exercici de :ref:`l'informe de capicuitat
+<exercici_informe_capicuitat_python>` de matrícules que vas desenvolupar amb
+Python? Doncs ara toca amb Java!
+
+Caldrà que la teva funció ``String capicuitat(String)`` faci servir les funcions
+``boolean matriculaCapicuaNumerica(String)``, ``boolean
+matriculaCapicuaAlfanumerica(String)``, i ``boolean matriculaValida(String)``.
+
+Potser voldràs fer servir la funció de String `String substring(String)
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring(int,int)>`_
+que et permetrà obtenir una part d'un string.
+
+----
+
+*Ref. IP17.11*

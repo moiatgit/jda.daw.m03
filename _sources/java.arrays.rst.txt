@@ -1,0 +1,274 @@
+##########
+Seqüències
+##########
+
+Hem presentat les :doc:`seqüències <sequencies>` com una agrupació de dades
+ordenades, de manera que podem recórrer-les de la primera a la darrera.
+
+Amb Python vam fer servir les tuples, que ens permetien una manera molt còmoda
+d'implementar seqüències, doncs estaven integrades dins del llenguatge.
+
+
+Java disposa també d'un tipus de seqüència integrat dins el llenguatge: els
+*arrays*.
+
+Per Java un *array* és un contenidor d'un nombre fix d'elements d'un mateix tipus disposats en ordre.
+
+Donat que no és un tipus primitiu, podem considerar un array com un objecte. Es tracta, però d'un
+objecte especial, donat que pot contenir tant tipus primitius com objectes [#arrayspeculiaritats]_.
+
+A l'hora de declarar un array, no ens cal saber quants elements tindrà, només de quin tipus seran.
+
+.. code-block:: java
+
+    int[] notesCurs;
+
+Amb això, el compilador sap que ``notesCurs`` és una referència a una seqüència
+de valors enters. Però no sap quants.
+
+Suposant que un curs té quatre notes (quatre avaluacions), la inicialització es realitza de la
+següent manera:
+
+.. code-block:: java
+
+    notesCurs = new int[4];
+
+Ara tenim un array inicialitzat. Encara, però, no tenim valors als quatre espais on deixar
+enters.
+
+Els arrays en java s'indexen amb un valor enter, començant pel 0. Així, una manera d'inicialitzar
+les nostres notes serà:
+
+.. code-block:: java
+
+    notesCurs[0] = 8;
+    notesCurs[1] = 9;
+    notesCurs[2] = 10;
+    notesCurs[3] = 10;
+
+Fixa't que aquest punt fa dels arrays quelcom molt diferent a les tuples de
+Python. Recorda que les tuples en Python, com els strings, són inmutables. Així,
+intentar canviar el valor d'un dels elements d'una tupla, generava un error.
+
+.. code-block:: Python
+
+    >>> t = (1, 2, 3, 4)
+    >>> t[1] = 5
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment
+
+
+Java ens ofereix una manera d'inicialitzar els valors més compacta. En l'exemple:
+
+.. code-block:: java
+
+    int[] notesCurs = { 8, 9, 10, 10 };
+
+Fixa't que en aquest cas, el compilador ja es preocupa de comptar quants enters necessitem.
+
+Podrem mostrar els valors resultants, per exemple:
+
+.. code-block:: java
+
+    System.out.println("La nota de la primera avaluació és " + notesCurs[0]);
+    System.out.println("La nota de la segona avaluació és " + notesCurs[1]);
+    System.out.println("La nota de la tercera avaluació és " + notesCurs[2]);
+    System.out.println("La nota de la quarta avaluació és " + notesCurs[3]);
+
+Per suposat, els arrays permeten l'automatització d'aquest tipus de tasques repetitives, fent servir
+bucles. Per exemple:
+
+.. code-block:: java
+
+    for(int i=0;i<notesCurs.length;++i) {
+        System.out.println("La nota de la quarta avaluació és " + notesCurs[i]);
+    }
+
+Fixa't que ``notesCurs.length`` ens retorna la longitud de l'array però, a
+diferència del ``length()`` dels strings, aquí no porta parèntesis!
+
+També es poden definir arrays d'arrays (matrius), per exemple:
+
+.. code-block:: java
+
+    int[][] notesCursAlumnes;           // nr alumne x nr avaluació
+    notesCursAlumnes = new int[100];    // reservem espai pels 100 alumnes
+    notesCursAlumnes[3] = new int[4];   // reservem espai per les notes del quart alumne
+    notesCursAlumnes[3][1] = 10;        // el quart alumne va treure un 10 a la segona avaluació
+
+En Java, els arrays multidimensionals són arrays on cada element és un altre array, i aquests no cal
+que tinguin la mateixa longitud (només el tipus). De fet, en el exemple anterior, hi ha molts
+alumnes que no tenen espai reservat per posar les seves notes!
+
+A l'hora de copiar el contingut de dos arrays, ho podem fer amb algun bucle, per exemple:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    for (int i=0; i<notesCursEthel.length; i++) {
+        notesCursRahim[i] = notesCursEthel[i];
+    }
+
+Hi ha, però, una manera més eficient de fer-ho: fent servir la funció ``arraycopy()``:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    System.arraycopy(notesCursEthel, 0, notesCursRahim, 0, 4);
+    //               ^ array amb les dades d'origen
+    //                               ^ índex del primer element a copiar
+    //                                  ^ array de destinació
+    //                                                  ^ índex de la primera posició on copiar
+    //                                                     ^ nombre d'elements a copiar
+
+
+Donat que els arrays són una estructura molt utilitzada en programació, Java ens
+ofereix vàries utilitats típiques per manipular-los. Per exemple, és típic haver
+d'inicialitzar tots o part dels valors d'un array a un determinat valor, o bé
+comprovar si existeix un determinat valor dins d'un array, o si dos arrays
+contenen exactament els mateixos valors o un és subarray d'un altre. A aquestes
+alçades del curs, però, tot plegat queda una mica massa gran. Encara no hem
+presentat ni els bucles! Si no et pots esperar, mira la classe `Arrays
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html>`_
+per més detalls. 
+
+
+.. rubric:: Exercicis
+
+Exercici 1. Notes maques en Java
+================================
+
+Rescata l'exercici :ref:`Notes en maco <exercici_notes_en_maco_python>` i
+desenvolupa una funció anomenada ``String sequenciaMaca(int[])`` que faci el
+mateix en Java.
+
+Exercici 2. Conversor de string a array de caràcters
+====================================================
+
+Desenvolupa una funció que converteixi un string a una seqüència de caràcters.
+
+La signatura de la funció és ``char[] string2array(String)`` i dues simulacions
+d'execució podrien ser:
+
+.. code-block:: none
+
+    jshell> String2Array.string2array("hola");
+    $2 ==> char[4] { 'h', 'o', 'l', 'a' }
+
+    jshell> String2Array.string2array("");
+    $3 ==> char[0] {  }
+
+Exercici 3. Conversor d'array de caràcters a string
+===================================================
+
+Desenvolupa una funció que converteixi una seqüència de caracters a string.
+
+La signatura de la funció és ``String array2string(char[])`` i una simulació
+
+.. code-block:: none
+
+    jshell> Array2String.array2string( new char[] { 'h', 'o', 'l', 'a' });
+    $2 ==> "hola"
+
+Exercici 4. Ampliar un array
+============================
+
+Desenvolupa una funció que rebi com a paràmetres un array d'enters i un enter i
+retorni un nou array que contingui els mateixos elements de l'array d'entrada
+més l'enter addicional.
+
+La signatura serà ``int[] afegeixEnterAArray(int, int[])``
+
+.. code-block:: none
+
+    jshell> AfegeixEnterAArray.afegeixEnterAArray( 5, new int[] { 1, 2, 3, 4 });
+    $2 ==> int[4] { 1, 2, 3, 4, 5 }
+
+Exercici 5. Afegir a un array si no hi és
+=========================================
+
+Desenvolupa una funció que rebi un enter i un array com a paràmetre, i retorni
+un nou array amb el contingut de l'array d'entrada, més el nou element si no hi
+era.
+
+Considera la següent interacció:
+
+.. code-block:: none
+    :linenos:
+
+    jshell> int[] antics = new int[] {1, 2, 3, 4};
+    antics ==> int[4] { 1, 2, 3, 4 }
+
+    jshell> AfegeixSiNoHiEs.afegeixSiNoHiEs(5, new int[] {1, 2, 3, 4});
+    $3 ==> int[5] { 1, 2, 3, 4, 5 }
+
+    jshell> int[] nous = AfegeixSiNoHiEs.afegeixSiNoHiEs(3, antics);
+    nous ==> int[4] { 1, 2, 3, 4 }
+
+    jshell> nous[3] = 1000;
+    $5 ==> 1000
+
+    jshell> nous
+    nous ==> int[4] { 1, 2, 3, 1000 }
+
+    jshell> antics
+    antics ==> int[4] { 1, 2, 3, 4 }
+
+Fixa't que la línia 10 modifica el valor d'una de les posicions del nou array
+però que a la línia 16 es veu que l'antic array no ha quedat modificat.
+
+Exercici 6. Manteniment de notes
+================================
+
+En aquesta ocasió farem una versió en Java del programa de :ref:`manteniment de
+notes <exercici_manteniment_notes_python>` que vam fer en Python.
+
+Exercici 7. ☼ Manteniment de notes ampliat
+==========================================
+
+Afegeix al manteniment de notes anterior, les opcions ``màxima``, ``mínima``,
+``quantes`` i ``cerca n`` dels exercicis posteriors a :ref:`manteniment de notes
+<exercici_manteniment_notes_python>`
+
+Exercici 8. Modificació de notes
+================================
+
+Amplia el manteniment de notes amb la comanda ``modifica pos val`` que permet
+modificar el valor de la posició ``pos`` per ``val``.
+
+Així, la següent interacció funcionaria:
+
+.. code-block:: none
+
+    > mostra
+    5, 4, 3, 6 i 9
+    > modifica 1 10
+    fet
+    > mostra
+    10, 4, 3, 6 i 9
+    > modifica 6 10
+    no tinc tantes notes
+    > modifica 0 10
+    Començo a comptar per 1
+    > modifica x 10
+    La posició ha de ser un enter positiu major que 0
+    > modifica 30 x
+    El valor ha de ser un enter positiu
+
+
+.. rubric:: Anotacions
+
+.. [#arrayspeculiaritats] El fet que els arrays puguin incloure tipus primitius i també objectes,
+   requereix al compilador de Java fer algunes accions "ocultes" que, en certa manera pot fer que
+   els arrays no semblin del tot objectes. Per fer-te una lleugera idea, el compilador generarà un
+   tipus per cada array que definim al nostre programa!. Si bé, això hauria de ser-nos transparent,
+   preparat per veure algunes diferències de comportament entre els arrays i altres objectes.
+
+
+
+----
+
+*Ref. IP17.11*

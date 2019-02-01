@@ -37,6 +37,9 @@ Així, els teus nous fitxers contindran:
 Atenció: malgrat no es demana la part d'entrada/sortida, els enunciats es continuen descrivint en
 funció d'una o més simulacions, per facilitar la comprensió.
 
+
+.. _exercici_calculadora_senzilla_python:
+
 Pràctica 1. una calculadora senzilla
 ====================================
 
@@ -103,7 +106,9 @@ Exemple d'interacció: ::
     100
     No sobra ni falta res
 
-Pràctica 3. la guia de semàfors
+.. _exercici_guia_semafors_python:
+
+Pràctica 3. La guia de semàfors
 ===============================
 
 Desenvolupem un ajudant infantil per decidir que fer davant un semàfor

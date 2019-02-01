@@ -1,0 +1,143 @@
+:orphan:
+
+####################
+Instal·lació del JDK
+####################
+
+.. topic:: Introducció
+
+    Aquest document descriu la instal·lació del JDK (Java Development Kit) de Oracle a un sistema
+    GNU/Linux [#provatendebian]_.
+
+    Seguint les instruccions, aconseguiràs disposar del JDK d'Oracle només pel teu usuari,
+    accessible des d'un terminal.
+
+    És molt probable que altres implementacions del JDK, com ara OpenJDK, et permetin fer tots els
+    exercicis d'aquest curs. Si ho prefereixes, pots provar.
+
+    Finalment, si t'estimes més treballar amb un altre sistema operatiu (ex. MS Windows o OS X), no
+    hauries de trobar gaires dificultats en instal·lar el JDK. Et proposo que segueixis les instruccions
+    que t'ofereix `Oracle
+    <http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html>`_
+
+
+Segueix les instruccions:
+
+#. Comprovar si cal
+
+   Comprova si el teu sistema no disposa ja del programari:
+
+   .. code-block:: sh
+
+        $ javac -version
+        bash: javac: no s'ha trobat l'ordre
+        $ java -version
+        bash: java: no s'ha trobat l'ordre
+
+   Si el teu sistema respon quelcom diferent d'un missatge d'error, és que ja disposes d'una versió
+   del JDK (o com a mínim del JRE). Si no és la versió 8 d'Oracle, decideix si vols continuar amb el
+   que ja tens o seguir les passes que se t'indiquen a continuació.
+
+#. Descarregar
+
+   Descarrega la darrera versió del JDK disponible al lloc de `descàrregues d'Oracle
+   <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_
+
+   .. note::
+
+        Recorda a quina carpeta has deixat el fitxer. És possible que el teu navegador el deixi per
+        defecte a una carpeta anomenada *~/Baixades/*.
+
+   En cas que tinguis dubtes de si la teva màquina funciona amb 32 o 64 bits, pots comprovar-ho amb
+   la comanda:
+
+   .. code-block:: sh
+
+       $ uname -m
+
+   En el meu cas m'indica *x86_64* i, per tant, instal·laré la de 64 bits. En concret l'entrada
+   marcada com *jdk-8u40-linux-x64.tar.gz*, o la versió equivalent que hi hagi en el moment en que
+   ho facis tu.
+
+#. Descomprimir
+
+   Ara toca descomprimir el fitxer en un lloc accessible. Si no tens una preferència clara de com i
+   on fer-ho, et proposo la segúent: des d'una consola, col·locat a la carpeta on has descarregat el
+   fitxer anterior.
+
+   .. code-block:: sh
+
+        $ ls jdk-8u40-linux-x64.tar.gz
+        jdk-8u40-linux-x64.tar.gz
+        $ abans=`pwd`
+        $ mkdir -p ~/soft/jdk
+        $ cd ~/soft/jdk
+        $ tar xzvf "$abans/jdk-8u40-linux-x64.tar.gz"
+        $ ln -s jdk1.8.0_40 actual
+
+   Ara disposes d'una instal·lació de JDK 8 a la carpeta ~/soft/jdk/actual. Has creat un enllaç
+   simbòlic que et permetrà disposar d'altres versions del JDK sense grans canvis al teu sistema.
+
+#. Configurar
+
+   Ara caldrà afegir el JDK a la variable PATH de manera que puguis cridar les seves utilitats sense
+   haver de . Et proposo que ho facis al fitxer ~/.bashrc de manera que quedi definida
+   automàticament per cada terminal que obris.
+
+   Així doncs, edita el fitxer ~/.bashrc i afegeix al final d'aquest la següent línia:
+
+   .. code-block:: sh
+
+        PATH=$PATH:$HOME/soft/jdk/actual/bin
+
+   Finalment guarda els canvis. Pots comprovar que has definit correctament PATH fent:
+
+   .. code-block:: sh
+
+        $ . ~/.bashrc
+        $ echo $PATH
+
+   Entre la sortida de *echo* hauries de veure el camí al JDK.
+
+#. Comprovar
+
+   Comprovem que tot ha anat bé. Obre una nova consola i escriu:
+
+   .. code-block:: sh
+
+        $ javac -version
+        javac 1.8.0_40
+        $ java -version
+        java version "1.8.0_40"
+        Java(TM) SE Runtime Environment (build 1.8.0_40-b26)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.40-b25, mixed mode)
+
+   .. note::
+
+       En cas que el teu sistema ja tingui instal·lada alguna versió del JDK, la definició de PATH
+       no et funcionarà doncs arribarà primer a la carpeta del JDK del sistema. Et proposo el
+       següent
+
+       .. code-block:: sh
+
+          PATH=$HOME/soft/jdk/actual/bin:$PATH
+
+       Malauradament aquesta solució podria estar posan en perill la teva conta d'usuari. Si algú pot
+       guardar fitxers a la carpeta ~/soft/jdk/actual/bin, podria fer alguna malifeta com ara
+       substituir-te alguna comanda bàsica (ex. ls) per quelcom que fes alguna cosa desagradable.  Si
+       comparteixes l'equip amb algú altre, et proposo que impedeixis l'accés a qualsevol que no
+       siguis tu, canviant els permissos sobre la carpeta:
+
+       .. code-block:: sh
+
+          $ chmod 700 ~/soft/jdk
+
+Si tot ha anat bé, enhorabona, ja tens el teu flamant JDK 8 instal·lat només pel teu usuari sense
+necessitat de privilegis d'administració.
+
+.. rubric:: Anotacions
+
+.. [#provatendebian] La instal·lació ha estat provada en un Debian Wheezy. No hauria de ser molt
+   diferent per altres distribucions/versions donat que aquesta guia no es basa en el sistema de
+   paqueteria d'una distribució concreta.
+

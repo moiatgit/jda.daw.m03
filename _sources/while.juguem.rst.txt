@@ -2,6 +2,7 @@
 Juguem amb el ``while``
 #######################
 
+.. _exercici_lloro_python:
 
 Pràctica 1. El lloro
 ====================
@@ -369,6 +370,8 @@ començar amb ``+`` i amb ``-``.
 **Pista**: si aquí no fas un conjunt de fitxers d'entrada/sortida per fer les
 proves, és que et sobra el temps!
 
+.. _exercici_rimes_python:
+
 Pràctica 7. Rimes
 =================
 
@@ -411,6 +414,8 @@ El programa finalitzarà quan l'usuari s'equivoqui.
 
 **Fixat**: no considera majúscules/minúscules però si paraules completes.
 
+.. _exercici_lletra_continguda_python:
+
 Pràctica 9. Lletra continguda
 =============================
 
@@ -433,6 +438,7 @@ lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.
     >>> lletra_continguda('a', '')
     -1
 
+.. _exercici_paraula_continguda_python:
 
 Pràctica 10. Paraula continguda
 ===============================

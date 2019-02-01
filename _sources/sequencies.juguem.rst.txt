@@ -7,9 +7,10 @@ A continuació et proposo uns quants exercicis amb seqüències.
 Tot i que els exercicis han estat dissenyats per que els realitzis tots i en ordre, he remarcat amb
 una ☆ aquells que trobo imprescindibles per si tens greus restriccions de temps.
 
+.. _exercici_notes_en_maco_python:
 
-Pràctica 1. ☆ Mostra una seqüència de notes en maco
-===================================================
+Pràctica 1. ☆ Notes en maco
+===========================
 
 Desenvolupa una funció que composi un string a partir d'una seqüència
 d'enters de manera llegible.
@@ -69,6 +70,7 @@ a partir de la tupla rebuda, més el valor en cas que aquest no hi fos.
     >>> afegeix_si_no_hi_es((4, 3, 6), 5)
     (4, 3, 6, 5)
 
+.. _exercici_manteniment_notes_python:
 
 Pràctica 5. ☆ Manteniment de notes
 ==================================

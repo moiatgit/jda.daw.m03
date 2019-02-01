@@ -25,3 +25,27 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     programacio_modular.rst
     bucles_condicionals.rst
     sequencies.rst
+    python2java.rst
+
+..
+    glossari.rst
+
+..  tuples.rst
+
+
+..    prg013.ruptura_iteracions
+..    prg014.arrays
+..    prg015.matrius
+..    prg016a.tads
+..    prg016.tads
+..    prg017.memoria_dinamica
+..    prg021.moduls_matrius
+..    prg022.recursivitat
+..    prg023.fitxers
+..    prg024.fitxers_I_text
+..    prg025.fitxers_II
+..    prg026.fitxers_III.posicions
+..    prg027.fitxers_IV
+..    prg028.fitxers_V
+..    prg099.exercicis_repas
+

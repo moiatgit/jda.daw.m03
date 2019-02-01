@@ -365,10 +365,13 @@ La interacció serà:
     2018
     Doncs Midori, diria que tens 20 o 21 anys
 
+
+.. _exercici_calculadorabasica_python:
+
 Pràctica 6. una calculadora bàsica
 ----------------------------------
 
-Desenvolupa una calculadora bàsica que demani a l’usuari dos operands i
+Desenvolupa una calculadora bàsica que demani a l'usuari dos operands i
 mostri el resultat de realitzar les operacions bàsiques (+ - * /) sobre
 els operands.
 
@@ -401,6 +404,7 @@ Pistes:
         hola
         adéu
 
+* no et preocupis si alguna operació no és vàlida pels valors introduïts.
 
 ----
 

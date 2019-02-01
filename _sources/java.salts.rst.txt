@@ -1,0 +1,170 @@
+####################
+Instruccions de salt
+####################
+
+En aquesta secció veurem les instruccions per saltar el flux que ens ofereix
+Java: ``return``, ``break`` i ``continue``.
+
+No t'esperis cap novetat respecte a que :doc:`ja has vist
+<sequencies.control_bucles>` amb Python.
+Únicament t'hauria de servir de recordatori.
+
+La instrucció ``return``
+========================
+
+La instrucció ``return`` finalitza immediatament l'execució del mòdul en el que ens trobem.
+
+Per exemple, considera el mòdul ``main()``:
+
+.. code-block:: java
+
+    public static void main(String[] args) {
+        int n = demanaQuantsAUsuari();  // retornarà un enter que demanarà a l'usuari
+        if (n <= 1) {
+            System.out.println("Per tants pocs, ni em molesto!");
+            return;                     // Finalitza l'execució del main()
+        }
+        // Només s'executarà aquest codi si n és prou gran
+        for (int i=0; i<n; i++) {
+            System.out.println((char)('a' + i));
+        }
+    }
+
+.. caution::
+
+    En cas que afegim instruccions a continuació de ``return`` i en el mateix bloc on estigui
+    aquest, el compilador ens avisarà amb l'error: ``error: unreachable statement``
+
+La instrucció ``return`` pot retornar un valor. Això serà útil quan apareix en
+el bloc d'una funció. Estudiarem amb més detall els mòduls a
+:doc:`java.funcions`.
+
+Una diferència important respecte el ``return`` a Python és que el compilador de
+Java ens avisarà si calia i ens el descuidem o retornem quelcom que no toca.
+
+
+Continuant amb ``continue``
+===========================
+
+
+Imagina que has de resoldre el següent problema:
+
+    Donat un text (String no nul), desenvolupa un programa què mostri només les lletres en
+    majúscules que apareguin al text. Finalment el programa mostrarà una línia resum que indiqui
+    quantes majúscules ha trobat.
+
+    Per exemple, si el text és ``"Això és un text MOLT interessant"``, el
+    programa hi trobaria que les lletres en majúscules són A, M, O, L, T, i
+    respondria ``"Hi ha 5 lletres en majúscules"``.
+
+En el següent codi resol el problema de quatre maneres diferents:
+
+.. literalinclude:: _code/DemoContinue.java
+    :language: java
+    :linenos:
+
+La primera versió del programa correspon a un recorregut *clàssic* en el que passem element a
+element (en aquest cas, cada lletra) i comprovem si acompleix cadascun dels criteris que ens
+interessen. En cas que acompleixi tots els criteris, processem l'element (en aquest cas, el mostrem
+i incrementem el comptador de majúscules).
+
+La segona versió fa servir *continue*. Com abans, anem passant element a element. Aquest cop, però,
+l'aproximació al problema és diferent: en comptes de comprovar que l'element ha de ser processat, el
+que fem és comprovar que l'hem de descartar. En el moment que sabem que no ens interessa, llencem el
+*continue* i a tots els efectes el programa continua com si hagués arribat al final de la iteració i
+passa a la segúent (si n'hi ha).
+
+Les altres dues versions inclouen compactacions habituals de les dues anteriors.  La penúltima se
+n'aprofita de la simplicitat de l'exemple, doncs la funció ``isUpperCasse()`` ja inclou els dos
+casos (és una lletra i no es troba en minúscules) Això **no sempre** és possible, i trobaràs
+problemes amb complexos ``if`` aniuats.
+
+Finalment, fixat en els comentaris de la darrera versió:
+remarquen la separació clara entre la part del filtrat i la del processat dels elements cercats.
+
+Trencant amb ``break``
+======================
+
+La instrucció *break* permet finalitzar abruptament el bloc en que es troba.
+
+L'hem vista en funcionament amb el :ref:`condicional switch<condicions_switch>`. En aquell cas, si no
+fem servir *break*, un cop un dels casos s'acompleix, s'executen les instruccions de tota la resta
+de casos posteriors, cosa no sempre desitjada.
+
+Considera la següent descripció del problema a resoldre:
+
+    Donat un text (String no nul), desenvolupa un programa què cerqui el primer caràcter en
+    majúscules (començant per l'esquerra) i, en cas que el trobi, indiqui quin caràcter és i en
+    quina posició s'ha trobat.
+
+El següent codi inclou quatre versions que solucionen el problema anterior:
+
+
+.. literalinclude:: _code/DemoBreak.java
+    :language: java
+    :linenos:
+
+La primera versió resol el problema amb un ``for``. En el moment que troba l'element a cercar, com
+que no té manera de finalitzar fins que arribi al darrer element, el que fa és, com a mínim,
+assegurar-se de que no es fa res més amb els elements que, segur, no seran la primera majúscula.
+Fixat que el bucle es mantindrà, però, donant voltes fins que exhaureixi tots els elements! Esperem
+que no siguin gaires, no?
+
+La segona versió fa servir *break*. En el moment que detecta que s'ha trobat la resposta, ja sap que
+no cal continuar buscant-hi més i per tant *trenca* el bucle i salta a mostrar els resultats.
+Aquesta solució és, més compacta que la primera i, també, més eficient si la primera majúscula es
+troba abans de la última lletra del text.
+
+Finalment, una tercera versió, pels detractors de les instruccions de salt, que fa servir ``while``,
+i que no té la penalització d'eficiència de la primera (només fa un increment innecessari).
+
+
+.. _branching_calculssensesalts:
+
+Exercici 1. Càlculs sobre llista (sense salts)
+==============================================
+
+Desenvolupa un programa anomenat ``CalculadoraLlista.java`` que demani a l'usuari una llista de
+valors numèrics (mínim dos i màxim 10) i mostri el resultat de realitzar les operacions bàsiques
+``+``, ``-``, ``*`` i ``/`` agafant els valors introduïts de dos en dos (consecutius).
+
+Quan l'usuari introdueixi el valor ``"prou"`` (independent de majúscules/minúscules), o bé s'hagi
+enregistrat ja el màxim de valors, es considerarà finalitzada la introducció i es passarà a mostrar
+els resultats.
+
+Si algun dels valors no és la marca de finalització o un valor numèric, el programa es comportarà de
+manera indeterminada (per exemple, finalitzant l'execució amb un error)
+
+.. important::
+
+    Resol el problema **sense** cap instrucció de salt
+
+
+Un exemple d'execució (que inclou l'entrada de l'usuari) seria:
+
+.. code-block:: none
+
+    Calculadora llista
+    Introduiu l'element 1: 3.1
+    Introduiu l'element 2: 2.1
+    Introduiu l'element 3 o fi per acabar: 1.0
+    Introduiu l'element 4 o fi per acabar: 0
+    Introduiu l'element 5 o fi per acabar: Fi
+    3,10 + 2,10 = 5,20	3,10 - 2,10 = 1,00	3,10 * 2,10 = 6,51	3,10 / 2,10 = 1,48
+    2,10 + 1,00 = 3,10	2,10 - 1,00 = 1,10	2,10 * 1,00 = 2,10	2,10 / 1,00 = 2,10
+    1,00 + 0,00 = 1,00	1,00 - 0,00 = 1,00	1,00 * 0,00 = 0,00	1,00 / 0,00 = Infinity
+
+.. _branching_calculsambsalts:
+
+Exercici 2. Càlculs sobre llista (amb salts)
+============================================
+
+Resol el problema :ref:`branching_calculssensesalts`.
+
+Aquest cop, assegura't que fas servir instruccions de salt allà on sigui possible.
+
+Anomena a la nova versió ``CalculadoraLlistaSalts.java``.
+
+----
+
+*Ref. IP17.10*
