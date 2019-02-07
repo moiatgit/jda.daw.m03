@@ -1,16 +1,6 @@
-##########
-Seqüències
-##########
-
-Hem presentat les :doc:`seqüències <sequencies>` com una agrupació de dades
-ordenades, de manera que podem recórrer-les de la primera a la darrera.
-
-Amb Python vam fer servir les tuples, que ens permetien una manera molt còmoda
-d'implementar seqüències, doncs estaven integrades dins del llenguatge.
-
-
-Java disposa també d'un tipus de seqüència integrat dins el llenguatge: els
-*arrays*.
+######
+Arrays
+######
 
 Per Java un *array* és un contenidor d'un nombre fix d'elements d'un mateix tipus disposats en ordre.
 
@@ -151,7 +141,7 @@ Desenvolupa una funció que converteixi un string a una seqüència de caràcter
 La signatura de la funció és ``char[] string2array(String)`` i dues simulacions
 d'execució podrien ser:
 
-.. code-block:: none
+.. code-block:: bash
 
     jshell> String2Array.string2array("hola");
     $2 ==> char[4] { 'h', 'o', 'l', 'a' }
@@ -166,7 +156,7 @@ Desenvolupa una funció que converteixi una seqüència de caracters a string.
 
 La signatura de la funció és ``String array2string(char[])`` i una simulació
 
-.. code-block:: none
+.. code-block:: bash
 
     jshell> Array2String.array2string( new char[] { 'h', 'o', 'l', 'a' });
     $2 ==> "hola"
@@ -180,7 +170,7 @@ més l'enter addicional.
 
 La signatura serà ``int[] afegeixEnterAArray(int, int[])``
 
-.. code-block:: none
+.. code-block:: bash
 
     jshell> AfegeixEnterAArray.afegeixEnterAArray( 5, new int[] { 1, 2, 3, 4 });
     $2 ==> int[4] { 1, 2, 3, 4, 5 }
@@ -194,7 +184,7 @@ era.
 
 Considera la següent interacció:
 
-.. code-block:: none
+.. code-block:: bash
     :linenos:
 
     jshell> int[] antics = new int[] {1, 2, 3, 4};
@@ -231,6 +221,9 @@ Afegeix al manteniment de notes anterior, les opcions ``màxima``, ``mínima``,
 ``quantes`` i ``cerca n`` dels exercicis posteriors a :ref:`manteniment de notes
 <exercici_manteniment_notes_python>`
 
+
+.. _exercici_modificacio_notes_java:
+
 Exercici 8. Modificació de notes
 ================================
 
@@ -239,7 +232,7 @@ modificar el valor de la posició ``pos`` per ``val``.
 
 Així, la següent interacció funcionaria:
 
-.. code-block:: none
+.. code-block:: bash
 
     > mostra
     5, 4, 3, 6 i 9
@@ -269,4 +262,4 @@ Així, la següent interacció funcionaria:
 
 ----
 
-*Ref. IP17.11*
+*Ref. IP17.11.1*

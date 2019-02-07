@@ -1,0 +1,210 @@
+#######
+Llistes
+#######
+
+Hem vist que amb els *arrays* de Java podem guardar dades seqüèncials de manera
+molt còmoda.
+
+Què passa però quan hem hagut d'ampliar l'array? Doncs que hem hagut de crear-ne
+un altre i copiar el contingut de l'original abans d'ampliar-ho.
+
+Allò que amb Python fèiem tan còmodament sumant dues tuples, Java ens obliga a
+explicitar-ho.
+
+Considera la versió en Python amb tuples:
+
+.. code-block:: bash
+
+        >>> paraules = ('em', 'falta', 'un')
+        >>> noves_paraules = paraules + ('element', )
+        >>> noves_paraules
+        ('em', 'falta', 'un', 'element')
+
+Amb Java, una funcionalitat similar amb arrays, requeriria quelcom similar a:
+
+.. code-block: Java
+
+    String[] paraules = new String[] {"em", "falta", "un"};
+    String[] novesParaules = new String[paraules.length+1];
+    for(int i=0; i < paraules.length; i++) {
+        novesParaules[i] = paraules[i];
+    }
+    novesParaules[paraules.length] = "element";
+
+En Python disposem, a banda de les tuples, d'un altre tipus de dades anomenat
+``list``.
+
+Amb aquest tipus, afegir un nou element a la llista seria encara més fàcil
+
+.. code-block:: bash
+
+        >>> paraules = ['em', 'falta', 'un']
+        >>> paraules.append('element')
+        >>> paraules
+        ['em', 'falta', 'un', 'element']
+        >>> type(paraules)
+        <class 'list'>
+        >>> for paraula in paraules:
+        ...     print(paraula)
+        ...
+        em
+        falta
+        un
+        element
+
+Fixa't en els corxets en comptes dels parèntesis.
+
+Fixa't ara com farem servir el tipus ``ArrayList<String>`` en Java per fer
+quelcom similar.
+
+.. code-block:: bash
+
+    jshell> ArrayList<String> paraules = new ArrayList<String>();
+    paraules ==> []
+
+    jshell> paraules.add("em");
+    $2 ==> true
+
+    jshell> paraules.add("falta");
+    $3 ==> true
+
+    jshell> paraules.add("un");
+    $4 ==> true
+
+    jshell> paraules.add("element");
+    $5 ==> true
+
+    jshell> for(String paraula: paraules) {
+       ...>    System.out.println(paraula);
+       ...> }
+    em
+    falta
+    un
+    element
+
+Fixa't que indiquem quin tipus d'elements contindrà el ``ArrayList`` tot
+especificant-lo entre ``<>``. Una altra limitació de l'``ArrayList`` és
+que només en podem fer de tipus no primitius. 
+
+
+Java ens ofereix uns tipus no primitius que es comporten com els primitius. Els
+anomenarem tipus *embolcall*.
+
+Alguns dels tipus principals amb els seus embolcalls:
+
+=========   ==========
+Primitius   Embolcalls
+=========   ==========
+boolean     Boolean
+char        Character
+double      Double
+float       Float
+int         Integer
+=========   ==========
+
+Així per exemple, podem crear una seqüència d'enters amb:
+
+.. code-block: Java
+
+    ArrayList<Integer> notes = new ArrayList<Integer>();
+
+La llista de les funcionalitats que ens ofereix ``ArrayList`` es pot consultar a
+la `documentació oficial
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html>`_.
+
+Algunes de les interessants (nota: ``Tipus`` representa el tipus de dades amb el
+que declarem l'``ArrayList``, per exemple ``String`` per ``ArrayList<String>``:
+
+* ``void add(Tipus element)``: afegeix l'element al final de la seqüència
+
+* ``void add(int index, Tipus element)``: insereix l'element a la posició
+  ``index`` de la seqüència. Si hi havia ja elements a aquesta posició, els
+  desplaça per fer lloc al nou.
+
+* ``Tipus get(int index)``: retorna l'element a la posició ``index``. Molt
+  similar al ``get()`` de String.
+
+* ``boolean isEmpty()``: retorna cert si i només sí la seqüència està buida
+  (sense cap element)
+
+* ``Tipus remove(int index)``: elimina l'element de la posició ``index`` i el
+  retorna.
+
+* ``Tipus set(int index, Tipus element)``: substitueix l'element de la posició
+  ``index`` per ``element`` i retorna l'antic.
+
+* ``int size()``: retorna quants elements hi ha a la seqüència.
+
+
+Exercici 1. Practicant les operacions amb ``ArrayList``
+=======================================================
+
+Fes un programa sencill que demostri el funcionament de les diferents operacions
+de ``ArrayList``.
+
+Per exemple, crea una seqüència, afegeix alguns elements a diferents posicions,
+elimina'n algun, etc.
+
+Exercici 2. Modificació de notes amb ``ArrayList``
+==================================================
+
+Crea una nova versió de l'exercici de :ref:`modificació de
+notes<exercici_modificacio_notes_java>`. Aquest cop fes la implementació amb
+``ArrayList``.
+
+Exercici 3. Inserció i eliminació de notes
+==========================================
+
+Afegeix les següents comandes addicionals al gestor de notes:
+
+* ``insereix pos val``: insereix el valor ``val`` a la posició ``pos``. Cal
+  comprovar que ``pos`` estigui entre 0 i la longitut de la seqüència. Altrament
+  mostrarà els missatges d'error de ``modifica``.
+
+  Fixa't que si demana inserir a la posició inmediatament posterior a la
+  darrera, es comportarà com ``afegeix``.
+
+* ``elimina pos``: elimina el valor que es troba a la posició ``pos``. En cas
+  que ``pos`` no sigui vàlida, mostrarà els missatges d'error de ``modifica``.
+
+* ``buida``: elimina tots els elements de la seqüència.
+
+
+Un exemple d'interacció amb les noves operacions:
+
+.. code-block:: bash
+
+    > buida
+    fet
+    > mostra
+    cap
+    > insereix 1 5
+    no tinc tantes notes
+    > insereix 0 5
+    fet
+    > mostra
+    5
+    > insereix 0 8
+    fet
+    > mostra
+    8 i 5
+    > insereix 1 10
+    fet
+    > mostra
+    8, 10 i 5
+    > elimina 3
+    no tinc tantes notes
+    > elimina 1
+    fet
+    > mostra
+    8 i 5
+    > buida
+    fet
+    > mostra
+    cap
+
+
+
+----
+
+*Ref. IP17.11.2*

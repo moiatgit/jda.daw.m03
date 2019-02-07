@@ -1,0 +1,378 @@
+#################
+El joc del penjat
+#################
+
+Desenvolupa un programa que permeti jugar al joc del penjat.
+
+El joc del penjat consisteix en que algú (en aquest cas el programa) es
+pensa una paraula i mostra les seves lletres ocultes, de manera que
+l'altre (l'usuari del programa) pugui veure quantes lletres té.
+
+Quan l'usuari introdueix una lletra, si aquesta és a la paraula oculta, el
+programa mostra la paraula oculta però amb les lletres encertades
+descobertes.
+
+Quan l'usuari introdueix una lletra que no és a la paraula oculta, o bé
+una lletra que ja havia introduït abans, se li anota un error.  L'usuari
+té un màxim de 10 errors.
+
+Per simplificar les proves, el programa disposa exactament de les següents
+paraules per jugar: "pissarra", "aixeta", "sabata", "griflo" i "ciceront"
+
+L'usuari va introduint lletres fins que:
+
+* l'entrada és "prou": el programa finalitza
+
+* l'entrada és "glups": el programa mostra la paraula oculta i passa
+  a la següent
+
+* ha descobert totes les lletres de la paraula oculta: el programa mostra
+  la paraula oculta, informa que l'usuari ha guanyat i passa a la següent
+
+* ha exhaurit el nombre màxim d'errors: el programa mostra la paraula
+  oculta, informa que l'usuari ha perdut i passa a la següent.
+
+Altres consideracions:
+
+* No es distingeixen majúscules i minúscules a l'entrada.
+
+* En cas que l'usuari introdueixi quelcom que no sigui una lletra, ni
+  "prou" ni "glups", se li mostra un missatge però no se li compta com a
+  error.
+
+* Si es torna a introduir una lletra ja introduïda, el joc l'acceptarà com si
+  fos el primer cop. És a dir, si la lletra hi és a la palabra no hi haurà cap
+  canvi però, si no hi és, es tornarà a comptar un intent.
+
+* La seqüència de lletres utilitzades manté l'ordre d'entrada però no
+  inclou repetits.
+
+* No s'acceptarà cap mòdul amb més de 10 instruccions (més de 10 ``;``). Si un
+  dels teus mòduls supera aquest límit, caldrà que el trenquis en submòduls.
+
+* Per descomptat, tant el fitxer com cada mòdul hauran d'estar convenientment
+  documentats.
+
+* Caldrà que el programa disposi de jocs de prova d'entrada/sortida.
+
+  Aquestes proves s'hauran de poder realitzar amb :download:`test_java.sh
+  <_recursos/test_java.sh>`.
+
+
+
+Considera la següent simulació:
+
+.. code-block:: none
+
+    $ java Penjat
+    Comencem a jugar
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    a
+    paraula: ****A**A
+    utilitzades: A
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    s
+    paraula: **SSA**A
+    utilitzades: A i S
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    t
+    paraula: **SSA**A
+    utilitzades: A, S i T
+    intents disponibles: 9
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    a
+    paraula: **SSA**A
+    utilitzades: A, S i T
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    R
+    paraula: **SSARRA
+    utilitzades: A, S, T i R
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    I
+    paraula: *ISSARRA
+    utilitzades: A, S, T, R i I
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: PISSARRA
+    utilitzades: A, S, T, R, I i P
+    intents disponibles: 8
+    Has guanyat!
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 9
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 7
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 6
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 5
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 4
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 3
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 2
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 1
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    P
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 0
+    Has perdut
+    La paraula era: AIXETA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    GlUps
+    La paraula era: SABATA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    glups
+    La paraula era: GRIFLO
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    corxolis
+    No t'entenc
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    glups
+    La paraula era: CICERONT
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    glups
+    La paraula era: PISSARRA
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    glups
+    La paraula era: AIXETA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    prou
+    Espero que t'hagis divertit
+
+
+A banda dels fitxers d'entrada i sortida per fer proves automàtiques, et
+proporciono els continguts corresponents a la simulació anterior.
+
+La simulació anterior tindria com a entrada:
+
+.. code-block:: none
+
+    a
+    s
+    t
+    a
+    R
+    I
+    P
+    P
+    P
+    P
+    P
+    P
+    P
+    P
+    P
+    P
+    P
+    GlUps
+    glups
+    corxolis
+    glups
+    glups
+    glups
+    prou
+
+La simulació tindria com a sortida esperada:
+
+.. code-block:: none
+
+    Comencem a jugar
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ****A**A
+    utilitzades: A
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: **SSA**A
+    utilitzades: A i S
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: **SSA**A
+    utilitzades: A, S i T
+    intents disponibles: 9
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: **SSA**A
+    utilitzades: A, S i T
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: **SSARRA
+    utilitzades: A, S, T i R
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: *ISSARRA
+    utilitzades: A, S, T, R i I
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: PISSARRA
+    utilitzades: A, S, T, R, I i P
+    intents disponibles: 8
+    Has guanyat!
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 9
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 8
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 7
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 6
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 5
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 4
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 3
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 2
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 1
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    paraula: ******
+    utilitzades: P
+    intents disponibles: 0
+    Has perdut
+    La paraula era: AIXETA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    La paraula era: SABATA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    La paraula era: GRIFLO
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    No t'entenc
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    La paraula era: CICERONT
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    La paraula era: PISSARRA
+
+    paraula: ********
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    La paraula era: AIXETA
+
+    paraula: ******
+    utilitzades: cap
+    intents disponibles: 10
+    Introdueix una lletra (prou: per sortir, glups per rendir-te)
+    Espero que t'hagis divertit
+
+
+
+
+----
+
+*Ref. IP17.11.3*

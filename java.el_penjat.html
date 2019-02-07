@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>El joc del penjat &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Llistes" href="java.llistes.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.operadors.html">Operadors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.expressions.html">Expressions i Instruccions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="java.sequencies.html">Seqüències</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">El joc del penjat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
+        
+          <li><a href="java.sequencies.html">Seqüències</a> &raquo;</li>
+        
+      <li>El joc del penjat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="el-joc-del-penjat">
+<h1>El joc del penjat<a class="headerlink" href="#el-joc-del-penjat" title="Link permanent a aquest títol">¶</a></h1>
+<p>Desenvolupa un programa que permeti jugar al joc del penjat.</p>
+<p>El joc del penjat consisteix en que algú (en aquest cas el programa) es
+pensa una paraula i mostra les seves lletres ocultes, de manera que
+l’altre (l’usuari del programa) pugui veure quantes lletres té.</p>
+<p>Quan l’usuari introdueix una lletra, si aquesta és a la paraula oculta, el
+programa mostra la paraula oculta però amb les lletres encertades
+descobertes.</p>
+<p>Quan l’usuari introdueix una lletra que no és a la paraula oculta, o bé
+una lletra que ja havia introduït abans, se li anota un error.  L’usuari
+té un màxim de 10 errors.</p>
+<p>Per simplificar les proves, el programa disposa exactament de les següents
+paraules per jugar: «pissarra», «aixeta», «sabata», «griflo» i «ciceront»</p>
+<p>L’usuari va introduint lletres fins que:</p>
+<ul class="simple">
+<li>l’entrada és «prou»: el programa finalitza</li>
+<li>l’entrada és «glups»: el programa mostra la paraula oculta i passa
+a la següent</li>
+<li>ha descobert totes les lletres de la paraula oculta: el programa mostra
+la paraula oculta, informa que l’usuari ha guanyat i passa a la següent</li>
+<li>ha exhaurit el nombre màxim d’errors: el programa mostra la paraula
+oculta, informa que l’usuari ha perdut i passa a la següent.</li>
+</ul>
+<p>Altres consideracions:</p>
+<ul>
+<li><p class="first">No es distingeixen majúscules i minúscules a l’entrada.</p>
+</li>
+<li><p class="first">En cas que l’usuari introdueixi quelcom que no sigui una lletra, ni
+«prou» ni «glups», se li mostra un missatge però no se li compta com a
+error.</p>
+</li>
+<li><p class="first">Si es torna a introduir una lletra ja introduïda, el joc l’acceptarà com si
+fos el primer cop. És a dir, si la lletra hi és a la palabra no hi haurà cap
+canvi però, si no hi és, es tornarà a comptar un intent.</p>
+</li>
+<li><p class="first">La seqüència de lletres utilitzades manté l’ordre d’entrada però no
+inclou repetits.</p>
+</li>
+<li><p class="first">No s’acceptarà cap mòdul amb més de 10 instruccions (més de 10 <code class="docutils literal notranslate"><span class="pre">;</span></code>). Si un
+dels teus mòduls supera aquest límit, caldrà que el trenquis en submòduls.</p>
+</li>
+<li><p class="first">Per descomptat, tant el fitxer com cada mòdul hauran d’estar convenientment
+documentats.</p>
+</li>
+<li><p class="first">Caldrà que el programa disposi de jocs de prova d’entrada/sortida.</p>
+<p>Aquestes proves s’hauran de poder realitzar amb <a class="reference download internal" href="_downloads/test_java.sh" download=""><code class="xref download docutils literal notranslate"><span class="pre">test_java.sh</span></code></a>.</p>
+</li>
+</ul>
+<p>Considera la següent simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java Penjat
+Comencem a jugar
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+a
+paraula: ****A**A
+utilitzades: A
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+s
+paraula: **SSA**A
+utilitzades: A i S
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+t
+paraula: **SSA**A
+utilitzades: A, S i T
+intents disponibles: 9
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+a
+paraula: **SSA**A
+utilitzades: A, S i T
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+R
+paraula: **SSARRA
+utilitzades: A, S, T i R
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+I
+paraula: *ISSARRA
+utilitzades: A, S, T, R i I
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: PISSARRA
+utilitzades: A, S, T, R, I i P
+intents disponibles: 8
+Has guanyat!
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 9
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 7
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 6
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 5
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 4
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 3
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 2
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 1
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+P
+paraula: ******
+utilitzades: P
+intents disponibles: 0
+Has perdut
+La paraula era: AIXETA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+GlUps
+La paraula era: SABATA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+glups
+La paraula era: GRIFLO
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+corxolis
+No t&#39;entenc
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+glups
+La paraula era: CICERONT
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+glups
+La paraula era: PISSARRA
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+glups
+La paraula era: AIXETA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+prou
+Espero que t&#39;hagis divertit
+</pre></div>
+</div>
+<p>A banda dels fitxers d’entrada i sortida per fer proves automàtiques, et
+proporciono els continguts corresponents a la simulació anterior.</p>
+<p>La simulació anterior tindria com a entrada:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a
+s
+t
+a
+R
+I
+P
+P
+P
+P
+P
+P
+P
+P
+P
+P
+P
+GlUps
+glups
+corxolis
+glups
+glups
+glups
+prou
+</pre></div>
+</div>
+<p>La simulació tindria com a sortida esperada:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Comencem a jugar
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ****A**A
+utilitzades: A
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: **SSA**A
+utilitzades: A i S
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: **SSA**A
+utilitzades: A, S i T
+intents disponibles: 9
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: **SSA**A
+utilitzades: A, S i T
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: **SSARRA
+utilitzades: A, S, T i R
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: *ISSARRA
+utilitzades: A, S, T, R i I
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: PISSARRA
+utilitzades: A, S, T, R, I i P
+intents disponibles: 8
+Has guanyat!
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 9
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 8
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 7
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 6
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 5
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 4
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 3
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 2
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 1
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraula: ******
+utilitzades: P
+intents disponibles: 0
+Has perdut
+La paraula era: AIXETA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+La paraula era: SABATA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+La paraula era: GRIFLO
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+No t&#39;entenc
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+La paraula era: CICERONT
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+La paraula era: PISSARRA
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+La paraula era: AIXETA
+
+paraula: ******
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+Espero que t&#39;hagis divertit
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><em>Ref. IP17.11.3</em></p>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="java.llistes.html" class="btn btn-neutral" title="Llistes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

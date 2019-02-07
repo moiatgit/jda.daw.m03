@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Seqüències &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Arrays &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,7 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="prev" title="Mòduls" href="java.funcions.html" />
+    <link rel="next" title="Llistes" href="java.llistes.html" />
+    <link rel="prev" title="Seqüències" href="java.sequencies.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -105,7 +106,12 @@
 <li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Seqüències</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="java.sequencies.html">Seqüències</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.el_penjat.html">El joc del penjat</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -155,7 +161,9 @@
         
           <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
         
-      <li>Seqüències</li>
+          <li><a href="java.sequencies.html">Seqüències</a> &raquo;</li>
+        
+      <li>Arrays</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,14 +196,8 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="sequencies">
-<h1>Seqüències<a class="headerlink" href="#sequencies" title="Link permanent a aquest títol">¶</a></h1>
-<p>Hem presentat les <a class="reference internal" href="sequencies.html"><span class="doc">seqüències</span></a> com una agrupació de dades
-ordenades, de manera que podem recórrer-les de la primera a la darrera.</p>
-<p>Amb Python vam fer servir les tuples, que ens permetien una manera molt còmoda
-d’implementar seqüències, doncs estaven integrades dins del llenguatge.</p>
-<p>Java disposa també d’un tipus de seqüència integrat dins el llenguatge: els
-<em>arrays</em>.</p>
+  <div class="section" id="arrays">
+<h1>Arrays<a class="headerlink" href="#arrays" title="Link permanent a aquest títol">¶</a></h1>
 <p>Per Java un <em>array</em> és un contenidor d’un nombre fix d’elements d’un mateix tipus disposats en ordre.</p>
 <p>Donat que no és un tipus primitiu, podem considerar un array com un objecte. Es tracta, però d’un
 objecte especial, donat que pot contenir tant tipus primitius com objectes<a class="footnote-reference" href="#arrayspeculiaritats" id="id1">[1]</a>.</p>
@@ -299,11 +301,11 @@ mateix en Java.</p>
 <p>Desenvolupa una funció que converteixi un string a una seqüència de caràcters.</p>
 <p>La signatura de la funció és <code class="docutils literal notranslate"><span class="pre">char[]</span> <span class="pre">string2array(String)</span></code> i dues simulacions
 d’execució podrien ser:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jshell&gt; String2Array.string2array(&quot;hola&quot;);
-$2 ==&gt; char[4] { &#39;h&#39;, &#39;o&#39;, &#39;l&#39;, &#39;a&#39; }
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jshell&gt; String2Array.string2array<span class="o">(</span><span class="s2">&quot;hola&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="nv">$2</span> <span class="o">==</span>&gt; char<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="s1">&#39;h&#39;</span>, <span class="s1">&#39;o&#39;</span>, <span class="s1">&#39;l&#39;</span>, <span class="s1">&#39;a&#39;</span> <span class="o">}</span>
 
-jshell&gt; String2Array.string2array(&quot;&quot;);
-$3 ==&gt; char[0] {  }
+jshell&gt; String2Array.string2array<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="nv">$3</span> <span class="o">==</span>&gt; char<span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="o">{</span>  <span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -311,8 +313,8 @@ $3 ==&gt; char[0] {  }
 <h2>Exercici 3. Conversor d’array de caràcters a string<a class="headerlink" href="#exercici-3-conversor-d-array-de-caracters-a-string" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que converteixi una seqüència de caracters a string.</p>
 <p>La signatura de la funció és <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">array2string(char[])</span></code> i una simulació</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jshell&gt; Array2String.array2string( new char[] { &#39;h&#39;, &#39;o&#39;, &#39;l&#39;, &#39;a&#39; });
-$2 ==&gt; &quot;hola&quot;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jshell&gt; Array2String.array2string<span class="o">(</span> new char<span class="o">[]</span> <span class="o">{</span> <span class="s1">&#39;h&#39;</span>, <span class="s1">&#39;o&#39;</span>, <span class="s1">&#39;l&#39;</span>, <span class="s1">&#39;a&#39;</span> <span class="o">})</span><span class="p">;</span>
+<span class="nv">$2</span> <span class="o">==</span>&gt; <span class="s2">&quot;hola&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -322,8 +324,8 @@ $2 ==&gt; &quot;hola&quot;
 retorni un nou array que contingui els mateixos elements de l’array d’entrada
 més l’enter addicional.</p>
 <p>La signatura serà <code class="docutils literal notranslate"><span class="pre">int[]</span> <span class="pre">afegeixEnterAArray(int,</span> <span class="pre">int[])</span></code></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jshell&gt; AfegeixEnterAArray.afegeixEnterAArray( 5, new int[] { 1, 2, 3, 4 });
-$2 ==&gt; int[4] { 1, 2, 3, 4, 5 }
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jshell&gt; AfegeixEnterAArray.afegeixEnterAArray<span class="o">(</span> <span class="m">5</span>, new int<span class="o">[]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span> <span class="o">})</span><span class="p">;</span>
+<span class="nv">$2</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span> <span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -333,7 +335,7 @@ $2 ==&gt; int[4] { 1, 2, 3, 4, 5 }
 un nou array amb el contingut de l’array d’entrada, més el nou element si no hi
 era.</p>
 <p>Considera la següent interacció:</p>
-<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -349,23 +351,23 @@ era.</p>
 14
 15
 16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>jshell&gt; int[] antics = new int[] {1, 2, 3, 4};
-antics ==&gt; int[4] { 1, 2, 3, 4 }
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>jshell&gt; int<span class="o">[]</span> <span class="nv">antics</span> <span class="o">=</span> new int<span class="o">[]</span> <span class="o">{</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">}</span><span class="p">;</span>
+<span class="nv">antics</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span> <span class="o">}</span>
 
-jshell&gt; AfegeixSiNoHiEs.afegeixSiNoHiEs(5, new int[] {1, 2, 3, 4});
-$3 ==&gt; int[5] { 1, 2, 3, 4, 5 }
+jshell&gt; AfegeixSiNoHiEs.afegeixSiNoHiEs<span class="o">(</span><span class="m">5</span>, new int<span class="o">[]</span> <span class="o">{</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">})</span><span class="p">;</span>
+<span class="nv">$3</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">5</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span> <span class="o">}</span>
 
-jshell&gt; int[] nous = AfegeixSiNoHiEs.afegeixSiNoHiEs(3, antics);
-nous ==&gt; int[4] { 1, 2, 3, 4 }
+jshell&gt; int<span class="o">[]</span> <span class="nv">nous</span> <span class="o">=</span> AfegeixSiNoHiEs.afegeixSiNoHiEs<span class="o">(</span><span class="m">3</span>, antics<span class="o">)</span><span class="p">;</span>
+<span class="nv">nous</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span> <span class="o">}</span>
 
-jshell&gt; nous[3] = 1000;
-$5 ==&gt; 1000
+jshell&gt; nous<span class="o">[</span><span class="m">3</span><span class="o">]</span> <span class="o">=</span> <span class="m">1000</span><span class="p">;</span>
+<span class="nv">$5</span> <span class="o">==</span>&gt; <span class="m">1000</span>
 
 jshell&gt; nous
-nous ==&gt; int[4] { 1, 2, 3, 1000 }
+<span class="nv">nous</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">1000</span> <span class="o">}</span>
 
 jshell&gt; antics
-antics ==&gt; int[4] { 1, 2, 3, 4 }
+<span class="nv">antics</span> <span class="o">==</span>&gt; int<span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">{</span> <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span> <span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixa’t que la línia 10 modifica el valor d’una de les posicions del nou array
@@ -382,23 +384,23 @@ notes</span></a> que vam fer en Python.</p>
 <code class="docutils literal notranslate"><span class="pre">quantes</span></code> i <code class="docutils literal notranslate"><span class="pre">cerca</span> <span class="pre">n</span></code> dels exercicis posteriors a <a class="reference internal" href="sequencies.juguem.html#exercici-manteniment-notes-python"><span class="std std-ref">manteniment de notes</span></a></p>
 </div>
 <div class="section" id="exercici-8-modificacio-de-notes">
-<h2>Exercici 8. Modificació de notes<a class="headerlink" href="#exercici-8-modificacio-de-notes" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-modificacio-notes-java"></span><h2>Exercici 8. Modificació de notes<a class="headerlink" href="#exercici-8-modificacio-de-notes" title="Link permanent a aquest títol">¶</a></h2>
 <p>Amplia el manteniment de notes amb la comanda <code class="docutils literal notranslate"><span class="pre">modifica</span> <span class="pre">pos</span> <span class="pre">val</span></code> que permet
 modificar el valor de la posició <code class="docutils literal notranslate"><span class="pre">pos</span></code> per <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
 <p>Així, la següent interacció funcionaria:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; mostra
-5, 4, 3, 6 i 9
-&gt; modifica 1 10
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; mostra
+<span class="m">5</span>, <span class="m">4</span>, <span class="m">3</span>, <span class="m">6</span> i <span class="m">9</span>
+&gt; modifica <span class="m">1</span> <span class="m">10</span>
 fet
 &gt; mostra
-10, 4, 3, 6 i 9
-&gt; modifica 6 10
+<span class="m">10</span>, <span class="m">4</span>, <span class="m">3</span>, <span class="m">6</span> i <span class="m">9</span>
+&gt; modifica <span class="m">6</span> <span class="m">10</span>
 no tinc tantes notes
-&gt; modifica 0 10
-Començo a comptar per 1
-&gt; modifica x 10
-La posició ha de ser un enter positiu major que 0
-&gt; modifica 30 x
+&gt; modifica <span class="m">0</span> <span class="m">10</span>
+Començo a comptar per <span class="m">1</span>
+&gt; modifica x <span class="m">10</span>
+La posició ha de ser un enter positiu major que <span class="m">0</span>
+&gt; modifica <span class="m">30</span> x
 El valor ha de ser un enter positiu
 </pre></div>
 </div>
@@ -414,7 +416,7 @@ preparat per veure algunes diferències de comportament entre els arrays i altre
 </tbody>
 </table>
 <hr class="docutils" />
-<p><em>Ref. IP17.11</em></p>
+<p><em>Ref. IP17.11.1</em></p>
 </div>
 </div>
 
@@ -427,8 +429,10 @@ preparat per veure algunes diferències de comportament entre els arrays i altre
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="java.llistes.html" class="btn btn-neutral float-right" title="Llistes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="java.funcions.html" class="btn btn-neutral" title="Mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="java.sequencies.html" class="btn btn-neutral" title="Seqüències" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

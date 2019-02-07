@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>De Python a Java &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Seqüències &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Ritual Hola Món en Java!" href="java.holamon.html" />
-    <link rel="prev" title="Matrius" href="sequencies.matrius.html" />
+    <link rel="next" title="Arrays" href="java.arrays.html" />
+    <link rel="prev" title="Mòduls" href="java.funcions.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -94,7 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">De Python a Java</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
@@ -106,7 +106,12 @@
 <li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.sequencies.html">Seqüències</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Seqüències</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.el_penjat.html">El joc del penjat</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -154,7 +159,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>De Python a Java</li>
+          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
+        
+      <li>Seqüències</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -187,37 +194,29 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="de-python-a-java">
-<h1>De Python a Java<a class="headerlink" href="#de-python-a-java" title="Link permanent a aquest títol">¶</a></h1>
-<p>Fins ara hem tingut una introducció a la programació amb Python. Es tracta d’un
-llenguatge força flexible, que ens ha permès accedir als conceptes bàsics de la
-programació de manera molt fluida.</p>
-<p>Ara ens endinsem a una nova aventura: traslladar els conceptes que hem aprés a
-un nou llenguatge: Java.</p>
-<p>Java és un dels llenguatges de programació més utilitzats al món. Entre els seus
-avantatges està que apareix com a llenguatge de referència a molta part de la
-bibliografia i cursos sobre orientació a objectes, una manera d’entendre la
-programació força estesa i que, aviat començarem.</p>
-<p>A continuació et presento Java a partir dels conceptes de programació que ja hem
-treballat amb Python.</p>
+  <div class="section" id="sequencies">
+<h1>Seqüències<a class="headerlink" href="#sequencies" title="Link permanent a aquest títol">¶</a></h1>
+<p>Hem presentat les <a class="reference internal" href="sequencies.html"><span class="doc">seqüències</span></a> com una agrupació de dades
+ordenades, de manera que podem recórrer-les de la primera a la darrera.</p>
+<p>Amb Python vam fer servir les tuples, que ens permetien una manera molt còmoda
+d’implementar seqüències, doncs estaven integrades dins del llenguatge.</p>
+<p>Java disposa també d’un tipus de seqüència integrat dins el llenguatge: els
+<em>arrays</em>.</p>
+<p>Els <em>arrays</em> són una manera molt eficient i còmoda de guardar informació
+seqüèncial en Java, i per això els estudiarem en primer lloc. Els <em>arrayus</em> però
+ens presentaran algunes dificultats a l’hora d’ampliar-los. Això ens portarà a
+l’ús d’una estructura una mica més complexa anomenada <code class="docutils literal notranslate"><span class="pre">List</span></code> que ens
+solventarà bona part de les limitacions dels <em>arrays</em> pagant un lleuger preu en
+comoditat d’ús.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.variables.html">Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.operadors.html">Operadors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.expressions.html">Expressions i Instruccions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.el_penjat.html">El joc del penjat</a></li>
 </ul>
 </div>
 <hr class="docutils" />
-<p><em>Ref. IP17</em></p>
+<p><em>Ref. IP17.11</em></p>
 </div>
 
 
@@ -229,10 +228,10 @@ treballat amb Python.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="java.holamon.html" class="btn btn-neutral float-right" title="Ritual Hola Món en Java!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="java.arrays.html" class="btn btn-neutral float-right" title="Arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sequencies.matrius.html" class="btn btn-neutral" title="Matrius" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="java.funcions.html" class="btn btn-neutral" title="Mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
