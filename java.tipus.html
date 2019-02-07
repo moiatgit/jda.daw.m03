@@ -234,6 +234,36 @@ estan assignats. En canvi, els objectes són valors més <em>complexos</em> i la
 només serveix de referència al lloc de memòria on estan emmagatzemats. Anirem
 treballant aquests conceptes constantment, així que no pateixis si ho veus una
 mica confós encara.</p>
+<p class="plantuml">
+<img src="_images/plantuml-4d9bd1a83564d7adde01f6c33766c3a87a2402e9.png" alt="&#64;startuml
+
+hide class circle
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+class &quot;Tipus de dades&quot; as Tipus
+class &quot;Tipus primitiu&quot; as Primitiu
+Tipus &lt;|-- Primitiu
+Tipus &lt;|-- Objecte
+hide class circle
+hide class members
+
+Primitiu &lt;|-- boolean
+Primitiu &lt;|-- byte
+Primitiu &lt;|-- char
+Primitiu &lt;|-- double
+Primitiu &lt;|-- float
+Primitiu &lt;|-- int
+Primitiu &lt;|-- long
+Primitiu &lt;|-- short
+
+Objecte &lt;|-- String
+
+&#64;enduml"/>
+</p>
 <p>Cal tenir en compte què:</p>
 <ul>
 <li><p class="first">Els literals de tipus enter en base 10, s’especifiquen directament amb el valor. Si ens interessa
