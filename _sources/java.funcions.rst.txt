@@ -9,12 +9,17 @@ En aquesta secció veuràs una simplificació de la manera de crear mòduls en J
 visió més general per quan coneguis un dels elements més distintius del paradigma orientat a
 objectes que implementa Java: les *classes*.
 
-Mòduls
-======
+Què eren els mòduls?
+====================
 
 Quan una o més instruccions tenen sentit amb petites variacions, en diferents parts de la nostra
 aplicació, en comptes de repetir-les (copiar, enganxar i modificar), podem agrupar-les en el que
 coneixem com *mòduls*.
+
+Si et cal refrescar una mica el concepte revisa els continguts de :doc:`moduls`.
+
+Els mòduls en Java
+==================
 
 A Java ja hem vist un mòdul en tots els programes que hem treballat fins ara. Es deia ``main()``.
 
