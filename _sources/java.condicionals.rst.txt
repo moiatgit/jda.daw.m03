@@ -261,7 +261,7 @@ Exemple d'interacció: ::
     +
     Segon operand?
     5
-    4,00 + 5,00 = 9
+    4,00 + 5,00 = 9,00
     $ java CalculadoraSenzilla
     Primer operand?
     4
