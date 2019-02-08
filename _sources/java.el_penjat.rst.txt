@@ -41,7 +41,7 @@ Altres consideracions:
   error.
 
 * Si es torna a introduir una lletra ja introduïda, el joc l'acceptarà com si
-  fos el primer cop. És a dir, si la lletra hi és a la palabra no hi haurà cap
+  fos el primer cop. És a dir, si la lletra hi és a la paraula no hi haurà cap
   canvi però, si no hi és, es tornarà a comptar un intent.
 
 * La seqüència de lletres utilitzades manté l'ordre d'entrada però no
@@ -59,8 +59,7 @@ Altres consideracions:
   <_recursos/test_java.sh>`.
 
 
-
-Considera la següent simulació:
+Considera **amb molta atenció** la següent simulació:
 
 .. code-block:: none
 
@@ -375,4 +374,4 @@ La simulació tindria com a sortida esperada:
 
 ----
 
-*Ref. IP17.11.3*
+*Ref. IP17.11.4*

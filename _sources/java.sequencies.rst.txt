@@ -24,6 +24,7 @@ comoditat d'ús.
     :maxdepth: 1
 
     java.arrays.rst
+    java.taules.rst
     java.llistes.rst
     java.el_penjat.rst
 

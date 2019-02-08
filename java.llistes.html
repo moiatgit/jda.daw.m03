@@ -31,7 +31,7 @@
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
     <link rel="next" title="El joc del penjat" href="java.el_penjat.html" />
-    <link rel="prev" title="Arrays" href="java.arrays.html" />
+    <link rel="prev" title="Taules" href="java.taules.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="java.funcions.html">Mòduls</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="java.sequencies.html">Seqüències</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java.taules.html">Taules</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Llistes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="java.el_penjat.html">El joc del penjat</a></li>
 </ul>
@@ -312,20 +313,52 @@ retorna.</li>
 <li><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">size()</span></code>: retorna quants elements hi ha a la seqüència.</li>
 </ul>
 <div class="section" id="exercici-1-practicant-les-operacions-amb-arraylist">
-<h2>Exercici 1. Practicant les operacions amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-1-practicant-les-operacions-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 1. ☼ Practicant les operacions amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-1-practicant-les-operacions-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
 <p>Fes un programa sencill que demostri el funcionament de les diferents operacions
 de <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>.</p>
 <p>Per exemple, crea una seqüència, afegeix alguns elements a diferents posicions,
 elimina’n algun, etc.</p>
 </div>
-<div class="section" id="exercici-2-modificacio-de-notes-amb-arraylist">
-<h2>Exercici 2. Modificació de notes amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-2-modificacio-de-notes-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
-<p>Crea una nova versió de l’exercici de <a class="reference internal" href="java.arrays.html#exercici-modificacio-notes-java"><span class="std std-ref">modificació de
-notes</span></a>. Aquest cop fes la implementació amb
-<code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>.</p>
+<div class="section" id="exercici-2-notes-en-maco-amb-arraylist">
+<h2>Exercici 2. Notes en maco amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-2-notes-en-maco-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
+<p>Rescata l’exercici <a class="reference internal" href="java.arrays.html#exercici-notes-en-maco-java"><span class="std std-ref">Notes en maco</span></a> i
+desenvolupa una funció anomenada <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">sequenciaMaca(ArrayList&lt;Integer&gt;)</span></code>
+que faci el mateix amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>.</p>
 </div>
-<div class="section" id="exercici-3-insercio-i-eliminacio-de-notes">
-<h2>Exercici 3. Inserció i eliminació de notes<a class="headerlink" href="#exercici-3-insercio-i-eliminacio-de-notes" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-3-manteniment-de-notes-amb-arraylist">
+<h2>Exercici 3. Manteniment de notes amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-3-manteniment-de-notes-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
+<p>En aquesta ocasió farem una versió amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> del programa de <a class="reference internal" href="sequencies.juguem.html#exercici-manteniment-notes-python"><span class="std std-ref">manteniment de
+notes</span></a> que vam fer en Python.</p>
+</div>
+<div class="section" id="exercici-4-manteniment-de-notes-ampliat">
+<h2>Exercici 4. ☼ Manteniment de notes ampliat<a class="headerlink" href="#exercici-4-manteniment-de-notes-ampliat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Afegeix al manteniment de notes anterior, les opcions <code class="docutils literal notranslate"><span class="pre">màxima</span></code>, <code class="docutils literal notranslate"><span class="pre">mínima</span></code>,
+<code class="docutils literal notranslate"><span class="pre">quantes</span></code> i <code class="docutils literal notranslate"><span class="pre">cerca</span> <span class="pre">n</span></code> dels exercicis posteriors a <a class="reference internal" href="sequencies.juguem.html#exercici-manteniment-notes-python"><span class="std std-ref">manteniment de notes</span></a></p>
+</div>
+<div class="section" id="exercici-5-modificacio-de-notes-amb-arraylist">
+<h2>Exercici 5. Modificació de notes amb <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code><a class="headerlink" href="#exercici-5-modificacio-de-notes-amb-arraylist" title="Link permanent a aquest títol">¶</a></h2>
+<p>Amplia el programa de manteniment de notes amb la comanda <code class="docutils literal notranslate"><span class="pre">modifica</span> <span class="pre">pos</span> <span class="pre">val</span></code>
+que permet modificar el valor de la posició <code class="docutils literal notranslate"><span class="pre">pos</span></code> per <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
+<p>Així, la següent interacció funcionaria:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; mostra
+<span class="m">5</span>, <span class="m">4</span>, <span class="m">3</span>, <span class="m">6</span> i <span class="m">9</span>
+&gt; modifica <span class="m">1</span> <span class="m">10</span>
+fet
+&gt; mostra
+<span class="m">10</span>, <span class="m">4</span>, <span class="m">3</span>, <span class="m">6</span> i <span class="m">9</span>
+&gt; modifica <span class="m">6</span> <span class="m">10</span>
+no tinc tantes notes
+&gt; modifica <span class="m">0</span> <span class="m">10</span>
+Començo a comptar per <span class="m">1</span>
+&gt; modifica x <span class="m">10</span>
+La posició ha de ser un enter positiu major que <span class="m">0</span>
+&gt; modifica <span class="m">30</span> x
+El valor ha de ser un enter positiu
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-6-insercio-i-eliminacio-de-notes">
+<h2>Exercici 6. Inserció i eliminació de notes<a class="headerlink" href="#exercici-6-insercio-i-eliminacio-de-notes" title="Link permanent a aquest títol">¶</a></h2>
 <p>Afegeix les següents comandes addicionals al gestor de notes:</p>
 <ul>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">insereix</span> <span class="pre">pos</span> <span class="pre">val</span></code>: insereix el valor <code class="docutils literal notranslate"><span class="pre">val</span></code> a la posició <code class="docutils literal notranslate"><span class="pre">pos</span></code>. Cal
@@ -372,7 +405,7 @@ cap
 </pre></div>
 </div>
 <hr class="docutils" />
-<p><em>Ref. IP17.11.2</em></p>
+<p><em>Ref. IP17.11.3</em></p>
 </div>
 </div>
 
@@ -388,7 +421,7 @@ cap
         <a href="java.el_penjat.html" class="btn btn-neutral float-right" title="El joc del penjat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="java.arrays.html" class="btn btn-neutral" title="Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="java.taules.html" class="btn btn-neutral" title="Taules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

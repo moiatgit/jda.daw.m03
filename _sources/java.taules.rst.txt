@@ -1,0 +1,312 @@
+######
+Taules
+######
+
+Com hem vist, a Java podem definir un array de qualsevol tipus. Per tant,
+també es poden definir arrays d'arrays.
+
+Als arrays d'arrays se'ls coneixen com *arrays multidimensionals* o *matrius* i,
+quan són de dos dimensions, simplement *taules*.
+
+Per exemple:
+
+.. code-block:: java
+
+    int[][] notesCursAlumnes;           // nr alumne x nr avaluació
+    notesCursAlumnes = new int[100];    // reservem espai pels 100 alumnes
+    notesCursAlumnes[3] = new int[4];   // reservem espai per les notes del quart alumne
+    notesCursAlumnes[3][1] = 10;        // el quart alumne va treure un 10 a la segona avaluació
+
+En Java, els arrays multidimensionals s'implementen són arrays on cada element
+és un altre array, i aquests no cal que tinguin la mateixa longitud (només el
+tipus). De fet, en el exemple anterior, hi ha molts alumnes que no tenen espai
+reservat per posar les seves notes!
+
+A l'hora de copiar el contingut de dos arrays, ho podem fer amb algun bucle, per exemple:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    for (int i=0; i<notesCursEthel.length; i++) {
+        notesCursRahim[i] = notesCursEthel[i];
+    }
+
+Hi ha, però, una manera més eficient de fer-ho: fent servir la funció ``arraycopy()``:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    System.arraycopy(notesCursEthel, 0, notesCursRahim, 0, 4);
+    //               ^ array amb les dades d'origen
+    //                               ^ índex del primer element a copiar
+    //                                  ^ array de destinació
+    //                                                  ^ índex de la primera posició on copiar
+    //                                                     ^ nombre d'elements a copiar
+
+
+Donat que els arrays són una estructura molt utilitzada en programació, Java ens
+ofereix vàries utilitats típiques per manipular-los. Per exemple, és típic haver
+d'inicialitzar tots o part dels valors d'un array a un determinat valor, o bé
+comprovar si existeix un determinat valor dins d'un array, o si dos arrays
+contenen exactament els mateixos valors o un és subarray d'un altre. A aquestes
+alçades del curs, però, tot plegat queda una mica massa gran. Encara no hem
+presentat ni els bucles! Si no et pots esperar, mira la classe `Arrays
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html>`_
+per més detalls. 
+
+
+.. _exercici_taules_enters:
+
+Exercici 1. Taules d'enters
+===========================
+
+En aquest exercici desenvoluparàs una sèrie de mòduls per manipular taules
+d'enters.
+
+Desenvolupa el mòdul ``int[][] creaTaulaEnters(int col, int row, int
+val)`` que rebi el nombre de columnes i de files, i retorni una taula de
+booleans inicialitzada al valor indicat.
+
+Desenvolupa el mòdul ``mostraArray(int[][])`` que mostri per sortida estàndard,
+el contingut d'una taula d'enters. Els valors a mostrar apareixeran separats amb
+un espai i representa'ls sempre amb vuit posicions. (**pista**: "%8d")
+
+Per exemple, una taula de 4x3 podria tenir el següent aspecte:
+
+.. code-block:: none
+
+    1        2        3        4
+    5        6        7        8
+    9       10       !!       12
+
+Desenvolupa el mòdul ``reinicialitzaArray(int[][], int val)`` que rebi una taula
+d'enters, i un valor enter, i inicialitzi tota la taula al valor indicat.
+
+Afegeix el mòdul ``main()`` que:
+
+1. crearà la taula d'enters de 4x5 amb el valor ``1``
+
+2. mostrarà el seu contingut
+
+3. reiniciarà tots els valors a ``0``
+
+4. mostrarà el nou contingut
+
+Exercici 2. Inicialització seqüèncial
+=====================================
+
+Desenvolupa el mòdul ``inicialitzaSequencial(int[][])`` que inicialitzi seqüencialment
+un array d'enters.
+
+En mostrar el resultat amb ``mostraArray(int[][])`` d'un array de 4x3 es veuria:
+
+.. code-block:: none
+
+    1        2        3        4
+    5        6        7        8
+    9       10       !!       12
+
+Exercici 3. Taules de booleans
+==============================
+
+Farem una nova versió de l'exercici :ref:`Taules d'enters
+<exercici_taules_enters>`, aquest cop amb booleans.
+
+Desenvolupa el mòdul ``boolean[][] creaTaulaBooleans(int col, int row, boolean
+val)`` que rebi el nombre de columnes i de files, i retorni una taula de
+booleans inicialitzada al valor indicat.
+
+Desenvolupa el mòdul ``mostraArray(boolean[][])`` que mostri per sortida
+estàndard, el contingut d'una taula de booleans. Els valors ``true`` els
+representarà amb una ``X`` i els valors ``false`` amb un punt (``.``).
+
+Per exemple, una taula de 5x3 podria tenir el següent aspecte:
+
+.. code-block:: none
+
+    X...X
+    .X.X.
+    ..X..
+
+
+Desenvolupa el mòdul ``reinicialitzaArray(boolean[][], boolean val)`` que rebi una taula de
+booleans, i un valor booleà, i inicialitzi tota la taula al valor indicat.
+
+Afegeix el mòdul ``main()`` que:
+
+1. crei una taula de booleans de 4 columnes per 5 files a ``true`` 
+
+2. mostri el seu contingut
+
+3. reinicialitzi els valors de la taula a ``false``
+
+4. torni a mostrar el seu contingut
+
+Exercici 4. Usant ``BooleanTableView``
+======================================
+
+Descarregat el fitxer :download:`booleantableview.jar
+<_recursos/booleantableview.jar>`. Suposem que el deixes a la carpeta
+``~/prg``.
+
+Descarrega't el fitxer :download:`DemoBooleanTableView.java
+<_recursos/DemoBooleanTableView.java>`, compila'l i executa'l de la següent manera:
+
+
+.. code-block:: none
+
+    $ javac -cp ~/prg/booleantableview.jar DemoBooleanTableView.java
+    $ java -cp .:~/prg/booleantableview.jar DemoBooleanTableView
+
+T'apareixerà una finestra amb una graella.
+
+.. tip::
+
+    L'opció ``-cp`` indica a Java on pot trobar les classes que li fan falta. En aquest cas, la classe ``BooleanTableView``. Si vols estalviar-te haver d'indicar a cada execució, l'opció ``-cp``, simplement escriu:
+
+    .. code-block:: bash
+
+        $ CLASSPATH=.:~/prg/booleantableview.jar
+        $ javac DemoBooleanTableView.java
+        $ java DemoBooleanTableView
+
+    La definició de ``CLASSPATH`` l'hauràs de fer cada cop que obris una nova
+    consola. Si t'interessa mantenir aquesta definició per cada consola, una de
+    les maneres és afegint la següent línia al final del fitxer ``~/.bashrc``
+
+    .. code-block:: bash
+
+        export CLASSPATH=.:$HOME/prg/booleantableview.jar:$CLASSPATH
+
+
+Ara que ja has provat la demo i has mirat el seu codi, ja pots començar l'exercici!
+
+Crea una nova versió de l'exercici anterior de la taula de booleans, de manera
+que ara el ``main()`` a banda de cridar a ``mostraArray(boolean[][])`` mostri el
+resultat amb ``BooleanTableView``
+
+El funcionament serà el següent:
+
+1. crea la taula de booleans de 4 x 5
+
+2. mostra el seu contingut amb ``mostraArray(boolean[][])``
+
+3. mostra el contingut amb ``BooleanTableView``
+
+4. espera 2 segons i tanca la vista
+
+5. reinicia els valors de la taula a ``true``
+
+6. mostra el nou contingut amb ``mostraArray(boolean[][])``
+
+7. mostra el contingut amb ``BooleanTableView``
+
+8. espera 2 segons, tanca la vista i finalitza
+
+
+
+Exercici 5. La primera diagonal
+===============================
+
+Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
+``true`` només els valors de la diagonal, de manera que en fer servir
+``mostra(boolean[][])`` sobre el seu resultat d'una matriu de 6x5, es veurà:
+
+.. code-block:: none
+
+    X.....
+    .X....
+    ..X...
+    ...X..
+    ....X.
+
+Exercici 6. La segona diagonal
+==============================
+
+Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
+``true`` només els valors de la segona diagonal, de manera que en fer servir
+``mostra(boolean[][])`` sobre el seu resultat d'una matriu de 6x5, es veurà:
+
+.. code-block:: none
+
+    .....X
+    ....X.
+    ...X..
+    ..X...
+    .X....
+
+Exercici 7. Pas de vianants horitzontal
+=======================================
+
+Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
+de les files parelles a fals i les senars a cert.
+
+.. code-block:: none
+
+    ....
+    XXXX
+    ....
+    XXXX
+    ....
+
+Exercici 8. Pas de vianants vertical
+====================================
+
+Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
+de les columnes parelles a fals i les senars a cert.
+
+.. code-block:: none
+
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+
+Exercici 9. Taulell escacs
+==========================
+
+Desenvolupa un mòdul que inicialitzi una taula de booleans tot intercanviant
+``false`` amb ``true`` per cada posició des del primer element.
+
+.. code-block:: none
+
+    .X.X.X.
+    X.X.X.X
+    .X.X.X.
+    X.X.X.X
+    .X.X.X.
+
+
+Exercici 10. ☼ Manteniment de la taula de booleans
+==================================================
+
+Desenvolupa un programa que permeti realitzar el manteniment d'una taula de
+booleans, tot oferint una consola amb les següents comandes:
+
+* ``ajuda``: mostra un text d'ajuda indicant les diferents opcions disponibles
+
+* ``set col pos``: posa a cert la coordenada (col, pos) de la taula
+
+  Si la coordenada queda fora de la taula, mostra el missatge ``Fora de rang``.
+
+* ``unset col pos``: posa a fals la coordenada (col, pos) de la taula
+
+  Si la coordenada queda fora de la taula, mostra el missatge ``Fora de rang``.
+
+* ``exit``: el programa finalitzarà l'execució.
+
+El programa obtindrà les dimensions de la taula del paràmetre ``args`` del mòdul
+``main()``. En cas que no es proporcionin els dos valors o bé que algun
+d'aquests no sigui un enter positiu entre 1 i 100, generarà
+l'error ``Dimensions vàlides entre 1 i 100`` i s'aturarà.
+
+El programa farà servir ``BooleanTableView`` per anar mostrant els valors de la
+taula mentre estigui en execució.
+
+
+-----
+
+*Ref. IP17.11.2*
