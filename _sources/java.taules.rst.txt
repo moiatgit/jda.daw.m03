@@ -144,44 +144,49 @@ Afegeix el mòdul ``main()`` que:
 
 4. torni a mostrar el seu contingut
 
-Exercici 4. Usant ``BooleanTableView``
+Exercici 4. Un visualitzador de taules
 ======================================
 
-Descarregat el fitxer :download:`booleantableview.jar
-<_recursos/booleantableview.jar>`. Suposem que el deixes a la carpeta
-``~/prg``.
+Aquest exercici és una mica particular, doncs no et tocarà programar res!
 
-Descarrega't el fitxer :download:`DemoBooleanTableView.java
-<_recursos/DemoBooleanTableView.java>`, compila'l i executa'l de la següent manera:
+Caldrà només que et descarreguis un codi de la plataforma `github
+<https://github.com>`_ i el revisis.
 
+Primer de tot, tecleja les següents instruccions a la teva consola de Bash:
 
 .. code-block:: none
 
-    $ javac -cp ~/prg/booleantableview.jar DemoBooleanTableView.java
-    $ java -cp .:~/prg/booleantableview.jar DemoBooleanTableView
+    $ git clone https://github.com/moiatgit/TableView.git
+    $ cd TableView
+    $ javac DemoBooleanTableView.java
+    $ java DemoBooleanTableView
 
-T'apareixerà una finestra amb una graella.
+T'apareixerà una finestra amb una graella de quadradets en blanc que, després
+d'un parell de segons, un canviarà a vermell i, poc després, la finestra es
+tancarà.
 
-.. tip::
+Fes una ullada al contingut dels diferents fitxers .java que hi trobaràs. Si hi
+ha coses que no entens, no et preocupis. Felicita't per les que sí entenguis!
 
-    L'opció ``-cp`` indica a Java on pot trobar les classes que li fan falta. En aquest cas, la classe ``BooleanTableView``. Si vols estalviar-te haver d'indicar a cada execució, l'opció ``-cp``, simplement escriu:
+Com que farem servir aquest codi en alguns exercicis, et proposo que configuris
+el teu sistema perquè sigui més còmode.
 
-    .. code-block:: bash
+.. code-block:: none
 
-        $ CLASSPATH=.:~/prg/booleantableview.jar
-        $ javac DemoBooleanTableView.java
-        $ java DemoBooleanTableView
+    $ mkdir -p ~/lib
+    $ cd ..
+    $ mv TableView ~/lib/
+    $ echo 'export CLASSPATH=$CLASSPATH:.:$HOME/lib/TableView' >> ~/.bashrc
 
-    La definició de ``CLASSPATH`` l'hauràs de fer cada cop que obris una nova
-    consola. Si t'interessa mantenir aquesta definició per cada consola, una de
-    les maneres és afegint la següent línia al final del fitxer ``~/.bashrc``
+Ara que ja has provat la demo i has mirat el seu codi, ja pots provar-la en
+algun exercici.
 
-    .. code-block:: bash
+**Important**: si hi trobes cap problema o tens cap suggeriment, comenta-li al
+teu docent. Estarà encantat d'intentar millorar el seu codi!
 
-        export CLASSPATH=.:$HOME/prg/booleantableview.jar:$CLASSPATH
+Exercici 5. Taula de booleans amb ``BooleanTableView``
+======================================================
 
-
-Ara que ja has provat la demo i has mirat el seu codi, ja pots començar l'exercici!
 
 Crea una nova versió de l'exercici anterior de la taula de booleans, de manera
 que ara el ``main()`` a banda de cridar a ``mostraArray(boolean[][])`` mostri el
@@ -206,8 +211,7 @@ El funcionament serà el següent:
 8. espera 2 segons, tanca la vista i finalitza
 
 
-
-Exercici 5. La primera diagonal
+Exercici 6. La primera diagonal
 ===============================
 
 Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
@@ -222,7 +226,7 @@ Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
     ...X..
     ....X.
 
-Exercici 6. La segona diagonal
+Exercici 7. La segona diagonal
 ==============================
 
 Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
@@ -237,7 +241,7 @@ Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
     ..X...
     .X....
 
-Exercici 7. Pas de vianants horitzontal
+Exercici 8. Pas de vianants horitzontal
 =======================================
 
 Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
@@ -251,7 +255,7 @@ de les files parelles a fals i les senars a cert.
     XXXX
     ....
 
-Exercici 8. Pas de vianants vertical
+Exercici 9. Pas de vianants vertical
 ====================================
 
 Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
@@ -265,8 +269,8 @@ de les columnes parelles a fals i les senars a cert.
     .X.X.X.
     .X.X.X.
 
-Exercici 9. Taulell escacs
-==========================
+Exercici 10. Taulell escacs
+===========================
 
 Desenvolupa un mòdul que inicialitzi una taula de booleans tot intercanviant
 ``false`` amb ``true`` per cada posició des del primer element.
@@ -280,7 +284,7 @@ Desenvolupa un mòdul que inicialitzi una taula de booleans tot intercanviant
     .X.X.X.
 
 
-Exercici 10. ☼ Manteniment de la taula de booleans
+Exercici 11. ☼ Manteniment de la taula de booleans
 ==================================================
 
 Desenvolupa un programa que permeti realitzar el manteniment d'una taula de

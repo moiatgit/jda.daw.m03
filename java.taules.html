@@ -303,32 +303,37 @@ booleans, i un valor booleà, i inicialitzi tota la taula al valor indicat.</p>
 <li>torni a mostrar el seu contingut</li>
 </ol>
 </div>
-<div class="section" id="exercici-4-usant-booleantableview">
-<h2>Exercici 4. Usant <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code><a class="headerlink" href="#exercici-4-usant-booleantableview" title="Link permanent a aquest títol">¶</a></h2>
-<p>Descarregat el fitxer <a class="reference download internal" href="_downloads/booleantableview.jar" download=""><code class="xref download docutils literal notranslate"><span class="pre">booleantableview.jar</span></code></a>. Suposem que el deixes a la carpeta
-<code class="docutils literal notranslate"><span class="pre">~/prg</span></code>.</p>
-<p>Descarrega’t el fitxer <a class="reference download internal" href="_downloads/DemoBooleanTableView.java" download=""><code class="xref download docutils literal notranslate"><span class="pre">DemoBooleanTableView.java</span></code></a>, compila’l i executa’l de la següent manera:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ javac -cp ~/prg/booleantableview.jar DemoBooleanTableView.java
-$ java -cp .:~/prg/booleantableview.jar DemoBooleanTableView
-</pre></div>
-</div>
-<p>T’apareixerà una finestra amb una graella.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Pista</p>
-<p>L’opció <code class="docutils literal notranslate"><span class="pre">-cp</span></code> indica a Java on pot trobar les classes que li fan falta. En aquest cas, la classe <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code>. Si vols estalviar-te haver d’indicar a cada execució, l’opció <code class="docutils literal notranslate"><span class="pre">-cp</span></code>, simplement escriu:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">CLASSPATH</span><span class="o">=</span>.:~/prg/booleantableview.jar
+<div class="section" id="exercici-4-un-visualitzador-de-taules">
+<h2>Exercici 4. Un visualitzador de taules<a class="headerlink" href="#exercici-4-un-visualitzador-de-taules" title="Link permanent a aquest títol">¶</a></h2>
+<p>Aquest exercici és una mica particular, doncs no et tocarà programar res!</p>
+<p>Caldrà només que et descarreguis un codi de la plataforma <a class="reference external" href="https://github.com">github</a> i el revisis.</p>
+<p>Primer de tot, tecleja les següents instruccions a la teva consola de Bash:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/moiatgit/TableView.git
+$ cd TableView
 $ javac DemoBooleanTableView.java
 $ java DemoBooleanTableView
 </pre></div>
 </div>
-<p>La definició de <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> l’hauràs de fer cada cop que obris una nova
-consola. Si t’interessa mantenir aquesta definició per cada consola, una de
-les maneres és afegint la següent línia al final del fitxer <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$HOME</span>/prg/booleantableview.jar:<span class="nv">$CLASSPATH</span>
+<p>T’apareixerà una finestra amb una graella de quadradets en blanc que, després
+d’un parell de segons, un canviarà a vermell i, poc després, la finestra es
+tancarà.</p>
+<p>Fes una ullada al contingut dels diferents fitxers .java que hi trobaràs. Si hi
+ha coses que no entens, no et preocupis. Felicita’t per les que sí entenguis!</p>
+<p>Com que farem servir aquest codi en alguns exercicis, et proposo que configuris
+el teu sistema perquè sigui més còmode.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/lib
+$ cd ..
+$ mv TableView ~/lib/
+$ echo &#39;export CLASSPATH=$CLASSPATH:.:$HOME/lib/TableView&#39; &gt;&gt; ~/.bashrc
 </pre></div>
 </div>
+<p>Ara que ja has provat la demo i has mirat el seu codi, ja pots provar-la en
+algun exercici.</p>
+<p><strong>Important</strong>: si hi trobes cap problema o tens cap suggeriment, comenta-li al
+teu docent. Estarà encantat d’intentar millorar el seu codi!</p>
 </div>
-<p>Ara que ja has provat la demo i has mirat el seu codi, ja pots començar l’exercici!</p>
+<div class="section" id="exercici-5-taula-de-booleans-amb-booleantableview">
+<h2>Exercici 5. Taula de booleans amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code><a class="headerlink" href="#exercici-5-taula-de-booleans-amb-booleantableview" title="Link permanent a aquest títol">¶</a></h2>
 <p>Crea una nova versió de l’exercici anterior de la taula de booleans, de manera
 que ara el <code class="docutils literal notranslate"><span class="pre">main()</span></code> a banda de cridar a <code class="docutils literal notranslate"><span class="pre">mostraArray(boolean[][])</span></code> mostri el
 resultat amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code></p>
@@ -344,8 +349,8 @@ resultat amb <code class="docutils literal notranslate"><span class="pre">Boolea
 <li>espera 2 segons, tanca la vista i finalitza</li>
 </ol>
 </div>
-<div class="section" id="exercici-5-la-primera-diagonal">
-<h2>Exercici 5. La primera diagonal<a class="headerlink" href="#exercici-5-la-primera-diagonal" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-6-la-primera-diagonal">
+<h2>Exercici 6. La primera diagonal<a class="headerlink" href="#exercici-6-la-primera-diagonal" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
 <code class="docutils literal notranslate"><span class="pre">true</span></code> només els valors de la diagonal, de manera que en fer servir
 <code class="docutils literal notranslate"><span class="pre">mostra(boolean[][])</span></code> sobre el seu resultat d’una matriu de 6x5, es veurà:</p>
@@ -357,8 +362,8 @@ resultat amb <code class="docutils literal notranslate"><span class="pre">Boolea
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercici-6-la-segona-diagonal">
-<h2>Exercici 6. La segona diagonal<a class="headerlink" href="#exercici-6-la-segona-diagonal" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-7-la-segona-diagonal">
+<h2>Exercici 7. La segona diagonal<a class="headerlink" href="#exercici-7-la-segona-diagonal" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant a
 <code class="docutils literal notranslate"><span class="pre">true</span></code> només els valors de la segona diagonal, de manera que en fer servir
 <code class="docutils literal notranslate"><span class="pre">mostra(boolean[][])</span></code> sobre el seu resultat d’una matriu de 6x5, es veurà:</p>
@@ -370,8 +375,8 @@ resultat amb <code class="docutils literal notranslate"><span class="pre">Boolea
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercici-7-pas-de-vianants-horitzontal">
-<h2>Exercici 7. Pas de vianants horitzontal<a class="headerlink" href="#exercici-7-pas-de-vianants-horitzontal" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-8-pas-de-vianants-horitzontal">
+<h2>Exercici 8. Pas de vianants horitzontal<a class="headerlink" href="#exercici-8-pas-de-vianants-horitzontal" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
 de les files parelles a fals i les senars a cert.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>....
@@ -382,8 +387,8 @@ XXXX
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercici-8-pas-de-vianants-vertical">
-<h2>Exercici 8. Pas de vianants vertical<a class="headerlink" href="#exercici-8-pas-de-vianants-vertical" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-9-pas-de-vianants-vertical">
+<h2>Exercici 9. Pas de vianants vertical<a class="headerlink" href="#exercici-9-pas-de-vianants-vertical" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un mòdul que inicialitzi una taula de booleans tot posant els valors
 de les columnes parelles a fals i les senars a cert.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.X.X.X.
@@ -394,8 +399,8 @@ de les columnes parelles a fals i les senars a cert.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercici-9-taulell-escacs">
-<h2>Exercici 9. Taulell escacs<a class="headerlink" href="#exercici-9-taulell-escacs" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-10-taulell-escacs">
+<h2>Exercici 10. Taulell escacs<a class="headerlink" href="#exercici-10-taulell-escacs" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un mòdul que inicialitzi una taula de booleans tot intercanviant
 <code class="docutils literal notranslate"><span class="pre">false</span></code> amb <code class="docutils literal notranslate"><span class="pre">true</span></code> per cada posició des del primer element.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.X.X.X.
@@ -406,8 +411,8 @@ X.X.X.X
 </pre></div>
 </div>
 </div>
-<div class="section" id="exercici-10-manteniment-de-la-taula-de-booleans">
-<h2>Exercici 10. ☼ Manteniment de la taula de booleans<a class="headerlink" href="#exercici-10-manteniment-de-la-taula-de-booleans" title="Link permanent a aquest títol">¶</a></h2>
+<div class="section" id="exercici-11-manteniment-de-la-taula-de-booleans">
+<h2>Exercici 11. ☼ Manteniment de la taula de booleans<a class="headerlink" href="#exercici-11-manteniment-de-la-taula-de-booleans" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que permeti realitzar el manteniment d’una taula de
 booleans, tot oferint una consola amb les següents comandes:</p>
 <ul>
