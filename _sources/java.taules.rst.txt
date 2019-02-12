@@ -69,7 +69,7 @@ Desenvolupa el mòdul ``int[][] creaTaulaEnters(int col, int row, int
 val)`` que rebi el nombre de columnes i de files, i retorni una taula de
 booleans inicialitzada al valor indicat.
 
-Desenvolupa el mòdul ``mostraArray(int[][])`` que mostri per sortida estàndard,
+Desenvolupa el mòdul ``mostraTaula(int[][])`` que mostri per sortida estàndard,
 el contingut d'una taula d'enters. Els valors a mostrar apareixeran separats amb
 un espai i representa'ls sempre amb vuit posicions. (**pista**: "%8d")
 
@@ -81,7 +81,7 @@ Per exemple, una taula de 4x3 podria tenir el següent aspecte:
     5        6        7        8
     9       10       !!       12
 
-Desenvolupa el mòdul ``reinicialitzaArray(int[][], int val)`` que rebi una taula
+Desenvolupa el mòdul ``reinicialitzaTaula(int[][], int val)`` que rebi una taula
 d'enters, i un valor enter, i inicialitzi tota la taula al valor indicat.
 
 Afegeix el mòdul ``main()`` que:
@@ -100,7 +100,7 @@ Exercici 2. Inicialització seqüèncial
 Desenvolupa el mòdul ``inicialitzaSequencial(int[][])`` que inicialitzi seqüencialment
 un array d'enters.
 
-En mostrar el resultat amb ``mostraArray(int[][])`` d'un array de 4x3 es veuria:
+En mostrar el resultat amb ``mostraTaula(int[][])`` d'un array de 4x3 es veuria:
 
 .. code-block:: none
 
@@ -118,7 +118,7 @@ Desenvolupa el mòdul ``boolean[][] creaTaulaBooleans(int col, int row, boolean
 val)`` que rebi el nombre de columnes i de files, i retorni una taula de
 booleans inicialitzada al valor indicat.
 
-Desenvolupa el mòdul ``mostraArray(boolean[][])`` que mostri per sortida
+Desenvolupa el mòdul ``mostraTaula(boolean[][])`` que mostri per sortida
 estàndard, el contingut d'una taula de booleans. Els valors ``true`` els
 representarà amb una ``X`` i els valors ``false`` amb un punt (``.``).
 
@@ -131,7 +131,7 @@ Per exemple, una taula de 5x3 podria tenir el següent aspecte:
     ..X..
 
 
-Desenvolupa el mòdul ``reinicialitzaArray(boolean[][], boolean val)`` que rebi una taula de
+Desenvolupa el mòdul ``reinicialitzaTaula(boolean[][], boolean val)`` que rebi una taula de
 booleans, i un valor booleà, i inicialitzi tota la taula al valor indicat.
 
 Afegeix el mòdul ``main()`` que:
@@ -189,14 +189,14 @@ Exercici 5. Taula de booleans amb ``BooleanTableView``
 
 
 Crea una nova versió de l'exercici anterior de la taula de booleans, de manera
-que ara el ``main()`` a banda de cridar a ``mostraArray(boolean[][])`` mostri el
+que ara el ``main()`` a banda de cridar a ``mostraTaula(boolean[][])`` mostri el
 resultat amb ``BooleanTableView``
 
 El funcionament serà el següent:
 
 1. crea la taula de booleans de 4 x 5
 
-2. mostra el seu contingut amb ``mostraArray(boolean[][])``
+2. mostra el seu contingut amb ``mostraTaula(boolean[][])``
 
 3. mostra el contingut amb ``BooleanTableView``
 
@@ -204,7 +204,7 @@ El funcionament serà el següent:
 
 5. reinicia els valors de la taula a ``true``
 
-6. mostra el nou contingut amb ``mostraArray(boolean[][])``
+6. mostra el nou contingut amb ``mostraTaula(boolean[][])``
 
 7. mostra el contingut amb ``BooleanTableView``
 

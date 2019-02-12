@@ -248,7 +248,7 @@ d’enters.</p>
 <p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">int[][]</span> <span class="pre">creaTaulaEnters(int</span> <span class="pre">col,</span> <span class="pre">int</span> <span class="pre">row,</span> <span class="pre">int</span>
 <span class="pre">val)</span></code> que rebi el nombre de columnes i de files, i retorni una taula de
 booleans inicialitzada al valor indicat.</p>
-<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">mostraArray(int[][])</span></code> que mostri per sortida estàndard,
+<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">mostraTaula(int[][])</span></code> que mostri per sortida estàndard,
 el contingut d’una taula d’enters. Els valors a mostrar apareixeran separats amb
 un espai i representa’ls sempre amb vuit posicions. (<strong>pista</strong>: «%8d»)</p>
 <p>Per exemple, una taula de 4x3 podria tenir el següent aspecte:</p>
@@ -257,7 +257,7 @@ un espai i representa’ls sempre amb vuit posicions. (<strong>pista</strong>: �
 9       10       !!       12
 </pre></div>
 </div>
-<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">reinicialitzaArray(int[][],</span> <span class="pre">int</span> <span class="pre">val)</span></code> que rebi una taula
+<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">reinicialitzaTaula(int[][],</span> <span class="pre">int</span> <span class="pre">val)</span></code> que rebi una taula
 d’enters, i un valor enter, i inicialitzi tota la taula al valor indicat.</p>
 <p>Afegeix el mòdul <code class="docutils literal notranslate"><span class="pre">main()</span></code> que:</p>
 <ol class="arabic simple">
@@ -271,7 +271,7 @@ d’enters, i un valor enter, i inicialitzi tota la taula al valor indicat.</p>
 <h2>Exercici 2. Inicialització seqüèncial<a class="headerlink" href="#exercici-2-inicialitzacio-sequencial" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">inicialitzaSequencial(int[][])</span></code> que inicialitzi seqüencialment
 un array d’enters.</p>
-<p>En mostrar el resultat amb <code class="docutils literal notranslate"><span class="pre">mostraArray(int[][])</span></code> d’un array de 4x3 es veuria:</p>
+<p>En mostrar el resultat amb <code class="docutils literal notranslate"><span class="pre">mostraTaula(int[][])</span></code> d’un array de 4x3 es veuria:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1        2        3        4
 5        6        7        8
 9       10       !!       12
@@ -284,7 +284,7 @@ un array d’enters.</p>
 <p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">boolean[][]</span> <span class="pre">creaTaulaBooleans(int</span> <span class="pre">col,</span> <span class="pre">int</span> <span class="pre">row,</span> <span class="pre">boolean</span>
 <span class="pre">val)</span></code> que rebi el nombre de columnes i de files, i retorni una taula de
 booleans inicialitzada al valor indicat.</p>
-<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">mostraArray(boolean[][])</span></code> que mostri per sortida
+<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">mostraTaula(boolean[][])</span></code> que mostri per sortida
 estàndard, el contingut d’una taula de booleans. Els valors <code class="docutils literal notranslate"><span class="pre">true</span></code> els
 representarà amb una <code class="docutils literal notranslate"><span class="pre">X</span></code> i els valors <code class="docutils literal notranslate"><span class="pre">false</span></code> amb un punt (<code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
 <p>Per exemple, una taula de 5x3 podria tenir el següent aspecte:</p>
@@ -293,7 +293,7 @@ representarà amb una <code class="docutils literal notranslate"><span class="pr
 ..X..
 </pre></div>
 </div>
-<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">reinicialitzaArray(boolean[][],</span> <span class="pre">boolean</span> <span class="pre">val)</span></code> que rebi una taula de
+<p>Desenvolupa el mòdul <code class="docutils literal notranslate"><span class="pre">reinicialitzaTaula(boolean[][],</span> <span class="pre">boolean</span> <span class="pre">val)</span></code> que rebi una taula de
 booleans, i un valor booleà, i inicialitzi tota la taula al valor indicat.</p>
 <p>Afegeix el mòdul <code class="docutils literal notranslate"><span class="pre">main()</span></code> que:</p>
 <ol class="arabic simple">
@@ -335,16 +335,16 @@ teu docent. Estarà encantat d’intentar millorar el seu codi!</p>
 <div class="section" id="exercici-5-taula-de-booleans-amb-booleantableview">
 <h2>Exercici 5. Taula de booleans amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code><a class="headerlink" href="#exercici-5-taula-de-booleans-amb-booleantableview" title="Link permanent a aquest títol">¶</a></h2>
 <p>Crea una nova versió de l’exercici anterior de la taula de booleans, de manera
-que ara el <code class="docutils literal notranslate"><span class="pre">main()</span></code> a banda de cridar a <code class="docutils literal notranslate"><span class="pre">mostraArray(boolean[][])</span></code> mostri el
+que ara el <code class="docutils literal notranslate"><span class="pre">main()</span></code> a banda de cridar a <code class="docutils literal notranslate"><span class="pre">mostraTaula(boolean[][])</span></code> mostri el
 resultat amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code></p>
 <p>El funcionament serà el següent:</p>
 <ol class="arabic simple">
 <li>crea la taula de booleans de 4 x 5</li>
-<li>mostra el seu contingut amb <code class="docutils literal notranslate"><span class="pre">mostraArray(boolean[][])</span></code></li>
+<li>mostra el seu contingut amb <code class="docutils literal notranslate"><span class="pre">mostraTaula(boolean[][])</span></code></li>
 <li>mostra el contingut amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code></li>
 <li>espera 2 segons i tanca la vista</li>
 <li>reinicia els valors de la taula a <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
-<li>mostra el nou contingut amb <code class="docutils literal notranslate"><span class="pre">mostraArray(boolean[][])</span></code></li>
+<li>mostra el nou contingut amb <code class="docutils literal notranslate"><span class="pre">mostraTaula(boolean[][])</span></code></li>
 <li>mostra el contingut amb <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code></li>
 <li>espera 2 segons, tanca la vista i finalitza</li>
 </ol>
