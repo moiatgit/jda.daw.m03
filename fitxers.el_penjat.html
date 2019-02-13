@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>El joc del penjat revisitat &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Fitxers en java" href="fitxers.java.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers.intro.html">Introducció als fitxers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers.java.html">Fitxers en java</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">El joc del penjat revisitat</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+      <li>El joc del penjat revisitat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="el-joc-del-penjat-revisitat">
+<h1>El joc del penjat revisitat<a class="headerlink" href="#el-joc-del-penjat-revisitat" title="Link permanent a aquest títol">¶</a></h1>
+<p>Desenvolupa una nova versió del joc del penjat que vas realitzar a
+<a class="reference internal" href="java.el_penjat.html"><span class="doc">El joc del penjat</span></a>.</p>
+<p>Aquesta nova versió obtindrà dels arguments de la funció <code class="docutils literal notranslate"><span class="pre">main()</span></code> el nom d’un
+o més fitxers que contindran les paraules a endevinar.</p>
+<p>En cas que algun dels fitxers no existeixi, no es pugui llegir o el seu
+contingut no sigui correcte, el programa finalitzarà mostrant l’error.</p>
+<p>El contingut d’un fitxer vàlid haurà de ser de text. Només podrà contenir
+lletres, espais en blanc, salts de línia i comentaris.</p>
+<p>Els comentaris seran línies que comencen pel símbol <code class="docutils literal notranslate"><span class="pre">#</span></code>. Tota la línia serà
+ignorada.</p>
+<p>En cas que contingui altres caràcters que no siguin lletres, espais en blanc o
+salts de lína fora d’una línia de comentari, es considerarà contingut no vàlid.</p>
+<p>Les paraules que es consideraran seran totes les que apareguin en cada fitxer
+d’entrada fora dels comentaris, no importa si estan separades per espais o per
+salts de línia. No es guardarà una mateixa paraula més d’un cop.</p>
+<p>Per facilitar la prova, afegirem una nova comanda al joc del penjat, a banda de
+<code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>. Serà <code class="docutils literal notranslate"><span class="pre">&quot;paraules&quot;</span></code>.  En rebre <code class="docutils literal notranslate"><span class="pre">&quot;paraules&quot;</span></code>, el
+programa mostrarà la llista de paraules disponibles per a ser endevinades, una
+per línia, en l’ordre en que van aparèixer als fitxers d’entrada, sense
+repeticions i en majúscules.</p>
+<p>A banda, desenvoluparem el programa de suport <code class="docutils literal notranslate"><span class="pre">PoblaPenjat.java</span></code> que demanarà
+per entrada estàndard un nom de fitxer on guardarà les paraules que se li
+indiquin.</p>
+<p>En cas que existeixi un fitxer amb aquest nom, demanarà si es vol
+sobreescriure o bé ampliar.</p>
+<p>A continuació, anirà demanant paraules fins que s’introdueixi únicament la paraula
+<code class="docutils literal notranslate"><span class="pre">&quot;prou!&quot;</span></code>. Fixa’t en l’exclamació al final de la comanda. Això permetrà que la
+paraula <code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code> pugui formar part de les paraules a endevinar.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PoblaPenjat</span></code> no comprovarà si el que s’introdueix són o no paraules.
+Simplement recollirà cadascuna de les línies les guardarà al fitxer
+indicat. Si s’ha indicat ampliar, el fitxer resultant contindrà les paraules
+anteriors més les noves.</p>
+<p>En cas d’error accedint als fitxers, tant <code class="docutils literal notranslate"><span class="pre">Penjat</span></code> com <code class="docutils literal notranslate"><span class="pre">PoblaPenjat</span></code>
+finalitzaran l’execució.</p>
+<p>Caldrà que afegeixis nous fitxers d’entrada/sortida per provar la nova versió de
+<code class="docutils literal notranslate"><span class="pre">Penjat</span></code>.</p>
+<p>Per millorar l’experiència dels nostres usuaris jugadors, farem ús de la
+utilitat <code class="docutils literal notranslate"><span class="pre">BooleanTableView</span></code> tot mostrant el contingut d’un fitxer en el que es
+descriurà cada figura del penjat.
+Els fitxers es diran <code class="docutils literal notranslate"><span class="pre">penjat00.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">penjat01.txt</span></code>, etc.
+Per exemple, el fitxer <code class="docutils literal notranslate"><span class="pre">penjat10.txt</span></code>
+correspondrà a la figura del penjat quan s’han exaurit totes les oportunitats
+amb una paraula. Un possible contingut d’aquest fitxer podria ser:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>....................
+....XXXXXXXXXXXXXX..
+....XXXXXXXXXXXXXX..
+........X.......XX..
+........X.......XX..
+.......XXX......XX..
+.......XXX......XX..
+........X.......XX..
+.......XXX......XX..
+......X.X.X.....XX..
+.....X..X..X....XX..
+........X.......XX..
+.......X.X......XX..
+......X...X.....XX..
+.....X.....X....XX..
+................XX..
+................XX..
+................XX..
+</pre></div>
+</div>
+<p>Trobaràs tot un joc de figures del penjat al fitxer
+<a class="reference download internal" href="_downloads/figures_penjat.tar.gz" download=""><code class="xref download docutils literal notranslate"><span class="pre">figures_penjat.tar.gz</span></code></a>.</p>
+<p>Per descomptat, pots dissenyar-te les teves pròpies figures!</p>
+<p>Considera la següent simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ls *.penjat
+paraules01.penjat           paraules02.penjat
+$ cat paraules01.penjat
+ocurrent
+tromba
+$ cat paraules02.penjat
+sabata
+$ cat paraules.erronies
+# continguts erronis
+aquest fitxer
+inclou una paraula d0l3n+a
+i, per tant, ha de ser rebutjat
+$ java PoblaPenjat
+Camí al fitxer?
+paraules03.penjat
+Introdueix paraules (prou! per finalitzar)
+# darrera paraula
+ciceront
+prou!
+Fet
+$ ls *.penjat
+paraules01.penjat           paraules02.penjat           paraules03.penjat
+$ cat paraules03.txt
+# darrera paraula
+ciceront
+$ java PoblaPenjat
+Camí al fitxer?
+paraules01.penjat
+Ampliar o sobrescriure? (A o S)
+X
+Ampliar o sobrescriure? (A o S)
+S
+Introdueix paraules (prou! per finalitzar)
+# primeres paraules
+pissarra aixeta
+prou!
+Fet
+$ cat paraules01.penjat
+# primeres paraules
+pissarra aixeta
+$ java PoblaPenjat
+Camí al fitxer?
+paraules02.penjat
+Ampliar o sobrescriure? (A o S)
+A
+Introdueix paraules (prou! per finalitzar)
+# paraules en mig
+griflo
+prou!
+fet
+$ cat paraules02.penjat
+sabata
+# paraules en mig
+griflo
+$ java Penjat
+Cal indicar els fitxers amb les paraules
+$ java Penjat paraules01.penjat paraules.erronies paraules02.penjat
+El fitxer paraules.erronies conté paraules erronies
+$ java Penjat paraules01.penjat inexistent.penjat paraules02.penjat
+El fitxer inexistent.penjat no es troba
+$ java Penjat paraules01.penjat paraules02.penjat paraules03.penjat
+Comencem a jugar
+
+paraula: ********
+utilitzades: cap
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+a
+paraula: ****A**A
+utilitzades: A
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+paraules
+pissarra
+aixeta
+sabata
+griflo
+ciceront
+paraula: ****A**A
+utilitzades: A
+intents disponibles: 10
+Introdueix una lletra (prou: per sortir, glups per rendir-te)
+prou
+Espero que t&#39;hagis divertit
+</pre></div>
+</div>
+<p>Nota: fixa’t que aquesta simulació acaba oferint les mateixes paraules que la
+vesió anterior. Això et permetrà fer servir els mateixos jocs de prova que
+ja tenies preparats.</p>
+<hr class="docutils" />
+<p><em>Ref. IP18.x</em></p>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="fitxers.java.html" class="btn btn-neutral" title="Fitxers en java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>
