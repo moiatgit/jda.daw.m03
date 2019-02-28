@@ -304,3 +304,6 @@ Per exemple, considera el següent contingut per fer la prova.
 
 
 
+----
+
+*Ref. IP18.2*

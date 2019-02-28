@@ -1,0 +1,203 @@
+#############
+Codi duplicat
+#############
+
+Recorda el codi amb el que hem solucionat el problema de, donat un nom
+d'estudiant i la seva nota, indicar si l'estudiant ha superat o no la UF.
+
+.. code-block:: java
+    :linenos:
+
+    class Exemple01 {
+
+        /*
+            A partir de l'estudiant i la nota, mostra un missatge indicant si l'estudiant 
+            aprova o no la UF
+
+            Entrada (paràmetres): nom de l'estudiant i nota de la uf
+            Sortida (sortida estàndard): un string indicant
+                "L'estudiant «nom de l'estudiant» aprova la UF amb un «nota de la UF»." o
+                "L'estudiant «nom de l'estudiant» suspèn la UF amb un «nota de la UF»."
+        */
+        static void mostraResultat(String estudiant, int nota) {
+            String missatge = "L'estudiant " + estudiant + " ";
+            if (nota < 5) {
+                missatge += "suspèn";
+            } else {
+                missatge += "aprova";
+            }
+            missatge += " la UF amb un " + nota + ".";
+            System.out.println(missatge);
+        }
+
+        public static void main(String[] args) {
+            mostraResultat( "Laia Sánchez d'Àrgent", 6 );
+        }
+    }
+
+Suposem que ara, el nostre problema és el mateix però ara tenim tres
+estudiants a mostrar.
+
+Una possible solució seria:
+
+.. code-block:: java
+    :linenos:
+
+    class Exemple02 {
+
+        /*
+            A partir de l'estudiant i la nota, mostra un missatge indicant si l'estudiant
+            aprova o no la UF
+
+            Entrada (paràmetres): nom de l'estudiant i la seva nota de la uf.
+            Sortida (sortida estàndard): un missatge
+                "L'estudiant «nom de l'estudiant» aprova la UF amb un «nota de la UF»." o
+                "L'estudiant «nom de l'estudiant» suspèn la UF amb un «nota de la UF»."
+        */
+        static void mostraResultat(String estudiant, int nota) {
+            String missatge = "L'estudiant " + estudiant + " ";
+            if (nota < 5) {
+                missatge += "suspèn";
+            } else {
+                missatge += "aprova";
+            }
+            missatge += " la UF amb un " + nota + ".";
+            System.out.println(missatge);
+        }
+
+
+        /*
+            A partir dels noms de tres estudiants i les seves notes de la UF, indica si cada
+            estudiant aprova o no la UF
+
+            Entrada (paràmetres): noms dels tres estudiants i les seves corresponents notes
+            de la UF.
+            Sortida (sortida estàndard): per cada parell (estudiant,nota) mostra el missatge
+            definit pel procediment mostraResultat(String, int)
+        */
+        static void mostraResultatsDeTresEstudiantsEnUF(String estudiant01, int nota01,
+                                                               String estudiant02, int nota02,
+                                                               String estudiant03, int nota03) {
+
+            mostraResultat(estudiant01, nota01);
+            mostraResultat(estudiant02, nota02);
+            mostraResultat(estudiant03, nota03);
+        }
+
+        public static void main(String[] args) {
+            mostraResultatsDeTresEstudiantsEnUF("Laia Sánchez d'Àrgent", 6,
+                                                "Cipriano Lavanda Tintín", 4,
+                                                "Nemesia Gertru i Zimba", 8)
+        }
+    }
+
+Fixa't que, com ja teníem el procediment ``mostraResultatsDeTresEstudiantsEnUF(String, int)``, el
+podem reaprofitar. Així simplement hem de crear un nou procediment que mostri els resultats de les
+tres estudiants.
+
+Sort que eren tres i no 20 estudiants, oi?
+
+Ara seriosament, però què estem fent? És que ja no tenim bucles?
+
+Vinga, una nova versió:
+
+
+.. code-block:: java
+    :linenos:
+
+    class Exemple03 {
+
+        /*
+            A partir de l'estudiant i la nota, mostra un missatge indicant si l'estudiant
+            aprova o no la UF
+
+            Entrada (paràmetres): nom de l'estudiant i la seva nota de la uf.
+            Sortida (sortida estàndard): un missatge
+                "L'estudiant «nom de l'estudiant» aprova la UF amb un «nota de la UF»." o
+                "L'estudiant «nom de l'estudiant» suspèn la UF amb un «nota de la UF»."
+        */
+        static void mostraResultat(String estudiant, int nota) {
+            String missatge = "L'estudiant " + estudiant + " ";
+            if (nota < 5) {
+                missatge += "suspèn";
+            } else {
+                missatge += "aprova";
+            }
+            missatge += " la UF amb un " + nota + ".";
+            System.out.println(missatge);
+        }
+
+
+        /*
+            A partir dels noms d'estudiants i les seves notes de la UF, indica si cada
+            estudiant aprova o no la UF
+
+            Entrada (paràmetres): array amb els noms dels estudiants i array amb les
+            seves corresponents notes de la UF.
+            Nota: a l'estudiant estudiants[i] li correspon la nota notes[i]
+            Sortida (sortida estàndard): per cada parell (estudiant,nota) mostra el
+            missatge
+            definit pel procediment mostraResultat(String, int)
+
+            Nota: en cas que el nombre d'estudiants no coincideixi amb el de les notes,
+            el resultat
+            és indeterminat.
+        */
+        static void mostraResultats(String[] estudiants, int[] notes) {
+            for (int i = 0; i < estudiants.length; i++) {
+                mostraResultat(estudiants[i], notes[i]);
+            }
+        }
+
+        public static void main(String[] args) {
+            mostraResultats(
+                new String[] { "Laia Sánchez d'Àrgent",
+                               "Cipriano Lavanda Tintín",
+                               "Nemesia Gertru i Zimba" },
+                new int[] {6, 4, 8}
+            );
+        }
+    }
+
+Amb la incorporació d'arrays, el codi millora una mica. Amb tot, aquesta manera
+de solucionar no acaba de fer el pes. Per exemple, què passaria si el nom dels
+estudiants estigués format pel nom de pila i els cognoms? O també, si en comptes
+de la UF actual, ens interessés indicar el nom i el codi de la UF? O encara més,
+si ens calgués indicar el nom i el codi del mòdul?
+
+Amb l'aproximació per arrays, aquest tipus de problemes ens porta a passar un
+array per cada concepte (``nomEstudiant``, ``cognomsEstudiant``,
+``notaEstudiantEnUF``, ``nomUF``, ``codiUF`` …) i assegurar-nos sempre que els
+índexs de cada array coincideixen.
+
+No seria genial disposar de quelcom que ens permeti agrupar tots aquests
+conceptes en un concepte més gran, com ara **Resultat**?
+
+.. _exercici_unes_quantes_fitxes_persona:
+
+Exercici 2. Unes quantes fitxes de persones
+===========================================
+
+Desenvolupa un mòdul que, donades les dades de tres persones, escrigui tres
+fitxes fent servir el mòdul ``mostraFitxa()`` que vas desenvolupar a
+:ref:`aquest exercici <exercici_fitxa_persona>`
+El mòdul 
+El nou mòdul s'anomenarà ``mostraFitxes()`` i rebrà, en aquest ordre, els
+següents paràmetres:
+
+* ``String[] noms``
+
+* ``String[] cognoms``
+
+* ``int[] edats``
+
+En cas que la longitud d'algun dels arrays d'entrada sigui diferent de la resta,
+el programa es comportarà de manera indeterminada. És a dir, qualsevol
+comportament serà adequat, com per exemple, finalitzar l'execució.
+
+Inclou un ``main()`` que demostri el funcionament amb, com a mínim, les dades de
+tres persones. Poden ser els teus companys de classe.
+
+----
+
+*Ref. IP19.2*

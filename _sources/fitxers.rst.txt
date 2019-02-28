@@ -28,3 +28,7 @@ execucions anteriors.
     fitxers.java.rst
     fitxers.el_penjat.rst
 
+
+----
+
+*Ref. IP18*

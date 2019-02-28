@@ -1,0 +1,186 @@
+######################
+Agrupacions en classes
+######################
+
+Com podríem replicar, en Java, la solució d'agrupació de les dades en que es composa
+un resultat?
+
+Considera la següent traducció *directa* de les versions de C i Python:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 26
+
+    class Exercici04 {
+
+        /* Encapsula les dades de que es composa la nota d'un estudiant en una UF */
+        static class Resultat {
+            String estudiant;
+            int nota;
+        }
+
+        /* A partir de l'estudiant i la nota, mostra un missatge indicant si l'estudiant
+           aprova o no la UF
+
+           Entrada (paràmetres): resultat de l'estudiant
+           Sortida (sortida estàndard): un missatge
+             "L'estudiant «nom de l'estudiant» aprova la UF amb un «nota de la UF»." o
+             "L'estudiant «nom de l'estudiant» suspèn la UF amb un «nota de la UF»."
+        */
+        static void mostraResultat(Resultat resultat) {
+            System.out.printf(
+                    "L'estudiant %s %s la UF amb un %d.%n",
+                    resultat.estudiant,
+                    resultat.nota < 5 ? "suspèn" : "aprova",
+                    resultat.nota);
+        }
+
+        public static void main(String[] args) {
+            Resultat resultat = new Resultat();
+            resultat.estudiant =  "Laia Sánchez d'Àrgent";
+            resultat.nota = 6;
+            mostraResultat(resultat);
+        }
+    }
+
+
+Fixa't que hem definit una nova classe anomenada ``Resultat`` que conté els
+diferents *elements* de que es composa un resultat.
+
+Molt similar la versió de C, oi?
+
+Fixa't que:
+
+* a la línia 26 *creem* la instància d'un ``Resultat`` i l'associem a la variable ``resultat``, i
+
+* a les línies següents, *inicialitzem* els camps de la instància.
+
+Instàncies, valors i variables
+==============================
+
+Malgrat els mots *instància*, *valor* i *variable* sovint semblen
+intercanviables, aquí els distingirem.
+
+* Una *instància* és una ocurrència d'un determinat tipus de dades. Es tracta
+  d'un espai en memòria ocupat amb el *valor* de la dada representada per la
+  instància.
+
+* Una *variable* és una referència a la instància. Per suposat, podem tenir
+  moltes variables que facin referència a la mateixa instància. Per exemple:
+
+.. code-block:: java
+
+    Resultat r1 = new Resultat();
+    r1.estudiant = "Laia";
+    r1.nota = 6;
+    Resultat r2 = r1;
+    r1.nota = 8;
+    System.out.println( r2.estudiant + ": " + r2.nota); // "Laia: 8"
+
+Un fitxer per la nostra classe
+==============================
+
+De fet, un cop ja tenim la classe, podem guardar-la en el seu propi fitxer que
+en Java es sol anomenar igual que la classe (``Resultat.java``)
+
+.. code-block:: java
+
+    /*
+        La classe Resultat encapsula els resultats (la nota) que ha obtingut un
+        estudiant en una unitat formativa
+    */
+    public class Resultat {
+        String estudiant;
+        int nota;
+    }
+
+Ara, la versió de l'exercici es pot reescriure
+
+.. code-block:: java
+
+    class Exercici05 {
+
+        /* A partir de l'estudiant i la nota, mostra un missatge indicant si l'estudiant
+           aprova o no la UF
+
+           Entrada (paràmetres): resultat de l'estudiant
+           Sortida (sortida estàndard): un missatge
+             "L'estudiant «nom de l'estudiant» aprova la UF amb un «nota de la UF»." o
+             "L'estudiant «nom de l'estudiant» suspèn la UF amb un «nota de la UF»."
+        */
+        static void mostraResultat(Resultat resultat) {
+            System.out.printf(
+                    "L'estudiant %s %s la UF amb un %d.%n",
+                    resultat.estudiant,
+                    resultat.nota < 5 ? "suspèn" : "aprova",
+                    resultat.nota);
+        }
+
+        public static void main(String[] args) {
+            Resultat resultat = new Resultat();
+            resultat.estudiant =  "Laia Sánchez d'Àrgent";
+            resultat.nota = 6;
+            mostraResultat(resultat);
+        }
+    }
+
+Si guardes el fitxer ``Exercici05.java`` en la mateixa carpeta que
+``Resultat.java``, normalment podràs executar-ho de la manera habitual. Java
+sabrà trobar la definició de la classe ``Resultat``.
+
+Exercici 5. Instàncies i variables
+==================================
+
+Considera el següent fragment de codi en Java:
+
+.. code-block:: java
+    :linenos:
+
+    String laLaia = "Laia";
+    String[] noms;
+    noms = new String[10];
+    noms[0] = laLaia;
+    noms[1] = "Cipriano";
+    noms[3] = "Nemèsia";
+
+Crea una taula com la següent i indica quantes variables i instàncies de tipus
+String, han estat definides a cada línia. Indica també quantes variables no
+String s'han creat i de quin tipus.
+
+=====  ===================  ====================  ================
+Línia  variables de String  instàncies de String  altres variables
+=====  ===================  ====================  ================
+1
+2
+3
+4
+=====  ===================  ====================  ================
+
+
+Exercici 6. Mostra la fitxa d'una persona (revisitat)
+=====================================================
+
+Implementa la classe ``Persona`` ajudant-te de la definició de ``Resultat`` vist
+abans.
+
+Crea una nova versió del programa que vas desenvolupar a un :ref:`exercici
+anterior <exercici_fitxa_persona>`, aquest cop agrupant les dades de la persona
+en la classe ``Persona``.
+
+Modifica adequadament tant ``main()`` com ``mostraFitxa()``.
+
+
+Exercici 7. Unes quantes fitxes de persones (revisitat)
+=======================================================
+
+Torna a considerar :ref:`aquest exercici
+<exercici_unes_quantes_fitxes_persona>`. Implementa una nova versió tot fent
+servir la classe ``Persona`` que has definit anteriorment.
+
+Nota: pots crear una seqüència de persones de la mateixa manera que crearies una
+seqüència de String. Per exemple: ``Persona[] persones``.
+
+
+----
+
+*Ref. IP19.4*

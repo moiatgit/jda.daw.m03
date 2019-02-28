@@ -80,3 +80,7 @@ habitual distingir dos tipus de fitxers:
 
 En aquesta part del curs, ens centrarem en els fitxers de text.
 
+
+----
+
+*Ref. IP18.1*

@@ -79,7 +79,7 @@ Per exemple, una taula de 4x3 podria tenir el següent aspecte:
 
     1        2        3        4
     5        6        7        8
-    9       10       !!       12
+    9       10       11       12
 
 Desenvolupa el mòdul ``reinicialitzaTaula(int[][], int val)`` que rebi una taula
 d'enters, i un valor enter, i inicialitzi tota la taula al valor indicat.
