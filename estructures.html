@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Què és un ordinador? &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Estructures &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Què són els programes?" href="ubicacio_programes.html" />
-    <link rel="prev" title="Ubicació de la programació" href="ubicacio_programacio.html" />
+    <link rel="next" title="Introducció" href="estructures.intro.html" />
+    <link rel="prev" title="El joc del penjat revisitat" href="fitxers.el_penjat.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -84,29 +84,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="primeres_passes.html">Primeres passes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="requeriments.html">Requeriments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="primer_contacte.html">Un primer contacte visual amb la programació</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ritual_holamon.html">Ritual Hola Món!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="la_tortuga.html">Juguem amb la tortuga</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="ubicacio_programacio.html">Ubicació de la programació</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Què és un ordinador?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_programes.html">Què són els programes?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_instruccions.html">Instruccions?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_dades.html">Has dit dades?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_so.html">Què és un sistema operatiu?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_llenguatge.html">Què és un llenguatge de programació?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_tipus_llenguatges.html">Tipus de llenguatges de programació</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_fases.html">Fases de desenvolupament d’un programa</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_errors.html">Errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_documentacio.html">Documentació</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_eines.html">Eines pel desenvolupament</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ubicacio_practiques.html">Practiquem</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sistemes_numeracio.html">Sistemes de numeració</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
@@ -118,7 +96,13 @@
 <li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Estructures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="estructures.intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.codi_duplicat.html">Codi duplicat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.agrupacio.html">Agrupació de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.classes.html">Agrupacions en classes</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -164,11 +148,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="primeres_passes.html">Primeres passes</a> &raquo;</li>
-        
-          <li><a href="ubicacio_programacio.html">Ubicació de la programació</a> &raquo;</li>
-        
-      <li>Què és un ordinador?</li>
+      <li>Estructures</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,9 +181,21 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="que-es-un-ordinador">
-<h1>Què és un ordinador?<a class="headerlink" href="#que-es-un-ordinador" title="Link permanent a aquest títol">¶</a></h1>
-<img alt="_images/esquema_ordinador.png" class="align-center" src="_images/esquema_ordinador.png" />
+  <div class="section" id="estructures">
+<h1>Estructures<a class="headerlink" href="#estructures" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fins ara hem estat fent servir tipus que ja ens venien definits. Podria
+tenir sentit que ens interessés definir els nostres propis tipus de dades?</p>
+<p>Aquest tema en parla</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="estructures.intro.html">Introducció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.codi_duplicat.html">Codi duplicat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.agrupacio.html">Agrupació de dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.classes.html">Agrupacions en classes</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p><em>Ref. IP19</em></p>
 </div>
 
 
@@ -215,10 +207,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ubicacio_programes.html" class="btn btn-neutral float-right" title="Què són els programes?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="estructures.intro.html" class="btn btn-neutral float-right" title="Introducció" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ubicacio_programacio.html" class="btn btn-neutral" title="Ubicació de la programació" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="fitxers.el_penjat.html" class="btn btn-neutral" title="El joc del penjat revisitat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
