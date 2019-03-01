@@ -87,7 +87,7 @@ Una possible solució seria:
         public static void main(String[] args) {
             mostraResultatsDeTresEstudiantsEnUF("Laia Sánchez d'Àrgent", 6,
                                                 "Cipriano Lavanda Tintín", 4,
-                                                "Nemesia Gertru i Zimba", 8)
+                                                "Nemesia Gertru i Zimba", 8);
         }
     }
 
