@@ -1,0 +1,189 @@
+:orphan:
+
+#######################
+Jocs de prova amb JUnit
+#######################
+
+En aquests materials, hi ha alguns exercicis que disposen de proves unitàries amb *JUnit*.
+
+No és l'objectiu d'aquests materials aprofundir sobre proves en general i
+*JUnit* en particular.
+
+Com és habitual en aquests materials, estic suposant que fas servir una distribució GNU/Linux
+similar a Debian/Ubuntu. Si no és el teu cas, probablement et caldrà realitzar algun petit canvi de
+configuració.
+
+Per altra banda, en cas que facis servir algun IDE com ara Eclipse o NetBeans, és molt probable que
+estigui ja configurat per a fer ús de JUnit de manera integrada. Consulta la documentació del teu
+IDE per a més detalls de funcionament.
+
+Instal·lació
+============
+
+Per a instal·lar junit, cal seguir les passes a la pàgina d'instal·lació que es troba a `junit.org
+<http://www.junit.org>`_ 
+
+Per seguir aquests materials, farem servir la versió 4.12 donat que és força
+estable i fàcil d'utilitzar sense necessitat de programari addicional.
+
+Per tant, assegura't que aconsegueixes la versió 4.12 de JUnit. La trobaràs
+enllaçada a partir d'aquesta `pàgina de GitHub
+<https://github.com/junit-team/junit4/wiki/Download-and-Install>`_
+
+A la mateix pàgina hi trobaràs un enllaç per descarregar-te ``hamcrest-core``,
+una utilitat addicional. Per assegurar la compatibilitat amb la versió 4.12 de
+JUnit, et recomano que descarreguis la versió 1.3.
+
+Un cop descarregats els dos fitxers .jar, els guardarem a una carpeta, per
+exemple ``~/lib/`` i els afegirem a la variable ``CLASSPATH`` perquè Java sàpiga
+com trobar-los.
+
+Per exemple, segueix les passes:
+
+1. Comprova que no tinguis ja un ``CLASSPATH``. Per exemple, la següent comanda et respondrà que no està
+   definida:
+
+   .. code-block:: sh
+
+        $ [ ! -z "$CLASSPATH" ] || echo "no està definida"
+
+2. Guarda els dos fitxers (``junit-4.12.jar`` i ``hamcrest-core-1.3.jar``) a la carpeta ``~/lib``
+
+   .. code-block:: sh
+
+        $ mkdir -p ~/lib
+        $ cp junit-*.jar hamcrest-core*.jar ~/lib
+
+3. Si al pas 1 has trobat que ``CLASSPATH`` no estava definida, edita el fitxer ``~/.bashrc`` i
+   afegeix al final les següents línies:
+
+    .. code-block:: sh
+
+        CLASSPATH=.:$HOME/lib/junit.jar:$HOME/lib/hamcrest-core.jar
+        export CLASSPATH
+
+4. Si al pas 1 has trobat que ``CLASSPATH`` sí estava definida, edita el fitxer ``~/.bashrc`` i
+   afegeix al final la següent línia:
+
+    .. code-block:: sh
+
+        CLASSPATH=$CLASSPATH:$HOME/lib/junit.jar:$HOME/lib/hamcrest-core.jar
+
+Comprovació
+===========
+
+Passem a comprovar que hem fet la instal·lació correcta.
+
+.. code-block:: sh
+
+    $ java org.junit.runner.JUnitCore
+    JUnit version 4.12
+
+    Time: 0,001
+
+    OK (0 tests)
+
+Si la teva darrera línia coincideix amb OK (0 tests) és que tot ha
+anat bé. Altrament revisa amb atenció la instal·lació. Hi ha molts
+números que el problema estigui al ``CLASSPATH``.
+
+
+Execucció de les proves
+=======================
+
+Considera :ref:`classes_i_objectes_exercici5`.
+
+Segueix les passes:
+
+1. Descarrega't el fitxer de :download:`prova <_recursos/E5GatRenatTest.java>` a la mateixa carpeta on
+   tens el fitxer ``GatRenat.java`` que dóna resposta a l'exercici.
+
+2. Compila el fitxer de prova de la manera habitual, i executa'l
+
+   .. code-block:: sh
+
+        $ javac E5GatRenatTest.java && java E5GatRenatTest
+
+Si tot ha anat correcte, la sortida podria ser quelcom similar a:
+
+.. code-block:: none
+
+        JUnit version 4.12
+        .
+        Time: 0,006
+
+        OK (1 test)
+
+Altrament, revisa els errors que t'indiquen. Poden ser molt variats.
+
+Per exemple, si són missatges del compilador, pot ser degut a que has canviat el nom de la classe o
+d'algun dels seus membres (propietats o mètodes) En aquest cas, podria ser perquè has anomenat la
+propietat d'alguna manera diferent a ``estat``.
+
+Si és un missatge del JUnit, et podria sortir quelcom tan espantós com:
+
+.. code-block:: none
+    :linenos:
+    :emphasize-lines: 2, 4, 5, 6, 41, 42
+
+        JUnit version 4.12
+        .E
+        Time: 0,006
+        There was 1 failure:
+        1) testRenatNeixEstirat(GatRenatTest)
+        org.junit.ComparisonFailure: expected:<est[ir]at> but was:<est[ri]at>
+            at org.junit.Assert.assertEquals(Assert.java:115)
+            at org.junit.Assert.assertEquals(Assert.java:144)
+            at GatRenatTest.testRenatNeixEstirat(GatRenatTest.java:12)
+            at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+            at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+            at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+            at java.lang.reflect.Method.invoke(Method.java:497)
+            at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+            at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+            at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+            at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+            at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+            at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+            at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+            at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+            at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+            at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+            at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+            at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+            at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+            at org.junit.runners.Suite.runChild(Suite.java:128)
+            at org.junit.runners.Suite.runChild(Suite.java:27)
+            at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+            at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+            at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+            at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+            at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+            at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+            at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+            at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+            at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
+            at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
+            at E5GatRenatTest.main(E5GatRenatTest.java:16)
+
+        FAILURES!!!
+        Tests run: 1,  Failures: 1
+
+No t'espantis amb el missatge! A la reproducció anterior he ressaltat les línies més interessants.
+Aprendràs a localitzar-les aviat. En aquest cas concret:
+
+* les línies 2, 4 41 i 42, ens indiquen que tenim errors!
+
+* la línia 5 ens diu quin test ha fallat. Si mires el fitxer ``E5GatRenatTest.java`` podràs trobar
+  un mètode amb aquest nom. De vegades pot donar-te pistes mirar el seu codi per saber què
+  s'esperava del teu. En tot cas, et recomano que la teva solució estigui orientada a salvar els
+  requeriments de l'exercici i no de la prova unitària. Pensa que el teu codi podria rebre més
+  proves!
+
+* la línia 6 ens diu clarament que esperaba el valor *estirat* però ha trobat *estriat*. De fet, ens
+  remarca amb claudàtors la part del text que no coindiceix! Què macos són aquests del JUnit, oi?
+
+En aquest cas, el codi del meu ``GatRenat.java`` tenia un error a l'hora d'inicialitzar la propietat
+d'estat. En comptes de posar *estirat*, havia posat *estriat*. Quins dits més entremaliats ;)
+
+En cas d'errors, corregeix-los i torna a executar fins que la resposta sigui ``OK``.

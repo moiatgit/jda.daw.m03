@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jocs de prova amb JUnit &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Jocs de prova amb JUnit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jocs-de-prova-amb-junit">
+<h1>Jocs de prova amb JUnit<a class="headerlink" href="#jocs-de-prova-amb-junit" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquests materials, hi ha alguns exercicis que disposen de proves unitàries amb <em>JUnit</em>.</p>
+<p>No és l’objectiu d’aquests materials aprofundir sobre proves en general i
+<em>JUnit</em> en particular.</p>
+<p>Com és habitual en aquests materials, estic suposant que fas servir una distribució GNU/Linux
+similar a Debian/Ubuntu. Si no és el teu cas, probablement et caldrà realitzar algun petit canvi de
+configuració.</p>
+<p>Per altra banda, en cas que facis servir algun IDE com ara Eclipse o NetBeans, és molt probable que
+estigui ja configurat per a fer ús de JUnit de manera integrada. Consulta la documentació del teu
+IDE per a més detalls de funcionament.</p>
+<div class="section" id="installacio">
+<h2>Instal·lació<a class="headerlink" href="#installacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per a instal·lar junit, cal seguir les passes a la pàgina d’instal·lació que es troba a <a class="reference external" href="http://www.junit.org">junit.org</a></p>
+<p>Per seguir aquests materials, farem servir la versió 4.12 donat que és força
+estable i fàcil d’utilitzar sense necessitat de programari addicional.</p>
+<p>Per tant, assegura’t que aconsegueixes la versió 4.12 de JUnit. La trobaràs
+enllaçada a partir d’aquesta <a class="reference external" href="https://github.com/junit-team/junit4/wiki/Download-and-Install">pàgina de GitHub</a></p>
+<p>A la mateix pàgina hi trobaràs un enllaç per descarregar-te <code class="docutils literal notranslate"><span class="pre">hamcrest-core</span></code>,
+una utilitat addicional. Per assegurar la compatibilitat amb la versió 4.12 de
+JUnit, et recomano que descarreguis la versió 1.3.</p>
+<p>Un cop descarregats els dos fitxers .jar, els guardarem a una carpeta, per
+exemple <code class="docutils literal notranslate"><span class="pre">~/lib/</span></code> i els afegirem a la variable <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> perquè Java sàpiga
+com trobar-los.</p>
+<p>Per exemple, segueix les passes:</p>
+<ol class="arabic">
+<li><p class="first">Comprova que no tinguis ja un <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code>. Per exemple, la següent comanda et respondrà que no està
+definida:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="o">[</span> ! -z <span class="s2">&quot;</span><span class="nv">$CLASSPATH</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;no està definida&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Guarda els dos fitxers (<code class="docutils literal notranslate"><span class="pre">junit-4.12.jar</span></code> i <code class="docutils literal notranslate"><span class="pre">hamcrest-core-1.3.jar</span></code>) a la carpeta <code class="docutils literal notranslate"><span class="pre">~/lib</span></code></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/lib
+$ cp junit-*.jar hamcrest-core*.jar ~/lib
+</pre></div>
+</div>
+</li>
+<li><p class="first">Si al pas 1 has trobat que <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> no estava definida, edita el fitxer <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> i
+afegeix al final les següents línies:</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$HOME</span>/lib/junit.jar:<span class="nv">$HOME</span>/lib/hamcrest-core.jar
+<span class="nb">export</span> CLASSPATH
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Si al pas 1 has trobat que <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> sí estava definida, edita el fitxer <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> i
+afegeix al final la següent línia:</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$CLASSPATH</span>:<span class="nv">$HOME</span>/lib/junit.jar:<span class="nv">$HOME</span>/lib/hamcrest-core.jar
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="comprovacio">
+<h2>Comprovació<a class="headerlink" href="#comprovacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Passem a comprovar que hem fet la instal·lació correcta.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ java org.junit.runner.JUnitCore
+JUnit version <span class="m">4</span>.12
+
+Time: <span class="m">0</span>,001
+
+OK <span class="o">(</span><span class="m">0</span> tests<span class="o">)</span>
+</pre></div>
+</div>
+<p>Si la teva darrera línia coincideix amb OK (0 tests) és que tot ha
+anat bé. Altrament revisa amb atenció la instal·lació. Hi ha molts
+números que el problema estigui al <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code>.</p>
+</div>
+<div class="section" id="execuccio-de-les-proves">
+<h2>Execucció de les proves<a class="headerlink" href="#execuccio-de-les-proves" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera <a class="reference internal" href="classes_i_objectes.html#classes-i-objectes-exercici5"><span class="std std-ref">Exercici 5. Renat té estat</span></a>.</p>
+<p>Segueix les passes:</p>
+<ol class="arabic">
+<li><p class="first">Descarrega’t el fitxer de <a class="reference download internal" href="_downloads/E5GatRenatTest.java" download=""><code class="xref download docutils literal notranslate"><span class="pre">prova</span></code></a> a la mateixa carpeta on
+tens el fitxer <code class="docutils literal notranslate"><span class="pre">GatRenat.java</span></code> que dóna resposta a l’exercici.</p>
+</li>
+<li><p class="first">Compila el fitxer de prova de la manera habitual, i executa’l</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ javac E5GatRenatTest.java <span class="o">&amp;&amp;</span> java E5GatRenatTest
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Si tot ha anat correcte, la sortida podria ser quelcom similar a:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>JUnit version 4.12
+.
+Time: 0,006
+
+OK (1 test)
+</pre></div>
+</div>
+<p>Altrament, revisa els errors que t’indiquen. Poden ser molt variats.</p>
+<p>Per exemple, si són missatges del compilador, pot ser degut a que has canviat el nom de la classe o
+d’algun dels seus membres (propietats o mètodes) En aquest cas, podria ser perquè has anomenat la
+propietat d’alguna manera diferent a <code class="docutils literal notranslate"><span class="pre">estat</span></code>.</p>
+<p>Si és un missatge del JUnit, et podria sortir quelcom tan espantós com:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    JUnit version 4.12
+<span class="hll">    .E
+</span>    Time: 0,006
+<span class="hll">    There was 1 failure:
+</span><span class="hll">    1) testRenatNeixEstirat(GatRenatTest)
+</span><span class="hll">    org.junit.ComparisonFailure: expected:&lt;est[ir]at&gt; but was:&lt;est[ri]at&gt;
+</span>        at org.junit.Assert.assertEquals(Assert.java:115)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at GatRenatTest.testRenatNeixEstirat(GatRenatTest.java:12)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:497)
+        at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+        at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+        at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+        at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+        at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+        at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+        at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+        at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+        at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+        at org.junit.runners.Suite.runChild(Suite.java:128)
+        at org.junit.runners.Suite.runChild(Suite.java:27)
+        at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+        at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+        at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+        at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+        at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+        at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+        at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+        at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+        at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
+        at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
+        at E5GatRenatTest.main(E5GatRenatTest.java:16)
+
+<span class="hll">    FAILURES!!!
+</span><span class="hll">    Tests run: 1,  Failures: 1
+</span></pre></div>
+</td></tr></table></div>
+<p>No t’espantis amb el missatge! A la reproducció anterior he ressaltat les línies més interessants.
+Aprendràs a localitzar-les aviat. En aquest cas concret:</p>
+<ul class="simple">
+<li>les línies 2, 4 41 i 42, ens indiquen que tenim errors!</li>
+<li>la línia 5 ens diu quin test ha fallat. Si mires el fitxer <code class="docutils literal notranslate"><span class="pre">E5GatRenatTest.java</span></code> podràs trobar
+un mètode amb aquest nom. De vegades pot donar-te pistes mirar el seu codi per saber què
+s’esperava del teu. En tot cas, et recomano que la teva solució estigui orientada a salvar els
+requeriments de l’exercici i no de la prova unitària. Pensa que el teu codi podria rebre més
+proves!</li>
+<li>la línia 6 ens diu clarament que esperaba el valor <em>estirat</em> però ha trobat <em>estriat</em>. De fet, ens
+remarca amb claudàtors la part del text que no coindiceix! Què macos són aquests del JUnit, oi?</li>
+</ul>
+<p>En aquest cas, el codi del meu <code class="docutils literal notranslate"><span class="pre">GatRenat.java</span></code> tenia un error a l’hora d’inicialitzar la propietat
+d’estat. En comptes de posar <em>estirat</em>, havia posat <em>estriat</em>. Quins dits més entremaliats ;)</p>
+<p>En cas d’errors, corregeix-los i torna a executar fins que la resposta sigui <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

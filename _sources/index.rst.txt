@@ -28,3 +28,8 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     python2java.rst
     fitxers.rst
     estructures.rst
+    poo.rst
+
+----
+
+*Ref. 20*
