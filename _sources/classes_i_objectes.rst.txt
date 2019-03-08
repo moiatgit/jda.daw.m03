@@ -73,12 +73,15 @@ següents línies al final del ``main()``:
 .. code-block:: java
     :linenos:
 
-    public static void main(String[] args) {
-        GatRenat renat;           // declarem l'objecte (la referència) al gat
-        renat = new GatRenat();   // creem la instància del gat Renat.
-        System.out.println("Abans el gat Renat tenia " + renat.vides + " vides");
-        renat.vides = renat.vides - 1;  // Renat ha tingut un accident
-        System.out.println("Ara el gat Renat té " + renat.vides);
+    public class GatRenat {
+        int vides = 7;                // vides disponibles del gat Renat
+        public static void main(String[] args) {
+            GatRenat renat;           // declarem l'objecte (la referència) al gat
+            renat = new GatRenat();   // creem la instància del gat Renat.
+            System.out.println("Abans el gat Renat tenia " + renat.vides + " vides");
+            renat.vides = renat.vides - 1;  // Renat ha tingut un accident
+            System.out.println("Ara el gat Renat té " + renat.vides);
+        }
     }
 
 Modifica la classe ``GatRenat`` amb els canvis, executa el codi i contesta
@@ -346,6 +349,9 @@ ens retornarà poden ser:
 * no faig res
 
 Crea un ``main()`` que demostri el funcionament dels nous mètodes.
+
+**Atenció**: els nous mètodes **no** han d'escriure res per sortida estàndard.
+
 
 .. note:: Aquest exercici disposa d'un 
    :download:`test unitari <_recursos/E9GatRenatTest.java>`.

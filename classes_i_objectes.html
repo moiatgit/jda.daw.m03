@@ -249,18 +249,24 @@ i una petita descripció del contingut, al començament del fitxer.</p>
 <h3>Exercici 2. El gat Renat té un accident<a class="headerlink" href="#exercici-2-el-gat-renat-te-un-accident" title="Link permanent a aquest títol">¶</a></h3>
 <p>Podem canviar el nombre de vides del gat Renat simplement afegint les
 següents línies al final del <code class="docutils literal notranslate"><span class="pre">main()</span></code>:</p>
-<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">GatRenat</span> <span class="n">renat</span><span class="o">;</span>           <span class="c1">// declarem l&#39;objecte (la referència) al gat</span>
-    <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>   <span class="c1">// creem la instància del gat Renat.</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Abans el gat Renat tenia &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">);</span>
-    <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>  <span class="c1">// Renat ha tingut un accident</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Ara el gat Renat té &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span><span class="o">);</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span>                <span class="c1">// vides disponibles del gat Renat</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="o">;</span>           <span class="c1">// declarem l&#39;objecte (la referència) al gat</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>   <span class="c1">// creem la instància del gat Renat.</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Abans el gat Renat tenia &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">);</span>
+        <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>  <span class="c1">// Renat ha tingut un accident</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Ara el gat Renat té &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span><span class="o">);</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
@@ -534,6 +540,7 @@ ens retornarà poden ser:</p>
 <li>no faig res</li>
 </ul>
 <p>Crea un <code class="docutils literal notranslate"><span class="pre">main()</span></code> que demostri el funcionament dels nous mètodes.</p>
+<p><strong>Atenció</strong>: els nous mètodes <strong>no</strong> han d’escriure res per sortida estàndard.</p>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">Aquest exercici disposa d’un
