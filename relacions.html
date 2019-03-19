@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Membres d’instància i de classe &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Relacions entre classes &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Mètodes de classe" href="metodes_de_classe.html" />
-    <link rel="prev" title="Constructors" href="constructors_i.html" />
+    <link rel="next" title="Agregació" href="relacions.agregacio.html" />
+    <link rel="prev" title="Propietats finals" href="propietats_finals.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -100,13 +100,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Membres d’instància i de classe</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="metodes_de_classe.html">Mètodes de classe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="propietats_de_classe.html">Propietats de classe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="propietats_finals.html">Propietats finals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Relacions entre classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +155,7 @@
         
           <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
         
-      <li>Membres d’instància i de classe</li>
+      <li>Relacions entre classes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,23 +188,20 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="membres-d-instancia-i-de-classe">
-<h1>Membres d’instància i de classe<a class="headerlink" href="#membres-d-instancia-i-de-classe" title="Link permanent a aquest títol">¶</a></h1>
-<p>Tot i que habitualment els membres que definim a les nostres classes, estan orientats a cada
-instància concreta de la classe, hi ha ocasions en que ens cal disposar de mètodes o/i propietats
-que facin referència a tota la classe i no a una instància concreta d’aquesta.</p>
-<p>En aquest document es discuteix aquesta possibilitat en forma de membres d’instància i de classe.</p>
-<p>Com a <em>extra</em> se li afegeix el concepte de <em>final</em> què, simplificant-ho molt, permet indicar que
-quelcom és constant.</p>
+  <div class="section" id="relacions-entre-classes">
+<h1>Relacions entre classes<a class="headerlink" href="#relacions-entre-classes" title="Link permanent a aquest títol">¶</a></h1>
+<p>En la programació orientada a objectes, els programes es composen de
+classes que interaccionen les unes amb les altres. Aquesta interacció
+de les classes es realitza en funció de la relació que tenen aquestes
+classes entre si.</p>
+<p>En considerarem dues relacions: l’agregació i la composició. Deixare’m per més
+endavant una tercera anomenada herència.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="metodes_de_classe.html">Mètodes de classe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="propietats_de_classe.html">Propietats de classe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="propietats_finals.html">Propietats finals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
 </ul>
 </div>
-<hr class="docutils" />
-<p><em>Ref. 20.1.3</em></p>
 </div>
 
 
@@ -217,10 +213,10 @@ quelcom és constant.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="metodes_de_classe.html" class="btn btn-neutral float-right" title="Mètodes de classe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relacions.agregacio.html" class="btn btn-neutral float-right" title="Agregació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constructors_i.html" class="btn btn-neutral" title="Constructors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="propietats_finals.html" class="btn btn-neutral" title="Propietats finals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

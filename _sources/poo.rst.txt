@@ -33,6 +33,7 @@ Aquest tema es desglossa en les següents entrades:
     classes_i_objectes.rst
     constructors_i.rst
     membres_instancia_classe.rst
+    relacions.rst
 
 ----
 

@@ -1,0 +1,119 @@
+#########
+Agregació
+#########
+
+Definició: Quan una classe A usa els serveis (membres públics) d'una
+altra B, es diu que hi ha una *dependència* entre la classe A i la B.
+Quan B pateix algun canvi en la seva interfície, A podria requerir ser
+modificat.
+
+Definició: Es diu que una classe A *agrega* una classe B quan té una
+dependència de B, de manera que l'existència de B és independent de la
+de A. És a dir la instància de B pot ser creada abans que la de A i
+"sobreviure" després de A. Es diu que A usa (uses-a) B
+
+Aquesta relació de dependència es coneix com a **agregació**. En Java,
+s'implementa normalment amb una propietat de l'objecte agregat. En cas
+d'haver de duplicar una instància de la classe A, les dues instàncies
+farien referència a la mateixa instància de la classe B.
+
+.. _relacions_exercicis_picarol:
+
+Exercici 1. El Picarol
+======================
+
+En aquest exercici desenvoluparem una nova versió del nostre estimat Gat Renat. En aquesta ocasió,
+el Renat acceptarà que li pengem un picarol.
+
+Quan el Renat té un picarol penjat, cada cop que es mou (s'aixeca, seu o s'estira), fa sonar el
+picarol. Atenció: no es considera que es mou quan es construeix la instància ni quan es fa servir un
+mètode ``setEstat()``.
+
+Es demana:
+
+* implementa la classe Picarol amb el mètode *sona()*.
+
+* amplia la classe del gat Renat tal i com va quedar a l'exercici de :ref:`l'entorn operatiu <constructors_i_exercici_entorn_operatiu>` amb els següents mètodes:
+
+  * ``boolean tePicarol()``: cert si té un picarol assignat. Inicialment no en té.
+
+  * ``Picarol posaPicarol(Picarol)``: assigna un picarol. Si en tenia un, el substitueix pel nou i retorna
+    l'anterior. Si no en tenia cap, retorna null.
+
+  * ``Picarol treuPicarol()``: retorna el picarol i a partir d'aquest moment deixa de tenir picarol.
+    Si no en tenia cap, retorna null.
+
+* crea una nova versió de l'entorn operatiu del gat Renat, que ofereixi les noves comandes:
+
+  * "posa't picarol": Si no tenia picarol, respondrà "fet", altrament dirà "ja tinc picarol".
+
+  * "treu-te picarol":  Si tenia picarol, respondrà "fet", altrament dirà "no en tinc cap de picarol".
+
+  * "tens picarol?": Contesta "sí" o "no" segons correspongui.
+
+Considera la classe Picarol que ofereix els següents serveis:
+
+* ``sona()`` que de moment, simplement escriu per sortida estàndard el missatge "clink-clink".
+
+* ``int quantsCopsHaSonat()`` que retorna el nombre de cops que s'ha cridat al mètode ``sona()``
+  d'aquest picarol.
+
+Crea un joc de proves que mostri el funcionament d'aquestes noves funcionalitats.
+
+.. tip:: Sabem que normalment no és una bona idea escriure per sortida estàndard des dels mètodes
+   de les nostres classes. En aquest cas farem una excepció doncs ens simplifica molt l'exercici.
+
+   Espera un moment. Estàs pensant que seria més xulo fer sonar el picarol de debò? Doncs no et quedis
+   amb les ganes! Considera el següent codi:
+
+   .. code-block:: java
+      :linenos:
+      :emphasize-lines: 7
+
+       import javax.sound.sampled.Clip;
+       import javax.sound.sampled.AudioSystem;
+       import javax.sound.sampled.AudioInputStream;
+       public class DemoPicarol {
+           public static void sona() {
+               String url = "picarol.wav";
+               Class thisClass = DemoPicarol.class;
+               try {
+                   Clip clip = AudioSystem.getClip();
+                   AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                           thisClass.getResourceAsStream(url));
+                   clip.open(inputStream);
+                   clip.start();
+                   Thread.sleep(1000);
+               } catch (Exception e) {
+                   System.err.println("No puc fer sonar!");
+               }
+           }
+           public static void main(String[] args) {
+               sona();
+           }
+       }
+
+   Descarregat el fitxer :download:`picarol.wav <_recursos/picarol.wav>` i col·loca'l a la carpeta on
+   tinguis la demostració del Picarol. Compila la demo, executa-la i assegura't que els altaveus (o
+   auriculars) estan en funcionament.
+
+   Adapta aquest codi a la teva resposta a aquest exercici i gaudeix de fer sonar el teu picarol.
+   No et capfiquis gaire amb com funciona. Hi ha alguns elements que no hem vist encara. Amb tot, el
+   codi el pots fer servir pràcticament directament. Únicament assegura't que a la línia 7 canvies
+   ``DemoPicarol`` pel nom de la classe on posis aquest codi.
+
+.. note:: Aquest exercici disposa d'un test de prova que pots descarregar-te :download:`d'aquí
+   <_recursos/E005001TestSuite.tar.gz>`.
+
+   Donat que els tests comencen a fer-se més grans, en aquest cas trobes un fitxer comprimit amb
+   quatre fitxers .java. El que has d'executar és ``E005001TestSuite.java``.
+
+   Guarda el fitxer a la carpeta on hi col·locaràs el teu codi i desempaqueta'l amb la comanda:
+
+   .. code-block:: sh
+
+        $ tar xzvf E005001TestSuite.tar.gz
+
+
+
+
