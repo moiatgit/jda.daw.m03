@@ -1,0 +1,205 @@
+#######################
+Ocultació i redefinició
+#######################
+
+El cas d'ocultació (*hidding*) ja ens l'hem trobat. Recorda el següent codi de les primeres versions
+de ``GatRenat``:
+
+.. code-block:: java
+
+    public void setVides(int vides) { this.vides = vides; }
+
+En aquest exemple, la propietat ``vides`` de la classe ``GatRenat`` queda amagada pel paràmetre amb
+el mateix nom. La referència ``this`` ens permet accedir a la propietat.
+
+Reconsiderem aquest exemple:
+
+.. literalinclude:: /_code/ExempleSubclasseAmbComportamentEspecific.java
+    :language: java
+    :linenos:
+
+En el cas del mètode ``menja(Menjar)`` l'ocultació correspon a una redefinició del mètode que es
+coneix també com *overriding* [#overridingoverwriting]_.
+
+Per a accedir des de la subclasse, a membres de la superclasse redefinits (*overrided*) fem servir
+la paraula clau ``super``.
+
+De fet, podríem fer servir ``super`` per a accedir a membres *no* redefinits de la superclasse, de
+la mateixa manera que podem fer servir opcionalment el ``this`` per a referenciar membres propis
+quan el nom no ha estat ocultat pel d'un paràmetre o variable local.
+
+.. code-block:: java
+    :linenos:
+
+    class A {
+        void m() { /* ... */ }
+        void f() { /* ... */ }
+    }
+    class B extends A {
+        @Override
+        void m() {      // redefinició de m()
+            /* ... */ // no cal començar amb super, que no és un constructor!
+            super.m()
+
+            // puc cridar a f() de diferents maneres
+            f();
+            this.f();
+            super.f();
+
+            // però...
+            this.m();       // és una crida recursiva! compte!
+            m();            // li passa el mateix que a l'anterior!
+        }
+    }
+
+Hauràs observat que cada cop que redefinim un mètode a una subclasse, el prefixem amb ``@Override``.
+Aquest element és una `anotació <https://docs.oracle.com/javase/tutorial/java/annotations/>`_, un
+mecanisme amb el que Java permet definir informacions sobre el codi que podran fer servir el
+compilador, la màquina virtual o altres eines (ex. JUnit ``@Test``). El concepte queda fora dels
+objectius d'aquests continguts. Quan aparegui la necessitat d'una anotació, com ara amb
+``@Override``, es presentarà.
+
+En el cas de ``@Override``, es tracta d'una anotació opcional, que indica al compilador que el
+mètode que segueix està redefinint un mètode heretat. És opcional, doncs la màquina virtual no el
+necessita per saber quin codi ha d'executar. Però és recomanable, doncs el compilador no és tan
+hàbil com per saber si en escriure quelcom com ara ``String tostring()`` volíem en realitat
+redefinir el mètode heretat ``String toString()`` i símplement ens hem deixat de posar una ``S`` en
+majúscules. Si afegim l'anotació, el compilador se n'adonarà i ens avisarà de que no hi ha cap
+mètode ``String toString()`` per heretar.
+
+A partir d'ara, assegura't que tots els mètodes que vulguis redefinir, afegeixen aquesta anotació.
+
+.. _herencia_exercici_garfield:
+
+Exercici 7. ☆ L'amic Garfield
+=============================
+
+Al gat Renat que vam definir a :ref:`l'exercici de la classe
+Gat<herencia_exercici_laclassegat>` li ha sorgit un competidor: l'amic Garfield. En
+Garfield és també un gat però afegeix el mètode ``String fesUnaEntremaliadura()`` i, per
+contra, no ofereix cap mecanisme per a néixer en un estat determinat. És a dir, a
+diferència del gat Renat, el Garfield no ofereix constructor específic per indicar l'estat
+d'inici.
+
+Per no embolicar-la massa, les entremaliadures del Garfield consistiran en dir una paraulota.
+Les paraulotes seran escollides seqüencialment a partir d'una llista de paraulotes, des de
+la primera de la llista a la darrera i, en acabar, tornarà a començar per la primera.
+
+Garfield oferirà un constructor específic que acceptarà un array de Strings no null i amb un
+mínim d'un element. Les paraulotes seran Strings no nuls ni buits.  En cas que la instància
+sigui construida per a aquest constructor, si la llista de paraulotes rebudes acompleix
+aquestes característiques, acceptarà aquestes com les paraulotes a treballar.  Altrament, el
+constructor considerarà la llista de paraulotes per defecte, que contindrà un mínim de 10
+paraulotes (no nul·les ni buides).  En cas que no sigui construida amb aquest constructor, les
+paraulotes seran les indicades a un array intern de paraulotes per defecte que contindrà un
+mínim de 10 paraulotes vàlides.
+
+El Garfield també oferirà un mètode per canviar les paraulotes. ``void
+setParaulotes(String[])`` acceptarà un array de String no nul i de longitud mínima 1, de
+Strings no nuls ni buits. No importa si la llista inclou entrades repetides. Si el rebut
+per paràmetre acompleix aquestes característiques, canviarà la llista interna de
+paraulotes.  Altrament, mantindrà la antiga.
+
+A més, el Garfield ens permetrà conèixer la llista de paraulotes disponibles amb ``String[]
+getParaulotes()``.
+
+Crea una nova versió de l'entorn operatiu del gat Renat que permeti gestionar tant el
+Renat com el Garfield. Evidentment només permetrà treballar amb entremaliadures al
+Garfield.
+
+El nou entorn crearà una instància del Garfield o l'acceptarà del constructor específic.
+En el cas del Garfield, començarà estirat com bon Garfield que és. Les comandes es
+prefixaran amb el nom del gat a qui vagin dirigides.
+
+Per exemple, si es vol que s'aixequi Garfield, escriurem:
+
+.. code-block:: none
+
+    Garfield aixeca't
+
+Mentre que si el que volem és que segui Renat, ho especificarem amb:
+
+.. code-block:: none
+
+    Renat seu
+
+En el cas que una comanda vagi dirigida al gat no adequat (per exemple, al Renat no li podem demanar
+que faci entremaliadures), l'entorn ens respondrà amb el missatge "no t'entenc".
+
+Les comandes que podrem demanar-li al Garfield respecte les entremaliadures són:
+
+* "Garfield assigna paraulota1, paraulota2, «...» paraulotaN"
+
+  Substitueix les paraulotes del Garfield per les indicades a la llista.
+
+  L'entorn operatiu no té manera de saber quines són les característiques que ha de presentar la
+  llista de paraulotes perquè el Garfield les accepti. Per tant, passarà al Garfield allò que li
+  digui l'usuari sense comprovar res (ex. no comprovarà que hi hagi algun element a la llista ni si
+  hi ha espais al començament o al final de cada paraulota.
+
+  Per exemple, si li diem ``Garfield assigna lleig, tonto, , soca``, li passarà a Garfield la llista
+  amb tres Strings
+  ``{"lleig", "tonto", "", "soca" }`` i Garfield la rebutjarà sense avís, tot mantenint la llista de
+  paraulotes prèvia.
+
+  Un altre exemple, si li diem ``Garfield assigna lleig "tonto, "soca.``, li passarà a Garfield la
+  llista amb dos Strings ``{"lleig \"tonto", "\"soca."}`` i Garfield l'acceptarà i canviarà la
+  llista anterior.
+
+  Un altre exemple més, si li diem ``Garfield assigna``, li passarà a Garfield una llista buida ``{}``
+  i Garfield la rebutjarà silenciosament.
+
+  L'entorn si que requerirà un mínim d'un espai en blanc entre el nom, la comanda i la llista
+  (possiblement buida) de paràmetres.
+
+  Tant si el Garfield accepta la llista com si no ho fa, l'entorn respondrà ``aha!``.
+
+* "Garfield aprén paraulota1, paraulota2, «...» paraulotaN"
+
+  Afegeix les paraulotes indicades al final de la llista de paraulotes de Garfield.
+
+  Donat que Garfield no ens ofereix cap mètode per realitzar aquesta acció directament, haurem
+  de trobar el com amb els mètodes que ofereix.
+
+  En qualsevol cas, l'entorn respondrà ``aha!``.
+
+
+* "Garfield estàs gras"
+
+  Fa que el Garfield digui una paraulota i ens la mostra.
+
+
+Assegura't que el teu codi passa :download:`aquestes proves <_recursos/E006007TestSuite.tar.gz>`.
+
+
+.. tip:: Aquest exercici et requerirà manipular una mica els Strings i els arrays. Fes una ullada als mètodes i la classe:
+
+       - ``String.split()``
+
+       - ``String.trim()``
+
+       - ``System.arraycopy()``
+
+       - ``java.util.Arrays``
+
+
+.. rubric:: Anotacions
+
+.. [#overridingoverwriting] De vegades, trobarem que en comptes d' *overriding*
+   es refereixen a aquest concepte com a *overwriting*. La diferència pot ser
+   subtil, però existeix. Es diu que quelcom *overwrites* una altra cosa quan la
+   reemplaça completament de manera que ja deixi d'existir la reemplaçada. Podríem
+   fer servir com a sinònim el terme *reemplaça*. Quan la substitució d'una cosa
+   per una altra té només efecte en alguns casos i no en tots (és a dir, hi ha
+   casos en que encara es podria fer servir l'anterior) llavors es parla d'
+   *overriding*. En el cas concret en que una subclasse redefineix un mètode que
+   hereda de la superclasse, la definició original del mètode de la superclasse
+   encara és usable per altres subclasses que no l'hagin redefinit.
+
+   Com a traducció podríem fer servir *sobreescriure* per *overwrite* i
+   i *anteposar* per *override*.
+
+----
+
+*Ref. 20.1.5.5*
+

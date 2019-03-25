@@ -1,0 +1,114 @@
+########################
+Comportaments específics
+########################
+
+El fet que una subclasse hereti tots els membres d'una superclasse no vol dir que la subclasse
+s'hagi de comportar exàctament igual que la superclasse, a l'hora d'executar els serveis que hereta.
+
+Per exemple, el nostre amic Renat és un gat sí, però un de molt especial. Només menja després de
+netejar-se les urpes. Suposem que Renat hereta els mètodes ``void menja(Menjar)`` i ``void
+netejaUrpes()``. Així el codi (parcial) tindria el següent aspecte:
+
+.. literalinclude:: /_code/ExempleSubclasseAmbComportamentEspecific.java
+    :language: java
+    :linenos:
+
+Ignorem per un moment això del ``@Override`` i el ``super``, i concentrem-nos en els mètodes:
+
+- ``netejaUrpes()``.
+
+  Com que Renat no fa res diferent amb el mètode ``netejaUrpes()`` del que fa Gat, no cal que el
+  declari. Quan es cridi el mètode ``netejaUrpes()`` a una instància de GatRenat, directament
+  s'executarà el mètode declarat a la classe Gat.
+
+- ``miola()``
+
+  Renat miola de manera diferent a un gat *general*. Per aquesta raó, GatRenat *redefineix* el
+  mètode. Aquesta redefinició es coneix també com *overriding* i en parlarem :doc:`més endavant
+  <herencia.ocultacio_redefinicio>`.
+
+  Si es realitza la crida al mètode ``miola()`` des d'una instància de GatRenat,
+  s'executarà el mètode d'aquesta classe i no de la seva superclasse.
+
+- ``menja(Menjar)``
+
+  El Renat també menja de manera diferent que els gats *normals*. A diferència del cas de
+  ``miola()``, la manera de menjar del Renat no és completament diferent de la dels altres
+  gats. De fet, la única particularitat és que el Renat, abans de menjar, sempre es renta les
+  urpes.
+
+  Com amb el cas de ``miola()``, en cridar ``menja(Menjar)`` des d'una instància de GatRenat,
+  s'executarà el seu mètode i no el de Gat.
+
+Analitzem amb detall el codi de ``GatRenat.menja(Menjar)``. La primera instrucció és una crida al
+mètode ``netejaUrpes()``. Aquest mètode no apareix definit a la classe ``GatRenat`` sinó que és
+heretat de ``Gat``.  Amb tot, la instància de ``GatRenat`` pot considerar el mètode com a seu i,
+fins i tot, cridar-lo amb ``this.netejaUrpes()``!.
+
+Per poder accedir a membres de la superclasse no cal que fem res especial. Podem accedir-hi com si
+haguessin estat declarats a la subclasse [#superprivat]_.
+
+Amb la segona instrucció, el que perseguim és que executi el codi del mètode ``menja(Menjar)`` de la
+classe Gat. No podem simplement fer ``menja(menjar)`` ni ``this.menja(menjar)``, doncs estaríem
+cridant a aquest mateix mètode de manera recursiva que acabaria d'una manera poc dessitjable (amb la
+pila d'execució plena i el gat sense arribar a menjar!)
+
+El problema és que el mètode ``menja(Menjar)`` heretat pel GatRenat, ha quedat *ocultat* per la nova
+definició del mètode a dins de GatRenat. Per a poder accedir al mètode de Gat i no al de GatRenat,
+haurem de fer servir la referència ``super``, que al igual que ``this`` ens arriba per defecte a
+qualsevol instància i que apunta a la part de la instància que és heretada. Veurem més detalls sobre
+``super`` a la secció :doc:`herencia.ocultacio_redefinicio`.
+
+Exercici 6. Els mètodes que realment es criden
+==============================================
+
+En aquest exercici demostraràs quins són els mètodes que es criden realment quan hi ha entre mig l'herència.
+
+Per fer-ho, considera la definició de les següents classes (lleugerament diferent de la definició de
+l'exemple anterior):
+
+.. literalinclude:: _code/06democrides/Feli.java
+    :language: java
+
+.. literalinclude:: _code/06democrides/Gat.java
+    :language: java
+
+.. literalinclude:: _code/06democrides/GatRenat.java
+    :language: java
+
+.. literalinclude:: _code/06democrides/Menjar.java
+    :language: java
+
+Crea una classe anomenada ``DemoCrides`` que, disposi d'un ``main()`` que en ser executat generi
+exactament el següent per sortida estàndard:
+
+.. code-block:: none
+
+    Feli neix
+    Gat neix
+    Feli neix
+    Feli neix
+    Gat neix
+    GatRenat neix
+    Felí netejaUrpes des de class Feli
+    Felí netejaUrpes des de class Gat
+    Felí netejaUrpes des de class GatRenat
+    Gat miola des de class Gat
+    GatRenat miola des de class GatRenat
+    Menjar 'sardines' neix
+    Gat menja Menjar(sardines) des de class Gat
+    Menjar 'fideus xinesos' neix
+    GatRenat menja des de class GatRenat
+    Felí netejaUrpes des de class GatRenat
+    Gat menja Menjar(fideus xinesos) des de class GatRenat
+
+.. rubric:: Anotacions
+
+.. [#superprivat] Des d'una classe podem accedir directament a un
+   membre de la seva superclasse, sempre i quan aquest no hagi estat redefinit a la subclasse
+   (*overrided*) ni hagi estat definit a la superclasse com a ``private``.
+
+----
+
+*Ref. 20.1.5.4*
+

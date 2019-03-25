@@ -1,0 +1,113 @@
+###############
+Casos especials
+###############
+
+Considerem ara un parell de casos especials sobre l'herència: l'herència no permesa i l'herència no
+desitjada.
+
+Es tracta d'un parell de casos més avançadets i que probablement es poden saltar a una introducció
+a la orientació a objectes. En tot cas, et pot servir de reflexió fer-li una ullada.
+
+L'herència no permesa
+=====================
+
+De vegades ens pot interessar que una classe no permeti tenir
+subclasses. Això pot passar, per exemple, quan la nostra classe és
+immutable (el valor de les seves propietats es manté des de
+l'assignació). No voldrem que una subclasse pugui permetre perdre
+aquesta condició d'immutabilitat.
+
+Això, que pot semblar una mica estrany si no coneixem el concepte de *polimorfisme* [#polimorfisme]_, és quelcom que
+ha preocupat suficientment als desenvolupadors de classes com String, com per voler trobar una
+manera d'evitar-ho.
+
+Evitar que una classe pugui tenir subclasses és molt simple: declares la classe *final*
+
+.. code-block:: java
+    :linenos:
+
+    final class A { /* ... */ }
+    class B extends A { /* ... */ } // error de compilació
+
+Per cert, també pots fer que no es pugui redefinir un mètode de la mateixa manera: fent-lo *final*.
+Això pot repercutir en una certa millora d'eficiència en alguns casos (generalment també relacionats
+amb el polimorfisme)
+
+L'herència no desitjada
+-----------------------
+
+**Nota**: aquesta secció és opcional en una primera visita a la POO.
+És perfectament raonable que te la saltis.
+
+De vegades pot passar que heretem coses que no volem.
+
+Considera per exemple el cas de l'ornitorinc. Es tracta d'un mamífer.
+Sí, té un aspecte una mica... peculiar com es pot començar a apreciar
+a la foto [#ornitorinc]_. Aquest animaló d'Australia fa servir ous per
+reproduir-se, és verinós, té bec d'ànec, cua de castor i potes de
+llúdria. Ah!  l'alletament de les cries es realitza a través de porus
+a la pell en comptes de fer servir mamelles, no fos que semblés normal
+en alguna cosa... Amb tot, no és una mena de *pokemon* sinó què és
+real i...  és un mamífer!.
+
+.. figure:: _images/poo011.img003.ornitorinc.png
+   :alt: L'ornitorinc
+   :align: center
+
+És clar, si tens una classe Mamífer ben construïda per la **immensa**
+majoria dels mamífers, probablement l'ornitorinc la posarà molt a
+prova!
+
+Tornem a la POO. Què fem quan heretem un membre que no ens interessa
+oferir? Si hem de ser puristes, ens hauríem de replantejar tota la
+jerarquia de classes. Com que això no sempre és possible, des de Java
+ens queden poques opcions.
+
+Si el membre heretat era una propietat pública, la podem ocultar
+creant una nova propietat a la subclasse amb el mateix nom i
+visibilitat privada. Ara tindrem dues còpies de la propietat però al
+menys no serà accessible, i si accedim a la instància considerant-la
+de la superclasse  encara hi accedirem a la propietat
+heretada!
+
+Si és un mètode públic, no podem fer el mateix que amb una propietat,
+perquè l'estem redefinint amb una visibilitat més restrictiva i el
+compilador ens retornarà l'error ``attempting to assign weaker access
+privileges; was public``
+
+El que farem serà:
+
+1. documentar a la nostra classe que el membre heretat no es suporta.
+
+2. ocultar el membre heretat amb una versió pròpia
+
+3. fer que el cos del mètode redefinit llenci l'excepció
+   ``UnsuportedOperationException``. [#excepcions]_
+
+És a dir, avisarem als desenvolupadors que vulguin fer servir la
+nostra classe, que el mètode no està suportat, i en cas que tot i
+així l'intentin fer servir, farem que en executar el seu codi se
+n'adonin que anàvem seriosament.
+
+Atenció: aquestes mesures tindran repercussions desagradables si la
+nostra classe es fa servir en un context *polimòrfic*.
+
+
+.. rubric:: Anotacions
+
+.. [#polimorfisme] Estudiarem més endavant, el concepte de polimorfisme.
+   En poques paraules, és la possibilitat de fer servir una instància considerant-la d'un tipus
+   diferent del que és (per exemple, com la seva superclasse) Concretant l'exemple, si un mètode
+   espera un ``Gat``, li podem passar un ``GatRenat``.
+
+
+.. [#ornitorinc] Foto obtinguda de `Wikimedia commons
+   <http://commons.wikimedia.org>`_
+
+.. [#excepcions] Si encara no coneixes les excepcions, no t'amoïnis,
+   que arribaran aviat.
+
+----
+
+*Ref. 20.1.5.6*
+

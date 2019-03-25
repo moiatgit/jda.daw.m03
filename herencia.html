@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relacions entre classes &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Herència &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Agregació" href="relacions.agregacio.html" />
-    <link rel="prev" title="Propietats finals" href="propietats_finals.html" />
+    <link rel="next" title="Introducció al concepte d’herència" href="herencia.intro.html" />
+    <link rel="prev" title="Composició" href="relacions.composicio.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -101,12 +101,16 @@
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Relacions entre classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Herència</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="herencia.intro.html">Introducció al concepte d’herència</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.java.html">L’herència a Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.visualitzacio.html">Una visualització del concepte d’extensió</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.especifics.html">Comportaments específics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.ocultacio_redefinicio.html">Ocultació i redefinició</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.casos_especials.html">Casos especials</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +160,7 @@
         
           <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
         
-      <li>Relacions entre classes</li>
+      <li>Herència</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,20 +193,27 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="relacions-entre-classes">
-<h1>Relacions entre classes<a class="headerlink" href="#relacions-entre-classes" title="Link permanent a aquest títol">¶</a></h1>
-<p>En la programació orientada a objectes, els programes es composen de
-classes que interaccionen les unes amb les altres. Aquesta interacció
-de les classes es realitza en funció de la relació que tenen aquestes
-classes entre si.</p>
-<p>En considerarem dues relacions: l’agregació i la composició. Deixare’m per més
-endavant una tercera anomenada herència.</p>
+  <div class="section" id="herencia">
+<h1>Herència<a class="headerlink" href="#herencia" title="Link permanent a aquest títol">¶</a></h1>
+<p>Si es pregunta pel concepte més <em>representatiu</em> de la programació orientada a objectes, amb pocs
+dubtes sortiria el d”<strong>herència</strong>.</p>
+<p>Ja hem vist un parell de relacions entre classes a <a class="reference internal" href="relacions.html"><span class="doc">Relacions entre classes</span></a>. L’herència és una altra relació
+de dependència entre dues classes.</p>
+<p>Aquesta secció introdueix el concepte d’herència i explora algunes de les repercussions més
+visibles en la programació orientada a objectes.</p>
+<p>Els conceptes s’introduiran a partir d’aquests apartats:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
-<li class="toctree-l1"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.intro.html">Introducció al concepte d’herència</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.java.html">L’herència a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.visualitzacio.html">Una visualització del concepte d’extensió</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.especifics.html">Comportaments específics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.ocultacio_redefinicio.html">Ocultació i redefinició</a></li>
+<li class="toctree-l1"><a class="reference internal" href="herencia.casos_especials.html">Casos especials</a></li>
 </ul>
 </div>
+<hr class="docutils" />
+<p><em>Ref. 20.1.5</em></p>
 </div>
 
 
@@ -214,10 +225,10 @@ endavant una tercera anomenada herència.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relacions.agregacio.html" class="btn btn-neutral float-right" title="Agregació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="herencia.intro.html" class="btn btn-neutral float-right" title="Introducció al concepte d’herència" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="propietats_finals.html" class="btn btn-neutral" title="Propietats finals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="relacions.composicio.html" class="btn btn-neutral" title="Composició" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

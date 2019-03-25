@@ -1,0 +1,170 @@
+#########################################
+Una visualització del concepte d'extensió
+#########################################
+
+La interfície pública d'una classe està formada per tots els membres públics que defineix la classe,
+més tots els membres públics [#protected]_ que hereta.
+
+Considerem el següent diagrama:
+
+.. figure:: _images/poo011.img002.herencia.png
+   :alt: herència
+   :align: center
+
+Veiem que la classe Felí defineix els membres *mf1* i *mf2*.  Aquests membres, en virtut de la
+relació d'herència, queden inclosos entre els membres de Gat i de Pantera. Així Gat disposa dels
+membres que defineix *mg1* i *mg2*, més els heretats *mf1* i *mf2*. És clar, Gat no disposa dels
+membres definits per altes subclasses de Felí, com ara el *mp1* que defineix Pantera, tot i que
+comparteix amb aquesta els membres de Felí.
+
+Finalment, Renat, en ser un Gat disposa dels membres *mr1*, *mr2* (propis), més **tots** els de Gat
+(*mg1*, *mg2*, *mf1* i *mf2*).
+
+El diagrama permet visualitzar gràficament el concepte d'extensió d'una classe. Gat estén els
+membres de Felí amb els membres propis. És a dir, Gat inclou *tota* la definició de Felí, i a més a
+més, estén aquesta amb nous continguts.
+
+Concretem una mica. Suposem que disposem de les següents definicions de classe:
+
+.. code-block:: java
+    :linenos:
+
+    class Felí {
+        /* ... */
+        void menja(Menjar m) { System.out.println("Nyam Nyam " + m); }
+        /* ... */
+    }
+
+    class Gat extends Felí {
+        void miola() { System.out.println("MEEEEEEU"); }
+    }
+
+    class UsaGat {
+        public static void main(String[] args) {
+            Gat gat = new Gat();
+            gat.miola();
+            gat.menja(new Menjar());
+        }
+    }
+
+En aquest exemple podem observar com, des de la classe *UsaGat* podem accedir a un membre de *Gat*
+(el mètode *menja()*) que no ha estat definit a *Gat* sinó a la seva superclasse *Felí*. Fixem-nos
+en que l'accés a un mètode heretat de *Gat* des de *UsaGat* és idèntic a l'accés a un mètode definit
+per *Gat*.
+
+Exercici 3. Implementació dels felins
+=====================================
+
+Implementa plantilles per les classes que apareixen al diagrama anterior. Pots considerar els
+membres de qualsevol tipus (ex. propietats del tipus que vulguis, mètodes (procediments o funcions
+del tipus que et vingui de gust) En cas de membres, pots deixar el cos sense contingut.
+
+Per exemple, considera la proposta per la classe ``Renat``:
+
+.. code-block:: java
+
+    class Renat extends Gat {
+        int mr1;
+        void mr2() {}
+    }
+
+.. note:: Aquest exercici **no** està vinculat a cap versió de la classe ``GatRenat`` realitzada en
+          exercicis previs.
+
+Exercici 4. La meva visualització
+=================================
+
+Defineix una jerarquia de classes de tres nivells i quatre classes, com l'anterior. Indica com a
+mínim, un mètode per cada classe. Finalment, dibuixa un diagrama similar al de la visualització
+anterior, de manera que quedi clar quins mètodes disposa cada classe.
+
+.. _herencia_exercici_laclassegat:
+
+Exercici 5. La classe Gat
+=========================
+
+Desenvolupa la classe ``Gat`` de manera que:
+
+- la nova classe ``Gat`` oferirà **tota** la funcionalitat de la classe ``GatRenat``, tal i com va
+  quedar a la versió de l'exercici :ref:`relacions_exercicis_ullsdegat`
+
+- la classe ``Gat`` estarà implementada de tal manera que només es podran crear instàncies de si
+  s'especifica un nom. Això implica que no oferirà constructor per defecte, i tots els específics
+  requeriran, com a primer paràmetre, un String amb el nom. En cas que el String sigui null o una
+  cadena buida, el nom del gat serà "Desconegut".
+
+- també disposarà d'un mètode per a poder consultar el nom del gat (``String getNom()``). No
+  oferirà, però, cap mètode per canviar el nom. De fet, aquesta propietat serà declarada ``final``.
+
+Finalment, per provar la classe Gat executem el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Descripció: Classe que comprova el funcionament de classe Gat
+     * Crea tants gats com li ho indiquin els paràmetres de la línia
+     * de comandes, els pregunta com estan i el seu nom, i mostra els
+     * resultats per pantalla.
+     */
+    import java.util.Vector;
+    public class UsaGat {
+        public static void main(String[] args) {
+            System.out.println("Provador de gats");
+            Vector<Gat> llistaDeGats = new Vector<Gat>();
+            // crea la llista de gats passats per paràmetre
+            for (String nom: args) {
+                Gat gat = new Gat(nom);
+                llistaDeGats.add(gat);
+            }
+            System.out.println("Hem creat " + llistaDeGats.size() +
+                    (llistaDeGats.size() == 1 ? " gat" : " gats"));
+            for (Gat gat: llistaDeGats) {
+                String nom = gat.comEtDius();
+                String estat = gat.getEstatComString();
+                System.out.println("El gat " + nom + " diu que està " + estat);
+            }
+            System.out.println("Ara el Garbage Collector acabarà amb tots els gats. Ha Ha Ha!");
+        }
+    }
+
+Executant-lo amb l'ordre
+
+.. code-block:: sh
+
+    $ java UsaGat RenatJR Misifú Garfield > sortida.out
+
+Ens haurà de generar el següent contingut dins del fitxer
+``sortida.out``
+
+.. code-block:: none
+
+    Provador de gats
+    RenatJR: he nascut
+    Misifú: he nascut
+    Garfield: he nascut
+    Hem creat 3 gats
+    El gat RenatJR diu que està estirat
+    El gat Misifú diu que està estirat
+    El gat Garfield diu que està estirat
+    Ara el Garbage Collector acabarà amb tots els gats. Ha Ha Ha!
+
+Nota: el tipus Vector<Gat> és un vector de gats. Pots trobar
+l'especificació dels mètodes de la classe ``Vector`` a la documentació
+oficial de la API de Java. Tot i que la notació pot semblar-te una
+mica confosa, simplement està dient que el vector és de gats i no de
+cap altra classe. Considera l'exemple com a introducció al concepte de
+*genèrics* que treballarem posteriorment.
+
+
+
+.. rubric:: Anotacions
+
+.. [#protected] Per ser precisos, hereta tots els mèmbres no privats
+   de la superclasse. Aquesta puntualització tindrà més sentit quan
+   coneguem el concepte de *visibilitat*.
+
+----
+
+*Ref. 20.1.5.3*
+

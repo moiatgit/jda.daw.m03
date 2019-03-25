@@ -35,7 +35,7 @@ Considera el següent codi, executa'l i intenta entendre el perquè de la sortid
             for (int i=0; i < gats.length; i++) {
                 gats[i] = new GatRenat();
                 gats[i].setVides(i);    // canviem les vides només per distingir-los
-                System.out.println("Tenim: " + gats[i].toStering() + " amb " +
+                System.out.println("Tenim: " + gats[i] + " amb " +
                     gats[i].getNumInstancies() + " germanets");
             }
             // tornem a demanar a cadascun quants germans té
@@ -49,7 +49,7 @@ Considera el següent codi, executa'l i intenta entendre el perquè de la sortid
 
 .. note::
 
-    Les crides a ``println()`` (línies 25 i 31) es podrien escriure de manera més simple, sense
+    La darrera crida a ``println()`` (línia 31) es podria escriure de manera més simple, sense
     necessitat de cridar explícitament al mètode ``toString()``. Considera:
 
     .. code-block:: java

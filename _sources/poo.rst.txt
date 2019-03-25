@@ -34,6 +34,7 @@ Aquest tema es desglossa en les següents entrades:
     constructors_i.rst
     membres_instancia_classe.rst
     relacions.rst
+    herencia.rst
 
 ----
 

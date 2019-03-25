@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relacions entre classes &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Introducció al concepte d’herència &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Agregació" href="relacions.agregacio.html" />
-    <link rel="prev" title="Propietats finals" href="propietats_finals.html" />
+    <link rel="next" title="L’herència a Java" href="herencia.java.html" />
+    <link rel="prev" title="Herència" href="herencia.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -101,12 +101,16 @@
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Relacions entre classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="herencia.html">Herència</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introducció al concepte d’herència</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.java.html">L’herència a Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.visualitzacio.html">Una visualització del concepte d’extensió</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.especifics.html">Comportaments específics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.ocultacio_redefinicio.html">Ocultació i redefinició</a></li>
+<li class="toctree-l3"><a class="reference internal" href="herencia.casos_especials.html">Casos especials</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +160,9 @@
         
           <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
         
-      <li>Relacions entre classes</li>
+          <li><a href="herencia.html">Herència</a> &raquo;</li>
+        
+      <li>Introducció al concepte d’herència</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,19 +195,73 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="relacions-entre-classes">
-<h1>Relacions entre classes<a class="headerlink" href="#relacions-entre-classes" title="Link permanent a aquest títol">¶</a></h1>
-<p>En la programació orientada a objectes, els programes es composen de
-classes que interaccionen les unes amb les altres. Aquesta interacció
-de les classes es realitza en funció de la relació que tenen aquestes
-classes entre si.</p>
-<p>En considerarem dues relacions: l’agregació i la composició. Deixare’m per més
-endavant una tercera anomenada herència.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="relacions.agregacio.html">Agregació</a></li>
-<li class="toctree-l1"><a class="reference internal" href="relacions.composicio.html">Composició</a></li>
+  <div class="section" id="introduccio-al-concepte-d-herencia">
+<h1>Introducció al concepte d’herència<a class="headerlink" href="#introduccio-al-concepte-d-herencia" title="Link permanent a aquest títol">¶</a></h1>
+<p>Què tenen en comú en Renat, el Garfield, el Misifú, i en Tom (company
+del Jerry)? Doncs tots ells tenen quatre potes amb urpes i ullals,
+miolen, respiren, mengen sardines, empaiten ratolins… en definitiva:
+són gats.</p>
+<p>I, què tenen en comú els gats, els gossos i els ratolins? Doncs que
+respiren, mengen… en definitiva: són animals. Però també són éssers
+vius, mamífers terrestres, de sang calenta, amb endoesquelet…</p>
+<p>Cadascuna de les diferents categories (classes) a les que pertany en
+Renat, li ofereix un conjunt de característiques. En Renat hereta
+necessitat de menjar per ser ésser viu, de respirar per ser animal, un
+esquelet intern per ser un animal amb endoesquelet, urpes i ullals per
+ser felí, etc.</p>
+<p>Diem que Renat és un gat (<em>is-a</em>). I com que els gats són felins, en
+Renat és un felí. I com que els felins són animals, en Renat és un
+animal. És a dir, la relació <em>is-a</em> és transitiva:</p>
+<blockquote>
+<div>Si A és subclasse de B, i B és subclasse de C, llavors A és subclasse de C</div></blockquote>
+<p>O amb un exemple més proper:</p>
+<blockquote>
+<div>Si GatRenat és Gat, i Gat és Felí, llavors GatRenat és Felí</div></blockquote>
+<p>El següent diagrama mostra una jerarquia <em>parcial</em> dels animals.</p>
+<div class="figure align-center">
+<img alt="Jerarquia d'animals" src="_images/poo011.img001.jerarquia_animals.png" />
+</div>
+<p>Al diagrama, les <em>caixes</em> amb nom representen classes, mentre que les
+fletxetes (totes amb nom <em>és un</em>) representen la relació d’herència
+entre dues classes. La classe d’on parteix la fletxa és la que hereta
+de la classe destinació de la fletxa.</p>
+<p>Quan una classe A hereta d’una classe B, es diu que:</p>
+<ul class="simple">
+<li>A és un B</li>
+<li>A estén B</li>
+<li>A especialitza a B</li>
+<li>A concreta B</li>
+<li>B generalitza a A</li>
+<li>A és subclasse de B</li>
+<li>B és superclasse d’A</li>
 </ul>
+<p>Al diagrama veiem també casos en que una classe estén més d’una
+superclasse. Per exemple, els felins són a l’hora carnívors i
+mamífers.  Això permet que un felí tingui a l’hora característiques de
+Carnívor (ex. menja carn), i a l’hora les de mamífer (ex. alleta les
+seves cries).</p>
+<p>D’aquesta possibilitat de disposar de més d’una superclasse pertanyent
+a jerarquies diferents, se’n diu <em>herència múltiple</em> i es produeix
+quan:</p>
+<blockquote>
+<div>A estén B i A estén C però B no estén C ni C estén B</div></blockquote>
+<p>Així, tenim que els gats són a l’hora mamífers i carnívors (per ser
+felins). El diagrama ens mostra que els gossos són també mamífers i
+carnívors, però no són felins. Això explica que, com els gats, mengin
+carn (per ser carnívors) i alletin les seves cries (per ser mamífers)
+però, a diferència dels gats, no tinguin urpes (per no ser felins).
+Això exemplifica el fet que cada classe dins la jerarquia afegeix
+característiques particulars a les seves subclasses.</p>
+<div class="section" id="exercici-1-el-meu-exemple-d-herencia">
+<h2>Exercici 1. El meu exemple d’herència<a class="headerlink" href="#exercici-1-el-meu-exemple-d-herencia" title="Link permanent a aquest títol">¶</a></h2>
+<p>Imagina’t tres classes de manera que una d’elles extengui les altres dues i aquestes no estiguin
+relacionades entre si per herència.</p>
+<p>Torna a explicar, amb les teves paraules el concepte de <em>superclasse</em> fent servir les classes que
+has escollit.</p>
+<p>Idealment les classes que proposis seran conceptes que tothom coneguem, com ho eren Gat i
+Felí d’exemples anteriors.</p>
+<hr class="docutils" />
+<p><em>Ref. 20.1.5.1</em></p>
 </div>
 </div>
 
@@ -214,10 +274,10 @@ endavant una tercera anomenada herència.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relacions.agregacio.html" class="btn btn-neutral float-right" title="Agregació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="herencia.java.html" class="btn btn-neutral float-right" title="L’herència a Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="propietats_finals.html" class="btn btn-neutral" title="Propietats finals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="herencia.html" class="btn btn-neutral" title="Herència" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
