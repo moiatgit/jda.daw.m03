@@ -108,6 +108,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
 </ul>
 </li>
 </ul>
@@ -255,7 +259,7 @@
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
             <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>
             <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">setVides</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>    <span class="c1">// canviem les vides només per distingir-los</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">toStering</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
                 <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getNumInstancies</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="o">);</span>
         <span class="o">}</span>
         <span class="c1">// tornem a demanar a cadascun quants germans té</span>
@@ -270,7 +274,7 @@
 </td></tr></table></div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p>La darrera crida a <code class="docutils literal notranslate"><span class="pre">println()</span></code> (línia 31) es podria escriure de manera més simple, sense
+<p>Les crides a <code class="docutils literal notranslate"><span class="pre">println()</span></code> (línies 25 i 31) es podrien escriure de manera més simple, sense
 necessitat de cridar explícitament al mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. Considera:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
                    <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getNumInstancies</span><span class="o">()</span> <span class="o">+</span>

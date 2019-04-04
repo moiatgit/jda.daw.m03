@@ -1,0 +1,316 @@
+############
+Polimorfisme
+############
+
+Aquest document introdueix al concepte de *polimorfisme*. En una de les seves versions, el
+polimorfisme esdevé una de les conseqüències més útils de l'herència i altres relacions
+jeràrquiques.
+
+Definició
+=========
+
+Una possible definició del polimorfisme és: possibilitat que ofereixen alguns llenguatges
+de programació de fer servir dades de diferents tipus d'una manera uniforme.
+
+De les diferents "varietats" de polimorfisme que els teòrics discuteixen, en aquest
+context ens és útil considerar:
+
+#. *polimorfisme de funcions* o *polimorfisme estàtic*: mètodes que poden ser aplicats a diferents
+   tipus d'arguments. És el que aconseguim, per exemple, amb la sobrecàrrega de mètodes en Java. Ex.
+
+   .. code-block:: java
+      :linenos:
+
+      class A {
+          void m(int a) { /* ... */ }     // versió amb enter
+          void m(char c) { /* ... */ }    // versió amb caràcter
+          void f() {
+              m(1);       // usa la versió amb enter
+              m('1');     // usa la versió amb caràcter
+          }
+      }
+
+#. *polimòrfisme de subclasses* o *polimorfisme dinàmic*: una variable declarada d'una determinada
+   classe A, pot fer referència a instàncies de la classe A, però també de qualsevol classe B que
+   tingui a A com a avantpassat [#avantpassat]_. Ex.
+
+   .. code-block:: java
+      :linenos:
+
+      class A { /* ... */ }
+      class B extends A { /* ... */ }
+      class C {
+          void f() {
+              A a;            // referència de tipus A
+              a = new A();    // instància de tipus A
+              a = new B();    // instància de tipus B assignada a una referència de tipus A
+          }
+      }
+
+B és un A però A no és un B
+===========================
+
+EL polimorfisme de subclasses ens permet fer servir una variable de
+la superclasse per referenciar una instància de la subclasse, però
+**no** a l'inrevés.
+
+El següent dibuix intenta mostrar-ho gràficament.
+
+.. figure:: /_images/cucurutxos.png
+   :alt: Metàfora dels cucurutxos
+   :align: center
+
+A la imatge veiem com un suport (*variable*) per cucurutxos de tipus
+(*classe*) A, pot subjectar (*referenciar*) cucurutxos (*instàncies*) de
+tipus A. Aquest mateix suport, és capaç de subjectar cucurutxos que
+estenen el tipus A. En canvi, amb el suport pels cucurutxos de tipus
+B, els de tipus A ens **caurien** a terra!
+
+Assignació tardana
+==================
+
+*Assignació tardana* (o *late binding*) és la determinació del tipus de
+dades/mètode que realment s'executarà és realitza en temps d'execució i no en la
+compilació.
+
+Per exemple, considerem:
+
+.. code-block:: java
+   :linenos:
+
+    class A {
+        void m() { /* ... */ }
+    }
+    class C {
+        void f() {
+            A a = new A();
+            a.m();
+        }
+    }
+
+El codi que finalment es cridarà en la línia 7 sembla que podria ser
+determinat en temps de compilació: no hauria de ser el definit pel
+mètode ``A.m()``?. En canvi:
+
+.. code-block:: java
+   :linenos:
+
+    class A {
+        void m() { /* ... */ }
+    }
+    class B extends A {
+        void m() { /* ... */ } // redefinició de m()
+        void n() { /* ... */ } // un altre mètode
+    }
+    class C {
+        void f(A a) {
+            a.m();
+            if (a instanceof B) {   // comprova si a és instància de B
+                B b = (B)a;         // considera a com un B
+                b.n();              // ara ja puc accedir a B.n()
+                ((B)a).n();         // també ho puc fer directament
+            }
+        }
+        void g() {
+            f(new A());
+            f(new B());
+        }
+    }
+
+En aquest segon exemple, la situació no està tan clara. Quin mètode
+s'executarà a la línia 10? El del mètode definit a la línia 2 o el de
+la 5?
+
+El compilador no té manera de saber-ho, així que serà la màquina
+virtual qui ho determinarà, en funció del tipus de la instància que
+finalment estigui rebent ``C.f(A)``.
+
+A la línia 11 fem servir l'operador ``instanceof``. Aquest operador ens
+retornarà True si, en temps d'execució, el primer operand resulta ser
+una instància del tipus del segon operand (o bé d'una subclasse
+d'aquest) [#instanceof]_.
+
+Sovint *late binding* es traduït també per *assignació dinàmica*, per
+contrapossar-ho a l'*assignació estàtica* que oferiria el compilador
+(si pogués).
+
+Per cert, aquesta flexibilitat té un preu: es paga amb la velocitat
+d'execució. Si estàs desenvolupant un codi on l'eficiència sigui
+crítica i saps que un mètode no serà redefinit per una subclasse, pots
+facilitar la feina al compilador fent servir ``final``:
+
+.. code-block:: java
+   :linenos:
+
+    class A {
+        final void m() { /* ... */ }
+    }
+    class C {
+        void f() {
+            A a = new A();
+            a.m();
+        }
+    }
+
+Amb aquest darrer exemple, el compilador *sí* sap quin serà el codi
+que s'executarà. Això sí, no intentis crear una subclasse B com la de
+fa dos exemples perquè el compilador es queixarà!
+
+Sí però... quin mètode es crida
+===============================
+
+Quan ens enfrontem per primer cop al polimorfisme, una de les
+dificultats més grans és saber com es realitza finalment aquesta
+assignació tardana.
+
+Per exemple:
+
+.. code-block:: java
+   :linenos:
+
+    class A {
+        void m() { System.out.println("superclasse"); }
+    }
+
+    class B extends A {
+        void m()  { System.out.println("subclasse"); }
+        void sm() { super.m(); } // una mena d'àlies de A.m()
+    }
+
+    class C {
+        void f() {
+            A a = new A();
+            a.m();       // escriu: superclasse
+            B b = new B();
+            b.m();       // escriu: subclasse
+            ((A)b).m();  // escriu... subclasse!
+            a = new B();
+            a.m();       // escriu... subclasse!
+            b.sm();      // escriu: superclasse
+
+            b = new A(); // error de compilació
+            a = new A();
+            a.sm();      // error de compilació
+            ((B)a).sm(); // error d'execució
+        }
+    }
+
+En l'exemple veiem que a la màquina virtual no hi ha manera de fer-li
+executar el mètode definit per A des d'una instància de B (excepte
+fent servir l'"*àlies*" ``B.sm()``.
+
+L'exemple afegeix, a mode de repàs, alguns errors típics dels que
+s'inicien amb aquests temes.
+
+Liskov
+======
+
+El principi de substitució de `Liskov
+<http://en.wikipedia.org/wiki/Barbara_Jane_Liskov>`_ diu que:
+
+    una herència entre dues classes està correctament definida si
+    **sempre** es pot fer servir una instància de la subclasse allà on
+    el programa espera una instància de la superclasse.
+
+Un exemple típic d'herència incorrecta [#herenciaincorrecta]_ és entre
+Quadrat i Rectangle (o també Cercle i Oval). Suposa que tens les
+següents classes:
+
+.. code-block:: java
+   :linenos:
+
+    class Rectangle {
+        private int base, altura;
+        public Rectangle(int base, int altura) {
+            this.base = base; this.altura = altura;
+        }
+        public int getBase() { return base; }
+        public int getAltura() { return altura; }
+        public void setBase(int base) { this.base=base; }
+        public void setAltura(int altura) { this.alaura=altura; }
+        /* ... */
+    }
+
+    class Quadrat extends Rectangle {
+        public Quadrat(int costat) {
+            super(costat, costat);
+        }
+        public int getCostat() { getBase(); }
+        public void setCostat(int costat) {
+            setBase(costat);
+            setAltura(costat);
+        }
+        /* ... */
+    }
+
+Malgrat que, en principi, una herència com aquesta pot semblar una
+bona idea (especialment si els «...» inclouen molt de codi, en
+realitat amaga una desagradable sorpresa. Considera el següent codi:
+
+.. code-block:: java
+   :linenos:
+
+    class UsaRectangles {
+        void f() {
+            Rectangle[] rectangles = new Rectangle[2];
+            rectangles[0] = new Rectangle(3, 5);
+            rectangles[1] = new Quadrat(4);
+            for (Rectangle r: rectangles) {
+                r.setBase(r.getBase() - 1); // encongeix la base
+            }
+        }
+    }
+
+En ``UsaRectangles.f()`` aconseguim que la instància de Quadrat
+referenciada per ``rectangles[1]`` acabi tenint un quadrat de costat 3
+i 4!. És a dir, hem aconseguit *petar* la coherència de la classe i
+tot fent-la servir "legalment".
+
+El problema de l'exemple és que un quadrat **no** es pot considerar un
+rectangle en tots els contexts on s'espera que es comporti
+correctament un rectangle (ex. quan encongim un dels seus costats)
+
+En resum, abans de crear una subclasse B d'una classe A, assegurem-nos
+que podem dir que tot B **és un** A. No n'hi ha prou amb que *algun* B
+és un A, o tot B s'*assembla* a A, o *és pràcticament un* A *excepte
+per*..., etc. Els *ornitorincs* en POO a la llarga es paguen cars. No
+diguis després que no se t'ha avisa't!.
+
+
+Exercici 1. El meu exemple d'herència (revisitat)
+=================================================
+
+Recupera l'exemple d'herència que vas definir a :ref:`exercici_el_meu_exemple_dherencia`.
+
+Descriu perquè el teu exemple respecta o no el principi de Liskov.
+
+Exercici 2. Veiem quin mètode es crida
+======================================
+
+La secció `Sí però... quin mètode es crida`_ presenta un codi orientat a
+demostrar l'assignació tardana en Java. Els noms de les classes i els mètodes
+poden resultar massa abstractes.
+
+Reemplaça'ls per unes classes i mètodes amb més sentit per a tu. Podrien ser
+relacionades amb les que has definit a l'exercici anterior.
+
+El programa resultant hauria de comportar-se de la mateixa manera que
+l'original.
+
+.. rubric:: Anotacions
+
+.. [#avantpassat] (B és subclasse de A, o bé d'una classe C que tingui a A com a
+   avantpassat)
+
+.. [#herenciaincorrecta] Sorprenentment, aquestes exemples els
+   trobarem a molts textos (i cursos) d'introducció a la programació
+   orientada a objectes, pel concepte d'herència!
+
+.. [#instanceof] No tothom està gaire d'acord amb l'ús "indiscriminat"
+   del *instanceof*. Mira per exemple l'article `Beware of instanceof
+   operator <http://www.javapractices.com/topic/TopicAction.do?Id=31>`_
+
+
+----
+
+*Ref. 20.1.6*

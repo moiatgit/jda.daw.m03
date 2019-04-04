@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programació Orientada a Objectes &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Classes, subclasses, classes abstractes, interfaces? &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,7 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Classes i objectes" href="classes_i_objectes.html" />
-    <link rel="prev" title="Agrupacions en classes" href="estructures.classes.html" />
+    <link rel="prev" title="Interfaces" href="interfaces.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -97,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Orientada a Objectes</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
@@ -106,7 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
 </ul>
 </li>
 </ul>
@@ -154,7 +153,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Programació Orientada a Objectes</li>
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Classes, subclasses, classes abstractes, <em>interfaces</em>?</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -187,41 +188,27 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="programacio-orientada-a-objectes">
-<h1>Programació Orientada a Objectes<a class="headerlink" href="#programacio-orientada-a-objectes" title="Link permanent a aquest títol">¶</a></h1>
-<p>Ens endinsem ara al descobriment d’un nou paradigma de programació: la
-programació orientada a objectes</p>
-<p>Darrera de la paraulota <em>paradigma</em> s’amaga la idea de «manera d’entendre
-quelcom». Així, un paradigma de programació seria una manera d’entendre la
-programació.</p>
-<p>Fins ara, hem aprés a desenvolupar amb el paradigma de la programació
-estructurada i modular. Així, hem aprés que estructurem el nostre codi a partir
-de:</p>
-<ul class="simple">
-<li>dades: instruccions d’assignació, entrada/sortida, tipus, estructures</li>
-<li>estructures de control de flux: condicionals (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">switch</span></code>) i de
-repetició (<code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>)</li>
-<li>mòduls: procediments, funcions, crides</li>
-</ul>
-<p>El paradigma de la programació orientada a objectes també inclou els elements
-anteriors, però presenta una particularitat: les dades i els mòduls apareixeran
-agrupats en el que coneixerem com <em>objectes</em>.</p>
-<p>Aquest tema es desglossa en les següents entrades:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.html">Herència</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
-<li class="toctree-l1"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
-</ul>
-</div>
-<hr class="docutils" />
-<p><em>Ref. 20.1</em></p>
+  <div class="section" id="classes-subclasses-classes-abstractes-interfaces">
+<h1>Classes, subclasses, classes abstractes, <em>interfaces</em>?<a class="headerlink" href="#classes-subclasses-classes-abstractes-interfaces" title="Link permanent a aquest títol">¶</a></h1>
+<p>Amb les <em>interfaces</em>, hem afegit una nova eina d’expressió al nostre calaix, en el que ja
+teníem les classes «normals», l’herència i les classes abstractes.</p>
+<p>Ara bé, quan escollirem una opció o una altra?</p>
+<p>Aquesta és una recepta per a decidir si vols una classe, una subclasse, una classe
+abstracta o una <em>interface</em>.</p>
+<ol class="arabic simple">
+<li>Si de la teva nova classe només pots dir que és un <em>Object</em> (<em>is a</em>),
+llavors fes una classe concreta</li>
+<li>Si la teva nova classe correspon a una versió més específica d’una
+altra existent, fes una subclasse (recorda el principi de
+substitució de Liskov)</li>
+<li>Si et cal realitzar una plantilla per a un conjunt de classes i
+disposes d’algun codi que totes les subclasses podrien fer servir,
+i no t’interessa que es pugui instanciar aquesta classe, crea una
+classe abstracta</li>
+<li>Si et cal definir un rol al que altres classes hagin de jugar, amb
+independència de la posició d’aquestes a l’arbre jeràrquic, fes-ho
+amb una <em>interface</em>.</li>
+</ol>
 </div>
 
 
@@ -233,10 +220,8 @@ agrupats en el que coneixerem com <em>objectes</em>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="classes_i_objectes.html" class="btn btn-neutral float-right" title="Classes i objectes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="estructures.classes.html" class="btn btn-neutral" title="Agrupacions en classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="interfaces.html" class="btn btn-neutral" title="Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

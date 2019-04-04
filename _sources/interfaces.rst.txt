@@ -1,0 +1,86 @@
+##########
+Interfaces
+##########
+
+En aquesta secció veurem un nou concepte, també prou important, anomenat
+*interface*. L'anomenarem així, en anglés, per distingir-lo del concepte
+d'interfície que, tot i ser la traducció més propera, sovint tenim associat al
+concepte específic d'interfície gràfica.
+
+Les *interfaces* són un mecanisme molt flexible que permet definir el
+comportament de les classes, de tal manera que puguem arribar a no necessitar
+conèixer amb quina classe concreta estem treballant mentre tinguem clar que
+respon al comportament que esperem.
+
+Una *interface* de Java especifica un conjunt de constants i signatures
+de mètodes que hauran de ser definits per qualsevol classe que
+implementi la *interface*.
+
+Un dels avantatges de les *interfaces* és la possibilitat de
+desenvolupar independentment peces de codi que només es comprometen a
+respectar *un contracte*: la implementació de la *interface*.
+
+Donat que una classe pot implementar un nombre indefinit d'*interfaces*,
+aquest mecanisme resol parcialment l'aparent limitació del Java amb
+l'herència múltiple.
+
+Considerem el següent exemple adaptat del `tutorial oficial de Java
+<http://docs.oracle.com/javase/tutorial/>`_:
+
+.. code-block:: java
+    :linenos:
+
+    public interface Conduible {
+       int gira(Direction direccio,   // Un enumerat amb els valors LEFT i RIGHT
+                  double radi, double velocitatInicial, double velocitatFinal);
+       int canviaCarril(Direction direccio, double velocitatInicial, double velocitatFinal);
+       int senyalitzaGir(Direction direccio, boolean activar);
+       // més signatures de mètodes
+    }
+
+Fixa't que les signatures dels mètodes no tenen claus i finalitzen amb punt i coma tal i
+com fèiem als mètodes abstractes.
+
+Per a fer servir la *interface* ``Conduible`` podem implementar:
+
+.. code-block:: java
+    :linenos:
+
+    public class Seat600 implements Conduible {
+       // mètodes definits per Conduible
+       int senyalitzaGir(Direction direccio, boolean activar) {
+          //codi per activar i desactivar els intermitents del Seat 600
+       }
+       // altres membres de la classe independents de la interface i
+       // no visibles als usuaris d'aquesta
+    }
+
+Fixa't que, per a implementar una *interface*, ho indiquem amb
+implements. Per altra banda, implementar un mètode de la *interface*
+implica simplement escriure el mètode incloent el cos.
+
+Per què la classe implementi correctament una *interface* cal que
+implementi **tots** els mètodes especificats per la *interface*.
+
+
+
+Exercici 1. Els animals de companyia
+====================================
+
+Farem una nova versió del l'exercici :ref:`abstract_exercici_unsaltresanimals`.
+
+En aquesta ocassió implementarem la interfície ``Mascota`` que definirà el
+mètode ``String mascoteja()``.
+
+Entendrem que *Mascotejar* és el que fan els animals de companyia.
+
+El gat mascoteja fent "rrr rrr". El gos ho fa fent "brink brink". El canari ho
+fa… bé, quan mascoteja, simplement fa el mateix que quan piula. El lleo i la boa
+no són animals de companyia en aquest exercici. Ho sento si per tu sí.
+
+Assegura't que el teu codi supera les proves de ``TestSuite`` inclós al
+:download:`paquet de suport <_recursos/E20010803AltresAnimals.tar.gz>`.
+
+----
+
+*Ref. 20.1.8*

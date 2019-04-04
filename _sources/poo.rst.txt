@@ -35,6 +35,10 @@ Aquest tema es desglossa en les següents entrades:
     membres_instancia_classe.rst
     relacions.rst
     herencia.rst
+    polimorfisme.rst
+    abstractes.rst
+    interfaces.rst
+    poo.eleccio.rst
 
 ----
 

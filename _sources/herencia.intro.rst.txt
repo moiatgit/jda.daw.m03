@@ -68,6 +68,8 @@ però, a diferència dels gats, no tinguin urpes (per no ser felins).
 Això exemplifica el fet que cada classe dins la jerarquia afegeix
 característiques particulars a les seves subclasses.
 
+.. _exercici_el_meu_exemple_dherencia:
+
 Exercici 1. El meu exemple d'herència
 =====================================
 

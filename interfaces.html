@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Herència &mdash; Introducció a la programació 1819 documentació</title>
+  <title>Interfaces &mdash; Introducció a la programació 1819 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Introducció al concepte d’herència" href="herencia.intro.html" />
-    <link rel="prev" title="Composició" href="relacions.composicio.html" />
+    <link rel="next" title="Classes, subclasses, classes abstractes, interfaces?" href="poo.eleccio.html" />
+    <link rel="prev" title="Classes abstractes" href="abstractes.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -102,18 +102,10 @@
 <li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Herència</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="herencia.intro.html">Introducció al concepte d’herència</a></li>
-<li class="toctree-l3"><a class="reference internal" href="herencia.java.html">L’herència a Java</a></li>
-<li class="toctree-l3"><a class="reference internal" href="herencia.visualitzacio.html">Una visualització del concepte d’extensió</a></li>
-<li class="toctree-l3"><a class="reference internal" href="herencia.especifics.html">Comportaments específics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="herencia.ocultacio_redefinicio.html">Ocultació i redefinició</a></li>
-<li class="toctree-l3"><a class="reference internal" href="herencia.casos_especials.html">Casos especials</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
 <li class="toctree-l2"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
 </ul>
 </li>
@@ -164,7 +156,7 @@
         
           <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
         
-      <li>Herència</li>
+      <li>Interfaces</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,27 +189,80 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="herencia">
-<h1>Herència<a class="headerlink" href="#herencia" title="Link permanent a aquest títol">¶</a></h1>
-<p>Si es pregunta pel concepte més <em>representatiu</em> de la programació orientada a objectes, amb pocs
-dubtes sortiria el d”<strong>herència</strong>.</p>
-<p>Ja hem vist un parell de relacions entre classes a <a class="reference internal" href="relacions.html"><span class="doc">Relacions entre classes</span></a>. L’herència és una altra relació
-de dependència entre dues classes.</p>
-<p>Aquesta secció introdueix el concepte d’herència i explora algunes de les repercussions més
-visibles en la programació orientada a objectes.</p>
-<p>Els conceptes s’introduiran a partir d’aquests apartats:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="herencia.intro.html">Introducció al concepte d’herència</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.java.html">L’herència a Java</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.visualitzacio.html">Una visualització del concepte d’extensió</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.especifics.html">Comportaments específics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.ocultacio_redefinicio.html">Ocultació i redefinició</a></li>
-<li class="toctree-l1"><a class="reference internal" href="herencia.casos_especials.html">Casos especials</a></li>
-</ul>
-</div>
+  <div class="section" id="interfaces">
+<h1>Interfaces<a class="headerlink" href="#interfaces" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció veurem un nou concepte, també prou important, anomenat
+<em>interface</em>. L’anomenarem així, en anglés, per distingir-lo del concepte
+d’interfície que, tot i ser la traducció més propera, sovint tenim associat al
+concepte específic d’interfície gràfica.</p>
+<p>Les <em>interfaces</em> són un mecanisme molt flexible que permet definir el
+comportament de les classes, de tal manera que puguem arribar a no necessitar
+conèixer amb quina classe concreta estem treballant mentre tinguem clar que
+respon al comportament que esperem.</p>
+<p>Una <em>interface</em> de Java especifica un conjunt de constants i signatures
+de mètodes que hauran de ser definits per qualsevol classe que
+implementi la <em>interface</em>.</p>
+<p>Un dels avantatges de les <em>interfaces</em> és la possibilitat de
+desenvolupar independentment peces de codi que només es comprometen a
+respectar <em>un contracte</em>: la implementació de la <em>interface</em>.</p>
+<p>Donat que una classe pot implementar un nombre indefinit d”<em>interfaces</em>,
+aquest mecanisme resol parcialment l’aparent limitació del Java amb
+l’herència múltiple.</p>
+<p>Considerem el següent exemple adaptat del <a class="reference external" href="http://docs.oracle.com/javase/tutorial/">tutorial oficial de Java</a>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Conduible</span> <span class="o">{</span>
+   <span class="kt">int</span> <span class="nf">gira</span><span class="o">(</span><span class="n">Direction</span> <span class="n">direccio</span><span class="o">,</span>   <span class="c1">// Un enumerat amb els valors LEFT i RIGHT</span>
+              <span class="kt">double</span> <span class="n">radi</span><span class="o">,</span> <span class="kt">double</span> <span class="n">velocitatInicial</span><span class="o">,</span> <span class="kt">double</span> <span class="n">velocitatFinal</span><span class="o">);</span>
+   <span class="kt">int</span> <span class="nf">canviaCarril</span><span class="o">(</span><span class="n">Direction</span> <span class="n">direccio</span><span class="o">,</span> <span class="kt">double</span> <span class="n">velocitatInicial</span><span class="o">,</span> <span class="kt">double</span> <span class="n">velocitatFinal</span><span class="o">);</span>
+   <span class="kt">int</span> <span class="nf">senyalitzaGir</span><span class="o">(</span><span class="n">Direction</span> <span class="n">direccio</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">activar</span><span class="o">);</span>
+   <span class="c1">// més signatures de mètodes</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que les signatures dels mètodes no tenen claus i finalitzen amb punt i coma tal i
+com fèiem als mètodes abstractes.</p>
+<p>Per a fer servir la <em>interface</em> <code class="docutils literal notranslate"><span class="pre">Conduible</span></code> podem implementar:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Seat600</span> <span class="kd">implements</span> <span class="n">Conduible</span> <span class="o">{</span>
+   <span class="c1">// mètodes definits per Conduible</span>
+   <span class="kt">int</span> <span class="nf">senyalitzaGir</span><span class="o">(</span><span class="n">Direction</span> <span class="n">direccio</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">activar</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">//codi per activar i desactivar els intermitents del Seat 600</span>
+   <span class="o">}</span>
+   <span class="c1">// altres membres de la classe independents de la interface i</span>
+   <span class="c1">// no visibles als usuaris d&#39;aquesta</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que, per a implementar una <em>interface</em>, ho indiquem amb
+implements. Per altra banda, implementar un mètode de la <em>interface</em>
+implica simplement escriure el mètode incloent el cos.</p>
+<p>Per què la classe implementi correctament una <em>interface</em> cal que
+implementi <strong>tots</strong> els mètodes especificats per la <em>interface</em>.</p>
+<div class="section" id="exercici-1-els-animals-de-companyia">
+<h2>Exercici 1. Els animals de companyia<a class="headerlink" href="#exercici-1-els-animals-de-companyia" title="Link permanent a aquest títol">¶</a></h2>
+<p>Farem una nova versió del l’exercici <a class="reference internal" href="abstractes.html#abstract-exercici-unsaltresanimals"><span class="std std-ref">Exercici 3. Uns altres animals</span></a>.</p>
+<p>En aquesta ocassió implementarem la interfície <code class="docutils literal notranslate"><span class="pre">Mascota</span></code> que definirà el
+mètode <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">mascoteja()</span></code>.</p>
+<p>Entendrem que <em>Mascotejar</em> és el que fan els animals de companyia.</p>
+<p>El gat mascoteja fent «rrr rrr». El gos ho fa fent «brink brink». El canari ho
+fa… bé, quan mascoteja, simplement fa el mateix que quan piula. El lleo i la boa
+no són animals de companyia en aquest exercici. Ho sento si per tu sí.</p>
+<p>Assegura’t que el teu codi supera les proves de <code class="docutils literal notranslate"><span class="pre">TestSuite</span></code> inclós al
+<a class="reference download internal" href="_downloads/E20010803AltresAnimals.tar.gz" download=""><code class="xref download docutils literal notranslate"><span class="pre">paquet</span> <span class="pre">de</span> <span class="pre">suport</span></code></a>.</p>
 <hr class="docutils" />
-<p><em>Ref. 20.1.5</em></p>
+<p><em>Ref. 20.1.8</em></p>
+</div>
 </div>
 
 
@@ -229,10 +274,10 @@ visibles en la programació orientada a objectes.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="herencia.intro.html" class="btn btn-neutral float-right" title="Introducció al concepte d’herència" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="poo.eleccio.html" class="btn btn-neutral float-right" title="Classes, subclasses, classes abstractes, interfaces?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relacions.composicio.html" class="btn btn-neutral" title="Composició" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="abstractes.html" class="btn btn-neutral" title="Classes abstractes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

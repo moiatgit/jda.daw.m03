@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classes abstractes &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Interfaces" href="interfaces.html" />
+    <link rel="prev" title="Polimorfisme" href="polimorfisme.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Classes abstractes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Classes abstractes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classes-abstractes">
+<h1>Classes abstractes<a class="headerlink" href="#classes-abstractes" title="Link permanent a aquest títol">¶</a></h1>
+<p>A una jerarquia de classes, es pressuposa que la superclasse és més
+<em>abstracta</em> que la subclasse. Sovint recollim els elements comuns
+d’unes classes i els agrupem en una superclasse.</p>
+<p>Considera el següent exemple:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="cm">/* … */</span>
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">comEtDius</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">aixecat</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">estirat</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">seu</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">estàsDret</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">estàsEstirat</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">estàsAssegut</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="o">(</span><span class="n">Menjar</span><span class="o">){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="cm">/* … */</span>
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="o">()</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="o">()</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Gos</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="o">{</span>
+    <span class="cm">/* … */</span>
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kt">void</span> <span class="nf">borda</span><span class="o">(){</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> agrupa els elements comuns dels gats i dels gossos. A l’exemple, tots
+els animals, tant gats com gossos, ens permeten demanar-los que es posin drets i que
+mengin un determinat menjar.</p>
+<p>Fixa’t que d’aquesta manera ens estalviem de definir tots aquests mètodes a les diferents
+subclasses d’animal. Únicament ens caldrà definir els elements particulars. Per exemple,
+la classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code> podria definir el mètode <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">fesSoroll()</span></code> de la següent manera:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">miola</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>A l’exemple dels animals, té sentit instanciar un Gat o un Gos. En podem fer coses amb
+ells com, demanar-los el seu nom, que s’aixequin, que mengin,  que miolin, bordin (o més
+general, que facin soroll).</p>
+<p>Ens podem imaginar quin serà el soroll d’un gat o d’un gos, però, com serà el soroll d’una
+instància d”<code class="docutils literal notranslate"><span class="pre">Animal</span></code>?</p>
+<p>Quan la raó principal de crear una classe és per actuar com a agrupador d’elements comuns
+de les seves subclasses, però no es pretén que existeixin instàncies d’aquesta classe,
+aquesta classe li diem <em>classe abstracta</em>.</p>
+<p>D’una classe abstracta no es poden fer instàncies, però poden contenir qualsevol dels
+elements que una classe «normal» tingui permès. A més a més, pot fer servir el modificador
+<code class="docutils literal notranslate"><span class="pre">abstract</span></code> per a indicar mètodes que han de ser implementats per les subclasses.</p>
+<p>Considerem ara el clàssic exemple de les figures geomètriques.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Figura</span> <span class="o">{</span>
+    <span class="cm">/* …˙*/</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getÀrea</span><span class="o">()</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerímetre</span><span class="o">()</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Quadrat</span> <span class="kd">extends</span> <span class="n">Figura</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Triangle</span> <span class="kd">extends</span> <span class="n">Figura</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Cercle</span> <span class="kd">extends</span> <span class="n">Figura</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Figura</span> <span class="o">{</span> <span class="cm">/* … */</span> <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Les figures geomètriques, com ara cercles, quadrats, triangles…, tenen alguns elements
+en comú. Per exemple, totes elles ocupen un àrea i se’ls pot mesurar el perímetre. En
+paraules de la POO, totes les figures disposen de dos mètodes: <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">getArea()</span></code> i
+<code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">getPerimetre()</span></code> que retornen respectivament l’àrea i el perímetre corresponents
+a la figura.</p>
+<p>És a dir, les classes <code class="docutils literal notranslate"><span class="pre">Cercle</span></code> i <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> serien subclasses de la classe
+<code class="docutils literal notranslate"><span class="pre">Figura</span></code>. Ara bé, com calculem l’àrea d’una instància de la classe <code class="docutils literal notranslate"><span class="pre">Figura</span></code>? No té
+sentit, oi? Per tant, segons la definició anterior, seria adequat implementar la classe
+<code class="docutils literal notranslate"><span class="pre">Figura</span></code>  una classe abstracta.</p>
+<p>La implementació de la classe <code class="docutils literal notranslate"><span class="pre">Figura</span></code> vindria a ser quelcom similar a:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Figura</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="nf">getPerimetre</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t en l’ús del modificador <code class="docutils literal notranslate"><span class="pre">abstract</span></code> als diferents mètodes. A més a més,
+aquests mètodes abstractes <strong>no</strong> tenen cosh</p>
+<p>La implementació de la classe <code class="docutils literal notranslate"><span class="pre">Cercle</span></code> podria ser:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cercle</span> <span class="kd">extends</span> <span class="n">Figura</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">radi</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Cercle</span><span class="o">()</span> <span class="o">{</span> <span class="n">radi</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Cercle</span><span class="o">(</span><span class="kt">double</span> <span class="n">radi</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">radi</span> <span class="o">=</span> <span class="n">radi</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">getRadi</span><span class="o">(),</span> <span class="mi">2</span><span class="o">)</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getPerimetre</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">getRadi</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getRadi</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">radi</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixat en que l’herència s’indica exactament igual que amb una superclasse no
+abstracta, o també anomenada <em>concreta</em>.</p>
+<p>Una subclasse d’una classe abstracta pot ser també abstracta.  Simplement cal no
+implementar algun dels mètodes de la superclasse.</p>
+<div class="section" id="exercici-1-la-jerarquia-d-animals">
+<h2>Exercici 1. ☼ La jerarquia d’animals<a class="headerlink" href="#exercici-1-la-jerarquia-d-animals" title="Link permanent a aquest títol">¶</a></h2>
+<p>Finalitza la implementació de la jerarquia d’animals que apareix a l’inici
+d’aquesta pàgina.</p>
+<p>La major part del codi ja la tens definida a exercicis previs del Gat Renat.</p>
+<p>Vols fer que l’exercici sigui una mica més interessant? Construeix-te els jocs
+de prova. Bàsicament els has d’adaptar respecte a aquells que ja has fet servir
+pel Gat Renat.</p>
+</div>
+<div class="section" id="exercici-2-figures">
+<h2>Exercici 2. Figures<a class="headerlink" href="#exercici-2-figures" title="Link permanent a aquest títol">¶</a></h2>
+<p>Implementa les classes Figura, <code class="docutils literal notranslate"><span class="pre">Quadrat</span></code>, <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">Cercle</span></code> i
+<code class="docutils literal notranslate"><span class="pre">TriangleRectangle</span></code>.</p>
+<p>Aquestes subclasses oferiran únicament constructors específics que permetin especificar
+les dimensions de cada figura:</p>
+<ul class="simple">
+<li>Quadrat: costat</li>
+<li>Rectangle: base, altura</li>
+<li>Cercle: radi</li>
+<li>TriangleRectangle: base, altura</li>
+</ul>
+<p>Cada figura oferirà un constructor específic amb les dimensions anteriors, així com
+mètodes <em>get</em> per a poder consultar-los (ex. <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">getCostat()</span></code>.</p>
+<p>Nota: si et passa pel cap, venç la temptació de fer Quadrat una subclasse de Rectangle
+(recorda el principi de Liskov)</p>
+<p>Disposes de <a class="reference download internal" href="_downloads/E008001Figures.tar.gz" download=""><code class="xref download docutils literal notranslate"><span class="pre">proves</span></code></a> per a aquest exercici.</p>
+</div>
+<div class="section" id="exercici-3-uns-altres-animals">
+<span id="abstract-exercici-unsaltresanimals"></span><h2>Exercici 3. Uns altres animals<a class="headerlink" href="#exercici-3-uns-altres-animals" title="Link permanent a aquest títol">¶</a></h2>
+<p>En aquest exercici desenvoluparem una nova jerarquia d’animals. És nova perquè
+no podrem fer servir pràcticament res del que ja teníem a altres exercicis.</p>
+<p>Desenvolupa la següent jerarquia d’animals representada en UML:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-c659ec1dfdb00cc352801f184eecf96fe73cc56a.png" alt="hide circle
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+class Animal
+class Gat extends Animal
+class Gos extends Animal
+class Canari extends Animal
+class Lleo extends Animal
+class Boa extends Animal"/>
+</p>
+</div>
+<p>És a dir, implementa la classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> amb les subclasses <code class="docutils literal notranslate"><span class="pre">Gat</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Gos</span></code>, <code class="docutils literal notranslate"><span class="pre">Canari</span></code>, <code class="docutils literal notranslate"><span class="pre">Lleo</span></code> i <code class="docutils literal notranslate"><span class="pre">Boa</span></code>.</p>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> és abstracta i ofereix els mètodes i constructors següents:</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Animal(String</span> <span class="pre">nom)</span></code> permet inicialitzar l’animal amb un nom.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">comEtDius()</span></code> retorna el nom de l’animal</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">moute()</span></code> s’implementa amb el següent codi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">moute</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">fesSoroll</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">camina</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">camina()</span></code>: tots els animals d’aquest exercici fan «tap tap tap» en
+caminar.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">dorm()</span></code>: tots els animals d’aquest exercici fan «zzz» en dormir.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">fesSoroll()</span></code>: és un mètode <em>abstracte</em> que cada classe d’animal
+haurà d’implementar. Més endavant s’indica la sortida que s’espera per cada
+animal.</p>
+</li>
+</ul>
+<p>Les subclasses implementen un mètode específic per fer soroll. Per exemple, la
+classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code> implementa el mètode <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">miola()</span></code> que retorna «meeu».
+Aquest és el mètode que crida el mètode <code class="docutils literal notranslate"><span class="pre">fesSoroll()</span></code>.</p>
+<p>La següent taula descriu, per cada subclasse, quin és el métode específic i quin
+soroll fa.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="47%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">classe</th>
+<th class="head">mètode específic</th>
+<th class="head">soroll</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Gat</td>
+<td>miola()</td>
+<td><em>meeu</em></td>
+</tr>
+<tr class="row-odd"><td>Gos</td>
+<td>borda()</td>
+<td><em>bof bof</em></td>
+</tr>
+<tr class="row-even"><td>Canari</td>
+<td>piula()</td>
+<td><em>piu piu</em></td>
+</tr>
+<tr class="row-odd"><td>Lleo</td>
+<td>rugeix()</td>
+<td><em>grr grr</em></td>
+</tr>
+<tr class="row-even"><td>Boa</td>
+<td>xiuxiueja()</td>
+<td><em>xiu-xiu</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Fixa’t que <code class="docutils literal notranslate"><span class="pre">Animal</span></code> té un mètode <em>concret</em> que crida a un mètode <em>abstracte</em>, que
+haurà de ser implementat per les subclasses. Cap problema per Java. Quan aquest mètode
+pugui ser cridat, voldrà dir que hi ha una instància d’una subclasse de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> que
+sí implementa el mètode <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">fesSoroll()</span></code>.</p>
+</div>
+<p>En el paquet de suport <a class="reference download internal" href="_downloads/E20010703AltresAnimals.tar.gz" download=""><code class="xref download docutils literal notranslate"><span class="pre">paquet</span> <span class="pre">de</span> <span class="pre">suport</span></code></a> hi trobaràs, a més dels tests que
+pots executar a partir de <code class="docutils literal notranslate"><span class="pre">TestSuite.java</span></code>, el programa <code class="docutils literal notranslate"><span class="pre">UsaAnimals.java</span></code> i
+el fitxer <code class="docutils literal notranslate"><span class="pre">sortidaesperada.txt</span></code>.</p>
+<p>Assegura’t que el teu codi, a banda de passar les proves de <code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>, també
+generen exàctament la <code class="docutils literal notranslate"><span class="pre">sortidaesperada.txt</span></code> en executat <code class="docutils literal notranslate"><span class="pre">UsaAnimals</span></code>.</p>
+<hr class="docutils" />
+<p><em>Ref. 20.1.7</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interfaces.html" class="btn btn-neutral float-right" title="Interfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="polimorfisme.html" class="btn btn-neutral" title="Polimorfisme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>
