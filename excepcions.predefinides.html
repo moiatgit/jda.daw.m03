@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Excepcions predefinides &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Excepcions amb recursos" href="excepcions.ambrecursos.html" />
+    <link rel="prev" title="Les excepcions en Java" href="excepcions.presentacio.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors_i.html">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relacions.html">Relacions entre classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polimorfisme.html">Polimorfisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="excepcions.html">Excepcions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="excepcions.control.html">Control d’excepcions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="excepcions.presentacio.html">Les excepcions en Java</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Excepcions predefinides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="excepcions.ambrecursos.html">Excepcions amb recursos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+          <li><a href="excepcions.html">Excepcions</a> &raquo;</li>
+        
+      <li>Excepcions predefinides</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="excepcions-predefinides">
+<h1>Excepcions predefinides<a class="headerlink" href="#excepcions-predefinides" title="Link permanent a aquest títol">¶</a></h1>
+<p>Totes les excepcions a Java hereten de la <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">classe Throwable</a>.</p>
+<div class="figure align-center" id="id1">
+<p class="plantuml">
+<img src="_images/plantuml-3b3151c8ab3d179363dfde4d480944436b888d2c.png" alt="class Throwable extends Object
+class Error extends Throwable
+class Exception extends Throwable
+class RuntimeException extends Exception
+
+class PrinterException extends Exception
+class SQLException extends Exception
+
+class IndexOutOfBoundsException extends RuntimeException
+class NullPointerException extends RuntimeException
+class UnsupportedOperationException extends RuntimeException
+
+class VirtualMachineError extends Error
+class OutOfMemoryError extends VirtualMachineError
+class UnknownError extends VirtualMachineError
+
+class IndexOutOfBoundsException #lightgrey
+class PrinterException #lightgrey
+class SQLException #lightgrey
+class NullPointerException #lightgrey
+class UnsupportedOperationException #lightgrey
+class VirtualMachineError #lightgrey
+class OutOfMemoryError #lightgrey
+class UnknownError #lightgrey
+
+
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}"/>
+</p>
+<p class="caption"><span class="caption-text">Jerarquia (parcial) de les excepcions en Java</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>La funció de la classe <code class="docutils literal notranslate"><span class="pre">Throwable</span></code> és indicar que les seves
+subclasses poden ser llençades. Ja hem vist signatures de funcions amb
+<code class="docutils literal notranslate"><span class="pre">throws</span></code>, oi?</p>
+<p>Podem classificar les excepcions de Java en dos tipus: les que
+requereixen ser gestionades explícitament (per exemple amb un bloc
+<em>try</em>/<em>catch</em>) i les que no requereixen d’aquesta gestió explícita.</p>
+<img src="_images/graphviz-a5b599f6f445da71a6bde91e73db6ce23d7877c1.png" alt="digraph {
+    excepcions -&gt; gestionades
+    excepcions -&gt; &quot;no gestionades&quot;
+    gestionades -&gt; Exception
+    &quot;no gestionades&quot; -&gt; Error
+    &quot;no gestionades&quot; -&gt; RuntimeException
+    Error[shape=box]
+    Exception[shape=box]
+    RuntimeException[shape=box]
+
+}" />
+<p>Les excepcions que no requereixen de gestió explícita són les classes <code class="docutils literal notranslate"><span class="pre">Error</span></code> i
+<code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code> i les seves subclasses. Aquestes excepcions representen situacions
+d’error del sistema de les que normalment no s’espera que el programa es recuperi.
+Considera per exemple les subclasses <code class="docutils literal notranslate"><span class="pre">VirtualMachineError</span></code> i <code class="docutils literal notranslate"><span class="pre">NullPointerException</span></code>
+que indiquen, respectivament, que la màquina virtual de Java s’ha trencat, i que el codi
+està fent servir <code class="docutils literal notranslate"><span class="pre">null</span></code> on hauria d’haver una instància.</p>
+<p>La gestió explícita de les excepcions és revisada pel compilador.
+Aquest no deixarà passar un codi que no gestioni les excepcions
+adequadament. Hi ha dues maneres de gestionar una excepció:</p>
+<ol class="arabic simple">
+<li>Envoltar el codi que pot generar una excepció en un bloc <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">{}</span></code> i capturar
+l’excepció amb una clàusula <code class="docutils literal notranslate"><span class="pre">catch</span> <span class="pre">(E</span> <span class="pre">e)</span></code> on <code class="docutils literal notranslate"><span class="pre">E</span></code> ha de ser del tipus d’excepció a
+gestionar o bé una superclasse d’aquesta.</li>
+<li>Indicar al mètode que conté el codi que pot generar l’excepció, que pot llençar
+(<code class="docutils literal notranslate"><span class="pre">throws</span></code>) una excepció del tipus a gestionar o bé una superclasse d’aquesta.</li>
+</ol>
+<p>Fem una ullada a la documentació de la <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">classe Exception</a>.</p>
+<p>A la secció <em>Direct known subclasses</em> hi trobem les subclasses de <code class="docutils literal notranslate"><span class="pre">Exception</span></code> que ens ofereix la API.
+Per exemple hi trobem la <code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code>.</p>
+<div class="section" id="exercici-3-la-classe-hora-amb-illegalargumentexception">
+<span id="excepcions-exercici-horaambillegalargumentexception"></span><h2>Exercici 3. La classe Hora amb <code class="docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code><a class="headerlink" href="#exercici-3-la-classe-hora-amb-illegalargumentexception" title="Link permanent a aquest títol">¶</a></h2>
+<p>Torna a considerar la classe Hora de l’exercici <a class="reference internal" href="excepcions.presentacio.html#excepcions-horaambexcepcions"><span class="std std-ref">anterior</span></a>.</p>
+<p>En aquest cas, l’excepció que es generarà en cas de problemes serà
+<code class="docutils literal notranslate"><span class="pre">IllegalArgumentException</span></code>. Comprova de quin tipus és aquesta excepció (gestionada o no
+gestionada) i adapta el teu codi adequadament.</p>
+<p>Aquest exercici disposa d’un conjunt de tests que pots descarregar-te d”<a class="reference download internal" href="_downloads/E010003HoraTest.java" download=""><code class="xref download docutils literal notranslate"><span class="pre">aquí</span></code></a>.</p>
+</div>
+<div class="section" id="exercici-4-incondicional">
+<h2>Exercici 4. ☼ Incondicional<a class="headerlink" href="#exercici-4-incondicional" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa anomenat <code class="docutils literal notranslate"><span class="pre">UsaHora</span></code> que esperi tres arguments per línia de
+comandes (paràmetre del <code class="docutils literal notranslate"><span class="pre">main()</span></code>)</p>
+<p>El programa no farà servir cap condicional (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">switch</span></code>) ni els simularà amb
+bucles.</p>
+<p>La seva funció <code class="docutils literal notranslate"><span class="pre">main()</span></code> consistirà exactament en el següent codi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">processaEntrada</span><span class="o">(</span><span class="n">args</span><span class="o">));</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Considera les següents sortides esperades per a aquest programa:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java UsaHora
+java.lang.ArrayIndexOutOfBoundsException: 0
+
+$ java UsaHora a
+java.lang.NumberFormatException: For input string: &quot;a&quot;
+
+$ java UsaHora 1
+java.lang.ArrayIndexOutOfBoundsException: 1
+
+$ java UsaHora 1 b
+java.lang.NumberFormatException: For input string: &quot;b&quot;
+
+$ java UsaHora 1 2
+java.lang.ArrayIndexOutOfBoundsException: 2
+
+$ java UsaHora 1 2 c
+java.lang.NumberFormatException: For input string: &quot;c&quot;
+
+$ java UsaHora 24 2 3
+java.lang.IllegalArgumentException: Hora(24, 2, 3) fora de rang
+
+$ java UsaHora 1 60 3
+java.lang.IllegalArgumentException: Hora(1, 60, 3) fora de rang
+
+$ java UsaHora 1 2 -3
+java.lang.IllegalArgumentException: Hora(1, 2, -3) fora de rang
+
+$ java UsaHora 1 2 3
+1:02:04
+</pre></div>
+</div>
+<p>Aquest exercici disposa d’un conjunt de tests que pots descarregar-te d”<a class="reference download internal" href="_downloads/E010004TestSuite.tar.gz" download=""><code class="xref download docutils literal notranslate"><span class="pre">aquí</span></code></a>.</p>
+<hr class="docutils" />
+<p><em>Ref. 20.1.10.3</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="excepcions.ambrecursos.html" class="btn btn-neutral float-right" title="Excepcions amb recursos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="excepcions.presentacio.html" class="btn btn-neutral" title="Les excepcions en Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

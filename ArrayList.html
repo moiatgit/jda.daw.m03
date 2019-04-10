@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ArrayList &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="HashMap" href="HashMap.html" />
+    <link rel="prev" title="Agrupacions d’objectes" href="contenidors.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ArrayList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HashMap.html">HashMap</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="contenidors.html">Agrupacions d’objectes</a> &raquo;</li>
+        
+      <li>ArrayList</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arraylist">
+<h1>ArrayList<a class="headerlink" href="#arraylist" title="Link permanent a aquest títol">¶</a></h1>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-df47ba3c5226f4ca17c5ef827593f4cad8710a6e.png" alt="&#64;startuml
+
+hide circle
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+
+interface Iterable
+interface Collection extends Iterable {
+    afegeix(E): boolean
+    clear()
+    contains(Object): boolean
+    indexOf(Object): int
+    isEmpty(): boolean
+    elimina(Object): boolean
+    size(): int
+    toArray(): Object[]
+}
+interface List extends Collection {
+    afegeix(index: int, E)
+    get(index: int): E
+    elimina(index: int): E
+    set(index: int, E): E
+    subList(fromIndex: int, toIndex: int): llista&lt;E&gt;
+}
+
+class Object
+class AbstractCollection &lt;&lt;abstract&gt;&gt; extends Object implements Collection
+class AbstractList &lt;&lt;abstract&gt;&gt; extends AbstractCollection implements List
+class ArrayList extends AbstractList
+
+&#64;enduml"/>
+</p>
+</div>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">ArrayList</a>
+ens ofereix un contenidor de tipus seqüència força flexible i eficient.</p>
+<p>Un exemple d’ús d’aquesta classe és el següent:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">llista</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;groc&quot;</span><span class="o">);</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;blau&quot;</span><span class="o">);</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;vermell&quot;</span><span class="o">);</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">:</span> <span class="n">colors</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>      <span class="c1">// groc, blau, vermell</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que indiquem el tipus de dades que emmagatzemarem a la seqüència. Això
+permet al compilador de Java comprovar que no ens equivoquem guardant-hi quelcom
+que no toca.</p>
+<div class="section" id="exercici-1-que-podem-fer-amb-un-arraylist">
+<h2>Exercici 1. Què podem fer amb un ArrayList?<a class="headerlink" href="#exercici-1-que-podem-fer-amb-un-arraylist" title="Link permanent a aquest títol">¶</a></h2>
+<p>Al diagrama que apareix en aquesta pàgina, es mostra la relació de <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>
+amb diferents classes i interfícies. El diagrama també mostra alguns dels
+mètodes que ofereix la classe.</p>
+<p>En aquest exercici se’t demana que cerquis què ofereixen els diferents mètodes
+de la classe <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>. Com a mínim els indicats al diagrama.</p>
+<p>Per cada mètode, crea un exemple d’ús, com el que apareix en aquesta
+mateixa pàgina pel mètode <code class="docutils literal notranslate"><span class="pre">afegeix(E)</span></code>.</p>
+</div>
+<div class="section" id="exercici-2-el-llistat-de-contactes">
+<span id="exercici-llistat-contactes-amb-arraylist"></span><h2>Exercici 2. ☆ El llistat de contactes<a class="headerlink" href="#exercici-2-el-llistat-de-contactes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que carregui en memòria les entrades del fitxer
+<code class="docutils literal notranslate"><span class="pre">contactes.lst</span></code> (inicialment pot ser buit o fins i tot no existir).</p>
+<p>Cada entrada disposarà de la següent informació</p>
+<ul class="simple">
+<li>nom del contacte</li>
+<li><code class="docutils literal notranslate"><span class="pre">NUM</span></code> | <code class="docutils literal notranslate"><span class="pre">EMAIl</span></code></li>
+<li>valor</li>
+</ul>
+<p>Per exemple:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rafael Marín John NUM 933349231
+Aina Suàrez Romagossa NUM 643321243
+Aina Suàrez Romagossa NUM 926345123
+Aina Suàrez Romagossa EMAIL aina1998@coldmail.com
+</pre></div>
+</div>
+<p>Aquest exemple té dos contactes. El Rafa només té un número de telèfon,
+mentre que l’Aina té dos números i un email.</p>
+<p>El nom dels contactes serà identificador. Si hi ha més d’una entrada al
+fitxer amb el mateix nom de contacte, voldrà dir que el contacte té més
+d’un</p>
+<p>El programa oferirà un entorn operatiu amb les següents opcions:</p>
+<ul>
+<li><p class="first">ajuda: ofereix un text amb la descripció de totes les opcions disponibles</p>
+</li>
+<li><p class="first">llista: mostra la llista de noms de tots els contactes.</p>
+<p>La llista serà en l’ordre en que apareix al fitxer.</p>
+</li>
+<li><p class="first">llista «str»: mostra la llista de tots els contactes que contenen el
+substring «str» en algun dels seus camps (nom, telèfon o email).</p>
+<p>Si no hi ha cap contacte que contingui aquesta cadena, es mostrarà el
+missatge «cap contacte»</p>
+</li>
+<li><p class="first">mostra «nom»: mostra totes les dades del contacte amb aquest nom. Si no
+es troba, es mostra el missatge «no es troba el contacte».</p>
+</li>
+<li><p class="first">elimina contacte «nom»: elimina el contacte amb aquest nom. Si no hi ha
+cap contacte amb aquest nom, indica «no es troba el contacte».</p>
+<p>Abans d’eliminar el contacte, mostrarà totes les seves dades i demanarà
+confirmació. El resultat final, si s’ha eliminat o no, serà indicat amb
+un missatge.</p>
+</li>
+<li><p class="first">elimina num «nom» «num»: elimina el telèfon del contacte. Si el contacte
+no té aquest telèfon, ho indica amb «telèfon no disponible». Si el
+contacte no es troba, es mostra el missatge «no es troba el contacte».</p>
+<p>No es demana confirmació per eliminar el telèfon, a menys que sigui la
+darrera dada que tenim del contacte. En aquest darrer cas, es demana
+confirmació per eliminar el contacte de la mateixa manera que es fa a
+<code class="docutils literal notranslate"><span class="pre">elimina</span> <span class="pre">contacte</span> <span class="pre">«nom»</span></code>.</p>
+</li>
+<li><p class="first">elimina email «nom» «email»: com a <code class="docutils literal notranslate"><span class="pre">elimina</span> <span class="pre">num</span> <span class="pre">«nom»</span> <span class="pre">«num»</span></code> però amb
+l’adreça de correu.</p>
+</li>
+<li><p class="first">afegeix num «nom» «num»: afegeix el número de telèfon al contacte amb
+aquest nom. Si no hi ha cap contacte amb aquest nom, el crea i l’afegeix
+al final del llistat.</p>
+</li>
+<li><p class="first">afegeix email «nom» «email»: com <code class="docutils literal notranslate"><span class="pre">afegeix</span> <span class="pre">num</span> <span class="pre">«nom»</span> <span class="pre">«num»</span></code> però amb
+l’adreça de correu.</p>
+</li>
+<li><p class="first">puja «nom»: puja el contacte una posició en l’ordre. Si ja era el
+primer, no fa res. Altrament, intercanvia la seva posició amb la de
+l’anterior.</p>
+</li>
+<li><p class="first">flota «nom»: puja el contacte com a primer element del llistat. La resta
+de contactes anteriors passen a tenir una posició més.</p>
+</li>
+<li><p class="first">baixa «nom»: baixa el contacte una posició en l’ordre. Si ja era
+l’últim, no fa res. Altrament, intercanvia la seva posició amb la del
+següent.</p>
+</li>
+<li><p class="first">enfonsa «nom»: baixa el contacte a la darrera posició del llistat. Si ja
+era l’últim, no fa res. Altrament, tots els seus antics posteriors
+passen a ocupar una posició anterior.</p>
+</li>
+<li><p class="first">troba «num»: troba tots els contactes que comparteixen aquest número de
+telèfon. En cas que no n’hi hagi cap, respondrà «no es troba el contacte»,
+altrament mostrarà els noms dels contactes que comparteixen aquest telèfon.</p>
+</li>
+<li><p class="first">canvis: mostra els contactes que han estat canviats respecte el que hi
+ha guardat. Cada contacte apareixerà amb la marca <code class="docutils literal notranslate"><span class="pre">A</span></code> quan ha estat
+afeit, <code class="docutils literal notranslate"><span class="pre">M</span></code> quan s’ha modificat algun dels seus valors o/i la posició,
+o <code class="docutils literal notranslate"><span class="pre">D</span></code> quan ha estat eliminat.</p>
+<p>Si no hi ha canvis, es mostrarà «cap canvi»</p>
+</li>
+<li><p class="first">sortir: en cas que la llista de contactes hagi tingut algun canvi,
+demana a l’usuari si vol guardar els canvis, ignorar-los o cancelar la
+sortida.</p>
+<p>En cas que es demani guardar els canvis, la informació de contactes
+sobreescriurà el contingut del fitxer.</p>
+</li>
+</ul>
+<p>Internament es requereix:</p>
+<ul class="simple">
+<li>implementar la classe <code class="docutils literal notranslate"><span class="pre">Contacte</span></code> que tindrà, com a mínim, un nom, una
+llista de telèfons i una llista d’adreces de correu.</li>
+<li>cal gestionar les excepcions, de manera que l’usuari del programa pugui
+saber què ha passat si hi ha hagut algun problema amb el fitxer.</li>
+</ul>
+<hr class="docutils" />
+<p><em>ef. 21.1</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="HashMap.html" class="btn btn-neutral float-right" title="HashMap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contenidors.html" class="btn btn-neutral" title="Agrupacions d’objectes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

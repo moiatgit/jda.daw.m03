@@ -1,0 +1,202 @@
+#########
+ArrayList
+#########
+
+.. uml::
+    :align: center
+
+    @startuml
+
+    hide circle
+    hide empty members
+
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+        ArrowColor Black
+    }
+
+
+    interface Iterable
+    interface Collection extends Iterable {
+        afegeix(E): boolean
+        clear()
+        contains(Object): boolean
+        indexOf(Object): int
+        isEmpty(): boolean
+        elimina(Object): boolean
+        size(): int
+        toArray(): Object[]
+    }
+    interface List extends Collection {
+        afegeix(index: int, E)
+        get(index: int): E
+        elimina(index: int): E
+        set(index: int, E): E
+        subList(fromIndex: int, toIndex: int): llista<E>
+    }
+
+    class Object
+    class AbstractCollection <<abstract>> extends Object implements Collection
+    class AbstractList <<abstract>> extends AbstractCollection implements List
+    class ArrayList extends AbstractList
+
+    @enduml
+
+
+
+
+La classe `ArrayList
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html>`_
+ens ofereix un contenidor de tipus seqüència força flexible i eficient.
+
+Un exemple d'ús d'aquesta classe és el següent:
+
+.. code-block:: java
+    :linenos:
+
+    llista<String> colors = new ArrayList<String>();
+    colors.afegeix("groc");
+    colors.afegeix("blau");
+    colors.afegeix("vermell");
+    for (String color: colors) {
+        System.out.println(color);      // groc, blau, vermell
+    }
+
+Fixa't que indiquem el tipus de dades que emmagatzemarem a la seqüència. Això
+permet al compilador de Java comprovar que no ens equivoquem guardant-hi quelcom
+que no toca.
+
+Exercici 1. Què podem fer amb un ArrayList?
+===========================================
+
+Al diagrama que apareix en aquesta pàgina, es mostra la relació de ``ArrayList``
+amb diferents classes i interfícies. El diagrama també mostra alguns dels
+mètodes que ofereix la classe.
+
+En aquest exercici se't demana que cerquis què ofereixen els diferents mètodes
+de la classe ``ArrayList``. Com a mínim els indicats al diagrama. 
+
+Per cada mètode, crea un exemple d'ús, com el que apareix en aquesta
+mateixa pàgina pel mètode ``afegeix(E)``.
+
+.. _exercici_llistat_contactes_amb_arraylist:
+
+Exercici 2. ☆ El llistat de contactes
+=====================================
+
+Desenvolupa un programa que carregui en memòria les entrades del fitxer
+``contactes.lst`` (inicialment pot ser buit o fins i tot no existir).
+
+Cada entrada disposarà de la següent informació
+
+* nom del contacte
+
+* ``NUM`` | ``EMAIl`` 
+
+* valor
+
+Per exemple:
+
+.. code-block:: none
+
+    Rafael Marín John NUM 933349231
+    Aina Suàrez Romagossa NUM 643321243
+    Aina Suàrez Romagossa NUM 926345123
+    Aina Suàrez Romagossa EMAIL aina1998@coldmail.com
+
+Aquest exemple té dos contactes. El Rafa només té un número de telèfon,
+mentre que l'Aina té dos números i un email.
+
+El nom dels contactes serà identificador. Si hi ha més d'una entrada al
+fitxer amb el mateix nom de contacte, voldrà dir que el contacte té més
+d'un
+
+El programa oferirà un entorn operatiu amb les següents opcions:
+
+* ajuda: ofereix un text amb la descripció de totes les opcions disponibles
+
+* llista: mostra la llista de noms de tots els contactes.
+
+  La llista serà en l'ordre en que apareix al fitxer.
+
+* llista «str»: mostra la llista de tots els contactes que contenen el
+  substring «str» en algun dels seus camps (nom, telèfon o email).
+
+  Si no hi ha cap contacte que contingui aquesta cadena, es mostrarà el
+  missatge "cap contacte"
+
+* mostra «nom»: mostra totes les dades del contacte amb aquest nom. Si no
+  es troba, es mostra el missatge "no es troba el contacte".
+
+* elimina contacte «nom»: elimina el contacte amb aquest nom. Si no hi ha
+  cap contacte amb aquest nom, indica "no es troba el contacte".
+
+  Abans d'eliminar el contacte, mostrarà totes les seves dades i demanarà
+  confirmació. El resultat final, si s'ha eliminat o no, serà indicat amb
+  un missatge.
+
+* elimina num «nom» «num»: elimina el telèfon del contacte. Si el contacte
+  no té aquest telèfon, ho indica amb "telèfon no disponible". Si el
+  contacte no es troba, es mostra el missatge "no es troba el contacte".
+
+  No es demana confirmació per eliminar el telèfon, a menys que sigui la
+  darrera dada que tenim del contacte. En aquest darrer cas, es demana
+  confirmació per eliminar el contacte de la mateixa manera que es fa a
+  ``elimina contacte «nom»``.
+
+* elimina email «nom» «email»: com a ``elimina num «nom» «num»`` però amb
+  l'adreça de correu.
+
+* afegeix num «nom» «num»: afegeix el número de telèfon al contacte amb
+  aquest nom. Si no hi ha cap contacte amb aquest nom, el crea i l'afegeix
+  al final del llistat.
+
+* afegeix email «nom» «email»: com ``afegeix num «nom» «num»`` però amb
+  l'adreça de correu.
+
+* puja «nom»: puja el contacte una posició en l'ordre. Si ja era el
+  primer, no fa res. Altrament, intercanvia la seva posició amb la de
+  l'anterior.
+
+* flota «nom»: puja el contacte com a primer element del llistat. La resta
+  de contactes anteriors passen a tenir una posició més.
+
+* baixa «nom»: baixa el contacte una posició en l'ordre. Si ja era
+  l'últim, no fa res. Altrament, intercanvia la seva posició amb la del
+  següent.
+
+* enfonsa «nom»: baixa el contacte a la darrera posició del llistat. Si ja
+  era l'últim, no fa res. Altrament, tots els seus antics posteriors
+  passen a ocupar una posició anterior.
+
+* troba «num»: troba tots els contactes que comparteixen aquest número de
+  telèfon. En cas que no n'hi hagi cap, respondrà "no es troba el contacte",
+  altrament mostrarà els noms dels contactes que comparteixen aquest telèfon.
+
+* canvis: mostra els contactes que han estat canviats respecte el que hi
+  ha guardat. Cada contacte apareixerà amb la marca ``A`` quan ha estat
+  afeit, ``M`` quan s'ha modificat algun dels seus valors o/i la posició,
+  o ``D`` quan ha estat eliminat.
+
+  Si no hi ha canvis, es mostrarà "cap canvi"
+
+* sortir: en cas que la llista de contactes hagi tingut algun canvi,
+  demana a l'usuari si vol guardar els canvis, ignorar-los o cancelar la
+  sortida.
+
+  En cas que es demani guardar els canvis, la informació de contactes
+  sobreescriurà el contingut del fitxer.
+
+
+Internament es requereix:
+
+* implementar la classe ``Contacte`` que tindrà, com a mínim, un nom, una
+  llista de telèfons i una llista d'adreces de correu.
+
+* cal gestionar les excepcions, de manera que l'usuari del programa pugui
+  saber què ha passat si hi ha hagut algun problema amb el fitxer.
+
+----
+
+*ef. 21.1*

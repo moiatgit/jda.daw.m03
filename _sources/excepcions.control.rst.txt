@@ -1,0 +1,125 @@
+####################
+Control d'excepcions
+####################
+
+Una excepció és un esdeveniment (*event*) que representa una condició anormal
+en l'execució d'un programa i que atura el flux normal d'execució.
+
+Les excepcions permeten a les aplicacions detectar i donar resposta situacions
+d'error de manera controlada (sense penjar-se)
+
+Considerem l'exemple de la classe ``Hora``
+
+.. code-block:: java
+    :linenos:
+
+    public class Hora {
+      private int h, m, s;
+      public Hora() { h=0; m=0; s=0; }
+      public Hora(int h,int m, int s) { this.h=h; this.m=m; this.s=s; }
+      public int getHora() { return h; }
+      public int getMinut() { return m; }
+      public int getSegon() { return s; }
+      public void setHora(int h) { this.h=h; }
+      public void setMinut(int m) { this.m=m; }
+      public void setSegon(int s) { this.s=s; }
+      public String toString() { return h+":"+m+":"+s; }
+    }
+
+Imaginem que volem controlar que els valors que ens introdueixen els
+mètodes set siguin correctes.
+
+Una manera seria la següent:
+
+.. code-block:: java
+
+    public void setHora(int h)  {
+        if (h>=0 && h<24) this.h=h;
+    }
+
+D'aquesta manera només hi acceptem hores vàlides.
+
+El problema és que el programa usuari no té manera de saber que ha
+introduït un valor no vàlid!
+
+Una solució pot ser fer que el mètode cridat retorni informació sobre
+el resultat de la seva execució:
+
+.. code-block:: java
+   :linenos:
+
+   /** retorna true si s'ha assignat satisfactòriament */
+   public boolean setHora(int h)  {
+     boolean correcte = (h>=0 && h<24);
+     if (correcte) this.h=h;
+     return correcte;
+   }
+
+Que podem usar d'una manera similar a:
+
+.. code-block:: java
+    :linenos:
+
+    // «...»
+    Hora h1 = new Hora();
+    if (h1.setHora(4)) {
+        System.out.println("Assignada l'hora correctament");
+    } else {
+        System.out.println("Error assignant l'hora");
+    }
+    // «...»
+
+Però el nostre programa s'ha fet força més llarg i menys llegible.
+
+Hi haurà alguna manera més llegible i compacta de controlar aquestes situacions excepcionals?
+
+.. _excepcions_horaambcontrolderrors:
+
+Exercici 1. La classe Hora amb control d'errors
+===============================================
+
+Torna a considerar l'exercici de :ref:`mètodes de classe <metodesdeclasse_exercici>`.
+
+En aquest cas, se't demana desenvolupar una nova versió de la classe ``Hora`` que sigui
+mutable. És a dir, que ofereixi mètodes *set* per a assignar els valors d'hores, minuts i
+segons. Aquests mètodes retornaran ``true`` quan l'assignació hagi estat possible i
+``false`` altrament.
+
+El següent diagrama descriu la nova classe:
+
+.. uml::
+   :align: center
+
+   class Hora {
+        Hora()
+        Hora(int hores, int minuts, int segons)
+        int getHores()
+        int getMinuts()
+        int getSegons()
+        boolean setHores(int)
+        boolean setMinuts(int)
+        boolean setSegons(int)
+        void incrementa()
+        void incrementa(int)
+        void decrementa()
+        void decrementa(int)
+        int compareTo(Hora)
+        String toString()
+        static boolean esValida(int hores, int minuts, int segons)
+        static int compareTo(Hora, Hora)
+        static Hora duplica(Hora)
+    }
+    hide class circle
+    skinparam classAttributeIconSize 0
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+    }
+
+
+Aquest exercici disposa d'un conjunt de tests que pots descarregar-te d':download:`aquí
+<_recursos/E010001HoraTest.java>`.
+
+----
+
+*Ref. 20.1.10.1*

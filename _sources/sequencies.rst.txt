@@ -28,11 +28,6 @@ Els continguts d'aquesta secció es distribueixen en les següents entrades:
     sequencies.juguem.rst
     sequencies.matrius.rst
 
-.. sequencies.pythoniques.rst
-.. sequencies,modificables.rst
-.. sequencies.el_penjat
-
-
 ----
 
 *Ref. IP15*

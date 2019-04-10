@@ -115,8 +115,10 @@
 <li class="toctree-l2"><a class="reference internal" href="abstractes.html">Classes abstractes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="poo.eleccio.html">Classes, subclasses, classes abstractes, <em>interfaces</em>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="excepcions.html">Excepcions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a></li>
 </ul>
 
             
@@ -202,7 +204,7 @@
   <div class="section" id="una-visualitzacio-del-concepte-d-extensio">
 <h1>Una visualització del concepte d’extensió<a class="headerlink" href="#una-visualitzacio-del-concepte-d-extensio" title="Link permanent a aquest títol">¶</a></h1>
 <p>La interfície pública d’una classe està formada per tots els membres públics que defineix la classe,
-més tots els membres públics<a class="footnote-reference" href="#protected" id="id1">[1]</a> que hereta.</p>
+més tots els membres públics que hereta.</p>
 <p>Considerem el següent diagrama:</p>
 <div class="figure align-center">
 <img alt="herència" src="_images/poo011.img002.herencia.png" />
@@ -326,11 +328,11 @@ oferirà, però, cap mètode per canviar el nom. De fet, aquesta propietat serà
 <span class="cm"> * de comandes, els pregunta com estan i el seu nom, i mostra els</span>
 <span class="cm"> * resultats per pantalla.</span>
 <span class="cm"> */</span>
-<span class="kn">import</span> <span class="nn">java.util.Vector</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaGat</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Provador de gats&quot;</span><span class="o">);</span>
-        <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;</span> <span class="n">llistaDeGats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;();</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;</span> <span class="n">llistaDeGats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;();</span>
         <span class="c1">// crea la llista de gats passats per paràmetre</span>
         <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">:</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="o">(</span><span class="n">nom</span><span class="o">);</span>
@@ -365,21 +367,6 @@ El gat Garfield diu que està estirat
 Ara el Garbage Collector acabarà amb tots els gats. Ha Ha Ha!
 </pre></div>
 </div>
-<p>Nota: el tipus Vector&lt;Gat&gt; és un vector de gats. Pots trobar
-l’especificació dels mètodes de la classe <code class="docutils literal notranslate"><span class="pre">Vector</span></code> a la documentació
-oficial de la API de Java. Tot i que la notació pot semblar-te una
-mica confosa, simplement està dient que el vector és de gats i no de
-cap altra classe. Considera l’exemple com a introducció al concepte de
-<em>genèrics</em> que treballarem posteriorment.</p>
-<p class="rubric">Anotacions</p>
-<table class="docutils footnote" frame="void" id="protected" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Per ser precisos, hereta tots els mèmbres no privats
-de la superclasse. Aquesta puntualització tindrà més sentit quan
-coneguem el concepte de <em>visibilitat</em>.</td></tr>
-</tbody>
-</table>
 <hr class="docutils" />
 <p><em>Ref. 20.1.5.3</em></p>
 </div>

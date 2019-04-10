@@ -3,7 +3,7 @@ Una visualització del concepte d'extensió
 #########################################
 
 La interfície pública d'una classe està formada per tots els membres públics que defineix la classe,
-més tots els membres públics [#protected]_ que hereta.
+més tots els membres públics que hereta.
 
 Considerem el següent diagrama:
 
@@ -107,11 +107,11 @@ Finalment, per provar la classe Gat executem el següent codi:
      * de comandes, els pregunta com estan i el seu nom, i mostra els
      * resultats per pantalla.
      */
-    import java.util.Vector;
+    import java.util.ArrayList;
     public class UsaGat {
         public static void main(String[] args) {
             System.out.println("Provador de gats");
-            Vector<Gat> llistaDeGats = new Vector<Gat>();
+            ArrayList<Gat> llistaDeGats = new ArrayList<Gat>();
             // crea la llista de gats passats per paràmetre
             for (String nom: args) {
                 Gat gat = new Gat(nom);
@@ -148,21 +148,6 @@ Ens haurà de generar el següent contingut dins del fitxer
     El gat Misifú diu que està estirat
     El gat Garfield diu que està estirat
     Ara el Garbage Collector acabarà amb tots els gats. Ha Ha Ha!
-
-Nota: el tipus Vector<Gat> és un vector de gats. Pots trobar
-l'especificació dels mètodes de la classe ``Vector`` a la documentació
-oficial de la API de Java. Tot i que la notació pot semblar-te una
-mica confosa, simplement està dient que el vector és de gats i no de
-cap altra classe. Considera l'exemple com a introducció al concepte de
-*genèrics* que treballarem posteriorment.
-
-
-
-.. rubric:: Anotacions
-
-.. [#protected] Per ser precisos, hereta tots els mèmbres no privats
-   de la superclasse. Aquesta puntualització tindrà més sentit quan
-   coneguem el concepte de *visibilitat*.
 
 ----
 

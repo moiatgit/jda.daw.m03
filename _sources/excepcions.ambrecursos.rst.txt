@@ -1,0 +1,204 @@
+#######################
+Excepcions amb recursos
+#######################
+
+
+Les excepcions sovint les trobem associades a l'ús de recursos que poden fallar, com ara
+accés a fitxers, a la xarxa, a un SGBD, etc.
+
+Quan hem de fer servir un recurs, l'estructura habitual és la següent:
+
+.. code-block:: java
+    :linenos:
+
+    // declarar referències als recursos
+    try {
+        // iniciar els recursos (ex. obrir, connectar...)
+        // processar recursos   (ex. escriure, enviar...)
+    } catch ( CorresponentException e) {
+        // processar excepció
+    } finally {
+        // finalitzar recursos  (ex. tancar, desconnectar...)
+    }
+
+Fixa't que:
+
+* primer declarem les variables que han de fer referència als nostres recursos
+
+* dins del *try* iniciem els recursos (creem les instàncies, els obrim, etc..)
+
+* si no ha fallat, realitzem sobre els recursos les activitats que necessitem com ara
+  guardar un valor en un fitxer, o fer una consulta a la base de dades.
+
+* en cas que falli alguna cosa, la capturem amb el *catch* i recuperem la situació de la
+  manera que correspongui (ex. guardant els detalls del problema a un fitxer de log.
+
+* tant si hi ha com si no hi ha error, finalitzem alliberant els recursos reservats. Per
+  exemple, tancarem la connexió amb la base de dades o el fitxer.
+
+Per exemple, considera el :download:`següent codi <_code/CatBasic.java>` que
+defineix la nostra versió de la comanda *cat*, la coneguda utilitat GNU que ens
+permet veure el contingut d'un fitxer de text:
+
+.. literalinclude:: _code/CatBasic.java
+    :language: java
+    :linenos:
+
+El primer cop que veus una cosa així, et pots espantar. Quan se't passi, continua llegint.
+Veuràs que no era per tant.
+
+Pots executar aquest codi des del mateix directori on tinguis el seu
+codi font, fent:
+
+.. code-block:: bash
+
+    $ java CatBasic fitxerinexistent1 CatBasic.java fitxerinexistent2
+
+En executar la línia anterior, trobaràs que apareixen dos missatges d'error per fitxer
+inexistent, i el contingut del fitxer ``CatBasic.java`` amb cada línia numerada.
+
+Algunes consideracions:
+
+* l'exemple fa servir ``ArrayList<String>``. És tracta d'una classe definida per la API de
+  Java que ofereix algunes millores d'usabilitat al ``String[]``. En aquest codi, fem
+  servir els mètodes:
+
+  - ``add(String)`` per a afegir una nova línia al final
+
+  - ``int size()`` per saber quants elements hi tenim
+
+  - ``String get(int)`` per a obtenir una línia concreta
+
+  Més endavant estudiarem aquesta classe amb una mica més de profunditat.
+
+* A la línia 10 declarem un ``FileReader``. Ja la coneixem del tema
+  :doc:`fitxers`. Es tracta d'una classe de la `API de Java
+  <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileReader.html>`_
+  que ens permet llegir fitxers caràcter a caràcter. Aquí l'hem d'inicialitzar a
+  ``null`` o el compilador es queixaria que en línies com la 24 pugui no estar
+  inicialitzada.
+
+* Ja dins del *try*, a la línia 12, inicialitzem el ``FileReader`` tot passant-li el camí
+  cap el fitxer a obrir.
+
+* A la línia 13, *embolcallem* el ``FileReader`` amb un ``BufferedReader``, una
+  `altra utilitat de Java
+  <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html>`_
+  que ens permetrà llegir el fitxer línia a línia, en comptes de caràcter a
+  caràcter.
+
+* Entre les línies 14 i 17 fem la feina real de llegir línia a línia i guardar-les a la
+  seqüència.
+
+* A la línia 18 capturem l'excepció que es produeix quan no es troba el fitxer.
+
+* A la línia 20 capturem altres excepcions d'entrada sortida.
+
+  Donat que ``FileNotFoundException`` és subclasse de ``IOException``, en realitat podríem
+  haver-nos estalviat un *catch*. D'aquesta manera, però, podem oferir un missatge més
+  específic.
+
+* A la línia 22 comença el bloc *finally*, que serà executat passi el que passi dins del
+  bloc *try*. En aquest cas, hem de comprovar que ``fr`` apunti a un ``FileReader`` (no
+  passarà si, per exemple, el fitxer no existeix) i *intentar* tancar-la. Cal
+  *intentar-ho* doncs ``FileReader.close()`` pot generar una ``IOException``.
+
+``try`` amb recursos
+====================
+
+Java ens ofereix una variant d'ús del *try*. Es diu `try amb recursos
+<http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html>`_.
+Aquesta versió ens permet especificar recursos com a arguments de *try*. Quan
+fem servir aquest format, el compilador de Java afegirà el codi necessari per
+tancar els recursos tant si es produeix excepció o no.
+
+El format és:
+
+.. code-block:: java
+
+    try (declaracióIInicialitzacióDelsRecursos) {
+        // processar recursos
+    } catch ( CorresponentException e) {
+        // processar excepció
+    }
+
+Fixa't que aquí ens estalviem la declaració de les variables fora del bloc del
+*try*, doncs es realitza dins dels paràmetres d'aquest. També ens estalviem el
+bloc *finally*.
+
+Per a poder fer servir aquesta notació, els recursos han d'implementar la
+*interface* `Autocloseable
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html>`_.
+Això vol dir que fins i tot podem crear els nostres propis recursos!.
+
+Exercici 5. Cat amb recursos
+============================
+
+A partir del codir de la classe ``CatBasic``, fes la nova classe ``CatAmbRecursos`` que
+realitzi exàctament el mateix que ``CatBasic`` però fent servir la funcionalitat *try amb
+recursos* que acabem de veure.
+
+.. tip:: El bloc *try* comença així:
+
+        .. code-block:: java
+
+            try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+
+.. _excepcions_exercici_excepcionsambrecursos:
+
+Exercici 6. Excepcions amb recursos
+===================================
+
+A partir del codi de la classe ``CatAmbRecursos``, se't demana que facis una
+nova classe anomenada ``MostraImports`` tal que:
+
+* processi la llista d'arguments que se li passin per línia de comandes
+
+* per cada fitxer que no contingui codi Java (per simplicitat, els que no
+  tinguin extensió .java), mostrarà el missatge *«nomfitxer»: no correspon a un
+  fitxer Java*.
+
+* per cada fitxer .java que no es pugui obrir, mostrarà el missatge
+  *«nomfitxer»: no es pot obrir. «missatge de l'excepció»*
+
+* per cada fitxer .java que si es pugui obrir, mostrarà la llista d'imports que
+  conté o el missatge "Cap import" si no conté cap.
+
+* en cas que es produeixi una excepció ``IOException``, el missatge que es
+  mostrarà serà *«nomfitxer»: s'ha trobat un problema: «missatge de l'excepció»*
+
+  Per exemple:
+
+.. code-block:: bash
+
+    $ java MostraImports fitxernojava.c fitxerinexistent.java CatBasic.java
+    fitxernojava.c: no correspon a un fitxer Java
+    fitxerinexistent.java: no es pot obrir.
+    CatBasic.java:
+        java.io.BufferedReader
+        java.io.FileReader
+        java.io.IOException
+        java.io.FileNotFoundException
+        java.util.ArrayList
+
+.. note:
+
+    Quan estiguis realitzant aquest exercici, tingues en compte:
+
+    * fes servir el *try* amb recursos.
+
+    * no et preocupis de casos especials d'*import* (ex. els estàtics) Assegura't
+      simplement que el teu codi és capaç de processar situacions com les de
+      ``CatBasic.java``.
+
+    * recorda que la `classe String
+      <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html>`_
+      disposa de moltes utilitats per a poder consultar i extreure parts d'un
+      String.
+
+    * els elements de la llista d'*imports* apareixen indentats amb 4 espais.
+
+
+----
+
+*Ref. 20.1.10.6*

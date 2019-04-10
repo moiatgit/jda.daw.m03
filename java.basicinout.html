@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a></li>
 </ul>
 
             
@@ -265,12 +266,13 @@ sortida estàndard.</p>
 <p>Fixat que <code class="docutils literal notranslate"><span class="pre">print()</span></code> i <code class="docutils literal notranslate"><span class="pre">printf()</span></code> requereixen explicitar el salt de línia.</p>
 </li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">printf()</span></code> és semblant a la funció del mateix nom en C. Permet definir un patró en forma de String
-amb variables (que comencen amb <code class="docutils literal notranslate"><span class="pre">%</span></code>) que després substituirà amb els valors que rep a continuació.
-En el cas de l’exemple, apareix <code class="docutils literal notranslate"><span class="pre">%s</span></code> i <code class="docutils literal notranslate"><span class="pre">%n</span></code>, el primer indica que rebrà un valor de tipus String
-(el literal <code class="docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Món!&quot;</span></code> mentre que el segon seria equivalent a <code class="docutils literal notranslate"><span class="pre">\n</span></code> però és vàlid per més
-plataformes, i per tant, recomanat. A banda d’aquestes opcions, permet indicar altres tipus de
-dades. Considera el següent exemple:</p>
+<p><code class="docutils literal notranslate"><span class="pre">printf()</span></code> és semblant a la funció <code class="docutils literal notranslate"><span class="pre">print()</span></code> de Python. Permet definir un
+patró en forma de String amb variables (que comencen amb <code class="docutils literal notranslate"><span class="pre">%</span></code>) que després
+substituirà amb els valors que rep a continuació.  En el cas de l’exemple,
+apareix <code class="docutils literal notranslate"><span class="pre">%s</span></code> i <code class="docutils literal notranslate"><span class="pre">%n</span></code>, el primer indica que rebrà un valor de tipus String (el
+literal <code class="docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Món!&quot;</span></code> mentre que el segon seria equivalent a <code class="docutils literal notranslate"><span class="pre">\n</span></code> però és
+vàlid per més plataformes, i per tant, recomanat. A banda d’aquestes opcions,
+permet indicar altres tipus de dades. Considera el següent exemple:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * Demostració d&#39;ús del printf()</span>
 <span class="cm"> */</span>

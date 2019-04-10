@@ -1,0 +1,69 @@
+######################
+Agrupacions d'objectes
+######################
+
+Una de les gràcies de fer programes és la d'automatitzar el processament de
+moltes dades.
+
+La majoria dels llenguatges de programació ens ofereixen estructures de dades
+que ens permeten emmagatzemar agrupacions d'elements.
+
+Ja hem vist els *arrays* de Java, que el llenguatge inclou directament. Aquesta
+estructura, però, sovint pot resultar molt limitada donat que ens obliga a
+conèixer, en el moment de crear-la, quants elements hi guardarem.
+
+En aquesta secció veurem algunes de les utilitats que ens ofereix la biblioteca
+de Java. En concret, veurem exemples habituals de dues famílies principals:
+*col·leccions* i *mapes*.
+
+.. uml::
+    :align: center
+
+    @startuml
+
+    hide circle
+    hide empty members
+
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+        ArrowColor Black
+    }
+
+    interface Collection
+    interface Map
+
+    interface List extends Collection
+    class ArrayList implements List
+    class HashMap implements Map
+
+    @enduml
+
+El diagrama UML anterior ens mostra una visió **molt** parcial de les classes que ens
+ofereix la API de Java. 
+
+* la interface `Collection
+  <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html>`_
+  ens ofereix maneres d'agrupar les dades individuals.
+
+  Aquesta interface presenta moltes subinterfaces. N'estudiarem una:
+  `List
+  <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html>`_.
+
+* la interface `Map
+  <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html>`_
+  ens ofereix agrupació de dades per parelles associades, també conegudes com a
+  clau-valor.
+
+Anem a pams:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    ArrayList.rst
+    HashMap.rst
+
+----
+
+*Ref. 21*

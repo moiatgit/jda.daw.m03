@@ -39,6 +39,7 @@ Aquest tema es desglossa en les següents entrades:
     abstractes.rst
     interfaces.rst
     poo.eleccio.rst
+    excepcions.rst
 
 ----
 

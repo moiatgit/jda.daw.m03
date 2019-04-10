@@ -67,12 +67,13 @@ Analitzem amb detall la instrucció ``System.out.println("Hola Món!");``
 
   Fixat que ``print()`` i ``printf()`` requereixen explicitar el salt de línia.
 
-``printf()`` és semblant a la funció del mateix nom en C. Permet definir un patró en forma de String
-amb variables (que comencen amb ``%``) que després substituirà amb els valors que rep a continuació.
-En el cas de l'exemple, apareix ``%s`` i ``%n``, el primer indica que rebrà un valor de tipus String
-(el literal ``"Hola Món!"`` mentre que el segon seria equivalent a ``\n`` però és vàlid per més
-plataformes, i per tant, recomanat. A banda d'aquestes opcions, permet indicar altres tipus de
-dades. Considera el següent exemple:
+``printf()`` és semblant a la funció ``print()`` de Python. Permet definir un
+patró en forma de String amb variables (que comencen amb ``%``) que després
+substituirà amb els valors que rep a continuació.  En el cas de l'exemple,
+apareix ``%s`` i ``%n``, el primer indica que rebrà un valor de tipus String (el
+literal ``"Hola Món!"`` mentre que el segon seria equivalent a ``\n`` però és
+vàlid per més plataformes, i per tant, recomanat. A banda d'aquestes opcions,
+permet indicar altres tipus de dades. Considera el següent exemple:
 
 .. literalinclude:: _code/DemoPrintf.java
     :language: java

@@ -18,4 +18,6 @@ endavant una tercera anomenada herència.
    relacions.composicio.rst
 
 
+----
 
+*Ref. 20.1.4*

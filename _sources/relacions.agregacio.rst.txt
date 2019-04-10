@@ -117,3 +117,7 @@ Crea un joc de proves que mostri el funcionament d'aquestes noves funcionalitats
 
 
 
+----
+
+*Ref. 20.1.4.1*
+

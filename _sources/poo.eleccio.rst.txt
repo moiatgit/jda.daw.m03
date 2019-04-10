@@ -26,3 +26,7 @@ abstracta o una *interface*.
    independència de la posició d'aquestes a l'arbre jeràrquic, fes-ho
    amb una *interface*.
 
+
+----
+
+*Ref. 20.1.9*
