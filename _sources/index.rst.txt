@@ -29,8 +29,7 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     fitxers.rst
     estructures.rst
     poo.rst
-
-.. contenidors.rst
+    contenidors.rst
 
 ----
 
