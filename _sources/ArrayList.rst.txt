@@ -85,10 +85,13 @@ mateixa pàgina pel mètode ``afegeix(E)``.
 Exercici 2. ☆ El llistat de contactes
 =====================================
 
-Desenvolupa un programa que carregui en memòria les entrades del fitxer
+En aquest exercici, desenvoluparem un programa anomenat ``GestioContactes`` que
+ens permetrà gestionar una llista de contactes.
+
+En arrencar, el nostre programa carregarà en memòria les entrades del fitxer
 ``contactes.lst`` (inicialment pot ser buit o fins i tot no existir).
 
-Cada entrada disposarà de la següent informació
+Cada entrada, o línia, disposarà de la següent informació
 
 * nom del contacte
 
