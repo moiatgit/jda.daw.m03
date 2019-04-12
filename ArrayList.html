@@ -187,7 +187,7 @@
 <h1>ArrayList<a class="headerlink" href="#arraylist" title="Link permanent a aquest títol">¶</a></h1>
 <div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-df47ba3c5226f4ca17c5ef827593f4cad8710a6e.png" alt="&#64;startuml
+<img src="_images/plantuml-de6195cd8e09a2a0eb803b5df867001d2aaaf8a2.png" alt="&#64;startuml
 
 hide circle
 hide empty members
@@ -201,21 +201,21 @@ skinparam class {
 
 interface Iterable
 interface Collection extends Iterable {
-    afegeix(E): boolean
+    add(E): boolean
     clear()
     contains(Object): boolean
     indexOf(Object): int
     isEmpty(): boolean
-    elimina(Object): boolean
+    remove(Object): boolean
     size(): int
     toArray(): Object[]
 }
 interface List extends Collection {
-    afegeix(index: int, E)
+    add(index: int, E)
     get(index: int): E
-    elimina(index: int): E
+    remove(index: int): E
     set(index: int, E): E
-    subList(fromIndex: int, toIndex: int): llista&lt;E&gt;
+    subList(fromIndex: int, toIndex: int): List&lt;E&gt;
 }
 
 class Object
@@ -235,10 +235,10 @@ ens ofereix un contenidor de tipus seqüència força flexible i eficient.</p>
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">llista</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
-<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;groc&quot;</span><span class="o">);</span>
-<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;blau&quot;</span><span class="o">);</span>
-<span class="n">colors</span><span class="o">.</span><span class="na">afegeix</span><span class="o">(</span><span class="s">&quot;vermell&quot;</span><span class="o">);</span>
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;groc&quot;</span><span class="o">);</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;blau&quot;</span><span class="o">);</span>
+<span class="n">colors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;vermell&quot;</span><span class="o">);</span>
 <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">:</span> <span class="n">colors</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>      <span class="c1">// groc, blau, vermell</span>
 <span class="o">}</span>
@@ -255,7 +255,7 @@ mètodes que ofereix la classe.</p>
 <p>En aquest exercici se’t demana que cerquis què ofereixen els diferents mètodes
 de la classe <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>. Com a mínim els indicats al diagrama.</p>
 <p>Per cada mètode, crea un exemple d’ús, com el que apareix en aquesta
-mateixa pàgina pel mètode <code class="docutils literal notranslate"><span class="pre">afegeix(E)</span></code>.</p>
+mateixa pàgina pel mètode <code class="docutils literal notranslate"><span class="pre">add(E)</span></code>.</p>
 </div>
 <div class="section" id="exercici-2-el-llistat-de-contactes">
 <span id="exercici-llistat-contactes-amb-arraylist"></span><h2>Exercici 2. ☆ El llistat de contactes<a class="headerlink" href="#exercici-2-el-llistat-de-contactes" title="Link permanent a aquest títol">¶</a></h2>
@@ -358,7 +358,7 @@ llista de telèfons i una llista d’adreces de correu.</li>
 saber què ha passat si hi ha hagut algun problema amb el fitxer.</li>
 </ul>
 <hr class="docutils" />
-<p><em>ef. 21.1</em></p>
+<p><em>Ref. 21.1</em></p>
 </div>
 </div>
 

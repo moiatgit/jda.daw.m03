@@ -19,21 +19,21 @@ ArrayList
 
     interface Iterable
     interface Collection extends Iterable {
-        afegeix(E): boolean
+        add(E): boolean
         clear()
         contains(Object): boolean
         indexOf(Object): int
         isEmpty(): boolean
-        elimina(Object): boolean
+        remove(Object): boolean
         size(): int
         toArray(): Object[]
     }
     interface List extends Collection {
-        afegeix(index: int, E)
+        add(index: int, E)
         get(index: int): E
-        elimina(index: int): E
+        remove(index: int): E
         set(index: int, E): E
-        subList(fromIndex: int, toIndex: int): llista<E>
+        subList(fromIndex: int, toIndex: int): List<E>
     }
 
     class Object
@@ -55,10 +55,10 @@ Un exemple d'ús d'aquesta classe és el següent:
 .. code-block:: java
     :linenos:
 
-    llista<String> colors = new ArrayList<String>();
-    colors.afegeix("groc");
-    colors.afegeix("blau");
-    colors.afegeix("vermell");
+    List<String> colors = new ArrayList<String>();
+    colors.add("groc");
+    colors.add("blau");
+    colors.add("vermell");
     for (String color: colors) {
         System.out.println(color);      // groc, blau, vermell
     }
@@ -78,7 +78,7 @@ En aquest exercici se't demana que cerquis què ofereixen els diferents mètodes
 de la classe ``ArrayList``. Com a mínim els indicats al diagrama. 
 
 Per cada mètode, crea un exemple d'ús, com el que apareix en aquesta
-mateixa pàgina pel mètode ``afegeix(E)``.
+mateixa pàgina pel mètode ``add(E)``.
 
 .. _exercici_llistat_contactes_amb_arraylist:
 
@@ -199,4 +199,4 @@ Internament es requereix:
 
 ----
 
-*ef. 21.1*
+*Ref. 21.1*
