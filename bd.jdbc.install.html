@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instal·lació del driver per PostGreSQL &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Primeres consultes a PostGreSQL" href="bd.jdbc.primeres_consultes.html" />
+    <link rel="prev" title="Què és JDBC" href="bd.jdbc.descripcio.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bd.html">Persistència amb bases de dades</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bd.modelrelacional_i_poo.html">La programació orientada a objectes i el model relacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd.postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bd.jdbc.html">PostGreSQL JDBC</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bd.jdbc.descripcio.html">Què és JDBC</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Instal·lació del driver per PostGreSQL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bd.jdbc.primeres_consultes.html">Primeres consultes a PostGreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bd.consultes.html">JDBC amb Model relacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd.agenda.html">L’agenda</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bd.html">Persistència amb bases de dades</a> &raquo;</li>
+        
+          <li><a href="bd.jdbc.html">PostGreSQL JDBC</a> &raquo;</li>
+        
+      <li>Instal·lació del driver per PostGreSQL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installacio-del-driver-per-postgresql">
+<h1>Instal·lació del driver per PostGreSQL<a class="headerlink" href="#installacio-del-driver-per-postgresql" title="Link permanent a aquest títol">¶</a></h1>
+<p>Aquesta secció és una guia d’instal·lació i configuració del <em>driver</em>
+per accedir des de Java a PostGreSQL. Es tracta d’una instal·lació
+directa des de consola.</p>
+<div class="section" id="installacio">
+<h2>Instal·lació<a class="headerlink" href="#installacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Segueix les següents instruccions per a instal·lar el <em>driver</em> de
+PostGreSQL.</p>
+<p>Descarrega la darrera versió del <em>driver</em> de <a class="reference external" href="http://jdbc.postgresql.org/">jdbc.postgresql.org</a></p>
+<p>En el moment en que s’escriu aquest document la darrera versió correspon a <a class="reference external" href="https://jdbc.postgresql.org/download/postgresql-42.2.5.jar">42.2.5</a><a class="footnote-reference" href="#compteversiojava" id="id2">[1]</a>.</p>
+<p>Deixa el fitxer descarregat a un directori, per exemple:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir -p ~/lib/postgresql_jdbc.versions
+$ <span class="nb">cd</span> ~/lib/postgresql_jdbc.versions
+$ wget -c https://jdbc.postgresql.org/download/postgresql-42.2.5.jar
+$ <span class="nb">cd</span> ..
+$ ln -fs postgresql_jdbc.versions/postgresql-42.2.5.jar postgresql.jdbc.jar
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuracio">
+<h2>Configuració<a class="headerlink" href="#configuracio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Configura la variable <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> per què Java pugui trobar el
+driver.  Per exemple, afegeix la següent línia al teu ~/.bashrc:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$CLASSPATH</span>:<span class="nv">$HOME</span>/lib/postgresql.jdbc.jar
+</pre></div>
+</div>
+<p>Recorda tornar a carregar el <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> o bé obrir una nova consola per
+poder-lo usar.</p>
+</div>
+<div class="section" id="prova">
+<h2>Prova<a class="headerlink" href="#prova" title="Link permanent a aquest títol">¶</a></h2>
+<p>Provem el <em>driver</em> que acabem d’instal·lar amb el típic «holamón».  Considera el
+programa <a class="reference download internal" href="_downloads/HolaPG.java" download=""><code class="xref download docutils literal notranslate"><span class="pre">HolaPG.java</span></code></a> que:</p>
+<ol class="arabic">
+<li><p class="first">importa les classes del JDBC</p>
+</li>
+<li><p class="first">composa la cadena de connexió</p>
+<p>Fixat que aquest és l’únic punt on apareix alguna referència a
+PostGreSQL. La resta del codi no hauria de requerir canvis si
+decidíssim canviar de SGBD.</p>
+</li>
+<li><p class="first">realitza la connexió</p>
+</li>
+<li><p class="first">tanca la connexió</p>
+</li>
+</ol>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1">// (1) importa les classes del JDBC</span>
+</span><span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaPG</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// components de la cadena de connexió</span>
+        <span class="n">String</span> <span class="n">usuari</span>   <span class="o">=</span> <span class="s">&quot;usuaribd&quot;</span><span class="o">;</span>
+<span class="hll">        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&quot;pass&quot;</span><span class="o">;</span>
+</span>        <span class="n">String</span> <span class="n">host</span>     <span class="o">=</span> <span class="s">&quot;192.168.33.10&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">bd</span>       <span class="o">=</span> <span class="s">&quot;testbd&quot;</span><span class="o">;</span>
+
+        <span class="n">String</span> <span class="n">cadenaConnexio</span> <span class="c1">// (2) composa la cadena de connexió</span>
+            <span class="o">=</span> <span class="s">&quot;jdbc:postgresql://&quot;</span> <span class="o">+</span> <span class="n">host</span>
+            <span class="o">+</span> <span class="s">&quot;/&quot;</span>                  <span class="o">+</span> <span class="n">bd</span>
+            <span class="o">+</span> <span class="s">&quot;?user=&quot;</span>             <span class="o">+</span> <span class="n">usuari</span>
+            <span class="o">+</span> <span class="s">&quot;&amp;password=&quot;</span>         <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
+<span class="hll">
+</span>        <span class="c1">// connexió</span>
+        <span class="n">Connection</span> <span class="n">conn</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// (3) realitza la connexió</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">cadenaConnexio</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Connectat a la base de dades &quot;</span> <span class="o">+</span> <span class="n">bd</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ERROR: no s&#39;ha pogut connectar: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+</span>        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">try</span><span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">conn</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="c1">// (4) tanca la connexió</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ERROR: no s&#39;ha pogut desconnectar: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En executar HolaPG, si tot ha anat correctament hauries de veure el
+missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connectat</span> <span class="n">a</span> <span class="n">la</span> <span class="n">base</span> <span class="n">de</span> <span class="n">dades</span> <span class="n">testbd</span>
+</pre></div>
+</div>
+<p>Altrament, revisa que el servidor estigui disponible amb els paràmetres de
+connexió que especifica <code class="docutils literal notranslate"><span class="pre">HolaPG</span></code>, i que <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> estigui correctament
+configurada per a accedir al driver.</p>
+<p>Per descomptat, podem fer servir el <a class="reference internal" href="excepcions.ambrecursos.html"><span class="doc">try amb recursos</span></a> que hem estudiat, i que ens deixarà un codi més
+compacte, tot estalviant-nos tancar explícitament la connexió.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaPG</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">usuari</span>   <span class="o">=</span> <span class="s">&quot;usuaribd&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&quot;pass&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">host</span>     <span class="o">=</span> <span class="s">&quot;192.168.33.10&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">bd</span>       <span class="o">=</span> <span class="s">&quot;testbd&quot;</span><span class="o">;</span>
+
+        <span class="n">String</span> <span class="n">cadenaConnexio</span>
+            <span class="o">=</span> <span class="s">&quot;jdbc:postgresql://&quot;</span> <span class="o">+</span> <span class="n">host</span>
+            <span class="o">+</span> <span class="s">&quot;/&quot;</span>                  <span class="o">+</span> <span class="n">bd</span>
+            <span class="o">+</span> <span class="s">&quot;?user=&quot;</span>             <span class="o">+</span> <span class="n">usuari</span>
+            <span class="o">+</span> <span class="s">&quot;&amp;password=&quot;</span>         <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
+
+        <span class="k">try</span> <span class="o">(</span><span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">cadenaConnexio</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Connectat a la base de dades &quot;</span> <span class="o">+</span> <span class="n">bd</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ERROR: no s&#39;ha pogut connectar: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="rubric">Anotacions</p>
+<table class="docutils footnote" frame="void" id="compteversiojava" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Atenció: estic suposant que fas servir la versió 1.8 del
+JDK o superior. Si estàs amb una diferent, per favor, llegeix-te la secció
+<em>current version</em> de la pàgina de <a class="reference external" href="https://jdbc.postgresql.org/download.html">descàrregues</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bd.jdbc.primeres_consultes.html" class="btn btn-neutral float-right" title="Primeres consultes a PostGreSQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bd.jdbc.descripcio.html" class="btn btn-neutral" title="Què és JDBC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

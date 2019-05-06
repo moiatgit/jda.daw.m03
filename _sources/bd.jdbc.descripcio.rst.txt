@@ -1,0 +1,51 @@
+###########
+Què és JDBC
+###########
+
+Segons la definició que apareix a la documentació oficial de Java per
+`JDBC <https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/>`_:
+
+    The Java Database Connectivity (JDBC) API provides universal data
+    access from the Java programming language. Using the JDBC API, you
+    can access virtually any data source, from relational databases to
+    spreadsheets and flat files. JDBC technology also provides a
+    common base on which tools and alternate interfaces can be built. […]
+
+    To use the JDBC API with a particular database management system, you need a
+    JDBC technology-based driver to mediate between JDBC technology and the
+    database. Depending on various factors, a driver might be written purely in
+    the Java programming language or in a mixture of the Java programming
+    language and Java Native Interface (JNI) native methods. To obtain a JDBC
+    driver for a particular database management system, see `JDBC Data Access
+    API
+    <https://www.oracle.com/technetwork/java/javase/tech/index-jsp-136101.html>`_.
+
+Amb JDBC, per tant, disposem d'un conjunt d'*interfaces* i alguna
+classe completa que ens permetrà comunicar-nos amb el SGBD (entre
+altres fonts de dades) Per si sol, no podrem fer gaire cosa, fins que
+disposem d'una implementació concreta i adequada pel nostre SGBD. A
+aquesta implementació se la coneix com a *driver*. Si el *driver*
+implementa correctament la interfície, el codi que desenvolupem
+fent-la servir, hauria de funcionar (sense comptar les sentències sql)
+per altres fonts de dades que implementin el JDBC.
+
+Exercici 1. A veure si ho he entès bé
+=====================================
+
+Indica quines de les següents afirmacions són certes respecte JDBC:
+
+#. és un sistema que ens permet accedir des d'una base de dades relacional, a un
+   programa fet en Java.
+
+#. per a poder accedir a un SGBD concret, ens caldrà una implementació adequada
+   del JDBC, doncs JDBC per si sol només defineix *interfaces* i poc més.
+
+#. si els nostres programes fan servir les interfícies definides per JDBC en
+   comptes de les classes concretes dels drivers, hauria de ser raonablement
+   fàcil canviar de SGBD sense haver de modificar els nostres programes.
+
+#. donada una implementació concreta de JDBC, coneguda com a *driver*, podríem
+   accedir a diverses fonts de dades, no només bases de dades.
+
+#. amb el *driver* adequat, el nostre programa hauria de poder accedir a un full
+   de càlcul fent servir JDBC.

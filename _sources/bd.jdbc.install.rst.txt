@@ -1,0 +1,117 @@
+######################################
+Instal·lació del driver per PostGreSQL
+######################################
+
+Aquesta secció és una guia d'instal·lació i configuració del *driver*
+per accedir des de Java a PostGreSQL. Es tracta d'una instal·lació 
+directa des de consola.
+
+Instal·lació
+============
+
+Segueix les següents instruccions per a instal·lar el *driver* de
+PostGreSQL.
+
+Descarrega la darrera versió del *driver* de `jdbc.postgresql.org
+<http://jdbc.postgresql.org/>`_
+
+En el moment en que s'escriu aquest document la darrera versió correspon a `42.2.5 
+<https://jdbc.postgresql.org/download/postgresql-42.2.5.jar>`_
+[#compteversiojava]_.
+
+Deixa el fitxer descarregat a un directori, per exemple:
+
+.. code-block:: bash
+
+    $ mkdir -p ~/lib/postgresql_jdbc.versions
+    $ cd ~/lib/postgresql_jdbc.versions
+    $ wget -c https://jdbc.postgresql.org/download/postgresql-42.2.5.jar
+    $ cd ..
+    $ ln -fs postgresql_jdbc.versions/postgresql-42.2.5.jar postgresql.jdbc.jar
+
+
+Configuració
+============
+
+Configura la variable ``CLASSPATH`` per què Java pugui trobar el
+driver.  Per exemple, afegeix la següent línia al teu ~/.bashrc:
+
+.. code-block:: bash
+
+    CLASSPATH=$CLASSPATH:$HOME/lib/postgresql.jdbc.jar
+
+Recorda tornar a carregar el ``.bashrc`` o bé obrir una nova consola per
+poder-lo usar.
+
+Prova
+=====
+
+Provem el *driver* que acabem d'instal·lar amb el típic "holamón".  Considera el
+programa :download:`HolaPG.java <_code/HolaPG.java>` que:
+
+1. importa les classes del JDBC
+
+2. composa la cadena de connexió
+
+   Fixat que aquest és l'únic punt on apareix alguna referència a
+   PostGreSQL. La resta del codi no hauria de requerir canvis si
+   decidíssim canviar de SGBD.
+
+3. realitza la connexió
+
+4. tanca la connexió
+
+.. literalinclude:: _code/HolaPG.java
+    :language: java
+    :linenos:
+    :emphasize-lines: 1,10,19,27
+
+En executar HolaPG, si tot ha anat correctament hauries de veure el
+missatge: ::
+
+    Connectat a la base de dades testbd
+
+Altrament, revisa que el servidor estigui disponible amb els paràmetres de
+connexió que especifica ``HolaPG``, i que ``CLASSPATH`` estigui correctament
+configurada per a accedir al driver.
+
+Per descomptat, podem fer servir el :doc:`try amb recursos
+<excepcions.ambrecursos>` que hem estudiat, i que ens deixarà un codi més
+compacte, tot estalviant-nos tancar explícitament la connexió.
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.Connection;
+    import java.sql.DriverManager;
+    import java.sql.SQLException;
+    public class HolaPG {
+        public static void main(String[] args) {
+            String usuari   = "usuaribd";
+            String password = "pass";
+            String host     = "192.168.33.10";
+            String bd       = "testbd";
+
+            String cadenaConnexio
+                = "jdbc:postgresql://" + host
+                + "/"                  + bd
+                + "?user="             + usuari
+                + "&password="         + password;
+
+            try (Connection conn = DriverManager.getConnection(cadenaConnexio)) {
+                System.out.println("Connectat a la base de dades " + bd);
+            } catch (SQLException e) {
+                System.out.println("ERROR: no s'ha pogut connectar: " + e);
+            }
+        }
+    }
+
+
+
+.. rubric:: Anotacions
+
+.. [#compteversiojava] Atenció: estic suposant que fas servir la versió 1.8 del
+    JDK o superior. Si estàs amb una diferent, per favor, llegeix-te la secció
+    *current version* de la pàgina de `descàrregues
+    <https://jdbc.postgresql.org/download.html>`_.
+

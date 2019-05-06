@@ -1,0 +1,33 @@
+##############################
+Connectem a la màquina virtual
+##############################
+
+Un cop hem inicialitzat la nostra màquina virtual, passarem a
+connectar-nos-hi amb ``ssh``.
+
+.. code-block:: none
+    :emphasize-lines: 1
+
+    $ vagrant ssh
+    The programs included with the Debian GNU/Linux system are free software;
+    the exact distribution terms for each program are described in the
+    individual files in /usr/share/doc/\*/copyright.
+
+    Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+    permitted by applicable law.
+    Last login: Fri Feb 13 12:12:12 1984 from 10.0.2.2
+    vagrant@stretch:~$
+
+.. note:: A partir d'ara, per distingir les comandes que hem d'escriure a
+    l'amfitrió de les que corresponen a la màquina virtual, fixa't que les
+    de la màquina virtual apareixeran prefixades amb
+    ``vagrant@stretch:~$``.
+
+Per sortir d'aquesta connexió, pots fer simplement ``exit``.
+
+.. code-block:: none
+
+    vagrant@stretch:~$  exit
+    logout
+    Connection to 127.0.0.1 closed.
+

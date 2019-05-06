@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JDBC amb Model relacional &mdash; Introducció a la programació 1819 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="L’agenda" href="bd.agenda.html" />
+    <link rel="prev" title="Primeres consultes a PostGreSQL" href="bd.jdbc.primeres_consultes.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1819
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dades.html">Dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operadors_i_expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contenidors.html">Agrupacions d’objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bd.html">Persistència amb bases de dades</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bd.modelrelacional_i_poo.html">La programació orientada a objectes i el model relacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd.postgresql.html">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd.jdbc.html">PostGreSQL JDBC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">JDBC amb Model relacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd.agenda.html">L’agenda</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bd.html">Persistència amb bases de dades</a> &raquo;</li>
+        
+      <li>JDBC amb Model relacional</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jdbc-amb-model-relacional">
+<h1>JDBC amb Model relacional<a class="headerlink" href="#jdbc-amb-model-relacional" title="Link permanent a aquest títol">¶</a></h1>
+<p>Amb aquests continguts treballarem la manera de comunicar els nostres programes
+orientats a objecte amb les nostres bases de dades objecte relacionals.</p>
+<p>A aquesta segona part es treballa amb el JDBC per a comunicar-nos amb una base
+de dades que disposi d’un model relacional <em>bàsic</em>.</p>
+<p>Estudiem el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>     <span class="c1">// valor de la clau primària a ANIMALS</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">categoria</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">,</span> <span class="n">String</span> <span class="n">categoria</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(-</span><span class="mi">1</span><span class="o">,</span> <span class="n">nom</span><span class="o">,</span> <span class="n">categoria</span><span class="o">);</span> <span class="c1">// encara no té identificador</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">nom</span><span class="o">,</span> <span class="n">String</span> <span class="n">categoria</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">categoria</span> <span class="o">=</span> <span class="n">categoria</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span>    <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">=</span><span class="n">id</span><span class="o">;</span>       <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNom</span><span class="o">()</span>       <span class="o">{</span> <span class="k">return</span> <span class="n">nom</span><span class="o">;</span>       <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCategoria</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">categoria</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">&quot;, &#39;&quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s">&quot;&#39;, &#39;&quot;</span> <span class="o">+</span> <span class="n">categoria</span> <span class="o">+</span> <span class="s">&quot;&#39;)&quot;</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>i</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaAnimal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>    <span class="c1">// connexió</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">connecta</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">conn</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">usuari</span>   <span class="o">=</span> <span class="s">&quot;usuaribd&quot;</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&quot;pass&quot;</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">host</span>     <span class="o">=</span> <span class="s">&quot;192.168.33.10&quot;</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">bd</span>       <span class="o">=</span> <span class="s">&quot;testbd&quot;</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">url</span>      <span class="o">=</span> <span class="s">&quot;jdbc:postgresql://&quot;</span> <span class="o">+</span> <span class="n">host</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">bd</span><span class="o">;</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">usuari</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Connectat amb &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// tanca la connexió en cas que estigui connectada</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">desconnecta</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span> <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Desconnectat&quot;</span><span class="o">);</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// crea la taula d&#39;animals</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">creaTaula</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="n">eliminaTaula</span><span class="o">();</span> <span class="c1">// eliminem si ja existia</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span>
+                <span class="s">&quot;CREATE TABLE  ANIMALS (&quot;</span> <span class="o">+</span>
+                <span class="s">&quot;       id        SERIAL PRIMARY KEY,&quot;</span> <span class="o">+</span>
+                <span class="s">&quot;       nom       TEXT,              &quot;</span> <span class="o">+</span>
+                <span class="s">&quot;       categoria VARCHAR(40))&quot;</span><span class="o">;</span>
+            <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Creada taula ANIMALS&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// elimina la taula d&#39;animals si existeix</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">eliminaTaula</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;DROP TABLE IF EXISTS ANIMALS&quot;</span><span class="o">;</span>
+            <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span> <span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Eliminada taula ANIMALS&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// mostra la llista d&#39;animals</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">consulta</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT * FROM ANIMALS ORDER BY nom&quot;</span><span class="o">;</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">nAnimals</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;nom&quot;</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">cat</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;categoria&quot;</span><span class="o">);</span>
+                <span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">nom</span><span class="o">,</span> <span class="n">cat</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">animal</span><span class="o">);</span>
+                <span class="n">nAnimals</span><span class="o">++;</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nAnimals</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Cap animal de moment&quot;</span><span class="o">);</span>
+            <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// retorna el nombre d&#39;animals que hi ha insertats</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">comptaAnimals</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">SELECT_SQL</span> <span class="o">=</span> <span class="s">&quot;SELECT COUNT(*) FROM Animals&quot;</span><span class="o">;</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">SELECT_SQL</span><span class="o">);</span>
+            <span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre d&#39;animals a la bd és: &quot;</span> <span class="o">+</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// afegeix un animal a la taula i obté l&#39;id generat</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">afegeixAnimal</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="c1">// crea l&#39;animal</span>
+        <span class="n">Animal</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;canari&quot;</span><span class="o">,</span> <span class="s">&quot;ocell&quot;</span><span class="o">);</span>
+        <span class="c1">// crea la comanda</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;INSERT INTO ANIMALS (nom, categoria) values (&#39;&quot;</span>
+            <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">getNom</span><span class="o">()</span>
+            <span class="o">+</span> <span class="s">&quot;&#39;, &#39;&quot;</span>
+            <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">getCategoria</span><span class="o">()</span>
+            <span class="o">+</span> <span class="s">&quot;&#39;)&quot;</span><span class="o">;</span>
+        <span class="c1">// envia la comanda</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">,</span> <span class="n">Statement</span><span class="o">.</span><span class="na">RETURN_GENERATED_KEYS</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Nombre d&#39;animals afegits: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="o">);</span>
+            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">getGeneratedKeys</span><span class="o">();</span>
+            <span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+            <span class="n">a</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>        <span class="c1">// assignem l&#39;id de l&#39;animal</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Afegit l&#39;animal &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
+            <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// afegeix uns quants animals a la taula</span>
+    <span class="c1">// Ho fa com a transacció (o tots o cap)</span>
+    <span class="c1">// Fa servir un PreparedStatement per optimitzar repetides crides</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">afegeixMoltsAnimals</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="c1">// plantilla de la sentència d&#39;inserció</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;INSERT INTO Animals (nom, categoria) values (?,?)&quot;</span><span class="o">;</span>
+
+        <span class="c1">// crea els animals</span>
+        <span class="n">Animal</span><span class="o">[]</span> <span class="n">llista</span> <span class="o">=</span> <span class="o">{</span>
+            <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;estruç&quot;</span><span class="o">,</span> <span class="s">&quot;ocell&quot;</span><span class="o">),</span>
+            <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;kiwi&quot;</span><span class="o">,</span> <span class="s">&quot;ocell&quot;</span><span class="o">),</span>
+            <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;gos&quot;</span><span class="o">,</span> <span class="s">&quot;mamifer&quot;</span><span class="o">),</span>
+            <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;bacallà&quot;</span><span class="o">,</span> <span class="s">&quot;peix&quot;</span><span class="o">),</span>
+            <span class="k">new</span> <span class="n">Animal</span><span class="o">(</span><span class="s">&quot;dofí&quot;</span><span class="o">,</span> <span class="s">&quot;peix&quot;</span><span class="o">)</span>
+        <span class="o">};</span>
+
+        <span class="c1">// crea la sentència a executar (només un cop!)</span>
+        <span class="n">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+
+            <span class="c1">// obté l&#39;estat anterior de l&#39;autocommit.</span>
+            <span class="kt">boolean</span> <span class="n">anteriorAutoCommit</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">getAutoCommit</span><span class="o">();</span>
+
+            <span class="n">ps</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="k">try</span> <span class="o">{</span>
+
+                <span class="c1">// fem que no faci autocommit a cada execució</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">setAutoCommit</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+                <span class="c1">// afegeix cada animal de la llista</span>
+                <span class="k">for</span> <span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">:</span> <span class="n">llista</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="c1">// afegim els valors a insertar</span>
+                    <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">getNom</span><span class="o">());</span>       <span class="c1">// primer camp</span>
+                    <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">getCategoria</span><span class="o">());</span> <span class="c1">// segon camp</span>
+                    <span class="n">ps</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Afegit l&#39;animal &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="c1">// si no hi ha problemes accepta tot</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// trobat problemes amb la inserció: tot enrere</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+                <span class="c1">// tornem l&#39;estat de autocomit tal i com estava</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">setAutoCommit</span><span class="o">(</span><span class="n">anteriorAutoCommit</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">ps</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">ps</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">corregeixAnimals</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="c1">// tenim el dofí en una categoria equivocada. Canviem-la a la BD</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;UPDATE Animals set categoria = &#39;mamifer&#39; WHERE nom = &#39;dofí&#39;&quot;</span><span class="o">;</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Modificat animals: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">eliminaOcells</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+        <span class="c1">// volem eliminar tots els ocells de la bd</span>
+        <span class="n">String</span> <span class="n">DELETE_SQL</span> <span class="o">=</span> <span class="s">&quot;DELETE FROM Animals WHERE categoria = &#39;ocell&#39;&quot;</span><span class="o">;</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">DELETE_SQL</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Eliminats ocells: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">UsaAnimal</span> <span class="n">ua</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">ua</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UsaAnimal</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">connecta</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">creaTaula</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">consulta</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">afegeixAnimal</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">afegeixMoltsAnimals</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">consulta</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">corregeixAnimals</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">consulta</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">eliminaOcells</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">consulta</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">comptaAnimals</span><span class="o">();</span>
+            <span class="n">ua</span><span class="o">.</span><span class="na">eliminaTaula</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">ua</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">ua</span><span class="o">.</span><span class="na">desconnecta</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="exercici-1-jdbc-en-funcionament">
+<h2>Exercici 1. JDBC en funcionament<a class="headerlink" href="#exercici-1-jdbc-en-funcionament" title="Link permanent a aquest títol">¶</a></h2>
+<p>Contesta les següents preguntes respecte el codi anterior. Algunes de
+les preguntes potser requeriran que revisis la documentació oficial.</p>
+<ol class="arabic simple">
+<li>Quines diferències hi trobes entre executar una comanda sql que
+potencialment modifica registres i una altra que fa una consulta?</li>
+<li>Què passa si tanques un <em>Statement</em> que ja està tancat?</li>
+<li>Què passa si no tanques un <em>ResultSet</em>?</li>
+<li>Com s’assegura aquest codi que es tanquen els <em>Statement</em> passi el
+que passi?</li>
+<li>Seria possible fer servir una única instància de <em>Statement</em> per a
+totes les operacions d’aquest codi? Si contestes que sí, mostra com
+(no cal el codi complet) Si contestes que no, indica perquè?</li>
+<li>Indica la diferència principal entre <em>Statement</em> i
+<em>PreparedStatement</em>.</li>
+<li>Perquè hi ha dos <em>try</em> al mètode <em>afegeixMoltsAnimals()</em>?</li>
+<li>Què volen dir els interrogants que apareixen a la comanda sql del
+mètode <em>afegeixMoltsAnimals()</em>?</li>
+<li>Explica quin és l’objectiu que persegueixen les crides als mètodes
+<em>getAutoCommit()</em> i <em>setAutoCommit()</em> al mètode
+<em>afegeixMoltsAnimals()</em>.</li>
+<li>Al mètode <em>afegeixMoltsAnimals()</em> què ha de passar perquè s’executi
+la crida al mètode <em>commit()</em>? i què per què s’executi
+<em>rollback()</em>?</li>
+<li>La documentació del mètode <em>rollback()</em> ens indica que només hem de
+fer servir aquest mètode quan tenim <em>autocomit</em> inhabilitat. El
+codi anterior respecta aquest <em>contracte</em>?</li>
+<li>Què fan les crides al mètode <em>setString()</em> a
+<em>afegeixMoltsAnimals()</em>?</li>
+<li>Com es pot saber a quants registres ha afectat l’execució d’una
+comanda de modificació?</li>
+<li>Fixa’t que cada animal que es guarda a la base de dades disposa
+d’un identificador (la clau primària de la taula). Tal i com s’ha
+definit aquest programa, qui posa l’identificador dels animals, el
+codi o el SGBD? Com podem fer que l’altre part se n’assabenti?
+Podríem fer-ho a l’inrevés? És a dir, podria ser la part que no
+assigna ara l’identificador qui l’assignés? Quines implicacions
+tindria? Què consideres més adequat? Perquè?</li>
+</ol>
+</div>
+<div class="section" id="exercici-2-l-entorn-operatiu-de-gestio-d-animals">
+<h2>Exercici 2. ☆ L’entorn operatiu de gestió d’animals<a class="headerlink" href="#exercici-2-l-entorn-operatiu-de-gestio-d-animals" title="Link permanent a aquest títol">¶</a></h2>
+<p>Crea un nou projecte anomenat <em>gestoranimals</em> que ofereixi una senzilla consola
+que permeti gestionar un conjunt d’instàncies de la classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> que hem
+vist abans.</p>
+<p>L’aplicació mostrarà el <em>prompt</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">animals</span><span class="p">]:</span>
+</pre></div>
+</div>
+<p>L’aplicació oferirà les següents opcions:</p>
+<ul>
+<li><p class="first">help</p>
+<p>mostra la llista de comandes vàlides</p>
+</li>
+<li><p class="first">list</p>
+<p>Mostra la llista d’animals a la base de dades en el següent format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">primera</span> <span class="n">categoria</span> <span class="p">(</span><span class="n">per</span> <span class="n">ordre</span> <span class="n">alfabètic</span><span class="p">)</span>
+
+    <span class="o">-</span> <span class="n">nom</span> <span class="n">primer</span> <span class="n">animal</span> <span class="n">de</span> <span class="n">la</span> <span class="n">primera</span> <span class="n">categoria</span> <span class="p">(</span><span class="n">per</span> <span class="n">ordre</span>
+      <span class="n">alfabètic</span><span class="p">)</span>
+
+    <span class="o">-</span> <span class="n">nom</span> <span class="n">segon</span> <span class="n">animal</span> <span class="n">de</span> <span class="n">la</span> <span class="n">primera</span> <span class="n">categoria</span>
+
+<span class="o">*</span> <span class="n">segona</span> <span class="n">categoria</span>
+
+    <span class="o">-</span> <span class="n">nom</span> <span class="n">primer</span> <span class="n">animal</span> <span class="n">de</span> <span class="n">la</span> <span class="n">segona</span> <span class="n">categoria</span>
+
+    <span class="o">-</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>Si no es troba cap animal a la bd, s’indicarà amb el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cap</span> <span class="n">animal</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">list «categoria»</p>
+<p>Mostra la llista d’animals ordenats alfabèticament de la categoria
+indicada.</p>
+<p>El format serà idèntic que per l’opció <em>list</em>, excepte que només
+mostrarà una categoria.</p>
+<p>Si no es troba cap animal de la categoria indicada, s’indicarà amb
+el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cap</span> <span class="n">animal</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">add «nom animal» «categoria»</p>
+<p>Afegeix un nou animal a la categoria indicada.</p>
+<p>Si ja existeix un animal amb aquest nom, per a aquesta categoria,
+mostrarà el missatge d’error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ja</span> <span class="n">existeix</span> <span class="n">un</span> <span class="n">animal</span> <span class="n">amb</span> <span class="n">aquest</span> <span class="n">nom</span> <span class="n">per</span> <span class="n">a</span> <span class="n">aquesta</span> <span class="n">categoria</span>
+</pre></div>
+</div>
+<p>Si tot ha anat correctament, es mostrarà el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="s1">&#39;acord</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">del «nom animal» [ «categoria» ]</p>
+<p>Aquesta comanda permet eliminar un animal pel seu nom. Opcionalment
+es pot indicar la categoria a la que pertany.</p>
+<p>En cas que no existeixi cap animal amb aquest nom, o no existeixi
+amb el nom per la categoria indicada, es mostrarà el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">es</span> <span class="n">troba</span> <span class="n">l</span><span class="s1">&#39;animal</span>
+</pre></div>
+</div>
+<p>En cas que no s’especifiqui la categoria i hi hagi més d’un animal
+amb el mateix nom en diferents categories, es mostrarà el missatge i
+es tornarà mostrar el <em>prompt</em> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>S&#39;ha trobat aquest nom d&#39;animal en les següents categories:
+
+* primera categoria (per ordre alfabètic)
+
+* segona categoria
+
+* …
+
+Per favor, expliciteu la categoria
+</pre></div>
+</div>
+<p>Finalment, en cas que s’hagi identificat un únic animal, es demanarà
+confirmació segons:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Es procedirà a eliminar l&#39;animal «nom animal» de la categoria «categoria»
+Segur? (S|n):
+</pre></div>
+</div>
+<p>En cas que l’usuari respongui amb “S” o “s”, s’eliminarà l’animal de
+la base de dades i s’informarà amb el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="s1">&#39;acord</span>
+</pre></div>
+</div>
+<p>Si es respon amb qualsevol altre caràcter, es mostrarà el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cap</span> <span class="n">modificació</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">assign «nom animal» [ «categoria1» ] to «categoria2»</p>
+<p>Permet canviar la categoria d’un animal.</p>
+<p>En cas que no quedi clarament especificat un sol animal (com a
+l’opció <em>del</em>), es mostrarà els mateixos missatges.</p>
+<p>En cas de que l’animal estigui identificat, es procedirà a demanar
+confirmació amb el missatge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Es procedirà a assignar l&#39;animal «nom animal» de la categoria «categoria1» a la categoria «categoria2»
+Segur? (S|n):
+</pre></div>
+</div>
+<p>L’usuari rebrà el missatge corresponent com en el cas de <em>del</em>.</p>
+</li>
+<li><p class="first">quit</p>
+<p>Finalitzarà l’aplicació</p>
+</li>
+</ul>
+<div class="section" id="requeriments-addicionals">
+<h3>Requeriments addicionals<a class="headerlink" href="#requeriments-addicionals" title="Link permanent a aquest títol">¶</a></h3>
+<p>En arrencar, l’aplicació demanarà un password que farà servir per
+intentar la connexió a la base de dades (la resta de dades de connexió
+les posarà l’aplicació) En cas que el password proporcionat no permeti
+realitzar la connexió, l’aplicació mostrarà l’error i permetrà tornar
+a intentar o bé cancelar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contrasenya</span> <span class="n">incorrecta</span> <span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">tornar</span> <span class="n">a</span> <span class="n">intentar</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">cancelar</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>En cas de cancelació, l’aplicació finalitzarà l’execució.</p>
+</div>
+<div class="section" id="pistes">
+<h3>Pistes:<a class="headerlink" href="#pistes" title="Link permanent a aquest títol">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Per simplicitat, totes les operacions que modifiquin els continguts
+de la base de dades, es realitzaran directament, sense esperar a
+que es tanqui l’aplicació.</p>
+</li>
+<li><p class="first">Una altra simplificació acceptada consisteix en que els noms dels
+animals i categories consistiran sempre en una paraula sense
+espais. Si t’agradaria permetre multiparaules (ex. <em>lleó marí</em>), et
+proposo que, o bé substitueixis els espais per guions baixos (_), o
+bé consideris que les paraules múltiples apareixeran entre cometes.</p>
+</li>
+<li><p class="first">Per a aconseguir que es pugui llegir el password de manera segura
+(sense fer eco del que teclegi l’usuari), i aprofitant que es
+tracta d’una aplicació de consola, podem fer servir la classe
+<a class="reference external" href="http://docs.oracle.com/javase/7/docs/api/java/io/Console.html">java.io.Console</a></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoPassword</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span> <span class="n">String</span><span class="o">[]</span> <span class="n">args</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Console</span> <span class="n">cons</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">console</span><span class="o">();</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">passwd</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">usuari</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cons</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">usuari</span> <span class="o">=</span> <span class="n">cons</span><span class="o">.</span><span class="na">readLine</span><span class="o">(</span><span class="s">&quot;Usuari: &quot;</span><span class="o">);</span>
+            <span class="n">passwd</span> <span class="o">=</span> <span class="n">cons</span><span class="o">.</span><span class="na">readPassword</span><span class="o">(</span><span class="s">&quot;Password de %s: &quot;</span><span class="o">,</span> <span class="n">usuari</span><span class="o">);</span>
+            <span class="n">cons</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;Usuari: %s. Password: %s%n&quot;</span><span class="o">,</span> <span class="n">usuari</span><span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">passwd</span><span class="o">));</span>
+            <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">passwd</span><span class="o">,</span> <span class="sc">&#39; &#39;</span><span class="o">);</span> <span class="c1">// un cop usat, eliminem el contingut de</span>
+                                                <span class="c1">// passwd per minimitzar el temps que</span>
+                                                <span class="c1">// mantenim dades sensibles en memòria</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Revisa la resta de l’API de la classe Console per veure si hi ha
+altres mètodes que et puguin ser d’utilitat.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bd.agenda.html" class="btn btn-neutral float-right" title="L’agenda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bd.jdbc.primeres_consultes.html" class="btn btn-neutral" title="Primeres consultes a PostGreSQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright 2018-2019 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1819',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+     
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+  
+
+</body>
+</html>

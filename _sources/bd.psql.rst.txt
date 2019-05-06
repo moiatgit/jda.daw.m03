@@ -1,0 +1,188 @@
+###############
+La consola psql
+###############
+
+Tal i com ens descriuen a la `documentació oficial de PostGreSQL
+<https://www.postgresql.org/docs/current/static/app-psql.html>`_, ``psql``
+és una interfície basada en terminal que ens permet communicar-nos amb el
+servidor PostGreSQL de manera interactiva, com a intèrpret de comandes, a
+l'hora que ens ofereix diferents utilitats per automatitzar tasques.
+
+Aquesta breu secció ens oferirà un accés ràpid a les funcions més bàsiques
+d'aquest entorn operatiu.
+
+Pots venir a mirar aquesta guia cada cop que necessitis fer una consulta
+ràpida.
+
+Per entrar i per sortir
+=======================
+
+Ens connectarem a la base de dades ``testbd`` que es troba al servidor
+``192.168.33.10`` amb l'usuari ``usuaribd`` i password ``pass``, escrivint
+al terminal :
+
+.. code-block:: bash
+
+    $ psql -U usuaribd -d testbd -h 192.168.33.10
+
+Per sortir de la consola de ``psql``:
+
+.. code-block:: psql
+
+    testbd=> \q
+
+Per aconseguir ajuda
+====================
+
+La consola ``psql`` disposa d'un sistema d'ajut molt complet.
+
+Obtenim ajuda sobre el programa ``psql`` amb:
+
+.. code-block:: psql
+
+    $ psql --help
+
+Un cop dins de ``psql``, podem aconseguir ajuda sobre comandes disponibles amb:
+
+.. code-block:: psql
+
+    testbd=> \?
+
+Obtenim ajuda sobre comandes *sql* amb:
+
+.. code-block:: psql
+
+    testbd=> \h
+
+Si volem una comanda concreta, simplement l'afegim a continuació:
+
+.. code-block:: psql
+
+    testbd=> \h SELECT
+
+Per carregar el contingut d'un fitxer
+=====================================
+
+Sovint ens interessarà executar les comandes sql guardades en un fitxer.
+
+Des de terminal:
+
+.. code-block:: none
+
+    $ psql -U usuaribd -d testbd -h 192.168.33.10 < fitxer.sql
+
+o també
+
+.. code-block:: none
+
+    $ psql -U usuaribd -d testbd -h 192.168.33.10 -f fitxer.sql
+
+Des de consola ``psql``:
+
+.. code-block:: psql
+
+    testbd=> \i fitxer.sql
+
+*Nota*: dins del codi, es poden comentar línies amb ``--``. Per exemple:
+
+.. code-block:: none
+    :emphasize-lines: 1, 4
+
+    $ cat quisoc.sql
+    -- Comprovem quin és l'úsuari amb que ens hem connectat
+    SELECT current_user;
+    $ psql -U usuaribd -d testbd -h 192.168.33.10 -f quisoc.sql
+    Password for user usuaribd:
+     current_user
+    --------------
+     usuaribd
+    (1 row)
+
+Per guardar el resultat d'una consulta en un fitxer
+===================================================
+
+Una altra necessitat habitual és la de guardar el resultat d'una o més
+comandes SQL a un fitxer.
+
+Guardarem la sortida d'una o més comandes, tot indicant des de la consola:
+
+.. code-block:: psql
+
+    testbd=> \o fitxer.sql
+
+Per recuperar la sortida en la consola:
+
+
+.. code-block:: psql
+
+    testbd=> \o
+
+Per descomptat, des de fora de la consola, podem simplement redireccionar
+la sortida cap el fitxer que ens interessi.
+Per exemple, la següent comanda ens guardarà el resultat d'executar les
+comandes del fitxer ``quisoc.sql`` al fitxer ``resultat.txt``.
+
+.. code-block:: psql
+    :emphasize-lines: 1, 3
+
+    $ psql -U usuaribd -d testbd -h 192.168.33.10 -f quisoc.sql > resultat.txt
+    Password for user usuaribd:
+    $ cat /tmp/resultat.txt
+     current_user
+    --------------
+     usuaribd
+    (1 row)
+
+
+Consultar objectes de la base de dades
+======================================
+
+Podem consultar els diferents elements de la base de dades amb les
+comandes:
+
++--------------+--------------------------------------------------------+
+| \d           | mostra tables, seqüències, vistes i indexos            |
++--------------+--------------------------------------------------------+
+| \dt          | mostra les tables                                      |
++--------------+--------------------------------------------------------+
+| \dt clients  | mostra els detalls de la taula *clients*               |
++--------------+--------------------------------------------------------+
+| \dt+ clients | mostra **més** detalls sobre la taula *clients*        |
++--------------+--------------------------------------------------------+
+| \dt cl*      | mostra els detalls de les taules que comencen amb *cl* |
++--------------+--------------------------------------------------------+
+| \d clients   | mostra la descripció de la taula *clients*             |
++--------------+--------------------------------------------------------+
+
+Per exemple:
+
+.. code-block:: psql
+    :emphasize-lines: 1, 3, 10, 17, 24
+
+    testbd=> CREATE TABLE exemple (clau INT, valor TEXT);
+    CREATE TABLE
+    testbd=> \d
+              List of relations
+     Schema |  Name   | Type  |  Owner   
+    --------+---------+-------+----------
+     public | exemple | table | usuaribd
+    (1 row)
+
+    testbd=> \dt+
+                           List of relations
+     Schema |  Name   | Type  |  Owner   |    Size    | Description 
+    --------+---------+-------+----------+------------+-------------
+     public | exemple | table | usuaribd | 8192 bytes | 
+    (1 row)
+
+    testbd=> \d exemple 
+        Table "public.exemple"
+     Column |  Type   | Modifiers 
+    --------+---------+-----------
+     clau   | integer | 
+     valor  | text    | 
+
+    testbd=> DROP TABLE exemple ;
+    DROP TABLE
+
+

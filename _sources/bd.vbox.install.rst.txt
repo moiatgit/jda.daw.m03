@@ -1,0 +1,94 @@
+#####################
+Instal·lem VirtualBox
+#####################
+
+VirtualBox és, com indiquen a la seva `web <https://www.virtualbox.org/>`_
+una aplicació de virtualització potents disponible gratuïtament amb
+llicència GPL.
+
+Abans d'instal·lar aquest sistema de virtualització, potser voldràs
+comprovar si ja el tens disponible.
+
+.. sidebar:: Màquina anfitrió i màquina virtual
+
+    A partir d'ara tindrem més d'una màquina o equip en funcionament sobre
+    el nostre equip. Un serà el nostre equip en sí, que li direm
+    *amfitrió* i l'altre serà la *màquina virtual*.
+
+    Especialment quan fem servir sistemes operatius molt similars, és
+    important tenir molt clar on estem llençant les comandes.
+
+Per exemple, tecleja
+
+.. code-block:: none
+
+    $ virtualbox
+    -bash: virtualbox: command not found
+
+Si el teu amfitrió et respon amb un missatge d'error com aquest, segueix
+llegint per instal·lar l'aplicació. Altrament, molt probablement se t'ha
+obert una finestra amb l'aplicació. Comprova la seva versió i si la
+consideres prou actual, pots saltar-te aquesta secció.
+
+D'acord, comencem a instal·lar.
+
+Aquesta instal·lació requereix privilegis d'administració en la màquina on
+instal·larem VirtualBox.
+
+Instal·larem VirtualBox a partir dels repositoris d'Oracle.
+
+En primer lloc, descarregarem i instal·larem la clau del repositori:
+
+.. code-block:: none
+
+    $ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    $ sudo apt-key add oracle_vbox_2016.asc
+    OK
+
+Afegim el repositori d'Oracle a la llista de repositoris:
+
+.. code-block:: none
+
+    $ sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+
+Si no t'ha funcionat la comanda anterior, probablement és perquè no tens
+instal·lat ``add-apt-repository`` al teu equip. En aquest cas, assegura't
+que instal·les el paquet ``software-properties-common`` (amb ``apt
+install``). Alternativament, pots afegir la línia següent a
+``/etc/apt/sources.list``:
+
+.. code-block:: none
+
+    deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian XXX contrib
+
+Assegura't que substitueixes ``XXX`` per la resposta que reps en executar
+``$ lsb_release -cs``. En el meu cas és ``stretch``.
+
+Comprovem que està ben afegit amb:
+
+.. code-block:: none
+
+    $ grep virtualbox /etc/apt/sources.list
+    deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian stretch contrib
+
+    # deb-src [arch=amd64] http://download.virtualbox.org/virtualbox/debian stretch contrib
+
+Ara passem a actualitzar les dades de ``apt`` i a instal·lar el
+VirtualBox. En el moment de preparar aquests materials, la darrera versió
+disponible era la 6.
+
+.. code-block:: none
+
+    $ sudo apt update
+    $ sudo apt install virtualbox-6.0
+
+Finalment arrenca l'aplicació:
+
+.. code-block:: none
+
+    $ virtualbox &
+
+Si tot ha anat bé, se t'hauria d'obrir una finestra amb l'aplicació.
+
+Ja la pots tancar, doncs mirarem de fer tota la gestió de la màquina
+virtual des d'una altra aplicació anomenada ``vagrant``.

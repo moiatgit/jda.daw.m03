@@ -1,0 +1,204 @@
+#########################################################
+La programació orientada a objectes i el model relacional
+#########################################################
+
+Ja hem vist que la programació orientada a objectes és probablement el paradigma
+més *de moda* en programació. També sabem que el model relacional és el paradigma
+més sòlid que coneixem per estructurar les nostres dades en bases de dades.
+
+Sembla que tenim dues estrelles que han de treballar conjuntament. S'hi avindran
+bé?
+
+SGBD-*què?*
+===========
+
+Veiem algunes definicions com a recordatori:
+
+*base de dades* 
+
+  és una col·lecció de dades organitzada d'una manera
+  coherent, de manera que pugui ser accedida per una aplicació.
+
+SGBD
+
+  un *sistema de gestió de bases de dades* (SGBD) és una aplicació que
+  permet l'administració de bases de dades, de l'organització de les
+  dades i de les dades pròpiament.
+
+Transacció
+
+  Una *transacció* és una operació unitària sobre una base de dades,
+  tractada d'una manera coherent, fiable i independent d'altres
+  transaccions. Tot i que pot consistir en diverses operacions
+  individuals, la transacció ha de ser realitzada completament o bé no
+  realitzada. És a dir, no pot ser executada parcialment.
+
+ACID
+
+  Acrònim anglès de les paraules *Atomicity*, *Consistency*,
+  *Isolation* i *Durability* implica un conjunt de propietats que ha
+  de complir un SGBD per garantir la fiabilitat de les transaccions.
+
+  - Atomicitat: assegura que una transacció és un *tot o res*. Una
+    transacció o bé finalitza correctament i confirma o bé no deixa
+    cap rastre de la seva execució.
+
+  - Consistència: garanteix que l'execució de qualsevol transacció
+    no violarà cap les regles definides a la base de dades.
+
+  - Aïllament (*Isolation*): el resultat d'executar transaccions de manera
+    concurrent ha de ser el mateix que si l'execució hagués estat seqüencial.
+
+  - Durabilitat: un cop confirmada una transacció, aquesta propietat
+    ens assegura que el seu resultat es mantindrà fins i tot en el
+    cas de fallada del sistema.
+
+SGBDR
+
+  El *model relacional* és una manera d'estructurar la informació en
+  bases de dades basada en lògica de primer ordre, un sistema
+  descriptiu formal. L'estructura es basa en *tuples* (llistes
+  ordenades d'elements o *camps*) agrupades en relacions o *taules*.
+  Sovint ens referim a les tuples com *registres*.
+
+  Direm SGBDR a un SGBD que gestiona bases de dades definides fent servir el
+  model relacional. De fet, en l'actualitat és tan comú que es respecti aquest
+  model, que quan llegim SGBD es sobreenten que és un SGBDR.
+
+Normalització
+
+  Es coneix com a *normalització* al procés d'organitzar els camps i
+  taules d'una base de dades de manera que es minimitzi redundàncies
+  i dependències. Tot i que hi ha més, es considera que una base de
+  dades està normalitzada si acompleix les primeres tres formes
+  normals:
+
+  - 1FN: es diu que una taula està en primera forma normal si
+    disposa d'una clau primària no nula que permet identificar cada
+    registre [#1NFmes]_
+
+  - 2FN: tots els camps de un registre que no són clau depenen de la
+    clau primària en el seu conjunt. És a dir, que no depenen d'altres
+    camps que no siguin tots els que formen la clau primària.
+
+  - 3FN: tot camp que no sigui clau no ha dependre de cap altre camp
+    a banda dels que formen la clau primària.
+
+Limitacions i problemes dels SGBDRs
+===================================
+
+Tot i que un SGBDR és suficient per a moltes (potser *la majoria de
+les*) necessitats de gestió de dades que puguin tenir les nostres
+aplicacions, presenta algunes febleses.
+
+Una de les crítiques freqüents que trobarem és: en normalitzar, sovint
+ens trobem forçats a crear taules que no es corresponen amb entitats
+del món real. Per exemple, pensa en com cal implementar les relacions
+M:N.
+
+Però potser la limitació més *incòmoda* del model relacional és la
+dificultat que ofereix a comunicar-se amb aplicacions basades en el
+paradigma "de moda": l'orientació a objectes. És el que es coneix com
+a *bretxa* o *impedance mismatch* entre els dos models. Bàsicament:
+
++-----------------------------------------+--------------------------------------------------+
+| El model Orientat a Objectes            | El model relacional                              |
++=========================================+==================================================+
+| transitori (*transient*)                | persistent                                       |
++-----------------------------------------+--------------------------------------------------+
+| classes (inclou comportament)           | taules (només dades)                             |
++-----------------------------------------+--------------------------------------------------+
+| jerarquia de classes (inclou herència)  | esquema de la BD (inclou claus foranes)          |
++-----------------------------------------+--------------------------------------------------+
+| herència                                | !                                                |
++-----------------------------------------+--------------------------------------------------+
+| propietats / atributs                   | columnes / camps                                 |
++-----------------------------------------+--------------------------------------------------+
+| instància                               | tuples / files / registres                       |
++-----------------------------------------+--------------------------------------------------+
+| atribut d'instància                     | camp                                             |
++-----------------------------------------+--------------------------------------------------+
+| identitat implícita (punter)            | identitat explícita (clau primària)              |
++-----------------------------------------+--------------------------------------------------+
+| referències                             | claus foranes                                    |
++-----------------------------------------+--------------------------------------------------+
+| referències unidireccionals             | referències bidireccionals                       |
++-----------------------------------------+--------------------------------------------------+
+| amb ordre (seqüèncial)                  | sense ordre                                      |
++-----------------------------------------+--------------------------------------------------+
+| missatges / interfície                  | !                                                |
++-----------------------------------------+--------------------------------------------------+
+| centrat en el comportament              | centrat en les dades                             |
++-----------------------------------------+--------------------------------------------------+
+| navegació seguint referències           | operació en conjunt                              |
++-----------------------------------------+--------------------------------------------------+
+| agrupació basada en el comportament     | agrupació basada en les dades                    |
++-----------------------------------------+--------------------------------------------------+
+| mètodes                                 | *stored procedures*                              |
++-----------------------------------------+--------------------------------------------------+
+| dades i comportament fortament acoblats | *triggers* i restriccions                        |
++-----------------------------------------+--------------------------------------------------+
+| ocultació de dades, encapsulació        | !                                                |
++-----------------------------------------+--------------------------------------------------+
+
+Alternatives als SGBDRs
+=======================
+
+A partir d'aquesta bretxa, es van dissenyar bases de dades orientades
+a objecte per incorporar un mecanisme de persistència a les
+aplicacions orientades a objecte.
+
+Per diferents raons, els SGBDOOs (SGBD Orientats a Objectes) no han acabat de
+quallar fins a data d'avui en la industria del desenvolupament. Segurament es
+explicable pel fet que el model relacional tingui una sòlida base matemàtica i,
+probablement, la disponibilitat del llenguatge SQL per realitzar consultes amb
+independència del llenguatge de programació.
+
+Amb tot, les necessitats d'afegir funcionalitats orientades a objecte es manté.
+Així apareix el model *objecte-relacional* (SGBDOR) com un pas intermedi entre
+els SGBDR i els SGBDOOs.
+
+Podem simplificar el que ens ofereixen els SGBDOR amb el següent diagrama:
+
+.. graphviz::
+    :align: center
+
+    digraph ERD {
+      rankdir = BT;
+      node [
+                fontname = "Bitstream Vera Sans"
+                fontsize = 8
+                shape = "record"
+        ]
+
+        edge [
+                fontname = "Bitstream Vera Sans"
+                fontsize = 8
+        ]
+
+        "Model Objecte-Relacional" [
+                label = "{Model Objecte-Relacional|Tipus definits per l'usuari (UDT)\lColleccions\lObjectes complexos\lHerència\l}"
+        ]
+
+      edge [
+        arrowhead = "empty"
+      ]
+
+        "Model Objecte-Relacional" -> "Model Relacional"
+    }
+
+Darrerament estan començant a proliferar nous sistemes de gestió de bases de
+dades basats en models no relacionals. Un dels més exitosos és el model
+documental. En aquests models es prima la flexibilitat i accessibilitat a les
+dades per sobre de la robustesa del model.
+
+En aquests continguts, ens mantindrem amb el model relacional, doncs pels
+nostres objectius d'aprendre la persistència de dades en tenim més que
+suficient, i no ens força a aprendre un nou model.
+
+.. rubric:: Anotacions
+
+.. [#1NFmes] La formulació original incloïa més característiques com
+   ara l'atomicitat dels camps. Com que hi ha certa controvèrsia amb
+   les interpretacions, aquí obviarem aquests detalls.
+

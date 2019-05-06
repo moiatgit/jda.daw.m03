@@ -1,0 +1,40 @@
+##################
+Instal·lem Vagrant
+##################
+
+En aquesta secció instal·larem l'aplicació *vagrant*. Vagrant és una
+utilitat que ens permet gestionar màquines virtuals de manera molt fàcil i
+homogènia, amb només modificar un fitxer de configuració.
+
+
+En primer lloc, ens assegurarem que no tenim encara Vagrant instal·lat al
+nostre sistema.  Per exemple, escriurem:
+
+.. code-block:: none
+
+    $ vagrant --version
+    Vagrant 2.2.4
+
+Si el teu sistema et respon amb un ``vagrant: command not found`` o bé amb una
+versió significativament antiga (ex. anterior a 2.x), continua llegint.
+
+La instal·lació següent requerirà que disposis de privilegis
+d'administració a la teva màquina.
+
+
+https://www.vagrantup.com/downloads.html
+
+En primer lloc, descarregarem la darrera versió de Vagrant de la `pàgina
+<https://www.vagrantup.com/downloads.html>`_.
+
+Per exemple,
+
+.. code-block:: none
+
+    $ cd /tmp
+    $ wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
+    $ sudo dpkg -i vagrant_2.2.4_x86_64.deb
+    $ vagrant --version
+    Vagrant 2.2.4
+
+Si tot ha anat bé, ja disposem de Vagrant a la nostra màquina.

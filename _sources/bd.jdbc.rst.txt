@@ -1,0 +1,20 @@
+###############
+PostGreSQL JDBC
+###############
+
+Amb aquests continguts treballarem la manera de comunicar els nostres programes
+orientats a objecte amb bases de dades objecte relacionals.
+
+Farem servir Java i PostgreSQL, tot i que no hauries te tenir gaire problema per
+a adaptar els continguts a un altre llenguatge que ofereixi orientació a
+objectes i a un altre SGBD relacional.
+
+Els continguts són:
+
+  .. toctree::
+     :titlesonly:
+
+     bd.jdbc.descripcio.rst
+     bd.jdbc.install.rst
+     bd.jdbc.primeres_consultes.rst
+

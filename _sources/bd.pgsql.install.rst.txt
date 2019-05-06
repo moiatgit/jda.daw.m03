@@ -1,0 +1,18 @@
+#####################
+Instal·lem PostgreSQL
+#####################
+
+El següent pas és instal·lar *PostGreSQL* a la nostra màquina virtual.
+
+Primer instal·larem la clau de *PostGreSQL*. Tot seguit, afegirem el
+repositori. A continuació actualitzarem els paquets i, finalment,
+instal·larem la darrera versió.
+
+.. code-block:: none
+
+    vagrant@stretch:~$ wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | sudo apt-key add -
+    vagrant@stretch:~$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+    vagrant@stretch:~$ sudo apt update
+    vagrant@stretch:~$ sudo apt install postgresql-11
+
+

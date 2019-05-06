@@ -123,6 +123,7 @@ de la classe ``HashMap``. Com a mínim els indicats al diagrama.
 
 Per cada mètode, crea un exemple d'ús que demostri el seu funcionament.
 
+.. _exercici_hashmap_llistat_contactes:
 
 Exercici 2. ☆ El llistat de contactes eficient
 ==============================================

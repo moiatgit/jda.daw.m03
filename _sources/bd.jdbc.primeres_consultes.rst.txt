@@ -1,0 +1,92 @@
+###############################
+Primeres consultes a PostGreSQL
+###############################
+
+
+En aquesta secció veurem com podem fer unes consultes *molt simples* a un
+servidor de PostGreSQL.
+
+Per llençar una consulta (*query*) a la base de dades, JDBC ens
+ofereix les classes ``Statement`` i ``PreparedStatement``.
+
+Considera la classe :download:`SgbdVersion.java <_code/SgbdVersion.java>` que:
+
+1. importa la classe ``java.util.Properties`` per emmagatzemar les dades
+   *sensibles* (usuari i password).
+
+   Amb ``Properties`` podem, per exemple, disposar de les dades en algun fitxer
+   extern al nostre codi, probablement protegit i segur *fora* del control de
+   versions.
+
+2. considerem un mètode per a *amagar* tots els detalls de connexió: el
+   ``connecta()``.
+
+3. crea el *Statement* que permetrà llençar una comanda sql i recollir el
+   resultat de la seva interpretació pel SGBD.
+
+4. crea el *ResultSet* que contindrà el resultat obtingut d'una commanda.
+
+5. recupera el resultat
+
+6. tanca els recursos
+
+.. literalinclude:: _code/SgbdVersion.java
+    :linenos:
+    :language: java
+
+El resultat d'executar aquest programa hauria de mostrar-te la versió
+del servidor de PostGreSQL a la que s'està connectant.
+
+Exercici 1. Obtenció de dades de la connexió
+============================================
+
+Crea la classe ``InfoConnexio.java`` que es connecti a la base de dades *testbd*
+i:
+
+- obtingui l'adreça (*inet address*) i el port amb el que es comunica
+  el nostre client
+
+- obtingui l'adreça i el port del servidor.
+
+Finalment, l'aplicació mostrarà els resultats obtinguts i finalitzarà.
+
+**Pistes**: 
+
+* Pots trobar la llista de funcions de sistema que ofereix PostGreSQL
+  a la `seva documentació oficial
+  <https://www.postgresql.org/docs/current/functions-info.html>`_
+
+* Potser voldràs intentar-ho fer amb una única consulta. Al codi anterior
+  apareix ``rs.getString(1)``. Aquest ``1`` indica que el que es vol és la
+  **primera** columna obtinguda.
+
+Exercici 2. ☼ Cadena de connexió des d'un fitxer
+================================================
+
+Disposar de les dades de connexió, com ara la contrasenya, a un fitxer
+extern al nostre codi té els seus avantatges. Per exemple, pots deixar
+el fitxer fora del control de versions i així, si estàs compartint el
+codi en un lloc públic (ex. `GitHub <https://github.com/>`_) no corres
+risc de compartir *massa*.
+
+Considera la api `java.util.Properties
+<https://docs.oracle.com/javase/10/docs/api/java/util/Properties.html>`_
+i, amb una mica de recerca, aconsegueix que les dades de la cadena de
+connexió es recullin d'un fitxer de propietats.
+
+Exercici 3. ☼ Dades de connexió protegides
+==========================================
+
+El fitxer de propietats que has preparat a l'exercici anterior
+presenta el problema de que la contrasenya apareix *oberta*. Qualsevol
+que tingui accés al fitxer per lectura, la pot veure. Potser fent
+servir les utilitats de protecció que ofereix el sistema operatiu en
+tindràs prou per "garantir" la seguretat, però de vegades voldràs anar
+una mica més lluny.
+
+Si aquest és el teu cas, considera algun sistema d'encriptació com el
+que t'ofereix la llibreria com ara `Java Simplified Encryption
+<http://www.jasypt.org/>`_ i crea una nova versió de l'aplicació que
+et permeti protegir encara més aquestes dades tan sensibles.
+
+
