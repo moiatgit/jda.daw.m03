@@ -292,10 +292,10 @@ permet veure el contingut d’un fitxer de text:</p>
 <span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.FileNotFoundException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Vector</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CatBasic</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">llegeixFitxer</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">llegeixFitxer</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
         <span class="n">FileReader</span> <span class="n">fr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
         <span class="k">try</span> <span class="o">{</span>
@@ -321,10 +321,10 @@ permet veure el contingut d’un fitxer de text:</p>
         <span class="k">return</span> <span class="n">linies</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraLinies</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraLinies</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;\n\nContinguts del fitxer &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">);</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">linia</span> <span class="o">&lt;</span> <span class="n">linies</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">linia</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;Línia [%d]: &#39;%s&#39;\n&quot;</span><span class="o">,</span> <span class="n">linia</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">linies</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">linia</span><span class="o">));</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;Línia [%d]: &#39;%s&#39;\n&quot;</span><span class="o">,</span> <span class="n">linia</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">linies</span><span class="o">.</span><span class="na">elementAt</span><span class="o">(</span><span class="n">linia</span><span class="o">));</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -334,7 +334,7 @@ permet veure el contingut d’un fitxer de text:</p>
             <span class="k">return</span><span class="o">;</span>
         <span class="o">}</span>
         <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">:</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="n">llegeixFitxer</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+            <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="n">llegeixFitxer</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
             <span class="n">mostraLinies</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">linies</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>

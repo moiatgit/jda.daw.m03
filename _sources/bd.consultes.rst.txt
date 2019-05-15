@@ -119,11 +119,11 @@ i
 
         // retorna el nombre d'animals que hi ha insertats
         private void comptaAnimals() throws SQLException {
-            String SELECT_SQL = "SELECT COUNT(*) FROM Animals";
+            String sql = "SELECT COUNT(*) FROM Animals";
             Statement st = null;
             try {
                 st = conn.createStatement();
-                ResultSet rs = st.executeQuery(SELECT_SQL);
+                ResultSet rs = st.executeQuery(sql);
                 rs.next();
                 System.out.println("El nombre d'animals a la bd és: " + rs.getInt(1));
             } finally {
@@ -226,11 +226,11 @@ i
 
         private void eliminaOcells() throws SQLException {
             // volem eliminar tots els ocells de la bd
-            String DELETE_SQL = "DELETE FROM Animals WHERE categoria = 'ocell'";
+            String sql = "DELETE FROM Animals WHERE categoria = 'ocell'";
             Statement st = null;
             try {
                 st = conn.createStatement();
-                int num = st.executeUpdate(DELETE_SQL);
+                int num = st.executeUpdate(sql);
                 System.out.println("Eliminats ocells: " + num);
             } finally {
                 if (st != null) { st.close(); }
@@ -315,7 +315,7 @@ les preguntes potser requeriran que revisis la documentació oficial.
    assigna ara l'identificador qui l'assignés? Quines implicacions
    tindria? Què consideres més adequat? Perquè?
 
-Exercici 2. ☆ L'entorn operatiu de gestió d'animals
+Exercici 2. ☼ L'entorn operatiu de gestió d'animals
 ===================================================
 
 Crea un nou projecte anomenat *gestoranimals* que ofereixi una senzilla consola

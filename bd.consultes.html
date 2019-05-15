@@ -536,11 +536,11 @@ de dades que disposi d’un model relacional <em>bàsic</em>.</p>
 
     <span class="c1">// retorna el nombre d&#39;animals que hi ha insertats</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">comptaAnimals</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">SELECT_SQL</span> <span class="o">=</span> <span class="s">&quot;SELECT COUNT(*) FROM Animals&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT COUNT(*) FROM Animals&quot;</span><span class="o">;</span>
         <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">SELECT_SQL</span><span class="o">);</span>
+            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
             <span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre d&#39;animals a la bd és: &quot;</span> <span class="o">+</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
         <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
@@ -643,11 +643,11 @@ de dades que disposi d’un model relacional <em>bàsic</em>.</p>
 
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">eliminaOcells</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
         <span class="c1">// volem eliminar tots els ocells de la bd</span>
-        <span class="n">String</span> <span class="n">DELETE_SQL</span> <span class="o">=</span> <span class="s">&quot;DELETE FROM Animals WHERE categoria = &#39;ocell&#39;&quot;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;DELETE FROM Animals WHERE categoria = &#39;ocell&#39;&quot;</span><span class="o">;</span>
         <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">DELETE_SQL</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Eliminats ocells: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="o">);</span>
         <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="n">st</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="o">}</span>
@@ -721,7 +721,7 @@ tindria? Què consideres més adequat? Perquè?</li>
 </ol>
 </div>
 <div class="section" id="exercici-2-l-entorn-operatiu-de-gestio-d-animals">
-<h2>Exercici 2. ☆ L’entorn operatiu de gestió d’animals<a class="headerlink" href="#exercici-2-l-entorn-operatiu-de-gestio-d-animals" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 2. ☼ L’entorn operatiu de gestió d’animals<a class="headerlink" href="#exercici-2-l-entorn-operatiu-de-gestio-d-animals" title="Link permanent a aquest títol">¶</a></h2>
 <p>Crea un nou projecte anomenat <em>gestoranimals</em> que ofereixi una senzilla consola
 que permeti gestionar un conjunt d’instàncies de la classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> que hem
 vist abans.</p>

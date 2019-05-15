@@ -2,10 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.util.Vector;
 public class CatBasic {
-    public static ArrayList<String> llegeixFitxer(String path) {
-        ArrayList<String> linies = new ArrayList<String>();
+    public static Vector<String> llegeixFitxer(String path) {
+        Vector<String> linies = new Vector<String>();
 
         FileReader fr = null;
         try {
@@ -31,10 +31,10 @@ public class CatBasic {
         return linies;
     }
 
-    private static void mostraLinies(String path, ArrayList<String> linies) {
+    private static void mostraLinies(String path, Vector<String> linies) {
         System.out.println("\n\nContinguts del fitxer " + path);
         for (int linia=0; linia < linies.size(); linia++) {
-            System.out.printf("Línia [%d]: '%s'\n", linia + 1, linies.get(linia));
+            System.out.printf("Línia [%d]: '%s'\n", linia + 1, linies.elementAt(linia));
         }
     }
 
@@ -44,7 +44,7 @@ public class CatBasic {
             return;
         }
         for (String path: args) {
-            ArrayList<String> linies = llegeixFitxer(path);
+            Vector<String> linies = llegeixFitxer(path);
             mostraLinies(path, linies);
         }
     }
