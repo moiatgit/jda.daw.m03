@@ -1,3 +1,9 @@
+.float-right  {float:middle}
+.float-center {float:center}
+.underline {
+  text-decoration: underline;
+}
+
 #cookiesbox {
     width:100%;
     z-index:99999;
