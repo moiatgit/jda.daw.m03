@@ -11,12 +11,11 @@ bé, ment oberta, molta curiositat i… endavant!
 
     requeriments.rst
 
+
+..  primer_contacte.rst
+..  holagit.rst
+..  ritual_holamon.rst
+..  la_tortuga.rst
 ..
-
-    primer_contacte.rst
-    holagit.rst
-    ritual_holamon.rst
-    la_tortuga.rst
-
-    ubicacio_programacio.rst
-    sistemes_numeracio.rst
+..  ubicacio_programacio.rst
+..  sistemes_numeracio.rst
