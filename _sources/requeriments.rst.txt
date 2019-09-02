@@ -7,10 +7,10 @@ Què presuposo de tu i del teu equip per realitzar aquest curs?
 Coneixements previs
 ===================
 
-Els continguts d'aquest curs estan dissenyats per a poder ser seguits per una
-persona sense coneixements previs de programació. S'espera, però, que tinguis
-una certa experiència fent servir un equip tipus PC. Hauries, per exemple, de
-ser capaç de moure i fer click amb el ratolí, escriure amb el teclat, llegir la
+Els continguts d'aquest curs estan dissenyats per a poder ser seguits sense
+coneixements previs de programació. S'espera, però, que tinguis una certa
+experiència fent servir un equip tipus PC. Hauries, per exemple, de ser
+capaç de moure i fer click amb el ratolí, escriure amb el teclat, llegir la
 pantalla… A partir d'aquí, com més en sàpigues, més ràpid podràs avançar.
 
 Tot i que els continguts es realitzaran fent servir un sistema operatiu
