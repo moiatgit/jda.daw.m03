@@ -8,9 +8,6 @@ Els continguts d'aquest curs estan dissenyats per a ser utilitzats com a suport 
 del mòdul 3 *Programació* del cicles de grau superior *Desenvolupament d'Aplicacions Web*
 que estic impartint al centre `IES Joan d'Àustria <http://agora.xtec.cat/insjoandaustria/>`_.
 
-Pots trobar més detalls sobre aquests materials i la seva llicència d'ús seguint
-:doc:`aquest enllaç <about>`.
-
 Els continguts d'aquest curs estan organitzats en els següents temes:
 
 
@@ -20,17 +17,19 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
 
     primeres_passes.rst
 
-..    instruccions.rst
-..    condicionals.rst
-..    iteracions.rst
-..    strings.rst
-..    programacio_modular.rst
-..    bucles_condicionals.rst
-..    sequencies.rst
-..    conceptes.rst
-..    python2java.rst
-..    fitxers.rst
-..    estructures.rst
-..    poo.rst
-..    contenidors.rst
-..    bd.rst
+..   dades.rst
+..   operadors_i_expressions.rst
+..   instruccions.rst
+..   condicionals.rst
+..   iteracions.rst
+..   strings.rst
+..   programacio_modular.rst
+..   bucles_condicionals.rst
+..   sequencies.rst
+..   python2java.rst
+..   fitxers.rst
+..   estructures.rst
+..   poo.rst
+..   contenidors.rst
+..   bd.rst
+

@@ -10,7 +10,12 @@ bé, ment oberta, molta curiositat i… endavant!
     :maxdepth: 1
 
     requeriments.rst
-    primer_contacte.rst
-    holagit.rst
-    ritual_holamon.rst
-    la_tortuga.rst
+
+
+..  primer_contacte.rst
+..  holagit.rst
+..  ritual_holamon.rst
+..  la_tortuga.rst
+..
+..  ubicacio_programacio.rst
+..  sistemes_numeracio.rst
