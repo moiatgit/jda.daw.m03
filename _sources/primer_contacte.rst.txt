@@ -8,7 +8,6 @@ Versió pseudocodi
 -----------------
 
 .. code-block:: none
-    :linenos:
 
     programa
       const PI = 3,14159
@@ -25,7 +24,6 @@ Versió C
 --------
 
 .. code-block:: c
-    :linenos:
 
     #include <stdio.h>
     #define PI 3.14159
@@ -44,7 +42,6 @@ Versió java
 -----------
 
 .. code-block:: java
-    :linenos:
 
     import java.io.*;
 
@@ -65,7 +62,6 @@ Versió python
 -------------
 
 .. literalinclude:: _recursos/calcularea.py
-    :linenos:
     :language: python
 
 
