@@ -106,7 +106,7 @@ carpeta com a repositori ``git``.
 
 Descarrega els següents dos fitxers dins d'aquesta carpeta:
 
-* :download:`reame.rst <_recursos/introprg_readme.rst>`
+* :download:`readme.rst <_recursos/introprg_readme.rst>`
 
 * :download:`.gitignore <_recursos/introprg_gitignore>`
 
@@ -247,6 +247,7 @@ Segueix les instruccions:
 
    .. code-block:: bash
 
+        $ git add primer_exercici.rst
         $ git commit -am "Completat l'exercici 00_01_hola_git"
 
 #. Un cop estigui tal i com vols la teva resposta, puja els canvis a GitHub
