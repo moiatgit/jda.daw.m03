@@ -93,9 +93,9 @@ ofereix la funció ``type()``. Per exemple:
 
     >>> i = 3 + 6
     >>> type(i)
-    <type 'int'>
+    <class 'int'>
     >>> i = "hola"
-    <type 'str'>
+    <class 'str'>
 
 
 Amb els exemples que hem vist fins ara, hi podem trobar els tipus ``int``
@@ -138,7 +138,7 @@ Considera la següent seqüència d'assignacions.
      i = i + 1
      ch = 'A'
      text = 'Hello World!'
-     es_modificat = Fals
+     es_modificat = False
      x = 2.1
      y = 1.2
      es_modificat = (x == y)

@@ -426,11 +426,32 @@ Per construir el nostre programet, hem realitzat les següents passes:
    lliurat al nostre client i ens ha pagat. Bé, aquesta part no l'hem feta
    de moment. Tot arribarà.
 
-Exercici 3. ☼ Saluda a la usuària
-=================================
 
-Torna a rellegir les instruccions anteriors, aquest cop segueix les passes fent el
-programa descrit.
+.. important::
+
+    Els exercicis que venen a continuació et permetran pràcticar l'assignació i
+    l'entrada/sortida. L'objectiu més important, però, **no** rau en que
+    funcionin sinó en que practiquis la manera estructurada que t'estic
+    proposant.
+
+    Molta gent es veu de seguida amb la capacitat de programar aquests exercicis
+    sense pensar-hi gaire i se sent temptada a saltar-se la part de
+    explícitar l'objectiu amb una capçalera, definir la simulació o de fer
+    servir comentaris per indicar els subproblemes a resoldre. Et recomano molt
+    que no caiguis en la trampa. Els problemes aniran esdevenint cada cop més
+    complexos i començar amb bons hàbits amb problemes menys complexos pot
+    donar-te molt d'avantatge.
+
+    **Jo t'he avisat**
+
+Exercici 3. ☼ El programa que saluda (repassat)
+===============================================
+
+Segurament mentre t'ho explicava a classe no has tingut temps de teclejar
+l'exercici d'exemple. És una bona pràctica escriure'l sencer des de zero.
+
+Torna a rellegir la descripció de com desenvolupar el programa que saluda,
+aquest cop segueix les passes fins que el programa s'executi.
 
 
 Exercici 4. Noms i cognoms
@@ -473,7 +494,7 @@ La interacció podria ser similar al següent:
     namaste
     Diguem quants cops la vols:
     5
-    namaste namaste namaste namaste namaste 
+    namaste namaste namaste namaste namaste
 
 **Pistes**
 
@@ -494,8 +515,8 @@ La interacció podria ser similar al següent:
   requerirà convertir-ho si et cal un número.
 
 
-Exercici 6. Un rectangle a mida
-===============================
+Exercici 6. ☼ Un rectangle a mida
+=================================
 
 Desenvolupa un programa a la carpeta ``01_06_rectangleamida`` que demani a
 l'usuària un color i la longitut dels dos costats d'un rectandle i, fent servir
@@ -515,7 +536,7 @@ La interacció pot ser similar a:
     75
 
 A continuació, obrirà una finestra i dibuixarà el rectangle amb el color i els
-costats indicats, 
+costats indicats,
 
 .. image:: _images/rectangleamida.png
     :align: center
@@ -530,5 +551,10 @@ canvi de color amb:
 
     tortuga.color(color)
 
-.. tip:: Recorda que ``input()`` et retorna sempre text i potser voldràs que
-    sigui numèric. En aquests casos caldrà convertir amb la funció ``int()``.
+**Pistes**:
+
+* Recorda que ``input()`` et retorna sempre text i potser voldràs que sigui
+  numèric. En aquests casos caldrà convertir amb la funció ``int()``.
+
+* En aquest exercici, la simulació descrita no serà igual que les anteriors. En
+  concret la sortida haurà de ser descrita en llenguatge natural.
