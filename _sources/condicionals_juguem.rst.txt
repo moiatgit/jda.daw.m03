@@ -1,0 +1,262 @@
+#######################
+Juguem amb condicionals
+#######################
+
+Fem uns quants exercicis més de condicionals, ara que sabem fer proves amb més
+control.
+
+En cas que et resulti més fàcil, pots fer primer el programa de la manera
+antiga, per després extreure la part del càlcul en una funció. De totes maneres,
+intenta de mica en mica anar fent directament la funció doncs a la llarga hi
+sortiràs guanyant.
+
+Recorda que cada fitxer de codi presentarà:
+
+* capçalera: una descripció de què conté el fitxer
+
+* definició de la funció
+
+  - nom de la funció
+
+  - arguments esperats
+
+  - comentari descrivint el que fa la funció, què és i de quin tipus és cada
+    argument, i el resultat a retornar
+
+  - un o més *doctest* que provin els diferents casos que pot executar la funció
+    depenent del valor dels arguments.
+
+  - el codi que resol el problema
+
+  - la clàusula o clàusules *return* corresponents
+
+  - un bloc de condició ``__name__ == '__main__'`` en el que apareixeran les
+    instruccions necessàries per obtenir les dades dels usuaris i finalment
+    mostrar el resultat.
+
+
+.. _exercici_calculadora_senzilla_python:
+
+Exercici 15. Una calculadora senzilla
+=====================================
+
+En aquesta ocasió desenvoluparem una calculadora senzilla a la carpeta
+``02_15_calculadorasenzilla/`` que demani a l'usuari un primer operand numèric,
+una operació entre (+ - * /) i un segon operand, i escrigui el resultat
+d'aplicar l'operació als operands.
+
+Exemple d'interacció: ::
+
+    $ python3 calculadorasenzilla.py
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    5
+    4 + 5 = 9
+    $ python3 calculadorasenzilla.py
+    Primer operand?
+    4
+    Operador?
+    /
+    Segon operand?
+    0
+    No es pot dividir entre 0
+    $ python3 calculadorasenzilla.py
+    Primer operand?
+    4
+    Operador?
+    ^
+    Segon operand?
+    3
+    L'operador ^ no està disponible
+
+En el cas dels *doctest* pots fer servir les mateixes proves. Per exemple, la
+prova realitzada per la primera simulació es codificaria amb *doctest* com:
+
+.. code-block:: python
+
+    >>> calculadora_senzilla(4, '+', 5)
+    '4 + 5 = 9'
+
+
+Exercici 16. Pagaments
+======================
+
+Desenvolupa un programa a ``02_16_pagaments/canvi.py`` que demani a l'usuari que
+introdueixi un preu en € i la quantitat de € que paga. El programa compararà les
+dues quantitats i escriurà els € que li falten per pagar o bé els que li han de
+tornar.
+
+
+Exemple d'interacció: ::
+
+    $ python3 canvi.py
+    Preu?
+    102
+    Paga?
+    150
+    Sobren 48€
+    $ python3 canvi.py
+    Preu?
+    102
+    Paga?
+    100
+    Falten 2€
+    $ python3 canvi.py
+    Preu?
+    100
+    Paga?
+    100
+    No sobra ni falta res
+
+La primera simulació es traduiría a *doctest* com:
+
+.. code-block:: python
+
+    >>> canvi(102, 150)
+    'sobren 48€'
+
+
+.. _exercici_guia_semafors_python:
+
+Exercici 17. ☞ La guia de semàfors
+==================================
+
+Desenvolupem a ``02_17_semafor/`` un ajudant infantil per decidir que fer
+davant un semàfor ('vermell', *verd* o *groc*). El programa demanarà de
+quin color està el semàfor i segons la resposta recomanarà respectivament
+'espera', *passa*, o *corre!*.
+
+En cas que el color introduït no sigui cap d'aquests, el programa
+respondrà amb el missatge 'ves a l'oculista'.
+
+Exemple d'interacció: ::
+
+    $ python3 semafor.py
+    Color?
+    groc
+    corre!
+
+No cal que cada opció disposi d'una simulació però sí d'un *doctest*. En
+total seran quatre com el següent:
+
+.. code-block:: python
+
+    >>> semafor('groc')
+    'corre!'
+
+Exercici 18. ☞ El nombre de fills
+=================================
+
+Desevolupa a ``02_18_nombrefills/`` un progama que demani el nombre de
+fills de l'usuari i respongui segons el nombre de fills sigui:
+
+* menys de 0: Error, no pots tenir menys que 0 fills!
+
+* 0: Tot el que thas estalviat en bolquers!'
+
+* 1: Compte de no mimar-lo massa!
+
+* entre 1 i 5 (no inclosos): No t'avorreixes a casa eh?
+
+* més de 4: Tu sí fas país!
+
+Assegura't que crees els *doctest* per cobrir quan el nombre de fills
+sigui -1, 0, 1, 2, 4, 5 i 6. Per exemple:
+
+.. code-block:: python
+
+    >>> nombre_fills(1)
+    'Compte de no mimar-lo massa!'
+
+
+Exemple d'interacció: ::
+
+    $ python3 nombredefills.py
+    Quants fills tens?
+    1
+    Compte de no mimar-lo massa!
+
+.. note::
+
+    Per què creus que no se't demana *doctest* pel cas de 3 fills? Val la
+    pena afegir-lo? I pel cas de -2 o 7?
+
+Exercici 19. ☆ L'ascensor
+=========================
+
+Considerem un ascensor d'un edifici amb planta baixa i dos pisos (primer pis i
+segon pis) que tingui els següents botons: ‘pujar un', ‘pujar dos', ‘baixar un'
+i ‘baixar dos'. L'ascensor es comporta, a partir dels botons esmentats, segons
+el següent diagrama de transició d'estats:
+
+.. image:: _images/esquemaascensor.png
+   :align: center
+
+Es demana desenvolupar un programa que simuli el funcionament d'aquest
+ascensor.
+
+El programa demanarà el pis en que es troba i el botó que es prem, i
+mostrarà el nou pis.
+
+Cal comprovar que els botons i les plantes siguin correctes. En cas que no ho
+siguin, el programa mostrarà un missatge d'error en comptes del nou pis.
+
+Exemple d'interacció: ::
+
+    $ python3 ascensor.py
+    pis?
+    planta baixa
+    botó?
+    puja un
+    primer pis
+    $ python3 ascensor.py
+    pis?
+    segon pis
+    botó?
+    puja un
+    error
+
+No cal que incloguis una simulació per cada cas possible (cada branca), però sí
+un *doctest*. Defineix la funció de la següent manera:
+
+.. code-block:: python
+
+    def ascensor(pis, boto):
+        """ …
+        >>> ascensor('planta baixa', 'puja un')
+        'primer pis'
+        …
+        """
+
+**Nota**: Aquest exercici està marcat amb una estrelleta (☆). Simbolitza que
+l'exercici és relativament més interessant que els que no en porten. En aquest
+cas, l'interés addicional és que pot ser resolt de, com a mínim, tres maneres
+diferents, i una d'elles resol el nou pis amb una sola línia de codi!
+
+
+Exercici 20. ☼ Tortuga semàfor
+==============================
+
+Desenvolupa un programa que demani als usuaris de quin color està el semàfor.
+
+Fent servir ``turtle``, dibuixa un cercle de radi 100 amb el color indicat.
+
+El programa només acceptarà els colors 'verd', 'groc' i 'vermell'. Per qualsevol
+altre color, ho pintarà amb negre.
+
+Vinga, que et passo el codi de com es fa el cercle negre:
+
+.. code-block:: python
+
+    >>> t.fillcolor('black')
+    >>> t.begin_fill()
+    >>> t.circle(100)
+    >>> t.end_fill()
+
+**Nota**: Per aquest exercici no cal que et preocupis de fer *doctest* però
+potser et resultarà interessant que la part que dibuixa el cercle estigui a una
+funció anomenada ``dibuixa_cercle()`` que rebi el color.
+

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Instruccions &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Condicionals &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -30,8 +30,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Instruccions d’assignació" href="instruccions_assignacio.html" />
-    <link rel="prev" title="Juguem amb la tortuga" href="la_tortuga.html" />
+    <link rel="next" title="L’alternativa simple" href="condicionals_simple.html" />
+    <link rel="prev" title="Comprovem els programes" href="instruccions_comprovacio.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -85,14 +85,15 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Instruccions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="instruccions_assignacio.html">Instruccions d’assignació</a></li>
-<li class="toctree-l2"><a class="reference internal" href="instruccions_es.html">Entrada/Sortida</a></li>
-<li class="toctree-l2"><a class="reference internal" href="instruccions_pas_a_pas.html">Un programa pas a pas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="instruccions_comprovacio.html">Comprovem els programes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Condicionals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_simple.html">L’alternativa simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_doctest.html">Coneixem els <em>doctest</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_juguem.html">Juguem amb condicionals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 </ul>
 
             
@@ -138,7 +139,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Instruccions</li>
+      <li>Condicionals</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,19 +172,44 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="instruccions">
-<h1>Instruccions<a class="headerlink" href="#instruccions" title="Link permanent a aquest títol">¶</a></h1>
-<p>Com hem vist, un programa no deixa de ser una llista d’instruccions que
-l’ordinador va executant de manera seqüencial.</p>
-<p>En aquesta secció en veurem dos tipus d’instruccions que ens permetran
-desenvolupar programes que interaccionin amb els nostres usuaris.</p>
+  <div class="section" id="condicionals">
+<h1>Condicionals<a class="headerlink" href="#condicionals" title="Link permanent a aquest títol">¶</a></h1>
+<div class="section" id="exercici-1-parell-o-senar">
+<h2>Exercici 1. Parell o senar<a class="headerlink" href="#exercici-1-parell-o-senar" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani un número enter i retorni les paraules
+<code class="docutils literal notranslate"><span class="pre">parell</span></code> o <code class="docutils literal notranslate"><span class="pre">senar</span></code> depenent del número rebut.</p>
+<p>Per exemple, considera les següents interaccions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 parellsenar.py
+Introdueix un número
+4
+És parell
+$ python3 parellsenar.py
+Introdueix un número
+5
+És senar
+</pre></div>
+</div>
+<p>Si veus que no te’n surts, no et sentis malament i continua llegint.</p>
+</div>
+<div class="section" id="instruccions-condicionals">
+<h2>Instruccions condicionals<a class="headerlink" href="#instruccions-condicionals" title="Link permanent a aquest títol">¶</a></h2>
+<p>Amb el que sabem fins ara, els nostres programes són una seqüència
+d’instruccions que s’executen de la primera a la darrera.</p>
+<p>T’imagines que els programes només poguessin fer això? Com resoldríem problemes
+com el proposat amb l’exercici anterior?</p>
+<p>Els llenguatges de programació ofereixen la possibilitat d’executar una
+instrucció o una altra depenent d’alguna condició. Aquesta funcionalitat ens
+l’ofereixen les <em>instruccions condicionals</em>.</p>
+<p>Els continguts d’aquesta secció s’estructuren en les següents entrades:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="instruccions_assignacio.html">Instruccions d’assignació</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instruccions_es.html">Entrada/Sortida</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instruccions_pas_a_pas.html">Un programa pas a pas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instruccions_comprovacio.html">Comprovem els programes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals_simple.html">L’alternativa simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_doctest.html">Coneixem els <em>doctest</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals_juguem.html">Juguem amb condicionals</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -210,10 +236,10 @@ desenvolupar programes que interaccionin amb els nostres usuaris.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="instruccions_assignacio.html" class="btn btn-neutral float-right" title="Instruccions d’assignació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="condicionals_simple.html" class="btn btn-neutral float-right" title="L’alternativa simple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="la_tortuga.html" class="btn btn-neutral" title="Juguem amb la tortuga" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="instruccions_comprovacio.html" class="btn btn-neutral" title="Comprovem els programes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
