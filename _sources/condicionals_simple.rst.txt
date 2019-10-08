@@ -38,14 +38,16 @@ De manera general:
     if condicio:
         instruccions
 
+
 Allà on diu:
 
 * ``condició`` hi col·locarem qualsevol expressió que retorni un valor
-  booleà. Per exemple ``nom == 'Simona'``.
-  
+  booleà. Per exemple ``nom == 'Simona'``, ``resposta == 'sí'`` o ``edat <= 8``.
+
   Fixa't els dos ``=``, no és una assignació!
 
 * ``instruccions`` podem tenir una o més instruccions.
+
 
 Una altra cosa que potser t'haurà sobtat són aquests espais que apareixen davant
 ``treu_el_paraigues()``.  Es coneixen com a *sagnat*, però com que és una
@@ -114,7 +116,7 @@ Exemples d'interacció: ::
 ----
 
 .. [#problemesindentació] D'acord, vols saber quins problemes, oi? Doncs mira,
-   per començar, si barreges indentacions diferents, Python es queixarà. 
+   per començar, si barreges indentacions diferents, Python es queixarà.
    Depenent de l'editor (o la seva configuració) els tabuladors ocupen quatre,
    vuit espais (potser altres quantitats) Com que els espais són marques que
    normalment no es veuen, és difícil de saber si hi ha un tabulador o quatre
