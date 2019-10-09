@@ -168,7 +168,7 @@ sigui -1, 0, 1, 2, 4, 5 i 6. Per exemple:
 
 .. code-block:: python
 
-    >>> nombre_fills(1)
+    >>> nombre_de_fills(1)
     'Compte de no mimar-lo massa!'
 
 
