@@ -21,8 +21,8 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     primeres_passes.rst
     instruccions.rst
     condicionals.rst
+    iteracions.rst
 
-..    iteracions.rst
 ..    strings.rst
 ..    programacio_modular.rst
 ..    bucles_condicionals.rst
