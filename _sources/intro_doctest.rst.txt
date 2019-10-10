@@ -298,7 +298,7 @@ Segueix, a mode de recordatori, les següents instruccions:
 
 #. Documenta la funció (què fa?)
 
-   Recorda, fes servir ``""""`` a partir de la següent línia de la definició del
+   Recorda, fes servir ``"""`` a partir de la següent línia de la definició del
    nom de la funció.
 
 #. Simula una execució com a ``doctest``
