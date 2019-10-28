@@ -1,0 +1,306 @@
+############################
+String: seqüència de lletres
+############################
+
+Considera la següent interacció a la consola de Python
+
+.. code-block:: python
+
+    >>> s = "Ameba"         # declarem i inicialitzem un string
+    >>> type(s)             # comprovem que és un string
+    <class 'str'>
+    >>> len(s)              # obtenim el nombre de lletres que conté s
+    5
+    >>> s[0]                # accedim a la primera lletra de s (fixa't que comença per 0!)
+    'A'
+    >>> s[1]                # accedim a la segona lletra de s
+    'm'
+    >>> type(s[1])          # comprovem el tipus d'una lletra (també és string!)
+    <class 'str'>
+    >>> s[4]                # accedim a la darrera lletra de s
+    'a'
+    >>> s[len(s)-1]         # accedim a la darrera lletra de s a partir de la longitud menys 1
+    'a'
+    >>> s[len(s)]           # accedim a una posició fora del string
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: string index out of range
+
+.. important:: La notació ``[]`` té moltes possibilitats en Python. Aquí farem un ús reduït d'aquestes i és
+    important que, de moment, facis servir només les funcionalitats que et proposo doncs et
+    permetran entendre millor el funcionament dels strings independentment del llenguatge que facis
+    servir.
+
+
+Juguem una mica
+===============
+
+En els següents exercicis treballarem l'accés a diferents lletres d'un
+string. Se t'oferiran noves funcions de Python que podràs fer servir en
+successius exercicis, a menys que explícitament t'indiquin el contrari.
+
+Recorda: tot i que hi ha moltes funcions que ens ofereix Python que ens
+podrien simplificar els nostres codis, el nostre objectiu no és tant
+resoldre els problemes si no aprendre a programar. És a dir, fes servir
+**només** el que et vagin oferint aquests continguts.
+
+Et recomano que ampliïs les teves anotacions de ``apunts/`` amb les
+funcions que et vagi presentant. En cas que trobis d'altres, és important
+que les marquis com a **no permeses** en els exercicis base ni a les
+proves d'aquest curs.
+
+Assegura't que les teves solucions passen totes les proves (incloent *doctest*)
+abans de lliurar-los.
+
+
+Exercici 18. ☞ Inicia amb vocal minúscula
+=========================================
+
+Desenvolupa una funció anomenada ``inicia_amb_vocal_minuscula(paraula)``
+que rep una paraula (``str``) i retorna cert si i només sí, la paraula
+comença per una vocal en minúscules.
+
+Considerarem com a vocals només els valors ``a``, ``e``, ``i``, ``o`` i
+``u``.
+
+Els *doctest* corresponents:
+
+.. code-block:: python
+
+    >>> inicia_amb_vocal_minuscula('hola')
+    False
+    >>> inicia_amb_vocal_minuscula('adéu')
+    True
+    >>> inicia_amb_vocal_minuscula('Ameba')
+    False
+    >>> inicia_amb_vocal_minuscula('')
+    False
+
+Exercici 19. ☞ Acaba amb vocal minúscula
+========================================
+
+Desenvolupa una funció que rep una paraula i retorna cert si i només sí,
+la paraula finalitza amb una vocal en minúscules.
+
+Com abans, considerarem com a vocals només els valors ``a``, ``e``, ``i``, ``o`` i ``u``.
+
+Els *doctest* corresponents:
+
+.. code-block:: python
+
+    >>> acaba_amb_vocal_minuscula('hola')
+    True
+    >>> acaba_amb_vocal_minuscula('ADÉU')
+    False
+    >>> acaba_amb_vocal_minuscula('')
+    False
+
+
+Exercici 20. ☞ Acaba amb una lletra
+===================================
+
+Desenvolupa una funció que rebi un text i retorni cert si acaba amb una lletra.
+
+El doctest de la nostra nova funció dirà quelcom similar a:
+
+.. code-block:: python
+
+    >>> acaba_en_lletra('hola')
+    True
+    >>> acaba_en_lletra('i punt.')
+    False
+    >>> acaba_en_lletra('')
+    False
+
+
+En aquesta ocasió, és possible que et plantegis comprovar una per una, totes les lletres de
+l'alfabet del teu idioma tal i com vas fer amb les cinc vocals.
+
+Com que aquesta repetició no farà el problema més interessant, et proposo que consideris una funció
+que ens ofereix Python per fer-ho: ``isalpha()``. Considera la següent interacció a la consola de
+Python:
+
+.. code-block:: python
+
+    >>> lletra = "1"
+    >>> lletra.isalpha()
+    False
+    >>> "1".isalpha()           # mateixa comprovació però directament amb el literal
+    False
+    >>> "à".isalpha()
+    True
+
+Exercici 21. ☞ Comença amb majúscules i acaba amb lletra
+========================================================
+
+Desenvolupa una funció que rebi un text i retorni cert si comença en majúscules i acaba amb una
+lletra.
+
+.. code-block:: python
+
+    >>> inici_majuscules_acaba_lletra('Ten fast fingers')
+    True
+    >>> inici_majuscules_acaba_lletra('10 fast fingers')
+    False
+    >>> inici_majuscules_acaba_lletra('ten fast fingers')
+    False
+    >>> inici_majuscules_acaba_lletra('Ten fast fingers!')
+    False
+    >>> inici_majuscules_acaba_lletra('')
+    False
+
+Comprovar que una lletra està o no en majúscules pot resultar una mica tediós si ho hem de fer
+lletra a lletra. Python ens ofereix dues funcions interessants. Considera la següent interacció a la
+consola:
+
+.. code-block:: python
+
+    >>> "a".islower()       # és "a" una lletra en minúscules?
+    True
+    >>> "1".islower()       # el que no sigui lletra no pot tampoc estar en minúscules
+    False
+    >>> "A".isupper()       # és "A" una lletra en majúscules?
+    True
+
+Exercici 22. ☞ La segona lletra és igual a la penúltima
+=======================================================
+
+En aquesta ocasió desenvoluparem una funció que ens dirà si la segona lletra d'un text
+coincideix amb la penúltima.
+
+.. code-block:: python
+
+    >>> segona_igual_penultima("blabla")
+    True
+    >>> segona_igual_penultima("bLabla")
+    False
+    >>> segona_igual_penultima("1221")
+    True
+    >>> segona_igual_penultima("Leo")
+    True
+    >>> segona_igual_penultima("aa")
+    True
+    >>> segona_igual_penultima("a")
+    False
+    >>> segona_igual_penultima("")
+    False
+
+Exercici 23. ☞ Practiquem funcions de strings
+=============================================
+
+Desenvolupa un programa que demani un text i, respecte la seva primera
+lletra composi una taula amb el resultat de les funcions de string
+``len()``, ``isalnum()``, ``isalpha()``, ``isdigit()``, ``islower()``,
+``isupper()``, ``tolower()``, i ``toupper()``.
+
+Considera les següents simulacions:
+
+.. code-block:: none
+
+    $ python3 funcionsstrings.py
+    lletra?
+    1
+    len('1') -> 1
+    '1'.isalnum() -> True
+    '1'.isalpha() -> False
+    '1'.isdigit() -> True
+    '1'.islower() -> False
+    '1'.isupper() -> False
+    '1'.lower() -> 1
+    '1'.upper() -> 1
+
+Nota: fixa't que, excepte ``len()``, la resta de funcions s'apliquen
+després del valor i separant-les per un punt. Ja descobrirem més endavant
+el perquè d'aquesta diferència.
+
+Completa els jocs de prova, com a mínim, per les següents entrades:
+
+* entrada en blanc (fitxer buit que pots aconseguir simplement fent ``$ touch
+  testfile2.txt``)
+
+* ``"al·leluia"``
+
+* ``"4321"``
+
+* ``"3.14"``
+
+* ``"Ameba"``
+
+* ``"¿Comoooor?"``
+
+* ``"3 x 4 = 12"``
+
+Exercici 24. ☞ Una matrícula vàlida
+===================================
+
+Desenvolupa un programa que demani a l'usuari una matrícula i li digui si el que li ha introduït
+correspon a una matrícula vàlida en el format instaurat a partir de l'any 2000 a Espanya.
+
+Una matrícula vàlida està formada per quatre xifres seguides de tres lletres en majúscules de
+l'alfabet espanyol, excepte les vocals 'A', 'E', 'I', 'O', 'U' i les consonants 'Ñ' i 'Q'.
+
+T'ofereixo alguns *doctest* per provar, però potser en voldràs afegir-ne alguns altres:
+
+.. code-block:: python
+
+    >>> matricula_valida('1234BCD')
+    'Vàlida'
+    >>> matricula_valida('1234bcd')
+    'No vàlida'
+    >>> matricula_valida('1234ABC')
+    'No vàlida'
+    >>> matricula_valida('B1234UU')
+    'No vàlida'
+    >>> matricula_valida('01234ABC')
+    'No vàlida'
+    >>> matricula_valida('123BCDF')
+    'No vàlida'
+
+
+Exercici 25. ☞ Matrícules en minúscules
+=======================================
+
+Desenvolupa una funció que rebi un string i, en cas que correspongui a una
+matrícula vàlida, el retorni amb les lletres de la matrícula en minúscules.
+
+En cas que el valor rebut no correspongui a una matrícula vàlida, el retornarà
+sense canvis.
+
+Els *doctest* que ha d'acomplir la teva funció són els següents:
+
+.. code-block:: python
+
+    >>> matricula_minuscula('1234BCD')
+    '1234bcd'
+
+    >>> matricula_minuscula('123BCD')
+    '123BCD'
+
+    >>> matricula_minuscula('')
+    ''
+
+    >>> matricula_minuscula('1234ABC')
+    '1234ABC'
+
+    >>> matricula_minuscula('1234BcD')
+    '1234BcD'
+
+**Pista**: Fixa't que no podem modificar un string un cop composat. Per exemple,
+no podem fer quelcom com ara:
+
+.. code-block:: python
+
+    >>> s = 'anna'
+    >>> s[0] = s[0].upper()         # ERROR: intentem posar la primera en majúscules
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'str' object does not support item assignment
+
+Per poder fer això, ens cal composar un nou string amb les dades que ens interessi.
+
+.. code-block:: python
+
+    >>> s = s[0].upper() + s[1] + s[2] + s[3]
+    >>> s
+    'Anna'
+

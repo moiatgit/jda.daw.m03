@@ -155,7 +155,7 @@ fills de l'usuari i respongui segons el nombre de fills sigui:
 
 * menys de 0: Error, no pots tenir menys que 0 fills!
 
-* 0: Tot el que thas estalviat en bolquers!'
+* 0: Tot el que thas estalviat en bolquers!
 
 * 1: Compte de no mimar-lo massa!
 

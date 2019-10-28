@@ -100,8 +100,8 @@ Veurem:
     :titlesonly:
 
     iteracions_numeriques.rst
+    strings.rst
 
-..  strings.rst
 ..  bucles_condicionals.rst
 ..  sequencies.rst
 

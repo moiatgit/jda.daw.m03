@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>String: seqüència de lletres &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Strings" href="strings.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="iteracions.html">Iteracions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="iteracions_numeriques.html">Iteracions numèriques</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="strings.html">Strings</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">String: seqüència de lletres</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="iteracions.html">Iteracions</a> &raquo;</li>
+        
+          <li><a href="strings.html">Strings</a> &raquo;</li>
+        
+      <li>String: seqüència de lletres</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="string-sequencia-de-lletres">
+<h1>String: seqüència de lletres<a class="headerlink" href="#string-sequencia-de-lletres" title="Link permanent a aquest títol">¶</a></h1>
+<p>Considera la següent interacció a la consola de Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Ameba&quot;</span>         <span class="c1"># declarem i inicialitzem un string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>             <span class="c1"># comprovem que és un string</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>              <span class="c1"># obtenim el nombre de lletres que conté s</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                <span class="c1"># accedim a la primera lletra de s (fixa&#39;t que comença per 0!)</span>
+<span class="go">&#39;A&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                <span class="c1"># accedim a la segona lletra de s</span>
+<span class="go">&#39;m&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>          <span class="c1"># comprovem el tipus d&#39;una lletra (també és string!)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>                <span class="c1"># accedim a la darrera lletra de s</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>         <span class="c1"># accedim a la darrera lletra de s a partir de la longitud menys 1</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)]</span>           <span class="c1"># accedim a una posició fora del string</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">string index out of range</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">La notació <code class="docutils literal notranslate"><span class="pre">[]</span></code> té moltes possibilitats en Python. Aquí farem un ús reduït d’aquestes i és
+important que, de moment, facis servir només les funcionalitats que et proposo doncs et
+permetran entendre millor el funcionament dels strings independentment del llenguatge que facis
+servir.</p>
+</div>
+<div class="section" id="juguem-una-mica">
+<h2>Juguem una mica<a class="headerlink" href="#juguem-una-mica" title="Link permanent a aquest títol">¶</a></h2>
+<p>En els següents exercicis treballarem l’accés a diferents lletres d’un
+string. Se t’oferiran noves funcions de Python que podràs fer servir en
+successius exercicis, a menys que explícitament t’indiquin el contrari.</p>
+<p>Recorda: tot i que hi ha moltes funcions que ens ofereix Python que ens
+podrien simplificar els nostres codis, el nostre objectiu no és tant
+resoldre els problemes si no aprendre a programar. És a dir, fes servir
+<strong>només</strong> el que et vagin oferint aquests continguts.</p>
+<p>Et recomano que ampliïs les teves anotacions de <code class="docutils literal notranslate"><span class="pre">apunts/</span></code> amb les
+funcions que et vagi presentant. En cas que trobis d’altres, és important
+que les marquis com a <strong>no permeses</strong> en els exercicis base ni a les
+proves d’aquest curs.</p>
+<p>Assegura’t que les teves solucions passen totes les proves (incloent <em>doctest</em>)
+abans de lliurar-los.</p>
+</div>
+<div class="section" id="exercici-18-inicia-amb-vocal-minuscula">
+<h2>Exercici 18. ☞ Inicia amb vocal minúscula<a class="headerlink" href="#exercici-18-inicia-amb-vocal-minuscula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció anomenada <code class="docutils literal notranslate"><span class="pre">inicia_amb_vocal_minuscula(paraula)</span></code>
+que rep una paraula (<code class="docutils literal notranslate"><span class="pre">str</span></code>) i retorna cert si i només sí, la paraula
+comença per una vocal en minúscules.</p>
+<p>Considerarem com a vocals només els valors <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code> i
+<code class="docutils literal notranslate"><span class="pre">u</span></code>.</p>
+<p>Els <em>doctest</em> corresponents:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inicia_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inicia_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;adéu&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inicia_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;Ameba&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inicia_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-19-acaba-amb-vocal-minuscula">
+<h2>Exercici 19. ☞ Acaba amb vocal minúscula<a class="headerlink" href="#exercici-19-acaba-amb-vocal-minuscula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rep una paraula i retorna cert si i només sí,
+la paraula finalitza amb una vocal en minúscules.</p>
+<p>Com abans, considerarem com a vocals només els valors <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code> i <code class="docutils literal notranslate"><span class="pre">u</span></code>.</p>
+<p>Els <em>doctest</em> corresponents:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;ADÉU&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_amb_vocal_minuscula</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-20-acaba-amb-una-lletra">
+<h2>Exercici 20. ☞ Acaba amb una lletra<a class="headerlink" href="#exercici-20-acaba-amb-una-lletra" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi un text i retorni cert si acaba amb una lletra.</p>
+<p>El doctest de la nostra nova funció dirà quelcom similar a:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_en_lletra</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_en_lletra</span><span class="p">(</span><span class="s1">&#39;i punt.&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">acaba_en_lletra</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>En aquesta ocasió, és possible que et plantegis comprovar una per una, totes les lletres de
+l’alfabet del teu idioma tal i com vas fer amb les cinc vocals.</p>
+<p>Com que aquesta repetició no farà el problema més interessant, et proposo que consideris una funció
+que ens ofereix Python per fer-ho: <code class="docutils literal notranslate"><span class="pre">isalpha()</span></code>. Considera la següent interacció a la consola de
+Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lletra</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;1&quot;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>           <span class="c1"># mateixa comprovació però directament amb el literal</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;à&quot;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-21-comenca-amb-majuscules-i-acaba-amb-lletra">
+<h2>Exercici 21. ☞ Comença amb majúscules i acaba amb lletra<a class="headerlink" href="#exercici-21-comenca-amb-majuscules-i-acaba-amb-lletra" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi un text i retorni cert si comença en majúscules i acaba amb una
+lletra.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inici_majuscules_acaba_lletra</span><span class="p">(</span><span class="s1">&#39;Ten fast fingers&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inici_majuscules_acaba_lletra</span><span class="p">(</span><span class="s1">&#39;10 fast fingers&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inici_majuscules_acaba_lletra</span><span class="p">(</span><span class="s1">&#39;ten fast fingers&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inici_majuscules_acaba_lletra</span><span class="p">(</span><span class="s1">&#39;Ten fast fingers!&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inici_majuscules_acaba_lletra</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Comprovar que una lletra està o no en majúscules pot resultar una mica tediós si ho hem de fer
+lletra a lletra. Python ens ofereix dues funcions interessants. Considera la següent interacció a la
+consola:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>       <span class="c1"># és &quot;a&quot; una lletra en minúscules?</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;1&quot;</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>       <span class="c1"># el que no sigui lletra no pot tampoc estar en minúscules</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;A&quot;</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>       <span class="c1"># és &quot;A&quot; una lletra en majúscules?</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-22-la-segona-lletra-es-igual-a-la-penultima">
+<h2>Exercici 22. ☞ La segona lletra és igual a la penúltima<a class="headerlink" href="#exercici-22-la-segona-lletra-es-igual-a-la-penultima" title="Link permanent a aquest títol">¶</a></h2>
+<p>En aquesta ocasió desenvoluparem una funció que ens dirà si la segona lletra d’un text
+coincideix amb la penúltima.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;blabla&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;bLabla&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;1221&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;Leo&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;aa&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segona_igual_penultima</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-23-practiquem-funcions-de-strings">
+<h2>Exercici 23. ☞ Practiquem funcions de strings<a class="headerlink" href="#exercici-23-practiquem-funcions-de-strings" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani un text i, respecte la seva primera
+lletra composi una taula amb el resultat de les funcions de string
+<code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">isalnum()</span></code>, <code class="docutils literal notranslate"><span class="pre">isalpha()</span></code>, <code class="docutils literal notranslate"><span class="pre">isdigit()</span></code>, <code class="docutils literal notranslate"><span class="pre">islower()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">isupper()</span></code>, <code class="docutils literal notranslate"><span class="pre">tolower()</span></code>, i <code class="docutils literal notranslate"><span class="pre">toupper()</span></code>.</p>
+<p>Considera les següents simulacions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 funcionsstrings.py
+lletra?
+1
+len(&#39;1&#39;) -&gt; 1
+&#39;1&#39;.isalnum() -&gt; True
+&#39;1&#39;.isalpha() -&gt; False
+&#39;1&#39;.isdigit() -&gt; True
+&#39;1&#39;.islower() -&gt; False
+&#39;1&#39;.isupper() -&gt; False
+&#39;1&#39;.lower() -&gt; 1
+&#39;1&#39;.upper() -&gt; 1
+</pre></div>
+</div>
+<p>Nota: fixa’t que, excepte <code class="docutils literal notranslate"><span class="pre">len()</span></code>, la resta de funcions s’apliquen
+després del valor i separant-les per un punt. Ja descobrirem més endavant
+el perquè d’aquesta diferència.</p>
+<p>Completa els jocs de prova, com a mínim, per les següents entrades:</p>
+<ul class="simple">
+<li>entrada en blanc (fitxer buit que pots aconseguir simplement fent <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">touch</span>
+<span class="pre">testfile2.txt</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;al·leluia&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;3.14&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;Ameba&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;¿Comoooor?&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;3</span> <span class="pre">x</span> <span class="pre">4</span> <span class="pre">=</span> <span class="pre">12&quot;</span></code></li>
+</ul>
+</div>
+<div class="section" id="exercici-24-una-matricula-valida">
+<h2>Exercici 24. ☞ Una matrícula vàlida<a class="headerlink" href="#exercici-24-una-matricula-valida" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani a l’usuari una matrícula i li digui si el que li ha introduït
+correspon a una matrícula vàlida en el format instaurat a partir de l’any 2000 a Espanya.</p>
+<p>Una matrícula vàlida està formada per quatre xifres seguides de tres lletres en majúscules de
+l’alfabet espanyol, excepte les vocals “A”, “E”, “I”, “O”, “U” i les consonants “Ñ” i “Q”.</p>
+<p>T’ofereixo alguns <em>doctest</em> per provar, però potser en voldràs afegir-ne alguns altres:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;1234BCD&#39;</span><span class="p">)</span>
+<span class="go">&#39;Vàlida&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;1234bcd&#39;</span><span class="p">)</span>
+<span class="go">&#39;No vàlida&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;1234ABC&#39;</span><span class="p">)</span>
+<span class="go">&#39;No vàlida&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;B1234UU&#39;</span><span class="p">)</span>
+<span class="go">&#39;No vàlida&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;01234ABC&#39;</span><span class="p">)</span>
+<span class="go">&#39;No vàlida&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_valida</span><span class="p">(</span><span class="s1">&#39;123BCDF&#39;</span><span class="p">)</span>
+<span class="go">&#39;No vàlida&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-25-matricules-en-minuscules">
+<h2>Exercici 25. ☞ Matrícules en minúscules<a class="headerlink" href="#exercici-25-matricules-en-minuscules" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi un string i, en cas que correspongui a una
+matrícula vàlida, el retorni amb les lletres de la matrícula en minúscules.</p>
+<p>En cas que el valor rebut no correspongui a una matrícula vàlida, el retornarà
+sense canvis.</p>
+<p>Els <em>doctest</em> que ha d’acomplir la teva funció són els següents:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;1234BCD&#39;</span><span class="p">)</span>
+<span class="go">&#39;1234bcd&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;123BCD&#39;</span><span class="p">)</span>
+<span class="go">&#39;123BCD&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;1234ABC&#39;</span><span class="p">)</span>
+<span class="go">&#39;1234ABC&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matricula_minuscula</span><span class="p">(</span><span class="s1">&#39;1234BcD&#39;</span><span class="p">)</span>
+<span class="go">&#39;1234BcD&#39;</span>
+</pre></div>
+</div>
+<p><strong>Pista</strong>: Fixa’t que no podem modificar un string un cop composat. Per exemple,
+no podem fer quelcom com ara:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;anna&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>         <span class="c1"># ERROR: intentem posar la primera en majúscules</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<p>Per poder fer això, ens cal composar un nou string amb les dades que ens interessi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">&#39;Anna&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="strings.html" class="btn btn-neutral" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
