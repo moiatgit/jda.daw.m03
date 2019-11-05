@@ -99,18 +99,18 @@ majúscules.
 
 .. code-block:: python
 
-    >>> primera_lletra_majúscules('anna María')
+    >>> primera_lletra_majuscules('anna María')
     'Anna María'
-    >>> primera_lletra_majúscules('Anna María')
+    >>> primera_lletra_majuscules('Anna María')
     'Anna María'
-    >>> primera_lletra_majúscules('')
+    >>> primera_lletra_majuscules('')
     ''
 
-Exercici 28. Comptant 'A's
-==========================
+Exercici 28. Comptant As
+========================
 
-Desenvolupa una funció que rebi un string i retorni el nombre de lletres ``A``, en majúscules o
-minúscules, que conté.
+Desenvolupa una funció que rebi un string i retorni el nombre de lletres
+``A``, en majúscules o minúscules, que conté.
 
 .. code-block:: python
 
