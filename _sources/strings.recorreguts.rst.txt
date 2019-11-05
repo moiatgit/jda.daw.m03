@@ -1,0 +1,528 @@
+######################
+Recorreguts de strings
+######################
+
+Ara que ja hem vist que els elements que composen un string poden se accedits individualment
+mitjançant la notació ``[index]``, passem a automatitzar l'accés.
+
+Considera el següent codi:
+
+.. code-block:: python
+
+    >>> nom = 'Ritchie'
+    >>> for i in range(0, len(nom), 1):
+    ...     print('nom[' + str(i) + '] -> ' + nom[i])
+    ...
+    nom[0] -> R
+    nom[1] -> i
+    nom[2] -> t
+    nom[3] -> c
+    nom[4] -> h
+    nom[5] -> i
+    nom[6] -> e
+
+Què ha passat? Doncs que:
+
+* el bucle fa passar la variable ``i`` pels valors del 0 fins al nombre de lletras que té
+  ``Ritchie``, en aquest cas 7 (menys 1 recorda!)
+
+* finalment mostrem el resultat d'indexar ``nom`` amb ``i`` per cada valor que pren aquesta última
+
+En resum, farem servir les tècniques que hem aprés a :doc:`iteracions_numeriques` per
+generar els índexos --les posicions-- que ens interessen dels strings.
+
+Sobre els següents exercicis
+============================
+
+A continuació et proposo una sèrie d'exercicis amb recorreguts de strings.
+
+És **molt important** que només facis servir les eines que han aparegut
+fins ara en aquests continguts. Com ja hem comentat, Python és molt
+complet i disposa de moltes utilitats per simplificar-nos la vida quan ja
+sabem programar. Ara, però, aquestes utilitats ens dificultarien
+l'aprenentatge dels conceptes que estem treballant.
+
+Les restriccions principalment són:
+
+* **totes** les utilitats dels strings, a excepció de les presentades fins
+  a :doc:`strings.posicions`.
+
+* els bucles han de ser sempre de la forma ``for variable in range(inici,
+  final + quelcom, increment)``. Encara que pot arribar a ser molt
+  temptador fer-ho d'una altra manera, després de ``in`` sempre ha
+  d'haver-hi ``range()``.
+
+Per descomptat, aquestes restriccions són eliminades amb els exercicis
+opcionals (☼). Alguns dels conceptes que treballaràs en aquests exercicis
+són una mica més avançats que el que hem fet fins ara. Si t'ho pots
+permetre, et recomano molt que els intentis.
+
+Per altra banda, col·loca cada exercici en un fitxer dins d'una carpeta
+prefixada amb el número del bloc actual i el número de l'exercici, i
+després posa-hi un nom que et serveixi de referència per identificar
+l'exercici visualment.
+
+Per exemple, tenint en comptes que aquest és el bloc **03**, l'exercici 26
+que es descriu a continuació, podria estar dins d'una carpeta anomenada
+``03_26_separalletres/``. D'aquest nom, el que és **imprescindible** és que
+comenci per ``03_26_``. Fixa't en els guions separadors ``_``.
+
+A dins de ``03_26_separalletres/`` només hi ha d'haver un *únic* fitxer
+que contingui la funció requerida. Per exemple, l'exercici 26 requereix la
+funció ``separa_lletres()``. Si dins de ``03_26_separalletres/`` lliures
+més d'un fitxer ``.py`` amb la funció ``separa_lletres()``, la correcció
+escollirà una versió qualsevol o, fins i tot, podria rebutjar tot el
+lliurament.
+
+
+Exercici 26. Separa lletres
+===========================
+
+Desenvolupa una funció que rebi un string i retorni un string amb cada
+lletra separada per un espai.
+
+Els *doctest*:
+
+.. code-block:: python
+
+    >>> separa_lletres('Ritchie')
+    'R i t c h i e'
+    >>> separa_lletres('')
+    ''
+
+
+Exercici 27. Primera lletra en majúscules
+=========================================
+
+Desenvolupa una funció que rebi un string i en retorni un altre igual, però amb la primera lletra en
+majúscules.
+
+.. code-block:: python
+
+    >>> primera_lletra_majúscules('anna María')
+    'Anna María'
+    >>> primera_lletra_majúscules('Anna María')
+    'Anna María'
+    >>> primera_lletra_majúscules('')
+    ''
+
+Exercici 28. Comptant 'A's
+==========================
+
+Desenvolupa una funció que rebi un string i retorni el nombre de lletres ``A``, en majúscules o
+minúscules, que conté.
+
+.. code-block:: python
+
+    >>> compta_as('Anaximandro')
+    3
+    >>> compta_as('')
+    0
+
+Exercici 29. Comptador de vocals
+================================
+
+Desenvolupa una funció que rebi un string i retorni un altre que indiqui quantes ocurrències conté
+de cada vocal. Considerarem només vocals sense accentuar.
+
+.. code-block:: python
+
+    >>> compta_vocals('Anaximandro')
+    'a:3 e:0 i:1 o:1 u:0'
+    >>> compta_vocals('Supercalifrastilisticoespialidoso')
+    'a:3 e:2 i:6 o:3 u:1'
+    >>> compta_vocals('')
+    'a:0 e:0 i:0 o:0 u:0'
+
+
+Exercici 30. Informe d'un nom
+=============================
+
+Desenvolupa una funció que rebi un string amb el nom d'una persona i retorni un petit informe
+d'aquest. En concret informarà de quantes lletres té i quantes d'aquestes són vocals.
+
+En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuades: ``àèéíïòóúü``
+
+.. code-block:: python
+
+    >>> informa_nom('Eleftèria')
+    '9 lletres i 5 vocals'
+    >>> informa_nom('aàeèéiíïoòóuúü')
+    '14 lletres i 14 vocals'
+    >>> informa_nom('Anna Güell Abbas')     # els espais no compten com lletres!
+    '14 lletres i 6 vocals'
+
+**Pistes**: 
+
+* Recordes ``isalpha()``?
+
+* Si col·loques totes les vocals en un string, pots fer un bucle que comprovi si una lletra es troba
+  dins del string.
+
+Exercici 31. Inicials en majúscules
+===================================
+
+Desenvolupa una funció que rebi un string que contindrà el nom d'una persona i el retorni amb les
+inicials en majúscules i la resta en minúscules.
+
+.. code-block:: python
+
+    >>> majusculitza('anNa güeLL aBBas')
+    'Anna Güell Abbas'
+    >>> majusculitza('jesús tomás-dado vicents')    # compte amb el guió!
+    'Jesús Tomás-Dado Vicents'
+
+**Pista**: podem considerar que una paraula comença, o bé a l'inici del string, o després de quelcom
+que no sigui lletra (com ara un espai)
+
+Pots fer una versió avançada d'aquest exercici, fent que no torni en majúscules les lletres que
+apareixen soles. Considera el *doctest*:
+
+.. code-block:: python
+
+    >>> majusculitza('enric vidal i viu')           # la i està sola!
+    'Enric Vidal i Viu'
+
+
+Exercici 32. El text transformat
+================================
+
+Desenvolupa una funció que rebi un string amb un text i en retorni una transformació d'aquest segons les següents regles:
+
+* les vocals (les cinc sense accents) apareixeran en minúscules
+
+* les lletres no vocals apareixeran en majúscules
+
+* els nombres apareixeran entre parèntesis ``()``
+
+.. code-block:: python
+
+    >>> transforma('Avui faig 19 anys')
+    'aVui FaiG (1)(9) aNYS'
+
+Et proposo, com a pràctica addicional, que realitzis una versió en la que els números estiguin
+agrupats. Per exemple, el *doctest* anterior seria:
+
+.. code-block:: python
+
+    >>> transforma('Avui faig 19 anys')
+    'aVui FaiG (19) aNYS'
+
+Exercici 33. El text del revés
+==============================
+
+Desenvolupa una funció que rebi un text i el retorni a l'inrevés.
+
+.. code-block:: python
+
+    >>> reves('tinc gana')
+    'anag cnit'
+
+Exercici 34. Texts capicua
+==========================
+
+Desenvolupa una funció que rebi un text i retorni ``True`` quan aquest és capicua.
+
+.. code-block:: python
+
+    >>> es_capicua('Alondra')
+    False
+    >>> es_capicua('Anna')      # Fixa't que no distingeix majúscules!
+    True
+    >>> es_capicua('')
+    False
+    >>> es_capicua('a')         # Sí, comença i acaba igual!
+    True
+
+
+Exercici 35. Texts coincidents
+==============================
+
+Desenvolupa una funció que rebi dos strings i retorni el nombre de lletres que coincideixen en
+posició en ambdós.
+
+.. code-block:: python
+
+    >>> coincidencies('Ramón', 'Ratón')
+    4
+    >>> coincidencies('sabina', 'supina')
+    4
+    >>> coincidencies('Sabina', 'supina')   # distingeix majúscules de minúscules
+    3
+    >>> coincidencies('empty', 'buit')      # no cal que coincideixin en longitud
+    1
+    >>> coincidencies('', 'quelcom')        # amb una cadena buida no hi haurà coincidències
+    0
+
+Col·loca la funció en un programa anomenat ``textscoincidents.py`` que no cal que faci res en ser
+executat.
+
+Exercici 36. Desaccentua
+========================
+
+Desenvolupa una funció que desaccentuí el text que rep. En concret, les lletres que transformarà
+són:
+
+* à → a
+
+* è, é → e
+
+* í, ï → i
+
+* ò, ó → o
+
+* ú, ü → u
+
+* ç → c
+
+
+.. code-block:: python
+
+    >>> desaccentua('Desenvolupa una funció que desaccentuí el text que rep.')
+    'Desenvolupa una funcio que desaccentui el text que rep.'
+    >>> desaccentua('çàèéíïòóúü')
+    'caeeiioouu'
+
+Col·loca la funció en un programa anomenat ``desaccentua.py`` que no cal que faci res en ser
+executat.
+
+Exercici 37. Codifica bàsic
+===========================
+
+Cada lletra que trobem a un string té un codi, un nombre positiu.
+
+Podem accedir a aquest número a partir d'una lletra i també podem, a partir del número, obtenir la
+lletra que té associada. Considera la següent interacció:
+
+.. code-block:: python
+
+    >>> ord('a')
+    97
+    >>> chr(97)
+    'a'
+    >>> chr(ord('a')+1)
+    'b'
+    >>> ord('b')
+    98
+
+En aquesta ocasió, has de desenvolupar una funció que, donat un string, retorni un altre on cada
+lletra estigui reemplaçada per la seva següent dins de l'ordre indicat per ``ord()``, tenint en
+comptes que:
+
+* només codificarem les lletres entre la ``a`` i la ``z`` minúscules. La resta d'elements que
+  apareguin al text, es mantindran iguals.
+
+* la lletra ``z`` serà substituïda per la ``a``
+
+Considera els *doctest*:
+
+.. code-block:: python
+
+    >>> codifica_basic('hola')
+    'ipmb'
+    >>> codifica_basic('Cada lletra que trobem a un string té un codi, un nombre positiu.')
+    'Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.'
+    >>> codifica_basic('Dábale arroz a la zorra el abad')
+    'Dácbmf bsspa b mb apssb fm bcbe'
+
+Col·loca la funció en un programa anomenat ``codificabasic.py`` que no cal que faci res en ser
+executat.
+
+Exercici 38. Un triangle de lletres
+===================================
+
+Desenvolupa un programa que demani a l’usuari el seu nom.
+
+El programa dibuixarà el seu nom en forma de triangle.
+
+.. code-block:: none
+
+    $ python3 trianglelletres.py
+    nom?
+    Nemesio
+    N
+    N, e
+    N, e, m
+    N, e, m, e
+    N, e, m, e, s
+    N, e, m, e, s, i
+    N, e, m, e, s, i, o
+
+
+Exercici 39. Un triangle de lletres invertit
+============================================
+
+Desenvolupa un programa que demani a l’usuari el seu nom.
+
+El programa dibuixarà el seu nom en forma de triangle invertit.
+
+.. code-block:: none
+
+    $ python3 trianglelletres.py
+    nom?
+    Romualda
+    a, d, l, a, u, m, o, R
+    d, l, a, u, m, o, R
+    l, a, u, m, o, R
+    a, u, m, o, R
+    u, m, o, R
+    m, o, R
+    o, R
+    R
+
+
+Exercici 40. Una piràmide amb el nom
+====================================
+
+Desenvolupa un programa que demani a l'usuari el seu nom i dibuixi amb aquest una piràmide.
+
+.. code-block:: none
+
+    $ python3 piramitza.py
+    nom?
+    Eva
+    ....E-E....
+    ..E.v-v.E..
+    E.v.a-a.v.E
+
+Crea dos jocs de prova, un amb el nom de l'exemple i l'altre amb el teu. Si et dius "Eva", fes
+servir el teu cognom.
+El teu programa ha de ser capaç de superar la prova amb :download:`test_py.sh
+<_recursos/test_py.sh>`.
+
+Exercici 41. ☼ Matricula formatada (vesió simplificada)
+=======================================================
+
+Com que hi ha molts tipus de matrícules, ens interessa definir una funció
+que ens permeti saber si un determinat valor correspon a una matrícula
+vàlida segons un format concret.
+
+El format vindrà especificat per un string amb dos possibles valors ``L``
+i ``D`` per cada posició de la matrícula.
+
+Així, els següents *doctest* haurien de funcionar:
+
+.. code-block:: python
+
+    # Matrícules espanyoles (simplificades)
+    >>> matricula_segons_format('DDDDLLL' '1234BCD')
+    True
+
+    >>> matricula_segons_format('DDDDLLL' '123BCD')
+    False
+
+    >>> matricula_segons_format('DDDDLLL' '12345CD')
+    False
+
+    # Matrícules italianes (simplificades)
+    >>> matricula_segons_format('LLDDDLL', 'AB123CD')
+    True
+
+    # Matrícules d'un país molt petit
+    >>> matricula_segons_format('DDLL', '12AB')
+    True
+
+    >>> matricula_segons_format('DDLL', '1AB2')
+    False
+
+*Nota*: per simplicitat, no tindrem en comptes les restriccions de valors
+com ara les vocals a les matrícules espanyoles.
+
+Exercici 42. ☼ Matrícula formatada (versió completa)
+====================================================
+
+T'has quedat amb les ganes de fer la versió completa? Doncs vinga!
+
+En aquest cas, ``matricula_segons_format()`` rebrà un paràmetre més: un
+string amb les lletres no vàlides
+
+Suposarem que tots els números són sempre vàlids, i que les lletres
+vàlides són de la A a la Z, a menys que el string d'excepcions digui el
+contrari.
+
+Per exemple, les matrícules espanyoles es podrien codificar de la següent
+manera:
+
+.. code-block:: python
+
+    >>> matricula_segons_format('DDDDLLL' '1234BCD', 'AEIOUQÑ')
+    True
+    >>> matricula_segons_format('DDDDLLL' '1234ABC', 'AEIOUQÑ')
+    False
+
+Exercici 43. ☼ Tortuga robotitzada
+==================================
+
+En aquest exercici desenvoluparàs un programa que demani un conjunt
+d'instruccions a realitzar per una tortuga.
+
+Les instruccions vindran codificades amb un string
+
+Cada lletra del string implicarà una acció de la tortuga.
+
+Les comandes reconegudes són:
+
+- E: gira a l'esquerra 90 graus
+- D: gira a la dreta 90 graus
+- A: avança 100 punts
+- L: llapis amunt/avall
+- V: color vermell
+- N: color negre
+
+Qualsevol altre valor que rebi, serà ignorat.
+
+Per exemple, si el programa rep ``ADLADLAVDAEAENA``, la tortuga dibuixarà
+el següent
+
+.. image:: _images/tortugarobotsimple.png
+    :align: center
+
+Els moviments corresponents, es correspondrien amb:
+
+.. code-block:: python
+
+    >>> t = turtle.Pen()
+    >>> t.forward(100)
+    >>> t.right(90)
+    >>> t.penup()
+    >>> t.forward(100)
+    >>> t.right(90)
+    >>> t.pendown()
+    >>> t.forward(100)
+    >>> t.color('red')
+    >>> t.right(90)
+    >>> t.forward(100)
+    >>> t.left(90)
+    >>> t.forward(100)
+    >>> t.left(90)
+    >>> t.color('black')
+    >>> t.forward(100)
+
+
+Exercici 44. ☼☆ Tortuga robot ampliada
+======================================
+
+Fes una nova versió de la tortuga. Aquest cop afegirem més comandes. En
+concret:
+
+- N: neteja la pantalla
+- Cx: canvia el color a x, on x és un valor entre (V)ermell, (N)egre,
+  (B)lau i (G)roc.
+- Ax: avança els punts que li digui x, sent x un valor numèric enter
+  positiu
+- Dx, Ex: gira a la dreta o a l'esquerra el nombre de graus indicats per
+  x, sent x un enter positiu.
+
+Cal tenir present que aquesta versió és més complexa que l'anterior, donat
+que algunes lletres poden significar diferent depenent del context. Per
+exemple ``N`` voldrà dir *(N)eteja* quan no va després de ``C`` i
+*canvia color a (N)egre* quan va després de ``C``.
+
+El control d'errors també es complica una mica. Ara ja no només cal
+ignorar els caracters desconeguts. També caldrà ignorar les comandes de
+més d'un caràcter que no estiguin ben completades.  Per exemple: ``CA100``
+avançarà 100 passos, donat que ``C`` no és seguit de cap lletra de color-
+
+Et proposo que facis primer un *diagrama d'estats* similar al que vas
+veure a l'exercici de l'ascensor, de manera que puguis tenir una idea
+clara de què fer en cada moment.
