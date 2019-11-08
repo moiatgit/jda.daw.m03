@@ -387,8 +387,6 @@ Desenvolupa un programa que demani a l'usuari el seu nom i dibuixi amb aquest un
 
 Crea dos jocs de prova, un amb el nom de l'exemple i l'altre amb el teu. Si et dius "Eva", fes
 servir el teu cognom.
-El teu programa ha de ser capaç de superar la prova amb :download:`test_py.sh
-<_recursos/test_py.sh>`.
 
 Exercici 41. ☼ Matricula formatada (vesió simplificada)
 =======================================================
