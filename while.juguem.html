@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Juguem amb el while &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Un while pot emular un for" href="while.recorreguts.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="iteracions.html">Iteracions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="iteracions_numeriques.html">Iteracions numèriques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="while.visio_general.html">El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="while.recorreguts.html">Un <code class="docutils literal notranslate"><span class="pre">while</span></code> pot emular un <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="iteracions.html">Iteracions</a> &raquo;</li>
+        
+          <li><a href="bucles_condicionals.html">Bucles condicionals</a> &raquo;</li>
+        
+      <li>Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="juguem-amb-el-while">
+<h1>Juguem amb el <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#juguem-amb-el-while" title="Link permanent a aquest títol">¶</a></h1>
+<div class="section" id="exercici-52-el-lloro">
+<span id="exercici-lloro-python"></span><h2>Exercici 52. ☞ El lloro<a class="headerlink" href="#exercici-52-el-lloro" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani a l’usuari paraules i les repeteixi
+fins que l’usuari introdueixi «adéu».</p>
+<p>Considera la simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 lloro.py
+El lloro pregunta paraula:
+hola
+El lloro diu: hola
+El lloro pregunta paraula:
+què tal?
+El lloro diu: què tal?
+El lloro pregunta paraula:
+adéu
+Adéu
+</pre></div>
+</div>
+<p>Fixa’t que la resposta del lloro canvia lleugerament en finalitzar.</p>
+</div>
+<div class="section" id="exercici-53-compta-lletres">
+<h2>Exercici 53. ☞ Compta lletres<a class="headerlink" href="#exercici-53-compta-lletres" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que compti les lletres de totes les paraules que li
+passin, fins que li diguin prou.</p>
+<p>El teu programa respectarà les següents simulacions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 comptalletres.py
+<span class="hll">Ves introduïnt paraules i acaba amb &quot;prou&quot;
+</span>hola
+i
+adéu
+prou
+<span class="hll">Has introduït 9 lletres
+</span>
+$ python3 comptalletres.py
+<span class="hll">Ves introduïnt paraules i acaba amb &quot;prou&quot;
+</span>hola
+i
+a10
+prou
+<span class="hll">Has introduït 6 lletres
+</span>
+$ python3 comptalletres.py
+<span class="hll">Ves introduïnt paraules i acaba amb &quot;prou&quot;
+</span>
+prou
+<span class="hll">Has introduït 0 lletres
+</span>
+$ python3 comptalletres.py
+<span class="hll">Ves introduïnt paraules i acaba amb &quot;prou&quot;
+</span>a!
+prou
+<span class="hll">Has introduït 1 lletra
+</span>
+$ python3 comptalletres.py
+<span class="hll">Ves introduïnt paraules i acaba amb &quot;prou&quot;
+</span>prou
+<span class="hll">Has introduït 0 lletres
+</span></pre></div>
+</div>
+<p><strong>Nota</strong>: fixa’t que només compta lletres (ni nombres ni símbols).</p>
+</div>
+<div class="section" id="exercici-54-validador-de-matricules">
+<h2>Exercici 54. ☞ Validador de matrícules<a class="headerlink" href="#exercici-54-validador-de-matricules" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que validi matrícules fins que li indiquin prou.</p>
+<p>El teu programa respectarà la següent simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 validamatricules.py
+<span class="hll">Introdueix matricules o &quot;prou&quot; per finalitzar
+</span>1234BCD
+Vàlida
+1234ACD
+No vàlida
+prou
+<span class="hll">Has introduït 1 matrícula vàlida
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="exercici-55-informes-de-capicuitat">
+<h2>Exercici 55. ☞ Informes de capicuïtat<a class="headerlink" href="#exercici-55-informes-de-capicuitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que indiqui la capicuïtat de les matrícules fins que li indiquin prou.</p>
+<p>El teu programa respectarà les següents simulacions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 informescapicuitat.py
+<span class="hll">Introdueix matricules o &quot;prou&quot; per finalitzar
+</span>1234BCB
+Capicua de lletres
+1221BCD
+Capicua de números
+1221ABC
+Matrícula no vàlida
+1221BCB
+Capicua de lletres i números
+1234BCD
+Matrícula avorrida
+prou
+<span class="hll">Has introduït 4 matrícules vàlides; 3 interessants.
+</span>
+$ python3 informescapicuitat.py
+<span class="hll">Introdueix matricules o &quot;prou&quot; per finalitzar
+</span>1221ABC
+Matrícula no vàlida
+prou
+<span class="hll">No has introduït cap matrícula vàlida.
+</span>
+$ python3 informescapicuitat.py
+<span class="hll">Introdueix matricules o &quot;prou&quot; per finalitzar
+</span>1234BCD
+Matrícula avorrida
+prou
+<span class="hll">Has introduït 1 matrícula vàlida; cap interessant.
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="exercici-56-l-ascensor-continu">
+<h2>Exercici 56. ☞ L’ascensor continu<a class="headerlink" href="#exercici-56-l-ascensor-continu" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes la pràctica de l’ascensor? (<a class="reference internal" href="condicionals_juguem.html"><span class="doc">Juguem amb condicionals</span></a>)</p>
+<p>En aquesta ocassió, oferirem un menú per interaccionar amb el nostre ascensor.
+Inicialment, l’ascensor es trobarà a la <em>planta baixa</em>.</p>
+<p>Una simulació d’interacció és:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 ascensorcontinu.py
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">b
+</span>No pot pujar tant
+Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">a
+</span>No pot pujar tant
+Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>No pot baixar tant
+Es troba al primer pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">c
+</span>No pot baixar tant
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>No pot baixar tant
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">b
+</span>Es troba al segon pis
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">d
+</span>Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+<span class="hll">f
+</span>No és una opció vàlida
+Es troba a la planta baixa
+Seleccioni una opció:
+    a: pujar un pis
+    b: pujar dos pisos
+    c: baixar un pis
+    d: baixar dos pisos
+    x: sortir de l’ascensor
+x
+Adéu
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-57-la-calculadora-iterativa">
+<h2>Exercici 57. ☞ La calculadora iterativa<a class="headerlink" href="#exercici-57-la-calculadora-iterativa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una calculadora com la <em>calculadora senzilla</em> de
+<a class="reference internal" href="condicionals_juguem.html#exercici-calculadora-senzilla-python"><span class="std std-ref">Exercici 15. Una calculadora senzilla</span></a>. Aquest cop, però, el programa
+permetrà seguir introduint peticions fins que li diguin prou.</p>
+<p>El teu programa respectarà les següents simulacions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 calculadoraiterativa.py
+Demana&#39;m que vols que calculi enters. Finalitza amb &quot;prou&quot;
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">+
+</span>Segon operand?
+<span class="hll">5
+</span>4 + 5 = 9
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">-
+</span>Segon operand?
+<span class="hll">5
+</span>4 - 5 = -1
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">*
+</span>Segon operand?
+<span class="hll">5
+</span>4 * 5 = 20
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">/
+</span>Segon operand?
+<span class="hll">0
+</span>No es pot dividir entre 0
+Primer operand?
+<span class="hll">-3
+</span>Operador?
+<span class="hll">*
+</span>Segon operand?
+<span class="hll">+5
+</span>-3 * 5 = 15
+<span class="hll">prou
+</span>ok
+
+$ python3 calculadoraiterativa.py
+Demana&#39;m que vols que calculi. Finalitza amb &quot;prou&quot;
+Primer operand?
+<span class="hll">prou
+</span>ok
+
+$ python3 calculadoraiterativa.py
+Demana&#39;m que vols que calculi. Finalitza amb &quot;prou&quot;
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">prou
+</span>ok
+
+$ python3 calculadoraiterativa.py
+Demana&#39;m que vols que calculi. Finalitza amb &quot;prou&quot;
+Primer operand?
+<span class="hll">4
+</span>Operador?
+<span class="hll">+
+</span>Segon operand?
+<span class="hll">prou
+</span>ok
+
+$ python3 calculadoraiterativa.py
+Demana&#39;m que vols que calculi. Finalitza amb &quot;prou&quot;
+Primer operand?
+<span class="hll">1,5
+</span>L&#39;operand no és un enter
+Primer operand?
+<span class="hll">un
+</span>L&#39;operand no és un enter
+Primer operand?
+<span class="hll">1
+</span>Operador?
+<span class="hll">^
+</span>Operador ^ no està disponible
+Primer operand?
+<span class="hll">1
+</span>Operador?
+<span class="hll">+
+</span>Segon operand?
+<span class="hll">dos
+</span>L&#39;operand no és un enter
+Primer operand?
+<span class="hll">prou
+</span>ok
+</pre></div>
+</div>
+<p>Fixa’t que es considera un operand vàlid quan és un enter. Els enters poden
+començar amb <code class="docutils literal notranslate"><span class="pre">+</span></code> i amb <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+</div>
+<div class="section" id="exercici-58-rimes">
+<span id="exercici-rimes-python"></span><h2>Exercici 58. ☞ Rimes<a class="headerlink" href="#exercici-58-rimes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que vagi recollint frases mentre <em>rimin</em> amb la frase
+anterior. Es considera que dues frases rimen si acaben amb la mateixa lletra.</p>
+<p>Una simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 rimes.py
+<span class="hll">Introdueix frases que rimin
+</span>Et dic hola
+perquè mola
+Així no et sents sola
+m&#39;he cansat de rimar
+<span class="hll">Has introduït 3 rimes
+</span></pre></div>
+</div>
+<p><strong>Pista</strong>: probablement et caldrà guardar quelcom de cada iteració per la
+següent.</p>
+</div>
+<div class="section" id="exercici-59-histories-encadenades">
+<h2>Exercici 59. ☞ Històries encadenades<a class="headerlink" href="#exercici-59-histories-encadenades" title="Link permanent a aquest títol">¶</a></h2>
+<p>Programa ara un divertit joc infantil en el que cada frase hagi de
+començar per la mateixa paraula amb que va acabar la frase anterior.</p>
+<p>El programa finalitzarà quan l’usuari s’equivoqui.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pythonr3 historiesencadenades.py
+<span class="hll">Introdueix frases encadenades
+</span>Qui comença guanya
+Guanya qui menteix
+Menteix qui no diu veritat
+Veritats com temples
+<span class="hll">Has introduït 3 frases encadenades
+</span></pre></div>
+</div>
+<p><strong>Fixat</strong>: no considera majúscules/minúscules però si paraules completes.</p>
+</div>
+<div class="section" id="exercici-60-lletra-continguda">
+<span id="exercici-lletra-continguda-python"></span><h2>Exercici 60. Lletra continguda<a class="headerlink" href="#exercici-60-lletra-continguda" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que ens permeti saber si una lletra està continguda en
+una paraula.  La funció ens retornarà la posició de la primera aparició de la
+lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;amic&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;amic&#39;</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;amic&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;amic&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;amic&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lletra_continguda</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-61-paraula-continguda">
+<span id="exercici-paraula-continguda-python"></span><h2>Exercici 61. Paraula continguda<a class="headerlink" href="#exercici-61-paraula-continguda" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que permeti saber si una paraula està continguda en una
+altra. La funció ens retornarà la posició de la primera lletra on comença la
+paraula cercada dins de la segona paraula, o -1 si no es troba.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;campanada&#39;</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;maduixa&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;xat&#39;</span><span class="p">,</span> <span class="s1">&#39;maduixa&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;maduixa&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paraula_continguda</span><span class="p">(</span><span class="s1">&#39;ana&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<p><em>important</em>: un cop trobi la paraula la primera vegada, <strong>no</strong> continuarà
+recorrent la segona paraula.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="while.recorreguts.html" class="btn btn-neutral float-left" title="Un while pot emular un for" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -62,6 +62,7 @@ Comprova que la sortida comença amb el valor ``0``, tot seguit ve ``1`` i així
 
 Si el darrer és ``100``, no has fet el que es demana!
 
+.. _exercici_entredosnombres_python:
 
 Exercici 5. ☞ Entre dos nombres
 ===============================
@@ -182,6 +183,7 @@ En aquest exercici no cal fer *doctest*.
 Passa les proves de ``03_09_historicedats/`` que espera que el teu
 programa es digui ``historicedats.py``.
 
+.. _exercici_quadrat_nombres_python:
 
 Exercici 10. ☆ Un quadrat de nombres
 ====================================

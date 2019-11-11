@@ -101,7 +101,7 @@ Veurem:
 
     iteracions_numeriques.rst
     strings.rst
+    bucles_condicionals.rst
 
-..  bucles_condicionals.rst
 ..  sequencies.rst
 

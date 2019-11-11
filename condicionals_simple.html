@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -35,21 +43,16 @@
      
     <script src="_static/moiscripts.js"></script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -179,7 +182,7 @@
 <h1>L’alternativa simple<a class="headerlink" href="#l-alternativa-simple" title="Link permanent a aquest títol">¶</a></h1>
 <p>«Si plou llavors treu el paraigües»</p>
 <p>De manera gràfica podem representar la condició anterior de la següent manera:</p>
-<div align="center" class="align-center"><img src="_images/graphviz-0663e3fd3c6dea4b4b1350e5f0162bcd7ae603e2.png" alt="digraph {
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-0709469cc33e80ba3171662021d0300e036aeea5.png" alt="digraph {
     inici[shape=&quot;box&quot;, style=rounded];
     final[shape=&quot;box&quot;, style=rounded];
     plou[shape=&quot;diamond&quot;, style=&quot;&quot;];
@@ -189,7 +192,7 @@
     plou -&gt; &quot;treu el paraigües&quot;[label=&quot;cert&quot;];
     plou -&gt; final[label=&quot;fals&quot;];
     &quot;treu el paraigües&quot; -&gt; final;
-}" />
+}" class="graphviz" /></div>
 </div>
 <p>Fixa’t com, depenent de si plou, executem una instrucció o no.</p>
 <p>En Python ho escriuríem de manera semblant a:</p>
@@ -204,12 +207,11 @@
 </div>
 <p>Allà on diu:</p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">condició</span></code> hi col·locarem qualsevol expressió que retorni un valor
+<li><p><code class="docutils literal notranslate"><span class="pre">condició</span></code> hi col·locarem qualsevol expressió que retorni un valor
 booleà. Per exemple <code class="docutils literal notranslate"><span class="pre">nom</span> <span class="pre">==</span> <span class="pre">'Simona'</span></code>, <code class="docutils literal notranslate"><span class="pre">resposta</span> <span class="pre">==</span> <span class="pre">'sí'</span></code> o <code class="docutils literal notranslate"><span class="pre">edat</span> <span class="pre">&lt;=</span> <span class="pre">8</span></code>.</p>
 <p>Fixa’t els dos <code class="docutils literal notranslate"><span class="pre">=</span></code>, no és una assignació!</p>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">instruccions</span></code> podem tenir una o més instruccions.</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instruccions</span></code> podem tenir una o més instruccions.</p></li>
 </ul>
 <p>Una altra cosa que potser t’haurà sobtat són aquests espais que apareixen davant
 <code class="docutils literal notranslate"><span class="pre">treu_el_paraigues()</span></code>.  Es coneixen com a <em>sagnat</em>, però com que és una
@@ -218,19 +220,19 @@ paraula una mica <em>gore</em>, farem servir una <em>catalanització</em> del mo
 <p>La indentació permet a Python saber quines instruccions s’han d’executar en cas
 que la condició sigui certa. Per tant, és <strong>obligatori</strong> posar-la.</p>
 <p>Pot ser qualsevol número d’espais (o tabuladors) però nosaltres farem servir
-quatre espais per indentar. Això ens evitarà molts problemes amb Python<a class="footnote-reference" href="#problemesindentacio" id="id1">[1]</a>.</p>
+quatre espais per indentar. Això ens evitarà molts problemes amb Python<a class="footnote-reference brackets" href="#problemesindentacio" id="id1">1</a>.</p>
 <div class="section" id="juguem-una-mica">
 <h2>Juguem una mica<a class="headerlink" href="#juguem-una-mica" title="Link permanent a aquest títol">¶</a></h2>
 <p>A l’hora de desenvolupar els programes amb condicionals, continuarem realitzant
 totes les passes que hem aprés en exercicis anteriors, però afegirem una
 simulació per cada branca:</p>
 <ol class="arabic simple">
-<li>Defineix una capçalera</li>
-<li>Simula una execució per cada branca</li>
-<li>Genera els fitxers d’entrada i sortida esperada per cada prova</li>
-<li>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
-l’entrada, càlcul i presentació dels resultats</li>
-<li>Resol cada subproblema. Si cal, decomposa’ls encara més.</li>
+<li><p>Defineix una capçalera</p></li>
+<li><p>Simula una execució per cada branca</p></li>
+<li><p>Genera els fitxers d’entrada i sortida esperada per cada prova</p></li>
+<li><p>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
+l’entrada, càlcul i presentació dels resultats</p></li>
+<li><p>Resol cada subproblema. Si cal, decomposa’ls encara més.</p></li>
 </ol>
 <p>Els programes desenvolupats poden pressuposar que les dades que
 introdueixi l’usuari seran sempre del tipus correcte.
@@ -262,19 +264,18 @@ Vagi amb compte Anna
 </pre></div>
 </div>
 <hr class="docutils" />
-<table class="docutils footnote" frame="void" id="problemesindentacio" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>D’acord, vols saber quins problemes, oi? Doncs mira,
+<dl class="footnote brackets">
+<dt class="label" id="problemesindentacio"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>D’acord, vols saber quins problemes, oi? Doncs mira,
 per començar, si barreges indentacions diferents, Python es queixarà.
 Depenent de l’editor (o la seva configuració) els tabuladors ocupen quatre,
 vuit espais (potser altres quantitats) Com que els espais són marques que
 normalment no es veuen, és difícil de saber si hi ha un tabulador o quatre
 (vuit, etc) espais.  Això genera tants embolics que Python3 ja no permet
 barrejar tabuladors i espais per indentar, i <cite>recomana
-espais &lt;https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces&gt;</cite></td></tr>
-</tbody>
-</table>
+espais &lt;https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces&gt;</cite></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -304,7 +305,7 @@ espais &lt;https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces&gt;</cite></
         <a href="condicionals_doble.html" class="btn btn-neutral float-right" title="L’alternativa doble" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="condicionals.html" class="btn btn-neutral" title="Condicionals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="condicionals.html" class="btn btn-neutral float-left" title="Condicionals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -313,7 +314,7 @@ espais &lt;https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces&gt;</cite></
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
 
     </p>
   </div> 
@@ -329,33 +330,16 @@ espais &lt;https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces&gt;</cite></
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2019-20',
-            LANGUAGE:'ca',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
