@@ -2,7 +2,7 @@
 Bucles condicionals
 ###################
 
-Considera el següent procediment:
+Considera el següent programa:
 
 .. code-block:: python
     :emphasize-lines: 5

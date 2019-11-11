@@ -49,8 +49,8 @@ Fes una nova versió, aquest cop amb ``while``. El teu nou programa haurà de
 passar les mateixes proves de la versió amb ``for``.
 
 
-Exercici 50. Un quadrat de nombres
-==================================
+Exercici 50. ☞ Un quadrat de nombres
+====================================
 
 Recupera el programa *Un quadrat de nombres* que vas desenvolupar a
 :ref:`exercici_quadrat_nombres_python`.
