@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -239,9 +236,9 @@ tenim els missatges concrets i la manera d’interactuar amb l’usuari.</p>
 <p>Ara que ja tenim clar <em>què</em> és el que hem de fer, pensem <em>com</em>. És a dir, quines
 passes ens portaran a aconseguir el nostre objectiu.</p>
 <ul class="simple">
-<li><p>primer, sembla que hem d’obtenir el nom de l’usuari, oi?</p></li>
-<li><p>un cop el tinguem, haurem de construir el missatge de salutació</p></li>
-<li><p>finalment, haurem de mostrar-li aquest missatge a l’usuari</p></li>
+<li>primer, sembla que hem d’obtenir el nom de l’usuari, oi?</li>
+<li>un cop el tinguem, haurem de construir el missatge de salutació</li>
+<li>finalment, haurem de mostrar-li aquest missatge a l’usuari</li>
 </ul>
 <p>Doncs vinga, a comentar el nostre codi:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -282,14 +279,14 @@ sobre, ara s’ha convertit en tres problemes a resoldre en comptes d’un!</p>
 que el problema principal i, en resoldre tots tres, tenim resolt el
 principal! D’això s’en diu <em>dividir i vèncer</em>.</p>
 <div class="sidebar">
-<p class="sidebar-title">Dividir i vèncer</p>
+<p class="first sidebar-title">Dividir i vèncer</p>
 <p>La tècnica de <em>dividir i vèncer</em> o <em>divide and conquer</em> és una de les
 més importants a l’hora de desenvolupar.</p>
 <p>En el fons, és una tècnica molt simple:</p>
-<ul class="simple">
-<li><p>si el problema és prou simple, resol directament</p></li>
-<li><p>si el problema és complex, trenca-ho en troços i a cada troç
-aplica-li la tècnica <em>dividir i vèncer</em></p></li>
+<ul class="last simple">
+<li>si el problema és prou simple, resol directament</li>
+<li>si el problema és complex, trenca-ho en troços i a cada troç
+aplica-li la tècnica <em>dividir i vèncer</em></li>
 </ul>
 </div>
 <p>Ara ens centrem en el primer subproblema. Hem de demanar-li el nom a
@@ -639,42 +636,48 @@ Hola Manel. M&#39;encanta saber de tu
 <div class="section" id="recapitulem">
 <h2>Recapitulem<a class="headerlink" href="#recapitulem" title="Link permanent a aquest títol">¶</a></h2>
 <div class="sidebar">
-<p class="sidebar-title">Esquema bàsic dels nostres programes</p>
+<p class="first sidebar-title">Esquema bàsic dels nostres programes</p>
 <p>Ara que estem aprenent a programar, ens trobarem que molt habitualment els nostres programes es descomposen en tres subproblemes:</p>
-<ul class="simple">
-<li><p>obtenir les dades a manipular</p></li>
-<li><p>manipular les dades per calcular la resposta</p></li>
-<li><p>generar la resposta obtinguda</p></li>
+<ul class="last simple">
+<li>obtenir les dades a manipular</li>
+<li>manipular les dades per calcular la resposta</li>
+<li>generar la resposta obtinguda</li>
 </ul>
 </div>
 <p>Per construir el nostre programet, hem realitzat les següents passes:</p>
 <ol class="arabic">
-<li><p>Hem descrit en una capçalera què fa el nostre programa</p></li>
-<li><p>Hem simulat una execució del nostre programa, amb el que</p>
+<li><p class="first">Hem descrit en una capçalera què fa el nostre programa</p>
+</li>
+<li><p class="first">Hem simulat una execució del nostre programa, amb el que</p>
 <ul class="simple">
-<li><p>hem decidit el nom del fitxer</p></li>
-<li><p>hem decidit els missatges concrets que generarem</p></li>
-<li><p>hem decidit la manera concreta d’interaccionar amb l’usuari</p></li>
+<li>hem decidit el nom del fitxer</li>
+<li>hem decidit els missatges concrets que generarem</li>
+<li>hem decidit la manera concreta d’interaccionar amb l’usuari</li>
 </ul>
 </li>
-<li><p>Tot seguit, hem descomposat el nostre problema en tres subproblemes</p>
+<li><p class="first">Tot seguit, hem descomposat el nostre problema en tres subproblemes</p>
 <p>Hem afegit les descripcions dels subproblemes com a comentaris dins del
 nostre codi. Els hem remarcat amb <code class="docutils literal notranslate"><span class="pre">XXX</span></code>.</p>
 </li>
-<li><p>A continuació hem anat resolent cada subproblema. Aquells que
-requereixen més d’una instrucció, els hem desglossat en subproblemes.</p></li>
-<li><p>Quan ja hem tingut les instruccions corresponent, hem substituït el
-comentari <code class="docutils literal notranslate"><span class="pre">XXX</span></code> per les instruccions.</p></li>
-<li><p>Hem executat sovint el codi resultant per comprovar que tot anava
-correctament.</p></li>
-<li><p>Quan hem tingut dubtes del funcionament d’alguna part, l’hem provada en
-la consola de Python</p></li>
-<li><p>Un cop finalitzat el nostre programa i comprovat que funciona, l’hem
+<li><p class="first">A continuació hem anat resolent cada subproblema. Aquells que
+requereixen més d’una instrucció, els hem desglossat en subproblemes.</p>
+</li>
+<li><p class="first">Quan ja hem tingut les instruccions corresponent, hem substituït el
+comentari <code class="docutils literal notranslate"><span class="pre">XXX</span></code> per les instruccions.</p>
+</li>
+<li><p class="first">Hem executat sovint el codi resultant per comprovar que tot anava
+correctament.</p>
+</li>
+<li><p class="first">Quan hem tingut dubtes del funcionament d’alguna part, l’hem provada en
+la consola de Python</p>
+</li>
+<li><p class="first">Un cop finalitzat el nostre programa i comprovat que funciona, l’hem
 lliurat al nostre client i ens ha pagat. Bé, aquesta part no l’hem feta
-de moment. Tot arribarà.</p></li>
+de moment. Tot arribarà.</p>
+</li>
 </ol>
 <div class="admonition important">
-<p class="admonition-title">Important</p>
+<p class="first admonition-title">Important</p>
 <p>Els exercicis que venen a continuació et permetran pràcticar l’assignació i
 l’entrada/sortida. L’objectiu més important, però, <strong>no</strong> rau en que
 funcionin sinó en que practiquis la manera estructurada que t’estic
@@ -686,7 +689,7 @@ servir comentaris per indicar els subproblemes a resoldre. Et recomano molt
 que no caiguis en la trampa. Els problemes aniran esdevenint cada cop més
 complexos i començar amb bons hàbits amb problemes menys complexos pot
 donar-te molt d’avantatge.</p>
-<p><strong>Jo t’he avisat</strong></p>
+<p class="last"><strong>Jo t’he avisat</strong></p>
 </div>
 </div>
 <div class="section" id="exercici-3-el-programa-que-saluda-repassat">
@@ -704,11 +707,11 @@ l’usuari el seu nom. Un cop obtingut, demanarà el seu cognom.  Finalment
 respondrà: <code class="docutils literal notranslate"><span class="pre">&quot;Ei</span> <span class="pre">«nom»,</span> <span class="pre">tinc</span> <span class="pre">una</span> <span class="pre">amiga</span> <span class="pre">que</span> <span class="pre">també</span> <span class="pre">és</span> <span class="pre">«cognom»&quot;</span></code>.</p>
 <p>Per fer-ho, recorda les passes:</p>
 <ol class="arabic simple">
-<li><p>Defineix una capçalera</p></li>
-<li><p>Simula una execució</p></li>
-<li><p>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
-l’entrada, càlcul i presentació dels resultats</p></li>
-<li><p>Resol cada subproblema. Si cal, decomposa’ls encara més.</p></li>
+<li>Defineix una capçalera</li>
+<li>Simula una execució</li>
+<li>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
+l’entrada, càlcul i presentació dels resultats</li>
+<li>Resol cada subproblema. Si cal, decomposa’ls encara més.</li>
 </ol>
 <p>No oblidis actualitzar el teu repositori <code class="docutils literal notranslate"><span class="pre">git</span></code> (incloent la versió remota) amb
 el nou exercici.</p>
@@ -729,18 +732,21 @@ Diguem una paraula:
 </div>
 <p><strong>Pistes</strong></p>
 <ul>
-<li><p>Com sempre, fes servir les passes habituals per resoldre’l</p></li>
-<li><p>L’operador <code class="docutils literal notranslate"><span class="pre">*</span></code> en Python permet multiplicar un text per un nombre i el
+<li><p class="first">Com sempre, fes servir les passes habituals per resoldre’l</p>
+</li>
+<li><p class="first">L’operador <code class="docutils literal notranslate"><span class="pre">*</span></code> en Python permet multiplicar un text per un nombre i el
 resultat és que el text es repeteix tants cops com digui el nombre</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hola&quot;</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="go">holaholahola</span>
 </pre></div>
 </div>
 </li>
-<li><p>La teva solució, perquè es separin les paraules, requerirà que aparegui un
-espai extra al final de cada repetició (incloent la darrera!)</p></li>
-<li><p>Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> retorna un valor de tipus <em>string</em>. Això et
-requerirà convertir-ho si et cal un número.</p></li>
+<li><p class="first">La teva solució, perquè es separin les paraules, requerirà que aparegui un
+espai extra al final de cada repetició (incloent la darrera!)</p>
+</li>
+<li><p class="first">Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> retorna un valor de tipus <em>string</em>. Això et
+requerirà convertir-ho si et cal un número.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="exercici-6-un-rectangle-a-mida">
@@ -771,10 +777,10 @@ canvi de color amb:</p>
 </div>
 <p><strong>Pistes</strong>:</p>
 <ul class="simple">
-<li><p>Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> et retorna sempre text i potser voldràs que sigui
-numèric. En aquests casos caldrà convertir amb la funció <code class="docutils literal notranslate"><span class="pre">int()</span></code>.</p></li>
-<li><p>En aquest exercici, la simulació descrita no serà igual que les anteriors. En
-concret la sortida haurà de ser descrita en llenguatge natural.</p></li>
+<li>Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> et retorna sempre text i potser voldràs que sigui
+numèric. En aquests casos caldrà convertir amb la funció <code class="docutils literal notranslate"><span class="pre">int()</span></code>.</li>
+<li>En aquest exercici, la simulació descrita no serà igual que les anteriors. En
+concret la sortida haurà de ser descrita en llenguatge natural.</li>
 </ul>
 </div>
 </div>
@@ -805,7 +811,7 @@ concret la sortida haurà de ser descrita en llenguatge natural.</p></li>
         <a href="instruccions_comprovacio.html" class="btn btn-neutral float-right" title="Comprovem els programes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="instruccions_es.html" class="btn btn-neutral float-left" title="Entrada/Sortida" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="instruccions_es.html" class="btn btn-neutral" title="Entrada/Sortida" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -814,7 +820,7 @@ concret la sortida haurà de ser descrita en llenguatge natural.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -830,16 +836,33 @@ concret la sortida haurà de ser descrita en llenguatge natural.</p></li>
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
