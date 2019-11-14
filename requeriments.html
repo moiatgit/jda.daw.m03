@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -196,13 +193,13 @@ GNU/Linux, no pressuposo que tinguis cap coneixement d’aquest sistema.</p>
 <p>Per a poder seguir aquest curs, suposaré que disposes d’un PC amb una
 distribució Debian o Ubuntu estàndard, més o menys recent.</p>
 <p>Aquestes distribucions normalment ja porta instal·lat un editor de text pla com
-ara <code class="docutils literal notranslate"><span class="pre">gedit</span></code><a class="footnote-reference brackets" href="#editortextpla" id="id1">1</a>. Si no tens cap altra preferència et recomano
+ara <code class="docutils literal notranslate"><span class="pre">gedit</span></code><a class="footnote-reference" href="#editortextpla" id="id1">[1]</a>. Si no tens cap altra preferència et recomano
 que facis servir <code class="docutils literal notranslate"><span class="pre">gedit</span></code></p>
 <div class="admonition tip">
-<p class="admonition-title">Truc</p>
+<p class="first admonition-title">Pista</p>
 <p>L’ús d’un editor més <em>guay</em> no t’ajudarà a aprendre a programar ni més
 ràpid ni millor.</p>
-<p>El meu consell: <strong>no et compliquis</strong></p>
+<p class="last">El meu consell: <strong>no et compliquis</strong></p>
 </div>
 <p>El PC no cal que sigui gaire potent, ni tenir molt d’espai de disc lliure, ni
 memòria, doncs la major part del temps estarem editant text i executant codi des
@@ -245,9 +242,10 @@ tasques que se’t requeriran amb el sistema operatiu escollit, així com
 resoldre les possibles incompatibilitats (especialment amb la codificació
 de caràcters), etc.</p>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="editortextpla"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Com que hi ha molts editors de text pla que siguin
+<table class="docutils footnote" frame="void" id="editortextpla" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="first">Com que hi ha molts editors de text pla que siguin
 adequats, potser és preferible deixar clar què <strong>no</strong> és un editor de
 text <em>pla</em>. Per exemple no seria adequat que programessis amb
 <code class="docutils literal notranslate"><span class="pre">LibreOffice</span> <span class="pre">Writer</span></code> o <code class="docutils literal notranslate"><span class="pre">MS</span> <span class="pre">Word</span></code>. Si tens dubtes de si el teu
@@ -256,11 +254,12 @@ consola fes:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ cat nomfitxereditat
 </pre></div>
 </div>
-<p>Si et mostra el contingut tal i com l’havies escrit al teu editor,
+<p class="last">Si et mostra el contingut tal i com l’havies escrit al teu editor,
 pots fer servir aquest últim per editar els teus programes amb
 tranquil·litat.</p>
-</dd>
-</dl>
+</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -290,7 +289,7 @@ tranquil·litat.</p>
         <a href="primer_contacte.html" class="btn btn-neutral float-right" title="Un primer contacte" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="primeres_passes.html" class="btn btn-neutral float-left" title="Primeres passes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="primeres_passes.html" class="btn btn-neutral" title="Primeres passes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -299,7 +298,7 @@ tranquil·litat.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -315,16 +314,33 @@ tranquil·litat.</p>
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

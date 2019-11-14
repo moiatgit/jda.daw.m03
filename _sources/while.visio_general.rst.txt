@@ -63,7 +63,6 @@ Fes que el teu programa es comporti segons les simulacions següents:
     prou
     El total és 6
 
-XXX next
 
 Exercici 46. ☞ Suma enters (més informativa)
 ============================================

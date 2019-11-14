@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -207,7 +204,7 @@ coneixem com a <em>estructures d’iteració</em> o també <em>bucles</em> o, en
 <p>Els bucles es poden representar gràficament amb un diagrama de flux. Per
 exemple, un programa que escriu els primers 10 números naturals es
 podria representar com:</p>
-<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-8ab789f58fab0230e933e554c968af145c0561c1.png" alt="digraph {
+<div align="center" class="align-center"><img src="_images/graphviz-446d70047404df1d104a3bdafdb8d35914cfa7a9.png" alt="digraph {
     inici[shape=&quot;box&quot;, style=rounded];
     final[shape=&quot;box&quot;, style=rounded];
     &quot;i = 1&quot;[shape=&quot;rectangle&quot;, style=&quot;&quot;];
@@ -221,33 +218,36 @@ podria representar com:</p>
     &quot;i &lt; 11&quot; -&gt; final[label=&quot;cert&quot;];
     &quot;print(i)&quot; -&gt; &quot;i = i + 1&quot;;
     &quot;i = i + 1&quot; -&gt; &quot;i &lt; 11&quot;;
-}" class="graphviz" /></div>
+}" />
 </div>
 <p>Fixa’t com:</p>
 <ul>
-<li><p>inicialitzem la <em>variable de recorregut</em> <code class="docutils literal notranslate"><span class="pre">i</span></code> a 1</p></li>
-<li><p>comprovem si la variable de recorregut encara està dins del rang de
+<li><p class="first">inicialitzem la <em>variable de recorregut</em> <code class="docutils literal notranslate"><span class="pre">i</span></code> a 1</p>
+</li>
+<li><p class="first">comprovem si la variable de recorregut encara està dins del rang de
 valors. Com que volem escriure fins el 10, <code class="docutils literal notranslate"><span class="pre">i</span></code> estarà dins de rang
-mentre sigui menor de 11.</p></li>
-<li><p>si <code class="docutils literal notranslate"><span class="pre">i</span></code> encara està dins, executem les instruccions que corresponguin.
+mentre sigui menor de 11.</p>
+</li>
+<li><p class="first">si <code class="docutils literal notranslate"><span class="pre">i</span></code> encara està dins, executem les instruccions que corresponguin.
 En aquest cas, escrivim el valor de <code class="docutils literal notranslate"><span class="pre">i</span></code> per pantalla</p>
 <p>Un cop realitzades les tasques amb aquesta interacció, incrementem el
 valor de la variable de recorregut per tal de que s’acosti al final del
 rang i <em>tornem</em> enrere a preguntar si encara hi som dins del rang</p>
 </li>
-<li><p>quan ja no estem dins del rang (sigui més gran o igual a 11), finalitzem</p></li>
+<li><p class="first">quan ja no estem dins del rang (sigui més gran o igual a 11), finalitzem</p>
+</li>
 </ul>
 <p>Evidentment, a banda d’escriure el valor de <code class="docutils literal notranslate"><span class="pre">i</span></code> es poden fer moltes
 altres coses, com per exemple comptar, sumar, filtrar, cercar…</p>
 <p>Doncs aquest és el nou tema que treballarem!</p>
 <p>En distingirem dos tipus principals d’estructures iteratives:</p>
 <ul class="simple">
-<li><p>els recorreguts: quan hem de passar per una seqüència de valors en un
-cert ordren. Per exemple, els primers 10 naturals.</p></li>
-<li><p>les iteracions generals: quan el nombre de cops que volem que es
+<li>els recorreguts: quan hem de passar per una seqüència de valors en un
+cert ordren. Per exemple, els primers 10 naturals.</li>
+<li>les iteracions generals: quan el nombre de cops que volem que es
 repeteixi un codi està en funció de quelcom que no podem preveure fins
 que no executem el nostre codi. Per exemple, fins que els usuaris ens
-indiquin que volen finalitzar.</p></li>
+indiquin que volen finalitzar.</li>
 </ul>
 <p>Veurem:</p>
 <div class="toctree-wrapper compound">
@@ -286,7 +286,7 @@ indiquin que volen finalitzar.</p></li>
         <a href="iteracions_numeriques.html" class="btn btn-neutral float-right" title="Iteracions numèriques" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="condicionals_juguem.html" class="btn btn-neutral float-left" title="Juguem amb condicionals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="condicionals_juguem.html" class="btn btn-neutral" title="Juguem amb condicionals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -295,7 +295,7 @@ indiquin que volen finalitzar.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -311,16 +311,33 @@ indiquin que volen finalitzar.</p></li>
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
