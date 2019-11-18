@@ -184,10 +184,13 @@ apareixen soles. Considera el *doctest*:
     'Enric Vidal i Viu'
 
 
+.. _exercici_text_transformat:
+
 Exercici 32. El text transformat
 ================================
 
-Desenvolupa una funció que rebi un string amb un text i en retorni una transformació d'aquest segons les següents regles:
+Desenvolupa una funció que rebi un string amb un text i en retorni una
+transformació d'aquest segons les següents regles:
 
 * les vocals (les cinc sense accents) apareixeran en minúscules
 
@@ -257,11 +260,13 @@ posició en ambdós.
 Col·loca la funció en un programa anomenat ``textscoincidents.py`` que no cal que faci res en ser
 executat.
 
+.. _exercici_desaccentua:
+
 Exercici 36. Desaccentua
 ========================
 
-Desenvolupa una funció que desaccentuí el text que rep. En concret, les lletres que transformarà
-són:
+Desenvolupa una funció que desaccentuí el text que rep. En concret, les
+lletres que transformarà són:
 
 * à → a
 
