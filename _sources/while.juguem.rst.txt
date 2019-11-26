@@ -309,6 +309,7 @@ El teu programa respectarà les següents simulacions:
     Segon operand?
     +5
     -3 * 5 = 15
+    Primer operand?
     prou
     ok
 
