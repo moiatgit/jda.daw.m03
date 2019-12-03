@@ -94,6 +94,8 @@ El teu programa respectarà la següent simulació:
     Has introduït 1 matrícula vàlida
 
 
+.. _exercici_informes_capicuitat:
+
 Exercici 55. ☞ Informes de capicuïtat
 =====================================
 

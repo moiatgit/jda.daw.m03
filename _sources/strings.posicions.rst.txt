@@ -185,6 +185,8 @@ coincideix amb la penúltima.
     >>> segona_igual_penultima("")
     False
 
+.. _exercici_funcions_strings:
+
 Exercici 23. ☞ Practiquem funcions de strings
 =============================================
 

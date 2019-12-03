@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -98,6 +95,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 </ul>
 
             
@@ -188,20 +186,19 @@ intenta de mica en mica anar fent directament la funció doncs a la llarga hi
 sortiràs guanyant.</p>
 <p>Recorda que cada fitxer de codi presentarà:</p>
 <ul class="simple">
-<li><p>capçalera: una descripció de què conté el fitxer</p></li>
-<li><p>definició de la funció</p>
-<ul>
-<li><p>nom de la funció</p></li>
-<li><p>arguments esperats</p></li>
-<li><p>comentari descrivint el que fa la funció, què és i de quin tipus és cada
-argument, i el resultat a retornar</p></li>
-<li><p>un o més <em>doctest</em> que provin els diferents casos que pot executar la funció
-depenent del valor dels arguments.</p></li>
-<li><p>el codi que resol el problema</p></li>
-<li><p>la clàusula o clàusules <em>return</em> corresponents</p></li>
-<li><p>un bloc de condició <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> en el que apareixeran les
+<li>capçalera: una descripció de què conté el fitxer</li>
+<li>definició de la funció<ul>
+<li>nom de la funció</li>
+<li>arguments esperats</li>
+<li>comentari descrivint el que fa la funció, què és i de quin tipus és cada
+argument, i el resultat a retornar</li>
+<li>un o més <em>doctest</em> que provin els diferents casos que pot executar la funció
+depenent del valor dels arguments.</li>
+<li>el codi que resol el problema</li>
+<li>la clàusula o clàusules <em>return</em> corresponents</li>
+<li>un bloc de condició <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> en el que apareixeran les
 instruccions necessàries per obtenir les dades dels usuaris i finalment
-mostrar el resultat.</p></li>
+mostrar el resultat.</li>
 </ul>
 </li>
 </ul>
@@ -305,11 +302,11 @@ total seran quatre com el següent:</p>
 <p>Desevolupa a <code class="docutils literal notranslate"><span class="pre">02_18_nombrefills/</span></code> un progama que demani el nombre de
 fills de l’usuari i respongui segons el nombre de fills sigui:</p>
 <ul class="simple">
-<li><p>menys de 0: Error, no pots tenir menys que 0 fills!</p></li>
-<li><p>0: Tot el que thas estalviat en bolquers!</p></li>
-<li><p>1: Compte de no mimar-lo massa!</p></li>
-<li><p>entre 1 i 5 (no inclosos): No t’avorreixes a casa eh?</p></li>
-<li><p>més de 4: Tu sí fas país!</p></li>
+<li>menys de 0: Error, no pots tenir menys que 0 fills!</li>
+<li>0: Tot el que thas estalviat en bolquers!</li>
+<li>1: Compte de no mimar-lo massa!</li>
+<li>entre 1 i 5 (no inclosos): No t’avorreixes a casa eh?</li>
+<li>més de 4: Tu sí fas país!</li>
 </ul>
 <p>Assegura’t que crees els <em>doctest</em> per cobrir quan el nombre de fills
 sigui -1, 0, 1, 2, 4, 5 i 6. Per exemple:</p>
@@ -325,8 +322,8 @@ Compte de no mimar-lo massa!
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Per què creus que no se’t demana <em>doctest</em> pel cas de 3 fills? Val la
+<p class="first admonition-title">Nota</p>
+<p class="last">Per què creus que no se’t demana <em>doctest</em> pel cas de 3 fills? Val la
 pena afegir-lo? I pel cas de -2 o 7?</p>
 </div>
 </div>
@@ -418,7 +415,7 @@ funció anomenada <code class="docutils literal notranslate"><span class="pre">d
         <a href="iteracions.html" class="btn btn-neutral float-right" title="Iteracions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intro_doctest.html" class="btn btn-neutral float-left" title="Coneixem els doctest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro_doctest.html" class="btn btn-neutral" title="Coneixem els doctest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -427,7 +424,7 @@ funció anomenada <code class="docutils literal notranslate"><span class="pre">d
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -443,16 +440,33 @@ funció anomenada <code class="docutils literal notranslate"><span class="pre">d
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

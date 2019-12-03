@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -101,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="control_bucles.html">Control de bucles</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 </ul>
 
             
@@ -203,9 +201,9 @@ mitjançant la notació <code class="docutils literal notranslate"><span class="
 </div>
 <p>Què ha passat? Doncs que:</p>
 <ul class="simple">
-<li><p>el bucle fa passar la variable <code class="docutils literal notranslate"><span class="pre">i</span></code> pels valors del 0 fins al nombre de lletras que té
-<code class="docutils literal notranslate"><span class="pre">Ritchie</span></code>, en aquest cas 7 (menys 1 recorda!)</p></li>
-<li><p>finalment mostrem el resultat d’indexar <code class="docutils literal notranslate"><span class="pre">nom</span></code> amb <code class="docutils literal notranslate"><span class="pre">i</span></code> per cada valor que pren aquesta última</p></li>
+<li>el bucle fa passar la variable <code class="docutils literal notranslate"><span class="pre">i</span></code> pels valors del 0 fins al nombre de lletras que té
+<code class="docutils literal notranslate"><span class="pre">Ritchie</span></code>, en aquest cas 7 (menys 1 recorda!)</li>
+<li>finalment mostrem el resultat d’indexar <code class="docutils literal notranslate"><span class="pre">nom</span></code> amb <code class="docutils literal notranslate"><span class="pre">i</span></code> per cada valor que pren aquesta última</li>
 </ul>
 <p>En resum, farem servir les tècniques que hem aprés a <a class="reference internal" href="iteracions_numeriques.html"><span class="doc">Iteracions numèriques</span></a> per
 generar els índexos –les posicions– que ens interessen dels strings.</p>
@@ -219,12 +217,12 @@ sabem programar. Ara, però, aquestes utilitats ens dificultarien
 l’aprenentatge dels conceptes que estem treballant.</p>
 <p>Les restriccions principalment són:</p>
 <ul class="simple">
-<li><p><strong>totes</strong> les utilitats dels strings, a excepció de les presentades fins
-a <a class="reference internal" href="strings.posicions.html"><span class="doc">String: seqüència de lletres</span></a>.</p></li>
-<li><p>els bucles han de ser sempre de la forma <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">variable</span> <span class="pre">in</span> <span class="pre">range(inici,</span>
+<li><strong>totes</strong> les utilitats dels strings, a excepció de les presentades fins
+a <a class="reference internal" href="strings.posicions.html"><span class="doc">String: seqüència de lletres</span></a>.</li>
+<li>els bucles han de ser sempre de la forma <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">variable</span> <span class="pre">in</span> <span class="pre">range(inici,</span>
 <span class="pre">final</span> <span class="pre">+</span> <span class="pre">quelcom,</span> <span class="pre">increment)</span></code>. Encara que pot arribar a ser molt
 temptador fer-ho d’una altra manera, després de <code class="docutils literal notranslate"><span class="pre">in</span></code> sempre ha
-d’haver-hi <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p></li>
+d’haver-hi <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</li>
 </ul>
 <p>Per descomptat, aquestes restriccions són eliminades amb els exercicis
 opcionals (☼). Alguns dels conceptes que treballaràs en aquests exercicis
@@ -309,9 +307,9 @@ d’aquest. En concret informarà de quantes lletres té i quantes d’aquestes 
 </div>
 <p><strong>Pistes</strong>:</p>
 <ul class="simple">
-<li><p>Recordes <code class="docutils literal notranslate"><span class="pre">isalpha()</span></code>?</p></li>
-<li><p>Si col·loques totes les vocals en un string, pots fer un bucle que comprovi si una lletra es troba
-dins del string.</p></li>
+<li>Recordes <code class="docutils literal notranslate"><span class="pre">isalpha()</span></code>?</li>
+<li>Si col·loques totes les vocals en un string, pots fer un bucle que comprovi si una lletra es troba
+dins del string.</li>
 </ul>
 </div>
 <div class="section" id="exercici-31-inicials-en-majuscules">
@@ -338,9 +336,9 @@ apareixen soles. Considera el <em>doctest</em>:</p>
 <p>Desenvolupa una funció que rebi un string amb un text i en retorni una
 transformació d’aquest segons les següents regles:</p>
 <ul class="simple">
-<li><p>les vocals (les cinc sense accents) apareixeran en minúscules</p></li>
-<li><p>les lletres no vocals apareixeran en majúscules</p></li>
-<li><p>els nombres apareixeran entre parèntesis <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li>les vocals (les cinc sense accents) apareixeran en minúscules</li>
+<li>les lletres no vocals apareixeran en majúscules</li>
+<li>els nombres apareixeran entre parèntesis <code class="docutils literal notranslate"><span class="pre">()</span></code></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;Avui faig 19 anys&#39;</span><span class="p">)</span>
 <span class="go">&#39;aVui FaiG (1)(9) aNYS&#39;</span>
@@ -399,12 +397,12 @@ executat.</p>
 <p>Desenvolupa una funció que desaccentuí el text que rep. En concret, les
 lletres que transformarà són:</p>
 <ul class="simple">
-<li><p>à → a</p></li>
-<li><p>è, é → e</p></li>
-<li><p>í, ï → i</p></li>
-<li><p>ò, ó → o</p></li>
-<li><p>ú, ü → u</p></li>
-<li><p>ç → c</p></li>
+<li>à → a</li>
+<li>è, é → e</li>
+<li>í, ï → i</li>
+<li>ò, ó → o</li>
+<li>ú, ü → u</li>
+<li>ç → c</li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;Desenvolupa una funció que desaccentuí el text que rep.&#39;</span><span class="p">)</span>
 <span class="go">&#39;Desenvolupa una funcio que desaccentui el text que rep.&#39;</span>
@@ -434,9 +432,9 @@ lletra que té associada. Considera la següent interacció:</p>
 lletra estigui reemplaçada per la seva següent dins de l’ordre indicat per <code class="docutils literal notranslate"><span class="pre">ord()</span></code>, tenint en
 comptes que:</p>
 <ul class="simple">
-<li><p>només codificarem les lletres entre la <code class="docutils literal notranslate"><span class="pre">a</span></code> i la <code class="docutils literal notranslate"><span class="pre">z</span></code> minúscules. La resta d’elements que
-apareguin al text, es mantindran iguals.</p></li>
-<li><p>la lletra <code class="docutils literal notranslate"><span class="pre">z</span></code> serà substituïda per la <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li>només codificarem les lletres entre la <code class="docutils literal notranslate"><span class="pre">a</span></code> i la <code class="docutils literal notranslate"><span class="pre">z</span></code> minúscules. La resta d’elements que
+apareguin al text, es mantindran iguals.</li>
+<li>la lletra <code class="docutils literal notranslate"><span class="pre">z</span></code> serà substituïda per la <code class="docutils literal notranslate"><span class="pre">a</span></code></li>
 </ul>
 <p>Considera els <em>doctest</em>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
@@ -557,12 +555,12 @@ d’instruccions a realitzar per una tortuga.</p>
 <p>Cada lletra del string implicarà una acció de la tortuga.</p>
 <p>Les comandes reconegudes són:</p>
 <ul class="simple">
-<li><p>E: gira a l’esquerra 90 graus</p></li>
-<li><p>D: gira a la dreta 90 graus</p></li>
-<li><p>A: avança 100 punts</p></li>
-<li><p>L: llapis amunt/avall</p></li>
-<li><p>V: color vermell</p></li>
-<li><p>N: color negre</p></li>
+<li>E: gira a l’esquerra 90 graus</li>
+<li>D: gira a la dreta 90 graus</li>
+<li>A: avança 100 punts</li>
+<li>L: llapis amunt/avall</li>
+<li>V: color vermell</li>
+<li>N: color negre</li>
 </ul>
 <p>Qualsevol altre valor que rebi, serà ignorat.</p>
 <p>Per exemple, si el programa rep <code class="docutils literal notranslate"><span class="pre">ADLADLAVDAEAENA</span></code>, la tortuga dibuixarà
@@ -593,13 +591,13 @@ el següent</p>
 <p>Fes una nova versió de la tortuga. Aquest cop afegirem més comandes. En
 concret:</p>
 <ul class="simple">
-<li><p>N: neteja la pantalla</p></li>
-<li><p>Cx: canvia el color a x, on x és un valor entre (V)ermell, (N)egre,
-(B)lau i (G)roc.</p></li>
-<li><p>Ax: avança els punts que li digui x, sent x un valor numèric enter
-positiu</p></li>
-<li><p>Dx, Ex: gira a la dreta o a l’esquerra el nombre de graus indicats per
-x, sent x un enter positiu.</p></li>
+<li>N: neteja la pantalla</li>
+<li>Cx: canvia el color a x, on x és un valor entre (V)ermell, (N)egre,
+(B)lau i (G)roc.</li>
+<li>Ax: avança els punts que li digui x, sent x un valor numèric enter
+positiu</li>
+<li>Dx, Ex: gira a la dreta o a l’esquerra el nombre de graus indicats per
+x, sent x un enter positiu.</li>
 </ul>
 <p>Cal tenir present que aquesta versió és més complexa que l’anterior, donat
 que algunes lletres poden significar diferent depenent del context. Per
@@ -641,7 +639,7 @@ clara de què fer en cada moment.</p>
         <a href="bucles_condicionals.html" class="btn btn-neutral float-right" title="Bucles condicionals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="strings.posicions.html" class="btn btn-neutral float-left" title="String: seqüència de lletres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="strings.posicions.html" class="btn btn-neutral" title="String: seqüència de lletres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -650,7 +648,7 @@ clara de què fer en cada moment.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -666,16 +664,33 @@ clara de què fer en cada moment.</p>
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

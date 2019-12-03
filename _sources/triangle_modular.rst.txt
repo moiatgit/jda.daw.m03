@@ -1,0 +1,662 @@
+################
+Triangle modular
+################
+
+Recordes :ref:`l'exercici dels triangles
+<exercici_triangles_sense_moduls>`?
+
+Tornem a desenvolupar-lo pas a pas
+
+Pas 1. plantejament inicial
+===========================
+
+En aquesta primera ullada al problema a resoldre, bàsicament crearem el
+fitxer i hi afegirem els comentaris de capçalera i l'esquema bàsic:
+
+.. code-block:: python
+    :linenos:
+
+    """
+        Programa que demana el nombre de triangles a dibuixar, i els
+        dibuixa.
+
+        Simulació:
+
+        $ python3 triangles.py
+        quants?
+        2
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+    """
+
+    if __name__ == '__main__':
+        # obtenir quants triangles
+        print("quants?")
+        resposta = input()
+        if resposta.isdigit():
+            num = int(resposta)
+            # dibuixar num triangles
+            pass
+        else:
+            print("Cal un nombre enter")
+
+Fixa't que aquest programa es pot executar i és capaç d'obtenir les dades
+d'entrada (en aquest cas el nombre de triangles a dibuixar) i de comprovar
+que sigui del tipus adequat (en aquest cas enter) De ser tot correcte,
+converteix al tipus correcte l'entrada i… bé i ja està. No fa res més!
+
+El problema a resoldre està "amagat" al ``pass`` de la línia 39.
+
+El que cal fer a la línia 57 és, tal i com diu el comentari, dibuixar un
+nombre de triangles.
+
+Doncs fem-ho!
+
+Pas 2. primer mòdul
+===================
+
+.. code-block:: python
+    :linenos:
+
+    """
+        Programa que demana el nombre de triangles a dibuixar, i els
+        dibuixa.
+    """
+    def dibuixa_triangles(num):
+        """
+            Donat l'enter num, dibuixa num triangles
+        """
+        pass
+
+    if __name__ == '__main__':
+        print("quants?")
+        resposta = input()
+        if resposta.isdigit():
+            num = int(resposta)
+            dibuixa_triangles(num)
+        else:
+            print("Cal un nombre enter")
+
+Fixa't que:
+
+* he eliminat la simulació, no per què sobri, sino per brevetat.
+
+* he reemplaçat el comentari de l'antiga línia 39 per quecom que
+  pràcticament inclou les mateixes paraules que el comentari,
+  ``dibuixa_triangles(num)``. D'això se'n diu *crida a un mòdul* i en
+  continuarem parlant-ne.
+
+* he afegit un ``def`` amb el mateix nom que apareix a la crida. Aquest
+  ``def`` (def)ineix el mòdul ``dibuixa_triangles()``.
+
+* el mòdul ``dibuixa_triangles()`` necessita saber quants triangles ha de
+  dibuixar. Això li ho diem a la crida, passant-li el valor ``num`` que
+  hem recollit dels usuaris. Els valors que passem durant la crida, es
+  diuen *arguments*.
+
+* a la definició del mòdul ``dibuixa_triangles()``, entre els parèntesis
+  incloem ``num`` per indicar que el mòdul, en ser cridat, espera rebre un
+  valor que anomenarà ``num``. Es diu que ``num`` és un *paràmetre* del
+  mòdul ``dibuixa_triangles()``
+
+* tot i que en aquest cas coincideixen, el nom dels paràmetres en la
+  definició, no tenen
+  perquè ser iguals que el nom dels arguments de la crida. De fet, a la
+  crida podria no haver cap variable sinó, per exemple, un literal:
+  ``dibuixa_triangles(4)``.
+
+Molt bé, però encara el nostre programa no fa res.
+
+Amb tot, el problema s'ha fet més petit. Ara *només* hem de resoldre com
+dibuixar *num* triangles i ens podem despreocupar d'obtenir un nombre
+enter correcte.
+
+Pas 3. com dibuixar triangles?
+==============================
+
+Per dibuixar *num* triangles, bàsicament hem de dibuixar un triangle *num*
+cops.
+
+Així, el nostre mòdul es podria descomposar en els següents subproblemes:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_triangles(num):
+        """
+            Donat l'enter num, dibuixa num triangles
+        """
+
+        # repeteix num cops
+
+            # dibuixa un triangle
+
+        pass
+
+
+A veure què et sembla la meva proposta de solució:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_triangles(num):
+        """
+            Donat l'enter num, dibuixa num triangles
+        """
+        for i in range(0, num, 1):
+            dibuixa_un_triangle()
+
+
+Fixa't què:
+
+* sabem repetir quelcom un nombre de vegades donat. ``for`` ens permet
+  fer-ho còmodament.
+
+* el que hem de fer aquest nombre de vegades és dibuixar un únic triangle,
+  així que substituïm el comentari per la crida a un mòdul que farà això.
+
+* per descomptat, ens caldrà definir un mòdul amb el nom
+  ``dibuixa_un_triangle``.
+
+* en aquest cas, el mòdul ``dibuixa_un_triangle()`` no necessita cap
+  informació per saber com dibuixar un triangle. Per aquesta raó, entre
+  els parèntesis no li *passem* cap *argument*.
+
+El nostre programa de moment queda així:
+
+.. code-block:: python
+    :linenos:
+
+    """
+        Programa que demana el nombre de triangles a dibuixar, i els
+        dibuixa.
+    """
+
+    def dibuixa_un_triangle():
+        """ Dibuixa un triangle amb la següent forma
+
+            .........9.........
+            ........898........
+            .......78987.......
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            ..234567898765432..
+            .12345678987654321.
+            0123456789876543210
+        """
+        pass
+
+    def dibuixa_triangles(num):
+        """
+            Donat l'enter num, dibuixa num triangles
+        """
+        for i in range(0, num, 1):
+            dibuixa_un_triangle()
+
+    if __name__ == '__main__':
+        print("quants?")
+        resposta = input()
+        if resposta.isdigit():
+            num = int(resposta)
+            dibuixa_triangles(num)
+        else:
+            print("Cal un nombre enter")
+
+Pas 4. com dibuixar **un** triangle?
+====================================
+
+Si executem el programa, tal i com està encara no fa gaire cosa. El nostre
+problema, però, ara és molt més petit que en començar. Només ens hem de
+preocupar de com dibuixar un únic triangle.
+
+Podem desglossar el problema en subproblemes de la següent manera:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_un_triangle():
+        """ Dibuixa un triangle amb la següent forma
+
+            .........9.........
+            ........898........
+            .......78987.......
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            ..234567898765432..
+            .12345678987654321.
+            0123456789876543210
+        """
+        # repetir per cada línia del triangle
+
+            # dibuixa la línia corresponent del triangle
+
+            # salta de línia
+
+Fixa't:
+
+* el nostre problema ara són tres subproblemes
+
+* per repetir quelcom ja disposem d'estructures. En aquest cas, hi ha 10
+  línies per cada triangle, així que podem fer servir un bucle de
+  recorregut numèric ``for`` des de la primera línia fins la darrera.
+  Donat que és arbitrari, podem escollir numerar les línies com més ens
+  convingui. Decideixo numerar-les com que el primer número que apareix a
+  cada línia i, per tant, el rang de valors serà ``range(9, 0 - 1, -1)``.
+
+* dibuixar una determinada línia no té una estructura de programació
+  inmediata (o al menys, a mi no se m'acut), així que crearem un nou mòdul
+  per realitzar-ho. Li direm ``dibuixa_linia`` i com que depenent de quina
+  línia sigui haurà de dibuixar elements diferents, li passarem el número
+  de línia.
+
+* finalment, saltar de línia sí que ho sabem programar directament. Per
+  exemple, cridant el mòdul ``print()``.
+
+El codi final d'aquest mòdul podria ser:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_linia(linia):
+        """ Dibuixa la línia numerada com a línia del triangle """
+        pass
+
+    def dibuixa_un_triangle():
+        """ Dibuixa un triangle amb la següent forma
+
+            .........9.........
+            ........898........
+            .......78987.......
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            ..234567898765432..
+            .12345678987654321.
+            0123456789876543210
+        """
+        for linia in range(9, 0 - 1, -1):
+            dibuixa_linia(linia)
+            print()
+
+Pas 5. com dibuixar una línia?
+==============================
+
+Si ens fixem, totes les línies disposen de punts, nombres creixents,
+nombres decreixents i més punts, en quantitats i amb inicis o finals
+diferents.
+
+Així, descomposar ``dibuixa_linia()`` es podria fer de la següent manera:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_linia(linia):
+        """ Dibuixa la línia numerada com a línia del triangle """
+        # dibuixa els punts inicials de la línia
+        # dibuixa els nombres creixents de la línia
+        # dibuixa els nombres decreixents de la línia
+        # dibuixa els punts finals de la línia
+        pass
+
+Evidentment, hi ha múltiples maneres de descomposar aquest problema. Per
+exemple, podríem haver optat per dividir en punts inicials, nombres, i
+punts finals. Aquestes decisions porten a solucions diferents i fant que
+sigui tant difícil que dos desenvolupaments siguin idèntics, fins i tot
+quan són implementats per la mateixa persona en moments diferents!
+
+A hores d'ara, segurament ja has vist que això em generarà nous mòduls:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_inicials(linia):
+        """ dibuixa els punts inicials de la línia """
+        pass
+
+    def dibuixa_nombres_creixents(linia):
+        """ dibuixa els nombres creixents de la línia """
+        pass
+
+    def dibuixa_nombres_decreixents(linia):
+        """ dibuixa els nombres decreixents de la línia """
+        pass
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        pass
+
+    def dibuixa_linia(linia):
+        """ Dibuixa la línia numerada com a línia del triangle """
+        dibuixa_punts_inicials(linia)
+        dibuixa_nombres_creixents(linia)
+        dibuixa_nombres_decreixents(linia)
+        dibuixa_punts_finals(linia)
+
+Ara tenim més problemes que abans! Bé, només en nombre. Cada nou problema
+és més petit que el problema de dibuixar tota la línia. I la suma de la
+complexitat de cada subproblema no és més grant que la de tot el problema.
+
+
+Pas 6. com dibuixar els punts inicials?
+=======================================
+
+Si comptem quants punts té la línia 9 (la línia de dalt del tot del
+triangle segons hem numerat) veiem que són 9 punts. La següent, la 8, en
+té 8 punts i així fins la 0 que té… 0 punts! Així, dibuixar els punts
+inicials d'una línia és força fàcil: n'hi ha tants punts com indiqui el
+número de línia:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_inicials(linia):
+        """ dibuixa els punts inicials de la línia """
+        for punt in range(0, linia, 1):
+            print('.', end='')
+
+O, ja que estem fent servir un llenguatge tant interessant com el Python:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_inicials(linia):
+        """ dibuixa els punts inicials de la línia """
+        print('.' * linia, end='')
+
+
+Pas 7. dibuixem els nombres creixents
+=====================================
+
+En aquest pas ens preocuparem exclusivament de com dibuixar els nombres
+creixents d'una línia.
+
+Com que la línia 9 dibuixa només un 9; la 8 dibuixa del 8 al 9; la 7
+dibuixa del 7 al 9 i així, hauria de ser fàcil veure que hem de dibuixar
+des del número fins el 9. Un ``for`` serà suficient:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_nombres_creixents(linia):
+        """ dibuixa els nombres creixents de la línia """
+        for n in range(linia, 9 + 1, 1):
+            print(n, end='')
+
+Pas 8. i els decreixents?
+=========================
+
+Els nombres decreixents van del 8 fins el número de línia. No ens
+estendrem gaire aquí doncs a aquestes alçades segur que ja trobes
+ràpidament una solució adequada. Per exemple:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_nombres_decreixents(linia):
+        """ dibuixa els nombres creixents de la línia """
+        for n in range(8, linia - 1, -1):
+            print(n, end='')
+
+Pas 9. Els punts finals
+=======================
+
+Els punts finals són com els inicials, oi?
+
+Podríem implementar els punts finals simplement copiant el codi del
+``dibuixa_punts_inicials()``
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        print('.' * linia, end='')
+
+Fer-ho així, però, seria una *aberració*! Si ja tenim
+``dibuixa_punts_inicials()`` no té sentit duplicar el codi
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        dibuixa_punts_inicials(linia)
+
+Fixa't que estarem cridant el mòdul ``dibuixa_punts_inicials()`` quan ens
+cridin a ``dibuixa_punts_finals()``, i passarem com a argument de la
+crida, el paràmetre de ``dibuixa_punts_finals()``.
+
+Encara ho podem fer millor. Ja que ``dibuixa_punts_inicials()`` i
+``dibuixa_punts_finals()`` fan el mateix, podríem crear un nou mòdul
+anomenat simplement ``dibuixa_punts()`` que fes la feina:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        print('.' * linia, end='')
+
+Fer-ho així, però, seria una *aberració*! Si ja tenim
+``dibuixa_punts_inicials()`` no té sentit duplicar el codi
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        dibuixa_punts_inicials(linia)
+
+Si t'ho planteges, que dibuixar punts finals sigui el mateix que dibuixar
+els punts inicials, fa que el nom d'aquests mòduls no sigui del tot
+adequat. ``dibuixa_punts_inicials()`` estaria de vegades dibuixant els
+punts finals!
+
+Tot i que a Python això dels noms no li preocupa gaire, a nosaltres, les
+persones que ens tocarà llegir-ho, sí que ens pot embolicar en un futur
+que els noms utilitzats no facin el que diuen que fan.
+
+Podem resoldre-ho fàcilment, definint un nou mòdul que sí faci el que diu
+fer:
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_punts(linia):
+        """ dibuixa una de les seqüencies de punts de la linia """
+        print('.' * linia, end='')
+
+    def dibuixa_punts_inicials(linia):
+        """ dibuixa els punts inicials de la línia """
+        dibuixa_punts(linia)
+
+    def dibuixa_punts_finals(linia):
+        """ dibuixa els punts finals de la línia """
+        dibuixa_punts(linia)
+
+
+De fet, ja posats, podríem prescindir-ne dels darrers dos mètodes per ser
+redundants. Així, el mòdul ``dibuixa_linia()`` 
+
+.. code-block:: python
+    :linenos:
+
+    def dibuixa_linia(linia):
+        """ Dibuixa la línia numerada com a línia del triangle """
+        dibuixa_punts(linia)
+        dibuixa_nombres_creixents(linia)
+        dibuixa_nombres_decreixents(linia)
+        dibuixa_punts(linia)
+
+Codi resultant
+==============
+
+El codi final resultant seria:
+
+.. code-block:: python
+    :linenos:
+
+    """
+        Programa que demana el nombre de triangles a dibuixar, i els
+        dibuixa.
+
+        Simulació:
+
+        $ python3 triangles.py
+        quants?
+        2
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+    """
+
+    def dibuixa_punts(linia):
+        """ dibuixa una de les seqüencies de punts de la linia """
+        print('.' * linia, end='')
+
+    def dibuixa_nombres_creixents(linia):
+        """ dibuixa els nombres creixents de la línia """
+        for n in range(linia, 9 + 1, 1):
+            print(n, end='')
+
+    def dibuixa_nombres_decreixents(linia):
+        """ dibuixa els nombres creixents de la línia """
+        for n in range(8, linia - 1, -1):
+            print(n, end='')
+
+
+    def dibuixa_linia(linia):
+        """ Dibuixa la línia numerada com a línia del triangle """
+        dibuixa_punts(linia)
+        dibuixa_nombres_creixents(linia)
+        dibuixa_nombres_decreixents(linia)
+        dibuixa_punts(linia)
+
+    def dibuixa_un_triangle():
+        """ Dibuixa un triangle amb la següent forma
+
+            .........9.........
+            ........898........
+            .......78987.......
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            ..234567898765432..
+            .12345678987654321.
+            0123456789876543210
+        """
+        for linia in range(9, 0 - 1, -1):
+            dibuixa_linia(linia)
+            print()
+
+    def dibuixa_triangles(num):
+        """
+            Donat l'enter num, dibuixa num triangles
+        """
+        for i in range(0, num, 1):
+            dibuixa_un_triangle()
+
+    if __name__ == '__main__':
+        print("quants?")
+        resposta = input()
+        if resposta.isdigit():
+            num = int(resposta)
+            dibuixa_triangles(num)
+        else:
+            print("Cal un nombre enter")
+
+Com ho veus? T'atreveixes a fer-ho tu?
+
+Exercici 1. ☞ Rombos modulars
+=============================
+
+Recordes l'exercici :ref:`exercici_rombos`? Doncs et toca fer-ho
+modular tal i com hem fet el dels triàngles.
+
+Nota: hauries de poder aprofitar molts dels mòduls que hem vist en aquesta
+secció.
+
+Els criteris d'acceptació d'aquest exercici són:
+
+* el programa passa les proves d'entrada/sortida que trobaràs al repositori
+
+* el codi està dividit en mòduls de manera similar a l'exemple del triangle
+  modular desenvolupat en aquesta secció.
+
+Exercici 2. ☞ L'arbre de Nadal
+==============================
+
+Desenvolupa un programa que dibuixi la següent figura, fent servir els conceptes
+de modulació que hem vist.
+
+.. code-block:: none
+
+            .........9.........
+            ........898........
+            .......78987.......
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ......6789876......
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            .....567898765.....
+            ....45678987654....
+            ...3456789876543...
+            ..234567898765432..
+            .12345678987654321.
+            0123456789876543210
+            .......78987.......
+            .......78987.......
+            .......78987.......
+            .......78987.......
+            .......78987.......
+
+Els criteris d'acceptació d'aquest exercici són:
+
+* el programa passa les proves d'entrada/sortida que trobaràs al repositori
+
+* el codi està dividit en mòduls de manera similar a l'exemple del triangle
+  modular desenvolupat en aquesta secció.

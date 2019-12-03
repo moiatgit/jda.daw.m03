@@ -1,0 +1,30 @@
+###################
+Programació Modular
+###################
+
+Fins ara hem conegut assignacions, E/S, condicionals i bucles. Amb això podem fer 
+qualsevol programa… en teoria.
+
+A la pràctica, la realització d'alguns programes ens requeriria un temps molt elevat doncs els
+programes esdevenen, de seguida, molt complexos.
+
+Ens cal quelcom que ens permeti trencar els programes en peces manegables. Al *què?* li direm
+**mòdul** i al *com?* el coneixem com *anàlisi descendent* o *top-down*.
+
+L’anàlisi descendent és una tècnica de resolució de problemes basada
+en la descomposició del problema en subproblemes. L’anàlisi descendent
+s’aplica també a aquests subproblemes fins que els subproblemes
+resultants presenten una solució trivial.
+
+Quan els problemes són de programació, cada subproblema es converteix en un mòdul.
+
+Anem a veure què és un mòdul i com es tradueix tot això a codi.
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    triangle_modular.rst
+    moduls_definicions.rst
+    moduls_practica.rst

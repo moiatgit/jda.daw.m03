@@ -15,7 +15,7 @@ Veiem-lo en acció amb l'exemple de mostrar els primers 10 números naturals:
         print(i)
 
 Fixat què el rang de valors s'explicita amb la paraula *range* i, entre
-  parèntesis, indiquem:
+parèntesis, indiquem:
 
 * el valor inicial,  en aquest cas *1*
 
@@ -293,6 +293,8 @@ En aquest exercici no cal fer *doctest*. Fes, però, tres proves externes
 com les de l'exercici anterior, dins de ``03_12_triangleinvertit`` sobre
 ``triangleinvertit.py``.
 
+.. _exercici_triangles_sense_moduls:
+
 Exercici 13. Triangles
 ======================
 
@@ -328,6 +330,8 @@ triangles com se li indiqui.
 En aquest exercici no cal fer *doctest*. Fes, però, tres proves externes
 amb valors d'entrada 0, 1 i 2, dins de ``03_13_triangles``.
 
+
+.. _exercici_rombos:
 
 Exercici 14. Rombos
 ===================

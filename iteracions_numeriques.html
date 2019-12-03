@@ -17,21 +17,13 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -43,16 +35,21 @@
      
     <script src="_static/moiscripts.js"></script>
 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -97,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="control_bucles.html">Control de bucles</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 </ul>
 
             
@@ -186,15 +184,13 @@
     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>Fixat què el rang de valors s’explicita amb la paraula <em>range</em> i, entre</dt><dd><p>parèntesis, indiquem:</p>
-</dd>
-</dl>
+<p>Fixat què el rang de valors s’explicita amb la paraula <em>range</em> i, entre
+parèntesis, indiquem:</p>
 <ul class="simple">
-<li><p>el valor inicial,  en aquest cas <em>1</em></p></li>
-<li><p>el primer valor fora de rang. Com que volem fins el 10, el primer fora
-de rang és 11.</p></li>
-<li><p>l’increment a cada iteració. En aquest cas anirem d’un en un.</p></li>
+<li>el valor inicial,  en aquest cas <em>1</em></li>
+<li>el primer valor fora de rang. Com que volem fins el 10, el primer fora
+de rang és 11.</li>
+<li>l’increment a cada iteració. En aquest cas anirem d’un en un.</li>
 </ul>
 <p>Altres exemples:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primers cinc nombres parells</span>
@@ -247,9 +243,9 @@ Per simplificar la prova, en comptes de retornar els números en una línia
 cadascún, els separem amb un espai.  Per aquesta raó, no ens serviran les
 proves que ja tenim de la versió anterior.</p>
 <div class="admonition note">
-<p class="admonition-title">Nota</p>
+<p class="first admonition-title">Nota</p>
 <p>Ampliació</p>
-<p>T’atreveixes a crear una còpia dels fitxers de prova de la versió
+<p class="last">T’atreveixes a crear una còpia dels fitxers de prova de la versió
 anterior, de manera que aquesta versió també passi aquestes proves?</p>
 </div>
 </div>
@@ -263,11 +259,11 @@ el següent doctest:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Nota</p>
+<p class="first admonition-title">Nota</p>
 <p>Ampliació</p>
 <p>Si et vas atrevir a fer l’ampliació anterior, aquesta encara et
 semblarà més fàcil.</p>
-<p>Modifica els fitxers de prova de la versió anterior i fes que
+<p class="last">Modifica els fitxers de prova de la versió anterior i fes que
 comprovin la nova funcionalitat.</p>
 </div>
 </div>
@@ -301,12 +297,14 @@ dirà quan va néixer i s’acomiadarà.</p>
 <p>Per altra banda, caldrà realitzar algunes comprovacions a l’entrada. Les
 comprovacions requerides són:</p>
 <ul>
-<li><p>que el nom no estigui buit</p>
+<li><p class="first">que el nom no estigui buit</p>
 <p><strong>pista</strong>: sabem que és buit si el nom introduït és igual a <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
 </li>
-<li><p>que l’edat sigui un valor positiu (es pressuposa que serà
-enter)</p></li>
-<li><p>que l’any sigui com a mínim 1971 (també es pressuposa enter)</p></li>
+<li><p class="first">que l’edat sigui un valor positiu (es pressuposa que serà
+enter)</p>
+</li>
+<li><p class="first">que l’any sigui com a mínim 1971 (també es pressuposa enter)</p>
+</li>
 </ul>
 <p>En cas d’error, sempre retornarà el mateix missatge: <em>Entrada errònia</em></p>
 <p>En aquest exercici no cal fer <em>doctest</em>.</p>
@@ -342,19 +340,20 @@ comprovació. Les comprovacions seran, com a mínim, per les entrades:
 <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> i <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 <p>Així, l’exercici presentarà els següents fitxers:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/quadratdenombres.py</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/quadratdenombres.py</span></code></p>
 <p>El teu programa</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/test/testfile1.txt</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/test/testfile1.txt</span></code></p>
 <p>Conté el valor 0</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/test/expected1.txt</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">03_10_quadratdenombres/test/expected1.txt</span></code></p>
 <p>Conté tota la sortida corresponent al teu programa quan rep el valor 0
 (inclou el missatge d’error)</p>
 </li>
-<li><p>Dins de <code class="docutils literal notranslate"><span class="pre">test/</span></code> hi apareixerà un <code class="docutils literal notranslate"><span class="pre">testfile?.txt</span></code> per les entrades <code class="docutils literal notranslate"><span class="pre">1</span></code>
-i <code class="docutils literal notranslate"><span class="pre">2</span></code>, i els seus corresponents <code class="docutils literal notranslate"><span class="pre">expected?.txt</span></code>.</p></li>
-<li><p>A Dins de <code class="docutils literal notranslate"><span class="pre">test/</span></code> realitza també les següents comandes:</p>
+<li><p class="first">Dins de <code class="docutils literal notranslate"><span class="pre">test/</span></code> hi apareixerà un <code class="docutils literal notranslate"><span class="pre">testfile?.txt</span></code> per les entrades <code class="docutils literal notranslate"><span class="pre">1</span></code>
+i <code class="docutils literal notranslate"><span class="pre">2</span></code>, i els seus corresponents <code class="docutils literal notranslate"><span class="pre">expected?.txt</span></code>.</p>
+</li>
+<li><p class="first">A Dins de <code class="docutils literal notranslate"><span class="pre">test/</span></code> realitza també les següents comandes:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cp ../../03_09_historicedats/test/test.sh .
 $ echo quadratdenombres.py &gt; programname
 </pre></div>
@@ -406,7 +405,7 @@ com les de l’exercici anterior, dins de <code class="docutils literal notransl
 <code class="docutils literal notranslate"><span class="pre">triangleinvertit.py</span></code>.</p>
 </div>
 <div class="section" id="exercici-13-triangles">
-<h2>Exercici 13. Triangles<a class="headerlink" href="#exercici-13-triangles" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-triangles-sense-moduls"></span><h2>Exercici 13. Triangles<a class="headerlink" href="#exercici-13-triangles" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa que demani un nombre enter positiu i dibuixi tants
 triangles com se li indiqui.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 triangles.py
@@ -438,7 +437,7 @@ quants?
 amb valors d’entrada 0, 1 i 2, dins de <code class="docutils literal notranslate"><span class="pre">03_13_triangles</span></code>.</p>
 </div>
 <div class="section" id="exercici-14-rombos">
-<h2>Exercici 14. Rombos<a class="headerlink" href="#exercici-14-rombos" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-rombos"></span><h2>Exercici 14. Rombos<a class="headerlink" href="#exercici-14-rombos" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa un programa anomenat <code class="docutils literal notranslate"><span class="pre">rombos.py</span></code> que
 que demani un nombre enter positiu i dibuixi tants
 rombos com se li indiqui:</p>
@@ -607,7 +606,7 @@ apunts associat amb el teu nom!</p>
         <a href="strings.html" class="btn btn-neutral float-right" title="Strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="iteracions.html" class="btn btn-neutral float-left" title="Iteracions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="iteracions.html" class="btn btn-neutral" title="Iteracions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -616,7 +615,7 @@ apunts associat amb el teu nom!</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón
+        &copy; Copyright 2019-2020 Moisès Gómez Girón.
 
     </p>
   </div> 
@@ -632,16 +631,33 @@ apunts associat amb el teu nom!</p>
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2019-20',
+            LANGUAGE:'ca',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
