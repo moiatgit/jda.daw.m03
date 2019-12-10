@@ -91,6 +91,8 @@ Els *doctest*:
     ''
 
 
+.. _exercici_primera_lletra_en_majuscules:
+
 Exercici 27. Primera lletra en majúscules
 =========================================
 
@@ -102,6 +104,8 @@ majúscules.
     >>> primera_lletra_majuscules('anna María')
     'Anna María'
     >>> primera_lletra_majuscules('Anna María')
+    'Anna María'
+    >>> primera_lletra_majuscules('aNNa mARíA')
     'Anna María'
     >>> primera_lletra_majuscules('')
     ''

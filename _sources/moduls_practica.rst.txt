@@ -28,11 +28,11 @@ partir de la indicada pel primer enter i de la longitud indicada pel segon.
 .. code-block:: python
 
     >>> substring('Anastàsia', 1, 3)
-    'na'
+    'nas'
     >>> substring('Anastàsia', 0, 3)
     'Ana'
-    >>> substring('Anastàsia', -1, 3)   # comença pel primer possible
-    'Ana'
+    >>> substring('Anastàsia', -1, 4)   # comença pel primer possible
+    'Anas'
     >>> substring('Anastàsia', 6, 14)   # finalitza fins el darrer possible
     'sia'
     >>> substring('Anastàsia', 12, 3)   # si es passa de longitud, retorna buit

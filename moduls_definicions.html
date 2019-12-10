@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -35,21 +43,16 @@
      
     <script src="_static/moiscripts.js"></script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -181,24 +184,20 @@ a partir d’ara.</p>
 <div class="section" id="id1">
 <h2>Definicions<a class="headerlink" href="#id1" title="Link permanent a aquest títol">¶</a></h2>
 <ul>
-<li><p class="first"><strong>mòdul</strong>: agrupació de codi dins d’un nom</p>
-</li>
-<li><p class="first"><strong>paràmetre</strong>: cadascuna de les variables que apareixen entre parèntesis en la definició d’un mòdul.</p>
-</li>
-<li><p class="first"><strong>argument</strong>: cadascun dels valors que apareixen entre parèntesis en la crida a un mòdul.</p>
-</li>
-<li><p class="first"><strong>procediment</strong>: mòdul, amb zero o més paràmetres, que no retorna cap valor.</p>
+<li><p><strong>mòdul</strong>: agrupació de codi dins d’un nom</p></li>
+<li><p><strong>paràmetre</strong>: cadascuna de les variables que apareixen entre parèntesis en la definició d’un mòdul.</p></li>
+<li><p><strong>argument</strong>: cadascun dels valors que apareixen entre parèntesis en la crida a un mòdul.</p></li>
+<li><p><strong>procediment</strong>: mòdul, amb zero o més paràmetres, que no retorna cap valor.</p>
 <p>En Python és més precís dir que retorna el valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </li>
-<li><p class="first"><strong>funció</strong>: mòdul, amb zero o més paràmetres, que retorna un valor</p>
-</li>
-<li><p class="first"><strong>crida</strong>: punt d’activació o execució d’un mòdul.</p>
+<li><p><strong>funció</strong>: mòdul, amb zero o més paràmetres, que retorna un valor</p></li>
+<li><p><strong>crida</strong>: punt d’activació o execució d’un mòdul.</p>
 <p>En el cas d’un procediment, la crida es realitza en forma d’instrucció, sense recollir el valor
 resultant (<code class="docutils literal notranslate"><span class="pre">None</span></code> en Python)</p>
 <p>En el cas d’una funció, la crida es realitza dins d’una expressió en la que es recull el valor
 resultant.</p>
 </li>
-<li><p class="first"><strong>funcions pures</strong>: aquelles que la seva execució, a partir dels mateixos arguments, sempre donarà
+<li><p><strong>funcions pures</strong>: aquelles que la seva execució, a partir dels mateixos arguments, sempre donarà
 el mateix resultat i no té efectes secundaris.</p>
 <p>Exemple:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadrat</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -219,14 +218,14 @@ el mateix resultat i no té efectes secundaris.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>funcions impures</strong>: aquelles per les que successives execucions amb els
+<li><p><strong>funcions impures</strong>: aquelles per les que successives execucions amb els
 mateixos arguments poden donar lloc a resultats diferents o/i tenir efectes
 secundaris.</p>
 <p>Per exemple, la funció <code class="docutils literal notranslate"><span class="pre">input()</span></code> retornarà un nou valor cada cop que
 sigui cridada. Fins i tot si el valor retornat és el mateix, de l’entrada
 estàndard s’haurà extret un element diferent.</p>
 </li>
-<li><p class="first"><strong>àmbit d’una variable</strong>: espai dins d’un programa en que la variable pot ser
+<li><p><strong>àmbit d’una variable</strong>: espai dins d’un programa en que la variable pot ser
 accedida.</p>
 <p>L’àmbit d’una variable comença a partir del moment en que es declara i
 finalitza quan es tanca el bloc de codi on està definida.</p>
@@ -249,7 +248,7 @@ finalitza quan es tanca el bloc de codi on està definida.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>variable global</strong>: És diu que una variable és <em>global</em> respecte un mòdul
+<li><p><strong>variable global</strong>: És diu que una variable és <em>global</em> respecte un mòdul
 quan ha estat definida fora del mòdul però és visible dins del mòdul.</p>
 <p>Exemple</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_global</span> <span class="o">=</span> <span class="mi">5</span>
@@ -266,15 +265,15 @@ que és inicialitzada.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Cal tenir present que, a Python, <code class="docutils literal notranslate"><span class="pre">variable_global</span></code> pot ser
+<p class="admonition-title">Nota</p>
+<p>Cal tenir present que, a Python, <code class="docutils literal notranslate"><span class="pre">variable_global</span></code> pot ser
 consultada des de <code class="docutils literal notranslate"><span class="pre">foo()</span></code> però no pot ser modificada. És tracta d’una
 particularitat de Python en la que no entrarem. Si tens curiositat, cerca la
 paraula reservada <code class="docutils literal notranslate"><span class="pre">global</span></code> i, si en tens <em>molta</em> de curiositat, el concepte de
 <em>clousure</em>.</p>
 </div>
 <ul>
-<li><p class="first"><strong>variable local</strong>: Es diu que una variable és <em>local</em> respecte un mòdul quan
+<li><p><strong>variable local</strong>: Es diu que una variable és <em>local</em> respecte un mòdul quan
 està definida dins del mòdul i, per tant, no té visibilitat fora d’aquest.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">variable_local</span> <span class="o">=</span> <span class="mi">5</span>
@@ -288,7 +287,7 @@ està definida dins del mòdul i, per tant, no té visibilitat fora d’aquest.<
 fora del cos de <code class="docutils literal notranslate"><span class="pre">foo()</span></code> generarà l’error d’execució <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span>
 <span class="pre">'variable_local'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>.</p>
 </li>
-<li><p class="first"><strong>temps de vida d’una variable</strong>: temps en que es manté l’espai de memòria
+<li><p><strong>temps de vida d’una variable</strong>: temps en que es manté l’espai de memòria
 assignat a una variable. Normalment podrem considerar que una variable roman
 viva fins la darrera vegada que sigui accedida, o, per simplicitat, mentre el
 seu àmbit estigui en execució.</p>
@@ -296,7 +295,7 @@ seu àmbit estigui en execució.</p>
 globals, però molts llenguatges permeten definir mòduls dins de mòduls. Python
 i Java en són dos exemples.</p>
 </li>
-<li><p class="first"><strong>ocultació</strong>: Quan definim en un àmbit local una variable amb el mateix nom
+<li><p><strong>ocultació</strong>: Quan definim en un àmbit local una variable amb el mateix nom
 que una global, es produeix un fenomen anomenat <em>ocultació</em> o <em>overriding</em>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
@@ -313,17 +312,17 @@ que una global, es produeix un fenomen anomenat <em>ocultació</em> o <em>overri
 </div>
 <p>Fixa’t com</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">variable</span></code> és global pel mòdul <code class="docutils literal notranslate"><span class="pre">foo()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">foo()</span></code> defineix la seva pròpia variable local també anomenada <code class="docutils literal notranslate"><span class="pre">variable</span></code></li>
-<li>per <code class="docutils literal notranslate"><span class="pre">foo()</span></code> la variable <code class="docutils literal notranslate"><span class="pre">variable</span></code> és la local (la que té assignat el <code class="docutils literal notranslate"><span class="pre">2</span></code>)</li>
-<li>fora de <code class="docutils literal notranslate"><span class="pre">foo()</span></code> la variable <code class="docutils literal notranslate"><span class="pre">variable</span></code> és la global (l’assignada a <code class="docutils literal notranslate"><span class="pre">1</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code> és global pel mòdul <code class="docutils literal notranslate"><span class="pre">foo()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">foo()</span></code> defineix la seva pròpia variable local també anomenada <code class="docutils literal notranslate"><span class="pre">variable</span></code></p></li>
+<li><p>per <code class="docutils literal notranslate"><span class="pre">foo()</span></code> la variable <code class="docutils literal notranslate"><span class="pre">variable</span></code> és la local (la que té assignat el <code class="docutils literal notranslate"><span class="pre">2</span></code>)</p></li>
+<li><p>fora de <code class="docutils literal notranslate"><span class="pre">foo()</span></code> la variable <code class="docutils literal notranslate"><span class="pre">variable</span></code> és la global (l’assignada a <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
 </ul>
 <p>El fenomen d’ocultació no es limita a les variables; també pot passar amb
 mòduls i altres definicions. A banda, alguns llenguatges permeten fer
 referència a variables ocultades. Tornarem a reprendre aquest tema més
 endavant.</p>
 </li>
-<li><p class="first"><strong>Signatura d’un mòdul</strong>: Anomenem signatura d’una subrutina a la descripció
+<li><p><strong>Signatura d’un mòdul</strong>: Anomenem signatura d’una subrutina a la descripció
 de la subrutina amb els paràmetres i el valor de sortida (en cas de funció)</p>
 <p>En Python, malgrat no es solen explicitar els tipus, és típic fer servir la
 següent notació:</p>
@@ -335,11 +334,10 @@ següent notació:</p>
 </div>
 <p>Fixa’t que:</p>
 <ul>
-<li><p class="first">no hem indicat el nom dels paràmetres en alguns dels mòduls</p>
+<li><p>no hem indicat el nom dels paràmetres en alguns dels mòduls</p>
 <p>El nom dels paràmetres no canvia la signatura però ofereix una bona descripció de què contindrà</p>
 </li>
-<li><p class="first">quan és un procediment no indiquem valor de retorn</p>
-</li>
+<li><p>quan és un procediment no indiquem valor de retorn</p></li>
 </ul>
 <p>La signatura del mòdul l’identifica respecte la resta de mòduls del seu mateix àmbit.</p>
 </li>
@@ -379,7 +377,7 @@ donar a classe.  Sigues original!</p>
         <a href="moduls_practica.html" class="btn btn-neutral float-right" title="Juguem amb mòduls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="triangle_modular.html" class="btn btn-neutral" title="Triangle modular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="triangle_modular.html" class="btn btn-neutral float-left" title="Triangle modular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -388,7 +386,7 @@ donar a classe.  Sigues original!</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
 
     </p>
   </div> 
@@ -404,33 +402,16 @@ donar a classe.  Sigues original!</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2019-20',
-            LANGUAGE:'ca',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

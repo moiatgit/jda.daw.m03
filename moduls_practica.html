@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -34,21 +42,16 @@
      
     <script src="_static/moiscripts.js"></script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -178,11 +181,11 @@
 <p>A continuació et presento alguns exercicis a realitzar de manera modular.</p>
 <p>Es mantenen les restriccions habituals:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">in</span></code> sempre seguit de <code class="docutils literal notranslate"><span class="pre">range()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">range(ini,</span> <span class="pre">fin,</span> <span class="pre">incr)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">[v]</span></code> mai <code class="docutils literal notranslate"><span class="pre">[a:b]</span></code> o <code class="docutils literal notranslate"><span class="pre">[a:b:c]</span></code></li>
-<li>ús de les funcions de strings restringuit a les vistes a l’exercici
-<a class="reference internal" href="strings.posicions.html#exercici-funcions-strings"><span class="std std-ref">Exercici 23. ☞ Practiquem funcions de strings</span></a>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> sempre seguit de <code class="docutils literal notranslate"><span class="pre">range()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(ini,</span> <span class="pre">fin,</span> <span class="pre">incr)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[v]</span></code> mai <code class="docutils literal notranslate"><span class="pre">[a:b]</span></code> o <code class="docutils literal notranslate"><span class="pre">[a:b:c]</span></code></p></li>
+<li><p>ús de les funcions de strings restringuit a les vistes a l’exercici
+<a class="reference internal" href="strings.posicions.html#exercici-funcions-strings"><span class="std std-ref">Exercici 23. ☞ Practiquem funcions de strings</span></a>.</p></li>
 </ul>
 <p>En aquests exercics podràs reaprofitar el codi de moltes funcions ja
 desenvolupades. De moment, la manera de reaprofitar-les serà copiant el
@@ -192,11 +195,11 @@ codi dins del fitxer corresponent. Ja veurem maneres millors.</p>
 <p>Desenvolupa una funció que, donat un string i dos enters, retorni les lletres a
 partir de la indicada pel primer enter i de la longitud indicada pel segon.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="go">&#39;na&#39;</span>
+<span class="go">&#39;nas&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">&#39;Ana&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># comença pel primer possible</span>
-<span class="go">&#39;Ana&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># comença pel primer possible</span>
+<span class="go">&#39;Anas&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>   <span class="c1"># finalitza fins el darrer possible</span>
 <span class="go">&#39;sia&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">substring</span><span class="p">(</span><span class="s1">&#39;Anastàsia&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># si es passa de longitud, retorna buit</span>
@@ -237,27 +240,25 @@ alguns altres:</p>
 l’anterior (bàsicament el valor de retorn), tens alguns requisits
 addicionals:</p>
 <ul>
-<li><p class="first">fes servir els conceptes de recorreguts de strings estudiats a
-<a class="reference internal" href="strings.recorreguts.html"><span class="doc">Recorreguts de strings</span></a>.</p>
-</li>
-<li><p class="first">crea dos nous mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code> i
+<li><p>fes servir els conceptes de recorreguts de strings estudiats a
+<a class="reference internal" href="strings.recorreguts.html"><span class="doc">Recorreguts de strings</span></a>.</p></li>
+<li><p>crea dos nous mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code> i
 <code class="docutils literal notranslate"><span class="pre">part_alfanumerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code> que se n’encarreguin de fer
 les comprovacions de cada banda, tot suposant que el valor que reben és
 de la longitud adequada.</p>
 <p>Per fer-ho, fes servir la teva funció <code class="docutils literal notranslate"><span class="pre">substring()</span></code> que has definit
 a un exercici anterior.</p>
 </li>
-<li><p class="first">afegeix <em>doctest</em> adequats als mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida()</span></code> i
+<li><p>afegeix <em>doctest</em> adequats als mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida()</span></code> i
 <code class="docutils literal notranslate"><span class="pre">part_alfanumerica_valida()</span></code> que permetin comprovar el seu
-funcionament.</p>
-</li>
+funcionament.</p></li>
 </ul>
 <p>Els criteris d’acceptació d’aquest exercici són:</p>
 <ul class="simple">
-<li>el programa passa les proves d’entrada/sortida que trobaràs al repositori</li>
-<li>el mòdul <code class="docutils literal notranslate"><span class="pre">matricula_valida()</span></code> fa servir els dos mòduls indicats, més el
-mòdul <code class="docutils literal notranslate"><span class="pre">substring()</span></code> de l’exercici anterior.</li>
-<li>tots els mòduls definits disposen dels seus <em>doctest</em></li>
+<li><p>el programa passa les proves d’entrada/sortida que trobaràs al repositori</p></li>
+<li><p>el mòdul <code class="docutils literal notranslate"><span class="pre">matricula_valida()</span></code> fa servir els dos mòduls indicats, més el
+mòdul <code class="docutils literal notranslate"><span class="pre">substring()</span></code> de l’exercici anterior.</p></li>
+<li><p>tots els mòduls definits disposen dels seus <em>doctest</em></p></li>
 </ul>
 </div>
 <div class="section" id="exercici-6-informe-de-capicuitat">
@@ -295,9 +296,9 @@ estàndard un informe segons si conté o no capicues en els seus components.</p>
 </div>
 <p>Els criteris d’acceptació d’aquest exercici són:</p>
 <ul class="simple">
-<li>el programa passa les proves d’entrada/sortida que trobaràs al repositori</li>
-<li>el mòdul <code class="docutils literal notranslate"><span class="pre">capicuitat()</span></code> fa servir els altres mòduls (incloent els
-d’exercicis previs)</li>
+<li><p>el programa passa les proves d’entrada/sortida que trobaràs al repositori</p></li>
+<li><p>el mòdul <code class="docutils literal notranslate"><span class="pre">capicuitat()</span></code> fa servir els altres mòduls (incloent els
+d’exercicis previs)</p></li>
 </ul>
 </div>
 </div>
@@ -326,7 +327,7 @@ d’exercicis previs)</li>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="moduls_definicions.html" class="btn btn-neutral" title="Definicions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="moduls_definicions.html" class="btn btn-neutral float-left" title="Definicions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -335,7 +336,7 @@ d’exercicis previs)</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
 
     </p>
   </div> 
@@ -351,33 +352,16 @@ d’exercicis previs)</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2019-20',
-            LANGUAGE:'ca',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

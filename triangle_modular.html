@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -35,21 +43,16 @@
      
     <script src="_static/moiscripts.js"></script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -315,26 +318,26 @@ nombre de triangles.</p>
 </td></tr></table></div>
 <p>Fixa’t que:</p>
 <ul class="simple">
-<li>he eliminat la simulació, no per què sobri, sino per brevetat.</li>
-<li>he reemplaçat el comentari de l’antiga línia 39 per quecom que
+<li><p>he eliminat la simulació, no per què sobri, sino per brevetat.</p></li>
+<li><p>he reemplaçat el comentari de l’antiga línia 39 per quecom que
 pràcticament inclou les mateixes paraules que el comentari,
 <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles(num)</span></code>. D’això se’n diu <em>crida a un mòdul</em> i en
-continuarem parlant-ne.</li>
-<li>he afegit un <code class="docutils literal notranslate"><span class="pre">def</span></code> amb el mateix nom que apareix a la crida. Aquest
-<code class="docutils literal notranslate"><span class="pre">def</span></code> (def)ineix el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code>.</li>
-<li>el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code> necessita saber quants triangles ha de
+continuarem parlant-ne.</p></li>
+<li><p>he afegit un <code class="docutils literal notranslate"><span class="pre">def</span></code> amb el mateix nom que apareix a la crida. Aquest
+<code class="docutils literal notranslate"><span class="pre">def</span></code> (def)ineix el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code>.</p></li>
+<li><p>el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code> necessita saber quants triangles ha de
 dibuixar. Això li ho diem a la crida, passant-li el valor <code class="docutils literal notranslate"><span class="pre">num</span></code> que
 hem recollit dels usuaris. Els valors que passem durant la crida, es
-diuen <em>arguments</em>.</li>
-<li>a la definició del mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code>, entre els parèntesis
+diuen <em>arguments</em>.</p></li>
+<li><p>a la definició del mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code>, entre els parèntesis
 incloem <code class="docutils literal notranslate"><span class="pre">num</span></code> per indicar que el mòdul, en ser cridat, espera rebre un
 valor que anomenarà <code class="docutils literal notranslate"><span class="pre">num</span></code>. Es diu que <code class="docutils literal notranslate"><span class="pre">num</span></code> és un <em>paràmetre</em> del
-mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code></li>
-<li>tot i que en aquest cas coincideixen, el nom dels paràmetres en la
+mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_triangles()</span></code></p></li>
+<li><p>tot i que en aquest cas coincideixen, el nom dels paràmetres en la
 definició, no tenen
 perquè ser iguals que el nom dels arguments de la crida. De fet, a la
 crida podria no haver cap variable sinó, per exemple, un literal:
-<code class="docutils literal notranslate"><span class="pre">dibuixa_triangles(4)</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">dibuixa_triangles(4)</span></code>.</p></li>
 </ul>
 <p>Molt bé, però encara el nostre programa no fa res.</p>
 <p>Amb tot, el problema s’ha fet més petit. Ara <em>només</em> hem de resoldre com
@@ -383,15 +386,15 @@ cops.</p>
 </td></tr></table></div>
 <p>Fixa’t què:</p>
 <ul class="simple">
-<li>sabem repetir quelcom un nombre de vegades donat. <code class="docutils literal notranslate"><span class="pre">for</span></code> ens permet
-fer-ho còmodament.</li>
-<li>el que hem de fer aquest nombre de vegades és dibuixar un únic triangle,
-així que substituïm el comentari per la crida a un mòdul que farà això.</li>
-<li>per descomptat, ens caldrà definir un mòdul amb el nom
-<code class="docutils literal notranslate"><span class="pre">dibuixa_un_triangle</span></code>.</li>
-<li>en aquest cas, el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_un_triangle()</span></code> no necessita cap
+<li><p>sabem repetir quelcom un nombre de vegades donat. <code class="docutils literal notranslate"><span class="pre">for</span></code> ens permet
+fer-ho còmodament.</p></li>
+<li><p>el que hem de fer aquest nombre de vegades és dibuixar un únic triangle,
+així que substituïm el comentari per la crida a un mòdul que farà això.</p></li>
+<li><p>per descomptat, ens caldrà definir un mòdul amb el nom
+<code class="docutils literal notranslate"><span class="pre">dibuixa_un_triangle</span></code>.</p></li>
+<li><p>en aquest cas, el mòdul <code class="docutils literal notranslate"><span class="pre">dibuixa_un_triangle()</span></code> no necessita cap
 informació per saber com dibuixar un triangle. Per aquesta raó, entre
-els parèntesis no li <em>passem</em> cap <em>argument</em>.</li>
+els parèntesis no li <em>passem</em> cap <em>argument</em>.</p></li>
 </ul>
 <p>El nostre programa de moment queda així:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -515,20 +518,20 @@ preocupar de com dibuixar un únic triangle.</p>
 </td></tr></table></div>
 <p>Fixa’t:</p>
 <ul class="simple">
-<li>el nostre problema ara són tres subproblemes</li>
-<li>per repetir quelcom ja disposem d’estructures. En aquest cas, hi ha 10
+<li><p>el nostre problema ara són tres subproblemes</p></li>
+<li><p>per repetir quelcom ja disposem d’estructures. En aquest cas, hi ha 10
 línies per cada triangle, així que podem fer servir un bucle de
 recorregut numèric <code class="docutils literal notranslate"><span class="pre">for</span></code> des de la primera línia fins la darrera.
 Donat que és arbitrari, podem escollir numerar les línies com més ens
 convingui. Decideixo numerar-les com que el primer número que apareix a
-cada línia i, per tant, el rang de valors serà <code class="docutils literal notranslate"><span class="pre">range(9,</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">-1)</span></code>.</li>
-<li>dibuixar una determinada línia no té una estructura de programació
+cada línia i, per tant, el rang de valors serà <code class="docutils literal notranslate"><span class="pre">range(9,</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">-1)</span></code>.</p></li>
+<li><p>dibuixar una determinada línia no té una estructura de programació
 inmediata (o al menys, a mi no se m’acut), així que crearem un nou mòdul
 per realitzar-ho. Li direm <code class="docutils literal notranslate"><span class="pre">dibuixa_linia</span></code> i com que depenent de quina
 línia sigui haurà de dibuixar elements diferents, li passarem el número
-de línia.</li>
-<li>finalment, saltar de línia sí que ho sabem programar directament. Per
-exemple, cridant el mòdul <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</li>
+de línia.</p></li>
+<li><p>finalment, saltar de línia sí que ho sabem programar directament. Per
+exemple, cridant el mòdul <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
 </ul>
 <p>El codi final d’aquest mòdul podria ser:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -985,9 +988,9 @@ modular tal i com hem fet el dels triàngles.</p>
 secció.</p>
 <p>Els criteris d’acceptació d’aquest exercici són:</p>
 <ul class="simple">
-<li>el programa passa les proves d’entrada/sortida que trobaràs al repositori</li>
-<li>el codi està dividit en mòduls de manera similar a l’exemple del triangle
-modular desenvolupat en aquesta secció.</li>
+<li><p>el programa passa les proves d’entrada/sortida que trobaràs al repositori</p></li>
+<li><p>el codi està dividit en mòduls de manera similar a l’exemple del triangle
+modular desenvolupat en aquesta secció.</p></li>
 </ul>
 </div>
 <div class="section" id="exercici-2-l-arbre-de-nadal">
@@ -1019,9 +1022,9 @@ de modulació que hem vist.</p>
 </div>
 <p>Els criteris d’acceptació d’aquest exercici són:</p>
 <ul class="simple">
-<li>el programa passa les proves d’entrada/sortida que trobaràs al repositori</li>
-<li>el codi està dividit en mòduls de manera similar a l’exemple del triangle
-modular desenvolupat en aquesta secció.</li>
+<li><p>el programa passa les proves d’entrada/sortida que trobaràs al repositori</p></li>
+<li><p>el codi està dividit en mòduls de manera similar a l’exemple del triangle
+modular desenvolupat en aquesta secció.</p></li>
 </ul>
 </div>
 </div>
@@ -1052,7 +1055,7 @@ modular desenvolupat en aquesta secció.</li>
         <a href="moduls_definicions.html" class="btn btn-neutral float-right" title="Definicions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="programacio_modular.html" class="btn btn-neutral" title="Programació Modular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="programacio_modular.html" class="btn btn-neutral float-left" title="Programació Modular" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1061,7 +1064,7 @@ modular desenvolupat en aquesta secció.</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
 
     </p>
   </div> 
@@ -1077,33 +1080,16 @@ modular desenvolupat en aquesta secció.</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2019-20',
-            LANGUAGE:'ca',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

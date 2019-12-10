@@ -17,13 +17,21 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
@@ -35,21 +43,16 @@
      
     <script src="_static/moiscripts.js"></script>
 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -288,12 +291,12 @@ fer les proves manualment?</p>
 </td></tr></table></div>
 <p>En aquesta nova versió del nostre saludador d’usuaris, tenim unes quantes modificacions importants:</p>
 <ul>
-<li><p class="first">línia 24: en comptes de composar el missatge, assignem a <code class="docutils literal notranslate"><span class="pre">missatge</span></code>
+<li><p>línia 24: en comptes de composar el missatge, assignem a <code class="docutils literal notranslate"><span class="pre">missatge</span></code>
 l’expressió <code class="docutils literal notranslate"><span class="pre">saluda_usuari(nom)</span></code></p>
 <p>Aquesta expressió és una <em>crida a una funció</em> anomenada <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code>
 que estem definint a la línia 10.</p>
 </li>
-<li><p class="first">línia 10: és la definició d’una funció</p>
+<li><p>línia 10: és la definició d’una funció</p>
 <p>De moment, una <em>funció</em> és un codi al que li donem un nom i les dades que
 necessita per realitzar el seu càlcul.</p>
 <p>En aquest cas, hem escollit <code class="docutils literal notranslate"><span class="pre">saluda_usuari</span></code> com a nom de la funció, doncs és
@@ -301,17 +304,14 @@ el nom del programa.</p>
 <p>La funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code> necessita la variable <code class="docutils literal notranslate"><span class="pre">nom</span></code> per composar el
 missatge. Per aquesta raó <code class="docutils literal notranslate"><span class="pre">nom</span></code> apareix tant a la línia 10 com a la 24.</p>
 </li>
-<li><p class="first">línia 16: aquest és el punt en que la funció <em>retorna</em> el resultat de la
+<li><p>línia 16: aquest és el punt en que la funció <em>retorna</em> el resultat de la
 composició. Ho podem entendre com que la funció <em>informa</em> al compilador que la
-variable <code class="docutils literal notranslate"><span class="pre">resultat</span></code> conté el missatge resultant.</p>
-</li>
-<li><p class="first">línies 11 a 14: es tracta d’un comentari que documenta la funció
-<code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code>.</p>
-</li>
-<li><p class="first">línies 11 a 16: aquest és el <em>cos</em> de la funció. Per indicar que tot forma
-part de la funció, fixat que totes les línies estan indentades.</p>
-</li>
-<li><p class="first">línies 12 i 13: es tracta d’una simulació d’execució. En aquest cas el que
+variable <code class="docutils literal notranslate"><span class="pre">resultat</span></code> conté el missatge resultant.</p></li>
+<li><p>línies 11 a 14: es tracta d’un comentari que documenta la funció
+<code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code>.</p></li>
+<li><p>línies 11 a 16: aquest és el <em>cos</em> de la funció. Per indicar que tot forma
+part de la funció, fixat que totes les línies estan indentades.</p></li>
+<li><p>línies 12 i 13: es tracta d’una simulació d’execució. En aquest cas el que
 estem simulant, en comptes de ser una execució de tot el programa, ho és només
 de la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code></p>
 <p>Fixa’t que a la línia 12 apareix el <em>prompt</em> de la consola de Python. Fixa’t
@@ -319,20 +319,16 @@ també que a la línia 13, el resultat apareix entre cometes, doncs és com
 representa Python els strings.</p>
 <p>A aquestes simulacions se les anomena <em>doctest</em> o <em>proves dins de comentari</em>.</p>
 </li>
-<li><p class="first">línia 18: és una condició que indica a Python que només executi el que ve a
+<li><p>línia 18: és una condició que indica a Python que només executi el que ve a
 continuació només quan el programa és executat com a <code class="docutils literal notranslate"><span class="pre">python3</span>
-<span class="pre">saludausuari.py</span></code>. De moment, creu-t’ho.</p>
-</li>
-<li><p class="first">linies 19 a 21: obtenció del valor d’entrada. Fixa’t que és el mateix codi que
-al programa original.</p>
-</li>
-<li><p class="first">línia 24: en comptes de composar el missatge de sortida com a la línia 15 del
+<span class="pre">saludausuari.py</span></code>. De moment, creu-t’ho.</p></li>
+<li><p>linies 19 a 21: obtenció del valor d’entrada. Fixa’t que és el mateix codi que
+al programa original.</p></li>
+<li><p>línia 24: en comptes de composar el missatge de sortida com a la línia 15 del
 programa original, ara fem que la <em>funció</em> <code class="docutils literal notranslate"><span class="pre">saluda_usuari()</span></code> composi aquest
-resultat per nosaltres.</p>
-</li>
-<li><p class="first">la resta de línies corresponen a les del programa original, només que
-indentades dins del condicional de la línia 18.</p>
-</li>
+resultat per nosaltres.</p></li>
+<li><p>la resta de línies corresponen a les del programa original, només que
+indentades dins del condicional de la línia 18.</p></li>
 </ul>
 <p>Si tornem a executar <code class="docutils literal notranslate"><span class="pre">saludausuari.py</span></code> trobarem que fa el mateix que l’antiga
 versió.</p>
@@ -425,10 +421,10 @@ contingui el programa. Per altra banda <code class="docutils literal notranslate
 munt d’informació respecte les proves que realitzi.</p>
 <p>T’ho tradueixo al català per la teva comoditat:</p>
 <ul class="simple">
-<li>Línies 2 a 5: Estic intentant executar la prova de cridar la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari('Manel')</span></code> i
-espero que el seu resultat sigui <code class="docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Manel.</span> <span class="pre">M'encanta</span> <span class="pre">saber</span> <span class="pre">de</span> <span class="pre">tu&quot;</span></code>.</li>
-<li>Línia 6: He trobat el que esperava.</li>
-<li>Línia 13: S’han superat totes les proves</li>
+<li><p>Línies 2 a 5: Estic intentant executar la prova de cridar la funció <code class="docutils literal notranslate"><span class="pre">saluda_usuari('Manel')</span></code> i
+espero que el seu resultat sigui <code class="docutils literal notranslate"><span class="pre">&quot;Hola</span> <span class="pre">Manel.</span> <span class="pre">M'encanta</span> <span class="pre">saber</span> <span class="pre">de</span> <span class="pre">tu&quot;</span></code>.</p></li>
+<li><p>Línia 6: He trobat el que esperava.</p></li>
+<li><p>Línia 13: S’han superat totes les proves</p></li>
 </ul>
 <p>És a dir, que tot ha anat bé!</p>
 <p>Podem afegir més d’un <code class="docutils literal notranslate"><span class="pre">doctest</span></code> a una funció. Per exemple:</p>
@@ -475,26 +471,26 @@ manera:</p>
 <h2>En resum<a class="headerlink" href="#en-resum" title="Link permanent a aquest títol">¶</a></h2>
 <p>Què hem fet?</p>
 <ul class="simple">
-<li>hem extret la part del codi del nostre programa que realitzava els càlculs i
-l’hem substituïda per la crida a una funció</li>
-<li>hem definit la funció amb el nom del nostre programa</li>
-<li>hem posat, entre parèntesis, els valors (o arguments) necessaris perquè la
-nostra funció pugui fer el que ha de fer</li>
-<li>hem documentat la funció, tot explicant què fa, què retorna i de quin tipus
-espera els seus arguments</li>
-<li>hem afegit uns comentaris especials, anomenats <code class="docutils literal notranslate"><span class="pre">doctest</span></code> que simulen
-l’execució de la funció a la consola de Python</li>
-<li>hem afegit el codi antic dins del bloc de la funció (indentat)</li>
-<li>hem finalitzat amb <code class="docutils literal notranslate"><span class="pre">return</span></code> a la nostra funció per indicar quin és el
-resultat de cridar-la.</li>
-<li>hem comprovat l’execució de la funció a la consola de Python</li>
-<li>hem substituït el codi original per una crida a la funció, tot passant-li els
-valors que requereix per fer el càlcul, amb el tipus adequat</li>
-<li>hem ficat el codi original (amb la crida a la nova funció) dins d’un bloc d’un
-condicional especial.</li>
-<li>hem provat que el codi canviat continua passant les proves que ja teníem</li>
-<li>hem fet que Python comprovi automàticament la simulació de l’execució de la
-funció, amb els arguments <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span> <span class="pre">-v</span></code></li>
+<li><p>hem extret la part del codi del nostre programa que realitzava els càlculs i
+l’hem substituïda per la crida a una funció</p></li>
+<li><p>hem definit la funció amb el nom del nostre programa</p></li>
+<li><p>hem posat, entre parèntesis, els valors (o arguments) necessaris perquè la
+nostra funció pugui fer el que ha de fer</p></li>
+<li><p>hem documentat la funció, tot explicant què fa, què retorna i de quin tipus
+espera els seus arguments</p></li>
+<li><p>hem afegit uns comentaris especials, anomenats <code class="docutils literal notranslate"><span class="pre">doctest</span></code> que simulen
+l’execució de la funció a la consola de Python</p></li>
+<li><p>hem afegit el codi antic dins del bloc de la funció (indentat)</p></li>
+<li><p>hem finalitzat amb <code class="docutils literal notranslate"><span class="pre">return</span></code> a la nostra funció per indicar quin és el
+resultat de cridar-la.</p></li>
+<li><p>hem comprovat l’execució de la funció a la consola de Python</p></li>
+<li><p>hem substituït el codi original per una crida a la funció, tot passant-li els
+valors que requereix per fer el càlcul, amb el tipus adequat</p></li>
+<li><p>hem ficat el codi original (amb la crida a la nova funció) dins d’un bloc d’un
+condicional especial.</p></li>
+<li><p>hem provat que el codi canviat continua passant les proves que ja teníem</p></li>
+<li><p>hem fet que Python comprovi automàticament la simulació de l’execució de la
+funció, amb els arguments <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">doctest</span> <span class="pre">-v</span></code></p></li>
 </ul>
 <p>Hem fet moltes coses, oi? Ens caldrà una mica d’entrenament per tal de pair-les.</p>
 </div>
@@ -527,17 +523,17 @@ versió.</p>
 vistos en aquesta secció.</p>
 <p>Segueix, a mode de recordatori, les següents instruccions:</p>
 <ol class="arabic">
-<li><p class="first">Defineix la funció que tindrà el codi que calcula i composa el missatge a
+<li><p>Defineix la funció que tindrà el codi que calcula i composa el missatge a
 partir de l’entrada.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadrat_num</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Documenta la funció (què fa?)</p>
+<li><p>Documenta la funció (què fa?)</p>
 <p>Recorda, fes servir <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> a partir de la següent línia de la definició del
 nom de la funció.</p>
 </li>
-<li><p class="first">Simula una execució com a <code class="docutils literal notranslate"><span class="pre">doctest</span></code></p>
+<li><p>Simula una execució com a <code class="docutils literal notranslate"><span class="pre">doctest</span></code></p>
 <p>Per la simulació pots fer servir la prova que es fa a la simulació del
 programa sencer:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quadrat_num</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -546,30 +542,28 @@ programa sencer:</p>
 </div>
 <p>Fixa’t que la simulació rep un <code class="docutils literal notranslate"><span class="pre">4</span></code> i no un <code class="docutils literal notranslate"><span class="pre">'4'</span></code>!</p>
 </li>
-<li><p class="first">Posa dins del bloc de la funció el codi que en la versió anterior calculava
+<li><p>Posa dins del bloc de la funció el codi que en la versió anterior calculava
 el quadrat del número feia la composició del missatge.</p>
 <p>En comptes d’escriure el resultat amb <code class="docutils literal notranslate"><span class="pre">print()</span></code>, guarda’l a una variable
 anomenada, per exemple, <code class="docutils literal notranslate"><span class="pre">resultat</span></code>.</p>
 </li>
-<li><p class="first">Retorna el resultat composat (amb <code class="docutils literal notranslate"><span class="pre">return</span></code>)</p>
-</li>
-<li><p class="first">Modifica la part antiga que composava el missatge, de manera que ara cridi la
+<li><p>Retorna el resultat composat (amb <code class="docutils literal notranslate"><span class="pre">return</span></code>)</p></li>
+<li><p>Modifica la part antiga que composava el missatge, de manera que ara cridi la
 funció que acabes de definir.</p>
 <p>Atenció: la funció <code class="docutils literal notranslate"><span class="pre">quadrat_num()</span></code> espera un número, així que hauràs de
 convertir el valor que hagis recollit de <code class="docutils literal notranslate"><span class="pre">input()</span></code> abans de passar-li.</p>
 <p>No oblidis ficar-ho tot dins de la condició <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code>.</p>
 </li>
-<li><p class="first">Passa les proves antigues (<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">bash</span> <span class="pre">test/test.sh</span></code>)</p>
-</li>
-<li><p class="first">Passa les proves de <code class="docutils literal notranslate"><span class="pre">doctest</span></code>:</p>
+<li><p>Passa les proves antigues (<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">bash</span> <span class="pre">test/test.sh</span></code>)</p></li>
+<li><p>Passa les proves de <code class="docutils literal notranslate"><span class="pre">doctest</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python3 -m doctest -v quadratnum.py
 </pre></div>
 </div>
 </li>
 </ol>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Assegura’t que aconsegueixes que funcioni aquest exercici i
+<p class="admonition-title">Important</p>
+<p>Assegura’t que aconsegueixes que funcioni aquest exercici i
 entendre bé el que has fet, abans de passar al següent.</p>
 </div>
 </div>
@@ -600,9 +594,8 @@ vist en aquesta secció.</p>
 sortida a la funció <code class="docutils literal notranslate"><span class="pre">calculadora_basica()</span></code>.</p>
 <p>En aquesta ocasió has de tenir en comptes que:</p>
 <ul>
-<li><p class="first">la funció ha de rebre dos números que hauràs de separar amb comes</p>
-</li>
-<li><p class="first">el text a retornar molt probablement correspon al que abans escrivies amb més
+<li><p>la funció ha de rebre dos números que hauràs de separar amb comes</p></li>
+<li><p>el text a retornar molt probablement correspon al que abans escrivies amb més
 d’un <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
 <p>Com que ara has de retornar un sol valor, et toca modificar lleugerament el
 codi antic de manera que els quatre resultats apareguin concatenats en una
@@ -678,7 +671,7 @@ menor que el segon i que el segon sigui menor que el primer.</p>
         <a href="condicionals_juguem.html" class="btn btn-neutral float-right" title="Juguem amb condicionals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="condicionals_niament.html" class="btn btn-neutral" title="Niament múltiple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="condicionals_niament.html" class="btn btn-neutral float-left" title="Niament múltiple" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -687,7 +680,7 @@ menor que el segon i que el segon sigui menor que el primer.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 Moisès Gómez Girón.
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
 
     </p>
   </div> 
@@ -703,33 +696,16 @@ menor que el segon i que el segon sigui menor que el primer.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2019-20',
-            LANGUAGE:'ca',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
