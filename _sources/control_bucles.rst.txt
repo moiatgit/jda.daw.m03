@@ -275,15 +275,15 @@ Aplica els nous coneixements amb ``break`` i ``continue`` de manera que no
 et calgui fer servir ``elif`` ni ``else``.
 
 
-Exercici 62. Desaccentua (revisitat)
-============================================
+Exercici 63. Desaccentua (revisitat)
+====================================
 
 Recordes l'exercici :ref:`Desaccentua <exercici_desaccentua>`?
 
 Aplica els nous coneixements amb ``break`` i ``continue`` de manera que no
 et calgui fer servir ``elif`` ni ``else``.
 
-Exercici 63. El lloro no diu paraulotes
+Exercici 64. El lloro no diu paraulotes
 =======================================
 
 Torna a considerar l'exercici del :ref:`lloro <exercici_lloro_python>`.
@@ -321,7 +321,7 @@ Considera la simulació:
     adéu
     Adéu
 
-Exercici 64. El lloro no diu paraulotes (multiparaula)
+Exercici 65. El lloro no diu paraulotes (multiparaula)
 ======================================================
 
 L'exercici del lloro benparlat pot ser ampliat per què sigui capaç de
@@ -345,7 +345,7 @@ Considera la simulació:
     adéu
     Adéu
 
-Exercici 65. ☼ Treient espines
+Exercici 66. ☼ Treient espines
 ==============================
 
 Segurament algun dels exercicis anteriors a aquesta secció t'han resultat
