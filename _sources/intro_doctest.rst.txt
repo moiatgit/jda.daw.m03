@@ -396,7 +396,7 @@ En aquesta ocasió has de tenir en comptes que:
         hola
         adéu
 
-   Així, el *doctest* serà:
+  Així, el *doctest* serà:
 
    .. code-block:: python
 

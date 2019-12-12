@@ -49,7 +49,7 @@ Recordes la pràctica *Una matrícula vàlida* de :doc:`strings.posicions`?
 El nou enunciat queda de la següent manera:
 
 Desenvolupa una funció amb la següent signatura ``matricula_valida(str) ->
-boolean`` que retorni True si el paràmetre que rep correspon a una
+bool`` que retorni True si el paràmetre que rep correspon a una
 matrícula vàlida segons el format instaurat a partir de l'any 2000 a
 Espanya.
 
@@ -82,8 +82,8 @@ addicionals:
 * fes servir els conceptes de recorreguts de strings estudiats a
   :doc:`strings.recorreguts`.
 
-* crea dos nous mòduls ``part_numerica_valida(str) -> boolean`` i
-  ``part_alfanumerica_valida(str) -> boolean`` que se n'encarreguin de fer
+* crea dos nous mòduls ``part_numerica_valida(str) -> bool`` i
+  ``part_alfanumerica_valida(str) -> bool`` que se n'encarreguin de fer
   les comprovacions de cada banda, tot suposant que el valor que reben és
   de la longitud adequada.
 
@@ -105,26 +105,27 @@ Els criteris d'acceptació d'aquest exercici són:
 
 .. _exercici_informe_capicuitat_python:
 
-Exercici 6. ☞ Informe de "capicuïtat"
-=====================================
+Exercici 6. ☞ Informe de "capicuïtat" (revisitat)
+=================================================
 
-Recordem l'exercici :ref:`exercici_informes_capicuitat`.
+Fem una nova versió de l'exercici :ref:`exercici_informes_capicuitat`.
 
-Desenvolupa un procediment que, donat un string escrigui per sortida
-estàndard un informe segons si conté o no capicues en els seus components.
+En aquest cas, la part de l'informe la realitzarem amb la nova funció
+``capicuïtat()`` que, donat un string retornarà un informe segons si
+conté o no capicues en els seus components.
 
 .. code-block:: python
 
     >>> capicuitat('1234BCB')
-    Capicua de lletres
+    'Capicua de lletres'
     >>> capicuitat('1221BCD')
-    Capicua de números
+    'Capicua de números'
     >>> capicuitat('1221ABC')
-    Matrícula no vàlida
+    'Matrícula no vàlida'
     >>> capicuitat('1221BCB')
-    Capicua de lletres i números
+    'Capicua de lletres i números'
     >>> capicuitat('1234BCD')
-    Matrícula avorrida
+    'Matrícula avorrida'
 
 
 El programa farà servir les funcions ``matricula_capicua_numerica()`` i

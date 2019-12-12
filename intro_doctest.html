@@ -601,21 +601,21 @@ d’un <code class="docutils literal notranslate"><span class="pre">print()</spa
 codi antic de manera que els quatre resultats apareguin concatenats en una
 sola variable de text.</p>
 <p>Una pista:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>     <span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;hola&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39;adéu&#39;</span>
-     <span class="o">&gt;&gt;&gt;</span> <span class="n">text</span>
-     <span class="s1">&#39;hola</span><span class="se">\n</span><span class="s1">adéu&#39;</span>
-     <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-     <span class="n">hola</span>
-     <span class="n">adéu</span>
-
-<span class="n">Així</span><span class="p">,</span> <span class="n">el</span> <span class="o">*</span><span class="n">doctest</span><span class="o">*</span> <span class="n">serà</span><span class="p">:</span>
-
-<span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
-
-     <span class="o">&gt;&gt;&gt;</span> <span class="n">calculadora_basica</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-     <span class="s1">&#39;6 + 2 = 8</span><span class="se">\n</span><span class="s1">6 - 2 = 4</span><span class="se">\n</span><span class="s1">6 * 2 = 12</span><span class="se">\n</span><span class="s1">6 / 2 = 3.0</span><span class="se">\n</span><span class="s1">&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;hola&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39;adéu&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span>
+<span class="go">&#39;hola\nadéu&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="go">hola</span>
+<span class="go">adéu</span>
 </pre></div>
 </div>
+<p>Així, el <em>doctest</em> serà:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculadora_basica</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;6 + 2 = 8\n6 - 2 = 4\n6 * 2 = 12\n6 / 2 = 3.0\n&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ul>
 </div>

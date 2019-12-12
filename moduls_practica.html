@@ -214,7 +214,7 @@ partir de la indicada pel primer enter i de la longitud indicada pel segon.</p>
 <p>Recordes la pràctica <em>Una matrícula vàlida</em> de <a class="reference internal" href="strings.posicions.html"><span class="doc">String: seqüència de lletres</span></a>?</p>
 <p>El nou enunciat queda de la següent manera:</p>
 <p>Desenvolupa una funció amb la següent signatura <code class="docutils literal notranslate"><span class="pre">matricula_valida(str)</span> <span class="pre">-&gt;</span>
-<span class="pre">boolean</span></code> que retorni True si el paràmetre que rep correspon a una
+<span class="pre">bool</span></code> que retorni True si el paràmetre que rep correspon a una
 matrícula vàlida segons el format instaurat a partir de l’any 2000 a
 Espanya.</p>
 <p>Una matrícula vàlida està formada per quatre xifres seguides de tres
@@ -242,8 +242,8 @@ addicionals:</p>
 <ul>
 <li><p>fes servir els conceptes de recorreguts de strings estudiats a
 <a class="reference internal" href="strings.recorreguts.html"><span class="doc">Recorreguts de strings</span></a>.</p></li>
-<li><p>crea dos nous mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code> i
-<code class="docutils literal notranslate"><span class="pre">part_alfanumerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code> que se n’encarreguin de fer
+<li><p>crea dos nous mòduls <code class="docutils literal notranslate"><span class="pre">part_numerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code> i
+<code class="docutils literal notranslate"><span class="pre">part_alfanumerica_valida(str)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code> que se n’encarreguin de fer
 les comprovacions de cada banda, tot suposant que el valor que reben és
 de la longitud adequada.</p>
 <p>Per fer-ho, fes servir la teva funció <code class="docutils literal notranslate"><span class="pre">substring()</span></code> que has definit
@@ -261,21 +261,22 @@ mòdul <code class="docutils literal notranslate"><span class="pre">substring()<
 <li><p>tots els mòduls definits disposen dels seus <em>doctest</em></p></li>
 </ul>
 </div>
-<div class="section" id="exercici-6-informe-de-capicuitat">
-<span id="exercici-informe-capicuitat-python"></span><h2>Exercici 6. ☞ Informe de «capicuïtat»<a class="headerlink" href="#exercici-6-informe-de-capicuitat" title="Link permanent a aquest títol">¶</a></h2>
-<p>Recordem l’exercici <a class="reference internal" href="while.juguem.html#exercici-informes-capicuitat"><span class="std std-ref">Exercici 55. ☞ Informes de capicuïtat</span></a>.</p>
-<p>Desenvolupa un procediment que, donat un string escrigui per sortida
-estàndard un informe segons si conté o no capicues en els seus components.</p>
+<div class="section" id="exercici-6-informe-de-capicuitat-revisitat">
+<span id="exercici-informe-capicuitat-python"></span><h2>Exercici 6. ☞ Informe de «capicuïtat» (revisitat)<a class="headerlink" href="#exercici-6-informe-de-capicuitat-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fem una nova versió de l’exercici <a class="reference internal" href="while.juguem.html#exercici-informes-capicuitat"><span class="std std-ref">Exercici 55. ☞ Informes de capicuïtat</span></a>.</p>
+<p>En aquest cas, la part de l’informe la realitzarem amb la nova funció
+<code class="docutils literal notranslate"><span class="pre">capicuïtat()</span></code> que, donat un string retornarà un informe segons si
+conté o no capicues en els seus components.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">capicuitat</span><span class="p">(</span><span class="s1">&#39;1234BCB&#39;</span><span class="p">)</span>
-<span class="go">Capicua de lletres</span>
+<span class="go">&#39;Capicua de lletres&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">capicuitat</span><span class="p">(</span><span class="s1">&#39;1221BCD&#39;</span><span class="p">)</span>
-<span class="go">Capicua de números</span>
+<span class="go">&#39;Capicua de números&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">capicuitat</span><span class="p">(</span><span class="s1">&#39;1221ABC&#39;</span><span class="p">)</span>
-<span class="go">Matrícula no vàlida</span>
+<span class="go">&#39;Matrícula no vàlida&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">capicuitat</span><span class="p">(</span><span class="s1">&#39;1221BCB&#39;</span><span class="p">)</span>
-<span class="go">Capicua de lletres i números</span>
+<span class="go">&#39;Capicua de lletres i números&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">capicuitat</span><span class="p">(</span><span class="s1">&#39;1234BCD&#39;</span><span class="p">)</span>
-<span class="go">Matrícula avorrida</span>
+<span class="go">&#39;Matrícula avorrida&#39;</span>
 </pre></div>
 </div>
 <p>El programa farà servir les funcions <code class="docutils literal notranslate"><span class="pre">matricula_capicua_numerica()</span></code> i
