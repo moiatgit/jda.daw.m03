@@ -1,0 +1,194 @@
+###########
+Hola Pytest
+###########
+
+Obre un fitxer anomenat ``test_holapytest.py`` i copia-hi el següent codi:
+
+.. code-block:: python
+    :linenos:
+
+    """ Aquest és el meu primer test en pytest """
+
+    def test_hola_mon():
+        """ si em poses un bon nom, no cal afegir un comentari """
+        assert False
+
+Com pots veure, el codi no pot ser gaire més senzill. Inclou el típic
+comentari de capçalera de tots els fitxers que et fa no perdre punts ni en
+aquesta assignatura ni com a professional del desenvolupament, i una
+funció sense paràmetres i amb una única línia al cos que diu, traduïnt-la
+al català: *afirmo que fals és cert*.
+
+Evidentment, fals no pot ser cert, així que estem afirmant quelcom fals.
+Envolicat? Potser. Veiem què passa en executar-
+
+.. code-block:: none
+    :linenos:
+
+    $ python3 -m pytest test_holapytest.py
+    ============================= test session starts ==============================
+    platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+    rootdir: /tmp/unaprova
+    collected 1 item
+
+    test_holapytest.py F                                                [100%]
+
+    =================================== FAILURES ===================================
+    ________________________________ test_hola_mon _________________________________
+
+        def test_hola_mon():
+            """ si em poses un bon nom, no cal afegir un comentari """
+    >       assert False
+    E       assert False
+
+    test_holapytest.py:6: AssertionError
+    ============================== 1 failed in 0.02s ===============================
+
+Què ens està dient? Doncs bàsicament que el nostre test no passa la
+prova. És clar, no podem afirmar que és cert quelcom que és tan
+evidentment fals com ``False`` oi?
+
+Execució més còmoda
+===================
+
+El mòdul *pytest* és realment còmode de fer servir. Ens ofereix el
+programa ``pytest`` que executat directament en una carpeta, sense que li
+hàgim de dir res, cercarà tots els fitxers que tinguin pinta de ser
+fitxers de test i mirarà d'executar totes les funcions que tinguin pinta
+de ser funcions de test. Per nosaltres, de moment, això de *tenir pinta*
+ho farà simplement anomenant els fitxers i les funcions de prova amb el
+prefix ``test_``.
+
+Així, des de la carpeta anterior, podem fer simplement ``pytest`` sense
+cap paràmetre, i ens generarà la mateixa sortida.
+
+Un missatge més informatiu
+==========================
+
+De vegades, ens pot interessar descriure el nostre objectiu amb
+l'afirmació, de manera que sigui més fàcil d'interpretar el missatge
+d'error.
+
+Considera la nova versió del nostre programa:
+
+.. code-block:: python
+    :linenos:
+
+    """ Aquest és el meu primer test en pytest """
+
+    def test_hola_mon():
+        """ si em poses un bon nom, no cal afegir un comentari """
+        assert False, "No t'espantis. És una prova per veure una fallada a pytest"
+
+En executar-ho, ens trobem amb la següent sortida:
+
+.. code-block:: none
+    :linenos:
+
+        $ pytest
+        ============================= test session starts ==============================
+        platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+        rootdir: /tmp/unaprova
+        collected 1 item
+
+        test_holapytest.py F                                                     [100%]
+
+        =================================== FAILURES ===================================
+        ________________________________ test_hola_mon _________________________________
+
+            def test_hola_mon():
+                """ si em poses un bon nom, no cal afegir un comentari """
+        >       assert False, "No t'espantis. És una prova per veure una fallada a pytest"
+        E       AssertionError: No t'espantis. És una prova per veure una fallada a pytest
+        E       assert False
+
+        test_holapytest.py:5: AssertionError
+        ============================== 1 failed in 0.03s ===============================
+
+Com pots veure, el missatge resultant dóna una pista més clara de quin és
+el problema.
+
+Arreglem el problema
+====================
+
+Fem que passi la prova
+
+.. code-block:: python
+    :linenos:
+
+    """ Aquest és el meu primer test en pytest """
+
+    def test_hola_mon():
+        """ si em poses un bon nom, no cal afegir un comentari """
+        assert True
+
+Executem:
+
+.. code-block:: none
+    :linenos:
+
+    $ pytest
+    ============================= test session starts ==============================
+    platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+    rootdir: /tmp/unaprova
+    collected 1 item
+
+    test_holapytest.py .                                                [100%]
+
+    ============================== 1 passed in 0.01s ===============================
+
+Fantàstic! Prova superada.
+
+Una prova més interessant
+=========================
+
+Afegim una nova funció de prova:
+
+.. code-block:: python
+    :linenos:
+
+    """ Aquest és el meu primer test en pytest """
+
+    def test_hola_mon():
+        """ si em poses un bon nom, no cal afegir un comentari """
+        assert True
+
+    def test_compara_text():
+        assert "el meu nom és molt maco" == "el meu món és molt maco"
+
+En executar-la, ens genera el següent missatge:
+
+.. code-block:: none
+    :linenos:
+
+    $ pytest
+    ============================= test session starts ==============================
+    platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+    rootdir: /tmp/unaprova
+    collected 2 items
+
+    test_holapytest.py .F                                               [100%]
+
+    =================================== FAILURES ===================================
+    ______________________________ test_compara_text _______________________________
+
+        def test_compara_text():
+    >       assert "el meu nom és molt maco" == "el meu món és molt maco"
+    E       AssertionError: assert 'el meu nom és molt maco' == 'el meu món és molt maco'
+    E         - el meu nom és molt maco
+    E         ?         --
+    E         + el meu món és molt maco
+    E         ?        ++
+
+    test_holapytest.py:8: AssertionError
+    ========================= 1 failed, 1 passed in 0.04s ==========================
+
+Novament ens ha fallat.
+
+Aquesta vegada, però, observem coses diferents.
+En primer lloc, veiem que ha realitzat dues proves. Una ha passat i
+l'altra no.
+
+La que no ha passat, no s'ha quedat amb dir-nos que els dos texts no són
+iguals. Fixa't. Ens està indicant gràficament on és la diferència!
+

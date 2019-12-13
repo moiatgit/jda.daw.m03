@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programació Modular &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Instal·lació &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Triangle modular" href="triangle_modular.html" />
-    <link rel="prev" title="Control de bucles" href="control_bucles.html" />
+    <link rel="next" title="Hola Pytest" href="pytest.holapytest.html" />
+    <link rel="prev" title="Proves unitàries" href="pytest.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -91,11 +91,17 @@
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Modular</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pytest.html">Proves unitàries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Instal·lació</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.holapytest.html">Hola Pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.unexemplemessofisticat.html">Un exemple més sofisticat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.exercicis.html">Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +149,11 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Programació Modular</li>
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+          <li><a href="pytest.html">Proves unitàries</a> &raquo;</li>
+        
+      <li>Instal·lació</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,28 +186,32 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="programacio-modular">
-<h1>Programació Modular<a class="headerlink" href="#programacio-modular" title="Link permanent a aquest títol">¶</a></h1>
-<p>Fins ara hem conegut assignacions, E/S, condicionals i bucles. Amb això podem fer
-qualsevol programa… en teoria.</p>
-<p>A la pràctica, la realització d’alguns programes ens requeriria un temps molt elevat doncs els
-programes esdevenen, de seguida, molt complexos.</p>
-<p>Ens cal quelcom que ens permeti trencar els programes en peces manegables. Al <em>què?</em> li direm
-<strong>mòdul</strong> i al <em>com?</em> el coneixem com <em>anàlisi descendent</em> o <em>top-down</em>.</p>
-<p>L’anàlisi descendent és una tècnica de resolució de problemes basada
-en la descomposició del problema en subproblemes. L’anàlisi descendent
-s’aplica també a aquests subproblemes fins que els subproblemes
-resultants presenten una solució trivial.</p>
-<p>Quan els problemes són de programació, cada subproblema es converteix en un mòdul.</p>
-<p>Anem a veure què és un mòdul i com es tradueix tot això a codi.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
-</ul>
+  <div class="section" id="installacio">
+<h1>Instal·lació<a class="headerlink" href="#installacio" title="Link permanent a aquest títol">¶</a></h1>
+<p>Primer de tot, comprovem que el tens disponible a la teva instal·lació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pytest --version
+This is pytest version 5.2.2, imported from /home/moises/.virtualenvs/introprg/lib/python3.8/site-packages/pytest.py
+</pre></div>
 </div>
+<p>Si no t’ha sortit quelcom similar, no pateixis, l’instal·larem de seguida.</p>
+<p>Per instal·lar <em>pytest</em> comprovem si disposem de l’instal·lador <code class="docutils literal notranslate"><span class="pre">pip</span></code> al
+nostre equip.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip3 --version
+pip 19.3.1 from /home/moises/.virtualenvs/introprg/lib/python3.8/site-packages/pip (python 3.8)
+</pre></div>
+</div>
+<p>Si ens ha donat un error de no trobar la comanda <code class="docutils literal notranslate"><span class="pre">pip3</span></code> és que no tenim
+l’instal·lador. Probablement ens caldrà doncs disposar de privilegis
+d’administració i fer:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo apt install python3-pip
+</pre></div>
+</div>
+<p>Un cop el tinguem, instal·lem <code class="docutils literal notranslate"><span class="pre">pytest</span></code> amb:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip3 install --user -U pytest
+</pre></div>
+</div>
+<p>Torna a demanar la versió de <code class="docutils literal notranslate"><span class="pre">pytest</span></code> i ara ja sí que l’hauries de tenir
+al teu equip.</p>
 </div>
 
 
@@ -223,10 +237,10 @@ resultants presenten una solució trivial.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="triangle_modular.html" class="btn btn-neutral float-right" title="Triangle modular" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pytest.holapytest.html" class="btn btn-neutral float-right" title="Hola Pytest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="control_bucles.html" class="btn btn-neutral float-left" title="Control de bucles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pytest.html" class="btn btn-neutral float-left" title="Proves unitàries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

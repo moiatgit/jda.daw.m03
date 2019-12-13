@@ -1,0 +1,47 @@
+########################
+Exercicis amb ``pytest``
+########################
+
+Els següents exercicis pretenen oferir-te pràctica a l'hora de crear jocs
+de prova amb ``pytest``
+
+Exercici 8. Separa lletres (revisitat)
+======================================
+
+Crea una nova versió de l'exercici
+:ref:`exercici_separa_lletres`.
+Aquest cop, crea les proves unitàries a partir dels *doctest* que
+t'ofereix l'enunciat.
+
+Per exemple, el primer es traduiria com:
+
+.. code-block:: python
+    :linenos:
+
+    def test_text_buit():
+        entrada = ''
+        esperat = ''
+        obtingut = separa_lletres(entrada)
+        assert esperat == obtingut
+
+
+Exercici 9. Primera lletra en majúscules (revisitat)
+====================================================
+
+Crea una nova versió de l'exercici
+:ref:`exercici_primera_lletra_en_majuscules`.
+Aquest cop, crea les proves unitàries a partir dels *doctest* que
+t'ofereix l'enunciat.
+
+Exercici 10. ☼ Més exercicis de doctest a pytest
+================================================
+
+Et proposo que converteixis tants exercicis com vegis necessari per a
+acabar d'entendre el concepte darrera de *pytest*.
+
+Per exemple, pots completar la conversió dels exercicis de
+:doc:`strings.recorreguts`.
+
+És un bon moment per considerar si les proves definides per a aquests
+exercicis eren completes o bé hi hauria alguna que hagués estat bé
+d'afegir o suprimir.

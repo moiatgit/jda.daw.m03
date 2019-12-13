@@ -75,8 +75,10 @@ escollirà una versió qualsevol o, fins i tot, podria rebutjar tot el
 lliurament.
 
 
-Exercici 26. Separa lletres
-===========================
+.. _exercici_separa_lletres:
+
+Exercici 26. ☞ Separa lletres
+=============================
 
 Desenvolupa una funció que rebi un string i retorni un string amb cada
 lletra separada per un espai.
@@ -85,62 +87,74 @@ Els *doctest*:
 
 .. code-block:: python
 
-    >>> separa_lletres('Ritchie')
-    'R i t c h i e'
     >>> separa_lletres('')
     ''
+    >>> separa_lletres('Ritchie')
+    'R i t c h i e'
+    >>> separa_lletres('Programació')
+    'P r o g r a m a c i ó'
 
 
 .. _exercici_primera_lletra_en_majuscules:
 
-Exercici 27. Primera lletra en majúscules
-=========================================
+Exercici 27. ☞ Primera lletra en majúscules
+===========================================
 
 Desenvolupa una funció que rebi un string i en retorni un altre igual, però amb la primera lletra en
 majúscules.
 
 .. code-block:: python
 
+    >>> primera_lletra_majuscules('')
+    ''
     >>> primera_lletra_majuscules('anna María')
     'Anna María'
     >>> primera_lletra_majuscules('Anna María')
     'Anna María'
     >>> primera_lletra_majuscules('aNNa mARíA')
     'Anna María'
-    >>> primera_lletra_majuscules('')
-    ''
 
-Exercici 28. Comptant As
-========================
+Exercici 28. ☞ Comptant As
+==========================
 
 Desenvolupa una funció que rebi un string i retorni el nombre de lletres
 ``A``, en majúscules o minúscules, que conté.
 
 .. code-block:: python
 
-    >>> compta_as('Anaximandro')
-    3
     >>> compta_as('')
     0
+    >>> compta_as('a')
+    1
+    >>> compta_as('A')
+    1
+    >>> compta_as('Anaximandra')
+    4
 
-Exercici 29. Comptador de vocals
-================================
+Exercici 29. ☞ Comptador de vocals
+==================================
 
 Desenvolupa una funció que rebi un string i retorni un altre que indiqui quantes ocurrències conté
 de cada vocal. Considerarem només vocals sense accentuar.
 
 .. code-block:: python
 
+    >>> compta_vocals('')
+    'a:0 e:0 i:0 o:0 u:0'
+    >>> compta_vocals('a')
+    'a:1 e:0 i:0 o:0 u:0'
+    >>> compta_vocals('A')
+    'a:1 e:0 i:0 o:0 u:0'
     >>> compta_vocals('Anaximandro')
     'a:3 e:0 i:1 o:1 u:0'
     >>> compta_vocals('Supercalifrastilisticoespialidoso')
     'a:3 e:2 i:6 o:3 u:1'
-    >>> compta_vocals('')
-    'a:0 e:0 i:0 o:0 u:0'
+    >>> compta_vocals('SUPERCALIFRASTILISTICOESPIALIDOSO')
+    'a:3 e:2 i:6 o:3 u:1'
 
 
-Exercici 30. Informe d'un nom
-=============================
+Exercici 30. ☞ Informe d'un nom
+===============================
 
 Desenvolupa una funció que rebi un string amb el nom d'una persona i retorni un petit informe
 d'aquest. En concret informarà de quantes lletres té i quantes d'aquestes són vocals.
@@ -149,7 +163,23 @@ En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuade
 
 .. code-block:: python
 
+    >>> informa_nom('')
+    '0 lletres i 0 vocals'
+    >>> informa_nom('s')
+    '1 lletra i 0 vocals'
+    >>> informa_nom('a')
+    '1 lletra i 1 vocal'
+    >>> informa_nom('ss')
+    '2 lletres i 0 vocals'
+    >>> informa_nom('sos')
+    '3 lletres i 1 vocal'
+    >>> informa_nom('sos!')
+    '3 lletres i 1 vocal'
+    >>> informa_nom('S.O.S.!')
+    '3 lletres i 1 vocal'
     >>> informa_nom('Eleftèria')
+    '9 lletres i 5 vocals'
+    >>> informa_nom('ELEFTÈRIA')
     '9 lletres i 5 vocals'
     >>> informa_nom('aàeèéiíïoòóuúü')
     '14 lletres i 14 vocals'
@@ -163,14 +193,22 @@ En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuade
 * Si col·loques totes les vocals en un string, pots fer un bucle que comprovi si una lletra es troba
   dins del string.
 
-Exercici 31. Inicials en majúscules
-===================================
+Exercici 31. ☞ Inicials en majúscules
+=====================================
 
 Desenvolupa una funció que rebi un string que contindrà el nom d'una persona i el retorni amb les
 inicials en majúscules i la resta en minúscules.
 
 .. code-block:: python
 
+    >>> majusculitza('')
+    ''
+    >>> majusculitza('Anna')
+    'Anna'
+    >>> majusculitza('anna')
+    'Anna'
+    >>> majusculitza('ANNA')
+    'Anna'
     >>> majusculitza('anNa güeLL aBBas')
     'Anna Güell Abbas'
     >>> majusculitza('jesús tomás-dado vicents')    # compte amb el guió!
@@ -190,8 +228,8 @@ apareixen soles. Considera el *doctest*:
 
 .. _exercici_text_transformat:
 
-Exercici 32. El text transformat
-================================
+Exercici 32. ☞ El text transformat
+==================================
 
 Desenvolupa una funció que rebi un string amb un text i en retorni una
 transformació d'aquest segons les següents regles:
@@ -204,6 +242,18 @@ transformació d'aquest segons les següents regles:
 
 .. code-block:: python
 
+    >>> transforma('')
+    ''
+    >>> transforma('a')
+    'a'
+    >>> transforma('A')
+    'a'
+    >>> transforma('V')
+    'V'
+    >>> transforma('v')
+    'V'
+    >>> transforma('1')
+    '(1)'
     >>> transforma('Avui faig 19 anys')
     'aVui FaiG (1)(9) aNYS'
 
@@ -215,59 +265,77 @@ agrupats. Per exemple, el *doctest* anterior seria:
     >>> transforma('Avui faig 19 anys')
     'aVui FaiG (19) aNYS'
 
-Exercici 33. El text del revés
-==============================
+En cas que vulguis fer la versió addicional, construeix la teva solució a
+un fitxer diferent, doncs altrament no passarà els *doctest*!
+
+Exercici 33. ☞ El text del revés
+================================
 
 Desenvolupa una funció que rebi un text i el retorni a l'inrevés.
 
 .. code-block:: python
 
+    >>> reves('')
+    ''
+    >>> reves('t')
+    't'
+    >>> reves('ti')
+    'it'
     >>> reves('tinc gana')
     'anag cnit'
 
-Exercici 34. Texts capicua
-==========================
+Exercici 34. ☞ Texts capicua
+============================
 
 Desenvolupa una funció que rebi un text i retorni ``True`` quan aquest és capicua.
 
 .. code-block:: python
 
-    >>> es_capicua('Alondra')
-    False
-    >>> es_capicua('Anna')      # Fixa't que no distingeix majúscules!
-    True
     >>> es_capicua('')
     False
     >>> es_capicua('a')         # Sí, comença i acaba igual!
     True
+    >>> es_capicua('aa')
+    True
+    >>> es_capicua('aA')        # Fixa't que no distingeix majúscules!
+    True
+    >>> es_capicua('Alondra')
+    False
+    >>> es_capicua('Anna')
+    True
 
 
-Exercici 35. Texts coincidents
-==============================
+Exercici 35. ☞ Texts coincidents
+================================
 
 Desenvolupa una funció que rebi dos strings i retorni el nombre de lletres que coincideixen en
 posició en ambdós.
 
 .. code-block:: python
 
+    >>> coincidencies('', '')
+    0
+    >>> coincidencies('', 'quelcom')
+    0
+    >>> coincidencies('quelcom', '')
+    0
+    >>> coincidencies('a', 'a')
+    1
+    >>> coincidencies('A', 'a')
+    1
     >>> coincidencies('Ramón', 'Ratón')
     4
     >>> coincidencies('sabina', 'supina')
     4
-    >>> coincidencies('Sabina', 'supina')   # distingeix majúscules de minúscules
+    >>> coincidencies('Sabina', 'supina')
     3
-    >>> coincidencies('empty', 'buit')      # no cal que coincideixin en longitud
+    >>> coincidencies('empty', 'buit')
     1
-    >>> coincidencies('', 'quelcom')        # amb una cadena buida no hi haurà coincidències
-    0
-
-Col·loca la funció en un programa anomenat ``textscoincidents.py`` que no cal que faci res en ser
-executat.
 
 .. _exercici_desaccentua:
 
-Exercici 36. Desaccentua
-========================
+Exercici 36. ☞ Desaccentua
+==========================
 
 Desenvolupa una funció que desaccentuí el text que rep. En concret, les
 lletres que transformarà són:
@@ -287,16 +355,24 @@ lletres que transformarà són:
 
 .. code-block:: python
 
-    >>> desaccentua('Desenvolupa una funció que desaccentuí el text que rep.')
-    'Desenvolupa una funcio que desaccentui el text que rep.'
+    >>> desaccentua('')
+    ''
+    >>> desaccentua('a')
+    'a'
+    >>> desaccentua('à')
+    'a'
+    >>> desaccentua('À')
+    'A'
     >>> desaccentua('çàèéíïòóúü')
     'caeeiioouu'
+    >>> desaccentua('ÇÀÈÉÍÏÒÓÚÜ')
+    'CAEEIIOOUU'
+    >>> desaccentua('Desenvolupa una funció que desaccentuí el text que rep.')
+    'Desenvolupa una funcio que desaccentui el text que rep.'
 
-Col·loca la funció en un programa anomenat ``desaccentua.py`` que no cal que faci res en ser
-executat.
 
-Exercici 37. Codifica bàsic
-===========================
+Exercici 37. ☞ Codifica bàsic
+=============================
 
 Cada lletra que trobem a un string té un codi, un nombre positiu.
 
@@ -327,6 +403,18 @@ Considera els *doctest*:
 
 .. code-block:: python
 
+    >>> codifica_basic('')
+    ''
+    >>> codifica_basic('A')
+    'A'
+    >>> codifica_basic('à')
+    'à'
+    >>> codifica_basic('!')
+    '!'
+    >>> codifica_basic('h')
+    'i'
+    >>> codifica_basic('z')
+    'a'
     >>> codifica_basic('hola')
     'ipmb'
     >>> codifica_basic('Cada lletra que trobem a un string té un codi, un nombre positiu.')

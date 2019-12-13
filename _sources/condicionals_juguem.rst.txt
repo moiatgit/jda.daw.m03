@@ -150,8 +150,8 @@ total seran quatre com el següent:
 Exercici 18. ☞ El nombre de fills
 =================================
 
-Desevolupa a ``02_18_nombrefills/`` un progama que demani el nombre de
-fills de l'usuari i respongui segons el nombre de fills sigui:
+Desevolupa un progama que demani el nombre de fills de l'usuari i
+respongui segons el nombre de fills sigui:
 
 * menys de 0: Error, no pots tenir menys que 0 fills!
 

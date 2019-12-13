@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programació Modular &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Proves unitàries &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Triangle modular" href="triangle_modular.html" />
-    <link rel="prev" title="Control de bucles" href="control_bucles.html" />
+    <link rel="next" title="Instal·lació" href="pytest.installacio.html" />
+    <link rel="prev" title="Juguem amb mòduls" href="moduls_practica.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -91,11 +91,17 @@
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Modular</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Proves unitàries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytest.installacio.html">Instal·lació</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.holapytest.html">Hola Pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.unexemplemessofisticat.html">Un exemple més sofisticat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.exercicis.html">Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +149,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Programació Modular</li>
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+      <li>Proves unitàries</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,26 +184,36 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="programacio-modular">
-<h1>Programació Modular<a class="headerlink" href="#programacio-modular" title="Link permanent a aquest títol">¶</a></h1>
-<p>Fins ara hem conegut assignacions, E/S, condicionals i bucles. Amb això podem fer
-qualsevol programa… en teoria.</p>
-<p>A la pràctica, la realització d’alguns programes ens requeriria un temps molt elevat doncs els
-programes esdevenen, de seguida, molt complexos.</p>
-<p>Ens cal quelcom que ens permeti trencar els programes en peces manegables. Al <em>què?</em> li direm
-<strong>mòdul</strong> i al <em>com?</em> el coneixem com <em>anàlisi descendent</em> o <em>top-down</em>.</p>
-<p>L’anàlisi descendent és una tècnica de resolució de problemes basada
-en la descomposició del problema en subproblemes. L’anàlisi descendent
-s’aplica també a aquests subproblemes fins que els subproblemes
-resultants presenten una solució trivial.</p>
-<p>Quan els problemes són de programació, cada subproblema es converteix en un mòdul.</p>
-<p>Anem a veure què és un mòdul i com es tradueix tot això a codi.</p>
+  <div class="section" id="proves-unitaries">
+<h1>Proves unitàries<a class="headerlink" href="#proves-unitaries" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció coneixerem una de les eines que més ens ajudaran a
+construir i mantenir correctament els nostres programes: les proves
+unitàries.</p>
+<p>Les proves unitàries ens permeten definir com s’ha de comportar el nostre
+codi depenent del context en que s’executen.</p>
+<p>Ja n’hem vist de proves en funcionament durant aquest curs. Recordes el
+<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">test/test.sh</span></code> o els doctest? Ambdues tècniques ens han anat molt
+bé fins ara, però tenien les seves limitacions.</p>
+<p>El guió en bash requeria definir amb molta precisió l’entrada i la sortida
+en diferents fitxers. Quelcom prou farragós que de seguida es fa
+impracticable quan hem de realitzar molts casos.</p>
+<p>El <em>doctest</em> està molt bé. A banda de permetre provar les nostres funcions
+d’una manera molt natural, ens serveix per documentar el codi de les
+nostres funcions. Presenta però algunes incomoditats, per exemple amb els
+espais sobrers o les cometes dobles o simples. Per fer proves bàsiques
+està prou bé, però amb proves més sofisticades ens trobem tard o d’hora
+amb limitacions.</p>
+<p>Ara farem un pas més i començarem a fer servir un dels <em>frameworks</em> de
+proves més fàcils, potents i flexibles que tenim al món Python: <em>pytest</em></p>
+<p>Trobaràs la seva documentació completa <a class="reference external" href="https://docs.pytest.org/en/latest/contents.html">aquí</a> però deixa’m que et
+faci una breu introducció per començar.</p>
+<p>Trobaràs aquesta secció dividida en els següents punts:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.installacio.html">Instal·lació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.holapytest.html">Hola Pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.unexemplemessofisticat.html">Un exemple més sofisticat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.exercicis.html">Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
 </ul>
 </div>
 </div>
@@ -223,10 +241,10 @@ resultants presenten una solució trivial.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="triangle_modular.html" class="btn btn-neutral float-right" title="Triangle modular" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pytest.installacio.html" class="btn btn-neutral float-right" title="Instal·lació" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="control_bucles.html" class="btn btn-neutral float-left" title="Control de bucles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="moduls_practica.html" class="btn btn-neutral float-left" title="Juguem amb mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

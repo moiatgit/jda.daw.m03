@@ -28,3 +28,4 @@ Anem a veure què és un mòdul i com es tradueix tot això a codi.
     triangle_modular.rst
     moduls_definicions.rst
     moduls_practica.rst
+    pytest.rst

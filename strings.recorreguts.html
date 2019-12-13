@@ -247,62 +247,90 @@ escollirà una versió qualsevol o, fins i tot, podria rebutjar tot el
 lliurament.</p>
 </div>
 <div class="section" id="exercici-26-separa-lletres">
-<h2>Exercici 26. Separa lletres<a class="headerlink" href="#exercici-26-separa-lletres" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-separa-lletres"></span><h2>Exercici 26. ☞ Separa lletres<a class="headerlink" href="#exercici-26-separa-lletres" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string i retorni un string amb cada
 lletra separada per un espai.</p>
 <p>Els <em>doctest</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">separa_lletres</span><span class="p">(</span><span class="s1">&#39;Ritchie&#39;</span><span class="p">)</span>
-<span class="go">&#39;R i t c h i e&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">separa_lletres</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">separa_lletres</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">separa_lletres</span><span class="p">(</span><span class="s1">&#39;Ritchie&#39;</span><span class="p">)</span>
+<span class="go">&#39;R i t c h i e&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">separa_lletres</span><span class="p">(</span><span class="s1">&#39;Programació&#39;</span><span class="p">)</span>
+<span class="go">&#39;P r o g r a m a c i ó&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-27-primera-lletra-en-majuscules">
-<span id="exercici-primera-lletra-en-majuscules"></span><h2>Exercici 27. Primera lletra en majúscules<a class="headerlink" href="#exercici-27-primera-lletra-en-majuscules" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-primera-lletra-en-majuscules"></span><h2>Exercici 27. ☞ Primera lletra en majúscules<a class="headerlink" href="#exercici-27-primera-lletra-en-majuscules" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string i en retorni un altre igual, però amb la primera lletra en
 majúscules.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;anna María&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;anna María&#39;</span><span class="p">)</span>
 <span class="go">&#39;Anna María&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;Anna María&#39;</span><span class="p">)</span>
 <span class="go">&#39;Anna María&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;aNNa mARíA&#39;</span><span class="p">)</span>
 <span class="go">&#39;Anna María&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">primera_lletra_majuscules</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-28-comptant-as">
-<h2>Exercici 28. Comptant As<a class="headerlink" href="#exercici-28-comptant-as" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 28. ☞ Comptant As<a class="headerlink" href="#exercici-28-comptant-as" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string i retorni el nombre de lletres
 <code class="docutils literal notranslate"><span class="pre">A</span></code>, en majúscules o minúscules, que conté.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;Anaximandro&#39;</span><span class="p">)</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_as</span><span class="p">(</span><span class="s1">&#39;Anaximandra&#39;</span><span class="p">)</span>
+<span class="go">4</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-29-comptador-de-vocals">
-<h2>Exercici 29. Comptador de vocals<a class="headerlink" href="#exercici-29-comptador-de-vocals" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 29. ☞ Comptador de vocals<a class="headerlink" href="#exercici-29-comptador-de-vocals" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string i retorni un altre que indiqui quantes ocurrències conté
 de cada vocal. Considerarem només vocals sense accentuar.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;Anaximandro&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;a:0 e:0 i:0 o:0 u:0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&#39;a:1 e:0 i:0 o:0 u:0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">&#39;a:1 e:0 i:0 o:0 u:0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;Anaximandro&#39;</span><span class="p">)</span>
 <span class="go">&#39;a:3 e:0 i:1 o:1 u:0&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;Supercalifrastilisticoespialidoso&#39;</span><span class="p">)</span>
 <span class="go">&#39;a:3 e:2 i:6 o:3 u:1&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="go">&#39;a:0 e:0 i:0 o:0 u:0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compta_vocals</span><span class="p">(</span><span class="s1">&#39;SUPERCALIFRASTILISTICOESPIALIDOSO&#39;</span><span class="p">)</span>
+<span class="go">&#39;a:3 e:2 i:6 o:3 u:1&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-30-informe-d-un-nom">
-<h2>Exercici 30. Informe d’un nom<a class="headerlink" href="#exercici-30-informe-d-un-nom" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 30. ☞ Informe d’un nom<a class="headerlink" href="#exercici-30-informe-d-un-nom" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string amb el nom d’una persona i retorni un petit informe
 d’aquest. En concret informarà de quantes lletres té i quantes d’aquestes són vocals.</p>
 <p>En aquest cas, a les cinc vocals habituals, hi afegirem les següents accentuades: <code class="docutils literal notranslate"><span class="pre">àèéíïòóúü</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;Eleftèria&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;0 lletres i 0 vocals&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="go">&#39;1 lletra i 0 vocals&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&#39;1 lletra i 1 vocal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;ss&#39;</span><span class="p">)</span>
+<span class="go">&#39;2 lletres i 0 vocals&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;sos&#39;</span><span class="p">)</span>
+<span class="go">&#39;3 lletres i 1 vocal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;sos!&#39;</span><span class="p">)</span>
+<span class="go">&#39;3 lletres i 1 vocal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;S.O.S.!&#39;</span><span class="p">)</span>
+<span class="go">&#39;3 lletres i 1 vocal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;Eleftèria&#39;</span><span class="p">)</span>
+<span class="go">&#39;9 lletres i 5 vocals&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;ELEFTÈRIA&#39;</span><span class="p">)</span>
 <span class="go">&#39;9 lletres i 5 vocals&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">informa_nom</span><span class="p">(</span><span class="s1">&#39;aàeèéiíïoòóuúü&#39;</span><span class="p">)</span>
 <span class="go">&#39;14 lletres i 14 vocals&#39;</span>
@@ -318,10 +346,18 @@ dins del string.</p></li>
 </ul>
 </div>
 <div class="section" id="exercici-31-inicials-en-majuscules">
-<h2>Exercici 31. Inicials en majúscules<a class="headerlink" href="#exercici-31-inicials-en-majuscules" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 31. ☞ Inicials en majúscules<a class="headerlink" href="#exercici-31-inicials-en-majuscules" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string que contindrà el nom d’una persona i el retorni amb les
 inicials en majúscules i la resta en minúscules.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;anNa güeLL aBBas&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">)</span>
+<span class="go">&#39;Anna&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;anna&#39;</span><span class="p">)</span>
+<span class="go">&#39;Anna&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;ANNA&#39;</span><span class="p">)</span>
+<span class="go">&#39;Anna&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;anNa güeLL aBBas&#39;</span><span class="p">)</span>
 <span class="go">&#39;Anna Güell Abbas&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">majusculitza</span><span class="p">(</span><span class="s1">&#39;jesús tomás-dado vicents&#39;</span><span class="p">)</span>    <span class="c1"># compte amb el guió!</span>
 <span class="go">&#39;Jesús Tomás-Dado Vicents&#39;</span>
@@ -337,7 +373,7 @@ apareixen soles. Considera el <em>doctest</em>:</p>
 </div>
 </div>
 <div class="section" id="exercici-32-el-text-transformat">
-<span id="exercici-text-transformat"></span><h2>Exercici 32. El text transformat<a class="headerlink" href="#exercici-32-el-text-transformat" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-text-transformat"></span><h2>Exercici 32. ☞ El text transformat<a class="headerlink" href="#exercici-32-el-text-transformat" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un string amb un text i en retorni una
 transformació d’aquest segons les següents regles:</p>
 <ul class="simple">
@@ -345,7 +381,19 @@ transformació d’aquest segons les següents regles:</p>
 <li><p>les lletres no vocals apareixeran en majúscules</p></li>
 <li><p>els nombres apareixeran entre parèntesis <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;Avui faig 19 anys&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
+<span class="go">&#39;V&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+<span class="go">&#39;V&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">&#39;(1)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transforma</span><span class="p">(</span><span class="s1">&#39;Avui faig 19 anys&#39;</span><span class="p">)</span>
 <span class="go">&#39;aVui FaiG (1)(9) aNYS&#39;</span>
 </pre></div>
 </div>
@@ -355,50 +403,68 @@ agrupats. Per exemple, el <em>doctest</em> anterior seria:</p>
 <span class="go">&#39;aVui FaiG (19) aNYS&#39;</span>
 </pre></div>
 </div>
+<p>En cas que vulguis fer la versió addicional, construeix la teva solució a
+un fitxer diferent, doncs altrament no passarà els <em>doctest</em>!</p>
 </div>
 <div class="section" id="exercici-33-el-text-del-reves">
-<h2>Exercici 33. El text del revés<a class="headerlink" href="#exercici-33-el-text-del-reves" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 33. ☞ El text del revés<a class="headerlink" href="#exercici-33-el-text-del-reves" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un text i el retorni a l’inrevés.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reves</span><span class="p">(</span><span class="s1">&#39;tinc gana&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reves</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reves</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="go">&#39;t&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reves</span><span class="p">(</span><span class="s1">&#39;ti&#39;</span><span class="p">)</span>
+<span class="go">&#39;it&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reves</span><span class="p">(</span><span class="s1">&#39;tinc gana&#39;</span><span class="p">)</span>
 <span class="go">&#39;anag cnit&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-34-texts-capicua">
-<h2>Exercici 34. Texts capicua<a class="headerlink" href="#exercici-34-texts-capicua" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 34. ☞ Texts capicua<a class="headerlink" href="#exercici-34-texts-capicua" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi un text i retorni <code class="docutils literal notranslate"><span class="pre">True</span></code> quan aquest és capicua.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;Alondra&#39;</span><span class="p">)</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">)</span>      <span class="c1"># Fixa&#39;t que no distingeix majúscules!</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>         <span class="c1"># Sí, comença i acaba igual!</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;aA&#39;</span><span class="p">)</span>        <span class="c1"># Fixa&#39;t que no distingeix majúscules!</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;Alondra&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">es_capicua</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="exercici-35-texts-coincidents">
-<h2>Exercici 35. Texts coincidents<a class="headerlink" href="#exercici-35-texts-coincidents" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 35. ☞ Texts coincidents<a class="headerlink" href="#exercici-35-texts-coincidents" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que rebi dos strings i retorni el nombre de lletres que coincideixen en
 posició en ambdós.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;Ramón&#39;</span><span class="p">,</span> <span class="s1">&#39;Ratón&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;quelcom&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;quelcom&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;Ramón&#39;</span><span class="p">,</span> <span class="s1">&#39;Ratón&#39;</span><span class="p">)</span>
 <span class="go">4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;sabina&#39;</span><span class="p">,</span> <span class="s1">&#39;supina&#39;</span><span class="p">)</span>
 <span class="go">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;Sabina&#39;</span><span class="p">,</span> <span class="s1">&#39;supina&#39;</span><span class="p">)</span>   <span class="c1"># distingeix majúscules de minúscules</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;Sabina&#39;</span><span class="p">,</span> <span class="s1">&#39;supina&#39;</span><span class="p">)</span>
 <span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;buit&#39;</span><span class="p">)</span>      <span class="c1"># no cal que coincideixin en longitud</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;buit&#39;</span><span class="p">)</span>
 <span class="go">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidencies</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;quelcom&#39;</span><span class="p">)</span>        <span class="c1"># amb una cadena buida no hi haurà coincidències</span>
-<span class="go">0</span>
 </pre></div>
 </div>
-<p>Col·loca la funció en un programa anomenat <code class="docutils literal notranslate"><span class="pre">textscoincidents.py</span></code> que no cal que faci res en ser
-executat.</p>
 </div>
 <div class="section" id="exercici-36-desaccentua">
-<span id="exercici-desaccentua"></span><h2>Exercici 36. Desaccentua<a class="headerlink" href="#exercici-36-desaccentua" title="Link permanent a aquest títol">¶</a></h2>
+<span id="exercici-desaccentua"></span><h2>Exercici 36. ☞ Desaccentua<a class="headerlink" href="#exercici-36-desaccentua" title="Link permanent a aquest títol">¶</a></h2>
 <p>Desenvolupa una funció que desaccentuí el text que rep. En concret, les
 lletres que transformarà són:</p>
 <ul class="simple">
@@ -409,17 +475,25 @@ lletres que transformarà són:</p>
 <li><p>ú, ü → u</p></li>
 <li><p>ç → c</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;Desenvolupa una funció que desaccentuí el text que rep.&#39;</span><span class="p">)</span>
-<span class="go">&#39;Desenvolupa una funcio que desaccentui el text que rep.&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;à&#39;</span><span class="p">)</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;À&#39;</span><span class="p">)</span>
+<span class="go">&#39;A&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;çàèéíïòóúü&#39;</span><span class="p">)</span>
 <span class="go">&#39;caeeiioouu&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;ÇÀÈÉÍÏÒÓÚÜ&#39;</span><span class="p">)</span>
+<span class="go">&#39;CAEEIIOOUU&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">desaccentua</span><span class="p">(</span><span class="s1">&#39;Desenvolupa una funció que desaccentuí el text que rep.&#39;</span><span class="p">)</span>
+<span class="go">&#39;Desenvolupa una funcio que desaccentui el text que rep.&#39;</span>
 </pre></div>
 </div>
-<p>Col·loca la funció en un programa anomenat <code class="docutils literal notranslate"><span class="pre">desaccentua.py</span></code> que no cal que faci res en ser
-executat.</p>
 </div>
 <div class="section" id="exercici-37-codifica-basic">
-<h2>Exercici 37. Codifica bàsic<a class="headerlink" href="#exercici-37-codifica-basic" title="Link permanent a aquest títol">¶</a></h2>
+<h2>Exercici 37. ☞ Codifica bàsic<a class="headerlink" href="#exercici-37-codifica-basic" title="Link permanent a aquest títol">¶</a></h2>
 <p>Cada lletra que trobem a un string té un codi, un nombre positiu.</p>
 <p>Podem accedir a aquest número a partir d’una lletra i també podem, a partir del número, obtenir la
 lletra que té associada. Considera la següent interacció:</p>
@@ -442,7 +516,19 @@ apareguin al text, es mantindran iguals.</p></li>
 <li><p>la lletra <code class="docutils literal notranslate"><span class="pre">z</span></code> serà substituïda per la <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 </ul>
 <p>Considera els <em>doctest</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">&#39;A&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;à&#39;</span><span class="p">)</span>
+<span class="go">&#39;à&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span>
+<span class="go">&#39;!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="go">&#39;i&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
 <span class="go">&#39;ipmb&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">codifica_basic</span><span class="p">(</span><span class="s1">&#39;Cada lletra que trobem a un string té un codi, un nombre positiu.&#39;</span><span class="p">)</span>
 <span class="go">&#39;Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.&#39;</span>

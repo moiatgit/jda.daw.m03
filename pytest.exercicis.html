@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programació Modular &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Exercicis amb pytest &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,7 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Triangle modular" href="triangle_modular.html" />
-    <link rel="prev" title="Control de bucles" href="control_bucles.html" />
+    <link rel="prev" title="Un exemple més sofisticat" href="pytest.unexemplemessofisticat.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -91,11 +90,17 @@
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Modular</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pytest.html">Proves unitàries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pytest.installacio.html">Instal·lació</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.holapytest.html">Hola Pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytest.unexemplemessofisticat.html">Un exemple més sofisticat</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +148,11 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Programació Modular</li>
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+          <li><a href="pytest.html">Proves unitàries</a> &raquo;</li>
+        
+      <li>Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,27 +185,45 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="programacio-modular">
-<h1>Programació Modular<a class="headerlink" href="#programacio-modular" title="Link permanent a aquest títol">¶</a></h1>
-<p>Fins ara hem conegut assignacions, E/S, condicionals i bucles. Amb això podem fer
-qualsevol programa… en teoria.</p>
-<p>A la pràctica, la realització d’alguns programes ens requeriria un temps molt elevat doncs els
-programes esdevenen, de seguida, molt complexos.</p>
-<p>Ens cal quelcom que ens permeti trencar els programes en peces manegables. Al <em>què?</em> li direm
-<strong>mòdul</strong> i al <em>com?</em> el coneixem com <em>anàlisi descendent</em> o <em>top-down</em>.</p>
-<p>L’anàlisi descendent és una tècnica de resolució de problemes basada
-en la descomposició del problema en subproblemes. L’anàlisi descendent
-s’aplica també a aquests subproblemes fins que els subproblemes
-resultants presenten una solució trivial.</p>
-<p>Quan els problemes són de programació, cada subproblema es converteix en un mòdul.</p>
-<p>Anem a veure què és un mòdul i com es tradueix tot això a codi.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
-</ul>
+  <div class="section" id="exercicis-amb-pytest">
+<h1>Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code><a class="headerlink" href="#exercicis-amb-pytest" title="Link permanent a aquest títol">¶</a></h1>
+<p>Els següents exercicis pretenen oferir-te pràctica a l’hora de crear jocs
+de prova amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p>
+<div class="section" id="exercici-8-separa-lletres-revisitat">
+<h2>Exercici 8. Separa lletres (revisitat)<a class="headerlink" href="#exercici-8-separa-lletres-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Crea una nova versió de l’exercici
+<a class="reference internal" href="strings.recorreguts.html#exercici-separa-lletres"><span class="std std-ref">Exercici 26. ☞ Separa lletres</span></a>.
+Aquest cop, crea les proves unitàries a partir dels <em>doctest</em> que
+t’ofereix l’enunciat.</p>
+<p>Per exemple, el primer es traduiria com:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_text_buit</span><span class="p">():</span>
+    <span class="n">entrada</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">esperat</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">obtingut</span> <span class="o">=</span> <span class="n">separa_lletres</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">esperat</span> <span class="o">==</span> <span class="n">obtingut</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="exercici-9-primera-lletra-en-majuscules-revisitat">
+<h2>Exercici 9. Primera lletra en majúscules (revisitat)<a class="headerlink" href="#exercici-9-primera-lletra-en-majuscules-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Crea una nova versió de l’exercici
+<a class="reference internal" href="strings.recorreguts.html#exercici-primera-lletra-en-majuscules"><span class="std std-ref">Exercici 27. ☞ Primera lletra en majúscules</span></a>.
+Aquest cop, crea les proves unitàries a partir dels <em>doctest</em> que
+t’ofereix l’enunciat.</p>
+</div>
+<div class="section" id="exercici-10-mes-exercicis-de-doctest-a-pytest">
+<h2>Exercici 10. ☼ Més exercicis de doctest a pytest<a class="headerlink" href="#exercici-10-mes-exercicis-de-doctest-a-pytest" title="Link permanent a aquest títol">¶</a></h2>
+<p>Et proposo que converteixis tants exercicis com vegis necessari per a
+acabar d’entendre el concepte darrera de <em>pytest</em>.</p>
+<p>Per exemple, pots completar la conversió dels exercicis de
+<a class="reference internal" href="strings.recorreguts.html"><span class="doc">Recorreguts de strings</span></a>.</p>
+<p>És un bon moment per considerar si les proves definides per a aquests
+exercicis eren completes o bé hi hauria alguna que hagués estat bé
+d’afegir o suprimir.</p>
 </div>
 </div>
 
@@ -223,10 +250,8 @@ resultants presenten una solució trivial.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="triangle_modular.html" class="btn btn-neutral float-right" title="Triangle modular" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="control_bucles.html" class="btn btn-neutral float-left" title="Control de bucles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pytest.unexemplemessofisticat.html" class="btn btn-neutral float-left" title="Un exemple més sofisticat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

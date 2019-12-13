@@ -1,0 +1,436 @@
+#########################
+Un exemple més sofisticat
+#########################
+
+Fem un test d'una funció real!
+
+L'enunciat podria ser *implementa una funció que donat dos enters, retorni
+la suma dels seus valors absoluts*.
+
+Abans de començar, sempre és important que ens fem una idea de què ha de
+retornar la funció depenent de diferents valors d'entrada.
+
+Les possibles proves podríen ser:
+
+* quan els dos valors són 0
+
+* quan els dos valors són positius
+
+* quan el primer valor és negatiu i el segon és positiu
+
+* quan el primer valor és positiu i el segon negatiu
+
+* quan tots dos valors són negatius
+
+Això ja ho sabem expressar amb *doctest*, oi?
+Per exemple, que ambdós valors siguin negatius, ho podem indicar amb:
+
+.. code-block:: python
+
+    >>> suma_absolut(0, 0)
+    0
+
+Com que aquí estem introduïnt la nova eina ``pytest``, considera el següent codi:
+
+.. code-block:: python
+    :linenos:
+
+    def suma_absolut(a, b):
+        """ retorna el resultat de sumar els valors absoluts dels
+            numèrics a i b
+
+            >>> suma_absolut(0, 0)
+            0
+            >>> suma_absolut(2, 3)
+            5
+            >>> suma_absolut(-3, 4)
+            7
+            >>> suma_absolut(4, -5)
+            9
+            >>> suma_absolut(-6, -7)
+            13
+        """
+        pass
+
+    def test_quan_dos_zeros():
+        # context
+        a = 0
+        b = 0
+
+        # esperat
+        esperat = 0
+
+        # obtingut
+        obtingut = suma_absolut(a, b)
+
+        # afirmem
+        assert esperat == obtingut
+
+    def test_quan_dos_positius():
+        # context
+        a = 2
+        b = 3
+
+        # esperat
+        esperat = 5
+
+        # obtingut
+        obtingut = suma_absolut(a, b)
+
+        # afirmem
+        assert esperat == obtingut
+
+    def test_quan_negatiu_positiu():
+        assert False, "No implementat encara"
+
+    def test_quan_positiu_negatiu():
+        assert False, "No implementat encara"
+
+    def test_quan_negatiu_negatiu():
+        assert False, "No implementat encara"
+
+**Nota**: fixa't que les darreres tres funcions no estàn implementades.
+Has vist com ho indico?
+
+En executar ``pytest``:
+
+.. code-block:: none
+    :linenos:
+
+        $ pytest
+        ================================ test session starts ================================
+        platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+        rootdir: /tmp/unaprova
+        collected 5 items
+
+        test_holapytest.py FFFFF                                                      [100%]
+
+        ===================================== FAILURES ======================================
+        ________________________________ test_quan_dos_zeros ________________________________
+
+            def test_quan_dos_zeros():
+                # context
+                a = 0
+                b = 0
+
+                # esperat
+                esperat = 0
+
+                # obtingut
+                obtingut = suma_absolut(a, b)
+
+                # afirmem
+        >       assert esperat == obtingut
+        E       assert 0 == None
+
+        test_holapytest.py:33: AssertionError
+        ______________________________ test_quan_dos_positius _______________________________
+
+            def test_quan_dos_positius():
+                # context
+                a = 2
+                b = 3
+
+                # esperat
+                esperat = 5
+
+                # obtingut
+                obtingut = suma_absolut(a, b)
+
+                # afirmem
+        >       assert esperat == obtingut
+        E       assert 5 == None
+
+        test_holapytest.py:47: AssertionError
+        _____________________________ test_quan_negatiu_positiu _____________________________
+
+            def test_quan_negatiu_positiu():
+        >       assert False, "No implementat encara"
+        E       AssertionError: No implementat encara
+        E       assert False
+
+        test_holapytest.py:50: AssertionError
+        _____________________________ test_quan_positiu_negatiu _____________________________
+
+            def test_quan_positiu_negatiu():
+        >       assert False, "No implementat encara"
+        E       AssertionError: No implementat encara
+        E       assert False
+
+        test_holapytest.py:53: AssertionError
+        _____________________________ test_quan_negatiu_negatiu _____________________________
+
+            def test_quan_negatiu_negatiu():
+        >       assert False, "No implementat encara"
+        E       AssertionError: No implementat encara
+        E       assert False
+
+        test_holapytest.py:56: AssertionError
+        ================================= 5 failed in 0.05s =================================
+
+Uf! ``5 failed`` ens diu! No hem passat ni una prova! És clar,
+``suma_absolut()`` no està implementat!
+
+Amb tanta sortida, però, costa de veure el detall de l'error de cada
+prova.
+
+Sort que aquí només teníem 5 tests! Què passarà quan en tinguem molts? No
+pateixis, ``pytest`` ofereix moltes possibilitats per controlar quins
+errors vols que et mostri. Una de les més còmodes és dir-li que s'aturi al
+primer error.
+
+.. code-block:: none
+    :linenos:
+
+    $ pytest -x
+    ================================ test session starts ================================
+    platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+    rootdir: /tmp/unaprova
+    collected 5 items
+
+    test_holapytest.py F
+
+    ===================================== FAILURES ======================================
+    ________________________________ test_quan_dos_zeros ________________________________
+
+        def test_quan_dos_zeros():
+            # context
+            a = 0
+            b = 0
+
+            # esperat
+            esperat = 0
+
+            # obtingut
+            obtingut = suma_absolut(a, b)
+
+            # afirmem
+    >       assert esperat == obtingut
+    E       assert 0 == None
+
+D'acord, estudiem amb més calma aquest *únic* error.
+
+Fixa't que:
+
+* a la línia 7 ja només ens mostra una ``F``. És a dir, que de moment no
+  hem passat cap prova.
+
+* a la línia 25 ens diu que l`error és afirmar que ``0`` és el mateix que
+  ``None``. El ``0`` sabem d`on ve, del contingut de ``esperat`` assignat
+  a la línia 18. D'on surt el ``None``?
+
+  El valor ``None`` és el val ``obtingut`` que va ser assignat amb el
+  resultat de cridar a ``suma_absolut()`` amb els valors de context. És a
+  dir, ``suma_absolut(0, 0)`` ens ha retornat ``None``.
+
+  Si mirem el codi de la funció ``suma_absolut()`` ho entendrem
+  ràpidament. Encara està per implementar!
+  Ja sabem que la crida a un mòdul de Python, si no té un ``return`` ens
+  retorna ``None``.
+
+Corregim el nostre error *a la TDD*
+===================================
+
+*TDD* ve de l'anglès *Test Driven Development* (desenvolupament dirigit
+per proves) i el seu significat és tal qual: les proves són les que
+defineixen el que s'ha de desenvolupar.
+
+Es basa en repetir el següent procediment:
+
+.. code-block:: none
+
+    mentre el programa no estigui finalitzat:
+        crea una prova que comprovi que una part encara no feta funciona
+        mentre la prova falli:   # fallarà segur la primera vegada
+            canvia el codi el mínim possible per què passi la prova
+
+Així, seguint aquesta idea del TDD, per corregir el nostre error,
+implementarem quelcom a la funció ``suma_absolut()`` de manera que pugui
+passar la prova. El més simple és que retorni ``0`` independentment del
+valor dels paràmetres que rep.
+
+.. code-block:: python
+    :linenos:
+
+        def suma_absolut(a, b):
+            """ … """
+            return 0
+
+Si tornem a executar les proves, ens trobem que:
+
+.. code-block:: none
+    :linenos:
+
+        $ pytest -x
+        ================================ test session starts ================================
+        platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+        rootdir: /tmp/unaprova
+        collected 5 items
+
+        test_holapytest.py .F
+
+        ===================================== FAILURES ======================================
+        ______________________________ test_quan_dos_positius _______________________________
+
+            def test_quan_dos_positius():
+                # context
+                a = 2
+                b = 3
+
+                # esperat
+                esperat = 5
+
+                # obtingut
+                obtingut = suma_absolut(a, b)
+
+                # afirmem
+        >       assert esperat == obtingut
+        E       assert 5 == 0
+
+        test_holapytest.py:48: AssertionError
+        ============================ 1 failed, 1 passed in 0.04s ============================
+
+Uei! Hem passat una prova però encara ens queda un error!
+La línia 5 ens indica ``.F``. Amb el puntet està indicant les proves que
+sí han passat.
+
+Solucionem el segon error
+=========================
+
+Si analitzem la sortida de ``pytest`` el problema està en que esperava un
+``5`` però es troba un ``0``. El valor esperat és correcte doncs *2 + 3 =
+5*, així que el problema està a ``suma_absolut()``. Quan tornem a revisar
+el codi, veiem que sempre retorna ``0``. Ja tenim el problema.
+
+Què podem implementar per passar aquesta prova? Et proposo la següent:
+
+
+.. code-block:: python
+    :linenos:
+
+        def suma_absolut(a, b):
+            """ … """
+            return a + b
+
+El resultat és:
+
+.. code-block:: none
+    :linenos:
+
+        $ pytest -x
+        ================================ test session starts ================================
+        platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+        rootdir: /tmp/unaprova
+        collected 5 items
+
+        test_holapytest.py ..F
+
+        ===================================== FAILURES ======================================
+        _____________________________ test_quan_negatiu_positiu _____________________________
+
+            def test_quan_negatiu_positiu():
+        >       assert False, "No implementat encara"
+        E       AssertionError: No implementat encara
+        E       assert False
+
+        test_holapytest.py:51: AssertionError
+        ============================ 1 failed, 2 passed in 0.07s ============================
+
+Ops! Ens falla perquè no està implementada la prova! És clar.
+
+Completem la prova negatiu-positiu
+==================================
+
+La implementació de la prova ``test_quan_negatiu_positiu()`` la resolem
+amb:
+
+.. code-block:: python
+    :linenos:
+
+        def test_quan_negatiu_positiu():
+            a = -3
+            b = 4
+            esperat = 7
+            obtingut = suma_absolut(a, b)
+            assert esperat == obtingut
+
+Ara, el resultat de provar és:
+
+.. code-block:: none
+    :linenos:
+
+        $ pytest -x
+        ================================ test session starts ================================
+        platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+        rootdir: /tmp/unaprova
+        collected 5 items                                                                   
+
+        test_holapytest.py ..F
+
+        ===================================== FAILURES ======================================
+        _____________________________ test_quan_negatiu_positiu _____________________________
+
+            def test_quan_negatiu_positiu():
+                a = -3
+                b = 4
+                esperat = 7
+                obtingut = suma_absolut(a, b)
+        >       assert esperat == obtingut
+        E       assert 7 == 1
+
+        test_holapytest.py:55: AssertionError
+        ============================ 1 failed, 2 passed in 0.05s ============================
+
+Seguim amb errors, però ara és sobre el nostre codi i no sobre la nostra
+prova. Hem avançat.
+
+Corregim el codi perquè suporti negatiu-positiu
+===============================================
+
+Una manera de resoldre l'error seria:
+
+.. code-block:: python
+    :linenos:
+
+        def suma_absolut(a, b):
+            """ … """
+            a = a if a > 0 else -a
+            return a + b
+
+Aquest codi passa la prova negatiu-positiu, però falla en la
+positiu-negatiu.
+
+Probablement a hores d'ara ja has vist com continuar, oi? Doncs vinga,
+acaba-ho tu!
+
+Exercici 7. Completem els tests de suma_absolut()
+=================================================
+
+Completa els tests que encara no estan implementats a l'exemple de
+``suma_absolut()``
+
+Fes servir els mateixos valors del ``doctest``.
+
+Els criteris d'acceptació d'aquest exercici són:
+
+* hi ha una prova completa de ``pytest`` per cada ``doctest``
+
+* el programa passa totes les proves amb ``pytest``
+
+Exercici #. Separa lletres (revisitat)
+
+Crea una nova versió de l'exercici
+:ref:`exercici_separa_lletres`. Aquest cop, crea les proves
+unitàries a partir dels *doctest* que t'oferia l'enunciat.
+
+Per exemple:
+
+.. code-block:: python
+    :linenos:
+
+    def test_primera_lletra_de_primera_paraula()
+        entrada = 'anna Maria'
+        esperat = 'Anna Maria'
+        trobat = primera_lletra_majuscules(entrada)
+        assert esperat == trobat
+
