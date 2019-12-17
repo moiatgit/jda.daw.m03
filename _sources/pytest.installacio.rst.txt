@@ -36,3 +36,17 @@ Un cop el tinguem, instal·lem ``pytest`` amb:
 Torna a demanar la versió de ``pytest`` i ara ja sí que l'hauries de tenir
 al teu equip.
 
+Quan instal·les amb opció ``--user``, ``pip3`` deixa la instal·lació dins
+de ``~/.local/bin/``. Aquesta carpeta no sol estar a la variable d'entorn
+``PATH``. Per la teva comoditat, et proposo que consideris afegir la
+següent línia al teu fitxer ``~/.bashrc``:
+
+.. code-block:: none
+
+    PATH=$PATH:$HOME/.local/bin
+
+No oblidis tornar a carregar el ``.bashrc``, per exemple, amb:
+
+.. code-block:: none
+
+    $ source ~/.bashrc
