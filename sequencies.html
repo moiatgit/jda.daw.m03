@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercicis amb pytest &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Seqüències &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,6 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Necessitem seqüències" href="sequencies.justificacio.html" />
+    <link rel="prev" title="Juguem amb mòduls" href="moduls_practica.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -84,12 +86,22 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Seqüències</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sequencies.justificacio.html">Necessitem seqüències</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sequencies.en_python.html">Les seqüències en Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -135,7 +147,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></li>
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+      <li>Seqüències</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,45 +182,24 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exercicis-amb-pytest">
-<h1>Exercicis amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code><a class="headerlink" href="#exercicis-amb-pytest" title="Link permanent a aquest títol">¶</a></h1>
-<p>Els següents exercicis pretenen oferir-te pràctica a l’hora de crear jocs
-de prova amb <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p>
-<div class="section" id="exercici-8-separa-lletres-revisitat">
-<h2>Exercici 8. Separa lletres (revisitat)<a class="headerlink" href="#exercici-8-separa-lletres-revisitat" title="Link permanent a aquest títol">¶</a></h2>
-<p>Crea una nova versió de l’exercici
-<a class="reference internal" href="strings.recorreguts.html#exercici-separa-lletres"><span class="std std-ref">Exercici 26. ☞ Separa lletres</span></a>.
-Aquest cop, crea les proves unitàries a partir dels <em>doctest</em> que
-t’ofereix l’enunciat.</p>
-<p>Per exemple, el primer es traduiria com:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_text_buit</span><span class="p">():</span>
-    <span class="n">entrada</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">esperat</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">obtingut</span> <span class="o">=</span> <span class="n">separa_lletres</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">esperat</span> <span class="o">==</span> <span class="n">obtingut</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="exercici-9-primera-lletra-en-majuscules-revisitat">
-<h2>Exercici 9. Primera lletra en majúscules (revisitat)<a class="headerlink" href="#exercici-9-primera-lletra-en-majuscules-revisitat" title="Link permanent a aquest títol">¶</a></h2>
-<p>Crea una nova versió de l’exercici
-<a class="reference internal" href="strings.recorreguts.html#exercici-primera-lletra-en-majuscules"><span class="std std-ref">Exercici 27. ☞ Primera lletra en majúscules</span></a>.
-Aquest cop, crea les proves unitàries a partir dels <em>doctest</em> que
-t’ofereix l’enunciat.</p>
-</div>
-<div class="section" id="exercici-10-mes-exercicis-de-doctest-a-pytest">
-<h2>Exercici 10. ☼ Més exercicis de doctest a pytest<a class="headerlink" href="#exercici-10-mes-exercicis-de-doctest-a-pytest" title="Link permanent a aquest títol">¶</a></h2>
-<p>Et proposo que converteixis tants exercicis com vegis necessari per a
-acabar d’entendre el concepte darrera de <em>pytest</em>.</p>
-<p>Per exemple, pots completar la conversió dels exercicis de
-<a class="reference internal" href="strings.recorreguts.html"><span class="doc">Recorreguts de strings</span></a>.</p>
-<p>És un bon moment per considerar si les proves definides per a aquests
-exercicis eren completes o bé hi hauria alguna que hagués estat bé
-d’afegir o suprimir.</p>
+  <div class="section" id="sequencies">
+<h1>Seqüències<a class="headerlink" href="#sequencies" title="Link permanent a aquest títol">¶</a></h1>
+<p>Sabem que hi ha diferents tipus de dades. De moment, durant aquest curs hem treballat només amb un nombre
+força reduït, concretament enters, decimals, booleans, caràcters i strings.</p>
+<p>D’aquests tipus de dades, només els strings els podem considerar una agrupació de dades d’un altre
+tipus: caràcters.</p>
+<p>Com hem vist, un string és bàsicament una seqüència de caràcters que podem recórrer, per exemple,
+per cercar-hi un caràcter concret, extreure’n una part (<em>substring</em>), posar un o més caràcters a
+majúscules, minúscules, etc.</p>
+<p>Però, què passaria si ens interessés disposar de seqüències d’altres tipus que no siguin caràcters?
+Per exemple, imagina’t si volem disposar d’una seqüència amb els noms dels alumnes d’una classe
+(strings) o de les notes obtingudes per aquests alumnes en una determinada prova (decimal).</p>
+<p>Els continguts d’aquesta secció es distribueixen en les següents entrades:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.justificacio.html">Necessitem seqüències</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencies.en_python.html">Les seqüències en Python</a></li>
+</ul>
 </div>
 </div>
 
@@ -230,6 +223,15 @@ d’afegir o suprimir.</p>
 
 
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sequencies.justificacio.html" class="btn btn-neutral float-right" title="Necessitem seqüències" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moduls_practica.html" class="btn btn-neutral float-left" title="Juguem amb mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

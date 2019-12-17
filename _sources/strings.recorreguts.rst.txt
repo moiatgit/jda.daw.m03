@@ -284,6 +284,9 @@ Desenvolupa una funció que rebi un text i el retorni a l'inrevés.
     >>> reves('tinc gana')
     'anag cnit'
 
+
+.. _exercici_textscapicua:
+
 Exercici 34. ☞ Texts capicua
 ============================
 

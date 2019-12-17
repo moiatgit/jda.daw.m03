@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Les seqüències en Python &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Necessitem seqüències" href="sequencies.justificacio.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="sequencies.html">Seqüències</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="sequencies.justificacio.html">Necessitem seqüències</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Les seqüències en Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+          <li><a href="sequencies.html">Seqüències</a> &raquo;</li>
+        
+      <li>Les seqüències en Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="les-sequencies-en-python">
+<h1>Les seqüències en Python<a class="headerlink" href="#les-sequencies-en-python" title="Link permanent a aquest títol">¶</a></h1>
+<p>El problema anterior presenta la dificultat de requerir guardar, en algun
+lloc, les notes que anem rebent. El problema és que no coneixem encara cap
+tipus de dades que ens permeti guardar una seqüència d’enters.</p>
+<p>Python ens ofereix diferents tipus de dades per poder agrupar dades de
+manera seqüencial. De moment, ens quedarem amb una d’elles: la
+<em>tupla</em>.</p>
+<p>Considera la següent interacció amb la consola de Python</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nombres</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;tres&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>
+<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nombres</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nombres</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="gp">...</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t com:</p>
+<ul class="simple">
+<li><p>a la línia 1 inicialitzem la variable <code class="docutils literal notranslate"><span class="pre">nombres</span></code> amb tres enters
+separats per coma i entre parèntesis <code class="docutils literal notranslate"><span class="pre">(</span></code> i <code class="docutils literal notranslate"><span class="pre">)</span></code>.</p></li>
+<li><p>el tipus de <code class="docutils literal notranslate"><span class="pre">nombres</span></code> és <code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
+<li><p>hi podem accedir als diferents valors de <code class="docutils literal notranslate"><span class="pre">nombres</span></code> tot indexant-los
+entre claudàtors <code class="docutils literal notranslate"><span class="pre">[</span></code> i <code class="docutils literal notranslate"><span class="pre">]</span></code> com ho fèiem amb strings. De fet, fins i
+tot és vàlida la funció <code class="docutils literal notranslate"><span class="pre">len()</span></code> per saber quants elements en tenim!</p></li>
+<li><p>com els strings, les tuples són <em>inmutables</em>, és a dir, un cop creades,
+no podem canviar els valors que contenen.</p></li>
+<li><p>el codi anterior mostra que fins i tot podem tenir diferents tipus de
+dades a una tupla! En aquest cas, tots són enters menys el darrer.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>En aquest tema, novament, veurem restringit l’ús de les
+utilitats que ens ofereix Python per manegar seqüències.
+Tot sigui per millorar les nostres habilitats de
+desenvolupament, oi?</p>
+</div>
+<p>Considera el següent codi:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_nomes_enters_positius</span><span class="p">(</span><span class="n">nombres</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Donada una seqüència de strings, aquesta funció suma els valors enters</span>
+<span class="sd">        positius que conté, i retorna el resultat</span>
+
+<span class="sd">        Nota: en cas que algun valor dins de nombres no sigui string, el</span>
+<span class="sd">        resultat és indeterminat.</span>
+
+<span class="sd">        &gt;&gt;&gt; suma_nomes_enters_positius((&#39;a&#39;, &#39;1&#39;, &#39;-2&#39;, &#39;3&#39;, &#39;això no!&#39;, &#39;True&#39;))</span>
+<span class="sd">        4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nombres</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">suma</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">suma</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que:</p>
+<ul class="simple">
+<li><p>el recorregut de la seqüència és idèntic al recorregut d’un string. A la
+línia 12 fem que la variable de recorregut <code class="docutils literal notranslate"><span class="pre">i</span></code> vagi de 0 fins a la
+longitud de la seqüència (menys un, és clar)</p></li>
+<li><p>l’accés a un element de la seqüència és també idèntic al d’un string.
+Mira la línia 13 i intenta distingir-la de codi similar que has fet amb
+strings fins ara.</p></li>
+</ul>
+<p>Encara un altre exemple, considera el següent codi:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separa_parells_i_senars</span><span class="p">(</span><span class="n">valors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Donada una tupla d&#39;enters, retorna una tupla que conté els</span>
+<span class="sd">        mateixos enters però primer apareixen els parells i després</span>
+<span class="sd">        els senars.</span>
+
+<span class="sd">        &gt;&gt;&gt; separa_parells_i_senars((1, 2, 3, 4, 5, 6))</span>
+<span class="sd">        (2, 4, 6, 1, 3, 5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parells</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+    <span class="n">senars</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">valors</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="n">valors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">actual</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">senars</span> <span class="o">=</span> <span class="n">senars</span> <span class="o">+</span> <span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parells</span> <span class="o">+=</span> <span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="n">parells</span> <span class="o">+</span> <span class="n">senars</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t com:</p>
+<ul>
+<li><p>el codi fa servir dues variables de tipus tupla per anar emmagatzemant
+els valors.</p></li>
+<li><p>la tupla buida es defineix simplement escrivint <code class="docutils literal notranslate"><span class="pre">()</span></code> però també podem
+fer-ho amb <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>.</p>
+<p>En canvi, la tupla amb un sol element, cal definir-la amb una <code class="docutils literal notranslate"><span class="pre">,</span></code>
+extra. Altrament, Python es pensa que és un valor entre parèntesis!</p>
+</li>
+<li><p>de la manteixa manera que concatenàvem strings (amb l’operador <code class="docutils literal notranslate"><span class="pre">+</span></code>)
+també ho fem amb les tuples.</p></li>
+<li><p>la crida al doctest conté doble parèntesis. Els externs corresponen als
+parèntesis per definir que venen els arguments de la funció; els interns
+serveixen per delimitar la tupla.</p></li>
+</ul>
+<div class="section" id="exercici-14-suma-nomes-enters-parells-positius">
+<h2>Exercici 14. ☞ Suma només enters parells positius<a class="headerlink" href="#exercici-14-suma-nomes-enters-parells-positius" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi una seqüència de strings i retorni el
+resultat de sumar tots els nombres enters positius i parells que hi
+apareguin.</p>
+<p>Abans de posar-te a programar la solució, recorda els conceptes de TDD que
+hem vist fins ara. Planteja’t com sabràs si el que has codificat és
+correcte. Defineix els casos <em>extrems</em> del problema (ex. una seqüència
+buida d’entrada) i quina és la resposta que ha de donar la teva solució.</p>
+<p>Pots escollir si vols usar <em>doctest</em> o bé <em>pytest</em> per composar les teves
+proves. Fins i tot, si vols, tots dos! Però cal que incloguis al menys una
+d’elles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suma_parells_positius</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;-2&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;sis&#39;</span><span class="p">))</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>Els criteris d’acceptació d’aquest exercici són:</p>
+<ul class="simple">
+<li><p>has de passar la prova automàtica <code class="docutils literal notranslate"><span class="pre">test/test.sh</span></code></p></li>
+<li><p>has d’incloure diferents casos de test</p></li>
+<li><p>has de passar els teus casos de test (!)</p></li>
+</ul>
+</div>
+<div class="section" id="exercici-15-suma-nomes-enters">
+<h2>Exercici 15. ☞ Suma només enters<a class="headerlink" href="#exercici-15-suma-nomes-enters" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi una seqüència de strings i retorni el
+resultat de sumar tots els nombres enters que hi apareguin.</p>
+<p>Per descomptat, et toca definir els casos de test. T’ofereixo un de
+referència.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suma_enters</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;-2&#39;</span><span class="p">,</span> <span class="s1">&#39;+4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;sis&#39;</span><span class="p">))</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-16-filtra-enters">
+<h2>Exercici 16. ☞ Filtra enters<a class="headerlink" href="#exercici-16-filtra-enters" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi una seqüència de strings i retorni una
+seqüència amb només els nombres enters positius i parells que hi
+apareguin.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filtra_enters</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;-2&#39;</span><span class="p">,</span> <span class="s1">&#39;+4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;sis&#39;</span><span class="p">))</span>
+<span class="go">(1, 2, -2, 4, 5)</span>
+</pre></div>
+</div>
+<p>Inclou els casos de test que consideris que ha de complir el teu codi per
+poder-se considerar correcte.</p>
+</div>
+<div class="section" id="exercici-17-fins-un-maxim">
+<h2>Exercici 17. ☞ Fins un màxim<a class="headerlink" href="#exercici-17-fins-un-maxim" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que rebi una seqüència d’enters i un valor màxim.
+La funció retornarà una nova seqüència que contindrà els primers elements
+de la seqüència original de manera que la suma d’aquests sigui, com a
+molt, el valor màxim indicat.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fins_un_maxim</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span>
+<span class="go">(1, 1, 2, -2, 4)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fins_un_maxim</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">(1, 1, 2, -2, 4, 2)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fins_un_maxim</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="sequencies.justificacio.html" class="btn btn-neutral float-left" title="Necessitem seqüències" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
