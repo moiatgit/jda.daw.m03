@@ -172,7 +172,7 @@ Exercici 16. ☞ Filtra enters
 ============================
 
 Desenvolupa una funció que rebi una seqüència de strings i retorni una
-seqüència amb només els nombres enters positius i parells que hi
+seqüència amb només els nombres enters que hi
 apareguin.
 
 .. code-block:: python

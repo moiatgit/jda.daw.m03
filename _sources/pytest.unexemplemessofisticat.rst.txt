@@ -417,20 +417,3 @@ Els criteris d'acceptació d'aquest exercici són:
 
 * el programa passa totes les proves amb ``pytest``
 
-Exercici #. Separa lletres (revisitat)
-
-Crea una nova versió de l'exercici
-:ref:`exercici_separa_lletres`. Aquest cop, crea les proves
-unitàries a partir dels *doctest* que t'oferia l'enunciat.
-
-Per exemple:
-
-.. code-block:: python
-    :linenos:
-
-    def test_primera_lletra_de_primera_paraula()
-        entrada = 'anna Maria'
-        esperat = 'Anna Maria'
-        trobat = primera_lletra_majuscules(entrada)
-        assert esperat == trobat
-
