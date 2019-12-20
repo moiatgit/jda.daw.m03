@@ -10,7 +10,7 @@ la suma dels seus valors absoluts*.
 Abans de començar, sempre és important que ens fem una idea de què ha de
 retornar la funció depenent de diferents valors d'entrada.
 
-Les possibles proves podríen ser:
+Les possibles proves podrien ser:
 
 * quan els dos valors són 0
 
@@ -30,7 +30,7 @@ Per exemple, que ambdós valors siguin negatius, ho podem indicar amb:
     >>> suma_absolut(0, 0)
     0
 
-Com que aquí estem introduïnt la nova eina ``pytest``, considera el següent codi:
+Com que aquí estem introduint la nova eina ``pytest``, considera el següent codi:
 
 .. code-block:: python
     :linenos:
@@ -89,7 +89,7 @@ Com que aquí estem introduïnt la nova eina ``pytest``, considera el següent c
     def test_quan_negatiu_negatiu():
         assert False, "No implementat encara"
 
-**Nota**: fixa't que les darreres tres funcions no estàn implementades.
+**Nota**: fixa't que les darreres tres funcions no estan implementades.
 Has vist com ho indico?
 
 En executar ``pytest``:
@@ -215,8 +215,8 @@ Fixa't que:
 * a la línia 7 ja només ens mostra una ``F``. És a dir, que de moment no
   hem passat cap prova.
 
-* a la línia 25 ens diu que l`error és afirmar que ``0`` és el mateix que
-  ``None``. El ``0`` sabem d`on ve, del contingut de ``esperat`` assignat
+* a la línia 25 ens diu que l'error és afirmar que ``0`` és el mateix que
+  ``None``. El ``0`` sabem d'on ve, del contingut de ``esperat`` assignat
   a la línia 18. D'on surt el ``None``?
 
   El valor ``None`` és el val ``obtingut`` que va ser assignat amb el
@@ -363,7 +363,7 @@ Ara, el resultat de provar és:
         ================================ test session starts ================================
         platform linux -- Python 3.8.0, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
         rootdir: /tmp/unaprova
-        collected 5 items                                                                   
+        collected 5 items
 
         test_holapytest.py ..F
 

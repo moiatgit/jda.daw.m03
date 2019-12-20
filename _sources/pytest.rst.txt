@@ -14,7 +14,7 @@ Ja n'hem vist de proves en funcionament durant aquest curs. Recordes el
 ``bash test/test.sh`` o els doctest? Ambdues tècniques ens han anat molt
 bé fins ara, però tenien les seves limitacions.
 
-El guió en bash requeria definir amb molta precisió l'entrada i la sortida
+El guió en Bash requeria definir amb molta precisió l'entrada i la sortida
 en diferents fitxers. Quelcom prou farragós que de seguida es fa
 impracticable quan hem de realitzar molts casos.
 

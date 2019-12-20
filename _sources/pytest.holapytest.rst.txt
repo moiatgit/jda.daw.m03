@@ -1,6 +1,6 @@
-###########
-Hola Pytest
-###########
+###############
+Hola ``pytest``
+###############
 
 Obre un fitxer anomenat ``test_holapytest.py`` i copia-hi el següent codi:
 
@@ -16,11 +16,11 @@ Obre un fitxer anomenat ``test_holapytest.py`` i copia-hi el següent codi:
 Com pots veure, el codi no pot ser gaire més senzill. Inclou el típic
 comentari de capçalera de tots els fitxers que et fa no perdre punts ni en
 aquesta assignatura ni com a professional del desenvolupament, i una
-funció sense paràmetres i amb una única línia al cos que diu, traduïnt-la
+funció sense paràmetres i amb una única línia al cos que diu, traduint-la
 al català: *afirmo que fals és cert*.
 
 Evidentment, fals no pot ser cert, així que estem afirmant quelcom fals.
-Envolicat? Potser. Veiem què passa en executar-
+Embolicat? Potser. Veiem què passa en executar-
 
 .. code-block:: none
     :linenos:
