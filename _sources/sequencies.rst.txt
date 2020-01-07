@@ -24,7 +24,7 @@ Els continguts d'aquesta secció es distribueixen en les següents entrades:
 
     sequencies.justificacio.rst
     sequencies.en_python.rst
+    sequencies.juguem.rst
+    sequencies.matrius.rst
 
-.. sequencies.juguem.rst
-.. sequencies.matrius.rst
-
+..  control_bucles.rst
