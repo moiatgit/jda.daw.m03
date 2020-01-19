@@ -325,7 +325,7 @@ posició en ambdós.
     >>> coincidencies('a', 'a')
     1
     >>> coincidencies('A', 'a')
-    1
+    0
     >>> coincidencies('Ramón', 'Ratón')
     4
     >>> coincidencies('sabina', 'supina')
@@ -428,6 +428,8 @@ Considera els *doctest*:
 Col·loca la funció en un programa anomenat ``codificabasic.py`` que no cal que faci res en ser
 executat.
 
+.. _exercici_triangle_lletres:
+
 Exercici 38. Un triangle de lletres
 ===================================
 
@@ -448,6 +450,8 @@ El programa dibuixarà el seu nom en forma de triangle.
     N, e, m, e, s, i
     N, e, m, e, s, i, o
 
+
+.. _exercici_triangle_lletres_invertit:
 
 Exercici 39. Un triangle de lletres invertit
 ============================================
