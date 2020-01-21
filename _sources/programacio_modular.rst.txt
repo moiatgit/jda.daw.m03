@@ -30,3 +30,4 @@ Anem a veure què és un mòdul i com es tradueix tot això a codi.
     moduls_practica.rst
     pytest.rst
     sequencies.rst
+    mutabilitat.rst
