@@ -31,3 +31,5 @@ Anem a veure què és un mòdul i com es tradueix tot això a codi.
     pytest.rst
     sequencies.rst
     mutabilitat.rst
+    recursivitat.rst
+

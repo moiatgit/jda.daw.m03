@@ -1,0 +1,300 @@
+############
+Recursivitat
+############
+
+Fins ara hem vist dos tipus de bucles: ``for`` i ``while``.
+
+En aquesta ocasió, veurem com fer bucles sense ``for`` ni ``while``; només
+fent servir mòduls!
+
+La idea bàsica és que podem cridar un mòdul des de si mateix!
+
+.. code-block:: python
+
+    >>> def marlonbrando():
+    ...     marlonbrando()
+    ... 
+    >>> marlonbrando()
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "<stdin>", line 2, in marlonbrando
+      File "<stdin>", line 2, in marlonbrando
+      File "<stdin>", line 2, in marlonbrando
+      [Previous line repeated 996 more times]
+    RecursionError: maximum recursion depth exceeded
+
+Fixa't que el mòdul ``marlonbrando()`` es crida a si mateix. És similar a
+fer un bucle infinit, com per exemple:
+
+.. code-block:: python
+
+    while True:
+        pass
+
+En aquest cas, però,  no és *tan infinit*. Cada cop que fem una
+crida a un mòdul, Python se n'ha de guardar la posició de retorn per
+quan el mòdul cridat retorni. Aquesta informació es guarda en una
+seqüència anomenada *pila de crides* o *call stack*, que, com tantes
+coses, té una capacitat màxima.
+Quan fem recursivitat, es poden arribar a
+fer moltes crides que poden acabar emplenant tota la pila.
+
+
+Considera el següent codi:
+
+.. code-block:: python
+    :linenos:
+
+    def filtra_parells_iteratiu(llista):
+        """ retorna una llista amb només els parells sense modificar la
+            llisa original """
+        nomes_parells = []
+        for valor in llista:
+            if valor % 2 == 0:
+                nomes_parells.append(valor)
+        return nomes_parells
+
+
+    def filtra_parells_recursiu(llista):
+        """ retorna una llista amb només els parells sense modificar la
+            llisa original """
+        if not llista:
+            return []
+        else:
+            nomes_parells = filtra_parells_recursiu(llista[:-1])
+            valor = llista[-1]
+            if valor % 2 == 0:
+                nomes_parells.append(valor)
+            return nomes_parells
+
+
+    def test_filtra_parells():
+        entrada = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]
+        expected = [2, 4, 6, 4, 2]
+        found_iteratiu = filtra_parells_iteratiu(entrada)
+        found_recursiu = filtra_parells_recursiu(entrada)
+        assert expected == found_iteratiu
+        assert expected == found_recursiu
+
+Totes dues funcions retornen el mateix. La segona, però, no inclou cap
+bucle… aparentment.
+
+Analitzem-la amb més detall.
+
+* A la línia 14 comprova si la llista està buida. Si és així, finalitza
+  l'execució de la funció tot retornant la llista buida. Aquest és
+  l'anomenat *cas base*.  En parlem de seguida.
+
+* quan la llista no és buida, torna a cridar a la mateixa funció (!) però
+  amb una llista més curta: tots els valors de la d'entrada excepte el
+  darrer.
+  D'això se'n diu el *cas recursiu*.
+
+* un cop obtinguda la resta de la llista sense senars, només ens fa falta
+  afegir-hi el darrer valor, en cas que sigui parell.
+
+
+La idea és que ``filtra_parells_recursiu()`` em retornarà la resta de la
+llista sense senars. Quan la llista està buida, ja és una llista sense
+senars. Si la llista conté al menys un element, fem que
+``filtra_parells_recursiu()`` consideri la llista original sense l'element
+extret i, finalment, afegirem al seu resultat aquest element si era
+parell.
+
+Sabem que acabarà algun dia perquè:
+
+1. cada cop que cridem ``filtra_parells_recursiu()`` la llista a
+   considerar és més petita i, per tant, en algun moment arribarem a
+   considerar la llista buida.
+
+2. quan tractem la llista buida, no tornem a fer una crida recursiva i
+   finalitzem la iteració.
+
+
+La forma normal d'un mòdul recursiu és:
+
+.. code-block:: none
+
+    def funcio_recursiva(entrada):
+        if cas_base(entrada):
+            tasques_sense_crida_recursiva()
+        else:
+            tasques_previes()
+            entrada_mes_propera_al_cas_base= redueix_entrada(entrada)
+            funcio_recursiva(entrada_mes_propera_al_cas_base)
+            tasques_posteriors()
+
+Hi ha moltes més opcions a partir del cas base. Per exemple, és
+possible que hi hagi més d'un cas base o bé més d'un cas recursiu. De fet,
+és possible que el cas recursiu estigui dins de la crida a una segona
+funció que acabi cridant la primera. El que és crític és:
+
+* que hi hagi al menys un cas base
+
+* que hi hagi al menys un cas recursiu
+
+* que a cada crida, el valor de l'entrada estigui més a prop d'un cas base
+
+
+Una nota final sobre recursivitat
+=================================
+
+La majoria dels llenguatges de programació iterativa, com ara Python o
+Java, no gestionen especialment bé la recursivitat. Hi ha altres
+paradigmes, significativament el funcional, pels que la recursivitat és la
+manera natural d'expressar bucles i que sí disposen de mecanismes
+d'optimització (cerca pel terme *tail recursion* si tens interès.
+
+Amb tot, és interessant tenir coneixement d'aquesta tècnica de programació
+doncs, alguns problemes tenen com a solució més natural la versió
+recursiva. Pensa, per exemple en recórrer el sistema de fitxers o un
+document XML. Si bé, sovint podrem trobar la manera iterativa de
+resoldre'ls, aquesta darrera pot arribar a ser molt més complexa de
+programar i d'entendre. A més a més, qui sap? Potser algun dia t'animes a
+provar un llenguatge funcional com ara Haskell, Scala o Elixir.
+
+
+Exercici 42. Elimina negatius
+=============================
+
+Desenvolupa una funció recursiva que, donada una llista d'enters, retorni
+una llista amb només els elements que siguin positius. És a dir, elimina
+els valors negatius.
+
+.. code-block:: python
+
+    >>> filtra_negatius([-1, 2, -2, -1, 1, 3, -4])
+    [2, 1, 3]
+
+
+Exercici 43. Troba element
+==========================
+
+Desenvolupa una funció recursiva que, donada una llista i un valor,
+retorni cert si hi ha al menys una ocurrència d'aquest valor dins de la
+llista.
+
+.. code-block:: python
+
+    >>> troba_element([1, 2, 3, 4, 5, 6], 5)
+    True
+    >>> troba_element([1, 2, 3, 4, 6], 5)
+    False
+
+
+Exercici 44. Suma elements
+==========================
+
+Desenvolupa una funció recursiva que, donada una llista de valors
+numèrics, retorni la suma d'aquests valors.
+
+.. code-block:: python
+
+    >>> suma_rec([1, 2, 3, 4])
+    10
+
+Exercici 45. ☞ Aplana llistes
+=============================
+
+Desenvolupa una funció que, donada una llista, retorni una altra amb els
+elements aplanats.
+
+Considera els *doctest*:
+
+.. code-block:: python
+
+    >>> aplana([])
+    []
+    >>> aplana([1, 2, 3])
+    [1, 2, 3]
+    >>> aplana([1, [2], 3])
+    [1, 2, 3]
+    >>> aplana([1, [2, [3]]])
+    [1, 2, 3]
+
+**Pista**: podem saber que ``element`` és una llista amb l'expressió
+``isinstance(element, list)``
+
+**Nota** Fins aquest, els problemes que hem considerat tenien una solució iterativa
+prou natural. Resoldre'ls de manera recursiva amb un llenguatge com
+Python, tindria justificació únicament per practicar recursivitat. Aquest
+exercici, però, sí que té una definició recursiva: "L'entrada és una
+llista d'elements que poden ser:
+- un element pla (ex. un enter)
+- una llista
+
+La solució inmediata passaria per considerar els elements plans com a cas
+base i els de tipus llista com a cas recursiu.
+
+**Ampliació**: perquè quedar-se amb les llistes? Fes que la teva funció
+treballi també per tuples:
+
+.. code-block:: python
+
+        >>> aplana([1, [2, [3, (4, 5, 6)]]])
+        [1, 2, 3, 4, 5, 6]
+
+
+
+Exercici 46. ☼ Aplana llistes iterativament
+===========================================
+
+No et ve de gust fer una versió iterativa del problema d'aplanar llistes?
+Doncs vinga, gaudeix ;)
+
+Pots fer servir les mateixes proves que inclou l'exercici amb la versió
+recursiva.
+
+Pista: Considera usar una estructura *FIFO* o cua
+
+
+Exercici 47. ☞ *copydepth* de llistes
+=====================================
+
+Hem vist que la funció ``copy()`` del tipus ``list`` fa una còpia
+superficial.
+
+En aquest exercici desenvoluparem la funció ``copydepth()`` que, donada
+una llista amb possibles subllistes (que a l'hora poden tenir subllistes
+fins virtualment l'infinit!), retorna una copia profunda de la llista, de
+manera que els seus elements de tipus llista també siguin còpies profundes.
+
+És a dir, per cada element de la llista d'origen:
+
+* si és una llista, llavors es copia una copia profunda
+
+* si no és una llista, es copia tal qual
+
+
+Exercici 48. ☼ *copydepth* de llistes iterativament
+===================================================
+
+Si et ve de gust, pots provar de convertir l'algorisme recursiu de
+l'exercici de *copydepth* a iteratiu.
+
+Pots fer servir les mateixes proves que inclou l'exercici amb la versió
+recursiva.
+
+Exercici 49. ☼ Trobar un fitxer
+===============================
+
+A aquesta activitat desenvoluparàs un programa que demanarà el nom d'un
+fitxer i el cercarà per tot el sistema de fitxers a partir de la carpeta
+actual.
+
+**Pista**: El següent bloc de codi mostra tots els elements que es troben
+a l'arrel del teu sistema de fitxers i llista el seu nom, tot indicant si
+és un directori (``'D'``) o qualsevol altra cosa (``'X'``).
+
+.. code-block:: python
+
+    >>> import pathlib
+    >>> p = pathlib.Path('/')
+    >>> for entrada in p.iterdir():
+    ...     print('D' if entrada.is_dir() else 'X', end='; ')
+    ...     print(entrada)
+
+**Atenció**: si has de fer-lo funcionar a una carpeta on tinguis enllaços
+simbòlics (*softlinks*) sobre directoris, la teva funció podria *petar*
+per recursió infinita. Considera evitar seguir els enllaços simbòlics amb
+``entrada.is_symlink()``.

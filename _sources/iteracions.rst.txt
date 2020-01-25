@@ -103,4 +103,3 @@ Veurem:
     strings.rst
     bucles_condicionals.rst
     control_bucles.rst
-

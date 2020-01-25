@@ -1,0 +1,109 @@
+################
+Llistes i mòduls
+################
+
+La mutabilitat de les llistes presenta un fenomen que, fins ara, no havíem
+observat amb el nostre codi. Considera l'exemple:
+
+.. code-block:: python
+    :linenos:
+
+    def intercanvia_naif(a, b):
+        tmp = b
+        b = a
+        a = b                                           # sí, també a,b=b,a
+
+    def intercanvia_tupla(parell):
+        assert isinstance(parell, tuple)
+        assert len(parell) == 2
+        parell = (parell[1], parell[0])
+
+    def intercanvia_llista(parell):
+        assert isinstance(parell, list)
+        assert len(parell) == 2
+        tmp = parell[0]
+        parell[0] = parell[1]
+        parell[1] = tmp
+
+    def intercanvia_llista_alies(parell):
+        assert isinstance(parell, list)
+        assert len(parell) == 2
+        nou_parell = parell                             # fem un àlies
+        tmp = nou_parell[0]
+        nou_parell[0] = nou_parell[1]
+        nou_parell[1] = tmp
+
+    def intercanvia_llista_copia(parell):
+        assert isinstance(parell, list)
+        assert len(parell) == 2
+        parell = parell.copy()                          # fem una copia!
+        tmp = parell[0]
+        parell[0] = parell[1]
+        parell[1] = tmp
+
+    def test_parells():
+        a = 'un'
+        b = 'dos'
+
+        intercanvia_naif(a, b)
+        assert a == 'un' and b == 'dos'                 # sense canvis
+
+        parell = ('un', 'dos')
+        intercanvia_tupla(parell)
+        assert parell[0] == 'un' and parell[1] == 'dos' # sense canvis
+
+        parell = ['un', 'dos']
+        intercanvia_llista(parell)
+        assert parell[0] == 'dos' and parell[1] == 'un' # sí ha canviat!
+
+        parell = ['un', 'dos']
+        intercanvia_llista_alies(parell)
+        assert parell[0] == 'dos' and parell[1] == 'un' # sí ha canviat!
+
+        parell = ['un', 'dos']
+        intercanvia_llista_copia(parell)
+        assert parell[0] == 'un' and parell[1] == 'dos' # sense canvis
+
+Aquest test passa
+
+Fixa't:
+
+* tant ``intercanvia_naif()`` com ``intercanvia_tupla()`` no són capaços
+  d'intercanviar l'ordre dels elements. Bé, és el resultat esperat. 
+  Els mòduls, en aquest cas procediments, estan rebent valors inmutables
+  i, per tant, no tenim manera de canviar-los.
+
+  Si volem que això passi, ens caldria retornar els nous valors i
+  reassignar als originals.
+
+* ``intercanvia_llista()`` sí que funciona! Ja sabem que ``list`` és
+  mutable i, com que l'objecte dins de la funció és el **mateix** que des
+  del codi que fa la crida, en retornar, trobem els valors intercanviats.
+
+* ``intercanvia_llista_alies()`` també funciona. Fixa't que, malgrat els
+  canvis els fem a partir d'una nova referència (``nou_parell``), en
+  realitat aquest es refereix a la mateixa llista de ``parell``. Si vols,
+  ho pots comprovar comparant els ``id()``.
+
+* ``intercanvia_llista_copia()`` però **no** funciona! Perquè? Doncs
+  perquè els canvis els realitzem sobre una còpia de la llista i no sobre
+  la llista.
+
+
+
+
+Exercici 41. Filtra enters (revisitat)
+======================================
+
+Torna a considerar l':ref:`exercici_filtra_enters_tupla`.
+
+Aquest cop, desenvolupa una nova versió amb llistes i en format
+procediment. de manera que el següent test passi:
+
+.. code-block:: python
+
+    def test_filtra_enters():
+        entrada = ['a', '1', '2', '-2', '+4', '5', 'sis']
+        esperada = [1, 2, -2, 4, 5]
+        trobada = filtra_enters(entrada)
+        assert esperada == trobada

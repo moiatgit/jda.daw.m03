@@ -1,0 +1,64 @@
+######################
+Segments en seqüències
+######################
+
+
+Aquest tema és una altra simplificació que ens ofereix Python per manegar
+les seqüències.
+
+Fins ara hem fet servir ``[]`` per localitzar un element dins d'una
+seqüència, però aquest operador permet fer més coses.
+
+Considera el següent codi:
+
+.. code-block:: python
+
+    def part_numerica_de_matricula(matricula):
+        """ presuposa que matrícula correspon a una matrícula espanyola vàlida
+
+            >>> part_numerica_de_matricula('1234BCD')
+            '1234'
+        """
+
+        part_numerica = ''
+        for i in range(4):
+            part_numerica += matricula[i]
+        return part_numerica
+
+    def test_comprova_segments():
+        matricula='4321BBB'
+        trobat = part_numerica_de_matricula(matricula) 
+        assert matricula[0:4] == trobat
+        assert matricula[:4] == trobat
+
+Aquest test passa.
+
+Si ``matricula`` val ``'4321BCD'``:
+
+* ``matricula[-1]`` retorna ``'D'`` (l'últim element!)
+
+* ``matricula[0:4]`` retorna ``'4321'``
+
+* ``matricula[:4]`` retorna ``'4321'``
+
+* ``matricula[1:4]`` retorna ``321``
+
+* ``matricula[4:7]`` retorna ``'BCD'``
+
+* ``matricula[4:]`` retorna ``'BCD'``
+
+* ``matricula[:-3]`` retorna ``'4321'`` (tots menys els tres darrers!)
+
+* ``matricula[::2]`` retorna ``'42BD'`` (cada dues!)
+
+* ``matricula[::-1]`` retorna ``'DCB1234'``` (invertit!)
+
+
+Exercici 40. Una matrícula vàlida (re-revisitat)
+================================================
+
+Torna a implementar :ref:`exercici_matricula_valida_modular`, aquest cop
+fent servir segments tant com et sigui possible. Això podria implicar que
+algun submòdul deixi de tenir sentit (ex. ``substring()``)
+
+La teva solució haurà de passar les mateixes proves que el teu codi antic.

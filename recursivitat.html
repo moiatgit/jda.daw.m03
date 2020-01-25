@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recursivitat &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Llistes i mòduls" href="llistes_i_moduls.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencies.html">Seqüències</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutabilitat.html">Mutabilitat</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Recursivitat</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
+        
+      <li>Recursivitat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recursivitat">
+<h1>Recursivitat<a class="headerlink" href="#recursivitat" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fins ara hem vist dos tipus de bucles: <code class="docutils literal notranslate"><span class="pre">for</span></code> i <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>En aquesta ocasió, veurem com fer bucles sense <code class="docutils literal notranslate"><span class="pre">for</span></code> ni <code class="docutils literal notranslate"><span class="pre">while</span></code>; només
+fent servir mòduls!</p>
+<p>La idea bàsica és que podem cridar un mòdul des de si mateix!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">marlonbrando</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">marlonbrando</span><span class="p">()</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">marlonbrando</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">marlonbrando</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">marlonbrando</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">2</span>, in <span class="n">marlonbrando</span>
+<span class="gr">  [Previous line repeated 996 more times]</span>
+<span class="gr">RecursionError</span>: <span class="n">maximum recursion depth exceeded</span>
+</pre></div>
+</div>
+<p>Fixa’t que el mòdul <code class="docutils literal notranslate"><span class="pre">marlonbrando()</span></code> es crida a si mateix. És similar a
+fer un bucle infinit, com per exemple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>En aquest cas, però,  no és <em>tan infinit</em>. Cada cop que fem una
+crida a un mòdul, Python se n’ha de guardar la posició de retorn per
+quan el mòdul cridat retorni. Aquesta informació es guarda en una
+seqüència anomenada <em>pila de crides</em> o <em>call stack</em>, que, com tantes
+coses, té una capacitat màxima.
+Quan fem recursivitat, es poden arribar a
+fer moltes crides que poden acabar emplenant tota la pila.</p>
+<p>Considera el següent codi:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filtra_parells_iteratiu</span><span class="p">(</span><span class="n">llista</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; retorna una llista amb només els parells sense modificar la</span>
+<span class="sd">        llisa original &quot;&quot;&quot;</span>
+    <span class="n">nomes_parells</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">llista</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">valor</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nomes_parells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nomes_parells</span>
+
+
+<span class="k">def</span> <span class="nf">filtra_parells_recursiu</span><span class="p">(</span><span class="n">llista</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; retorna una llista amb només els parells sense modificar la</span>
+<span class="sd">        llisa original &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">llista</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nomes_parells</span> <span class="o">=</span> <span class="n">filtra_parells_recursiu</span><span class="p">(</span><span class="n">llista</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">valor</span> <span class="o">=</span> <span class="n">llista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">valor</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nomes_parells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nomes_parells</span>
+
+
+<span class="k">def</span> <span class="nf">test_filtra_parells</span><span class="p">():</span>
+    <span class="n">entrada</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">found_iteratiu</span> <span class="o">=</span> <span class="n">filtra_parells_iteratiu</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+    <span class="n">found_recursiu</span> <span class="o">=</span> <span class="n">filtra_parells_recursiu</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">expected</span> <span class="o">==</span> <span class="n">found_iteratiu</span>
+    <span class="k">assert</span> <span class="n">expected</span> <span class="o">==</span> <span class="n">found_recursiu</span>
+</pre></div>
+</td></tr></table></div>
+<p>Totes dues funcions retornen el mateix. La segona, però, no inclou cap
+bucle… aparentment.</p>
+<p>Analitzem-la amb més detall.</p>
+<ul class="simple">
+<li><p>A la línia 14 comprova si la llista està buida. Si és així, finalitza
+l’execució de la funció tot retornant la llista buida. Aquest és
+l’anomenat <em>cas base</em>.  En parlem de seguida.</p></li>
+<li><p>quan la llista no és buida, torna a cridar a la mateixa funció (!) però
+amb una llista més curta: tots els valors de la d’entrada excepte el
+darrer.
+D’això se’n diu el <em>cas recursiu</em>.</p></li>
+<li><p>un cop obtinguda la resta de la llista sense senars, només ens fa falta
+afegir-hi el darrer valor, en cas que sigui parell.</p></li>
+</ul>
+<p>La idea és que <code class="docutils literal notranslate"><span class="pre">filtra_parells_recursiu()</span></code> em retornarà la resta de la
+llista sense senars. Quan la llista està buida, ja és una llista sense
+senars. Si la llista conté al menys un element, fem que
+<code class="docutils literal notranslate"><span class="pre">filtra_parells_recursiu()</span></code> consideri la llista original sense l’element
+extret i, finalment, afegirem al seu resultat aquest element si era
+parell.</p>
+<p>Sabem que acabarà algun dia perquè:</p>
+<ol class="arabic simple">
+<li><p>cada cop que cridem <code class="docutils literal notranslate"><span class="pre">filtra_parells_recursiu()</span></code> la llista a
+considerar és més petita i, per tant, en algun moment arribarem a
+considerar la llista buida.</p></li>
+<li><p>quan tractem la llista buida, no tornem a fer una crida recursiva i
+finalitzem la iteració.</p></li>
+</ol>
+<p>La forma normal d’un mòdul recursiu és:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def funcio_recursiva(entrada):
+    if cas_base(entrada):
+        tasques_sense_crida_recursiva()
+    else:
+        tasques_previes()
+        entrada_mes_propera_al_cas_base= redueix_entrada(entrada)
+        funcio_recursiva(entrada_mes_propera_al_cas_base)
+        tasques_posteriors()
+</pre></div>
+</div>
+<p>Hi ha moltes més opcions a partir del cas base. Per exemple, és
+possible que hi hagi més d’un cas base o bé més d’un cas recursiu. De fet,
+és possible que el cas recursiu estigui dins de la crida a una segona
+funció que acabi cridant la primera. El que és crític és:</p>
+<ul class="simple">
+<li><p>que hi hagi al menys un cas base</p></li>
+<li><p>que hi hagi al menys un cas recursiu</p></li>
+<li><p>que a cada crida, el valor de l’entrada estigui més a prop d’un cas base</p></li>
+</ul>
+<div class="section" id="una-nota-final-sobre-recursivitat">
+<h2>Una nota final sobre recursivitat<a class="headerlink" href="#una-nota-final-sobre-recursivitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>La majoria dels llenguatges de programació iterativa, com ara Python o
+Java, no gestionen especialment bé la recursivitat. Hi ha altres
+paradigmes, significativament el funcional, pels que la recursivitat és la
+manera natural d’expressar bucles i que sí disposen de mecanismes
+d’optimització (cerca pel terme <em>tail recursion</em> si tens interès.</p>
+<p>Amb tot, és interessant tenir coneixement d’aquesta tècnica de programació
+doncs, alguns problemes tenen com a solució més natural la versió
+recursiva. Pensa, per exemple en recórrer el sistema de fitxers o un
+document XML. Si bé, sovint podrem trobar la manera iterativa de
+resoldre’ls, aquesta darrera pot arribar a ser molt més complexa de
+programar i d’entendre. A més a més, qui sap? Potser algun dia t’animes a
+provar un llenguatge funcional com ara Haskell, Scala o Elixir.</p>
+</div>
+<div class="section" id="exercici-42-elimina-negatius">
+<h2>Exercici 42. Elimina negatius<a class="headerlink" href="#exercici-42-elimina-negatius" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció recursiva que, donada una llista d’enters, retorni
+una llista amb només els elements que siguin positius. És a dir, elimina
+els valors negatius.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filtra_negatius</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="go">[2, 1, 3]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-43-troba-element">
+<h2>Exercici 43. Troba element<a class="headerlink" href="#exercici-43-troba-element" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció recursiva que, donada una llista i un valor,
+retorni cert si hi ha al menys una ocurrència d’aquest valor dins de la
+llista.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">troba_element</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">troba_element</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-44-suma-elements">
+<h2>Exercici 44. Suma elements<a class="headerlink" href="#exercici-44-suma-elements" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció recursiva que, donada una llista de valors
+numèrics, retorni la suma d’aquests valors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">suma_rec</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-45-aplana-llistes">
+<h2>Exercici 45. ☞ Aplana llistes<a class="headerlink" href="#exercici-45-aplana-llistes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa una funció que, donada una llista, retorni una altra amb els
+elements aplanats.</p>
+<p>Considera els <em>doctest</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aplana</span><span class="p">([])</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aplana</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">[1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aplana</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">[1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aplana</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]])</span>
+<span class="go">[1, 2, 3]</span>
+</pre></div>
+</div>
+<p><strong>Pista</strong>: podem saber que <code class="docutils literal notranslate"><span class="pre">element</span></code> és una llista amb l’expressió
+<code class="docutils literal notranslate"><span class="pre">isinstance(element,</span> <span class="pre">list)</span></code></p>
+<p><strong>Nota</strong> Fins aquest, els problemes que hem considerat tenien una solució iterativa
+prou natural. Resoldre’ls de manera recursiva amb un llenguatge com
+Python, tindria justificació únicament per practicar recursivitat. Aquest
+exercici, però, sí que té una definició recursiva: «L’entrada és una
+llista d’elements que poden ser:
+- un element pla (ex. un enter)
+- una llista</p>
+<p>La solució inmediata passaria per considerar els elements plans com a cas
+base i els de tipus llista com a cas recursiu.</p>
+<p><strong>Ampliació</strong>: perquè quedar-se amb les llistes? Fes que la teva funció
+treballi també per tuples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aplana</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]]])</span>
+<span class="go">[1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-46-aplana-llistes-iterativament">
+<h2>Exercici 46. ☼ Aplana llistes iterativament<a class="headerlink" href="#exercici-46-aplana-llistes-iterativament" title="Link permanent a aquest títol">¶</a></h2>
+<p>No et ve de gust fer una versió iterativa del problema d’aplanar llistes?
+Doncs vinga, gaudeix ;)</p>
+<p>Pots fer servir les mateixes proves que inclou l’exercici amb la versió
+recursiva.</p>
+<p>Pista: Considera usar una estructura <em>FIFO</em> o cua</p>
+</div>
+<div class="section" id="exercici-47-copydepth-de-llistes">
+<h2>Exercici 47. ☞ <em>copydepth</em> de llistes<a class="headerlink" href="#exercici-47-copydepth-de-llistes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem vist que la funció <code class="docutils literal notranslate"><span class="pre">copy()</span></code> del tipus <code class="docutils literal notranslate"><span class="pre">list</span></code> fa una còpia
+superficial.</p>
+<p>En aquest exercici desenvoluparem la funció <code class="docutils literal notranslate"><span class="pre">copydepth()</span></code> que, donada
+una llista amb possibles subllistes (que a l’hora poden tenir subllistes
+fins virtualment l’infinit!), retorna una copia profunda de la llista, de
+manera que els seus elements de tipus llista també siguin còpies profundes.</p>
+<p>És a dir, per cada element de la llista d’origen:</p>
+<ul class="simple">
+<li><p>si és una llista, llavors es copia una copia profunda</p></li>
+<li><p>si no és una llista, es copia tal qual</p></li>
+</ul>
+</div>
+<div class="section" id="exercici-48-copydepth-de-llistes-iterativament">
+<h2>Exercici 48. ☼ <em>copydepth</em> de llistes iterativament<a class="headerlink" href="#exercici-48-copydepth-de-llistes-iterativament" title="Link permanent a aquest títol">¶</a></h2>
+<p>Si et ve de gust, pots provar de convertir l’algorisme recursiu de
+l’exercici de <em>copydepth</em> a iteratiu.</p>
+<p>Pots fer servir les mateixes proves que inclou l’exercici amb la versió
+recursiva.</p>
+</div>
+<div class="section" id="exercici-49-trobar-un-fitxer">
+<h2>Exercici 49. ☼ Trobar un fitxer<a class="headerlink" href="#exercici-49-trobar-un-fitxer" title="Link permanent a aquest títol">¶</a></h2>
+<p>A aquesta activitat desenvoluparàs un programa que demanarà el nom d’un
+fitxer i el cercarà per tot el sistema de fitxers a partir de la carpeta
+actual.</p>
+<p><strong>Pista</strong>: El següent bloc de codi mostra tots els elements que es troben
+a l’arrel del teu sistema de fitxers i llista el seu nom, tot indicant si
+és un directori (<code class="docutils literal notranslate"><span class="pre">'D'</span></code>) o qualsevol altra cosa (<code class="docutils literal notranslate"><span class="pre">'X'</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">entrada</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span> <span class="k">if</span> <span class="n">entrada</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Atenció</strong>: si has de fer-lo funcionar a una carpeta on tinguis enllaços
+simbòlics (<em>softlinks</em>) sobre directoris, la teva funció podria <em>petar</em>
+per recursió infinita. Considera evitar seguir els enllaços simbòlics amb
+<code class="docutils literal notranslate"><span class="pre">entrada.is_symlink()</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="llistes_i_moduls.html" class="btn btn-neutral float-left" title="Llistes i mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

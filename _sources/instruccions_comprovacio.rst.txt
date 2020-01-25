@@ -232,3 +232,5 @@ Exemple d'interacció: ::
     6 / 2 = 3.0
 
 No et preocupis si alguna operació no és vàlida pels valors introduïts.
+
+Guarda el teu programa dins la carpeta ``01_10_calculadorabasica/``.

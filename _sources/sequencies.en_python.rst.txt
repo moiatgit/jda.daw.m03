@@ -168,6 +168,8 @@ referència.
     10
 
 
+.. _exercici_filtra_enters_tupla:
+
 Exercici 16. ☞ Filtra enters
 ============================
 

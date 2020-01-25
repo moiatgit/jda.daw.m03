@@ -114,9 +114,6 @@ que sí permet modificar els seus elements.
     :titlesonly:
 
     llistes.rst
-
-..
     llistes_foreach.rst
     llistes_segments.rst
     llistes_i_moduls.rst
-    recursivitat.rst
