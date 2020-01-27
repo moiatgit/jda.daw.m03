@@ -348,17 +348,9 @@ repetit.
 Exercici 27. ☞ Ordena per inserció
 ==================================
 
-Hi ha molts algorismes per ordenar seqüències. En aquest exercici
-implementaràs un d'ells `l'ordenació per inserció
-<https://en.wikipedia.org/wiki/Insertion_sort>`_.
-
 Desenvolupa una funció que rebi com a paràmetre una tupla d'enters i
 retorni una altra amb els mateixos valors de l'entrada però ordenats de
 manera creixent.
-
-Desenvolupa una funció que  programa que vagi demanant nombres enters (poden ser
-negatius), fins que rebi *prou*. En acabar, el programa mostrarà els
-valors introduïts ordenats de manera creixent.
 
 Considera els següents doctest:
 

@@ -23,27 +23,27 @@ Recorda que cada fitxer de codi presentarà:
   - comentari descrivint el que fa la funció, què és i de quin tipus és cada
     argument, i el resultat a retornar
 
-  - un o més *doctest* que provin els diferents casos que pot executar la funció
-    depenent del valor dels arguments.
+  - un o més *doctest* que provin els diferents casos que pot executar la
+    funció depenent del valor dels arguments.
 
   - el codi que resol el problema
 
   - la clàusula o clàusules *return* corresponents
 
-  - un bloc de condició ``__name__ == '__main__'`` en el que apareixeran les
-    instruccions necessàries per obtenir les dades dels usuaris i finalment
-    mostrar el resultat.
+  - un bloc de condició ``__name__ == '__main__'`` en el que apareixeran
+    les instruccions necessàries per obtenir les dades dels usuaris i
+    finalment mostrar el resultat.
 
 
 .. _exercici_calculadora_senzilla_python:
 
-Exercici 15. Una calculadora senzilla
-=====================================
+Exercici 15. ☞ Una calculadora senzilla
+=======================================
 
 En aquesta ocasió desenvoluparem una calculadora senzilla a la carpeta
-``02_15_calculadorasenzilla/`` que demani a l'usuari un primer operand numèric,
-una operació entre (+ - * /) i un segon operand, i escrigui el resultat
-d'aplicar l'operació als operands.
+``02_15_calculadorasenzilla/`` que demani a l'usuari un primer operand
+numèric, una operació entre (+ - * /) i un segon operand, i escrigui el
+resultat d'aplicar l'operació als operands.
 
 Exemple d'interacció: ::
 
@@ -54,7 +54,7 @@ Exemple d'interacció: ::
     +
     Segon operand?
     5
-    4 + 5 = 9
+    4,00 + 5,00 = 9,00
     $ python3 calculadorasenzilla.py
     Primer operand?
     4
@@ -71,6 +71,7 @@ Exemple d'interacció: ::
     Segon operand?
     3
     L'operador ^ no està disponible
+
 
 En el cas dels *doctest* pots fer servir les mateixes proves. Per exemple, la
 prova realitzada per la primera simulació es codificaria amb *doctest* com:
