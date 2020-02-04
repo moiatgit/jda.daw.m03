@@ -137,3 +137,11 @@ que ``HolaMon.java``, excepte que, en comptes de *Hola Món!*, sortirà un missa
 Com ja va passar la darrera vegada, si no et dius Adelita, canvia el nom. Pots
 modificar també la resta de la frase amb quelcom que sentis còmode.
 
+.. important:: Ara que estem fent servir Java, ens pot ser interessant que
+               *git* no guardi els fitxers `.class`. Per
+               fer-ho, afegeix la següent línia al teu ``,gitignore``
+
+               .. code-block:: none
+
+                   *.class
+
