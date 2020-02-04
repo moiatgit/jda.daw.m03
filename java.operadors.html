@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Operadors &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Strings en Java" href="java.strings.html" />
+    <link rel="prev" title="Tipus de dades" href="java.tipus.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java.versio.html">Versió del Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Operadors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.expressions.html">Expressions i Instruccions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.moduls.html">Mòduls</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
+        
+      <li>Operadors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="operadors">
+<h1>Operadors<a class="headerlink" href="#operadors" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció coneixeràs els operadors més habituals del llenguatge de
+programació Java.</p>
+<p>Trobaràs una discussió completa dels operadors de Java a les pàgines del
+<a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html">tutorial oficial</a>.</p>
+<div class="section" id="els-operadors-aritmetics">
+<h2>Els operadors aritmètics<a class="headerlink" href="#els-operadors-aritmetics" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els operadors aritmètics de Java no ens donaran gaire sorpresa. Aquí te’ls
+presento en ordre de precedència.</p>
+<ul class="simple">
+<li><p>Multiplicatius: <code class="docutils literal notranslate"><span class="pre">*</span></code> (producte), <code class="docutils literal notranslate"><span class="pre">/</span></code> (divisió),  <code class="docutils literal notranslate"><span class="pre">%</span></code> (mòdul)</p></li>
+<li><p>Aditius: <code class="docutils literal notranslate"><span class="pre">+</span></code> (suma), <code class="docutils literal notranslate"><span class="pre">-</span></code> (resta)</p></li>
+</ul>
+<p>Per tant, en una expressió com ara <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">5</span></code> la precedència farà que
+el resultat sigui equivalent a <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">(2</span> <span class="pre">*</span> <span class="pre">5)</span></code>.</p>
+<p>Recorda que el mòdul (<code class="docutils literal notranslate"><span class="pre">%</span></code>) és la resta de la divisió entera. Considera
+el següent programa:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Exemple d&#39;ús de l&#39;operador mòdul</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModul</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">2345</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">5432</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">esParell1</span> <span class="o">=</span> <span class="o">(</span><span class="n">num1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>    <span class="c1">// false</span>
+        <span class="kt">boolean</span> <span class="n">esParell2</span> <span class="o">=</span> <span class="o">(</span><span class="n">num2</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>    <span class="c1">// true</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell1</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="els-operadors-unaris">
+<h2>Els operadors unaris<a class="headerlink" href="#els-operadors-unaris" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els operadors unaris tenen un únic operand, que apareix a continuació.</p>
+<ul>
+<li><p>canvi de signe: <code class="docutils literal notranslate"><span class="pre">-valor</span></code></p>
+<p>El valor ha de ser numèric. Si el nombre era positiu, passa a negatiu i
+viceversa.</p>
+</li>
+<li><p>increment i decrement: <code class="docutils literal notranslate"><span class="pre">++var</span></code> i <code class="docutils literal notranslate"><span class="pre">--var</span></code></p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">var</span></code> veu incrementat/decrementat el seu valor. A
+continuació, el resultat és retornat.</p>
+<p>Aquests operadors tenen una versió postfixa amb la forma <code class="docutils literal notranslate"><span class="pre">var++</span></code> i
+<code class="docutils literal notranslate"><span class="pre">var--</span></code>. La diferència amb la versió prefixa és que, la postfixa
+retorna el valor original de var i després l’incrementa.</p>
+</li>
+<li><p>negació: <code class="docutils literal notranslate"><span class="pre">!valor</span></code></p>
+<p>El valor ha de ser boolean. El resultat serà la negació.</p>
+</li>
+</ul>
+<p>Tots els operadors unaris tenen precedència respecte els operadors
+aritmètics. Així, l’expressió:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">dos</span> <span class="o">=</span> <span class="o">-(++</span><span class="n">un</span> <span class="o">+</span> <span class="n">un</span> <span class="o">*</span> <span class="o">-</span><span class="mi">2</span><span class="o">);</span>
+<span class="c1">//      ^^ primer incrementa en 1 el valor de un</span>
+<span class="c1">//                  ^ canvia el signe a 2</span>
+<span class="c1">//                ^ multiplica un (que val 2) per -2. És a dir -4.</span>
+<span class="c1">//           ^ suma un (que val 2) i -4, el que resulta en -2</span>
+<span class="c1">//    ^ ara - disposa del valor a canviar de signe, el que resulta en 2</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Compte</p>
+<p>Recorda que l’increment sobre la variable un es manté fora de
+l’expressió. Així, en l’exemple anterior, tant <code class="docutils literal notranslate"><span class="pre">un</span></code> com <code class="docutils literal notranslate"><span class="pre">dos</span></code>
+valen <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>És probable que t’hagi costat una mica d’entendre aquest exemple en
+una primera ullada. A mi també! En general, no és una pràctica
+recomanable la de barregar operadors que provoquen canvis amb aquells
+que no ho fan, doncs deixen un codi difícil d’entendre. És a dir, és
+preferible que <code class="docutils literal notranslate"><span class="pre">++var</span></code>, <code class="docutils literal notranslate"><span class="pre">--var</span></code> i <code class="docutils literal notranslate"><span class="pre">var=expr</span></code> apareguin sols en
+una única línia com a instrucció, sense fer servir el seu valor de
+retorn.</p>
+</div>
+</div>
+<div class="section" id="els-operadors-d-assignacio">
+<h2>Els operadors d’assignació<a class="headerlink" href="#els-operadors-d-assignacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>L’operador d’assignació més bàsic és <code class="docutils literal notranslate"><span class="pre">=</span></code> permet assignar un valor a una
+variable. Ha aparegut ja en diferents exemples i, és molt semblant al
+d’altres llenguatges de programació com ara el Python.</p>
+<p>Considera els següents exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
+
+<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>          <span class="c1">// assigna 1 a la variable 1</span>
+<span class="n">dos</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// assigna el resultat de l&#39;expressió 1 + 1 a la variable dos</span>
+<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>    <span class="c1">// assigna el valor 3 a les variables dos i un</span>
+</pre></div>
+</div>
+<p>Potser el més interessant és el darrer exemple. Donat que en Java, <code class="docutils literal notranslate"><span class="pre">=</span></code>
+és un operador, a banda de tenir <em>l’efecte secundàri</em> de modificar el
+valor d’una variable, retorna el valor assignat. Així l’expressió <code class="docutils literal notranslate"><span class="pre">dos</span> <span class="pre">=</span>
+<span class="pre">3</span></code> assigna <code class="docutils literal notranslate"><span class="pre">3</span></code> a la variable <code class="docutils literal notranslate"><span class="pre">dos</span></code> i retorna el valor <code class="docutils literal notranslate"><span class="pre">3</span></code>.
+Normalment amb aquest valor no en fem res (com a <code class="docutils literal notranslate"><span class="pre">un</span> <span class="pre">=</span> <span class="pre">1;</span></code> però en
+aquest darrer exemple, el <code class="docutils literal notranslate"><span class="pre">3</span></code> apareix com a operand d’un altre <code class="docutils literal notranslate"><span class="pre">=</span></code> i
+és assignat novament a una variable (en aquest cas <code class="docutils literal notranslate"><span class="pre">un</span></code>). Aquesta
+darrera expressió retorna també el valor <code class="docutils literal notranslate"><span class="pre">3</span></code> però ara cap variable el
+recull.</p>
+<p>Altres operadors d’assignació habituals, combinen l’operador bàsic amb
+algun altre operador binari.  És tracta més d’una compactació de notació
+que d’operadors nous.  Entre els exemples més habituals hi trobem: <code class="docutils literal notranslate"><span class="pre">+=</span></code>,
+<code class="docutils literal notranslate"><span class="pre">-=</span></code>, i <code class="docutils literal notranslate"><span class="pre">*=</span></code>, que ja coneixem de Python.</p>
+<p>Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
+<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">dos</span> <span class="o">+=</span> <span class="n">un</span><span class="o">;</span>  <span class="c1">// equival a dos = dos + 1;</span>
+</pre></div>
+</div>
+<p>Els operadors d’assignació són els que menys precedència tenen. Així, en
+l’expressió:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>var = expr;
+</pre></div>
+</div>
+<p>El primer que s’avaluarà serà sempre <code class="docutils literal notranslate"><span class="pre">expr</span></code> siguin quins siguin els
+operadors que hi hagi (fins i tot si són d’assignació com a <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">=</span>
+<span class="pre">c</span></code>).</p>
+</div>
+<div class="section" id="els-operadors-d-igualtat">
+<h2>Els operadors d’igualtat<a class="headerlink" href="#els-operadors-d-igualtat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els operadors d’igualtat disponibles en Java pels tipus primitius són els
+que ja coneixem en Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>: igual a</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: diferent de</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: més gran què</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>: més gran o igual què</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>: menor què</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>: més petit o igual què</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En cas que no sigui un tipus primitiu, normalment no farem servir cap
+d’aquests operadors.</p>
+<p>Això inclou els strings! A <a class="reference internal" href="java.strings.html"><span class="doc">Strings en Java</span></a> trobaràs com comparar
+dos strings.</p>
+</div>
+</div>
+<div class="section" id="els-operadors-logics">
+<h2>Els operadors lògics<a class="headerlink" href="#els-operadors-logics" title="Link permanent a aquest títol">¶</a></h2>
+<p>Java ofereix els operadors lògics habituals</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>: <em>and</em>. Si el primer operand avalua a fals, no s’avalua el segon operand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">||</span></code>: <em>or</em>. Si el primer operand avalua a cert, no  s’avalua el segon operand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?:</span></code>: L’operador condicional ternari. Té tres operands. Avalua el
+primer i si és cert avalua el segon. Altrament avalua el tercer.</p>
+<p>Exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">temperatura</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="o">?</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">30</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Si <code class="docutils literal notranslate"><span class="pre">temperatura</span></code> s’avalua a menys de 30, retornarà <code class="docutils literal notranslate"><span class="pre">temperatura</span> <span class="pre">+</span>
+<span class="pre">1</span></code>, altrament retornarà <code class="docutils literal notranslate"><span class="pre">30</span></code>.</p>
+<p>Recorda que en Python fèiem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">temperatura</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="k">else</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="exercici-7-tipus-i-operadors">
+<span id="exercici-tipusioperadors"></span><h2>Exercici 7. Tipus i operadors<a class="headerlink" href="#exercici-7-tipus-i-operadors" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per a cada operador de la següent llista, indica:</p>
+<ul class="simple">
+<li><p>quants operands requereix</p></li>
+<li><p>de quin tipus és cada operand</p></li>
+<li><p>de quin tipus és el resultat</p></li>
+</ul>
+<p>Els operadors són:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">++i</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">?</span> <span class="pre">b</span> <span class="pre">:</span> <span class="pre">c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anyActual</span> <span class="pre">&lt;=</span> <span class="pre">anyNeixement</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edat</span> <span class="pre">=</span> <span class="pre">novaEdat</span></code></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="java.strings.html" class="btn btn-neutral float-right" title="Strings en Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="java.tipus.html" class="btn btn-neutral float-left" title="Tipus de dades" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

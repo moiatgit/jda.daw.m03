@@ -608,6 +608,8 @@ El codi final resultant seria:
 
 Com ho veus? T'atreveixes a fer-ho tu?
 
+.. _exercici_rombos_python:
+
 Exercici 1. ☞ Rombos modulars
 =============================
 

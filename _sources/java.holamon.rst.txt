@@ -1,0 +1,139 @@
+########################
+Ritual Hola Món en Java!
+########################
+
+Ja sabem que per a poder obtenir la benedicció dels deus de la programació, ens
+cal fer un ritual cada cop que ens introduïm amb una nova tecnologia, oi?
+
+De la mateixa manera que ja ho vam fer amb Python a :doc:`ritual_holamon`, ens
+toca ara fer-ho amb Java.
+
+Segueix les passes:
+
+#. Obre una consola / terminal
+
+#. Invoca la consola de Java
+
+   .. code-block:: none
+
+        $ jshell
+        |  Welcome to JShell -- Version 11.0.1
+        |  For an introduction type: /help intro
+
+        jshell>
+
+   La darrera línia correspon al *prompt* de la consola de Java
+
+#. Escriu (sense comptar el prompt):
+
+   .. code-block:: none
+
+        jshell> System.out.println("Hola món!");
+        Hola món!
+
+Felicitats! Has fet el teu primer programa en Java!
+
+#. Surt de la consola de java amb *ctrl-d*
+
+#. Crea un fitxer anomenat ``HolaMon.java`` (compte amb les majúscules!) i
+   escriu-hi a dins:
+
+   .. code-block:: java
+      :linenos:
+
+      /*
+       * Programa que saluda al món
+       */
+      public class HolaMon {
+          public static void main(String[] args) {
+              System.out.println("Hola Món!");
+          }
+      }
+
+   D'acord, sí, hi ha moltes coses aquí pel poc que ha de fer, oi? A més,
+   probablement tot et soni una mica indesxifrable. No t'amoïnis, ja veuràs com
+   aviat ho entendràs tot.
+
+   De moment, et vull fer notar que el nom del fitxer, sense l'extensió,
+   apareix a la línia 4.
+
+   Un altre punt important és que, per molt Java que sigui, aquí també haurem de
+   posar comentaris a cada fitxer, com fèiem amb Python. Per si no ho veus
+   clar, els comentaris són les paraules que apareixen entre els símbols ``/*``
+   o ``*/``. Aquesta manera de marcar comentaris seria similar a la que fem en
+   Python amb triple cometes ``"""``.
+
+   Java també ens ofereix una marca per fer comentaris en una línia amb ``//``, que funcionen de la mateixa manera que el ``#`` de Python.
+
+   No oblidis de guardar el document!
+
+#. Novament a la consola, executa la següent comanda:
+
+   .. code-block:: none
+
+        $ javac HolaMon.java
+
+   Si tot ha anat bé, no tindràs cap missatge. Altrament, t'indicarà algun error
+   que molt probablement has comés en teclejar. Revisa el teu codi i torna a
+   provar fins que la comanda anterior no generi cap missatge.
+
+#. Comprova que s'ha creat un nou fitxer
+
+   .. code-block:: none
+
+        $ ls HolaMon.*
+        HolaMon.class  HolaMon.java
+
+   El nou fitxer ``HolaMon.class`` és la versió compilada del teu codi.
+
+   Fins ara, amb Python, no ens havia tocat fer aquesta passa de compilar doncs
+   Python és interpretat.
+
+   Per executar un programa en qualsevol llenguatge de programació, cal
+   traduir les instruccions a l'únic llenguatge que entén l'ordinador (el
+   codi màquina).
+
+   Els llenguatges *interpretats* tradueixen una petita part del codi i
+   l'executen, abans de passar a la següent. Els llenguatges *compilats*
+   tradueixen **tot** el codi del programa abans de que es pugui començar
+   l'execució.
+
+   Molts llenguatges moderns s'escapen una mica o molt
+   d'aquesta definició bàsica i, en lloc de traduir el codi a llenguatge
+   màquina, ho fan a un llenguatge intermedi que requerirà un altre
+   programa per que el tradueixi definitivament al llenguatge màquina.
+   Aquest és el cas de Java.
+
+   El programa que ha de traduir el codi
+   compilat de java es diu *jre* (*java runtime environment* o més conegut
+   como *màquina virtual de Java*.
+
+   En compilar, Java ens ha generat el fitxer ``HolaMon.class``, que conté
+   valors no imprimibles i per tant, no pot ser editat de la mateixa
+   manera que ``HolaMon.java``. Està orientat a ser llegit pel *jre*
+   i no per una persona.
+
+#. Finalment, executa el teu programa
+
+   .. code-block:: none
+
+        $ java HolaMon
+        Hola Món!
+
+    Fixa't que ara no ha calgut dir l'extensió ``.class``. El programa ``java``
+    és l'encarregat d'executar el codi compilat que apareix al fitxer ``HolaMon.class``.
+
+
+Exercici 1. Presentem-nos
+=========================
+
+Crea un nou programa anomenat ``EmpPresento.java`` que, en ser executat escrigui per pantalla el mateix
+que ``HolaMon.java``, excepte que, en comptes de *Hola Món!*, sortirà un missatge similar al següent:
+
+.. code-block:: none
+
+    Hola, sóc la Adelita, la futura millor desenvolupadora del Món!
+
+Com ja va passar la darrera vegada, si no et dius Adelita, canvia el nom. Pots
+modificar també la resta de la frase amb quelcom que sentis còmode.
+
