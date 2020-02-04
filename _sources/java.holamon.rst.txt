@@ -120,8 +120,8 @@ Felicitats! Has fet el teu primer programa en Java!
         $ java HolaMon
         Hola Món!
 
-    Fixa't que ara no ha calgut dir l'extensió ``.class``. El programa ``java``
-    és l'encarregat d'executar el codi compilat que apareix al fitxer ``HolaMon.class``.
+   Fixa't que ara no ha calgut dir l'extensió ``.class``. El programa ``java``
+   és l'encarregat d'executar el codi compilat que apareix al fitxer ``HolaMon.class``.
 
 
 Exercici 1. Presentem-nos
@@ -139,7 +139,7 @@ modificar també la resta de la frase amb quelcom que sentis còmode.
 
 .. important:: Ara que estem fent servir Java, ens pot ser interessant que
                *git* no guardi els fitxers `.class`. Per
-               fer-ho, afegeix la següent línia al teu ``,gitignore``
+               fer-ho, afegeix la següent línia al teu ``.gitignore``
 
                .. code-block:: none
 
