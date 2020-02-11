@@ -47,7 +47,7 @@ En Java l'implementaríem amb:
     int quantes = 0;
     String resposta = "";
     while (! resposta.equals("prou")) {
-        String resposta = entrada.next();
+        resposta = entrada.next();
         if (! resposta.equals("prou")) {
             quantes++;
         }
