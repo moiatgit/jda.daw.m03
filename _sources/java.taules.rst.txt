@@ -1,0 +1,239 @@
+######
+Taules
+######
+
+Com hem vist, a Java podem definir un array de qualsevol tipus. Per tant,
+també es poden definir arrays d'arrays.
+
+Als arrays d'arrays se'ls coneixen com *arrays multidimensionals* o *matrius* i,
+quan són de dos dimensions, simplement *taules*.
+
+Per exemple:
+
+.. code-block:: java
+
+    int[][] notesCursAlumnes;           // nr alumne x nr avaluació
+    notesCursAlumnes = new int[100];    // reservem espai pels 100 alumnes
+    notesCursAlumnes[3] = new int[4];   // reservem espai per les notes del quart alumne
+    notesCursAlumnes[3][1] = 10;        // el quart alumne va treure un 10 a la segona avaluació
+
+En Java, els arrays multidimensionals són arrays on cada element és un
+altre array, i aquests no cal que tinguin la mateixa longitud (només el
+tipus). De fet, en el exemple anterior, hi ha molts alumnes que no tenen
+espai reservat per posar les seves notes!
+
+A l'hora de copiar el contingut de dos arrays, ho podem fer amb algun
+bucle, per exemple:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    for (int i=0; i<notesCursEthel.length; i++) {
+        notesCursRahim[i] = notesCursEthel[i];
+    }
+
+Hi ha, però, una manera més eficient de fer-ho: fent servir la funció
+``arraycopy()``:
+
+.. code-block:: java
+
+    int[] notesCursEthel = { 8, 9, 10, 10 };
+    int[] notesCursRahim = new int[4];
+    System.arraycopy(notesCursEthel, 0, notesCursRahim, 0, 4);
+    //               ^ array amb les dades d'origen
+    //                               ^ índex del primer element a copiar
+    //                                  ^ array de destinació
+    //                                                  ^ índex de la primera posició on copiar
+    //                                                     ^ nombre d'elements a copiar
+
+
+Donat que els arrays són una estructura molt utilitzada en programació,
+Java ens ofereix vàries utilitats típiques per manipular-los. Per exemple,
+és típic haver d'inicialitzar tots o part dels valors d'un array a un
+determinat valor, o bé comprovar si existeix un determinat valor dins d'un
+array, o si dos arrays contenen exactament els mateixos valors o un és
+subarray d'un altre. A aquestes alçades del curs, però, tot plegat queda
+una mica massa gran. Encara no hem presentat ni els bucles! Si no et pots
+esperar, mira la classe `Arrays
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html>`_
+per més detalls.
+
+.. _exercici_taula_enters_a_string:
+
+Exercici 32. ☞ Taula d'enters a String
+======================================
+
+Desenvolupa un mòdul anomenat ``TaulesUtils.taulaToString(int[][])`` que
+composi un String a partir del contingut d'una taula d'enters. Els
+valors a mostrar apareixeran separats amb un espai i representa els
+números com a mínim amb amb vuit posicions.  (**pista**: "%8d")
+
+Per exemple, imprimir el resultat de ``taulaToString()`` sobre una
+taula de 3x4 podria tenir el següent aspecte:
+
+.. code-block:: none
+
+            1         2         3         4
+            5         6         7         8
+            9        10        11        12
+
+Fixa't que la primera dimensió de la taula es representa com a línies i la
+segona com a columnes.
+
+Exercici 33. ☞ Inicialització seqüencial
+========================================
+
+Desenvolupa el procediment ``TaulesUtils.inicialitzaSequencial(int[][])``
+que inicialitzi seqüencialment una taula d'enters.
+
+En mostrar el resultat amb ``mostraTaula(int[][])`` d'un array de 4x3 es veuria:
+
+.. code-block:: none
+
+    1        2        3        4
+    5        6        7        8
+    9       10       11       12
+
+Exercici 34. ☞ Taula de booleans a String
+=========================================
+
+Farem una nova versió de l'exercici :ref:`exercici_taula_enters_a_string`,
+aquest cop amb booleans.
+
+La sortida de la funció tindrà el següent comportanemnt:
+
+* els valors ``true`` els representarà amb una ``X``, i
+* els valors ``false`` amb un punt (``.``).
+
+Per exemple, una taula de 3x5 podria tenir el següent aspecte:
+
+.. code-block:: none
+
+    X...X
+    .X.X.
+    ..X..
+
+
+La signatura de la nova funció és ``String
+Taula.taulaToString(boolean[][])``.
+
+.. nota:: Fixa't que el nom és el mateix que el de l'exercici amb enters.
+    Java ens ho permet, ja que el tipus del paràmetre és diferent.
+
+
+Exercici 35. La primera diagonal
+================================
+
+Desenvolupa el mòdul ``TaulesUtils.primeraDiagonalTrue(boolean[][])``
+que inicialitzi una taula de booleans tot posant a ``true`` els valors de
+la primera diagonal i la resta a ``false``,
+de manera que en fer servir ``mostra(boolean[][])`` sobre el seu resultat
+d'una matriu de 5x6, es veurà:
+
+.. code-block:: none
+
+    X.....
+    .X....
+    ..X...
+    ...X..
+    ....X.
+
+Exercici 36. La segona diagonal
+===============================
+
+Desenvolupa el mòdul ``TaulesUtils.segonaDiagonalTrue(boolean[][])``
+que inicialitzi una taula de booleans tot posant a ``true`` els valors de
+la segona diagonal i la resta a ``false``,
+de manera que en fer servir ``mostra(boolean[][])`` sobre el seu resultat
+d'una matriu de 5x6, es veurà:
+
+.. code-block:: none
+
+    .....X
+    ....X.
+    ...X..
+    ..X...
+    .X....
+
+Exercici 37. Pas de vianants
+============================
+
+Desenvolupa el mòdul ``TaulesUtils.pasDeVianants(boolean[][])``
+que inicialitzi una taula de booleans tot posant a ``true`` els valors de
+les files parells i la resta a ``false``,
+de manera que en fer servir ``mostra(boolean[][])`` sobre el seu resultat
+d'una matriu de 5x4, es veurà:
+
+.. code-block:: none
+
+    ....
+    XXXX
+    ....
+    XXXX
+    ....
+
+Exercici 38. Zebra
+==================
+
+Desenvolupa el mòdul ``TaulesUtils.zebra(boolean[][])``
+que inicialitzi una taula de booleans tot posant a ``true`` els valors de
+les columnes parells i la resta a ``false``,
+de manera que en fer servir ``mostra(boolean[][])`` sobre el seu resultat
+d'una matriu de 5x7, es veurà:
+
+.. code-block:: none
+
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+    .X.X.X.
+
+Exercici 39. Taulell escacs
+===========================
+
+Desenvolupa el mòdul ``TaulesUtils.escacs(boolean[][])`` que inicialitzi
+una taula de booleans de manera que s'intercalin els valors
+``true``/``false`` com en un taulell d'escacs, i en fer servir
+``mostra(boolean[][])`` sobre el seu resultat d'una matriu de 8x8, es
+veurà:
+
+
+.. code-block:: none
+
+    .X.X.X.X
+    X.X.X.X.
+    .X.X.X.X
+    X.X.X.X.
+    .X.X.X.X
+    X.X.X.X.
+    .X.X.X.X
+    X.X.X.X.
+
+
+Exercici 40. ☼ Manteniment de la taula de booleans
+==================================================
+
+Desenvolupa un programa que permeti realitzar el manteniment d'una taula de
+booleans, tot oferint una consola amb les següents comandes:
+
+* ``ajuda``: mostra un text d'ajuda indicant les diferents opcions disponibles
+
+* ``set col pos``: posa a cert la coordenada (col, pos) de la taula
+
+  Si la coordenada queda fora de la taula, mostra el missatge ``Fora de rang``.
+
+* ``unset col pos``: posa a fals la coordenada (col, pos) de la taula
+
+  Si la coordenada queda fora de la taula, mostra el missatge ``Fora de rang``.
+
+* ``exit``: el programa finalitzarà l'execució.
+
+El programa obtindrà les dimensions de la taula del paràmetre ``args`` del mòdul
+``main()``. En cas que no es proporcionin els dos valors o bé que algun
+d'aquests no sigui un enter positiu entre 1 i 100, generarà
+l'error ``Dimensions vàlides entre 1 i 100`` i s'aturarà.
+
+El programa farà servir ``BooleanTableView`` per anar mostrant els valors de la
+taula mentre estigui en execució.
