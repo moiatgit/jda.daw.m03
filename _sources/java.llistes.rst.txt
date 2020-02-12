@@ -51,7 +51,7 @@ de prou versàtil és ``ArrayList``. Considera el següent exemple:
     System.out.println(paraules.size());    // ==> 0
     paraules.add("em");
     paraules.add("falten");
-    paraules.addAll("un");
+    paraules.add("un");
     paraules.add("element");
     System.out.println(paraules.size());    // ==> 4
     System.out.println(paraules.get(0));    // ==> em
