@@ -33,7 +33,5 @@ treballat amb Python.
     java.repeticions.rst
     java.salts.rst
     java.moduls.rst
-
-..
     java.sequencies.rst
 
