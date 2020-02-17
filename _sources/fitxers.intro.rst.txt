@@ -1,0 +1,99 @@
+#######################
+Introducció als fitxers
+#######################
+
+Què és un fitxer?
+=================
+
+Un fitxer és una seqüència de bytes (sí, un *array*) guardats en un
+dispositiu d'emmagatzemament secundari com ara un disc.
+
+Els fitxers disposen de tres posicions importants: la inicial, la
+final i l'actual. La posició inicial correspon a la que conté el
+primer byte (la posició 0 d'un array). La final és la que conté el
+darrer byte. Finalment, els fitxers també disposen de la posició en
+que tindrà lloc la següent operació sobre el fitxer. Les operacions
+són una lectura o una escriptura d'un byte.
+
+Pots imaginar-t'ho com quan fas un recorregut en un array:
+
+.. code-block:: java
+
+    byte[] dades = new byte[10]     // array amb les dades a recòrrer
+    for (int posAct = 0;            // posició inicial de l'array
+             posAct < dades.length; // posició final de l'array
+             posAct++) {            // següent posició al final de la iteració
+         dades[posAct]=1;           // operació d'escriptura a la posició actual
+    }
+
+Com en el cas del codi anterior, amb els fitxers generalment podem
+canviar la posició actual (``posAct``) cap al començament, cap al
+final o avançar, retrocedir, anar a una posició concreta, etc.
+
+Accés bàsic a un fitxer
+=======================
+
+Les passes per llegir els continguts d'un fitxer són:
+
+.. code-block:: none
+
+    obrir fitxer en lectura
+    llegir continguts del fitxer
+    tancar fitxer
+
+Similarment, per escriure dades a un fitxer, les passes són:
+
+.. code-block:: none
+
+    obrir fitxer en escriptura
+    escriure continguts al fitxer
+    tancar fitxer
+
+Els compiladors/intèrprets dels llenguatges moderns, solen fer-se càrrec del
+tancament dels fitxers oberts pel programa si ens descuidem de tancar-los. Amb
+tot, i molt especialment en el cas d'escriptura, és molt important que tanquem
+els fitxers que obrim doncs pot passar que es perdi informació.
+
+Tipus de fitxers
+================
+
+Malgrat tots els fitxers són bàsicament una seqüència de bytes, és molt còmode i
+habitual distingir dos tipus de fitxers:
+
+* fitxers de text
+
+  El seu contingut són bytes que corresponen a text. Poden ser llegits per un
+  editor com el que fem servir per codificar els nostres programes. Internament,
+  el text pot presentar, és clar, diferents formats. Per exemple, el codi d'un
+  programa en Java, un document XML o la sortida esperada d'un dels nostres
+  programes quan preparem proves.
+
+  A banda, el contingut dels fitxers de text pot estar representat en un o
+  altre format. Per exemple: text pla, csv (*comma separated values*),
+  XML, HTML, YAML, i un llarg etcètera.
+
+* fitxers binaris
+
+  El seu contingut no es pot llegir amb un editor convencional donat que conté
+  valors fora del rang de les lletres que formen un text vàlid.
+
+  Aquests fitxers necessiten un programa especial per a ser llegits (i escrits).
+  Alguns exemples són els fitxers .class que genera ``javac``, un fitxer
+  *tar.gz* amb tots els teus programes empaquetats i comprimits, un *mp3* amb la
+  teva cançó favorita o un *png* amb la foto d'un gatet.
+
+En aquesta part del curs, ens centrarem en els fitxers de text i no ens
+preocuparem del format.
+
+El sistema de fitxers
+=====================
+
+Els fitxers es troben dins d'un context que anomenarem *sistema de
+fitxers*. Es tracta d'un sistema, normalment jeràrquic, amb carpetes que
+contenen altres carpetes i fitxers.
+
+Hi ha diferents tipus de sistemes de fitxers, sovint associats al sistema
+operatiu. És d'agrair que el llenguatge de programació que fem
+servir, ens permeti desenvolupar aplicacions sense que ens hàgim de
+preocupar de en quin sistema de fitxers s'executaran, però no sempre serà
+així. Sortosament, Java ens ofereix aquesta abstracció.

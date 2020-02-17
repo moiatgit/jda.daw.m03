@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cerca &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Fitxers &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -26,7 +26,6 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -38,7 +37,9 @@
   <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
-    <link rel="search" title="Cerca" href="#" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Introducció als fitxers" href="fitxers.intro.html" />
+    <link rel="prev" title="Llistes" href="java.llistes.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -85,14 +86,20 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fitxers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fitxers.intro.html">Introducció als fitxers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers.java.html">Fitxers en java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers.gestio.html">Gestió de fitxers en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.flota.html">Enfonsar la flota</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -138,7 +145,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Cerca</li>
+      <li>Fitxers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,19 +178,32 @@
     
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="fitxers">
+<h1>Fitxers<a class="headerlink" href="#fitxers" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fins ara els programes que hem realitzat únicament fan servir les dades
+disponibles a la memòria principal de l’ordinador. Això implica que, o bé és el
+programa el que conté, dins del codi, les dades a mostrar (com ara els missatges
+que escriu per pantalla) o bé les dades provenen de l’usuari que les ha
+introduït <em>pacientment</em> a partir d’alguna petició del nostre programa. Ah! i un
+cop finalitza el programa, totes les dades desapareixen. En tornar-lo a
+executar, cal començar tot de nou.</p>
+<p>Com s’ho fan altres programes per disposar de dades d’execucions anteriors? Fan
+servir <strong>fitxers</strong>.</p>
+<p>Bé, de fet ja els coneixem els fitxers. On sinó queda emmagatzemat el codi dels
+nostres programes?</p>
+<p>En aquest tema ens endinsarem en la definició i ús de fitxers. Tot plegat
+aprendrem a fer programes que puguin tornar a treballar amb dades introduïdes en
+execucions anteriors.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.intro.html">Introducció als fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.java.html">Fitxers en java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.gestio.html">Gestió de fitxers en Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.flota.html">Enfonsar la flota</a></li>
+</ul>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
@@ -204,6 +224,15 @@
 
 
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fitxers.intro.html" class="btn btn-neutral float-right" title="Introducció als fitxers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="java.llistes.html" class="btn btn-neutral float-left" title="Llistes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -235,14 +264,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

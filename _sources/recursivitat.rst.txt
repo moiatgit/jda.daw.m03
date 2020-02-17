@@ -275,6 +275,8 @@ l'exercici de *copydepth* a iteratiu.
 Pots fer servir les mateixes proves que inclou l'exercici amb la versió
 recursiva.
 
+.. _exercici_trobar_un_fitxer_python:
+
 Exercici 49. ☼ Trobar un fitxer
 ===============================
 

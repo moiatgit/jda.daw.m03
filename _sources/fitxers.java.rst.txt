@@ -1,0 +1,309 @@
+###############
+Fitxers en java
+###############
+
+Veiem com podem accedir als fitxers amb el llenguatge de programació Java
+d'una manera fàcil.
+
+Llegint un fitxer amb ``Scanner``
+=================================
+
+L'accés a un fitxer és molt similar al que hem fet amb l'entrada i sortida
+estàndards. La diferència principal és troba en que l'opertura i el tancament
+del fitxer la realitza el sistema operatiu.
+
+Recorda que, per cada programa que arrenquem, el sistema operatiu ens obre tres
+fluxos que podem entendre'ls com fitxers, un per llegir (l'entrada estàndard) i
+dos per escriure (la sortida estàndard i la sortida estàndard d'error)
+
+Per exemple, en Java hem aprés a llegir de l'entrada estàndard fent servir la
+utilitat ``Scanner``.
+
+El següent codi llegeix tot el que se li passi per entrada estàndard fins rebre
+la paraula ``"prou"``.
+
+.. code-block:: java
+    :linenos:
+
+    import java.io.Exception;
+    import java.util.Scanner;
+    class DemoLlegeixEntradaEstandard {
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            String linia = "";
+            System.out.println("Escriu el que vulguis. 'prou' per finalitzar");
+            while (! linia.equals("prou")) {
+                linia = input.next();
+                System.out.println("Has escrit: '"+linia+"'");
+            }
+            System.out.println("Adéu");
+        }
+    }
+
+Fixa't ara les similituds amb el següent programa que ens mostrarà el seu codi font.
+
+.. code-block:: java
+    :linenos:
+
+    import java.io.Exception;
+    import java.io.File;
+    import java.util.Scanner;
+    class DemoLlegeixFitxer {
+        public static void main(String[] args) throws IOException {
+            File fitxer = new File("DemoLlegeixFitxer.java");
+            Scanner input = new Scanner(fitxer);
+            while (input.hasNext()) {
+                String linia = input.next();
+                System.out.println(linia);
+            }
+        }
+    }
+
+En aquest programa hi ha alguns punts interessants:
+
+* la línia 5 inicialitza una variable de tipus ``File`` amb el camí al fitxer
+  del que volem llegir -- en aquest cas el fitxer que conté el codi font del
+  programa.
+
+  ``File`` se n'encarrega d'obrir el fitxer quan sigui necessari, per aquesta
+  raó no veiem en aquest codi cap instrucció que l'obri explícitament.
+
+* la línia 6 inicialitza ``Scanner``. Aquest cop, en comptes de dir-li que ha de
+  llegir de l'entrada estàndard ``System.in``, li diem que ho faci del fitxer.
+
+* el ``while`` de la línia 7 crida a la funció ``Scanner.hasNext()`` que li
+  retorna cert mentre hi hagi alguna cosa que llegir al fitxer, i fals quan
+  arribi al final.
+
+* a la línia 8 estem llegint una línia del fitxer. Començarà amb la primera i, a
+  cada iteració, passarà a la següent (d'aquí la paraula *next*)
+
+* la línia 4, un cop definida la signatura del mòdulo ``main()`` apareixen les
+  paraules ``throws IOException``. Això és un requisit de ``Scanner`` quan
+  s'inicialitza amb un fitxer doncs, ara podria passar que el fitxer no existís
+  i ``Scanner`` vol que ho tinguem present. Més endavant entendrem què és això
+  de ``IOException`` i com les podem gestionar.
+
+
+Lectura i escriptura de fitxers de text en Java
+===============================================
+
+Java ens ofereix, a banda de ``Scanner`` diferents utilitats per accedir a
+fitxers. Es tracta d'un sistema molt ric i potent, del que aquí veurem una
+petita part.
+
+La manera més bàsica de llegir i escriure fitxers en Java és fent servir les
+utilitats ``FileReader`` i ``FileWriter`` que permeten especificar el camí al
+fitxer que volem 
+
+Analitzem el següent programa
+
+.. code-block:: java
+    :linenos:
+
+    import java.util.ArrayList;
+    import java.io.Exception;
+    import java.io.FileReader;
+    import java.io.FileWriter;
+    import java.io.BufferedReader;
+    import java.io.BufferedWriter;
+
+    public class DemoLlegeixEscriu {
+        public static void main(String[] args) throws IOException {
+            String path = "/tmp/unfitxerqualsevol.txt";
+
+            // guardem continguts inicials al fitxer
+            ArrayList<String> contingutInicial = new ArrayList<String>();
+            contingutInicial.add("La primera línia\n");
+            escriuFitxerDeText(path, contingutInicial, false);
+
+            // llegim el que ja hem guardat al fitxer
+            ArrayList<String> primeresLinies = llegeixFitxerDeText(path);
+            System.out.println("\nContinguts inicials de " + path);
+            mostraLinies(primeresLinies);
+
+            // afegim més continguts al fitxer
+            ArrayList<String> mesContinguts = new ArrayList<String>();
+            mesContinguts.add("Aquí tenim una línia més\nI una altra\n");
+            escriuFitxerDeText(path, mesContinguts, true);
+
+            // llegim el contingut final del fitxer
+            ArrayList<String> darreresLinies = llegeixFitxerDeText(path);
+            System.out.println("\nContinguts finals de " + path);
+            mostraLinies(darreresLinies);
+        }
+
+        /* Donat el camí a un fitxer, llegeix els seus continguts i els retorna en
+         * forma d'ArrayList */
+        static ArrayList<String> llegeixFitxerDeText(String path) throws IOException {
+            ArrayList<String> linies = new ArrayList<String>();
+            FileReader fileReader = new FileReader(path);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String linia = "";
+            while (linia != null) {
+                linia = bufferedReader.readLine();
+                if (linia != null) {
+                    linies.add(linia);
+                }
+            }
+            bufferedReader.close();
+            return linies;
+        }
+
+        /* Donat el camí a un fitxer i una seqüència de línies de text, escriu les
+         * línies de text al fitxer indicat.
+         * El booleà amplia permet indicar:
+         *  true: afegir les línies després dels continguts existents al fitxer
+         *  false: reemplaçar els continguts anteriors al fitxer pels nous */
+        static void escriuFitxerDeText(String path,
+                                          ArrayList<String> linies,
+                                          boolean amplia)
+                                          throws IOException {
+            FileWriter fileWriter = new FileWriter(path, amplia);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (String linia: linies) {
+                bufferedWriter.write(linia);
+            }
+            bufferedWriter.close();
+        }
+
+        /* Donada una seqüència de línies, les mostra per sortida estàndard */
+        static void mostraLinies(ArrayList<String> linies) {
+            for (String linia: linies) {
+                System.out.println("Linia: " + linia);
+            }
+        }
+    }
+
+Què fa el programa?
+
+#. inicialment escriu en un fitxer un cert text. En cas que el fitxer no existís,
+   el crea, i en cas que ja existís, el sobrescriu (reemplaça el contingut
+   original pel nou)
+
+#. llegeix el contingut del fitxer i el mostra per sortida estàndard
+
+#. afegeix més contingut al fitxer
+
+#. llegeix el contingut del fitxer novament, aquest cop amb el nou contingut, i
+   el mostra.
+
+
+Exercici 1. Fitxer amb el teu nom
+=================================
+
+Desenvolupa un programa que demani a l'usuari el nom d'un fitxer
+(sense camí) i el nom de l'usuari. El programa crearà o reemplaçarà un
+fitxer de text a ``/tmp/«nomfitxer»`` i hi posarà el nom de l'usuari a
+dins.
+
+Si no ha hagut error, en finalitzar l'execució del programa, hi trobaràs un
+fitxer amb només el contingut indicat.
+
+Exercici 2. Mostra els fitxers passats per ``arg``
+==================================================
+
+Desenvolupa un programa que, en cridar-lo, mostri el contingut dels fitxers que
+estiguin especificats a la línia de comandes.
+
+Per exemple, considera la següent simulació (incompleta):
+
+.. code-block:: bash
+
+    $ java MostraFitxers DemoLlegeixEscriu.java MostraFitxers.java
+    Continguts del fitxer DemoLlegeixEscriu.java
+    import java.util.ArrayList;
+    import java.io.FileReader;
+    …
+    Continguts del fitxer MostraFitxers.java
+    …
+
+
+Exercici 3. Les meves dades
+===========================
+
+Desenvolupa un programa que llegeixi el fitxer ``/tmp/dades.txt`` de manera que:
+
+* si una línia comença per ``Nom:``, guardi el que vingui a continuació com a
+  nom
+
+* si una línia comença amb ``Primer cognom:``, guardi el que vingui a continuació com
+  a primer cognom.
+
+* si una línia comença amb ``Segon cognom:``, guardi el que vingui a continuació com
+  a segon cognom.
+
+* si més d'una línia comença amb ``Nom:``. ``Primer cognom:`` o ``Segon
+  cognom:``, el programa es quedarà només amb el primer valor que trobi.
+
+* ignorarà la resta de línies
+
+Finalment, el programa mostrarà el nom i els cognoms que ha llegit o la cadena
+``"<no proporcionat>"`` si el fitxer no contenia aquesta informació.
+
+Per exemple, considera la següent simulació:
+
+.. code-block:: none
+
+    $ cat /tmp/dades.txt
+    Les meves dades són aquestes:
+    Nom: Laia
+    Edat: 19
+    Primer cognom: Argent
+    Nom: Laiona
+    Segon cognom Sànchez
+    De moment no vull dir-te més dades meves
+
+    $ java ExtreuDades
+    Nom: Laia
+    Primer cognom: Argent
+    Segon cognom: <no proporcionat>
+
+Fixa't que aparèixen dos noms i que el segon cognom no apareix ben especificat
+(li falten els ``:``)
+
+Exercici 4. Carrega una taula
+=============================
+
+Desenvolupa un programa que obtingui el nom d'un fitxer per línia de comandes,
+
+El programa obrirà llegirà el contingut del fitxer. El contingut esperat serà
+una taula de caracters ``X`` i ``.`` distribuïts en línies.
+
+El programa considerarà les ``X`` com a *true* i els punts com a *false*,
+i composarà una taula de booleans que mostrarà amb la funció
+``TaulesUtils.taulaToString(boolean[][])`` que ja vas desenvolupar a un
+:ref:`exercici anterior<exercici_taula_enters_a_string>`.
+
+En cas que el nombre de fitxers especificat sigui diferent de un, el programa
+finalitzarà amb el missatge d'error ``ERROR: especificar un i només un fitxer``.
+
+Si el fitxer presenta algun caràcter que no sigui ``X`` o ``.`` (a banda del
+salt de línia), el programa finalitzarà amb el missatge d'error ``ERROR:
+conté caracters no valids``.
+
+De la mateixa manera, si alguna de les línies presenta un nombre de caràcters
+diferent del de la primera línia, el programa finalitzarà amb l'error ``ERROR:
+taula inconsistent``.
+
+En cas que el fitxer estigui buit, és a dir, no s'hagi pogut llegir cap línia de
+``X`` i ``.``, el programa finalitzarà amb el missatge d'error ``ERROR: fitxer
+buit``.
+
+Per exemple, considera el següent contingut per fer la prova.
+
+.. code-block:: none
+
+    $ cat lletra_m.txt
+    ................
+    ..XX........XX..
+    ..XXX......XXX..
+    ..XXXX....XXXX..
+    ..XX.XX..XX.XX..
+    ..XX..XXXX..XX..
+    ..XX...XX...XX..
+    ..XX........XX..
+    ..XX........XX..
+    ..XX........XX..
+    ................
+
