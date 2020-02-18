@@ -53,9 +53,14 @@ Per que un taulell sigui vàlid:
 
   .. code-block:: none
 
-      1.22..
-      .1..22
-      ..22..
+
+     ·   A  B  C  D  E  F
+        __ __ __ __ __ __
+     1   1  .  2  2  .  .   1
+     2   .  1  .  .  2  2   2
+     3   .  .  2  2  .  .   3
+        __ __ __ __ __ __
+         A  B  C  D  E  F
 
   Aquí molts dels vaixells semblen tocar-se, però ho fan només per la
   seva diagonal. Per exemple el vaixell *C1D1* està separat per aigua
@@ -66,8 +71,12 @@ Per que un taulell sigui vàlid:
 
   .. code-block:: none
 
-      2333
-      2..1
+     ·   A  B  C  D
+        __ __ __ __
+     1   2  3  3  3   1
+     2   2  .  .  1   2
+        __ __ __ __
+         A  B  C  D
 
   Aquí, el vaixell *A1A2* és adjacent als vaixells *B1D1* i *A3A3*.
 
@@ -193,20 +202,20 @@ Les comandes acceptades seran, sense distingir majúscules de minúscules:
 
   .. code-block:: none
 
-        A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
-       __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
-    1   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    1
-    2   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    2
-    3   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    3
-    4   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    4
-    5   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    5
-    6   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    6
-    7   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    7
-    8   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    8
-    9   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    9
-   10   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   10
-       __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
-        A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
+     ·    A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
+         __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+      1   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    1
+      2   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    2
+      3   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    3
+      4   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    4
+      5   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    5
+      6   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    6
+      7   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    7
+      8   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    8
+      9   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    9
+     10   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   10
+         __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+          A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
 
 
   Malgrat el taulell pot arribar a ser molt gran per ser representat en
@@ -245,9 +254,7 @@ El funcionament del joc és el següent:
 
   .. code-block:: none
 
-      Mapa actual:
-
-            A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
+      ·     A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
            __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
         1   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    1
         2   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    2
@@ -361,7 +368,7 @@ més fàcil serà fer servir una taula de ``char``. Tu manes!
 Nom dels fitxers
 ----------------
 
-Els noms dels fitxers 
+Els noms dels fitxers
 podrien correspondre amb el nom del taulell indicat per la constructora
 (en minúscules), amb l'extensió ``.taulell`` i podrien estar guardats en
 un mateix directori (ex. ``taulells/``.
@@ -419,16 +426,27 @@ missatge d'error gestionat pel Java.
 Control de versions
 -------------------
 
-No oblidis, després de cada canvi significatiu, fer un *commit*!
+És molt important que realitzis un control de versions durant el
+desenvolupament d'aquesta pràctica, doncs forma part de l'avaluació.
 
-És molt important, doncs forma part de l'avaluació. Guarda el teu exercici
-com a ``06_06_flota/`` al teu repositori.
+Si has de treballar tu sola/sol, guarda el teu exercici com a
+``06_06_flota/`` al teu repositori de l'assignatura.
 
 En cas que el desenvolupis conjuntament amb una altra companya o company,
-assegura't que inclous el nom de tots els autors/autores a la capçalera de
-cada fitxer. Donat que els vostres repos són privats, no podreu compartir
-codi directament. Això, si bé resultarà incòmode, us facilitarà, encara
-que no forçarà, que tothom hagi de teclejar **tot** el programa.
+és preferible que creeu un nou repositori on treballar conjuntament. Feu
+:doc:`les mateixes passes <holagit>` que vau realitzar per construir el
+que feu servir en aquesta assignatura. Aquest cop, però, hi serem un/una
+més al repositori. Tot i que el repositori estarà dedicat a aquest
+exercici, incloeu tot el desenvolupament dins de la carpeta
+``06_06_flota/``.
+
+Aquesta experiència de treballar conjuntament sobre el mateix repositori
+ja és, en sí, molt enriquidora. Demaneu ajut quan apareguin dificultats.
+
+Assegureu-vos que incloeu el nom de tots els autors/autores a la capçalera
+de cada fitxer.
+
+No oblidis, després de cada canvi significatiu, fer un *commit*!
 
 Recorda que aquí l'objectiu no és l'eficiència en la producció de codi
 sinó l'eficiència en l'aprenentatge.
@@ -439,6 +457,10 @@ Com començar-ho tot plegat?
 
 Probablement el punt més difícil és començar a fer el programa. Et proposo
 el següent:
+
+* si has de treballar per parelles, creeu el nou repositori privat,
+  convideu-me i prepareu el vostre entorn local. Potser voldreu fer alguna
+  prova tot editant per separat el fitxer ``readme``.
 
 * creat un fitxer amb el nom del programa i defineix una bona capçalera.
   Pots fer servir inicialment el text d'aquest enunciat, però de seguida,

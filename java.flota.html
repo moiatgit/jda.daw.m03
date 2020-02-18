@@ -216,9 +216,13 @@ vaixells diferents, no poden ser consecutives. Es consideren
 consecutives quan és troben a la cel·la anterior o posterior en la
 mateixa fila o columna, però no diagonal.</p>
 <p>Exemple vàlid amb taulell 3x6:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.22..
-.1..22
-..22..
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·   A  B  C  D  E  F
+   __ __ __ __ __ __
+1   1  .  2  2  .  .   1
+2   .  1  .  .  2  2   2
+3   .  .  2  2  .  .   3
+   __ __ __ __ __ __
+    A  B  C  D  E  F
 </pre></div>
 </div>
 <p>Aquí molts dels vaixells semblen tocar-se, però ho fan només per la
@@ -226,8 +230,12 @@ seva diagonal. Per exemple el vaixell <em>C1D1</em> està separat per aigua
 del vaixell <em>A1A1</em>, només toca en diagonal amb els vaixells de la fila
 2, i no toca amb el vaixell <em>C3D3</em> perquè el taulell no és esfèric.</p>
 <p>Exemple no vàlid amb taulell 2x4:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2333
-2..1
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·   A  B  C  D
+   __ __ __ __
+1   2  3  3  3   1
+2   2  .  .  1   2
+   __ __ __ __
+    A  B  C  D
 </pre></div>
 </div>
 <p>Aquí, el vaixell <em>A1A2</em> és adjacent als vaixells <em>B1D1</em> i <em>A3A3</em>.</p>
@@ -330,7 +338,7 @@ Si no hi ha cap taulell carregat, el programa recomanarà fer <code class="docut
 <p>Altrament, el programa mostrarà una representació del taulell.
 Per exemple, en cas que el taulell demanat sigui de 10x28, i hi hagi
 un vaixell <em>D3D4</em>, es mostrarà:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·    A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
     __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
  1   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    1
  2   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    2
@@ -375,9 +383,7 @@ símbol d’interrogació. Com a ajuda, al voltant dels valors del
 taulell, apareixeran els noms de la fila/la columna corresponent.</p>
 <p>Per exemple, si el taulell és 10x28, la seva representació inicial
 serà:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mapa actual:
-
-      A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·     A  B  C  D  E  F  G  H  I  J  K  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB AC
      __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
   1   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    1
   2   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    2
@@ -524,14 +530,22 @@ missatge d’error gestionat pel Java.</p>
 </div>
 <div class="section" id="control-de-versions">
 <h3>Control de versions<a class="headerlink" href="#control-de-versions" title="Link permanent a aquest títol">¶</a></h3>
-<p>No oblidis, després de cada canvi significatiu, fer un <em>commit</em>!</p>
-<p>És molt important, doncs forma part de l’avaluació. Guarda el teu exercici
-com a <code class="docutils literal notranslate"><span class="pre">06_06_flota/</span></code> al teu repositori.</p>
+<p>És molt important que realitzis un control de versions durant el
+desenvolupament d’aquesta pràctica, doncs forma part de l’avaluació.</p>
+<p>Si has de treballar tu sola/sol, guarda el teu exercici com a
+<code class="docutils literal notranslate"><span class="pre">06_06_flota/</span></code> al teu repositori de l’assignatura.</p>
 <p>En cas que el desenvolupis conjuntament amb una altra companya o company,
-assegura’t que inclous el nom de tots els autors/autores a la capçalera de
-cada fitxer. Donat que els vostres repos són privats, no podreu compartir
-codi directament. Això, si bé resultarà incòmode, us facilitarà, encara
-que no forçarà, que tothom hagi de teclejar <strong>tot</strong> el programa.</p>
+és preferible que creeu un nou repositori on treballar conjuntament. Feu
+<a class="reference internal" href="holagit.html"><span class="doc">les mateixes passes</span></a> que vau realitzar per construir el
+que feu servir en aquesta assignatura. Aquest cop, però, hi serem un/una
+més al repositori. Tot i que el repositori estarà dedicat a aquest
+exercici, incloeu tot el desenvolupament dins de la carpeta
+<code class="docutils literal notranslate"><span class="pre">06_06_flota/</span></code>.</p>
+<p>Aquesta experiència de treballar conjuntament sobre el mateix repositori
+ja és, en sí, molt enriquidora. Demaneu ajut quan apareguin dificultats.</p>
+<p>Assegureu-vos que incloeu el nom de tots els autors/autores a la capçalera
+de cada fitxer.</p>
+<p>No oblidis, després de cada canvi significatiu, fer un <em>commit</em>!</p>
 <p>Recorda que aquí l’objectiu no és l’eficiència en la producció de codi
 sinó l’eficiència en l’aprenentatge.</p>
 </div>
@@ -540,6 +554,9 @@ sinó l’eficiència en l’aprenentatge.</p>
 <p>Probablement el punt més difícil és començar a fer el programa. Et proposo
 el següent:</p>
 <ul>
+<li><p>si has de treballar per parelles, creeu el nou repositori privat,
+convideu-me i prepareu el vostre entorn local. Potser voldreu fer alguna
+prova tot editant per separat el fitxer <code class="docutils literal notranslate"><span class="pre">readme</span></code>.</p></li>
 <li><p>creat un fitxer amb el nom del programa i defineix una bona capçalera.
 Pots fer servir inicialment el text d’aquest enunciat, però de seguida,
 intenta desglossar-lo en una llista d’elements petits. Per exemple:</p>
