@@ -548,9 +548,13 @@ interessants. Et proposo algunes:
 
   .. code-block:: none
 
-        ....
-        3.33
-        ....
+     ·   A  B  C  D
+        __ __ __ __
+     1   .  .  .  .   1
+     2   3  .  3  3   2
+     3   .  .  .  .   3
+        __ __ __ __
+         A  B  C  D
 
 * multijugador distribuït: vols aconseguir que els jugadors puguin
   connectar-se a la teva aplicació de manera remota i jugar? Finalitza com
