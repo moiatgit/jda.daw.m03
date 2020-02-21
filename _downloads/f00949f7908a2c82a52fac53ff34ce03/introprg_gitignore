@@ -1,8 +1,0 @@
-*~
-.*.swp
-.*.swo
-**/_build/
-.~lock.*#
-**/__pycache__/
-*.[oa]
-*.pyc
