@@ -1,0 +1,446 @@
+############
+Git i GitHub
+############
+
+Ara que ja hem ja em fet el nostre primer programa, passarem a preparar l'equip
+entorn per poder realitzar les activitats d'aquest curs.
+
+Assegura't que segueixes totes les passes amb precisió. No et preocupis, però,
+si t'equivoques, doncs no pots trencar res. En el pitjor dels casos et pot
+passar que et toqui tornar a començar. Demana ajut sense rubor.
+
+GitHub
+======
+
+`GitHub <https://github.com/>`_ [#altresxarxes]_ és una coneguda xarxa social
+per desenvolupadors.
+
+Caldrà que disposis d'un repositori a GitHub per a poder realitzar bona part de
+les activitats d'aquest curs.
+
+Disposar d'un repositori a GitHub presenta, a més de l'avantatge de poder veure
+avaluades les teves activitats, una sèrie d'avantatges interessants:
+
+* no perdràs cap fitxer ni contingut que pugis al teu GitHub
+
+* la feina que facis a classe la podràs continuar a casa (o allà on puguis) i,
+  en tornar a classe, et trobaràs les actualitzacions disponibles
+
+* et familiaritzaràs amb una de les eines més utilitzades i millor valorades
+  pels desenvolupadors en l'actualitat
+
+Crear repositori
+----------------
+
+Crear el teu repositori és molt fàcil. En primer lloc, ves a
+`https://github.com/` i crea't un compte.  Assegura't que el crees amb el correu
+electrònic del centre.
+
+Un cop disposes del compte, crea un repositori. 
+
+Anomena'l ``introprg``, marca'l com a **privat** i prem el botó de crear,
+deixan't la resta d'opcions sense tocar, tal i com es veu a la següent captura
+de pantalla.
+
+.. figure:: _images/gitcrearepo.png
+    :figclass: align-center
+    :alt: creació d'un repositori a GitHub
+
+Obtenir la URL del repositori
+-----------------------------
+
+GitHub et mostrarà la localització (URL) del teu repositori.
+
+.. figure:: _images/githubrepourl.png
+    :figclass: align-center
+
+Fes click sobre HTTPS (requadre vermell de la imatge anterior) i selecciona el
+text que apareix a la caixa blava. Fes ``ctrl-c`` per guardar aquesta adreça al
+*clipboard*. La necessitaràs més endavant.
+
+Afegir-me com a col·laborador
+-----------------------------
+
+Un cop has creat el nou repositori, cal que m'afegeixis com a col·laborador.
+
+Ves a ``settings``, selecciona ``collaborators`` i afegeix el meu usuari de
+github: ``moiatjda``.
+
+.. figure:: _images/githubcollaborator.png
+    :figclass: align-center
+
+
+.. important:: Recordem els punts importants per que els teus exercicis puguin
+   ser avaluats sense problemes:
+
+   * ha d'estar associat al teu compte de correu del centre
+
+   * ha de ser privat
+
+   * ha de tenir ``moiatjda`` com a col·laborador
+
+   * no ha de tenir més col·laboradors
+
+Espai de treball
+================
+
+Ara que ja tenim la part *remota* enllestida, passem a preparar el nostre
+espai de treball al PC.
+
+Obre una consola, per exemple amb ``ctrl-alt-t`` o ``alt-f2
+gnome-terminal``, tot i que segurament trobaràs també opcions als menús.
+
+Escriu a la consola les següents línies que comencen amb dòlar ``$``. No
+escriguis, però, el (``$``):
+
+.. code-block:: bash
+
+    $ cd
+    $ mkdir introprg
+    $ cd introprg
+    $ git init
+
+Les comandes anteriors han creat una carpeta anomenada ``introprg/`` a la
+carpeta principal del teu usuari al sistema, i han inicialitzat aquesta
+carpeta com a repositori ``git``.
+
+Descarrega els següents dos fitxers dins d'aquesta carpeta:
+
+* :download:`readme.rst <_recursos/introprg_readme.rst>`
+
+* :download:`.gitignore <_recursos/introprg_gitignore>`
+
+.. note::
+
+    És probable que si no has fet res especial, et descarregui els fitxers
+    dins d'una carpeta per defecte del teu sistema. Probablement
+    ``~/Baixades/``. En aquest cas, per moure els fitxers a la carpeta que
+    ens interessa, pots fer quelcom similar a:
+
+    .. code-block:: bash
+
+        $ mv -v ~/Baixades/introprg_* ~/introprg/
+
+Reanomena aquests fitxers per què tinguin sentit per ``git``:
+
+.. code-block:: bash
+
+    $ mv introprg_readme.rst readme.rst
+    $ mv introprg_gitignore .gitignore
+
+Comprovem que ha anat tot bé:
+
+.. code-block:: bash
+
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        readme.rst
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+Si és així, registrem els nous fitxers en el ``git``:
+
+.. code-block:: bash
+
+    $ git add readme.rst .gitignore
+    $ git commit -am "First commit"
+    [master (root-commit) f1f6b7f] First commit
+     2 files changed, 15 insertions(+)
+     create mode 100644 .gitignore
+     create mode 100644 readme.rst
+
+
+Vincularem ara aquest repositori local amb el que has creat al GitHub.
+Escriu:
+
+.. code-block:: bash
+
+    $ git remote add origin https://github.com/elteuusuari/introprg.git
+
+Fixa't que després de la paraula ``origin`` pots fer ``maj-crl-v`` per
+enganxar la url que has copiat de GitHub.
+
+Passem a personalitzar la teva carpeta:
+
+.. code-block:: bash
+
+    $ git config user.name "el teu nom"
+    $ git config user.email "latevaadreça@iesjoandaustria.org"
+
+Ara ja podem pujar aquests continguts a GitHub. Escriu:
+
+.. code-block:: bash
+
+    $ git push origin master
+
+Et demanarà el teu usuari i password del GitHub. En introduir-los, els
+continguts ja estaran salvats a GitHub. Si vols, ho pots comprovar mirant amb el
+navegador d'Internet.
+
+
+Exercici 1. Hola Git
+====================
+
+Fem el nostre primer exercici de manera que puguem comprovar que tot està
+correcte.
+
+En realitzar-ho, aprendràs com publicar una resposta al GitHub.
+
+L'exercici consisteix en editar un fitxer i escriure-hi algunes dades teves.
+
+Segueix les instruccions:
+
+#. Obre una consola i col·loca't a la carpeta de treball (``~/introprg/``)
+
+#. Crea una nova carpeta amb el nom ``00_01_hola_git/`` on deixarem
+   l'exercici, i entra-hi:
+
+   .. code-block:: bash
+
+        $ cd ~/introprg
+        $ mkdir 00_01_hola_git
+        $ cd 00_01_hola_git
+
+#. Descarrega el fitxer :download:`primer_exercici.rst
+   <_recursos/primer_exercici.rst>` i posa'l a la nova carpeta.
+
+#. Edita el fitxer ``primer_exercici.rst`` amb un editor de text pla
+
+   .. code-block:: bash
+
+        $ gedit primer_exercici.rst &
+
+   Aquest fitxer conté text pla en un format anomenat *ReStructuredText*.
+   Es tracta d'un format que permet ser llegit fàcilment per les persones,
+   a l'hora que pot ser interpretat per programes i convertir-lo a altres
+   formats, com ara un pdf.
+
+#. Emplena cada apartat on hi apareix ``«…»`` amb la teva resposta a la
+   secció corresponent. Si trobes que el text que hi apareix et limita la
+   manera amb la que voldries expressar-te, pots canviar-ho
+
+   Sobretot, no canviïs el text de les seccions ni tampoc el nom del
+   fitxer.
+
+#. La darrera secció és opcional. Hi pots afegir el que consideris oportú. En
+   cas que no tinguis res més a dir, posa-hi quelcom similar a *Res més a dir*.
+
+#. Guarda els canvis al fitxer (ex. amb ``ctrl-s``)
+
+#. Pots revisar que tot estigui bé, escrivint, des de la consola:
+
+   .. code-block:: bash
+
+        $ cat primer_exercici.rst
+
+   Si hi ha alguna cosa que no t'agrada, pots tornar-ho a editar.
+
+#. Des de la consola, registra els canvis al control de versions:
+
+   .. code-block:: bash
+
+        $ git add primer_exercici.rst
+        $ git commit -am "Completat l'exercici 00_01_hola_git"
+
+#. Un cop estigui tal i com vols la teva resposta, puja els canvis a GitHub
+
+   .. code-block:: bash
+
+        $ git push origin master
+
+   Hauràs d'indicar el teu usuari i el password
+
+Pots comprovar que tot està correcte, mirant directament a l'aplicació Web de
+GitHub.
+
+
+Un altre espai de treball
+=========================
+
+Un cop que hem guardat el nostre repositori a GitHub, ja el tenim disponible per
+a ser utilitzat des d'altres equips que disposin de ``git``.
+
+En aquesta activitat simularem que ens hem canviat de PC només canviant de
+directori, però les mateixes passes serveixen per recuperar la nostra feina en
+qualsevol altre equip.
+
+En primer lloc clonarem el nostre treball a la carpeta temporal ``/tmp/``.
+Sovint el contingut d'aquesta carpeta és eliminat cada cop que iniciem l'equip.
+Per tant, el que fem aquí no tindria gaire futur si no el pugem a GitHub.
+
+.. code-block:: bash
+
+    $ cd /tmp
+    $ git clone https://github.com/elteuusuari/introprg.git temporal
+    $ cd temporal
+
+Fixa't que disposes dels mateixos continguts que tenies al teu espai de treball
+guardat a la carpeta ``introprg/``
+
+Ara crearem un nou fitxer, l'afegirem a ``git`` i el pujarem a GitHub
+
+El podem crear, per exemple, editant-lo:
+
+.. code-block:: bash
+
+    $ gedit eliminam.txt
+
+Però com que estem en el món GNU/Linux, ho farem automàticament amb una sola
+línia:
+
+.. code-block:: bash
+
+    $ echo 'un fitxer a eliminar' > eliminam.txt
+
+Podem comprovar que el fitxer hi és, fent servir la utilitat ``ls``
+
+.. code-block:: bash
+
+    $ ls
+    …
+    eliminam.txt
+    …
+
+També podem consultar el contingut del fitxer, per exemple, fent servir la
+utilitat ``cat``:
+
+.. code-block:: bash
+
+    $ cat eliminam.txt
+    un fitxer a eliminar
+
+Ara toca dir-li a ``git`` que ha de gestionar aquest nou fitxer:
+
+.. code-block:: bash
+
+    $ git add eliminam.txt
+    $ git commit -am "Afegit un fitxer des de l'espai de treball temporal"
+    $ git push origin master
+
+Un cop introduït el password, el nou fitxer hauria d'estar a GitHub.
+
+Ara simularem que tornem al nostre equip de classe, i recuperarem els continguts
+que hem realitzat al directori temporal:
+
+.. code-block:: bash
+
+    $ cd ~/introprg
+    $ git pull origin master
+
+Un cop introduït el password, ja tindrem disponible el fitxer ``eliminam.txt``.
+
+.. code-block:: bash
+
+    $ cat eliminam.txt
+    un fitxer a eliminar
+
+Ara que ja hem vist com actualitzar la feina realitzada en un altre lloc, ja
+podem eliminar aquest fitxer que no necessitem per res. Primer l'eliminarem del
+directori de treball i després del GitHub
+
+.. code-block:: bash
+
+    $ rm eliminam.txt
+    $ git status
+    …
+    deleted:     eliminam.txt
+    …
+
+Fixa't que la resposta de ``git status`` és que el fitxer ``eliminam.txt`` ha
+estat eliminat. Indicarem a ``git`` que el volem eliminat i pujarem els canvis a
+GitHub, on també quedarà eliminat.
+
+.. code-block:: bash
+
+    $ git commit -am "eliminat fitxer que feia nosa"
+    $ git push origin master
+
+Ja està.
+
+Si vols practicar una mica més, pots tornar a ``/tmp/temporal/`` i fer un ``git
+pull`` per que el fitxer quedi eliminat també allà.
+
+Exercici 2. ☼ Resum de comandes
+===============================
+
+.. sidebar:: Exercicis opcionals
+
+    Veuràs que els exercicis opcionals apareixen marcats amb el símbol **☼** al
+    seu títol.
+
+    Els exercicis opcionals solen servir per repassar o aprofundir en els
+    conceptes que hem treballat fins ara. Malgrat siguin opcionals, és molt
+    recomanable que els facis sempre que puguis. Recorda: *com més hi poses, més
+    en reps*.
+
+Aquest exercici és opcional però **molt recomanable**.
+
+En aquesta secció, hem vist un munt de noves comandes des de la consola de
+GNU/Linux. És molt fàcil que les oblidem, així que et proposo que et facis uns
+apunts.
+
+Potser voldràs guardar aquests apunts també en el teu repositori. Et proposo que
+creis una carpeta anomenada ``apunts/`` dins de ``introprg/``. En acabar, no
+oblidis pujar els canvis a GitHub!
+
+Crea un document, per exemple ``apunts.rst`` o ``apunts.odt`` i completa la
+següent taula amb una descripció de què fa cada comanda:
+
++-------------------------------+------------------------------------------------+
+| Comanda                       | Descripció                                     |
++===============================+================================================+
+| $ mkdir carpeta/              | crea una carpeta anomenada ``carpeta/``        |
++-------------------------------+------------------------------------------------+
+| $ cd carpeta/                 | canvia el directori actual a ``carpeta/``      |
++-------------------------------+------------------------------------------------+
+| $ cat fitxer                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ gedit fitxer &              |                                                |
++-------------------------------+------------------------------------------------+
+| $ ls                          |                                                |
++-------------------------------+------------------------------------------------+
+| $ cat fitxer                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ rm fitxer                   |                                                |
++-------------------------------+------------------------------------------------+
+| $ git init                    | Permet inicialitzar un repositori git          |
++-------------------------------+------------------------------------------------+
+| $ git clone                   |                                                |
++-------------------------------+------------------------------------------------+
+| $ git status                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ git add                     |                                                |
++-------------------------------+------------------------------------------------+
+| $ git commit                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ git push                    |                                                |
++-------------------------------+------------------------------------------------+
+| $ git pull                    |                                                |
++-------------------------------+------------------------------------------------+
+
+Et recomano que vagis modificant aquesta llista de comandes, a mida que vagis
+trobant-te noves comandes. De fet, aquesta llista que et proposo ni tant sols
+conté ja totes les comandes que has vist. Se t'acut alguna?
+
+----
+
+.. [#altresxarxes] A banda del GitHub hi ha d'altres xarxes similars
+   disponibles. Per exemple, `gitlab <https://about.gitlab.com/>`_ o `BitBucket
+   <https://bitbucket.org/>`_.
+
+   No vol dir que aquestes altres xarxes siguin pitjors. He escollit GitHub
+   només perquè ja la faig servir per hostatjar aquests apunts i per
+   uniformitzar la gestió de les teves activitats.
+
+   Et proposo que facis una ullada a les altres xarxes i, si hi trobes
+   avantatges, m'ho comuniquis perquè ho tingui en comptes en futures edicions
+   del curs.
+

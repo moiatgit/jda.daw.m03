@@ -1,0 +1,126 @@
+##################
+El bucle ``while``
+##################
+
+``while`` i ``for`` ens permeten fer bucles. És a dir, fer que un codi es
+repeteixi un cert nombre de vegades.
+
+El ``for`` ens permetia *recórrer* diferents valors des d'un primer fins a
+un darrer i executar el codi corresponent, un cop per cada valor que pren
+la seva variable de recorregut.
+
+``while`` també ens permetrà repetir el codi però, en comptes de recórrer
+una seqüència de valors, ho farà *mentre* una condició sigui certa.
+
+Podem entendre ``while`` com un ``if`` en el que el bloc pot ser executat
+més d'un cop.
+
+.. code-block:: python
+
+    if condició:
+        fes_quelcom()
+
+    while condició:
+        fes_quelcom()
+
+A diferència de ``if`` i de ``for``, el ``while`` pot entrar en el que s'anomena *bucle infinit*.
+Per exemple, considera el següent codi:
+
+.. code-block:: python
+
+    while 1 <= 2:
+        print('No em canso de dir això')
+
+.. tip:: Si executes el codi anterior, hauràs de matar el procés, per exemple, amb ``ctrl-c``.
+
+Exercici 45. ☞ Suma enters
+==========================
+
+Desenvolupa un programa que demani a l'usuari nombres enters positius fins que entri la paraula 'prou'.
+
+El programa indicarà quan el valor introduït no sigui un enter vàlid.
+
+Fes que el teu programa es comporti segons les simulacions següents:
+
+.. code-block:: none
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    prou
+    El total és 0
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    1
+    Introdueix un nombre o "prou" per finalitzar:
+    dos
+    No és un nombre enter vàlid
+    Introdueix un nombre o "prou" per finalitzar:
+    2
+    Introdueix un nombre o "prou" per finalitzar:
+    3
+    Introdueix un nombre o "prou" per finalitzar:
+    prou
+    El total és 6
+
+
+Exercici 46. ☞ Suma enters (més informativa)
+============================================
+
+Realitza una nova versió del programa anterior, de manera que sigui més informativa la interacció.
+
+La nova versió respectarà les següents simulacions:
+
+.. code-block:: none
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    prou
+    El total és 0
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    1
+    S'ha registrat el valor 1
+    dos
+    S'ha ignorat el valor dos
+    2
+    S'ha registrat el valor 2
+    3
+    S'ha registrat el valor 3
+    prou
+    El total és 6
+
+Exercici 47. ☞ Suma enters (incremental)
+========================================
+
+Encara farem una nova versió del programa anterior. Aquest cop, anirà informant
+de quant porta sumat fins ara.
+
+.. code-block:: none
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    prou
+    El total és 0
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    1
+    S'ha registrat el valor 1. En portem 1
+    dos
+    S'ha ignorat el valor dos. En portem 1
+    2
+    S'ha registrat el valor 2. En portem 3
+    3
+    S'ha registrat el valor 3. En portem 6
+    prou
+    El total és 6
+
+    $ pythonr3 sumahotot.py
+    Introdueix un nombre o "prou" per finalitzar:
+    un
+    S'ha ignorat el valor un. En portem 0
+    prou
+    El total és 0
+

@@ -1,0 +1,37 @@
+################
+De Python a Java
+################
+
+Fins ara hem tingut una introducció a la programació amb Python. Es tracta d'un
+llenguatge força flexible, que ens ha permès accedir als conceptes bàsics de la
+programació de manera molt fluida.
+
+Ara ens endinsem a una nova aventura: traslladar els conceptes que hem aprés a
+un nou llenguatge: Java.
+
+Java és un dels llenguatges de programació més utilitzats al món. Entre els seus
+avantatges està que apareix com a llenguatge de referència a molta part de la
+bibliografia i cursos sobre orientació a objectes, una manera d'entendre la
+programació força estesa i que, aviat coneixerem.
+
+A continuació et presento Java a partir dels conceptes de programació que ja hem
+treballat amb Python.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    java.versio.rst
+    java.holamon.rst
+    java.variables.rst
+    java.tipus.rst
+    java.operadors.rst
+    java.strings.rst
+    java.expressions.rst
+    java.basicinout.rst
+    java.condicionals.rst
+    java.repeticions.rst
+    java.salts.rst
+    java.moduls.rst
+    java.sequencies.rst
+

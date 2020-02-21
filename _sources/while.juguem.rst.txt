@@ -1,0 +1,465 @@
+#######################
+Juguem amb el ``while``
+#######################
+
+
+.. _exercici_lloro_python:
+
+Exercici 52. ☞ El lloro
+=======================
+
+Desenvolupa un programa que demani a l'usuari paraules i les repeteixi
+fins que l'usuari introdueixi "adéu".
+
+Considera la simulació:
+
+.. code-block:: none
+
+    python3 lloro.py
+    El lloro pregunta paraula:
+    hola
+    El lloro diu: hola
+    El lloro pregunta paraula:
+    què tal?
+    El lloro diu: què tal?
+    El lloro pregunta paraula:
+    adéu
+    Adéu
+
+Fixa't que la resposta del lloro canvia lleugerament en finalitzar.
+
+Exercici 53. ☞ Compta lletres
+=============================
+
+Desenvolupa un programa que compti les lletres de totes les paraules que li
+passin, fins que li diguin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :emphasize-lines: 2, 7, 10, 15, 18, 21, 24, 27, 30, 32
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    hola
+    i
+    adéu
+    prou
+    Has introduït 9 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    hola
+    i
+    a10
+    prou
+    Has introduït 6 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+
+    prou
+    Has introduït 0 lletres
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    a!
+    prou
+    Has introduït 1 lletra
+
+    $ python3 comptalletres.py
+    Ves introduïnt paraules i acaba amb "prou"
+    prou
+    Has introduït 0 lletres
+
+**Nota**: fixa't que només compta lletres (ni nombres ni símbols).
+
+Exercici 54. ☞ Validador de matrícules
+======================================
+
+Desenvolupa un programa que validi matrícules fins que li indiquin prou.
+
+El teu programa respectarà la següent simulació:
+
+.. code-block:: none
+    :emphasize-lines: 2, 8
+
+    $ python3 validamatricules.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCD
+    Vàlida
+    1234ACD
+    No vàlida
+    prou
+    Has introduït 1 matrícula vàlida
+
+
+.. _exercici_informes_capicuitat:
+
+Exercici 55. ☞ Informes de capicuïtat
+=====================================
+
+Desenvolupa un programa que indiqui la capicuïtat de les matrícules fins que li indiquin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :emphasize-lines: 2, 14, 17, 21, 24, 28
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCB
+    Capicua de lletres
+    1221BCD
+    Capicua de números
+    1221ABC
+    Matrícula no vàlida
+    1221BCB
+    Capicua de lletres i números
+    1234BCD
+    Matrícula avorrida
+    prou
+    Has introduït 4 matrícules vàlides; 3 interessants.
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1221ABC
+    Matrícula no vàlida
+    prou
+    No has introduït cap matrícula vàlida.
+
+    $ python3 informescapicuitat.py
+    Introdueix matricules o "prou" per finalitzar
+    1234BCD
+    Matrícula avorrida
+    prou
+    Has introduït 1 matrícula vàlida; cap interessant.
+
+Exercici 56. ☞ L'ascensor continu
+=================================
+
+Recordes la pràctica de l'ascensor? (:doc:`condicionals_juguem`)
+
+En aquesta ocassió, oferirem un menú per interaccionar amb el nostre ascensor.
+Inicialment, l'ascensor es trobarà a la *planta baixa*.
+
+Una simulació d'interacció és:
+
+.. code-block:: none
+    :emphasize-lines: 9, 17, 26, 34, 43, 51, 60, 68, 77, 86, 94, 102
+
+    $ python3 ascensorcontinu.py
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    b
+    No pot pujar tant
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    a
+    No pot pujar tant
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    No pot baixar tant
+    Es troba al primer pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    c
+    No pot baixar tant
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    No pot baixar tant
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    b
+    Es troba al segon pis
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    d
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    f
+    No és una opció vàlida
+    Es troba a la planta baixa
+    Seleccioni una opció:
+        a: pujar un pis
+        b: pujar dos pisos
+        c: baixar un pis
+        d: baixar dos pisos
+        x: sortir de l’ascensor
+    x
+    Adéu
+
+
+Exercici 57. ☞ La calculadora iterativa
+=======================================
+
+Desenvolupa una calculadora com la *calculadora senzilla* de
+:ref:`exercici_calculadora_senzilla_python`. Aquest cop, però, el programa
+permetrà seguir introduint peticions fins que li diguin prou.
+
+El teu programa respectarà les següents simulacions:
+
+.. code-block:: none
+    :emphasize-lines: 4, 6, 8, 11, 13, 15, 18, 20, 22, 25, 27, 29, 32, 34, 36, 38, 44, 50, 52, 58, 60, 62, 68, 71, 74, 76, 79, 81, 83, 86
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    5
+    4 + 5 = 9
+    Primer operand?
+    4
+    Operador?
+    -
+    Segon operand?
+    5
+    4 - 5 = -1
+    Primer operand?
+    4
+    Operador?
+    *
+    Segon operand?
+    5
+    4 * 5 = 20
+    Primer operand?
+    4
+    Operador?
+    /
+    Segon operand?
+    0
+    No es pot dividir entre 0
+    Primer operand?
+    -3
+    Operador?
+    *
+    Segon operand?
+    +5
+    -3 * 5 = 15
+    Primer operand?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    prou
+    ok
+
+    $ python3 calculadoraiterativa.py
+    Demana'm que vols que calculi. Finalitza amb "prou"
+    Primer operand?
+    1,5
+    L'operand no és un enter
+    Primer operand?
+    un
+    L'operand no és un enter
+    Primer operand?
+    1
+    Operador?
+    ^
+    Operador ^ no està disponible
+    Primer operand?
+    1
+    Operador?
+    +
+    Segon operand?
+    dos
+    L'operand no és un enter
+    Primer operand?
+    prou
+    ok
+
+Fixa't que es considera un operand vàlid quan és un enter. Els enters poden
+començar amb ``+`` i amb ``-``.
+
+
+.. _exercici_rimes_python:
+
+Exercici 58. ☞ Rimes
+====================
+
+Desenvolupa un programa que vagi recollint frases mentre *rimin* amb la frase
+anterior. Es considera que dues frases rimen si acaben amb la mateixa lletra.
+
+Una simulació:
+
+.. code-block:: none
+    :emphasize-lines: 2,7
+
+    $ python3 rimes.py
+    Introdueix frases que rimin
+    Et dic hola
+    perquè mola
+    Així no et sents sola
+    m'he cansat de rimar
+    Has introduït 3 rimes
+
+**Pista**: probablement et caldrà guardar quelcom de cada iteració per la
+següent.
+
+Exercici 59. ☞ Històries encadenades
+====================================
+
+Programa ara un divertit joc infantil en el que cada frase hagi de
+començar per la mateixa paraula amb que va acabar la frase anterior.
+
+El programa finalitzarà quan l'usuari s'equivoqui.
+
+.. code-block:: none
+    :emphasize-lines: 2, 7
+
+    $ pythonr3 historiesencadenades.py
+    Introdueix frases encadenades
+    Qui comença guanya
+    Guanya qui menteix
+    Menteix qui no diu veritat
+    Veritats com temples
+    Has introduït 3 frases encadenades
+
+**Fixat**: no considera majúscules/minúscules però si paraules completes.
+
+.. _exercici_lletra_continguda_python:
+
+Exercici 60. Lletra continguda
+==============================
+
+Desenvolupa una funció que ens permeti saber si una lletra està continguda en
+una paraula.  La funció ens retornarà la posició de la primera aparició de la
+lletra a la paraula, o -1 si no es troba, o bé el rebut no era una lletra.
+
+.. code-block:: python
+
+    >>> lletra_continguda('a', 'amic')
+    0
+    >>> lletra_continguda('c', 'amic')
+    3
+    >>> lletra_continguda('x', 'amic')
+    -1
+    >>> lletra_continguda('mi', 'amic')
+    -1
+    >>> lletra_continguda('', 'amic')
+    -1
+    >>> lletra_continguda('a', '')
+    -1
+
+.. _exercici_paraula_continguda_python:
+
+Exercici 61. Paraula continguda
+===============================
+
+Desenvolupa una funció que permeti saber si una paraula està continguda en una
+altra. La funció ens retornarà la posició de la primera lletra on comença la
+paraula cercada dins de la segona paraula, o -1 si no es troba.
+
+.. code-block:: python
+
+    >>> paraula_continguda('ana', 'banana')
+    1
+    >>> paraula_continguda('ana', 'campanada')
+    4
+    >>> paraula_continguda('ana', 'maduixa')
+    -1
+    >>> paraula_continguda('xat', 'maduixa')
+    -1
+    >>> paraula_continguda('', 'maduixa')
+    0
+    >>> paraula_continguda('ana', '')
+    -1
+
+*important*: un cop trobi la paraula la primera vegada, **no** continuarà
+recorrent la segona paraula.
+

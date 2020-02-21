@@ -1,0 +1,449 @@
+#########################
+Juguem amb les seqüències
+#########################
+
+A continuació et proposo uns quants exercicis amb seqüències.
+
+Per tots ells es demana:
+
+* definir els casos de test amb *doctest* o *pytest*. No et quedis només
+  amb els que et proporcioni l'enunciat. Es tracta de que et plantegis
+  quins casos de test hauria de passar el teu programa per ser considerat
+  correcte.
+
+  Et proposo que, un cop hagis definit els casos de test, i abans de
+  començar a codificar la solució al problema, discuteixis amb
+  alguna companya o company si us falten casos a implementar.
+
+* en cas d'indexar, no fer servir ``:`` dins de ``[]``. És a dir, els
+  índexs seran sempre un valor numèric únic.
+
+* en cas de fer servir l'operador ``in``, a continuació sempre haurà
+  d'aparèixer ``range()``.
+
+
+.. _exercici_notes_en_maco_python:
+
+Exercici 18. ☞ Notes en maco
+============================
+
+Desenvolupa una funció que composi un string a partir d'una seqüència
+d'enters de manera llegible.
+
+Considera els *doctest*
+
+.. code-block:: python
+
+    >>> sequencia_maca((1, 2, 3))
+    '1, 2 i 3'
+    >>> sequencia_maca((1,))
+    '1'
+    >>> sequencia_maca(())
+    'cap'
+
+**Pista**: Pensa el cas de test quan l'entrada té longitud 2.
+
+Exercici 19. ☞ Conversor de string a tupla de lletres
+=====================================================
+
+Desenvolupa una funció que converteixi un string a una seqüència de lletres
+(caracters)
+
+.. code-block:: python
+
+    >>> string2tuple('hola')
+    ('h', 'o', 'l', 'a')
+    >>> string2tuple('')
+    ()
+
+Exercici 20. ☞ Conversor de tuples de lletres a string
+======================================================
+
+Desenvolupa una funció que converteixi una tupla de lletres a string.
+
+La tupla pot contenir tant lletres com codis de lletres (recorda les
+funcions ``ord()`` i ``chr()``)
+
+.. code-block:: python
+
+    >>> tuple2string(('h', 111, 'l', 97))
+    'hola'
+    >>> tuple2string(())
+    ''
+
+Exercici 21. ☞ Tuples capicua
+=============================
+
+Farem un exercici similar al de :ref:`exercici_textscapicua`. Aquest cop
+amb tuples.
+
+Pots considerar que tots els elements que et passin seran de tipus string.
+
+De regal, un dels casos de test:
+
+.. code-block:: python
+
+    >>> tupla_capicua(('Una', 'està', 'sola', 'com', 'sola', 'està', 'una'))
+    True
+
+Fixa't que s'espera que ignori majúscules.
+
+**Nota**: segur que no vols intentar fer servir directament la funció que
+vas realitzar per :ref:`exercici_textscapicua`?
+
+
+Exercici 22. ☞ Afegir entrada a tupla si no hi és
+=================================================
+
+Desenvolupa una funció que rebi una tupla i un valor, i que crei una nova
+tupla a partir de la tupla rebuda, més el valor en cas que aquest no hi
+fos.
+
+.. code-block:: python
+
+    >>> afegeix_si_no_hi_es((4, 3, 6), 3)
+    (4, 3, 6)
+    >>> afegeix_si_no_hi_es((4, 3, 6), 5)
+    (4, 3, 6, 5)
+
+.. _exercici_manteniment_notes_python:
+
+Exercici 23. ☞ Manteniment de notes
+===================================
+
+Desenvolupa un programa que ofereixi un entorn operatiu pel manteniment de
+les notes d'una classe.
+
+Les opcions que admetrà són:
+
+* 'ajuda': mostra les opcions disponibles
+
+* 'afegeix': afegeix una nota
+
+* 'mostra': mostra la seqüència de notes
+
+* 'surt': finalitza i surt
+
+Per facilitar la visualització, el programa oferirà el *prompt* ``>``
+
+Una simulació d'execució seria:
+
+.. code-block:: none
+    :linenos:
+    :emphasize-lines: 3
+
+    $ python3 mantenimentnotes.py
+    Manteniment de notes ('ajuda' per obtenir ajuda)
+    > ajuda
+    Les opcions disponibles són:
+    * ajuda: mostra aquesta ajuda
+    * afegeix: afegeix una nota
+    * mostra: mostra la seqüència de notes
+    * surt: finalitza i surt
+    > mostra
+    cap
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > -1
+    cancel·lat
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 5
+    fet
+    > mostra
+    5
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 4
+    fet
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 14
+    només notes entre 0 i 10
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > dos
+    no és un enter positiu
+    > mostra
+    5 i 4
+    > comanda inventada
+    no t'entenc
+    > surt
+    adéu
+
+*Nota*: abans de començar a codificar, considera descomposar el problema
+en subproblemes. El codi del teu programa hauria de presentar aquesta
+estructura:
+
+.. code-block:: python
+
+    """
+        «capçalera descriptiva»
+    """
+
+    # «mòduls de suport»
+
+    def main():
+        # mòdul principal. Contindrà poc més que la inicialització de la
+        # tupla de notes i un bucle que anirà llegint les respostes dels
+        # usuaris i cridant als mòduls corresponents per que tractin cada
+        # resposta
+        pass
+
+    if __name__ == "__main__":
+        main()
+
+
+Exercici 24. ☞ El manteniment de notes ampliat
+==============================================
+
+Amplia el programa de manteniment de notes amb la possibilitat de demanar
+la nota mitja, la màxima, la mínima i quantes notes en portem.
+
+Una simulació:
+
+.. code-block:: none
+
+    $ python3 mantenimentnotes.py
+    Manteniment de notes ('ajuda' per obtenir ajuda)
+    > ajuda
+    Les opcions disponibles són:
+    * ajuda: mostra aquesta ajuda
+    * afegeix: afegeix una nota
+    * mostra: mostra la seqüència de notes
+    * quantes?: mostra quantes notes s'han introduït
+    * màxima?: mostra la nota màxima introduïda
+    * mínima?: mostra la nota mínima introduïda
+    * surt: finalitza i surt
+    > quantes?
+    cap
+    > màxima?
+    cap
+    > mínima?
+    cap
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 5
+    fet
+    Nova nota (-1 per cancel·lar)
+    > 4
+    fet
+    Nova nota (-1 per cancel·lar)
+    > 10
+    fet
+    > màxima?
+    10
+    > mínima?
+    4
+    > quantes?
+    3
+    > surt
+    adéu
+
+Exercici 25. ☞ Manteniment de notes amb cercador
+================================================
+
+Aquesta nova versió del manteniment de notes, ofereix la possibilitat de
+cercar una determinada nota.
+
+La nova comanda és ``cerca`` i, a l'igual que ``afegeix``, requerirà que
+s'introdueixi un valor enter; en aquest cas, el valor a cercar. La opció
+de ``cerca`` tindrà la mateixa resposta que ``afegeix`` en cas que el
+valor proporcionat no sigui correcte.
+
+.. code-block:: none
+
+    $ python3 mantenimentnotes.py
+    Manteniment de notes ('ajuda' per obtenir ajuda)
+    > ajuda
+    Les opcions disponibles són:
+    * ajuda: mostra aquesta ajuda
+    * afegeix: afegeix una nota
+    * mostra: mostra la seqüència de notes
+    * quantes?: mostra quantes notes s'han introduït
+    * màxima?: mostra la nota màxima introduïda
+    * mínima?: mostra la nota mínima introduïda
+    * cerca: cerca una nota
+    * surt: finalitza i surt
+    > cerca
+    no hi ha cap nota
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 1
+    fet
+    > cerca
+    Quina nota (-1 per cancel·lar)
+    > -1
+    cancel·lat
+    > cerca
+    Quina nota (-1 per cancel·lar)
+    > 1
+    Hi ha 1 nota amb valor 1 a la posició 0
+    > cerca
+    Quina nota (-1 per cancel·lar)
+    > 2
+    No hi ha cap nota amb valor 2
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 2
+    fet
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 1
+    fet
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 3
+    fet
+    > afegeix
+    Nova nota (-1 per cancel·lar)
+    > 1
+    fet
+    > cerca
+    Quina nota (-1 per cancel·lar)
+    > 1
+    Hi ha 3 notes amb valor 1 a les posicions 0, 2 i 4
+    > surt
+    adéu
+
+
+Per realitzar aquesta ampliació, el programa inclourà una funció que
+superarà, com a mínim, els següents doctest, tot i que caldrà afegir
+d'altres.
+
+.. code-block:: python
+
+    >>> cerca_nota((1, 2, 3, 2, 3, 4, 3, 5, 3), 10)
+    ()
+    >>> cerca_nota((1, 2, 3, 2, 3, 4, 3, 5, 3), 5)
+    (7,)
+    >>> cerca_nota((1, 2, 3, 2, 3, 4, 3, 5, 3), 3)
+    (2, 4, 6, 8)
+
+
+Exercici 26. ☞ Insereix en ordre
+================================
+
+Desenvolupa una funció que rebi un valor enter i una tupla d'enters
+ordenats creixentment, i retorni una tupla amb els valors de la tupla
+rebuda, més el nou enter.  La tupla retornada també estarà ordenada.
+
+Si el valor ja estava a la tupla original, la retornada el tindrà
+repetit.
+
+
+.. code-block:: python
+
+    >>> insereix_ordenat(5, ())
+    (5,)
+    >>> insereix_ordenat(5, (4, 6))
+    (4, 5, 6)
+    >>> insereix_ordenat(5, (6, 7, 8))
+    (5, 6, 7, 8)
+    >>> insereix_ordenat(5, (1, 2, 3, 4))
+    (1, 2, 3, 4, 5)
+    >>> insereix_ordenat(5, (4, 5, 6))
+    (4, 5, 5, 6)
+
+Exercici 27. ☞ Ordena per inserció
+==================================
+
+Desenvolupa una funció que rebi com a paràmetre una tupla d'enters i
+retorni una altra amb els mateixos valors de l'entrada però ordenats de
+manera creixent.
+
+Considera els següents doctest:
+
+.. code-block:: python
+
+    >>> ordena(())
+    ()
+    >>> ordena((1,))
+    (1,)
+    >>> ordena((1, 2))
+    (1, 2)
+    >>> ordena((2, 1))
+    (1, 2)
+    >>> ordena((4, 1, 3, 2))
+    (1, 2, 3, 4)
+    >>> ordena((6, 5, 4, 3, 2, 1))
+    (1, 2, 3, 4, 5, 6)
+
+**Nota**: fes servir la funció ``insereix_ordenat()`` de l'exercici anterior.
+
+
+Exercici 28. ☞ Elimina repetits
+===============================
+
+Desenvolupa una funció que rebi una tupla i retorni una altra
+valors repetits, conservant l'ordre relatiu dels elements.
+
+.. code-block:: python
+
+    >>> elimina_repetits((4, 5, 4, 2))
+    (4, 5, 2)
+    >>> elimina_repetits((1, 4, 2, 1, 4, 1, 4, 2, 3))
+    (1, 4, 2, 3)
+    >>> elimina_repetits((1, 2, 3))
+    (1, 2, 3)
+    >>> elimina_repetits(())
+    ()
+
+Exercici 29. ☞ Suma de seqüències
+=================================
+
+Desenvolupa una funció que rebi dues tuples d'enters i retorni una tupla
+amb la suma.
+
+.. code-block:: python
+
+    >>> suma_sequencies((1, 2, 3), (4, 5, 6))
+    (5, 7, 9)
+    >>> suma_sequencies((1, 2), (4, 5, 6))
+    (5, 7, 6)
+    >>> suma_sequencies((1, 2, 3), (4, 5))
+    (5, 7, 3)
+
+
+Exercici 30. ☞ Parells alumnes i notes
+======================================
+
+Desenvolupa una funció que rebi una tupla amb notes i una altra amb
+alumnes i retorni una tupla amb parells alumne, nota.
+
+La teva funció considerarà que a cada nom de la primera llista li
+correspon la nota que hi ha a la mateixa posició de la segona.
+
+En cas que hi hagi més alumnes que notes, els alumnes *sobrants* rebran
+``-1`` com a nota.
+
+En cas que hi hagi més notes que alumnes, les notes *sobrants* rebran
+``desconegut`` com a nom d'alumne.
+
+.. code-block:: python
+
+    >>> parells_alumne_nota(('Marta', 'Lin', 'Enrique'), (6, 9, 7))
+    (('Marta', 6), ('Lin', 9), ('Enrique', 7))
+    >>> parells_alumne_nota(('Marta', 'Lin', 'Enrique'), (6, 9))
+    (('Marta', 6), ('Lin', 9), ('Enrique', -1))
+    >>> parells_alumne_nota(('Marta', 'Lin'), (6, 9, 7))
+    (('Marta', 6), ('Lin', 9), ('desconegut', 7))
+
+Exercici 31. ☞ Alumnes i notes separats
+=======================================
+
+Desenvolupa una funció que rebi una tupla amb parells alumne i nota, i
+retorni una tupla amb tres tuples, la primera amb els alumnes, la segona
+amb les notes, i la tercera amb els errors.  Els errors són tuples que no són parells.
+
+
+.. code-block:: python
+
+    >>> separa_alumnes_i_notes((('Marta', 6), ('Lin', 9), ('Enrique', 7)))
+    (('Marta', 'Lin', 'Enrique'), (6, 9, 7), ())
+    >>> separa_alumnes_i_notes((('Marta', 6), ('Lin',), ('Enrique', 7)))
+    (('Marta', 'Enrique'), (6, 7), (('Lin',),))
+    >>> separa_alumnes_i_notes((('Marta', 6), ('Lin', 9, 'i', 'més', 'coses'), ('Enrique', 7)))
+    (('Marta', 'Enrique'), (6, 7), (('Lin', 9, 'i', 'més', 'coses'),))
+    >>> separa_alumnes_i_notes((('Marta',), (9,), ('Enrique',)))
+    ((), (), (('Marta',), (9,), ('Enrique',)))

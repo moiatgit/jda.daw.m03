@@ -1,0 +1,105 @@
+##########
+Iteracions
+##########
+
+Fem un petit repàs del que ja sabem programar amb els següents exercicis:
+
+Exercici 1. Els cinc primers
+============================
+
+Desenvolupa un programama que escrigui els cinc primers enters
+positius (0..4)
+
+Exercici 2. Els cent primers
+============================
+
+Desenvolupa un programama que escrigui els cent primers enters
+positius (0..99)
+
+Exercici 3. Els *n* primers
+===========================
+
+Desenvolupa un programama que demani un número enter n i escrigui els
+primers n enters positius.
+
+Amb el que sabem fins ara, el primer exercici és molt fàcil. El segon
+requereix una mica de paciència però també es pot fer (sort que no ens
+demana els 1000 primers, oi?) Però el tercer… simplement no el podem
+fer.
+
+Les instruccions de control condicional (ex.
+si…llavors…sinó…fsi) ens permeten canviar el flux d’execució,
+escollint diferents camins segons el resultat d’una expressió.  En tot
+cas, amb les estructures condicionals tota instrucció del programa es
+executada com a molt una vegada.
+
+De seguida en coneixerem d’estructures que ens permetran executar les
+mateixes instruccions més d’una vegada. A aquestes estructures les
+coneixem com a *estructures d'iteració* o també *bucles* o, en anglès
+*loops*.
+
+Els bucles es poden representar gràficament amb un diagrama de flux. Per
+exemple, un programa que escriu els primers 10 números naturals es
+podria representar com:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        inici[shape="box", style=rounded];
+        final[shape="box", style=rounded];
+        "i = 1"[shape="rectangle", style=""];
+        "i < 11"[shape="diamond", style=""];
+        "print(i)"[shape="rectangle", style=""]
+        "i = i + 1"[shape="rectangle", style=""]
+
+        inici -> "i = 1";
+        "i = 1" -> "i < 11";
+        "i < 11" -> "print(i)"[label="fals"];
+        "i < 11" -> final[label="cert"];
+        "print(i)" -> "i = i + 1";
+        "i = i + 1" -> "i < 11";
+    }
+
+Fixa't com:
+
+* inicialitzem la *variable de recorregut* ``i`` a 1
+
+* comprovem si la variable de recorregut encara està dins del rang de
+  valors. Com que volem escriure fins el 10, ``i`` estarà dins de rang
+  mentre sigui menor de 11.
+
+* si ``i`` encara està dins, executem les instruccions que corresponguin.
+  En aquest cas, escrivim el valor de ``i`` per pantalla
+
+  Un cop realitzades les tasques amb aquesta interacció, incrementem el
+  valor de la variable de recorregut per tal de que s'acosti al final del
+  rang i *tornem* enrere a preguntar si encara hi som dins del rang
+
+* quan ja no estem dins del rang (sigui més gran o igual a 11), finalitzem
+
+Evidentment, a banda d'escriure el valor de ``i`` es poden fer moltes
+altres coses, com per exemple comptar, sumar, filtrar, cercar…
+
+Doncs aquest és el nou tema que treballarem!
+
+En distingirem dos tipus principals d'estructures iteratives:
+
+* els recorreguts: quan hem de passar per una seqüència de valors en un
+  cert ordren. Per exemple, els primers 10 naturals.
+
+* les iteracions generals: quan el nombre de cops que volem que es
+  repeteixi un codi està en funció de quelcom que no podem preveure fins
+  que no executem el nostre codi. Per exemple, fins que els usuaris ens
+  indiquin que volen finalitzar.
+
+Veurem:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    iteracions_numeriques.rst
+    strings.rst
+    bucles_condicionals.rst
+    control_bucles.rst

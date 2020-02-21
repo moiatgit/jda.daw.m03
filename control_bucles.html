@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Control de bucles &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Programació Modular" href="programacio_modular.html" />
+    <link rel="prev" title="Juguem amb el while" href="while.juguem.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="iteracions.html">Iteracions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="iteracions_numeriques.html">Iteracions numèriques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bucles_condicionals.html">Bucles condicionals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Control de bucles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="iteracions.html">Iteracions</a> &raquo;</li>
+        
+      <li>Control de bucles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="control-de-bucles">
+<h1>Control de bucles<a class="headerlink" href="#control-de-bucles" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fins ara hem vist que els bucles ens permeten executar un mateix fragment
+de codi més d’una vegada.</p>
+<p>El bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> ens resulta molt còmode per repetir el troç de codi fent
+canviar el valor d’una variable (que anomenem <em>variable del recorregut</em>)
+entre els disponibles d’una seqüència de valors. De moment aquesta
+seqüència l’hem usada sempre el resultat d’un rang de valors numèrics
+obtinguts a partir de l’expressió <code class="docutils literal notranslate"><span class="pre">range(valor_inicial,</span>
+<span class="pre">valor_següent_al_final,</span> <span class="pre">salt)</span></code>.</p>
+<p>En aquesta secció, aprendrem a tenir més control sobre els bucles.</p>
+<div class="section" id="no-vull-arribar-al-final">
+<h2>No vull arribar al final!<a class="headerlink" href="#no-vull-arribar-al-final" title="Link permanent a aquest títol">¶</a></h2>
+<p>Segurament t’has trobat ja més d’un cop amb la situació de voler finalitzar un bucle abans d’arribar
+al final, oi?</p>
+<p>Per exemple, si volem desenvolupar una funció que retorni cert quan una lletra es troba dins d’una
+frase, el codi amb <code class="docutils literal notranslate"><span class="pre">for</span></code> vindria a ser quelcom similar a:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_conte_caracter</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; retorna True quan text conté al menys una ocurrència de</span>
+<span class="sd">        caracter, False altrament.</span>
+
+<span class="sd">        Espera que text i caracter siguin de tipus str</span>
+
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is wonderful&#39;, &#39;z&#39;)</span>
+<span class="sd">        False</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is wonderful&#39;, &#39;y&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is an interpreted high-level programming language for general-purpose programming. Created by Guido van Rossum and first released in 1991, Python has a design philosophy that emphasizes code readability, notably using significant whitespace. It provides constructs that enable clear programming on both small and large scales.&#39;, &#39;y&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;z&#39; + (&#39;repetit&#39; * 10000000), &#39;z&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
+            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">trobat</span>
+</pre></div>
+</td></tr></table></div>
+<p>En el primer doctest, <code class="docutils literal notranslate"><span class="pre">text_conte_caracter()</span></code> ha d’arribar fins al final
+del text per tenir clar que aquest no conté la lletra <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<p>En el segon doctest, la funció ha d’arribar també fins al final, malgrat a
+la segona iteració ja sap que ha de retornar <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>En el tercer doctest, la funció també s’ha d’esperar fins el final del
+text. La diferència és que ara el temps d’espera és una mica més llarg.
+amb tot, pràcticament no ho notarem amb una màquina moderneta.</p>
+<p>El darrer doctest, però, construeix un string amb “z” seguit de “repetit”
+MOLTS cops. En aquest cas, l’execució <strong>sí</strong> que ens farà esperar una
+estona. Molt trist, no trobes, tenint en comptes que, des de la primera
+iteració ja sabiem la resposta?</p>
+<p>Bash ens ofereix la utilitat <code class="docutils literal notranslate"><span class="pre">time</span></code> per saber quanta estona tarda en
+executar-se un fitxer. Anem a comprovar-ho:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ time python3 -m doctest ambfor.py
+
+real        0m22,185s
+user        0m21,536s
+sys 0m0,596s
+</pre></div>
+</div>
+<p>Sense entrar en gaire detalls, el que ens està dient és que m’he hagut
+d’esperar més de 20 segons per executar les proves.</p>
+</div>
+<div class="section" id="while-to-the-rescue">
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> to the rescue<a class="headerlink" href="#while-to-the-rescue" title="Link permanent a aquest títol">¶</a></h2>
+<p>Sabem resoldre aquest tipus de problemes fent servir un bucle condicional
+(el <code class="docutils literal notranslate"><span class="pre">while</span></code>), per exemple:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_conte_caracter</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; « no oblidis la documentació de la teva funció »</span>
+
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is wonderful&#39;, &#39;z&#39;)</span>
+<span class="sd">        False</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is wonderful&#39;, &#39;y&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;Python is an interpreted high-level programming language for general-purpose programming. Created by Guido van Rossum and first released in 1991, Python has a design philosophy that emphasizes code readability, notably using significant whitespace. It provides constructs that enable clear programming on both small and large scales.&#39;, &#39;y&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;z&#39; + (&#39;repetit&#39; * 10000000), &#39;z&#39;)</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
+            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">trobat</span>
+</pre></div>
+</td></tr></table></div>
+<p>En aquesta versió, no importa la longitud del text. En el moment que
+trobem la lletra cercada, finalitza el bucle.</p>
+<p>Comprovant els temps, un altra cop, trobem:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ time python3 -m doctest ambwhile.py
+
+real        0m1,148s
+user        0m0,564s
+sys 0m0,580s
+</pre></div>
+</div>
+<p>Poc més d’un segon! No està malament la diferència, no?</p>
+</div>
+<div class="section" id="ep-que-aixo-es-una-funcio">
+<h2>Ep, que això és una funció!<a class="headerlink" href="#ep-que-aixo-es-una-funcio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Donat que estem en una funció, disposem d’una possibilitat de finalitzar
+el bucle sense necessitat d’arribar al final: fent servir <code class="docutils literal notranslate"><span class="pre">return</span></code></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_conte_caracter</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; « no oblidis la documentació de la teva funció » &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixat com, simplement en trobar el caràcter en qüestió, ja sabem el
+resultat de la funció i el podem retornar directament sense esperar el
+final.</p>
+<p>No tens curiositat per saber si va més o menys ràpid que amb <code class="docutils literal notranslate"><span class="pre">while</span></code>?</p>
+</div>
+<div class="section" id="trenquem-el-bucle">
+<h2>Trenquem el bucle<a class="headerlink" href="#trenquem-el-bucle" title="Link permanent a aquest títol">¶</a></h2>
+<p>No sempre podem retornar dins d’un bucle. Per exemple, podria passar que
+ens calgués realitzar algun càlcul més després d’haver trobat el caràcter
+cercat.</p>
+<p>Aquest tipus de problemes és molt típic. Tant, que la majoria dels
+llenguatges imperatius ofereixen algun tipus de mecanisme per a afegir-hi
+control.</p>
+<p>Considera la nova versió del problema anterior:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_conte_caracter</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; « no oblidis la documentació de la teva funció » &quot;&quot;&quot;</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
+<span class="hll">            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+</span>            <span class="k">break</span>
+    <span class="c1"># aquí podria fer altres coses, tant si s&#39;ha trobat com si no</span>
+    <span class="k">return</span> <span class="n">trobat</span>
+</pre></div>
+</td></tr></table></div>
+<p>Un ús molt típic del <code class="docutils literal notranslate"><span class="pre">break</span></code> és el de construir un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> infinit i
+decidir la sortida en funció de diferents condicions.</p>
+<p>Per exemple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diguem alguna cosa&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s1">&#39;adéu&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Au, bon vent!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tens res millor a dir?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El <code class="docutils literal notranslate"><span class="pre">break</span></code> permet sortir del bucle quan ja no ens cal
+continuar fins el final.</p>
+</div>
+</div>
+<div class="section" id="continuem-el-bucle">
+<h2>Continuem el bucle<a class="headerlink" href="#continuem-el-bucle" title="Link permanent a aquest títol">¶</a></h2>
+<p>De vegades, el que volem no és finalitzar el bucle sinó passar a la
+següent iteració.</p>
+<p>Per exemple, si volem desenvolupar una funció que rebi una seqüència de
+paraules i que ens retorni només aquelles que corresponguin a nombres
+enters, podríem resoldre-ho amb:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_digits</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; donat un string, retorna un nou string que contingui només els</span>
+<span class="sd">        dígits</span>
+
+<span class="sd">        &gt;&gt;&gt; suma_digits(&#39;a12b3cde4f5&#39;)</span>
+<span class="sd">        &#39;1+2+3+4+5=15&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="hll">        <span class="k">if</span> <span class="ow">not</span> <span class="n">actual</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span class="hll">            <span class="k">continue</span>
+</span>        <span class="n">suma</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">resultat</span> <span class="o">+=</span> <span class="n">actual</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">actual</span>
+
+    <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixat que a la línia 13, un cop hem vist que el caràcter actual no és un dígit,
+demanem que continuï pel següent element del bucle. La línia 14 no serà
+executada mai després d’executar la 13.</p>
+<p>Tot plegat, el codi seria equivalent a fer el següent:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_digits</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; donat un string, retorna un nou string que contingui només els</span>
+<span class="sd">        dígits</span>
+
+<span class="sd">        &gt;&gt;&gt; suma_digits(&#39;a12b3cde4f5&#39;)</span>
+<span class="sd">        &#39;1+2+3+4+5=15&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">actual</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">actual</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="hll">            <span class="n">suma</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">resultat</span> <span class="o">+=</span> <span class="n">actual</span>
+</span><span class="hll">            <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">actual</span>
+</span>
+    <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</pre></div>
+</td></tr></table></div>
+<p>Amb tot, si tens vàries condicions per continuar, aviat els <code class="docutils literal notranslate"><span class="pre">if</span></code> aniuat
+acaben fent molt complicat de llegir el codi.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El <code class="docutils literal notranslate"><span class="pre">continue</span></code> permet de la iteració actual dins del bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> quan ja hem finalitzat
+el seu tractament.</p>
+</div>
+</div>
+<div class="section" id="exercici-62-el-text-transformat-revisitat">
+<h2>Exercici 62. El text transformat (revisitat)<a class="headerlink" href="#exercici-62-el-text-transformat-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes l’exercici <a class="reference internal" href="strings.recorreguts.html#exercici-text-transformat"><span class="std std-ref">El text transformat</span></a>?</p>
+<p>Aplica els nous coneixements amb <code class="docutils literal notranslate"><span class="pre">break</span></code> i <code class="docutils literal notranslate"><span class="pre">continue</span></code> de manera que no
+et calgui fer servir <code class="docutils literal notranslate"><span class="pre">elif</span></code> ni <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+</div>
+<div class="section" id="exercici-63-desaccentua-revisitat">
+<h2>Exercici 63. Desaccentua (revisitat)<a class="headerlink" href="#exercici-63-desaccentua-revisitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes l’exercici <a class="reference internal" href="strings.recorreguts.html#exercici-desaccentua"><span class="std std-ref">Desaccentua</span></a>?</p>
+<p>Aplica els nous coneixements amb <code class="docutils literal notranslate"><span class="pre">break</span></code> i <code class="docutils literal notranslate"><span class="pre">continue</span></code> de manera que no
+et calgui fer servir <code class="docutils literal notranslate"><span class="pre">elif</span></code> ni <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+</div>
+<div class="section" id="exercici-64-el-lloro-no-diu-paraulotes">
+<h2>Exercici 64. El lloro no diu paraulotes<a class="headerlink" href="#exercici-64-el-lloro-no-diu-paraulotes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Torna a considerar l’exercici del <a class="reference internal" href="while.juguem.html#exercici-lloro-python"><span class="std std-ref">lloro</span></a>.</p>
+<p>Fes una nova versió en la que el lloro no pugui dir cap paraula acabada en
+«uta» (com per exemple, em… «ruta») ni cap que comenci amb «cabr».
+Atenció: no tinguis en comptes majúscules i minúscules.</p>
+<p>Per simplificar-ho, tampoc no podrà dir cap «paraula» que contingui
+espais. És a dir, que només considerarà repetir quan sigui una única
+paraula.</p>
+<p>Així, si el que rep el lloro inclou alguna paraula «prohibida», el lloro
+respondrà: «no sóc un mal parlat».</p>
+<p>Per altra banda, la solució no ha de contenir cap <code class="docutils literal notranslate"><span class="pre">else</span></code> ni <code class="docutils literal notranslate"><span class="pre">elsif</span></code></p>
+<p>Considera la simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 lloro.py
+El lloro pregunta paraula:
+hola
+El lloro diu: hola
+El lloro pregunta paraula:
+què tal?
+El lloro diu: Només una paraula
+El lloro pregunta paraula:
+fruta
+No sóc un mal parlat
+El lloro pregunta paraula:
+Cabrales
+No sóc un mal parlat
+adéu
+Adéu
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-65-el-lloro-no-diu-paraulotes-multiparaula">
+<h2>Exercici 65. El lloro no diu paraulotes (multiparaula)<a class="headerlink" href="#exercici-65-el-lloro-no-diu-paraulotes-multiparaula" title="Link permanent a aquest títol">¶</a></h2>
+<p>L’exercici del lloro benparlat pot ser ampliat per què sigui capaç de
+tractar frases.</p>
+<p>En aquesta versió, si en la frase introduïda hi
+ha alguna paraula prohibida, el lloro canvia la part malsonant per un so
+de censura que representarem amb <em>&lt;piii&gt;</em>.</p>
+<p>Considera la simulació:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 lloro.py
+El lloro pregunta paraula:
+T&#39;agrada la fruta?
+El lloro diu: T&#39;agrada la fr&lt;piii&gt;?
+El lloro pregunta paraula:
+La ruta del cabrales
+El lloro diu: La r&lt;piii&gt; del &lt;piii&gt;ales
+adéu
+Adéu
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-66-treient-espines">
+<h2>Exercici 66. ☼ Treient espines<a class="headerlink" href="#exercici-66-treient-espines" title="Link permanent a aquest títol">¶</a></h2>
+<p>Segurament algun dels exercicis anteriors a aquesta secció t’han resultat
+especialment antipàtics per haver-te vist en l’obligació d’arribar al final d’un
+<code class="docutils literal notranslate"><span class="pre">for</span></code> o bé emplenar de condicionals el cos del bucle.</p>
+<p>Doncs aprofita aquest exercici opcional per a refer aquells exercicis.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Revisitar el codi que vas fer fa temps, és una de les millors maneres
+de millorar les teves habilitats de programació. Si t’ho pots
+permetre, no deixis passar cap oportunitat.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="programacio_modular.html" class="btn btn-neutral float-right" title="Programació Modular" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="while.juguem.html" class="btn btn-neutral float-left" title="Juguem amb el while" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

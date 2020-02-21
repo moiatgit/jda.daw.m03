@@ -1,0 +1,230 @@
+#########
+Variables
+#########
+
+Recordaràs que amb Python, la declaració d'una variable i la seva inicialització
+es realitzen en el mateix moment.
+
+Per exemple,
+
+.. code-block:: python
+
+    nom = 'Maite Li Romeu'
+
+El codi anterior declara la variable ``nom`` i li assigna el valor
+``'Maite Li Romeu'`` que és de tipus String, com podem comprovar a la
+consola de Python simplement fent:
+
+.. code-block:: python
+
+    >>> nom = 'Maite Li Romeu'
+    >>> type(nom)
+    <class 'str'>
+
+Java requereix fer les coses de manera més explícita. Així, faríem:
+
+.. code-block:: java
+    :linenos:
+
+    String nom;
+    nom = "Maite Li Romeu";
+
+La principal diferència entre els dos codis és que, a Java la declaració
+es realitza independentment de la inicialització. De fet, en línies
+separades!
+
+De fet, Java permet la possibilitat d'inicialitzar en el mateix moment en
+que es declara la variable:
+
+.. code-block:: java
+
+    String nom = "Maite Li Romeu";
+
+El que és important aquí és que Python **no** ho permet!
+
+Altres diferències *menors*:
+
+* Hem hagut d'indicar el tipus ``String`` explícitament. Java **no**
+  infereix
+  el tipus a partir del valor que hi assignem [#javavar]_.
+
+* Cada sentència en Java finalitza amb un punt i coma (``;``)
+
+* Les cometes pels strings en Java són **sempre** dobles
+
+La declaració de variables en un bloc de codi de Java és es realitza primer
+indicant el tipus i després el nom de la variable.
+
+.. code-block:: java
+
+    int unEnter;
+    char unCaracter;
+    boolean unBoolean;
+    String unString;
+    byte un, dos, tres; // sí, també podem declarar més d'una variable en la mateixa línia.
+
+Quan declarem una variable com ho hem fet en els exemples anteriors, únicament
+estem indicant el nom i el tipus. No estem assignant cap valor a les variables
+i, per tant, aquestes estan sense inicialitzar.  El compilador de Java no ens
+deixarà utilitzar valor d'una variable que no hagi estat inicialitzada. Per
+exemple, el següent codi no compilarà:
+
+.. literalinclude:: /_code/VariableNoInicialitzada.java
+   :language: java
+
+En intentar compilar-lo, rebem el següent missatge del compilador:
+
+.. code-block:: sh
+
+    $ javac VariableNoInicialitzada.java
+    VariableNoInicialitzada.java:9: error: variable noInicialitzada might not have been initialized
+            System.out.println(noInicialitzada);    // aquesta línia no compilarà
+                               ^
+    1 error
+
+La inicialització d'una variable es realitza en el moment que li assignem
+un valor, per exemple, amb l'operador d'assignació ``=``:
+
+.. code-block:: java
+
+    int unEnter;          // declaració
+    unEnter = 42;         // inicialització amb el valor 42
+
+Com ja hem vist, en Java també podem fer la declaració i la inicialització
+en una sola línia:
+
+.. code-block:: java
+
+    int unEnter = 42;               // declaració i assignació en una línia.
+    char unCaracter = '@';
+    boolean unBoolean = true;
+    String unString = "true";
+    byte un = 1, dos = 2, tres = 3;  // declaracions i assignacions múltiples.
+
+En cas que vulguem indicar que un valor serà constant, en Java precedirem
+la declaració amb ``final``. Com a l'exemple:
+
+.. code-block:: java
+
+    final int UNA_CONSTANT = 42;
+
+A diferència de Python, Java **no** ens permetrà canviar el valor d'una
+constant.
+
+A l'hora de posar un nom a una variable (no final), cal tenir present que:
+
+* els caràcters vàlids són les lletres majúscules i minúscules, els
+  números i els caràcters ``_`` i ``$``.
+
+* el nom no pot començar per número
+
+* la mida del nom pot ser *virtualment* infinita
+
+Amb tot, com a la majoria dels llenguatges, en Java hi ha una sèrie de
+convencions que és millor respectar si volem semblar desenvolupadors
+"pro". Considerarem doncs:
+
+* La inicial és una lletra en minúscules (mai ``_`` ni ``$``) Únicament la
+  posarem en majúscules per variables finals.
+
+* El caràcter ``$`` no el farem servir **mai**! [#perquesta]_
+
+* El guió baix tampoc no es fa servir per variables no finals.
+
+* Quan el nom d'una variable es composa de múltiples paraules, la
+  separació d'aquestes segueix l'anomenat *camel case*: excepte per la
+  primera paraula, cada inicial es posa en majúscules i la resta en
+  minúscules (``unEnter``, ``unaVariableAmbMoltesParaules``)
+
+* Ja que no tenim limitacions de longitud de les variables, i que el
+  nostre programa haurà de ser llegit vàries vegades per persones com
+  nosaltres, és important que les variables tinguin un nom autoexplicatiu
+  (que no calguin comentaris per poder entendre què contenen).
+  Evidentment, farem servir noms curts com ara ``i`` quan tenen vigència
+  en un bloc molt reduït de codi (ex. en un bucle). Per contra, intentarem
+  evitar noms reduïts com ara ``nsp`` o fins i tot ``nSecPrev`` afavorint
+  noms més llargs que, sense saber de què va el programa, ja ens donen més
+  informació ``nombreDeSeccionsPrevies``.
+
+Les constants (final) segueixen la convenció:
+
+* tot en majúscules
+
+* paraules separades per ``_`` (*snake case*)
+
+
+.. _exercici_comprensio_variables:
+
+Exercici 3. Preguntes de comprensió
+===================================
+
+A veure si ho hem entès tot bé. Respon a les següents preguntes:
+
+#. En Java, quina diferència hi ha entre declarar una variable de tipus
+   primitiu o de tipus objecte?
+
+#. Quin valor es guardarà en la variable ``y`` del següent codi?:
+
+   .. code-block:: java
+
+        int x;
+        int y;
+        y = x + 1;
+
+#. Indica com declararies tres enters anomenats ``prev``, ``act`` i
+   ``seg`` en una mateixa línia
+
+#. Indica com declararies tres enters anomenats ``prev``, ``act`` i
+   ``seg`` tot inicialitzant ``prev`` amb el valor -1 i a ``seg`` amb 1.
+   La variable ``act`` quedaria sense inicialitzar.  Atenció: tot en una
+   mateixa línia!
+
+#. Què voldrà dir *camel case* i *snake case*? Intenta donar una resposta
+   sense cercar per Internet tot fent servir els teus coneixements de
+   l'anglès. Inclou exemples il·lustratius.
+
+   Pista: camel -> camell i snake -> serp.
+
+
+.. _exercici_nomsvariablesadequats:
+
+Exercici 4. Noms de variable adequats
+=====================================
+
+Indica quins dels següents són noms de variables adequats, tant des de la perspectiva de *legalitat*
+com de les convencions explicades:
+
+#. ``int var$hol;``
+
+#. ``int nombre_de_constants;``
+
+#. ``int damaD'Elx;``
+
+#. ``int 3TristesTigres;``
+
+#. ``int TresTristesTigres;``
+
+#. ``int x000213``
+
+.. _exercici_holamonconstants:
+
+Exercici 5. Hola Constants
+==========================
+
+El nostre programa que saluda al Món podria veure's beneficiat de les constants. Realitza una nova
+versió anomenada HolaMonConstant.java en la que la crida a ``println()``, en comptes d'un literal se
+li passi una constant correctament inicialitzada i amb un nom adequat.
+
+
+----
+
+.. [#javavar] De fet, les darreres versions de Java sí ho permeten, però a
+    menys que s'indiqui el contrari, en els exercicis d'aquest curs **no** es
+    permet.
+
+.. [#perquesta] Imagino que si t'has interessat per aquesta nota a peu de pàgina és perquè t'has
+   preguntat el perquè hi ha la possibilitat de fer servir un caràcter que ningú no fa servir. La
+   resposta és que *algú* sí ho fa servir: el compilador! Ara és molt d'hora per explicar-te els
+   detalls, però accepta que en algunes ocasions, el compilador generarà variables noves i que
+   interessarà que puguin ser llegibles per humans.
+

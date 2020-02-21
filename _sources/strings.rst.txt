@@ -1,0 +1,37 @@
+#######
+Strings
+#######
+
+Fins ara, els strings els hem tractat de manera atòmica; és a dir, com un
+valor indivisible. Per exemple, els hem llegit, escrit, comparat o
+assignat en bloc.
+
+Considera la següent assignació:
+
+.. code-block:: python
+
+    autor = "Ritchie"
+
+El resultat d'executar-ho serà un espai de memòria al que ens podrem
+referir amb el nom de variable ``autor`` que contindrà les set lletres
+'R', 'i', 't', 'c', 'h', 'i' i 'e'.
+
+Podríem representar la memòria de la següent manera:
+
+.. image:: _images/string_ritchie.png
+   :align: center
+
+Hem de tenir en compte, però, que els *strings* són bàscament cadenes de
+lletres, i que les lletres són també un tipus de dades. En Python,
+concretament, també són *strings*.
+
+Podria tenir sentit accedir també de manera individual als elements d'un string?
+
+Doncs bé, d'això va aquest nou tema!
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    strings.posicions.rst
+    strings.recorreguts.rst

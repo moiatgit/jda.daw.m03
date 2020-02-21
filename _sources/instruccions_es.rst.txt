@@ -1,0 +1,83 @@
+###############
+Entrada/Sortida
+###############
+
+En una primera aproximació, les instruccions d’entrada recullen un valor
+des d’un dispositiu d’entrada (ex. teclat) i l’assignen a una variable.
+
+Per la seva banda, les instruccions de sortida dipositen el resultat d’una
+expressió a un dispositiu de sortida (ex. pantalla).
+
+Quan llencem un programa per ser executat, el sistema operatiu li obre
+automàticament tres canals (o fitxers) anomenats *entrada estàndard*,
+*sortida estàndard* i *sortida estàndard d'error*. A menys que es faci
+res especial, el fitxer d'entrada queda *connectat* al teclat, mentre
+que els dos canals de sortida queden *connectats* a la pantalla.
+
+.. image:: _images/esquema_es.png
+   :align: center
+
+De moment no en farem gaire cas de la sortida estàndard d'error.
+
+Entrada
+=======
+
+Per llegir de l'entrada estàndard farem:
+
+.. code-block:: python
+
+    >>> text = input()
+
+``input()`` és el que s'anomena una *funció*. Ja n'hem vist alguna (ex.
+``type()``). Anirem veient moltes de funcions a mida que avancem en la
+programació.
+
+És important tenir clar que el resultat de ``input()`` és sempre de tipus text o
+string. De vegades ens pot interessar que sigui un número, per exemple, per
+sumar-li un valor. Fixa't en la següent interacció:
+
+
+.. code-block:: python
+
+    >>> edat = input()
+    18
+    >>> edat
+    '18'
+    >>> type(edat)                  # edat no és un numèric
+    <class 'str'>
+    >>> edat_mes_u = edat + 1       # intentem sumar-li 1 al valor d'edat
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: Can't convert 'int' object to str implicitly
+    >>> edat_enter = int(edat)      # convertim edat a enter amb int()
+    >>> type(edat_enter)
+    <class 'int'>
+    >>> edat_mes_u = edat_enter + 1 # ara sí que podem sumar 1
+    >>> edat_mes_u
+    19
+
+
+Sortida
+=======
+
+Per escriure, simplement farem:
+
+.. code-block:: python
+    :linenos:
+
+    >>> print('Hello world!')
+    >>> print('Tinc', anys, 'anys')
+    >>> print('Tindré', anys+1, 'anys')
+    >>> print('He tingut ' + str(anys-1) + ' anys')
+
+Exercici 2. ☼ Crash!
+====================
+
+Intenta executar la darrera sense la crida a la funció ``str()`` a veure que
+passa.
+
+Descriu el que ha passat i comenta-ho amb les teves companyes i companys. Si no
+us en sortiu amb una explicació que us convenci, pregunteu al vostre docent que
+es mor per explicar-vos-ho!
+
+L'explicació és un bon element a incorporar als teus ``apunts/``.

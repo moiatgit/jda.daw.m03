@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Juguem amb condicionals &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Iteracions" href="iteracions.html" />
+    <link rel="prev" title="Coneixem els doctest" href="intro_doctest.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="condicionals.html">Condicionals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="condicionals_simple.html">L’alternativa simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_doble.html">L’alternativa doble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals_niament.html">Niament múltiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_doctest.html">Coneixem els <em>doctest</em></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Juguem amb condicionals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="condicionals.html">Condicionals</a> &raquo;</li>
+        
+      <li>Juguem amb condicionals</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="juguem-amb-condicionals">
+<h1>Juguem amb condicionals<a class="headerlink" href="#juguem-amb-condicionals" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fem uns quants exercicis més de condicionals, ara que sabem fer proves amb més
+control.</p>
+<p>En cas que et resulti més fàcil, pots fer primer el programa de la manera
+antiga, per després extreure la part del càlcul en una funció. De totes maneres,
+intenta de mica en mica anar fent directament la funció doncs a la llarga hi
+sortiràs guanyant.</p>
+<p>Recorda que cada fitxer de codi presentarà:</p>
+<ul class="simple">
+<li><p>capçalera: una descripció de què conté el fitxer</p></li>
+<li><p>definició de la funció</p>
+<ul>
+<li><p>nom de la funció</p></li>
+<li><p>arguments esperats</p></li>
+<li><p>comentari descrivint el que fa la funció, què és i de quin tipus és cada
+argument, i el resultat a retornar</p></li>
+<li><p>un o més <em>doctest</em> que provin els diferents casos que pot executar la
+funció depenent del valor dels arguments.</p></li>
+<li><p>el codi que resol el problema</p></li>
+<li><p>la clàusula o clàusules <em>return</em> corresponents</p></li>
+<li><p>un bloc de condició <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> en el que apareixeran
+les instruccions necessàries per obtenir les dades dels usuaris i
+finalment mostrar el resultat.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="exercici-15-una-calculadora-senzilla">
+<span id="exercici-calculadora-senzilla-python"></span><h2>Exercici 15. ☞ Una calculadora senzilla<a class="headerlink" href="#exercici-15-una-calculadora-senzilla" title="Link permanent a aquest títol">¶</a></h2>
+<p>En aquesta ocasió desenvoluparem una calculadora senzilla a la carpeta
+<code class="docutils literal notranslate"><span class="pre">02_15_calculadorasenzilla/</span></code> que demani a l’usuari un primer operand
+numèric, una operació entre (+ - * /) i un segon operand, i escrigui el
+resultat d’aplicar l’operació als operands.</p>
+<p>Exemple d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 calculadorasenzilla.py
+Primer operand?
+4
+Operador?
++
+Segon operand?
+5
+4,00 + 5,00 = 9,00
+$ python3 calculadorasenzilla.py
+Primer operand?
+4
+Operador?
+/
+Segon operand?
+0
+No es pot dividir entre 0
+$ python3 calculadorasenzilla.py
+Primer operand?
+4
+Operador?
+^
+Segon operand?
+3
+L&#39;operador ^ no està disponible
+</pre></div>
+</div>
+<p>En el cas dels <em>doctest</em> pots fer servir les mateixes proves. Per exemple, la
+prova realitzada per la primera simulació es codificaria amb <em>doctest</em> com:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculadora_senzilla</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">&#39;4 + 5 = 9&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-16-pagaments">
+<h2>Exercici 16. Pagaments<a class="headerlink" href="#exercici-16-pagaments" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa a <code class="docutils literal notranslate"><span class="pre">02_16_pagaments/canvi.py</span></code> que demani a l’usuari que
+introdueixi un preu en € i la quantitat de € que paga. El programa compararà les
+dues quantitats i escriurà els € que li falten per pagar o bé els que li han de
+tornar.</p>
+<p>Exemple d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 canvi.py
+Preu?
+102
+Paga?
+150
+Sobren 48€
+$ python3 canvi.py
+Preu?
+102
+Paga?
+100
+Falten 2€
+$ python3 canvi.py
+Preu?
+100
+Paga?
+100
+No sobra ni falta res
+</pre></div>
+</div>
+<p>La primera simulació es traduiría a <em>doctest</em> com:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">canvi</span><span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="go">&#39;sobren 48€&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-17-la-guia-de-semafors">
+<span id="exercici-guia-semafors-python"></span><h2>Exercici 17. ☞ La guia de semàfors<a class="headerlink" href="#exercici-17-la-guia-de-semafors" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupem a <code class="docutils literal notranslate"><span class="pre">02_17_semafor/</span></code> un ajudant infantil per decidir que fer
+davant un semàfor (“vermell”, <em>verd</em> o <em>groc</em>). El programa demanarà de
+quin color està el semàfor i segons la resposta recomanarà respectivament
+“espera”, <em>passa</em>, o <em>corre!</em>.</p>
+<p>En cas que el color introduït no sigui cap d’aquests, el programa
+respondrà amb el missatge “ves a l’oculista”.</p>
+<p>Exemple d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 semafor.py
+Color?
+groc
+corre!
+</pre></div>
+</div>
+<p>No cal que cada opció disposi d’una simulació però sí d’un <em>doctest</em>. En
+total seran quatre com el següent:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">semafor</span><span class="p">(</span><span class="s1">&#39;groc&#39;</span><span class="p">)</span>
+<span class="go">&#39;corre!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-18-el-nombre-de-fills">
+<h2>Exercici 18. ☞ El nombre de fills<a class="headerlink" href="#exercici-18-el-nombre-de-fills" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desevolupa un progama que demani el nombre de fills de l’usuari i
+respongui segons el nombre de fills sigui:</p>
+<ul class="simple">
+<li><p>menys de 0: Error, no pots tenir menys que 0 fills!</p></li>
+<li><p>0: Tot el que thas estalviat en bolquers!</p></li>
+<li><p>1: Compte de no mimar-lo massa!</p></li>
+<li><p>entre 1 i 5 (no inclosos): No t’avorreixes a casa eh?</p></li>
+<li><p>més de 4: Tu sí fas país!</p></li>
+</ul>
+<p>Assegura’t que crees els <em>doctest</em> per cobrir quan el nombre de fills
+sigui -1, 0, 1, 2, 4, 5 i 6. Per exemple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nombre_de_fills</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;Compte de no mimar-lo massa!&#39;</span>
+</pre></div>
+</div>
+<p>Exemple d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 nombredefills.py
+Quants fills tens?
+1
+Compte de no mimar-lo massa!
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Per què creus que no se’t demana <em>doctest</em> pel cas de 3 fills? Val la
+pena afegir-lo? I pel cas de -2 o 7?</p>
+</div>
+</div>
+<div class="section" id="exercici-19-l-ascensor">
+<h2>Exercici 19. ☆ L’ascensor<a class="headerlink" href="#exercici-19-l-ascensor" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considerem un ascensor d’un edifici amb planta baixa i dos pisos (primer pis i
+segon pis) que tingui els següents botons: ‘pujar un”, ‘pujar dos”, ‘baixar un”
+i ‘baixar dos”. L’ascensor es comporta, a partir dels botons esmentats, segons
+el següent diagrama de transició d’estats:</p>
+<img alt="_images/esquemaascensor.png" class="align-center" src="_images/esquemaascensor.png" />
+<p>Es demana desenvolupar un programa que simuli el funcionament d’aquest
+ascensor.</p>
+<p>El programa demanarà el pis en que es troba i el botó que es prem, i
+mostrarà el nou pis.</p>
+<p>Cal comprovar que els botons i les plantes siguin correctes. En cas que no ho
+siguin, el programa mostrarà un missatge d’error en comptes del nou pis.</p>
+<p>Exemple d’interacció:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 ascensor.py
+pis?
+planta baixa
+botó?
+puja un
+primer pis
+$ python3 ascensor.py
+pis?
+segon pis
+botó?
+puja un
+error
+</pre></div>
+</div>
+<p>No cal que incloguis una simulació per cada cas possible (cada branca), però sí
+un <em>doctest</em>. Defineix la funció de la següent manera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ascensor</span><span class="p">(</span><span class="n">pis</span><span class="p">,</span> <span class="n">boto</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; …</span>
+<span class="sd">    &gt;&gt;&gt; ascensor(&#39;planta baixa&#39;, &#39;puja un&#39;)</span>
+<span class="sd">    &#39;primer pis&#39;</span>
+<span class="sd">    …</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p><strong>Nota</strong>: Aquest exercici està marcat amb una estrelleta (☆). Simbolitza que
+l’exercici és relativament més interessant que els que no en porten. En aquest
+cas, l’interés addicional és que pot ser resolt de, com a mínim, tres maneres
+diferents, i una d’elles resol el nou pis amb una sola línia de codi!</p>
+</div>
+<div class="section" id="exercici-20-tortuga-semafor">
+<h2>Exercici 20. ☼ Tortuga semàfor<a class="headerlink" href="#exercici-20-tortuga-semafor" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani als usuaris de quin color està el semàfor.</p>
+<p>Fent servir <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, dibuixa un cercle de radi 100 amb el color indicat.</p>
+<p>El programa només acceptarà els colors “verd”, “groc” i “vermell”. Per qualsevol
+altre color, ho pintarà amb negre.</p>
+<p>Vinga, que et passo el codi de com es fa el cercle negre:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Nota</strong>: Per aquest exercici no cal que et preocupis de fer <em>doctest</em> però
+potser et resultarà interessant que la part que dibuixa el cercle estigui a una
+funció anomenada <code class="docutils literal notranslate"><span class="pre">dibuixa_cercle()</span></code> que rebi el color.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="iteracions.html" class="btn btn-neutral float-right" title="Iteracions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro_doctest.html" class="btn btn-neutral float-left" title="Coneixem els doctest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,566 @@
+:orphan:
+
+#################
+Enfonsar la flota
+#################
+
+.. note:: Aquest és l'enunciat original de la pràctica d'enfonsar la flota. Trobaràs un
+   enunciat amb la pràctica simplificada a :doc:`java.flota`. Per
+   descomptat, pots desenvolupar aquesta versió més completa. 
+
+Posem a treballar tot el que hem aprés fins ara, desenvolupant un joc:
+*enfonsa la flota*
+
+Probablement ja coneguis aquest joc. Es presenta un taulell que conté
+vaixells amagats, i has d'anar dient coordenades fins que descobreixes
+tots els vaixells.
+
+Normalment, aquest joc es desenvolupa per dos o més jugadors però
+nosaltres farem una primera versió simplificada. No pateixis, si ho fem
+ben modular, podrem reaprofitar molt de codi en cas que decidim ampliar-lo
+a més d'un jugador.
+
+El programa es basa en dos conceptes bàsics: el *taulell* i la
+*coordenada*
+
+Un taulell és una taula o matriu de dos dimensions *nXm*. Tant *n* com *m*
+han de ser més grans que 0.
+
+Cada posició de la taula és un valor entre el 0 i el 9, on
+
+- ``0``: no vaixell o aigua
+
+- ``1`` a ``9``: vaixell de la longitud indicada.
+
+Les cel·les de valor 0 es diuen *aigua* mentre que la resta són
+*vaixell* amb una longitud exactament igual a la longitud indicada
+pel seu valor.
+
+Les cel·les corresponents a un vaixell apareixen consecutives en la
+mateixa fila o en la mateixa columna.
+
+Els límits del taulell són també límits dels vaixells. És a dir, el
+taulell no és esfèric.
+
+Per que un taulell sigui vàlid:
+
+- ha de correspondre a un rectangle ben format, en el sentit què totes les
+  files presenten el mateix nombre de columnes.
+
+- ha d'haver-hi com a mínim un vaixell.
+
+- un vaixell no pot tocar a un altre. És a dir, dues cel·les de
+  vaixells diferents, no poden ser consecutives. Es consideren
+  consecutives quan és troben a la cel·la anterior o posterior en la
+  mateixa fila o columna, però no diagonal.
+
+  Exemple vàlid amb taulell 3x6:
+
+  .. code-block:: none
+
+
+     ·   A  B  C  D  E  F
+        __ __ __ __ __ __
+     1   1  .  2  2  .  .   1
+     2   .  1  .  .  2  2   2
+     3   .  .  2  2  .  .   3
+        __ __ __ __ __ __
+         A  B  C  D  E  F
+
+  Aquí molts dels vaixells semblen tocar-se, però ho fan només per la
+  seva diagonal. Per exemple el vaixell *C1D1* està separat per aigua
+  del vaixell *A1A1*, només toca en diagonal amb els vaixells de la fila
+  2, i no toca amb el vaixell *C3D3* perquè el taulell no és esfèric.
+
+  Exemple no vàlid amb taulell 2x4:
+
+  .. code-block:: none
+
+     ·   A  B  C  D
+        __ __ __ __
+     1   2  3  3  3   1
+     2   2  .  .  1   2
+        __ __ __ __
+         A  B  C  D
+
+  Aquí, el vaixell *A1A2* és adjacent als vaixells *B1D1* i *A3A3*.
+
+Les coordenades, des del punt de vista dels usuaris, es representen com a
+un full de càlcul tipus *libreoffice calc*. És a dir, amb un string format
+per una o dues lletres majúscules (representant les columnes) i un, dos o
+tres dígits començant per 1 (representant les files) Així, "A1" correspon
+a (0, 0), "B1" a (0, 1), i "A2" a (1, 0).
+
+Per simplificar l'exercici, la fila màxima permesa serà la *999* i la
+columna màxima la *ZZ*.
+
+Constructor de taulells
+=======================
+
+En primer lloc, ens caldrà desenvolupar un programa que ens permeti
+construir taulells.
+
+El programa es dirà ``ConstructorTaulell.java`` i funcionarà de manera
+interactiva, oferint un *prompt*.
+
+En arrencar, el programa oferirà un missatge presentant la seva funció i
+el *prompt* per demanar una comanda per part de la usuària.
+
+Les comandes acceptades seran, sense distingir majúscules de minúscules:
+
+- ``AJUDA``: el programa mostrarà un text d'ajuda amb les diferents
+  comandes possibles
+
+- ``NOU``: la constructora està demanant crear un nou taulell.
+
+  En cas que hi hagi cap taulell en construcció, el programa indicarà
+  aquesta circumstància i proposarà que la usuària indiqui ``OBLIDA``,
+  ``RECORDA`` o ``ACTUALITZA`` abans de demanar ``NOU``.
+
+  En cas que no hi hagi cap taulell en construcció, el programa indicarà
+  que està creant un nou taulell, demanarà el nombre de files i de
+  columnes, i de ser aquestes correctes, crearà un taulell amb totes les
+  cel·les amb el valor d'aigua.
+
+  Les files i columnes han de ser especificades a partir de la
+  coordenada de la darrera fila i columna.
+  Per exemple, un taulell de 10x28 serà especificat com *AB10*
+
+  A partir del moment en que que s'ha creat el taulell, aquest es
+  considera carregat i modificat. Aquest taulell, però, no es
+  considerarà vàlid, doncs per ser-ho, com a mínim ha de disposar d'un
+  vaixell.
+
+  En aquesta versió del programa no
+  s'ofereix la posibilitat de redimensionar el taulell. Per tant, si la
+  constructora vol, li caldrà oblidar aquest i crear-ne un altre.
+
+- ``CARREGA``: la constructora vol carregar un taulell ja creat. En cas
+  que hi hagi un taulell en construcció, el programa es comportarà com
+  en el cas de la comanda ``NOU``.
+
+  Si no hi ha cap taulell en construcció, el programa demanarà un nom de
+  taulell. En cas d'existir, el programa el carregarà i mostrarà el seu
+  contingut tot dient ``FET!``. Altrament, proposarà a la usuària que
+  torni a escriure ``CARREGA`` especificant algun altre nom o bé
+  ``TAULELLS`` per veure la llista.
+
+  Un taulell acabat de carregar no es considera modificat.
+
+- ``OBLIDA``: la constructora ha decidit abandonar la construcció
+  d'aquest taulell. El programa li respon amb "OBLIDAT" i considera que
+  no hi ha cap taulell en construcció.
+
+  A partir d'aquest moment, no es considera que hi hagi un taulell
+  carregat.
+
+- ``RECORDA``: la constructora ha decidit guardar el taulell tal i com
+  està.
+
+  Si el taulell no és vàlid (no conté cap vaixell), el programa
+  proposarà a la usuària que faci ``AFEGEIX`` abans.
+
+  Si el taulell és vàlid, el programa li demanarà un nom de taulell
+  (fitxer) i, en cas que no hi hagi cap altre fitxer amb el mateix nom,
+  el guardarà i informarà que tot ha anat bé amb el missatge ``FET!``.
+  En cas, però, que sí hi hagi un fitxer amb el mateix nom, se li
+  demanarà a la usuària que torni a demanar ``RECORDA`` i triï un altre
+  nom.  A partir d'ara, el taulell ja no es considera modificat fins que
+  la constructora no realitzi un nou canvi.
+
+- ``ACTUALITZA``: la constructora ha decidit que el contingut actual del
+  taulell li agrada més que l'antic, i el vol substituir. En cas que el
+  taulell hagi estat creat de nou i no es disposi de nom, el programa
+  suggerirà que escrigui ``RECORDA``, altrament sobreescriurà el mapa
+  anterior i informarà que tot ha anat bé amb el missatge ``FET!``. A
+  partir d'ara, el taulell ja no es considera modificat fins que la
+  constructora no realitzi un nou canvi.
+
+- ``TAULELLS``: el programa mostrarà la llista de noms de taulells
+  coneguts amb la seva dimensió al costat.
+
+- ``AFEGEIX``: la constructora vol afegir un nou vaixell al taulell. El
+  programa li demana les coordenades. Si les coordenades no són vàlides
+  (malament formades o fora del taulell)
+  o bé fan que el taulell deixi de ser vàlid (ex. fan col·lisionar el
+  nou vaixell amb un d'existent), el programa descriu el problema.
+
+  Si tot és correcte, el programa actualitzarà el taulell amb el nou
+  vaixell i el considerarà modificat fins que la usuària el faci guardar
+  o oblidar.
+
+- ``ELIMINA``: la constructora ha decidit que un dels vaixells no li
+  agrada i el vol eliminar. El programa li demana les coordenades del
+  vaixell i, en cas que no corresponguin exactament a un vaixell del
+  taulell, li indicarà l'error.
+
+  Altrament, eliminarà el vaixell del taulell, considerarà el taulell
+  modificat i respondrà amb el missatge habitual ``FET!``.
+
+- ``MOSTRA``: la constructora vol tornar a veure representat el taulell.
+  Si no hi ha cap taulell carregat, el programa recomanarà fer ``NOU`` o
+  ``CARREGA``.
+
+  Altrament, el programa mostrarà una representació del taulell.
+  Per exemple, en cas que el taulell demanat sigui de 10x28, i hi hagi
+  un vaixell *D3D4*, es mostrarà:
+
+  .. code-block:: none
+
+     ·    A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB
+         __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+      1   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    1
+      2   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    2
+      3   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    3
+      4   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    4
+      5   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    5
+      6   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    6
+      7   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    7
+      8   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    8
+      9   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    9
+     10   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   10
+         __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+          A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB
+
+
+  Malgrat el taulell pot arribar a ser molt gran per ser representat en
+  una pantalla amb comoditat, en aquesta primera versió del programa no
+  s'exigeix gestionar paginació
+
+- ``SURT``: la constructora vol finalitzar l'execució. Si hi ha un
+  taulell modificat, el programa proposarà que primer el guardi amb
+  ``RECORDA`` o ``ACTUALITZA``, o bé ``OBLIDA``.
+
+El joc
+======
+
+El joc serà implementat pel programa ``Flota.java``
+
+El funcionament del joc és el següent:
+
+* En arrencar el programa, carrega el taulell contingut a un fitxer, a
+  partir del nom del taulell segons s'hagi definit a
+  ``ConstructorTaulell``. El nom del taulell és proporcionat com a
+  argument de línia de comandes.
+
+  De no trobar-se el taulell amb aquest nom, finalitza execució amb
+  un missatge d'error
+
+* El programa valida que el contingut del fitxer sigui correcte. De no
+  ser-ho, finalitza execució amb un missatge d'error.
+
+* D'estar tot correcte, el programa mostra el mapa del taulell on,
+  inicialment totes les cel·les apareixen amb el valor *ocult* sota un
+  símbol d'interrogació. Com a ajuda, al voltant dels valors del
+  taulell, apareixeran els noms de la fila/la columna corresponent.
+
+  Per exemple, si el taulell és 10x28, la seva representació inicial
+  serà:
+
+  .. code-block:: none
+
+     ·      A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB
+           __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+        1   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    1
+        2   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    2
+        3   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    3
+        4   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    4
+        5   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    5
+        6   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    6
+        7   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    7
+        8   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    8
+        9   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    9
+       10   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?   10
+           __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+            A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z AA AB
+
+
+
+* un cop representat el taulell, se li demanarà a la jugadora que
+  introdueixi una comanda amb un prompt.
+
+Les comandes acceptades, sense distinció de majúscules/minúscules, són:
+
+- ``SURT``: la jugadora abandona la partida. El programa finalitza amb el
+  missatge "JO GUANYO!".
+
+- ``SOLUCIONA``: la jugadora abandona la partida però vol veure el taulell.
+  El programa finalitza tot mostrant el taulell sense cap posició oculta
+  i el missatge "JO GUANYO!".
+
+- ``AJUDA``: el programa mostra un text d'ajuda on descriu les comandes
+  acceptades.
+
+- una coordenada: la jugadora introdueix una coordenada vàlida. El
+  programa respon depenent de les següents condicions:
+
+  Si és una cel·la ja destapada, el programa respon amb un missatge que
+  invita la jugadora a estar més atenta. Per exemple, "DESPERTA!"
+
+  Si és una cel·la que contenia aigua, el programa respondrà "AIGUA" i
+  mostrarà el mapa del taulell amb la cel·la destapada.
+
+  Si és una cel·la que contenia un vaixell i encara queden parts del
+  vaixell sense destapar, el programa respondrà amb "TOCAT" i mostrarà
+  el mapa del taulell amb la cel·la destapada.
+
+  Si la cel·la destapada finalitza un vaixell, el programa respondrà amb
+  "TOCAT I ENFONSAT", i:
+
+  Si en finalitzar un vaixell, encara queden vaixells per destapar,
+  mostrarà el mapa del taulell amb la cel·la destapada.
+
+  Si era el darrer vaixell no destapat al taulell, mostrarà tot el
+  taulell destapat i el missatge "TU GUANYES!"
+
+
+Altres detalls importants
+=========================
+
+T'ofereixo algunes aclaracions i pistes. Encara que pensis que no les
+necessites, et demanaria que les llegeixis doncs inclouen informació de
+context que et pot ser útil.
+
+Representació interna
+---------------------
+
+Hi ha moltes maneres de representar internament els taulells. Donat que
+per cada cel·la només necessitem saber un valor del 0 al 9, el que guardem
+als fitxers podria ser, per exemple:
+
+* un caràcter per cel·la i separant cada línia amb un salt de línia per
+  delimitar files
+
+  És una solució molt fàcil de gestionar i fins i tot podem entendre el
+  contingut dels fitxers amb força facilitat. El problema és que en Java,
+  un caràcter ocupa 2 bytes quan amb 4 bits en tindríem de sobres!
+
+* un byte per cel·la (codificant els valors com a ASCII), amb salt de
+  línia per delimitar files
+
+  Una versió més eficient en espai que encara es podria llegir com a text
+
+* un byte per cel·la codificant els valors com a enters, amb un valor
+  especial per marcar el final de fila.
+
+  Ens caldrà guardar els fitxers en binari i potser no guanyem tant
+  respecte la proposta anterior.
+
+* un byte per cel·la amb dos enters petits inicials, codificant el nombre
+  de files i de columnes del taulell
+
+  Ens estalviem un byte per cada fila. Depenent del nombre de files, pot
+  ser un estalvi.
+
+* un byte per cada dues cel·les, amb dos *short int* inicials representant
+  les dimensions del taulell.
+
+  Si t'agrada estalviar espai, aquesta pot ser una bona opció. Costarà una
+  mica més codificar i descodificar, però et sentiràs *molt pro* ;)
+
+* guardant només les especificacions de les dimensions del taulell i dels
+  vaixells
+
+  Probablement és l'opció més eficient en espai. Et requerirà fer més
+  càlculs a l'hora d'interpretar el seu contingut però… i com t'ho
+  passaràs de bé codificant-t'ho?
+
+El taulell, durant l'execució pot ser representat de qualsevol de les
+maneres anteriors, tot i que potser serà interessant trobar-ne una que
+faci més fàcil identificar les cel·les encara ocultes. Potser la manera
+més fàcil serà fer servir una taula de ``char``. Tu manes!
+
+Nom dels fitxers
+----------------
+
+Els noms dels fitxers
+podrien correspondre amb el nom del taulell indicat per la constructora
+(en minúscules), amb l'extensió ``.taulell`` i podrien estar guardats en
+un mateix directori (ex. ``taulells/``.
+
+Tot plegat, simplificaria molt la seva gestió. En tot cas, com en tants
+altres detalls d'implementació d'aquest exercici, la decisió és teva.
+
+Esborrar pantalla
+-----------------
+
+* El teu programa farà més goig si pots esborrar la pantalla.
+
+  Crea un programa i fes que executi el següent codi que hauria de
+  funcionar-te amb una consola *X-linux*:
+
+  .. code-block:: java
+
+        /**
+         * Neteja la finestra de la consola
+         */
+        static void netejaFinestra() {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
+
+
+Reutilització de codi i *packages*
+----------------------------------
+
+És fàcil que et resulti interessant reaprofitar mòduls que has
+desenvolupat a ``ConstructorTaulell`` des de ``Flota`` o, fins i tot
+d'altres d'exercicis previs com ``TaulesUtils``. Per fer-ho, en comptes de
+copiar i enganxar funcions, pot simplement assegurar-te que el codi de
+totes les classes que t'interessen, es troba a la mateixa carpeta que el
+programa que estàs codificant. Llavors, per cridar-les, simplement fes
+servir el nom de la classe, seguit de punt, i acabat per la crida habitual
+al mòdul corresponent.
+
+Per simplicitat, de moment **no** defineixis els teus propis *packages*.
+Si estàs fent servir una eina que te'ls genera automàticament, assegura't
+d'eliminar-los.
+
+
+Excepcions i orientació a objectes
+----------------------------------
+
+Hi ha molts conceptes que encara no hem treballat de Java. Entre d'altres
+la orientació a objectes i el mecanisme d'excepcions.
+
+Evita tant com et sigui possible aquests dos temes, doncs no és l'objectiu
+d'aquesta pràctica. Si per exemple, en obrir un fitxer es produeix una
+excepció, és acceptable que el teu programa simplement finalitzi amb un
+missatge d'error gestionat pel Java.
+
+Control de versions
+-------------------
+
+És molt important que realitzis un control de versions durant el
+desenvolupament d'aquesta pràctica, doncs forma part de l'avaluació.
+
+Si has de treballar tu sola/sol, guarda el teu exercici com a
+``06_06_flota/`` al teu repositori de l'assignatura.
+
+En cas que el desenvolupis conjuntament amb una altra companya o company,
+és preferible que creeu un nou repositori on treballar conjuntament. Feu
+:doc:`les mateixes passes <holagit>` que vau realitzar per construir el
+que feu servir en aquesta assignatura. Aquest cop, però, hi serem un/una
+més al repositori. Tot i que el repositori estarà dedicat a aquest
+exercici, incloeu tot el desenvolupament dins de la carpeta
+``06_06_flota/``.
+
+Aquesta experiència de treballar conjuntament sobre el mateix repositori
+ja és, en sí, molt enriquidora. Demaneu ajut quan apareguin dificultats.
+
+Assegureu-vos que incloeu el nom de tots els autors/autores a la capçalera
+de cada fitxer.
+
+No oblidis, després de cada canvi significatiu, fer un *commit*!
+
+Recorda que aquí l'objectiu no és l'eficiència en la producció de codi
+sinó l'eficiència en l'aprenentatge.
+
+
+Com començar-ho tot plegat?
+---------------------------
+
+Probablement el punt més difícil és començar a fer el programa. Et proposo
+el següent:
+
+* si has de treballar per parelles, creeu el nou repositori privat,
+  convideu-me i prepareu el vostre entorn local. Potser voldreu fer alguna
+  prova tot editant per separat el fitxer ``readme``.
+
+* creat un fitxer amb el nom del programa i defineix una bona capçalera.
+  Pots fer servir inicialment el text d'aquest enunciat, però de seguida,
+  intenta desglossar-lo en una llista d'elements petits. Per exemple:
+
+  - oferir missatge presentant la funció del programa
+
+  - mostrar prompt
+
+  - recollir comanda
+
+  - mostrar ajuda
+
+  - crear nou taulell
+
+  - …
+
+
+* fes una o més simulacions de diferents execucions. La primera potser
+  podria ser simplement:
+
+  .. code-block:: none
+
+    $ java ConstructorTaulell
+
+    Benvingut, benvinguda al programa de construcció de taulells pel joc
+    d'enfonsar la flota.
+
+    Per demanar ajuda, simplement tecleja AJUDA
+
+    > SURT
+    Adéu
+
+  Un cop tinguis la primera, podries ja generar el primer programa que
+  sigui capaç de passar la prova.
+
+  És molt recomenable que facis servir fitxers d'entrada/sortida a l'estil
+  dels que hem estat fent servir durant tot el curs. Si et cal, demana
+  ajuda per adaptar el programa ``test/test.sh`` a les necessitats del teu
+  projecte.
+
+* Per la majoria de nosaltres, resulta més fàcil abordar els problemes,
+  tot simplificant-los inicialment, per després anar-los completant de
+  manera incremental.
+
+  Per exemple, probablement sigui més adequat mostrar inicialment els
+  valors dels taulells sense indicar ni el número de fila ni la lletra de
+  la columna. Tot seguit pots mirar de posar les files a una banda,
+  després a les dues, després els noms de columna de la A a la Z, després
+  continuar fins la ZZ.
+
+* quan tinguis clar que has de crear un mòdul, defineix clarament el seu
+  objectiu. En cas que et sigui possible, defineix una mena de *doctest*
+  o, si t'atreveixes, un *junit test*! No tinguis problemes per demanar
+  suport. El teu profe estarà més que content d'ajudar-te!
+
+* Finalment recorda: no estàs sola/sol desenvolupant. Està molt bé fer
+  coses per la teva banda, però també aprendre a fer consultes de com
+  resoldre un problema que no et surt o, fins i tot, demanar assessorament
+  quan el codi que has generat no t'acaba de convèncer.
+
+Ampliacions ☼
+=============
+
+Hi ha un bon nombre d'ampliacions d'aquest projecte que poden ser
+interessants. Et proposo algunes:
+
+* multijugador: oferir la possibilitat de que hi hagi més d'una jugadora.
+  ``Flota`` pot demanar quants jugadors a l'inici del joc, pot ser fins i
+  tot, un nom per jugadora, i anar demanant de manera alternativa la
+  resposta a cada jugadora.
+
+* paginació: ofereix la opció de mostrar parcialment el mapa. Per exemple,
+  indicant el segment del mapa a mostrar.
+
+* redimensionat: ``ConstructorTaulell`` permet redimensionar un taulell ja
+  creat o un vaixell, o fins i tot, moure un vaixell.
+
+* random: ``ConstructorTaulell`` permet col·locar de manera aleatòria un
+  vaixell d'una dimensió donada.
+
+* taulell esfèric: es considera el taulell esfèric.
+
+  Per exemple, el següent taulell 3x4 és vàlid i conté un sol vaixell:
+
+  .. code-block:: none
+
+     ·   A  B  C  D
+        __ __ __ __
+     1   .  .  .  .   1
+     2   3  .  3  3   2
+     3   .  .  .  .   3
+        __ __ __ __
+         A  B  C  D
+
+* multijugador distribuït: vols aconseguir que els jugadors puguin
+  connectar-se a la teva aplicació de manera remota i jugar? Finalitza com
+  a mínim els requeriments bàsics, i consulta'm!

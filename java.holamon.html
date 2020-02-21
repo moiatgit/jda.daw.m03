@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ritual Hola Món en Java! &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Variables" href="java.variables.html" />
+    <link rel="prev" title="Versió del Java" href="java.versio.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java.versio.html">Versió del Java</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ritual Hola Món en Java!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.operadors.html">Operadors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.expressions.html">Expressions i Instruccions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.moduls.html">Mòduls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.sequencies.html">Seqüències</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
+        
+      <li>Ritual Hola Món en Java!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ritual-hola-mon-en-java">
+<h1>Ritual Hola Món en Java!<a class="headerlink" href="#ritual-hola-mon-en-java" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ja sabem que per a poder obtenir la benedicció dels deus de la programació, ens
+cal fer un ritual cada cop que ens introduïm amb una nova tecnologia, oi?</p>
+<p>De la mateixa manera que ja ho vam fer amb Python a <a class="reference internal" href="ritual_holamon.html"><span class="doc">Ritual Hola Món!</span></a>, ens
+toca ara fer-ho amb Java.</p>
+<p>Segueix les passes:</p>
+<ol class="arabic">
+<li><p>Obre una consola / terminal</p></li>
+<li><p>Invoca la consola de Java</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ jshell
+|  Welcome to JShell -- Version 11.0.1
+|  For an introduction type: /help intro
+
+jshell&gt;
+</pre></div>
+</div>
+<p>La darrera línia correspon al <em>prompt</em> de la consola de Java</p>
+</li>
+<li><p>Escriu (sense comptar el prompt):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jshell&gt; System.out.println(&quot;Hola món!&quot;);
+Hola món!
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Felicitats! Has fet el teu primer programa en Java!</p>
+<ol class="arabic">
+<li><p>Surt de la consola de java amb <em>ctrl-d</em></p></li>
+<li><p>Crea un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">HolaMon.java</span></code> (compte amb les majúscules!) i
+escriu-hi a dins:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que saluda al món</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMon</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola Món!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>D’acord, sí, hi ha moltes coses aquí pel poc que ha de fer, oi? A més,
+probablement tot et soni una mica indesxifrable. No t’amoïnis, ja veuràs com
+aviat ho entendràs tot.</p>
+<p>De moment, et vull fer notar que el nom del fitxer, sense l’extensió,
+apareix a la línia 4.</p>
+<p>Un altre punt important és que, per molt Java que sigui, aquí també haurem de
+posar comentaris a cada fitxer, com fèiem amb Python. Per si no ho veus
+clar, els comentaris són les paraules que apareixen entre els símbols <code class="docutils literal notranslate"><span class="pre">/*</span></code>
+o <code class="docutils literal notranslate"><span class="pre">*/</span></code>. Aquesta manera de marcar comentaris seria similar a la que fem en
+Python amb triple cometes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>.</p>
+<p>Java també ens ofereix una marca per fer comentaris en una línia amb <code class="docutils literal notranslate"><span class="pre">//</span></code>, que funcionen de la mateixa manera que el <code class="docutils literal notranslate"><span class="pre">#</span></code> de Python.</p>
+<p>No oblidis de guardar el document!</p>
+</li>
+<li><p>Novament a la consola, executa la següent comanda:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ javac HolaMon.java
+</pre></div>
+</div>
+<p>Si tot ha anat bé, no tindràs cap missatge. Altrament, t’indicarà algun error
+que molt probablement has comés en teclejar. Revisa el teu codi i torna a
+provar fins que la comanda anterior no generi cap missatge.</p>
+</li>
+<li><p>Comprova que s’ha creat un nou fitxer</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ls HolaMon.*
+HolaMon.class  HolaMon.java
+</pre></div>
+</div>
+<p>El nou fitxer <code class="docutils literal notranslate"><span class="pre">HolaMon.class</span></code> és la versió compilada del teu codi.</p>
+<p>Fins ara, amb Python, no ens havia tocat fer aquesta passa de compilar doncs
+Python és interpretat.</p>
+<p>Per executar un programa en qualsevol llenguatge de programació, cal
+traduir les instruccions a l’únic llenguatge que entén l’ordinador (el
+codi màquina).</p>
+<p>Els llenguatges <em>interpretats</em> tradueixen una petita part del codi i
+l’executen, abans de passar a la següent. Els llenguatges <em>compilats</em>
+tradueixen <strong>tot</strong> el codi del programa abans de que es pugui començar
+l’execució.</p>
+<p>Molts llenguatges moderns s’escapen una mica o molt
+d’aquesta definició bàsica i, en lloc de traduir el codi a llenguatge
+màquina, ho fan a un llenguatge intermedi que requerirà un altre
+programa per que el tradueixi definitivament al llenguatge màquina.
+Aquest és el cas de Java.</p>
+<p>El programa que ha de traduir el codi
+compilat de java es diu <em>jre</em> (<em>java runtime environment</em> o més conegut
+como <em>màquina virtual de Java</em>.</p>
+<p>En compilar, Java ens ha generat el fitxer <code class="docutils literal notranslate"><span class="pre">HolaMon.class</span></code>, que conté
+valors no imprimibles i per tant, no pot ser editat de la mateixa
+manera que <code class="docutils literal notranslate"><span class="pre">HolaMon.java</span></code>. Està orientat a ser llegit pel <em>jre</em>
+i no per una persona.</p>
+</li>
+<li><p>Finalment, executa el teu programa</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java HolaMon
+Hola Món!
+</pre></div>
+</div>
+<p>Fixa’t que ara no ha calgut dir l’extensió <code class="docutils literal notranslate"><span class="pre">.class</span></code>. El programa <code class="docutils literal notranslate"><span class="pre">java</span></code>
+és l’encarregat d’executar el codi compilat que apareix al fitxer <code class="docutils literal notranslate"><span class="pre">HolaMon.class</span></code>.</p>
+</li>
+</ol>
+<div class="section" id="exercici-1-presentem-nos">
+<h2>Exercici 1. Presentem-nos<a class="headerlink" href="#exercici-1-presentem-nos" title="Link permanent a aquest títol">¶</a></h2>
+<p>Crea un nou programa anomenat <code class="docutils literal notranslate"><span class="pre">EmpPresento.java</span></code> que, en ser executat escrigui per pantalla el mateix
+que <code class="docutils literal notranslate"><span class="pre">HolaMon.java</span></code>, excepte que, en comptes de <em>Hola Món!</em>, sortirà un missatge similar al següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hola, sóc la Adelita, la futura millor desenvolupadora del Món!
+</pre></div>
+</div>
+<p>Com ja va passar la darrera vegada, si no et dius Adelita, canvia el nom. Pots
+modificar també la resta de la frase amb quelcom que sentis còmode.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ara que estem fent servir Java, ens pot ser interessant que
+<em>git</em> no guardi els fitxers <cite>.class</cite>. Per
+fer-ho, afegeix la següent línia al teu <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*.class
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="java.variables.html" class="btn btn-neutral float-right" title="Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="java.versio.html" class="btn btn-neutral float-left" title="Versió del Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

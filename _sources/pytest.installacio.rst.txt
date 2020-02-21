@@ -1,0 +1,52 @@
+############
+Instal·lació
+############
+
+Primer de tot, comprovem que el tens disponible a la teva instal·lació:
+
+.. code-block:: none
+
+    $ pytest --version
+    This is pytest version 5.2.2, imported from /home/moises/.virtualenvs/introprg/lib/python3.8/site-packages/pytest.py
+
+Si no t'ha sortit quelcom similar, no pateixis, l'instal·larem de seguida.
+
+Per instal·lar *pytest* comprovem si disposem de l'instal·lador ``pip`` al
+nostre equip.
+
+.. code-block:: none
+
+    $ pip3 --version
+    pip 19.3.1 from /home/moises/.virtualenvs/introprg/lib/python3.8/site-packages/pip (python 3.8)
+
+Si ens ha donat un error de no trobar la comanda ``pip3`` és que no tenim
+l'instal·lador. Probablement ens caldrà doncs disposar de privilegis
+d'administració i fer:
+
+.. code-block:: none
+
+    $ sudo apt install python3-pip
+
+Un cop el tinguem, instal·lem ``pytest`` amb:
+
+.. code-block:: none
+
+    $ pip3 install --user -U pytest
+
+Torna a demanar la versió de ``pytest`` i ara ja sí que l'hauries de tenir
+al teu equip.
+
+Quan instal·les amb opció ``--user``, ``pip3`` deixa la instal·lació dins
+de ``~/.local/bin/``. Aquesta carpeta no sol estar a la variable d'entorn
+``PATH``. Per la teva comoditat, et proposo que consideris afegir la
+següent línia al teu fitxer ``~/.bashrc``:
+
+.. code-block:: none
+
+    PATH=$PATH:$HOME/.local/bin
+
+No oblidis tornar a carregar el ``.bashrc``, per exemple, amb:
+
+.. code-block:: none
+
+    $ source ~/.bashrc

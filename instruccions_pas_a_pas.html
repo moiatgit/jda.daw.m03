@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Un programa pas a pas &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Comprovem els programes" href="instruccions_comprovacio.html" />
+    <link rel="prev" title="Entrada/Sortida" href="instruccions_es.html" />
+     
+    <script src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="instruccions.html">Instruccions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions_assignacio.html">Instruccions d’assignació</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions_es.html">Entrada/Sortida</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Un programa pas a pas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions_comprovacio.html">Comprovem els programes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="instruccions.html">Instruccions</a> &raquo;</li>
+        
+      <li>Un programa pas a pas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div>
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+
+    <script>setCookiesboxVisibility();</script>
+
+</div>
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="un-programa-pas-a-pas">
+<h1>Un programa pas a pas<a class="headerlink" href="#un-programa-pas-a-pas" title="Link permanent a aquest títol">¶</a></h1>
+<p>Encara que tot plegat pugui semblar confós, no et deixis superar pel soroll. Els
+conceptes que estem treballant continuen sent molt simples: instruccions
+seqüencials que permeten assignar valors a variables.</p>
+<p>Construïm un programa senzillet, va.</p>
+<p>Ho farem molt pas a pas i, per aquesta raó, semblarà més complex del que
+és. Les tècniques que aplicarem durant la seva construcció, però, ens
+oferiran una bona guia per a fer programes més complexos.</p>
+<p>Et recomano que, en una primera lectura <strong>només</strong> llegeixis i intentis entendre
+el màxim de la següent descripció. Després tindràs l’oportunitat de realitzar
+les passes.</p>
+<div class="section" id="el-programa-que-saluda">
+<h2>El programa que saluda<a class="headerlink" href="#el-programa-que-saluda" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considerem que volem construir un programa que demani als usuaris el seu
+nom i, tot seguit, el saludi amablement.</p>
+<p>Comencem per la part més important: el comentari de capçalera!</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+</pre></div>
+</td></tr></table></div>
+<p>Un cop hem escrit el comentari que descriu què fa el nostre programa,
+pensem com serà executat. Com l’enunciat no ho especifica, posarem els
+detalls que ens falten nosaltres mateixos. Per exemple, l’execució podria
+ser quelcom similar a:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 saludausuari.py
+Com et dius?
+Manel
+Hola Manel. M&#39;encanta saber de tu
+</pre></div>
+</td></tr></table></div>
+<p>Amb la línia 1 hem establert el nom del fitxer que contindrà el nostre
+programa. Tot i que podem posar-li qualsevol, <code class="docutils literal notranslate"><span class="pre">saludausuari.py</span></code> sembla
+prou descriptiu.</p>
+<p>El contingut de la línia 3 correspon a l’entrada que escriuria un usuari
+(entrada estàndard).  Les línies 2 i 4, en canvi, les escriurà el nostre
+programa (sortida estàndard).</p>
+<p>D’aquesta manera, hem pres algunes decisions importants. En concret, ja
+tenim els missatges concrets i la manera d’interactuar amb l’usuari.</p>
+<p>Afegim l’exemple al nostre codi:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara que ja tenim clar <em>què</em> és el que hem de fer, pensem <em>com</em>. És a dir, quines
+passes ens portaran a aconseguir el nostre objectiu.</p>
+<ul class="simple">
+<li><p>primer, sembla que hem d’obtenir el nom de l’usuari, oi?</p></li>
+<li><p>un cop el tinguem, haurem de construir el missatge de salutació</p></li>
+<li><p>finalment, haurem de mostrar-li aquest missatge a l’usuari</p></li>
+</ul>
+<p>Doncs vinga, a comentar el nostre codi:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="hll"><span class="c1"># XXX obtenir nom</span>
+</span>
+<span class="hll"><span class="c1"># XXX composar el missatge</span>
+</span>
+<span class="hll"><span class="c1"># XXX mostrar missatge</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Fixa’t que hem posat <code class="docutils literal notranslate"><span class="pre">XXX</span></code> davant dels comentaris que expressen les
+passes que hem de realitzar. Aquestes tres X juntes solen indicar que hi
+ha alguna cosa pendent a fer.</p>
+<p>El nostre programa continua creixent (14 línies!) i encara no fa res. A
+sobre, ara s’ha convertit en tres problemes a resoldre en comptes d’un!</p>
+<p>En el seu favor, direm que cadascun dels tres subproblemes és més fàcil
+que el problema principal i, en resoldre tots tres, tenim resolt el
+principal! D’això s’en diu <em>dividir i vèncer</em>.</p>
+<div class="sidebar">
+<p class="sidebar-title">Dividir i vèncer</p>
+<p>La tècnica de <em>dividir i vèncer</em> o <em>divide and conquer</em> és una de les
+més importants a l’hora de desenvolupar.</p>
+<p>En el fons, és una tècnica molt simple:</p>
+<ul class="simple">
+<li><p>si el problema és prou simple, resol directament</p></li>
+<li><p>si el problema és complex, trenca-ho en troços i a cada troç
+aplica-li la tècnica <em>dividir i vèncer</em></p></li>
+</ul>
+</div>
+<p>Ara ens centrem en el primer subproblema. Hem de demanar-li el nom a
+l’usuari. Per fer-ho, ens caldrà primer explicitar-li què volem i després
+recollir la seva resposta.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="c1"># XXX obtenir nom</span>
+
+<span class="hll"><span class="c1"># - XXX demanar nom</span>
+</span>
+<span class="hll"><span class="c1"># - XXX obtenir resposta</span>
+</span>
+<span class="c1"># XXX composar el missatge</span>
+
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>Tenim ara dos nous subproblemes. El primer és demanar el nom a l’usuari.
+Pero aquest problema és molt senzill de resoldre. En tenim prou amb la
+instrucció:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Doncs vinga, col·loquem la nostra primera instrucció a
+<code class="docutils literal notranslate"><span class="pre">saludausuari.py</span></code>!</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="c1"># XXX obtenir nom</span>
+
+<span class="c1"># - XXX demanar nom</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+</span>
+<span class="c1"># - XXX obtenir resposta</span>
+
+<span class="c1"># XXX composar el missatge</span>
+
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara ja tenim quelcom executable. Per comprovar que no hem trencat res,
+podem executar el nostre incipient programa:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 saludausuari.py
+Com et dius?
+</pre></div>
+</td></tr></table></div>
+<p>L’execució s’acaba aquí. És clar, no hem programat res més. Però ens
+dóna confiança de que anem bé!</p>
+<p>Eliminem el comentari de la línia 12 doncs el codi ja és evident, i
+continuem pel següent subproblema:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="c1"># XXX obtenir nom</span>
+
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+</span>
+<span class="c1"># - XXX obtenir resposta</span>
+
+<span class="c1"># XXX composar el missatge</span>
+
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>El nou problema a resoldre consisteix en recollir el que l’usuari ens
+respongui. Com que ho farà per l’entrada estàndard, el que hem de fer
+servir és <code class="docutils literal notranslate"><span class="pre">input()</span></code>. Hem de deixar el seu resultat en alguna variable.
+Com que el que ha de contenir és el nom de l’usuari i no sembla que haguem
+de tracter altres moms, podríem anomenar-la simplement <code class="docutils literal notranslate"><span class="pre">nom</span></code>.</p>
+<p>La instrucció resultant seria, simplement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Incorporem la nova instrucció al nostre programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="c1"># XXX obtenir nom</span>
+
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+</span>
+<span class="c1"># - XXX obtenir resposta</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="c1"># XXX composar el missatge</span>
+
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>Executem novament el nostre codi:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 saludausuari.py
+Com et dius?
+Manel
+</pre></div>
+</td></tr></table></div>
+<p>Aquest cop, en escriure <code class="docutils literal notranslate"><span class="pre">Com</span> <span class="pre">et</span> <span class="pre">dius?</span></code> es queda esperant. Quan li
+introduïm el nom, però, no fa res! Bé, clar, encara no li hem dit què n’ha
+de fer amb el nom.</p>
+<p>El que sí està clar és que ja hem completat el problema de recollir la
+resposta i, també, el problema més gros d’obtenir el nom. Fem neteja de
+comentaris innecessaris abans de continuar.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span>
+<span class="c1"># XXX composar el missatge</span>
+
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>El nostre programa està agafant forma, oi?</p>
+<p>Passem ara al següent objectiu i composem el missatge. Per fer-ho, sabem
+que haurem de concatenar el nom que ens han introduït amb la resta del
+missatge. Una de les maneres que podem fer per construir el missatge
+seria:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+</pre></div>
+</div>
+<p>Si no estem segurs de si això farà el que volem, podem entrar en la
+consola de Python i comprovar-ho:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Manel&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+<span class="go">&quot;Hola Manel. M&#39;encanta saber de tu&quot;</span>
+</pre></div>
+</div>
+<p>Fa bona pinta, oi?</p>
+<p>El resultat l’haurem de col·locar en algun lloc, és a dir, en
+una variable. Li podem dir per exemple <code class="docutils literal notranslate"><span class="pre">missatge</span></code> doncs és el que
+contindrà, no? La instrucció resultant seria:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+</pre></div>
+</div>
+<p>Substituïm el comentari de la línia 13 per la nova instrucció al codi del
+programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="hll"><span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+</span>
+<span class="c1"># XXX mostrar missatge</span>
+</pre></div>
+</td></tr></table></div>
+<p>Podem executar-ho per comprovar que no hem trencat res, però no veurem més
+resposta, doncs encara no hem dir que s’ha de fer amb el missatge. Això és
+justament el que ens demana el darrer objectiu.</p>
+<p>Però ja sabem com mostrar missatges de text per sortida estàndard, oi?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Reemplacem el comentari de la línia 15 per aquesta instrucció i tenim el
+programa:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Programa que demana a l&#39;usuari el seu nom i li saluda pel seu nom</span>
+<span class="c1">#</span>
+<span class="c1"># Exemple d&#39;execució:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ python3 saludausuari.py</span>
+<span class="c1">#   Com et dius?</span>
+<span class="c1">#   Manel</span>
+<span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
+
+<span class="c1"># Obtenció de l&#39;entrada</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="c1"># Composició del missatge</span>
+<span class="hll"><span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
+</span>
+<span class="c1"># Mostra el resultat</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+
+</pre></div>
+</td></tr></table></div>
+<p>Executem el nostre programa:</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 saludausuari.py
+Com et dius?
+Manel
+Hola Manel. M&#39;encanta saber de tu
+</pre></div>
+</td></tr></table></div>
+<p>Bravo!</p>
+</div>
+<div class="section" id="recapitulem">
+<h2>Recapitulem<a class="headerlink" href="#recapitulem" title="Link permanent a aquest títol">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Esquema bàsic dels nostres programes</p>
+<p>Ara que estem aprenent a programar, ens trobarem que molt habitualment els nostres programes es descomposen en tres subproblemes:</p>
+<ul class="simple">
+<li><p>obtenir les dades a manipular</p></li>
+<li><p>manipular les dades per calcular la resposta</p></li>
+<li><p>generar la resposta obtinguda</p></li>
+</ul>
+</div>
+<p>Per construir el nostre programet, hem realitzat les següents passes:</p>
+<ol class="arabic">
+<li><p>Hem descrit en una capçalera què fa el nostre programa</p></li>
+<li><p>Hem simulat una execució del nostre programa, amb el que</p>
+<ul class="simple">
+<li><p>hem decidit el nom del fitxer</p></li>
+<li><p>hem decidit els missatges concrets que generarem</p></li>
+<li><p>hem decidit la manera concreta d’interaccionar amb l’usuari</p></li>
+</ul>
+</li>
+<li><p>Tot seguit, hem descomposat el nostre problema en tres subproblemes</p>
+<p>Hem afegit les descripcions dels subproblemes com a comentaris dins del
+nostre codi. Els hem remarcat amb <code class="docutils literal notranslate"><span class="pre">XXX</span></code>.</p>
+</li>
+<li><p>A continuació hem anat resolent cada subproblema. Aquells que
+requereixen més d’una instrucció, els hem desglossat en subproblemes.</p></li>
+<li><p>Quan ja hem tingut les instruccions corresponent, hem substituït el
+comentari <code class="docutils literal notranslate"><span class="pre">XXX</span></code> per les instruccions.</p></li>
+<li><p>Hem executat sovint el codi resultant per comprovar que tot anava
+correctament.</p></li>
+<li><p>Quan hem tingut dubtes del funcionament d’alguna part, l’hem provada en
+la consola de Python</p></li>
+<li><p>Un cop finalitzat el nostre programa i comprovat que funciona, l’hem
+lliurat al nostre client i ens ha pagat. Bé, aquesta part no l’hem feta
+de moment. Tot arribarà.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Els exercicis que venen a continuació et permetran pràcticar l’assignació i
+l’entrada/sortida. L’objectiu més important, però, <strong>no</strong> rau en que
+funcionin sinó en que practiquis la manera estructurada que t’estic
+proposant.</p>
+<p>Molta gent es veu de seguida amb la capacitat de programar aquests exercicis
+sense pensar-hi gaire i se sent temptada a saltar-se la part de
+explícitar l’objectiu amb una capçalera, definir la simulació o de fer
+servir comentaris per indicar els subproblemes a resoldre. Et recomano molt
+que no caiguis en la trampa. Els problemes aniran esdevenint cada cop més
+complexos i començar amb bons hàbits amb problemes menys complexos pot
+donar-te molt d’avantatge.</p>
+<p><strong>Jo t’he avisat</strong></p>
+</div>
+</div>
+<div class="section" id="exercici-3-el-programa-que-saluda-repassat">
+<h2>Exercici 3. ☼ El programa que saluda (repassat)<a class="headerlink" href="#exercici-3-el-programa-que-saluda-repassat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Segurament mentre t’ho explicava a classe no has tingut temps de teclejar
+l’exercici d’exemple. És una bona pràctica escriure’l sencer des de zero.</p>
+<p>Torna a rellegir la descripció de com desenvolupar el programa que saluda,
+aquest cop segueix les passes fins que el programa s’executi.</p>
+</div>
+<div class="section" id="exercici-4-noms-i-cognoms">
+<h2>Exercici 4. Noms i cognoms<a class="headerlink" href="#exercici-4-noms-i-cognoms" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa en el fitxer anomenat <code class="docutils literal notranslate"><span class="pre">nom_i_cognoms.py</span></code> dins d’una
+carpeta anomenada <code class="docutils literal notranslate"><span class="pre">01_04_nomsicognoms/</span></code>, que demani a
+l’usuari el seu nom. Un cop obtingut, demanarà el seu cognom.  Finalment
+respondrà: <code class="docutils literal notranslate"><span class="pre">&quot;Ei</span> <span class="pre">«nom»,</span> <span class="pre">tinc</span> <span class="pre">una</span> <span class="pre">amiga</span> <span class="pre">que</span> <span class="pre">també</span> <span class="pre">és</span> <span class="pre">«cognom»&quot;</span></code>.</p>
+<p>Per fer-ho, recorda les passes:</p>
+<ol class="arabic simple">
+<li><p>Defineix una capçalera</p></li>
+<li><p>Simula una execució</p></li>
+<li><p>Decomposa el programa en, com a mínim tres subproblemes: obtenció de
+l’entrada, càlcul i presentació dels resultats</p></li>
+<li><p>Resol cada subproblema. Si cal, decomposa’ls encara més.</p></li>
+</ol>
+<p>No oblidis actualitzar el teu repositori <code class="docutils literal notranslate"><span class="pre">git</span></code> (incloent la versió remota) amb
+el nou exercici.</p>
+</div>
+<div class="section" id="exercici-5-repetim-una-paraula">
+<h2>Exercici 5. Repetim una paraula<a class="headerlink" href="#exercici-5-repetim-una-paraula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa dins de la carpeta <code class="docutils literal notranslate"><span class="pre">01_05_repeteixparaula/</span></code> que demani
+a l’usuari una paraula i un número, i escrigui la paraula tants cops com digui
+el nombre.</p>
+<p>La interacció podria ser similar al següent:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 paraularepetida.py
+Diguem una paraula:
+<span class="hll">namaste
+</span>Diguem quants cops la vols:
+<span class="hll"><span class="m">5</span>
+</span>namaste namaste namaste namaste namaste
+</pre></div>
+</div>
+<p><strong>Pistes</strong></p>
+<ul>
+<li><p>Com sempre, fes servir les passes habituals per resoldre’l</p></li>
+<li><p>L’operador <code class="docutils literal notranslate"><span class="pre">*</span></code> en Python permet multiplicar un text per un nombre i el
+resultat és que el text es repeteix tants cops com digui el nombre</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hola&quot;</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="go">holaholahola</span>
+</pre></div>
+</div>
+</li>
+<li><p>La teva solució, perquè es separin les paraules, requerirà que aparegui un
+espai extra al final de cada repetició (incloent la darrera!)</p></li>
+<li><p>Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> retorna un valor de tipus <em>string</em>. Això et
+requerirà convertir-ho si et cal un número.</p></li>
+</ul>
+</div>
+<div class="section" id="exercici-6-un-rectangle-a-mida">
+<h2>Exercici 6. ☼ Un rectangle a mida<a class="headerlink" href="#exercici-6-un-rectangle-a-mida" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa a la carpeta <code class="docutils literal notranslate"><span class="pre">01_06_rectangleamida</span></code> que demani a
+l’usuària un color i la longitut dels dos costats d’un rectandle i, fent servir
+la tortuga, el dibuixi.</p>
+<p>La interacció pot ser similar a:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 rectandeamida.py
+Color del rectangle:
+<span class="hll">red
+</span>Longitut del primer costat:
+<span class="hll"><span class="m">50</span>
+</span>Longitut del segon costat:
+<span class="m">75</span>
+</pre></div>
+</div>
+<p>A continuació, obrirà una finestra i dibuixarà el rectangle amb el color i els
+costats indicats,</p>
+<img alt="_images/rectangleamida.png" class="align-center" src="_images/rectangleamida.png" />
+<p>El programa no és gaire diferent als que ja hem fet. Simplement et tocarà
+demanar el valor per a tres variables i usar-les a l’hora de fer les peticions a
+la tortuga. Per exemple, si hem guardat el valor del color a una variable
+anomenada <code class="docutils literal notranslate"><span class="pre">color</span></code>, i la tortuga a la variable <code class="docutils literal notranslate"><span class="pre">tortuga</span></code>, podem demanar-li el
+canvi de color amb:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tortuga</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Pistes</strong>:</p>
+<ul class="simple">
+<li><p>Recorda que <code class="docutils literal notranslate"><span class="pre">input()</span></code> et retorna sempre text i potser voldràs que sigui
+numèric. En aquests casos caldrà convertir amb la funció <code class="docutils literal notranslate"><span class="pre">int()</span></code>.</p></li>
+<li><p>En aquest exercici, la simulació descrita no serà igual que les anteriors. En
+concret la sortida haurà de ser descrita en llenguatge natural.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41103782-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <!-- End Google Analytics -->
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="instruccions_comprovacio.html" class="btn btn-neutral float-right" title="Comprovem els programes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instruccions_es.html" class="btn btn-neutral float-left" title="Entrada/Sortida" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
