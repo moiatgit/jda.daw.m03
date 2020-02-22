@@ -186,7 +186,11 @@ Les comandes acceptades seran, sense distingir majúscules de minúscules:
   Altrament es mostra el missatge ``No hi ha cap taulell. Considereu les
   opcions NOU o CARREGA``.
 
-  Si hi ha un taulell en construcció, es demana un nom pel taulell.
+  En cas que el taulell encara no tingui cap vaixell, mostrarà el missatge
+  ``El taulell en construcció no té cap vaixell. Considereu AFEGEIX``.
+
+  Si hi ha un taulell en construcció amb un o més vaixells, es demana un
+  nom pel taulell.
 
   Si el nom del taulell existeix, es sobreescriu el seu contingut amb el
   del taulell actual. **Atenció**: això és una simplificació. Normalment

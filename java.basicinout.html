@@ -390,6 +390,35 @@ mica més de codi però ens solucionarà aquests problemes és:</p>
 <span class="pre">IOException</span></code> al costat de la signatura del <code class="docutils literal notranslate"><span class="pre">main()</span></code>. Es tracta d’un
 mecanisme de Java per controlar possibles errors. En parlarem més
 endavant.</p>
+<p>Donat que normalment ens interessarà disposar d’una única variable
+<code class="docutils literal notranslate"><span class="pre">entrada</span></code>, pot ser còmode expressar el programa anterior de la següent
+manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoReader</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="n">BufferedReader</span> <span class="n">entrada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">));</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>       <span class="c1">// llegim una línia de text</span>
+        <span class="kt">int</span> <span class="n">enter</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>     <span class="c1">// convertim el llegit a enter</span>
+        <span class="c1">// …</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que la declaració i inicialització de la variable <code class="docutils literal notranslate"><span class="pre">entrada</span></code>
+apareix ara fora de <code class="docutils literal notranslate"><span class="pre">main()</span></code>. Això tindrà més sentit quan treballem amb
+més mòduls, en breu.</p>
 </div>
 <div class="section" id="quin-metode-faig-servir">
 <h2>Quin mètode faig servir?<a class="headerlink" href="#quin-metode-faig-servir" title="Link permanent a aquest títol">¶</a></h2>

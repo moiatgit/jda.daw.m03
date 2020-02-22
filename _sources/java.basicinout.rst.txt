@@ -188,6 +188,29 @@ IOException`` al costat de la signatura del ``main()``. Es tracta d'un
 mecanisme de Java per controlar possibles errors. En parlarem més
 endavant.
 
+Donat que normalment ens interessarà disposar d'una única variable
+``entrada``, pot ser còmode expressar el programa anterior de la següent
+manera:
+
+.. code-block:: java
+    :linenos:
+
+    import java.io.BufferedReader;
+    import java.io.InputStreamReader;
+    import java.io.IOException;
+    public class DemoReader {
+        static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+        public static void main(String[] args) throws IOException {
+            String text = entrada.readLine();       // llegim una línia de text
+            int enter = Integer.parseInt(text);     // convertim el llegit a enter
+            // …
+        }
+    }
+
+Fixa't que la declaració i inicialització de la variable ``entrada``
+apareix ara fora de ``main()``. Això tindrà més sentit quan treballem amb
+més mòduls, en breu.
+
 Quin mètode faig servir?
 ========================
 
