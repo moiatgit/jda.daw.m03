@@ -162,6 +162,7 @@ Analitzem el següent programa
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (String linia: linies) {
                 bufferedWriter.write(linia);
+                bufferedWriter.newLine();
             }
             bufferedWriter.close();
         }
