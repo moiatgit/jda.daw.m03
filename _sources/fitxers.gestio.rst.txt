@@ -76,7 +76,7 @@ actual.
 És possible que vulguis veure més operacions disponibles a partir de la
 classe `File
 <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html>`_,
-com per exemple ``mkdir()`` o ``rename()``.
+com per exemple ``exists()``, ``mkdir()`` o ``rename()``.
 
 En executar-lo, et donarà una sortida similar a:
 
