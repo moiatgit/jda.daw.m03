@@ -318,8 +318,9 @@ Python)</p></li>
 <span id="java-construccio-strings"></span><h2>Construcció de Strings<a class="headerlink" href="#construccio-de-strings" title="Link permanent a aquest títol">¶</a></h2>
 <p>De vegades ens pot ser útil construir un String a partir de diferents
 valors. Una manera molt còmoda de fer-ho és aprofitar la funció
-<code class="docutils literal notranslate"><span class="pre">String.format()</span></code> que espera com a paràmetres un String amb marques de
-variables més tants valors com hi hagi a les marques del String.</p>
+<code class="docutils literal notranslate"><span class="pre">String.format()</span></code> que espera com a paràmetres un String que defineix un
+patró amb marques de variables més tants valors com hi hagi a les marques
+del String.</p>
 <p>Per exemple, considera el següent codi:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">19</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Nefertiti&quot;</span><span class="o">;</span>
@@ -333,10 +334,12 @@ variables més tants valors com hi hagi a les marques del String.</p>
 <span class="c1">// missatge.equals(&quot;Nefertiti Peláez Ramírez és major d&#39;edat doncs té 19 anys\n&quot;)</span>
 </pre></div>
 </div>
+<p>Trobaràs tot el detall sobre els elements que poden aparèixer dins del
+patró de <code class="docutils literal notranslate"><span class="pre">String.format()</span></code> a la secció <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax">Format String Syntax</a>.</p>
 </div>
 <div class="section" id="per-saber-mes">
 <h2>Per saber més<a class="headerlink" href="#per-saber-mes" title="Link permanent a aquest títol">¶</a></h2>
-<p>Trobaràs un munt d’altres possibilitats de manipulació i de conversió a i de Strings a:</p>
+<p>Hi ha tot un munt d’altres possibilitats de manipulació i de conversió a i de Strings a:</p>
 <ul class="simple">
 <li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">Strings</a></p></li>
 <li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Integer.html">Integer</a></p></li>
