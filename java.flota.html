@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -506,24 +506,24 @@ funcions:</p>
 <span class="c1">// vàlida</span>
 <span class="c1">// Són descripcions vàlides: (f, c), (f1:f2, c) i (f, c1:c2)</span>
 <span class="c1">// on f, f1, f2, c, c1 i c2 són enters entre 0 i 99</span>
-<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esDescripcioDeVaixellValida</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esDescripcioDeVaixellValida</span><span class="o">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="c1">// retorna true si el vaixell està posicionat de manera horitzontal</span>
 <span class="c1">// Si la descripció no és vàlida per un vaixell, retorna false</span>
-<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esVaixellHoritzontal</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esVaixellHoritzontal</span><span class="o">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="c1">// retorna la longitud del vaixell, -1 si no és una descripció vàlida</span>
-<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">longitudVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripció</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">longitudVaixell</span><span class="o">(</span><span class="n">String</span> <span class="n">descripció</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="c1">// retorna la primera fila del vaixell descrit, -1 si no és una</span>
 <span class="c1">// descripció vàlida</span>
 <span class="c1">// Exemple: &quot;(1:2, 3)&quot; retorna 1. &quot;(5, 4:2)&quot; retorna 5</span>
-<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="o">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="c1">// retorna la darrera fila del vaixell descrit, -1 si no és una</span>
 <span class="c1">// descripció vàlida</span>
 <span class="c1">// Exemple: &quot;(1:2, 3)&quot; retorna 2. &quot;(5, 4:2)&quot; retorna 5</span>
-<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="o">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="o">)</span> <span class="o">{}</span>
 </pre></div>
 </div>
 </div>
@@ -573,10 +573,10 @@ funcionar-te amb una consola <em>X-linux</em>:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * Neteja la finestra de la consola</span>
 <span class="cm"> */</span>
-<span class="kd">static</span> <span class="kt">void</span> <span class="nf">netejaFinestra</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\033[H\033[2J&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kd">static</span> <span class="kt">void</span> <span class="nf">netejaFinestra</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\033[H\033[2J&quot;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </li>
@@ -610,17 +610,17 @@ missatge d’error gestionat pel Java.</p>
 <p>Per simplicitat, en comptes d’haver de passar amunt i avall els taulells i
 altres variables, et proposo que les declaris amb àmbit global dins la
 classe. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">LaClasse</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="kt">int</span> <span class="n">laVariable</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">LaClasse</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">laVariable</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
 
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">elModul</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">laVariable</span><span class="p">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
-    <span class="p">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">elModul</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">laVariable</span><span class="o">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">laVariable</span><span class="p">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">laVariable</span><span class="o">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>

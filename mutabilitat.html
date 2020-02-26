@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -229,9 +229,9 @@ com <code class="docutils literal notranslate"><span class="pre">id(x)</span> <s
 <code class="docutils literal notranslate"><span class="pre">id(1)</span></code>.</p>
 <p>Això explica el que hem experimentat que passa quan el canvi el fem a una funció:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abans  &#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;abans  &#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 <span class="gp">... </span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;després&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;després&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
@@ -252,16 +252,16 @@ referència al mateix objecte que abans de la crida.</p>
 <p>Això funciona igual amb la resta dels tipus que hem vist fins ara. Per
 exemple:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">afegeix_a_str_una_X</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abans id(text):   &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="s2">&quot;text:   &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;abans id(text):   &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="s2">&quot;text:   &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
     <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;X&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;després id(text): &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="s2">&quot;text:   &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;després id(text): &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="s2">&quot;text:   &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">text</span>
 
 <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;Ada&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inici id(nom):    &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nom</span><span class="p">),</span> <span class="s2">&quot;nom:    &quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;inici id(nom):    &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nom</span><span class="p">),</span> <span class="s2">&quot;nom:    &quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
 <span class="n">nou_nom</span> <span class="o">=</span> <span class="n">afegeix_a_str_una_X</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;final id(nom):    &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nom</span><span class="p">),</span> <span class="s2">&quot;nom:    &quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;id(nou_nom):      &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nou_nom</span><span class="p">),</span> <span class="s2">&quot;nou_nom:&quot;</span><span class="p">,</span> <span class="n">nou_nom</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;final id(nom):    &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nom</span><span class="p">),</span> <span class="s2">&quot;nom:    &quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;id(nou_nom):      &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">nou_nom</span><span class="p">),</span> <span class="s2">&quot;nou_nom:&quot;</span><span class="p">,</span> <span class="n">nou_nom</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>El resultat d’executar el codi anterior és:</p>

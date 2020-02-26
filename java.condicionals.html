@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -198,11 +198,11 @@ ofereix Java.</p>
 <p>L’estructura bàsica que ens ofereix Java és la instrucció
 <code class="docutils literal notranslate"><span class="pre">if-then-else</span></code>. La seva estructura és idèntica a la d’altres llenguatges
 basats en sintaxis C, i relativament semblant a la de Python.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">condició</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">condició</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// «bloc a executar en cas que la condició avaluï a cert»</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
     <span class="c1">// «bloc a executar en cas que la condició avaluï a fals»</span>
-<span class="p">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Algunes característiques:</p>
@@ -217,18 +217,18 @@ comptes de <code class="docutils literal notranslate"><span class="pre">pass</sp
 encara que no és gaire recomanable.</p>
 <p>Per exemple, el següent codi mostra un missatge només quan l’edat
 correspon a algú major d’edat:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{}</span>   <span class="c1">// en cas que sigui menor, no fa res</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="o">)</span> <span class="o">{}</span>   <span class="c1">// en cas que sigui menor, no fa res</span>
 <span class="k">else</span>
     <span class="c1">// val, sí, és vàlid sense claus, però millor posar-les!</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Vostè ja pot anar a la presó&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Vostè ja pot anar a la presó&quot;</span><span class="o">);</span>
 </pre></div>
 </div>
 </li>
 <li><p>El bloc <code class="docutils literal notranslate"><span class="pre">else</span></code> és opcional. Per tant, el següent fragment és vàlid sintàcticament:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">plou</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">agafaElParaigues</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="n">surtAlCarrer</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">plou</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">agafaElParaigues</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="n">surtAlCarrer</span><span class="o">();</span>
 </pre></div>
 </div>
 <p>El codi de l’exemple només cridarà a la funció <code class="docutils literal notranslate"><span class="pre">agafaElParaigues()</span></code> en
@@ -239,26 +239,26 @@ si plou o no, es cridarà a la funció <code class="docutils literal notranslate
 condició. Si recordes, Python ens ofereix <code class="docutils literal notranslate"><span class="pre">elif</span></code>.  Amb Java, però,
 podem emular-la de manera més o menys elegant gràcies que no calen les
 claus quan és només una instrucció. Considera l’exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">plou</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">agafaElParaigues</span><span class="p">();</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">faSol</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">agafaElParasol</span><span class="p">();</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">maquillat</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">plou</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">agafaElParaigues</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">faSol</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">agafaElParasol</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">maquillat</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Aquest codi s’ha complicat una mica amb tants nivells d’indentació. Pot,
 però, ser reescrit per a aconseguir més llegibilitat segons:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">plou</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">agafaElParaigues</span><span class="p">();</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">faSol</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">agafaElParasol</span><span class="p">();</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">maquillat</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">plou</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">agafaElParaigues</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">faSol</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">agafaElParasol</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">maquillat</span><span class="o">();</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Aquesta versió és preferible per que és més compacta i suposa una de les
@@ -274,14 +274,14 @@ retorna cap valor.</p>
 expressions condicionals.</p>
 <p>Per exemple, les següents instruccions són equivalents:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// instrucció 1</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>         <span class="c1">// condició</span>
-    <span class="n">resultat</span> <span class="o">=</span> <span class="s">&quot;parell&quot;</span><span class="p">;</span>    <span class="c1">// instrucció en cas de cert</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">resultat</span> <span class="o">=</span> <span class="s">&quot;senar&quot;</span><span class="p">;</span>     <span class="c1">// instrucció valor en cas de fals</span>
-<span class="p">}</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>         <span class="c1">// condició</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="s">&quot;parell&quot;</span><span class="o">;</span>    <span class="c1">// instrucció en cas de cert</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="s">&quot;senar&quot;</span><span class="o">;</span>     <span class="c1">// instrucció valor en cas de fals</span>
+<span class="o">}</span>
 
 <span class="c1">// instrucció 2</span>
-<span class="n">resultat</span> <span class="o">=</span> <span class="p">(</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">&quot;parell&quot;</span> <span class="p">:</span> <span class="s">&quot;senar&quot;</span><span class="p">);</span>
+<span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">&quot;parell&quot;</span> <span class="o">:</span> <span class="s">&quot;senar&quot;</span><span class="o">);</span>
 <span class="c1">//           ^ condició</span>
 <span class="c1">//                          ^ expressió en cas de cert</span>
 <span class="c1">//                                     ^ expressió en cas de fals</span>
@@ -306,23 +306,23 @@ fàcil de llegir per un altre humà, no que sembli <em>cool</em>.</p>
 variable (normalment amb més de dos valors), Java ens ofereix una manera
 de compactar. Considera el següent exemple que converteix en paraules el
 dia de la setmana:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">numDiaSetmana</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dilluns&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimarts&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimecres&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dijous&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">4</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;divendres&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">5</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dissabte&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">6</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;diumenge&quot;</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="p">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;erroni&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="o">(</span><span class="n">numDiaSetmana</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dilluns&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimarts&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimecres&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dijous&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;divendres&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">5</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dissabte&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">6</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;diumenge&quot;</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span> <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;erroni&quot;</span><span class="o">;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Cal tenir present que:</p>
@@ -332,23 +332,23 @@ dia de la setmana:</p>
 expressió, sovint resulta en un codi més llegible.  Considera la versió
 amb <code class="docutils literal notranslate"><span class="pre">if</span></code>:</p>
 <blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dilluns&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimarts&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimecres&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dijous&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;divendres&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dissabte&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;diumenge&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;erroni&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dilluns&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimarts&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dimecres&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dijous&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">4</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;divendres&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;dissabte&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">numDiaSetmana</span> <span class="o">==</span> <span class="mi">6</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;diumenge&quot;</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">nomDiaSetmana</span> <span class="o">=</span> <span class="s">&quot;erroni&quot;</span><span class="o">;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -356,20 +356,20 @@ amb <code class="docutils literal notranslate"><span class="pre">if</span></code
 <li><p>Si no posem el <code class="docutils literal notranslate"><span class="pre">break</span></code>, en el moment que s’accepta un cas, passen
 tots. Considera l’exemple:</p>
 <blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">numDiaSetmana</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="n">anims</span><span class="p">();</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="k">case</span> <span class="mi">4</span><span class="p">:</span> <span class="n">esLaborable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-            <span class="n">treballa</span><span class="p">();</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">5</span><span class="p">:</span> <span class="n">compra</span><span class="p">();</span>
-    <span class="k">case</span> <span class="mi">6</span><span class="p">:</span> <span class="n">esLaborable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="n">descansa</span><span class="p">();</span>
-            <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="p">:</span> <span class="n">error</span><span class="p">();</span>
-<span class="p">}</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="o">(</span><span class="n">numDiaSetmana</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span> <span class="n">anims</span><span class="o">();</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="n">esLaborable</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">treballa</span><span class="o">();</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">5</span><span class="o">:</span> <span class="n">compra</span><span class="o">();</span>
+    <span class="k">case</span> <span class="mi">6</span><span class="o">:</span> <span class="n">esLaborable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="n">descansa</span><span class="o">();</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span> <span class="n">error</span><span class="o">();</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -386,17 +386,17 @@ dissabte, abans toca «comprar»!</p>
 String. Això implica que el compilador genera tot el codi necessari per
 fer les comparacions de manera adequada i sense que nosaltres ens hàgim
 de preocupar.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blau&quot;</span><span class="p">;</span>
-<span class="k">switch</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s">&quot;grana&quot;</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;és un clam!&quot;</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s">&quot;blau&quot;</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tot el camp&quot;</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="p">:</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tant se val d&#39;on venim&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blau&quot;</span><span class="o">;</span>
+<span class="k">switch</span> <span class="o">(</span><span class="n">color</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="s">&quot;grana&quot;</span><span class="o">:</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;és un clam!&quot;</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="s">&quot;blau&quot;</span><span class="o">:</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tot el camp&quot;</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tant se val d&#39;on venim&quot;</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </li>

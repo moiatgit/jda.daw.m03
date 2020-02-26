@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -232,18 +232,18 @@ de prou versàtil és <code class="docutils literal notranslate"><span class="pr
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">paraules</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">paraules</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>    <span class="c1">// ==&gt; 0</span>
-<span class="n">paraules</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;em&quot;</span><span class="p">);</span>
-<span class="n">paraules</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;falten&quot;</span><span class="p">);</span>
-<span class="n">paraules</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;un&quot;</span><span class="p">);</span>
-<span class="n">paraules</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;element&quot;</span><span class="p">);</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">paraules</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>    <span class="c1">// ==&gt; 4</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">paraules</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>    <span class="c1">// ==&gt; em</span>
-<span class="n">paraules</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;falta&quot;</span><span class="p">);</span>
-<span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">paraula</span><span class="p">:</span> <span class="n">paraules</span><span class="p">)</span> <span class="p">{</span>
-   <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">paraula</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
-<span class="p">}</span>                                       <span class="c1">// ==&gt; em falta un element</span>
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">paraules</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paraules</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>    <span class="c1">// ==&gt; 0</span>
+<span class="n">paraules</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;em&quot;</span><span class="o">);</span>
+<span class="n">paraules</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;falten&quot;</span><span class="o">);</span>
+<span class="n">paraules</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">);</span>
+<span class="n">paraules</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;element&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paraules</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>    <span class="c1">// ==&gt; 4</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paraules</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>    <span class="c1">// ==&gt; em</span>
+<span class="n">paraules</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">&quot;falta&quot;</span><span class="o">);</span>
+<span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">paraula</span><span class="o">:</span> <span class="n">paraules</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">paraula</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="o">);</span>
+<span class="o">}</span>                                       <span class="c1">// ==&gt; em falta un element</span>
 </pre></div>
 </td></tr></table></div>
 <p>A tenir en compte:</p>

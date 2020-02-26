@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -199,17 +199,17 @@ Java: <code class="docutils literal notranslate"><span class="pre">return</span>
 <p>La instrucció <code class="docutils literal notranslate"><span class="pre">return</span></code> finalitza immediatament l’execució del mòdul en
 el que ens trobem.</p>
 <p>Per exemple, considera el mòdul <code class="docutils literal notranslate"><span class="pre">main()</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">demanaQuantsAUsuari</span><span class="p">();</span>  <span class="c1">// retornarà un enter que demanarà a l&#39;usuari</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Per tants pocs, ni em molesto!&quot;</span><span class="p">);</span>
-        <span class="k">return</span><span class="p">;</span>                     <span class="c1">// Finalitza l&#39;execució del main()</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">demanaQuantsAUsuari</span><span class="o">();</span>  <span class="c1">// retornarà un enter que demanarà a l&#39;usuari</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Per tants pocs, ni em molesto!&quot;</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>                     <span class="c1">// Finalitza l&#39;execució del main()</span>
+    <span class="o">}</span>
     <span class="c1">// Només s&#39;executarà aquest codi si n és prou gran</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">char</span><span class="p">)(</span><span class="sc">&#39;a&#39;</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="kt">char</span><span class="o">)(</span><span class="sc">&#39;a&#39;</span> <span class="o">+</span> <span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <div class="admonition caution">
@@ -232,23 +232,23 @@ mateix que el de Python. Únicament assegura’t que no oblides el <code class="
 final.</p>
 <p>Fem servir <code class="docutils literal notranslate"><span class="pre">continue</span></code> dins d’un bucle quan hem trobat una iteració que no
 hem de seguir processant i volem que passi a la següent iteració:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">valor_a_ignorar</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">valor_a_ignorar</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">continue</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Fem servir el <code class="docutils literal notranslate"><span class="pre">break</span></code> també dins d’un bucle, quan hem trobat una
 iteració que fa que no tingui sentit continuar iterant:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;prou&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Segur que no vols dir prou?&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">entrada</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">resposta</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;prou&quot;</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Segur que no vols dir prou?&quot;</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Recorda, però, que <code class="docutils literal notranslate"><span class="pre">break</span></code> també es fa servir a Java amb l’estructura

@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -202,7 +202,7 @@
 
 <span class="k">def</span> <span class="nf">test_hola_mon</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot; si em poses un bon nom, no cal afegir un comentari &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="kc">False</span>
+    <span class="k">assert</span> <span class="bp">False</span>
 </pre></div>
 </td></tr></table></div>
 <p>Com pots veure, el codi no pot ser gaire més senzill. Inclou el típic
@@ -278,7 +278,7 @@ d’error.</p>
 
 <span class="k">def</span> <span class="nf">test_hola_mon</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot; si em poses un bon nom, no cal afegir un comentari &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;No t&#39;espantis. És una prova per veure una fallada a pytest&quot;</span>
+    <span class="k">assert</span> <span class="bp">False</span><span class="p">,</span> <span class="s2">&quot;No t&#39;espantis. És una prova per veure una fallada a pytest&quot;</span>
 </pre></div>
 </td></tr></table></div>
 <p>En executar-ho, ens trobem amb la següent sortida:</p>
@@ -335,7 +335,7 @@ el problema.</p>
 
 <span class="k">def</span> <span class="nf">test_hola_mon</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot; si em poses un bon nom, no cal afegir un comentari &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="kc">True</span>
+    <span class="k">assert</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table></div>
 <p>Executem:</p>
@@ -374,7 +374,7 @@ test_holapytest.py .                                                [100%]
 
 <span class="k">def</span> <span class="nf">test_hola_mon</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot; si em poses un bon nom, no cal afegir un comentari &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="kc">True</span>
+    <span class="k">assert</span> <span class="bp">True</span>
 
 <span class="k">def</span> <span class="nf">test_compara_text</span><span class="p">():</span>
     <span class="k">assert</span> <span class="s2">&quot;el meu nom és molt maco&quot;</span> <span class="o">==</span> <span class="s2">&quot;el meu món és molt maco&quot;</span>

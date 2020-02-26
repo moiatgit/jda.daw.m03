@@ -136,6 +136,30 @@ Al fragment de codi anterior:
 
 * línia 6: crea un nou String amb la concatenació d'un caràcter i un String
 
+.. _java_construccio_strings:
+
+Construcció de Strings
+======================
+
+De vegades ens pot ser útil construir un String a partir de diferents
+valors. Una manera molt còmoda de fer-ho és aprofitar la funció
+``String.format()`` que espera com a paràmetres un String amb marques de
+variables més tants valors com hi hagi a les marques del String.
+
+Per exemple, considera el següent codi:
+
+.. code-block:: java
+
+    int edat = 19;
+    String nom = "Nefertiti";
+    String cognoms = "Peláez Ramírez";
+    String missatge = String.format("%s %s és %s d'edat doncs té %d any%s%n",
+                                    nom, cognoms, 
+                                    edat < 18 ? "menor": "major", 
+                                    edat, 
+                                    edat == 1 ? "" : "s");
+
+    // missatge.equals("Nefertiti Peláez Ramírez és major d'edat doncs té 19 anys\n")
 
 Per saber més
 =============
