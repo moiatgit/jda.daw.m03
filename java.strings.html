@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -210,17 +210,17 @@ $1 ==&gt; &quot;hola i adeu&quot;
 <h2>Comparació d’igualtat<a class="headerlink" href="#comparacio-d-igualtat" title="Link permanent a aquest títol">¶</a></h2>
 <p>A Python, la comparació entre strings era igual que entre altres tipus de dades
 com ara enters; és a dir, fent servir l’operador d’igualtat <code class="docutils literal notranslate"><span class="pre">==</span></code>.  Per exemple:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>        <span class="c1"># escriu &#39;hola&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>        <span class="c1"># escriu &#39;hola&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text1</span><span class="p">)</span>        <span class="c1"># escriu &#39;hola&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>        <span class="c1"># escriu &#39;hola&#39;</span>
 <span class="n">text1</span> <span class="o">==</span> <span class="n">text2</span>      <span class="c1"># retorna True</span>
 </pre></div>
 </div>
 <p>Això no és possible amb Java. La manera de comparar dos Strings per
 igualtat la farem el següent:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">text1</span><span class="o">);</span>  <span class="c1">// escriu &quot;hola&quot;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">text2</span><span class="o">);</span>  <span class="c1">// escriu &quot;hola&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text1</span><span class="p">);</span>  <span class="c1">// escriu &quot;hola&quot;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text2</span><span class="p">);</span>  <span class="c1">// escriu &quot;hola&quot;</span>
 <span class="n">text1</span> <span class="o">==</span> <span class="n">text2</span>              <span class="c1">// podria retonar false!</span>
-<span class="n">text1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">text2</span><span class="o">)</span>         <span class="c1">// retorna true</span>
+<span class="n">text1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>         <span class="c1">// retorna true</span>
 </pre></div>
 </div>
 <p>A diferència de Python, les variables en Java <strong>no</strong> representen valors
@@ -270,12 +270,12 @@ primitius i els Strings. Aquí veurem les dels tipus que més farem servir en aq
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">valorEnter</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="s">&quot;12345&quot;</span><span class="o">);</span>
-<span class="kt">double</span> <span class="n">valorDecimal</span> <span class="o">=</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="s">&quot;123.45&quot;</span><span class="o">);</span>
-<span class="n">String</span> <span class="n">cadenaEntera</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">valorEnter</span><span class="o">);</span>
-<span class="n">String</span> <span class="n">cadenaDecimal</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">valorDecimal</span><span class="o">);</span>
-<span class="n">String</span> <span class="n">unaAltraManera</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">valorEnter</span><span class="o">;</span>    <span class="c1">// aprofita la concatenació</span>
-<span class="n">String</span> <span class="n">encaraUnaAltra</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">valorEnter</span><span class="o">);</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">valorEnter</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">&quot;12345&quot;</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">valorDecimal</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="s">&quot;123.45&quot;</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">cadenaEntera</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">valorEnter</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">cadenaDecimal</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">valorDecimal</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">unaAltraManera</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">valorEnter</span><span class="p">;</span>    <span class="c1">// aprofita la concatenació</span>
+<span class="n">String</span> <span class="n">encaraUnaAltra</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">valorEnter</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -292,13 +292,13 @@ ens caldrà fer quelcom similar al següent:</p>
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">paraula</span> <span class="o">=</span> <span class="s">&quot;cAmElL&quot;</span><span class="o">;</span>
-<span class="kt">char</span> <span class="n">inicial</span> <span class="o">=</span> <span class="n">paraula</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>                           <span class="c1">// &#39;c&#39;</span>
-<span class="n">String</span> <span class="n">resta</span> <span class="o">=</span> <span class="n">paraula</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>                        <span class="c1">// &quot;AmElL&quot;</span>
-<span class="kt">char</span> <span class="n">inicialMajuscules</span> <span class="o">=</span> <span class="n">Character</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="n">inicial</span><span class="o">);</span>    <span class="c1">// &#39;C&#39;</span>
-<span class="n">String</span> <span class="n">restaMinuscules</span> <span class="o">=</span> <span class="n">resta</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>               <span class="c1">// &quot;amell&quot;</span>
-<span class="n">String</span> <span class="n">paraulaCapitalitzada</span> <span class="o">=</span> <span class="n">inicialMajuscules</span> <span class="o">+</span> <span class="n">restaMinuscules</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">paraulaCapitalitzada</span><span class="o">);</span>                   <span class="c1">// escriu: Camell</span>
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">paraula</span> <span class="o">=</span> <span class="s">&quot;cAmElL&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">inicial</span> <span class="o">=</span> <span class="n">paraula</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                           <span class="c1">// &#39;c&#39;</span>
+<span class="n">String</span> <span class="n">resta</span> <span class="o">=</span> <span class="n">paraula</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>                        <span class="c1">// &quot;AmElL&quot;</span>
+<span class="kt">char</span> <span class="n">inicialMajuscules</span> <span class="o">=</span> <span class="n">Character</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">(</span><span class="n">inicial</span><span class="p">);</span>    <span class="c1">// &#39;C&#39;</span>
+<span class="n">String</span> <span class="n">restaMinuscules</span> <span class="o">=</span> <span class="n">resta</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>               <span class="c1">// &quot;amell&quot;</span>
+<span class="n">String</span> <span class="n">paraulaCapitalitzada</span> <span class="o">=</span> <span class="n">inicialMajuscules</span> <span class="o">+</span> <span class="n">restaMinuscules</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">paraulaCapitalitzada</span><span class="p">);</span>                   <span class="c1">// escriu: Camell</span>
 </pre></div>
 </td></tr></table></div>
 <p>Al fragment de codi anterior:</p>
@@ -314,32 +314,9 @@ Python)</p></li>
 <li><p>línia 6: crea un nou String amb la concatenació d’un caràcter i un String</p></li>
 </ul>
 </div>
-<div class="section" id="construccio-de-strings">
-<span id="java-construccio-strings"></span><h2>Construcció de Strings<a class="headerlink" href="#construccio-de-strings" title="Link permanent a aquest títol">¶</a></h2>
-<p>De vegades ens pot ser útil construir un String a partir de diferents
-valors. Una manera molt còmoda de fer-ho és aprofitar la funció
-<code class="docutils literal notranslate"><span class="pre">String.format()</span></code> que espera com a paràmetres un String que defineix un
-patró amb marques de variables més tants valors com hi hagi a les marques
-del String.</p>
-<p>Per exemple, considera el següent codi:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">19</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Nefertiti&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">cognoms</span> <span class="o">=</span> <span class="s">&quot;Peláez Ramírez&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%s %s és %s d&#39;edat doncs té %d any%s%n&quot;</span><span class="o">,</span>
-                                <span class="n">nom</span><span class="o">,</span> <span class="n">cognoms</span><span class="o">,</span>
-                                <span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">?</span> <span class="s">&quot;menor&quot;</span><span class="o">:</span> <span class="s">&quot;major&quot;</span><span class="o">,</span>
-                                <span class="n">edat</span><span class="o">,</span>
-                                <span class="n">edat</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="s">&quot;s&quot;</span><span class="o">);</span>
-
-<span class="c1">// missatge.equals(&quot;Nefertiti Peláez Ramírez és major d&#39;edat doncs té 19 anys\n&quot;)</span>
-</pre></div>
-</div>
-<p>Trobaràs tot el detall sobre els elements que poden aparèixer dins del
-patró de <code class="docutils literal notranslate"><span class="pre">String.format()</span></code> a la secció <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax">Format String Syntax</a>.</p>
-</div>
 <div class="section" id="per-saber-mes">
 <h2>Per saber més<a class="headerlink" href="#per-saber-mes" title="Link permanent a aquest títol">¶</a></h2>
-<p>Hi ha tot un munt d’altres possibilitats de manipulació i de conversió a i de Strings a:</p>
+<p>Trobaràs un munt d’altres possibilitats de manipulació i de conversió a i de Strings a:</p>
 <ul class="simple">
 <li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">Strings</a></p></li>
 <li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Integer.html">Integer</a></p></li>

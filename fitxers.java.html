@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -208,19 +208,19 @@ la paraula <code class="docutils literal notranslate"><span class="pre">&quot;pr
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
-<span class="kd">class</span> <span class="nc">DemoLlegeixEntradaEstandard</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Escriu el que vulguis. &#39;prou&#39; per finalitzar&quot;</span><span class="o">);</span>
-        <span class="k">while</span> <span class="o">(!</span> <span class="n">linia</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;prou&quot;</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Has escrit: &#39;&quot;</span><span class="o">+</span><span class="n">linia</span><span class="o">+</span><span class="s">&quot;&#39;&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Adéu&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">DemoLlegeixEntradaEstandard</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Escriu el que vulguis. &#39;prou&#39; per finalitzar&quot;</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span> <span class="n">linia</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;prou&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Has escrit: &#39;&quot;</span><span class="o">+</span><span class="n">linia</span><span class="o">+</span><span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Adéu&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixa’t ara les similituds amb el següent programa que ens mostrarà el seu codi font.</p>
@@ -236,19 +236,19 @@ la paraula <code class="docutils literal notranslate"><span class="pre">&quot;pr
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
-<span class="kd">class</span> <span class="nc">DemoLlegeixFitxer</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;DemoLlegeixFitxer.java&quot;</span><span class="o">);</span>
-        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">fitxer</span><span class="o">);</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">linia</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">DemoLlegeixFitxer</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;DemoLlegeixFitxer.java&quot;</span><span class="p">);</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">fitxer</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>En aquest programa hi ha alguns punts interessants:</p>
@@ -354,79 +354,81 @@ fitxer que volem</p>
 70
 71
 72
-73</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="o">;</span>
+73
+74</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoLlegeixEscriu</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/tmp/unfitxerqualsevol.txt&quot;</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoLlegeixEscriu</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/tmp/unfitxerqualsevol.txt&quot;</span><span class="p">;</span>
 
         <span class="c1">// guardem continguts inicials al fitxer</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">contingutInicial</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
-        <span class="n">contingutInicial</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;La primera línia\n&quot;</span><span class="o">);</span>
-        <span class="n">escriuFitxerDeText</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">contingutInicial</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">contingutInicial</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="n">contingutInicial</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;La primera línia\n&quot;</span><span class="p">);</span>
+        <span class="n">escriuFitxerDeText</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">contingutInicial</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
         <span class="c1">// llegim el que ja hem guardat al fitxer</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">primeresLinies</span> <span class="o">=</span> <span class="n">llegeixFitxerDeText</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;\nContinguts inicials de &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">);</span>
-        <span class="n">mostraLinies</span><span class="o">(</span><span class="n">primeresLinies</span><span class="o">);</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">primeresLinies</span> <span class="o">=</span> <span class="n">llegeixFitxerDeText</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nContinguts inicials de &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">);</span>
+        <span class="n">mostraLinies</span><span class="p">(</span><span class="n">primeresLinies</span><span class="p">);</span>
 
         <span class="c1">// afegim més continguts al fitxer</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">mesContinguts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
-        <span class="n">mesContinguts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Aquí tenim una línia més\nI una altra\n&quot;</span><span class="o">);</span>
-        <span class="n">escriuFitxerDeText</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">mesContinguts</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">mesContinguts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="n">mesContinguts</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Aquí tenim una línia més\nI una altra\n&quot;</span><span class="p">);</span>
+        <span class="n">escriuFitxerDeText</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mesContinguts</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
         <span class="c1">// llegim el contingut final del fitxer</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">darreresLinies</span> <span class="o">=</span> <span class="n">llegeixFitxerDeText</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;\nContinguts finals de &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">);</span>
-        <span class="n">mostraLinies</span><span class="o">(</span><span class="n">darreresLinies</span><span class="o">);</span>
-    <span class="o">}</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">darreresLinies</span> <span class="o">=</span> <span class="n">llegeixFitxerDeText</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nContinguts finals de &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">);</span>
+        <span class="n">mostraLinies</span><span class="p">(</span><span class="n">darreresLinies</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="cm">/* Donat el camí a un fitxer, llegeix els seus continguts i els retorna en</span>
 <span class="cm">     * forma d&#39;ArrayList */</span>
-    <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">llegeixFitxerDeText</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
-        <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
-        <span class="n">BufferedReader</span> <span class="n">bufferedReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="n">fileReader</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">linia</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">linia</span> <span class="o">=</span> <span class="n">bufferedReader</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">linia</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">linies</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">linia</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="n">bufferedReader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="k">return</span> <span class="n">linies</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">llegeixFitxerDeText</span><span class="p">(</span><span class="n">String</span> <span class="n">path</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+        <span class="n">BufferedReader</span> <span class="n">bufferedReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">linia</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">linia</span> <span class="o">=</span> <span class="n">bufferedReader</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">linia</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">linies</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">bufferedReader</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">linies</span><span class="p">;</span>
+    <span class="p">}</span>
 
     <span class="cm">/* Donat el camí a un fitxer i una seqüència de línies de text, escriu les</span>
 <span class="cm">     * línies de text al fitxer indicat.</span>
 <span class="cm">     * El booleà amplia permet indicar:</span>
 <span class="cm">     *  true: afegir les línies després dels continguts existents al fitxer</span>
 <span class="cm">     *  false: reemplaçar els continguts anteriors al fitxer pels nous */</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">escriuFitxerDeText</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">,</span>
-                                      <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="o">,</span>
-                                      <span class="kt">boolean</span> <span class="n">amplia</span><span class="o">)</span>
-                                      <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">FileWriter</span> <span class="n">fileWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">amplia</span><span class="o">);</span>
-        <span class="n">BufferedWriter</span> <span class="n">bufferedWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="n">fileWriter</span><span class="o">);</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">linia</span><span class="o">:</span> <span class="n">linies</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">bufferedWriter</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">linia</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">bufferedWriter</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">escriuFitxerDeText</span><span class="p">(</span><span class="n">String</span> <span class="n">path</span><span class="p">,</span>
+                                      <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="p">,</span>
+                                      <span class="kt">boolean</span> <span class="n">amplia</span><span class="p">)</span>
+                                      <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">FileWriter</span> <span class="n">fileWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">amplia</span><span class="p">);</span>
+        <span class="n">BufferedWriter</span> <span class="n">bufferedWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="p">(</span><span class="n">fileWriter</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">linia</span><span class="p">:</span> <span class="n">linies</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">bufferedWriter</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+            <span class="n">bufferedWriter</span><span class="p">.</span><span class="na">newLine</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">bufferedWriter</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
 
     <span class="cm">/* Donada una seqüència de línies, les mostra per sortida estàndard */</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraLinies</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">linia</span><span class="o">:</span> <span class="n">linies</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Linia: &quot;</span> <span class="o">+</span> <span class="n">linia</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraLinies</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linies</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">linia</span><span class="p">:</span> <span class="n">linies</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Linia: &quot;</span> <span class="o">+</span> <span class="n">linia</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Què fa el programa?</p>

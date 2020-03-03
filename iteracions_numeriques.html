@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -186,7 +186,7 @@
 <p>Veiem-lo en acció amb l’exemple de mostrar els primers 10 números naturals:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primers deu nombres naturals</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fixat què el rang de valors s’explicita amb la paraula <em>range</em> i, entre
@@ -200,13 +200,13 @@ de rang és 11.</p></li>
 <p>Altres exemples:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primers cinc nombres parells</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>        <span class="c1"># 2, 4, 6, 8, 10</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>En el cas dels decrements, farem:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primers cinc nombres parells en ordre decreixen</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>      <span class="c1"># 10, 8, 6, 4, 2</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fixa’t que el límit final és <code class="docutils literal notranslate"><span class="pre">0</span></code> doncs és el valor següent a l’últim que
@@ -330,8 +330,8 @@ Per exemple, si l’entrada és 5, dibuixarà:</p>
 d’error adequat.</p>
 <p>En cas que et vulguis estalviar concatenar els diferents valors de cada
 línia, pots fer servir el següent truc</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Gui&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;do&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gui&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;do&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Que en executar-ho resultarà en:</p>
@@ -366,7 +366,7 @@ nom del fitxer a provar.</p>
 </ul>
 <p>Assegura’t que el teu programa passa les tres proves que has creat.</p>
 <p>Nota: evidentment s’espera que no ho facis amb instruccions de l’estil</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;1 2 3 4 5&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 2 3 4 5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

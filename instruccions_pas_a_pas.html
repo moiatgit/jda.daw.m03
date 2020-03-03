@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -338,7 +338,7 @@ recollir la seva resposta.</p>
 <p>Tenim ara dos nous subproblemes. El primer és demanar el nom a l’usuari.
 Pero aquest problema és molt senzill de resoldre. En tenim prou amb la
 instrucció:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Doncs vinga, col·loquem la nostra primera instrucció a
@@ -373,7 +373,7 @@ instrucció:</p>
 <span class="c1"># XXX obtenir nom</span>
 
 <span class="c1"># - XXX demanar nom</span>
-<span class="hll"><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 </span>
 <span class="c1"># - XXX obtenir resposta</span>
 
@@ -421,7 +421,7 @@ continuem pel següent subproblema:</p>
 
 <span class="c1"># XXX obtenir nom</span>
 
-<span class="hll"><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 </span>
 <span class="c1"># - XXX obtenir resposta</span>
 
@@ -469,7 +469,7 @@ de tracter altres moms, podríem anomenar-la simplement <code class="docutils li
 
 <span class="c1"># XXX obtenir nom</span>
 
-<span class="hll"><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 </span>
 <span class="c1"># - XXX obtenir resposta</span>
 <span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
@@ -516,7 +516,7 @@ comentaris innecessaris abans de continuar.</p>
 <span class="c1">#   Manel</span>
 <span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
 
-<span class="hll"><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 </span><span class="hll"><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 </span>
 <span class="c1"># XXX composar el missatge</span>
@@ -571,7 +571,7 @@ programa:</p>
 <span class="c1">#   Manel</span>
 <span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 <span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 
 <span class="hll"><span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
@@ -583,7 +583,7 @@ programa:</p>
 resposta, doncs encara no hem dir que s’ha de fer amb el missatge. Això és
 justament el que ens demana el darrer objectiu.</p>
 <p>Però ja sabem com mostrar missatges de text per sortida estàndard, oi?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Reemplacem el comentari de la línia 15 per aquesta instrucció i tenim el
@@ -616,14 +616,14 @@ programa:</p>
 <span class="c1">#   Hola Manel. M&#39;encanta saber de tu</span>
 
 <span class="c1"># Obtenció de l&#39;entrada</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com et dius?&quot;</span><span class="p">)</span>
 <span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 
 <span class="c1"># Composició del missatge</span>
 <span class="hll"><span class="n">missatge</span> <span class="o">=</span> <span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot;. M&#39;encanta saber de tu&quot;</span>
 </span>
 <span class="c1"># Mostra el resultat</span>
-<span class="k">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
 
 </pre></div>
 </td></tr></table></div>
