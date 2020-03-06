@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Seqüències &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Estructures &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Necessitem seqüències" href="sequencies.justificacio.html" />
-    <link rel="prev" title="Exercicis amb pytest" href="pytest.exercicis.html" />
+    <link rel="next" title="Introducció" href="estructures.intro.html" />
+    <link rel="prev" title="Enfonsar la flota" href="java.flota.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -91,25 +91,16 @@
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="programacio_modular.html">Programació Modular</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="triangle_modular.html">Triangle modular</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moduls_definicions.html">Definicions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moduls_practica.html">Juguem amb mòduls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytest.html">Proves unitàries</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Seqüències</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="sequencies.justificacio.html">Necessitem seqüències</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sequencies.en_python.html">Les seqüències en Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sequencies.juguem.html">Juguem amb les seqüències</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sequencies.matrius.html">Matrius</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="mutabilitat.html">Mutabilitat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="recursivitat.html">Recursivitat</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Estructures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="estructures.intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.codi_duplicat.html">Codi duplicat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.agrupacio.html">Agrupació de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructures.classes.html">Agrupacions en classes</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -155,9 +146,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="programacio_modular.html">Programació Modular</a> &raquo;</li>
-        
-      <li>Seqüències</li>
+      <li>Estructures</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,25 +179,17 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="sequencies">
-<h1>Seqüències<a class="headerlink" href="#sequencies" title="Link permanent a aquest títol">¶</a></h1>
-<p>Sabem que hi ha diferents tipus de dades. De moment, durant aquest curs hem treballat només amb un nombre
-força reduït, concretament enters, decimals, booleans, caràcters i strings.</p>
-<p>D’aquests tipus de dades, només els strings els podem considerar una agrupació de dades d’un altre
-tipus: caràcters.</p>
-<p>Com hem vist, un string és bàsicament una seqüència de caràcters que podem recórrer, per exemple,
-per cercar-hi un caràcter concret, extreure’n una part (<em>substring</em>), posar un o més caràcters a
-majúscules, minúscules, etc.</p>
-<p>Però, què passaria si ens interessés disposar de seqüències d’altres tipus que no siguin caràcters?
-Per exemple, imagina’t si volem disposar d’una seqüència amb els noms dels alumnes d’una classe
-(strings) o de les notes obtingudes per aquests alumnes en una determinada prova (decimal).</p>
-<p>Els continguts d’aquesta secció es distribueixen en les següents entrades:</p>
+  <div class="section" id="estructures">
+<h1>Estructures<a class="headerlink" href="#estructures" title="Link permanent a aquest títol">¶</a></h1>
+<p>Fins ara hem estat fent servir tipus que ja ens venien definits. Podria
+tenir sentit que ens interessés definir els nostres propis tipus de dades?</p>
+<p>Aquest tema en parla</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sequencies.justificacio.html">Necessitem seqüències</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sequencies.en_python.html">Les seqüències en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sequencies.juguem.html">Juguem amb les seqüències</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sequencies.matrius.html">Matrius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.intro.html">Introducció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.codi_duplicat.html">Codi duplicat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.agrupacio.html">Agrupació de dades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.classes.html">Agrupacions en classes</a></li>
 </ul>
 </div>
 </div>
@@ -236,10 +217,10 @@ Per exemple, imagina’t si volem disposar d’una seqüència amb els noms dels
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sequencies.justificacio.html" class="btn btn-neutral float-right" title="Necessitem seqüències" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="estructures.intro.html" class="btn btn-neutral float-right" title="Introducció" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pytest.exercicis.html" class="btn btn-neutral float-left" title="Exercicis amb pytest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="java.flota.html" class="btn btn-neutral float-left" title="Enfonsar la flota" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

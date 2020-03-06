@@ -136,11 +136,41 @@ Al fragment de codi anterior:
 
 * línia 6: crea un nou String amb la concatenació d'un caràcter i un String
 
+.. _java_construccio_strings:
+
+Construcció de Strings
+======================
+
+De vegades ens pot ser útil construir un String a partir de diferents
+valors. Una manera molt còmoda de fer-ho és aprofitar la funció
+``String.format()`` que espera com a paràmetres un String que defineix un
+patró amb marques de variables més tants valors com hi hagi a les marques
+del String.
+
+Per exemple, considera el següent codi:
+
+.. code-block:: java
+
+    int edat = 19;
+    String nom = "Nefertiti";
+    String cognoms = "Peláez Ramírez";
+    String missatge = String.format("%s %s és %s d'edat doncs té %d any%s%n",
+                                    nom, cognoms, 
+                                    edat < 18 ? "menor": "major", 
+                                    edat, 
+                                    edat == 1 ? "" : "s");
+
+    // missatge.equals("Nefertiti Peláez Ramírez és major d'edat doncs té 19 anys\n")
+
+Trobaràs tot el detall sobre els elements que poden aparèixer dins del
+patró de ``String.format()`` a la secció `Format String Syntax
+<http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax>`_.
+
 
 Per saber més
 =============
 
-Trobaràs un munt d'altres possibilitats de manipulació i de conversió a i de Strings a:
+Hi ha tot un munt d'altres possibilitats de manipulació i de conversió a i de Strings a:
 
 * API `Strings <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html>`_
 * API `Integer <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Integer.html>`_

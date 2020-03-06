@@ -122,6 +122,17 @@ s'adapta a com es mostra en l'idioma en que està configurat el nostre sistema!
 També ens permet fàcilment controlar el nombre de decimals que volem que es
 mostrin. En aquest cas li hem demanat que apareguin 3 decimals amb ``%.3f``.
 
+La funció ``printf()`` està molt relacionada amb ``String.format()`` de la
+que ja :ref:`hem parlat <java_construccio_strings>`. Els següénts exemples
+generarien la mateixa sortida:
+
+.. code-block:: java
+
+    System.out.printf("Tinc %d anys%n", 19);
+    System.out.print(String.format("Tinc %d anys%n", 19));
+    System.out.println(String.format("Tinc %d anys", 19));
+
+
 Trobaràs tot el detall sobre els elements que poden aparèixer dins del patró de
 ``printf()`` a la secció `Format String Syntax
 <http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax>`_.

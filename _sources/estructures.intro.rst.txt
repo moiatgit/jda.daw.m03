@@ -1,0 +1,122 @@
+###########
+Introducció
+###########
+
+Quan hem volgut desenvolupar un programa fins ara, normalment ens hem preocupat
+de decidir:
+
+* quina és la informació d'entrada
+
+* què hem de fer amb aquesta informació
+
+* quina és la sortida que s'espera
+
+A partir d'aquesta informació definim una sèrie de variables on allotjar la informació d'entrada i
+de sortida, i on deixar resultats intermedis. A més a més, definim una sèrie de mòduls (subrutines,
+accions, procediments, funcions) que manipulen aquestes variables fins a obtenir els valors de
+sortida esperats.
+
+Per exemple, suposem que el nostre problema a resoldre és, donat el nom d'una estudiant i la seva nota
+final d'aquesta unitat formativa, indicar si l'estudiant ha superat o no la UF.
+
+El codi, en Java podria ser quelcom similar al següent:
+
+.. literalinclude:: _code/NotesEstudiantV01.java
+   :language: java
+   :linenos:
+
+El codi anterior defineix la funció ``composaResulat(String, int)`` que
+resol el nostre problema.
+
+Fixa't:
+
+* la informació d'entrada està definida pels paràmetres ``estudiant`` i
+  ``nota``
+
+* la informació de sortida es composa amb ``String.format()`` que ens
+  permet formar un String amb paràmetres.
+
+El codi inclou la funció ``main(String[])`` que ens ofereix una prova
+bàsica de la funció.
+En executar aquest codi tindrem:
+
+.. code-block:: none
+
+    $ javac Exercici.java && java Exercici 
+    L'estudiant Laia Sánchez d'Àrgent aprova la UF amb un 6.
+
+Què passaria si tenim més d'un estudiant?
+
+.. _exercici_fitxa_persona:
+
+Exercici 1. ☞ Mostra la fitxa d'una persona
+===========================================
+
+Desenvolupa un programa que llegeixi per
+entrada estàndard, una sèrie de dades d'una persona i finalment les mostri per sortida
+estàndard en forma de fitxa.
+
+La fitxa serà mostrada per un mòdul anomenat ``composaFitxa(String, String, int)`` que rebrà tres
+paràmetres, el nom, els cognoms i l'edat.
+
+Suposarem que sempre ens introdueixen valors vàlids.
+
+Una simulació d'execució seria:
+
+.. code-block:: none
+
+    $ java InformePersona
+    Quin és el teu nom?
+    Laia
+    Quins són els teus cognoms?
+    Sánchez d'Àrgent
+    Quina és la teva edat?
+    19
+
+    Fitxa
+    =====
+    Nom: Laia Sánchez d'Àrgent
+    Edat: 19 anys
+
+
+.. important:: El joc de proves a partir d'aquest exercici esperen que la
+               llibreria de proves de JUnit estigui definida a la variable d'entorn
+               ``CLASSPATH``. Si encara no la tens, és un bon moment per afegir-la.
+
+               Una manera fàcil:
+
+               #. descarregat el ``.jar`` amb el fitxer
+                  `junit-platform-console-standaloneXXX.jar <https://search.maven.org/search?q=g:org.junit.platform%20AND%20a:junit-platform-console-standalone>`_
+
+               #. col·loca el fitxer al directori ``~/lib/`` (si no existeix, crea'l)
+
+               #. cerca dins del fitxer ``~/.bashrc`` alguna definició de la variable
+                  d'entorn ``CLASSPATH``. Si no la trobes, afegeix al final del
+                  fitxer la següent línia:
+
+                  .. code-block:: bash
+
+                     export CLASSPATH=.
+
+                  Atenció amb el punt al final!
+
+
+               #. afegeix la següent línia al final del teu ``~/.bashrc``:
+
+                  .. code-block:: bash
+
+                       CLASSPATH=$CLASSPATH:$HOME/lib/junit-platform-console-standaloneXXX.jar
+
+               #. Càrrega el nou contingut del ``~/.bashrc`` i comprova que tens ben
+                  configurat el JUnit a la teva instal·lació:
+
+                  .. code-block:: bash
+
+                       $ source ~/.bashrc
+                       $ echo $CLASSPATH 
+                       .:/home/elteuusuari/lib/junit-platform-console-standaloneXXX.jar
+                       $ java org.junit.platform.console.ConsoleLauncher -h
+
+                       Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+                       …
+

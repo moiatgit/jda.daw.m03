@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 </ul>
 
             
@@ -231,10 +232,10 @@ frase, el codi amb <code class="docutils literal notranslate"><span class="pre">
 <span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;z&#39; + (&#39;repetit&#39; * 10000000), &#39;z&#39;)</span>
 <span class="sd">        True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
-            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">trobat</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="n">trobat</span>
 </pre></div>
 </td></tr></table></div>
@@ -295,11 +296,11 @@ d’esperar més de 20 segons per executar les proves.</p>
 <span class="sd">        &gt;&gt;&gt; text_conte_caracter(&#39;z&#39; + (&#39;repetit&#39; * 10000000), &#39;z&#39;)</span>
 <span class="sd">        True</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">trobat</span> <span class="ow">and</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
-            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">trobat</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">trobat</span>
 </pre></div>
@@ -329,8 +330,8 @@ el bucle sense necessitat d’arribar al final: fent servir <code class="docutil
     <span class="sd">&quot;&quot;&quot; « no oblidis la documentació de la teva funció » &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixat com, simplement en trobar el caràcter en qüestió, ja sabem el
@@ -357,10 +358,10 @@ control.</p>
 8
 9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">text_conte_caracter</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; « no oblidis la documentació de la teva funció » &quot;&quot;&quot;</span>
-    <span class="n">trobat</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">trobat</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">caracter</span><span class="p">:</span>
-<span class="hll">            <span class="n">trobat</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="hll">            <span class="n">trobat</span> <span class="o">=</span> <span class="bp">True</span>
 </span>            <span class="k">break</span>
     <span class="c1"># aquí podria fer altres coses, tant si s&#39;ha trobat com si no</span>
     <span class="k">return</span> <span class="n">trobat</span>
@@ -369,13 +370,13 @@ control.</p>
 <p>Un ús molt típic del <code class="docutils literal notranslate"><span class="pre">break</span></code> és el de construir un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> infinit i
 decidir la sortida en funció de diferents condicions.</p>
 <p>Per exemple:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diguem alguna cosa&quot;</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Diguem alguna cosa&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s1">&#39;adéu&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Au, bon vent!&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Au, bon vent!&quot;</span><span class="p">)</span>
         <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tens res millor a dir?&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;No tens res millor a dir?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
