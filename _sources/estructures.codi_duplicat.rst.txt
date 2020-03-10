@@ -18,7 +18,7 @@ Una possible solució seria:
    :language: java
    :linenos:
 
-Fixa't que, com ja teníem el procediment ``composaResulat(String, int)``,
+Fixa't que, com ja teníem el procediment ``composaResultat(String, int)``,
 el podem reaprofitar. Així simplement hem de crear un nou procediment que
 composi els resultats de les tres estudiants.
 

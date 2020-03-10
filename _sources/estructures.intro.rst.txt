@@ -25,7 +25,7 @@ El codi, en Java podria ser quelcom similar al següent:
    :language: java
    :linenos:
 
-El codi anterior defineix la funció ``composaResulat(String, int)`` que
+El codi anterior defineix la funció ``composaResultat(String, int)`` que
 resol el nostre problema.
 
 Fixa't:

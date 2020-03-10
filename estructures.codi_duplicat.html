@@ -330,7 +330,7 @@ estudiants a mostrar.</p>
 <span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Fixa’t que, com ja teníem el procediment <code class="docutils literal notranslate"><span class="pre">composaResulat(String,</span> <span class="pre">int)</span></code>,
+<p>Fixa’t que, com ja teníem el procediment <code class="docutils literal notranslate"><span class="pre">composaResultat(String,</span> <span class="pre">int)</span></code>,
 el podem reaprofitar. Així simplement hem de crear un nou procediment que
 composi els resultats de les tres estudiants.</p>
 <p>Sort que eren tres i no 20 estudiants, oi?</p>
@@ -390,7 +390,7 @@ composi els resultats de les tres estudiants.</p>
 <span class="cm">     * @param nota: nota de l&#39;estudiant</span>
 <span class="cm">     * @return missatge composat</span>
 <span class="cm">     */</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResulat</span><span class="o">(</span><span class="n">String</span> <span class="n">estudiant</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nota</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="o">(</span><span class="n">String</span> <span class="n">estudiant</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nota</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
                 <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="o">,</span>
                 <span class="n">estudiant</span><span class="o">,</span> 
@@ -413,7 +413,7 @@ composi els resultats de les tres estudiants.</p>
     <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultatsDeTresEstudiants</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">estudiants</span><span class="o">,</span> <span class="kt">int</span> <span class="n">notes</span><span class="o">[])</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">resultat</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">estudiants</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">resultat</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%s%n%s&quot;</span><span class="o">,</span> <span class="n">resultat</span><span class="o">,</span> <span class="n">composaResulat</span><span class="o">(</span><span class="n">estudiants</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">notes</span><span class="o">[</span><span class="n">i</span><span class="o">]));</span>
+            <span class="n">resultat</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%s%n%s&quot;</span><span class="o">,</span> <span class="n">resultat</span><span class="o">,</span> <span class="n">composaResultat</span><span class="o">(</span><span class="n">estudiants</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">notes</span><span class="o">[</span><span class="n">i</span><span class="o">]));</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
     <span class="o">}</span>

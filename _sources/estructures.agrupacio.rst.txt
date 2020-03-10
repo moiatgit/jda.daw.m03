@@ -24,7 +24,7 @@ servir *struct*
     $ gcc exemple.c && ./a.out
 
 Per no complicar massa l'exemple, he optat per canviar
-``composaResulat()`` a procediment en comptes de funció.
+``composaResultat()`` a procediment en comptes de funció.
 
 A les línies 5 a 8, definim un nou tipus anomenat ``Resultat`` que es
 compsa de dos *camps*, un string on emmagatzemar el nom de l'estudiant i
