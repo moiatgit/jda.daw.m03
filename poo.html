@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Seqüències &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Programació Orientada a Objectes &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Arrays" href="java.arrays.html" />
-    <link rel="prev" title="Mòduls" href="java.moduls.html" />
+    <link rel="next" title="Classes i objectes" href="classes_i_objectes.html" />
+    <link rel="prev" title="Agrupacions en classes" href="estructures.classes.html" />
      
     <script src="_static/moiscripts.js"></script>
 
@@ -92,30 +92,13 @@
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="python2java.html">De Python a Java</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="java.versio.html">Versió del Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.holamon.html">Ritual Hola Món en Java!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.variables.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.tipus.html">Tipus de dades</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.operadors.html">Operadors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.strings.html">Strings en Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.expressions.html">Expressions i Instruccions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.basicinout.html">Entrada i sortida bàsiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.condicionals.html">Condicions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.repeticions.html">Repeticions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.salts.html">Instruccions de salt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.moduls.html">Mòduls</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Seqüències</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="java.taules.html">Taules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Orientada a Objectes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -161,9 +144,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="python2java.html">De Python a Java</a> &raquo;</li>
-        
-      <li>Seqüències</li>
+      <li>Programació Orientada a Objectes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,25 +177,30 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="sequencies">
-<h1>Seqüències<a class="headerlink" href="#sequencies" title="Link permanent a aquest títol">¶</a></h1>
-<p>Hem presentat les <a class="reference internal" href="sequencies.html"><span class="doc">seqüències</span></a> com una agrupació de dades
-ordenades, de manera que podem recórrer-les de la primera a la darrera.</p>
-<p>Amb Python vam fer servir els tipus <code class="docutils literal notranslate"><span class="pre">tuple</span></code> i <code class="docutils literal notranslate"><span class="pre">list</span></code>, que ens
-permetien una manera molt còmoda d’implementar seqüències, doncs estaven
-integrades dins la sintaxi del llenguatge.</p>
-<p>Java disposa també d’un tipus de seqüència integrat dins el llenguatge: els
-<em>arrays</em>.</p>
-<p>Els <em>arrays</em> són una manera molt eficient i còmoda de guardar informació
-seqüèncial en Java, i per això els estudiarem en primer lloc. Els <em>arrays</em>
-però ens presentaran algunes limitacions a l’hora d’ampliar-los. Més
-endavant coneixerem estructures que ens resoldran les limitacions dels
-<em>arrays</em> pagant un cert preu en eficiència.</p>
+  <div class="section" id="programacio-orientada-a-objectes">
+<h1>Programació Orientada a Objectes<a class="headerlink" href="#programacio-orientada-a-objectes" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ens endinsem ara al descobriment d’un nou paradigma de programació: la
+programació orientada a objectes</p>
+<p>Darrera de la paraulota <em>paradigma</em> s’amaga la idea de «manera d’entendre
+quelcom». Així, un paradigma de programació seria una manera d’entendre la
+programació.</p>
+<p>Fins ara, hem aprés a desenvolupar amb el paradigma de la programació
+estructurada i modular. Així, hem aprés que estructurem el nostre codi a
+partir de:</p>
+<ul class="simple">
+<li><p>dades: instruccions d’assignació, entrada/sortida, tipus, estructures</p></li>
+<li><p>estructures de control de flux: condicionals (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">switch</span></code>) i de
+repetició (<code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>)</p></li>
+<li><p>mòduls: procediments, funcions, crides</p></li>
+<li><p>i, més recentment, dades agrupades</p></li>
+</ul>
+<p>El paradigma de la programació orientada a objectes també inclou els
+elements anteriors, però presenta una particularitat: les dades i els
+mòduls apareixeran agrupats en el que coneixerem com <em>objectes</em>.</p>
+<p>Aquest tema es desglossa en les següents entrades:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="java.arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.taules.html">Taules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="java.llistes.html">Llistes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 </ul>
 </div>
 </div>
@@ -242,10 +228,10 @@ endavant coneixerem estructures que ens resoldran les limitacions dels
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="java.arrays.html" class="btn btn-neutral float-right" title="Arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="classes_i_objectes.html" class="btn btn-neutral float-right" title="Classes i objectes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="java.moduls.html" class="btn btn-neutral float-left" title="Mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="estructures.classes.html" class="btn btn-neutral float-left" title="Agrupacions en classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
