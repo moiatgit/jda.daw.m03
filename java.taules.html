@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -180,21 +180,6 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <div>
-    <div id="cookiesbox">
-        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
-        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
-        En continuar navegant-hi, estàs acceptant-ho.
-        <br/>
-        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
-            Tancar
-            <span class="fa fa-window-close"></span>
-        </a>
-    </div>
-
-    <script>setCookiesboxVisibility();</script>
-
-</div>
     
            <div itemprop="articleBody">
             
@@ -205,10 +190,10 @@ també es poden definir arrays d’arrays.</p>
 <p>Als arrays d’arrays se’ls coneixen com <em>arrays multidimensionals</em> o <em>matrius</em> i,
 quan són de dos dimensions, simplement <em>taules</em>.</p>
 <p>Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">notesCursAlumnes</span><span class="o">;</span>           <span class="c1">// nr alumne x nr avaluació</span>
-<span class="n">notesCursAlumnes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">100</span><span class="o">];</span>    <span class="c1">// reservem espai pels 100 alumnes</span>
-<span class="n">notesCursAlumnes</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>   <span class="c1">// reservem espai per les notes del quart alumne</span>
-<span class="n">notesCursAlumnes</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>        <span class="c1">// el quart alumne va treure un 10 a la segona avaluació</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">notesCursAlumnes</span><span class="p">;</span>           <span class="c1">// nr alumne x nr avaluació</span>
+<span class="n">notesCursAlumnes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>    <span class="c1">// reservem espai pels 100 alumnes</span>
+<span class="n">notesCursAlumnes</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>   <span class="c1">// reservem espai per les notes del quart alumne</span>
+<span class="n">notesCursAlumnes</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>        <span class="c1">// el quart alumne va treure un 10 a la segona avaluació</span>
 </pre></div>
 </div>
 <p>En Java, els arrays multidimensionals són arrays on cada element és un
@@ -217,18 +202,18 @@ tipus). De fet, en el exemple anterior, hi ha molts alumnes que no tenen
 espai reservat per posar les seves notes!</p>
 <p>A l’hora de copiar el contingut de dos arrays, ho podem fer amb algun
 bucle, per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursEthel</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10</span> <span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursRahim</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">notesCursEthel</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-    <span class="n">notesCursRahim</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">notesCursEthel</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursEthel</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursRahim</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">notesCursEthel</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">notesCursRahim</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">notesCursEthel</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Hi ha, però, una manera més eficient de fer-ho: fent servir la funció
 <code class="docutils literal notranslate"><span class="pre">arraycopy()</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursEthel</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10</span> <span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursRahim</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
-<span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">notesCursEthel</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">notesCursRahim</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursEthel</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">notesCursRahim</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">notesCursEthel</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">notesCursRahim</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="c1">//               ^ array amb les dades d&#39;origen</span>
 <span class="c1">//                               ^ índex del primer element a copiar</span>
 <span class="c1">//                                  ^ array de destinació</span>
@@ -400,19 +385,36 @@ taula mentre estigui en execució.</p>
            </div>
            
           </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
 
-  <!-- Google Analytics -->
-<script>
+<script class="googleanalytics">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-41103782-2', 'auto');
   ga('send', 'pageview');
-
 </script>
-  <!-- End Google Analytics -->
 
 
           <footer>

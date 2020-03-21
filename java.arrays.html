@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -180,21 +180,6 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <div>
-    <div id="cookiesbox">
-        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
-        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
-        En continuar navegant-hi, estàs acceptant-ho.
-        <br/>
-        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
-            Tancar
-            <span class="fa fa-window-close"></span>
-        </a>
-    </div>
-
-    <script>setCookiesboxVisibility();</script>
-
-</div>
     
            <div itemprop="articleBody">
             
@@ -204,14 +189,14 @@
 mateix tipus disposats en ordre.</p>
 <p>A l’hora de declarar un array, no ens cal saber quants elements tindrà,
 però sí de quin tipus seran.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Amb això, el compilador sap que <code class="docutils literal notranslate"><span class="pre">notesCurs</span></code> és una referència a una seqüència
 de valors enters. De moment, però, no s’ha reservat espai per cap element.</p>
 <p>Suposant que un curs té quatre notes (quatre avaluacions), la
 inicialització es realitza de la següent manera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Ara tenim un array inicialitzat. Això vol dir que hi ha espai reservat per
@@ -220,30 +205,30 @@ a aquests espais. Ens caldrà assignar-los un valor abans de poder fer res
 amb ells.</p>
 <p>Els arrays en java s’indexen amb un valor enter, començant pel 0. Així,
 una manera d’inicialitzar les nostres notes serà:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">8</span><span class="o">;</span>
-<span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="o">;</span>
-<span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
-<span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Veiem que els arrays de Java són mutables com el <code class="docutils literal notranslate"><span class="pre">list</span></code> de Python.</p>
 <p>Java ens ofereix una manera d’inicialitzar els valors més compacta. En l’exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10</span> <span class="o">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
 </pre></div>
 </div>
 <p>Fixa’t que en aquest cas, el compilador ja es preocupa de comptar quants enters necessitem.</p>
 <p>Podrem mostrar els valors resultants, per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;La nota de la primera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;La nota de la segona avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;La nota de la tercera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;La nota de la quarta avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la primera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la segona avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la tercera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la quarta avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Per suposat, els arrays permeten l’automatització d’aquest tipus de
 tasques repetitives, fent servir bucles. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">notesCurs</span><span class="o">.</span><span class="na">length</span><span class="o">;++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;La nota de la quarta avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">notesCurs</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la quarta avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Fixa’t que <code class="docutils literal notranslate"><span class="pre">notesCurs.length</span></code> ens retorna la longitud de l’array però, a
@@ -371,19 +356,36 @@ El valor ha de ser un enter positiu
            </div>
            
           </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
 
-  <!-- Google Analytics -->
-<script>
+<script class="googleanalytics">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-41103782-2', 'auto');
   ga('send', 'pageview');
-
 </script>
-  <!-- End Google Analytics -->
 
 
           <footer>
