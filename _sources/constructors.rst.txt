@@ -187,11 +187,10 @@ Executa el programa i respon a les següents preguntes:
 
 5. Quan s'executa el codi dels blocs iniciats a les línies 5 i 8.
 
-6. Elimina o comenta la línia 5. Continua funcionant el codi? Perquè
-   creus?
+6. Comenta la línia 5. Continua funcionant el codi? Perquè creus?
 
-7. Substitueix el codi del bloc de la línia 8 pel següent i descriu
-   què passa a l'hora d'executar:
+7. Recupera la línia 5 tal i com estava. Substitueix ara el codi del bloc
+   de la línia 8 pel següent i descriu què passa a l'hora d'executar:
 
    .. code-block:: java
        :linenos:
