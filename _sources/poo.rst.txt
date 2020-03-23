@@ -33,9 +33,10 @@ Aquest tema es desglossa en les següents entrades:
     :titlesonly:
 
     classes_i_objectes.rst
+    constructors.rst
 
 
-..  constructors.rst
+
 ..  membres_instancia_classe.rst
 ..  relacions.rst
 ..  herencia.rst
