@@ -1,0 +1,777 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enfonsar la flota &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Estructures" href="estructures.html" />
+    <link rel="prev" title="Gestió de fitxers en Java" href="fitxers_gestio.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers_intro.html">Introducció als fitxers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_java.html">Fitxers en java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_gestio.html">Gestió de fitxers en Java</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Enfonsar la flota</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+      <li>Enfonsar la flota</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enfonsar-la-flota">
+<h1>Enfonsar la flota<a class="headerlink" href="#enfonsar-la-flota" title="Link permanent a aquest títol">¶</a></h1>
+<p>Posem a treballar tot el que hem aprés fins ara, desenvolupant un joc:
+<em>enfonsa la flota</em></p>
+<p>Probablement ja coneguis aquest joc. Es presenta un taulell que conté
+vaixells amagats, i has d’anar dient coordenades fins que descobreixes
+tots els vaixells.</p>
+<p>Normalment, aquest joc es desenvolupa per dos o més jugadors però
+nosaltres farem una primera versió simplificada. Pots trobar una versió
+<em>menys simplificada</em> <a class="reference internal" href="java_flota_original.html"><span class="doc">aqui</span></a>.</p>
+<p>El programa es basa en tres conceptes bàsics: el <em>taulell</em> , la
+<em>coordenada</em> i el <em>vaixell</em>.</p>
+<p>Un taulell és una taula o matriu de dos dimensions <em>nXm</em>. Tant <em>n</em> com <em>m</em>
+han de ser més grans que 0.</p>
+<p>Cada posició de la taula és un valor entre el 0 i el 9, on</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: no vaixell o aigua</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">9</span></code>: vaixell de la longitud indicada.</p></li>
+</ul>
+<p>Les cel·les de valor 0 es diuen <em>aigua</em> mentre que la resta són
+<em>vaixell</em> amb una longitud exactament igual a la longitud indicada
+pel seu valor.</p>
+<p>Les cel·les corresponents a un vaixell apareixen consecutives en la
+mateixa fila o en la mateixa columna.</p>
+<p>Els límits del taulell són també límits dels vaixells. És a dir, el
+taulell no és esfèric.</p>
+<p>Per que un taulell sigui vàlid:</p>
+<ul>
+<li><p>ha de correspondre a un rectangle ben format, en el sentit què totes les
+files presenten el mateix nombre de columnes.</p></li>
+<li><p>ha d’haver-hi com a mínim un vaixell.</p></li>
+<li><p>un vaixell no pot tocar a un altre. És a dir, dues cel·les de
+vaixells diferents, no poden ser consecutives. Es consideren
+consecutives quan és troben a la cel·la anterior o posterior en la
+mateixa fila o columna, però no diagonal.</p>
+<p>Exemple vàlid amb taulell 3x6:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·   0  1  2  3  4  5
+   __ __ __ __ __ __
+0   1  .  2  2  .  .   0
+1   .  1  .  .  2  2   1
+2   .  .  2  2  .  .   2
+   __ __ __ __ __ __
+    0  1  2  3  4  5
+</pre></div>
+</div>
+<p>Aquí molts dels vaixells semblen tocar-se, però ho fan només per la
+seva diagonal. Per exemple el vaixell <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">2:3)</span></code> està separat per aigua
+del vaixell <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>, només toca en diagonal amb els vaixells de la fila
+2, i no toca amb el vaixell <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">2:3)</span></code> perquè el taulell no és esfèric.</p>
+<p>Exemple no vàlid amb taulell 2x4:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·   0  1  2  3
+   __ __ __ __
+0   2  3  3  3   0
+1   2  .  .  1   1
+   __ __ __ __
+    0  1  2  3
+</pre></div>
+</div>
+<p>Aquí, el vaixell <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1:3)</span></code> és adjacent als vaixells <code class="docutils literal notranslate"><span class="pre">(0:1,</span> <span class="pre">0)</span></code> i <code class="docutils literal notranslate"><span class="pre">(1,</span>
+<span class="pre">3)</span></code>.</p>
+</li>
+</ul>
+<p>Les coordenades es representen amb un parell de números enters entre
+parèntesis i separats per coma.  El primer valor correspon al número de la
+fila i el segon al de la columna. Així, <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code> correspon a la primera
+fila i segona columna,</p>
+<p>Per simplificar l’exercici, les files i columnes seran com a màxim 99.</p>
+<p>Per descriure els vaixells, fem servir la mateixa notació que per indicar
+les coordenades, excepte que, allà on hi ha la dimensió en que s’estén el
+vaixell, ho indicarem en forma de rang. Per exemple, si el vaixell es
+desplega de manera horitzontal entre les coordenades <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">5)</span></code> i <code class="docutils literal notranslate"><span class="pre">(1,</span>
+<span class="pre">7)</span></code>, sabem que la seva longitud és de 3 i el representarem com <code class="docutils literal notranslate"><span class="pre">(1,</span>
+<span class="pre">5:7)</span></code>.  Per contra, si el vaixell està posicionat de manera vertical al
+taulell, per exemple, entre les posicions <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">5)</span></code> i <code class="docutils literal notranslate"><span class="pre">(6,</span> <span class="pre">5)</span></code>, el
+podrem representar com <code class="docutils literal notranslate"><span class="pre">(3:6,</span> <span class="pre">5)</span></code>.</p>
+<p>En el cas que un vaixell tingui llargària 1, la seva representació
+coincideix amb la d’una coordenada. El context determinarà si és una cosa
+o una altra.</p>
+<div class="section" id="constructor-de-taulells">
+<h2>Constructor de taulells<a class="headerlink" href="#constructor-de-taulells" title="Link permanent a aquest títol">¶</a></h2>
+<p>En primer lloc, ens caldrà desenvolupar un programa que ens permeti
+construir taulells.</p>
+<p>El programa es dirà <code class="docutils literal notranslate"><span class="pre">ConstructorTaulell.java</span></code> i funcionarà de manera
+interactiva, oferint un <em>prompt</em>.</p>
+<p>En arrencar, el programa oferirà un missatge presentant la seva funció i
+el <em>prompt</em> per demanar una comanda per part de la usuària.</p>
+<p>Les comandes acceptades seran, sense distingir majúscules de minúscules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">AJUDA</span></code>: el programa mostra un text d’ajuda amb les diferents comandes
+disponibles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AFEGEIX</span></code>: es vol afegir un nou vaixell al taulell.</p>
+<p>Si no hi ha un taulell en construcció (estat <em>inicial</em>), es mostra el
+missatge d’error <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">cap</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span> <span class="pre">les</span> <span class="pre">opcions</span> <span class="pre">NOU</span> <span class="pre">o</span>
+<span class="pre">CARREGA</span></code>.</p>
+<p>Si sí hi ha un taulell, el programa demana la descripció del vaixell.
+Recorda que un vaixell es descriu amb una coordenada amb possible rang
+en una de les dimensions. Ex. <code class="docutils literal notranslate"><span class="pre">(5:7,</span> <span class="pre">1)</span></code> correspon a un vaixell de
+longitud 3, col·locat de manera vertical a la columna 1, entre les files
+5 i 7.</p>
+<p>Si el vaixell està malament descrit, o no pot ser col·locat al lloc
+indicat perquè no hi cap o bé perquè toca un altre vaixell, es mostra el
+missatge d’error <code class="docutils literal notranslate"><span class="pre">Vaixell</span> <span class="pre">no</span> <span class="pre">vàlid</span></code>.</p>
+<p>Si el vaixell ha estat descrit correctament i, en col·locar-lo al
+taulell actual, el taulell es manté vàlid, llavors el programa l’afegeix
+al taulell.</p>
+<p>En cas que tot hagi anat bé, el programa ho indicarà amb el missatge <code class="docutils literal notranslate"><span class="pre">Fet!</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CARREGA</span></code>: es vol carregar un taulell guardat previament.</p>
+<p>Aquesta opció només és vàlida quan no hi ha un taulell en construcció.
+Si hi és, es mostra el missatge d’error <code class="docutils literal notranslate"><span class="pre">Ja</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">un</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span>
+<span class="pre">les</span> <span class="pre">opcions</span> <span class="pre">GUARDA</span> <span class="pre">o</span> <span class="pre">OBLIDA</span></code>.</p>
+<p>Si no hi ha cap vaixell en construcció, demana el nom d’un vaixell.</p>
+<p>Si el nom del taulell no està a la llista de vaixells disponibles, es
+mostra l’error <code class="docutils literal notranslate"><span class="pre">Taulell</span> <span class="pre">desconegut.</span> <span class="pre">Considereu</span> <span class="pre">l'opció</span> <span class="pre">LLISTA</span></code>.</p>
+<p>El nom del taulell correspon a un fitxer que conté les dades d’un
+taulell prèviament guardades per aquest programa.</p>
+<p>Si el taulell és conegut, s’intenta carregar.</p>
+<p>Si el contingut del taulell no és vàlid es mostra el missatge
+<code class="docutils literal notranslate"><span class="pre">Contingut</span> <span class="pre">no</span> <span class="pre">vàlid</span></code>. Això no hauria de passar amb els fitxers que
+hagi guardat aquesta aplicació, però ho comprovem per el fitxer ha estat
+alterat amb altres mitjans.</p>
+<p>Si el contingut és vàlid, el taulell és carregat i es mostra el missatge
+<code class="docutils literal notranslate"><span class="pre">Fet!</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ELIMINA</span></code>: es vol eliminar un vaixell del taulell.</p>
+<p>Aquesta opció només és vàlida quan hi ha un taulell en construcció.
+Altrament es mostra el missatge <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">cap</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span> <span class="pre">les</span>
+<span class="pre">opcions</span> <span class="pre">NOU</span> <span class="pre">o</span> <span class="pre">CARREGA</span></code>.</p>
+<p>Si sí hi ha un taulell, el programa demana la descripció del vaixell.</p>
+<p>Si el vaixell està malament descrit, o no es troba al taulell es mostra
+el missatge d’error <code class="docutils literal notranslate"><span class="pre">Vaixell</span> <span class="pre">no</span> <span class="pre">vàlid</span></code>.</p>
+<p>Si el vaixell ha estat descrit correctament i es troba al taulell,
+llavors el programa l’elimina del taulell.</p>
+<p>En cas que tot hagi anat bé, el programa ho indicarà amb el missatge <code class="docutils literal notranslate"><span class="pre">Fet!</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GUARDA</span></code>: es vol guardar el taulell en construcció.</p>
+<p>Aquesta opció només és vàlida quan hi ha un taulell en construcció.
+Altrament es mostra el missatge <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">cap</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span> <span class="pre">les</span>
+<span class="pre">opcions</span> <span class="pre">NOU</span> <span class="pre">o</span> <span class="pre">CARREGA</span></code>.</p>
+<p>En cas que el taulell encara no tingui cap vaixell, mostrarà el missatge
+<code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">taulell</span> <span class="pre">en</span> <span class="pre">construcció</span> <span class="pre">no</span> <span class="pre">té</span> <span class="pre">cap</span> <span class="pre">vaixell.</span> <span class="pre">Considereu</span> <span class="pre">AFEGEIX</span></code>.</p>
+<p>Si hi ha un taulell en construcció amb un o més vaixells, es demana un
+nom pel taulell.</p>
+<p>Si el nom del taulell existeix, es sobreescriu el seu contingut amb el
+del taulell actual. <strong>Atenció</strong>: això és una simplificació. Normalment
+hem de fer que els nostres programes demanin confirmació abans de
+realitzar accions que puguin fer perdre informació.</p>
+<p>Si el nom del taulell no existeix, es crea un de nou i s’hi guarda el
+contingut del taulell actual.</p>
+<p>En cas que tot hagi anat bé, el programa ho indicarà amb el missatge <code class="docutils literal notranslate"><span class="pre">Fet!</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LLISTA</span></code>: es vol veure la llista dels taulells guardats.</p>
+<p>Aquesta opció és vàlida amb i sense taulell en construcció.</p>
+<p>El programa mostra la llista dels noms dels taulells guardats.</p>
+<p>Si no n’hi ha cap, ho indica amb el missatge <code class="docutils literal notranslate"><span class="pre">Cap</span> <span class="pre">vaixell</span> <span class="pre">guardat</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOU</span></code>: es vol crear un nou taulell.</p>
+<p>Aquesta opció només és vàlida quan no hi ha un taulell en construcció.
+Si hi és, es mostra el missatge d’error <code class="docutils literal notranslate"><span class="pre">Ja</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">un</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span>
+<span class="pre">les</span> <span class="pre">opcions</span> <span class="pre">GUARDA</span> <span class="pre">o</span> <span class="pre">OBLIDA</span></code>.</p>
+<p>En cas que no hi hagi cap taulell en construcció, el programa demanarà
+les dimensions del taulell: dos enters indicant el nombre de files i de
+columnes.</p>
+<p>Tant el nombre de files, com el de columnes han de ser valors numèrics
+enters entre el 1 i el 99.</p>
+<p>Si s’introdueix un valor erroni, es mostrarà l’error <code class="docutils literal notranslate"><span class="pre">Cal</span> <span class="pre">un</span> <span class="pre">enter</span>
+<span class="pre">entre</span> <span class="pre">1</span> <span class="pre">i</span> <span class="pre">99</span></code>.</p>
+<p>Si tot ha anat bé, el programa crearà un taulell amb les dimensions
+indicades i l’omplirà del valor <em>aigua</em>. Finalment indicarà <code class="docutils literal notranslate"><span class="pre">Fet!</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MOSTRA</span></code>: és vol veure el contingut del taulell en construcció.</p>
+<p>Aquesta opció només és vàlida quan hi ha un taulell en construcció.
+Altrament es mostra el missatge <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">cap</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span> <span class="pre">les</span>
+<span class="pre">opcions</span> <span class="pre">NOU</span> <span class="pre">o</span> <span class="pre">CARREGA</span></code>.</p>
+<p>Altrament, el programa mostrarà una representació del taulell.
+Per exemple, en cas que el taulell demanat sigui de 10x28, i hi hagi
+un vaixell <code class="docutils literal notranslate"><span class="pre">(2:3,</span> <span class="pre">3)</span></code>, es mostrarà:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·    0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+    __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+ 0   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    0
+ 1   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    1
+ 2   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    2
+ 3   .  .  .  2  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    3
+ 4   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    4
+ 5   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    5
+ 6   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    6
+ 7   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    7
+ 8   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    8
+ 9   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    9
+      __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+     0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+</pre></div>
+</div>
+<p>Malgrat el taulell pot arribar a ser molt gran per ser representat en
+una pantalla amb comoditat, en aquesta primera versió del programa no
+s’exigeix gestionar paginació</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OBLIDA</span></code>: es vol ignorar el taulell en construcció sense guardar cap
+canvi.</p>
+<p>Aquesta opció només és vàlida quan hi ha un taulell en construcció.
+Altrament es mostra el missatge <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">hi</span> <span class="pre">ha</span> <span class="pre">cap</span> <span class="pre">taulell.</span> <span class="pre">Considereu</span> <span class="pre">les</span>
+<span class="pre">opcions</span> <span class="pre">NOU</span> <span class="pre">o</span> <span class="pre">CARREGA</span></code>.</p>
+<p>En cas que sí hi hagi, el taulell en construcció és oblidat i es deixa
+de tenir taulell de construcció. En aquest cas, el programa confirmarà
+amb l’habitual missatge <code class="docutils literal notranslate"><span class="pre">Fet!</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SURT</span></code>: es vol finalitzar l’execució de l’aplicació.</p>
+<p>Aquesta opció pot ser executada només quan no tenim taulell en
+construcció.
+En cas que sí el tenim, es recomanarà abans der <code class="docutils literal notranslate"><span class="pre">GUARDA</span></code> o <code class="docutils literal notranslate"><span class="pre">OBLIDA</span></code>.</p>
+<p>En cas que no el tinguem, el programa finalitzarà l’execució amb el seu
+habitual missatge <code class="docutils literal notranslate"><span class="pre">Fet!</span></code>.</p>
+</li>
+</ul>
+<p>En cas que s’introdueixi una altra comanda, el programa respondrà amb el
+missatge <code class="docutils literal notranslate"><span class="pre">Comanda</span> <span class="pre">desconeguda</span></code>.</p>
+<p>El comportament del programa es pot representar amb el següent diagrama
+d’estats:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-8b07323113b94d6b23ffb4902ced4559b10d0cfe.png" alt="&#64;startuml
+
+[*] --&gt; inici
+
+inici --&gt; [*] : SURT
+inici --&gt; inici : AJUDA, LLISTA
+inici --&gt; taulell : CARREGA, NOU
+taulell --&gt; taulell : AFEGEIX, AJUDA, ELIMINA, LLISTA
+taulell --&gt; inici : GUARDA, OBLIDA
+
+&#64;enduml"/>
+</p>
+</div>
+</div>
+<div class="section" id="el-joc">
+<h2>El joc<a class="headerlink" href="#el-joc" title="Link permanent a aquest títol">¶</a></h2>
+<p>El joc serà implementat amb el programa <code class="docutils literal notranslate"><span class="pre">Flota.java</span></code></p>
+<p>El funcionament del joc és el següent:</p>
+<ul>
+<li><p>En arrencar el programa, carrega el taulell contingut a un fitxer, a
+partir del nom del taulell segons s’hagi definit a
+<code class="docutils literal notranslate"><span class="pre">ConstructorTaulell</span></code>. El nom del taulell és proporcionat com a
+argument de línia de comandes.</p>
+<p>De no trobar-se el taulell amb aquest nom, finalitza execució amb
+un missatge d’error.</p>
+</li>
+<li><p>El programa valida que el contingut del fitxer sigui correcte. De no
+ser-ho, finalitza execució amb un missatge d’error.</p></li>
+<li><p>D’estar tot correcte, el programa mostra el mapa del taulell on,
+inicialment totes les cel·les apareixen amb el valor <em>ocult</em> sota un
+símbol d’interrogació. Com a ajuda, al voltant dels valors del
+taulell, apareixeran els noms de la fila/la columna corresponent.</p>
+<p>Per exemple, si el taulell és 10x28, la seva representació inicial
+serà:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>·    0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+    __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+ 0   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    0
+ 1   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    1
+ 2   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    2
+ 3   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    3
+ 4   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    4
+ 5   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    5
+ 6   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    6
+ 7   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    7
+ 8   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    8
+ 9   ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?    9
+      __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+     0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+</pre></div>
+</div>
+</li>
+<li><p>un cop representat el taulell, se li demanarà a la jugadora que
+introdueixi una comanda amb un prompt.</p></li>
+</ul>
+<p>Les comandes acceptades, sense distinció de majúscules/minúscules, són:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SURT</span></code>: la jugadora abandona la partida. El programa finalitza amb el
+missatge «JO GUANYO!».</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOLUCIONA</span></code>: la jugadora abandona la partida però vol veure el taulell.
+El programa finalitza tot mostrant el taulell sense cap posició oculta
+i el missatge «JO GUANYO!».</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AJUDA</span></code>: el programa mostra un text d’ajuda on descriu les comandes
+acceptades.</p></li>
+<li><p>una coordenada ben definida la jugadora introdueix una coordenada ben
+definida. És a dir, un string de la forma <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">m)</span></code> on <code class="docutils literal notranslate"><span class="pre">n</span></code> i <code class="docutils literal notranslate"><span class="pre">m</span></code>
+són valors enters entre el 0 i el 99.</p>
+<p>El programa respon depenent de les següents condicions:</p>
+<p>Si és una posició fora del taulell, el programa respon amb un missatge
+que invita a la jugadora a estar més atenta. Per exemple, «DESPERTA!»</p>
+<p>Si és una cel·la ja destapada, el programa respon amb un missatge que
+invita la jugadora a estar més atenta.</p>
+<p>Si és una cel·la que contenia aigua, el programa respondrà «AIGUA» i
+mostrarà el mapa del taulell amb la cel·la destapada.</p>
+<p>Si és una cel·la que contenia un vaixell i encara queden parts del
+vaixell sense destapar, el programa respondrà amb «TOCAT» i mostrarà
+el mapa del taulell amb la cel·la destapada.</p>
+<p>Si la cel·la destapada finalitza un vaixell, el programa respondrà amb
+«TOCAT I ENFONSAT», i:</p>
+<p>Si en finalitzar un vaixell, encara queden vaixells per destapar,
+mostrarà el mapa del taulell amb la cel·la destapada.</p>
+<p>Si era el darrer vaixell no destapat al taulell, mostrarà tot el
+taulell destapat i el missatge «TU GUANYES!».
+Amb això el programa finalitza.</p>
+</li>
+<li><p>qualsevol altra cosa: la jugadora ha introduït una comanda desconeguda o
+una coordenada malament definida. El programa li mostra un missatge
+d’error i continua l’execució.</p></li>
+</ul>
+</div>
+<div class="section" id="altres-detalls-importants">
+<h2>Altres detalls importants<a class="headerlink" href="#altres-detalls-importants" title="Link permanent a aquest títol">¶</a></h2>
+<p>Algunes aclaracions i pistes.</p>
+<div class="section" id="representacio-interna">
+<h3>Representació interna<a class="headerlink" href="#representacio-interna" title="Link permanent a aquest títol">¶</a></h3>
+<p>Hi ha moltes maneres de representar internament els taulells. Per
+simplicitat, et proposo que facis servir una taula de caracters tant en
+fitxer com en memòria.</p>
+</div>
+<div class="section" id="com-interpretar-les-descripcions-dels-vaixells">
+<h3>Com interpretar les descripcions dels vaixells?<a class="headerlink" href="#com-interpretar-les-descripcions-dels-vaixells" title="Link permanent a aquest títol">¶</a></h3>
+<p>Et caldrà fer un conjunt de funcions que permetin interpretar un string
+amb l’especificació d’un vaixell. Considera implementar les següents
+funcions:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// retorna true si descripció correspon a una descripció de vaixell</span>
+<span class="c1">// vàlida</span>
+<span class="c1">// Són descripcions vàlides: (f, c), (f1:f2, c) i (f, c1:c2)</span>
+<span class="c1">// on f, f1, f2, c, c1 i c2 són enters entre 0 i 99</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esDescripcioDeVaixellValida</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// retorna true si el vaixell està posicionat de manera horitzontal</span>
+<span class="c1">// Si la descripció no és vàlida per un vaixell, retorna false</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esVaixellHoritzontal</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// retorna la longitud del vaixell, -1 si no és una descripció vàlida</span>
+<span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">longitudVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripció</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// retorna la primera fila del vaixell descrit, -1 si no és una</span>
+<span class="c1">// descripció vàlida</span>
+<span class="c1">// Exemple: &quot;(1:2, 3)&quot; retorna 1. &quot;(5, 4:2)&quot; retorna 5</span>
+<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// retorna la darrera fila del vaixell descrit, -1 si no és una</span>
+<span class="c1">// descripció vàlida</span>
+<span class="c1">// Exemple: &quot;(1:2, 3)&quot; retorna 2. &quot;(5, 4:2)&quot; retorna 5</span>
+<span class="kd">static</span> <span class="kt">int</span> <span class="nf">primeraFilaVaixell</span><span class="p">(</span><span class="n">String</span> <span class="n">descripcio</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="com-saber-si-un-taulell-es-valid">
+<h3>Com saber si un taulell és vàlid?<a class="headerlink" href="#com-saber-si-un-taulell-es-valid" title="Link permanent a aquest títol">¶</a></h3>
+<p>Perquè un taulell sigui vàlid, sabem que ha de tenir com a mínim un
+vaixell, que els vaixells tinguin la longitud que indiquen amb el seu
+valor i que no es toquin entre ells en horitzontal.</p>
+<p>Una possible manera de comprovar-ho, és crear un nou taulell on anirem
+marcant les coordenades com visitades o no visitades. Inicialment estaran totes
+no visitades.</p>
+<p>Per cada posició del taulell a validar, mirarem si està marcat com a
+visitada. Si no és així:</p>
+<ul class="simple">
+<li><p>si és aigua, la marquem com a visitada (segur que està bé).</p></li>
+<li><p>si és vaixell amb valor 1, mirem que la posició següent a la mateixa
+fila i la següent a la mateixa columna siguin aigua o límit de taulell.
+Si és així marquem la posició del vaixell i les aigües. Altrament no és
+vàlid.</p></li>
+<li><p>si és vaixell amb valor més gran que 1, mirem si la posició següent a la
+mateixa fila és aigua. Si no ho és, reseguim la fila comptant que hi
+hagi tantes posicions ocupades de vaixell amb el mateix valor com
+indiqui el valor, finalitzant amb aigua o límit del taulell. En cas de
+ser aigua, farem el mateix amb les posteriors files dins la mateixa
+columna. Recordem marcar com a visitades tant les parts del vaixell com
+les d’aigua.</p></li>
+</ul>
+<p>Fixa’t que d’aquesta manera només hem de recorrer el taulell d’esquerra a
+dreta i de dalt a baix, i mirar només la columna o la fila següent, doncs
+les anteriors segur que estaven bé.</p>
+</div>
+<div class="section" id="nom-dels-fitxers">
+<h3>Nom dels fitxers<a class="headerlink" href="#nom-dels-fitxers" title="Link permanent a aquest títol">¶</a></h3>
+<p>Els noms dels fitxers
+podrien correspondre amb el nom del taulell indicat per la constructora
+(en minúscules), amb l’extensió <code class="docutils literal notranslate"><span class="pre">.taulell</span></code> i podrien estar guardats en
+un mateix directori (ex. <code class="docutils literal notranslate"><span class="pre">taulells/</span></code>.</p>
+<p>Tot plegat, simplificaria molt la seva gestió. En tot cas, com en tants
+altres detalls d’implementació d’aquest exercici, la decisió és teva.</p>
+</div>
+<div class="section" id="esborrar-pantalla">
+<h3>Esborrar pantalla<a class="headerlink" href="#esborrar-pantalla" title="Link permanent a aquest títol">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Flota.java</span></code> farà més goig si pots esborrar la pantalla.</p>
+<p>Crea un programa i fes que executi el següent codi que hauria de
+funcionar-te amb una consola <em>X-linux</em>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Neteja la finestra de la consola</span>
+<span class="cm"> */</span>
+<span class="kd">static</span> <span class="kt">void</span> <span class="nf">netejaFinestra</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\033[H\033[2J&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="reutilitzacio-de-codi-i-packages">
+<h3>Reutilització de codi i <em>packages</em><a class="headerlink" href="#reutilitzacio-de-codi-i-packages" title="Link permanent a aquest títol">¶</a></h3>
+<p>És fàcil que et resulti interessant reaprofitar mòduls que has
+desenvolupat a <code class="docutils literal notranslate"><span class="pre">ConstructorTaulell</span></code> des de <code class="docutils literal notranslate"><span class="pre">Flota</span></code> o, fins i tot
+d’altres d’exercicis previs com <code class="docutils literal notranslate"><span class="pre">TaulesUtils</span></code>. Per fer-ho, en comptes de
+copiar i enganxar funcions, pot simplement assegurar-te que el codi de
+totes les classes que t’interessen, es troba a la mateixa carpeta que el
+programa que estàs codificant. Llavors, per cridar-les, simplement fes
+servir el nom de la classe, seguit de punt, i acabat per la crida habitual
+al mòdul corresponent.</p>
+<p>Per simplicitat, de moment <strong>no</strong> defineixis els teus propis <em>packages</em>.
+Si estàs fent servir una eina que te’ls genera automàticament, assegura’t
+d’eliminar-los.</p>
+</div>
+<div class="section" id="excepcions-i-orientacio-a-objectes">
+<h3>Excepcions i orientació a objectes<a class="headerlink" href="#excepcions-i-orientacio-a-objectes" title="Link permanent a aquest títol">¶</a></h3>
+<p>Hi ha molts conceptes que encara no hem treballat de Java. Entre d’altres
+la orientació a objectes i el mecanisme d’excepcions.</p>
+<p>Evita tant com et sigui possible aquests dos temes, doncs no és l’objectiu
+d’aquesta pràctica. Si per exemple, en obrir un fitxer es produeix una
+excepció, és acceptable que el teu programa simplement finalitzi amb un
+missatge d’error gestionat pel Java.</p>
+</div>
+<div class="section" id="variables-globals">
+<h3>Variables globals<a class="headerlink" href="#variables-globals" title="Link permanent a aquest títol">¶</a></h3>
+<p>Per simplicitat, en comptes d’haver de passar amunt i avall els taulells i
+altres variables, et proposo que les declaris amb àmbit global dins la
+classe. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">LaClasse</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">laVariable</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">elModul</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">laVariable</span><span class="p">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">laVariable</span><span class="p">);</span> <span class="c1">// aquí tinc accés a laVariable</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="confirmacions">
+<h3>Confirmacions<a class="headerlink" href="#confirmacions" title="Link permanent a aquest títol">¶</a></h3>
+<p>Normalment cal demanar confirmació als nostres usuaris quan estem a punt
+de realitzar una acció que farà perdre informació sense posibilitat de
+recuperar-la. Per exemple, l’opció <code class="docutils literal notranslate"><span class="pre">OBLIDA</span></code> o <code class="docutils literal notranslate"><span class="pre">GUARDA</span></code> en cas
+d’existir el taulell on es guardarà.</p>
+<p>Per simplicitat de codi, aquesta versió no requereix cap confirmació.
+Evidentment tu pots decidir afegir-la.</p>
+</div>
+<div class="section" id="control-de-versions">
+<h3>Control de versions<a class="headerlink" href="#control-de-versions" title="Link permanent a aquest títol">¶</a></h3>
+<p>És molt important que realitzis un control de versions durant el
+desenvolupament d’aquesta pràctica, doncs forma part de l’avaluació.</p>
+<p>Si has de treballar tu sola/sol, guarda el teu exercici com a
+<code class="docutils literal notranslate"><span class="pre">06_06_flota/</span></code> al teu repositori de l’assignatura.</p>
+<p>En cas que el desenvolupis conjuntament amb una altra companya o company,
+és preferible que creeu un nou repositori on treballar conjuntament. Feu
+<a class="reference internal" href="holagit.html"><span class="doc">les mateixes passes</span></a> que vau realitzar per construir el
+que feu servir en aquesta assignatura. Aquest cop, però, hi serem un/una
+més al repositori. Tot i que el repositori estarà dedicat a aquest
+exercici, incloeu tot el desenvolupament dins de la carpeta
+<code class="docutils literal notranslate"><span class="pre">06_06_flota/</span></code>.</p>
+<p>Aquesta experiència de treballar conjuntament sobre el mateix repositori
+ja és, en sí, molt enriquidora. Demaneu ajut quan apareguin dificultats.</p>
+<p>Assegureu-vos que incloeu el nom de tots els autors/autores a la capçalera
+de cada fitxer.</p>
+<p>No oblidis, després de cada canvi significatiu, fer un <em>commit</em>!</p>
+<p>Recorda que aquí l’objectiu no és l’eficiència en la producció de codi
+sinó l’eficiència en l’aprenentatge.</p>
+</div>
+<div class="section" id="com-comencar-ho-tot-plegat">
+<h3>Com començar-ho tot plegat?<a class="headerlink" href="#com-comencar-ho-tot-plegat" title="Link permanent a aquest títol">¶</a></h3>
+<p>Probablement el punt més difícil és començar a fer el programa. Et proposo
+el següent:</p>
+<ul>
+<li><p>si has de treballar per parelles, creeu el nou repositori privat,
+convideu-me i prepareu el vostre entorn local. Potser voldreu fer alguna
+prova tot editant per separat el fitxer <code class="docutils literal notranslate"><span class="pre">readme</span></code>.</p></li>
+<li><p>creat un fitxer amb el nom del programa i defineix una bona capçalera.
+Pots fer servir inicialment el text d’aquest enunciat, però de seguida,
+intenta desglossar-lo en una llista d’elements petits. Per exemple:</p>
+<ul class="simple">
+<li><p>oferir missatge presentant la funció del programa</p></li>
+<li><p>mostrar prompt</p></li>
+<li><p>recollir comanda</p></li>
+<li><p>mostrar ajuda</p></li>
+<li><p>crear nou taulell</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>fes una o més simulacions de diferents execucions. La primera potser
+podria ser simplement:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java ConstructorTaulell
+
+Benvingut, benvinguda al programa de construcció de taulells pel joc
+d&#39;enfonsar la flota.
+
+Per demanar ajuda, simplement tecleja AJUDA
+
+&gt; SURT
+Adéu
+</pre></div>
+</div>
+<p>Un cop tinguis la primera, podries ja generar el primer programa que
+sigui capaç de passar la prova.</p>
+<p>És molt recomenable que facis servir fitxers d’entrada/sortida a l’estil
+dels que hem estat fent servir durant tot el curs. Si et cal, demana
+ajuda per adaptar el programa <code class="docutils literal notranslate"><span class="pre">test/test.sh</span></code> a les necessitats del teu
+projecte.</p>
+</li>
+<li><p>Per la majoria de nosaltres, resulta més fàcil abordar els problemes,
+tot simplificant-los inicialment, per després anar-los completant de
+manera incremental.</p>
+<p>Per exemple, probablement sigui més adequat mostrar inicialment els
+valors dels taulells sense indicar els números de files ni de columnes.
+Tot seguit pots mirar de posar les files a una banda,
+després a les dues, després els noms de columna…</p>
+</li>
+<li><p>quan tinguis clar que has de crear un mòdul, defineix amb precisió el seu
+objectiu. En cas que et sigui possible, defineix una mena de <em>doctest</em>
+o, si t’atreveixes, un <em>junit test</em>! No tinguis problemes per demanar
+suport. El teu profe estarà més que content d’ajudar-te!</p></li>
+<li><p>Finalment recorda: no estàs sola/sol desenvolupant. Està molt bé fer
+coses per la teva banda, però també aprendre a fer consultes de com
+resoldre un problema que no et surt o, fins i tot, demanar assessorament
+quan el codi que has generat no t’acaba de convèncer.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="estructures.html" class="btn btn-neutral float-right" title="Estructures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fitxers_gestio.html" class="btn btn-neutral float-left" title="Gestió de fitxers en Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

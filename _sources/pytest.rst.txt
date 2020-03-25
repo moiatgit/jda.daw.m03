@@ -38,8 +38,8 @@ Trobaràs aquesta secció dividida en els següents punts:
     :maxdepth: 1
     :titlesonly:
 
-    pytest.installacio.rst
-    pytest.holapytest.rst
-    pytest.unexemplemessofisticat.rst
-    pytest.exercicis.rst
+    pytest_installacio.rst
+    pytest_holapytest.rst
+    pytest_unexemplemessofisticat.rst
+    pytest_exercicis.rst
 

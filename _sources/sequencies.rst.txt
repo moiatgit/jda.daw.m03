@@ -22,9 +22,9 @@ Els continguts d'aquesta secció es distribueixen en les següents entrades:
     :titlesonly:
     :maxdepth: 1
 
-    sequencies.justificacio.rst
-    sequencies.en_python.rst
-    sequencies.juguem.rst
-    sequencies.matrius.rst
+    sequencies_justificacio.rst
+    sequencies_en_python.rst
+    sequencies_juguem.rst
+    sequencies_matrius.rst
 
 ..  control_bucles.rst

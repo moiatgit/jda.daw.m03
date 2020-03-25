@@ -24,8 +24,8 @@ execucions anteriors.
     :maxdepth: 1
     :titlesonly:
 
-    fitxers.intro.rst
-    fitxers.java.rst
-    fitxers.gestio.rst
-    java.flota.rst
+    fitxers_intro.rst
+    fitxers_java.rst
+    fitxers_gestio.rst
+    java_flota.rst
 

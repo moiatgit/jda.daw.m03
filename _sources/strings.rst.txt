@@ -33,5 +33,5 @@ Doncs bé, d'això va aquest nou tema!
     :maxdepth: 1
     :titlesonly:
 
-    strings.posicions.rst
-    strings.recorreguts.rst
+    strings_posicions.rst
+    strings_recorreguts.rst

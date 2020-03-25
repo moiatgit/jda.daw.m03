@@ -11,8 +11,8 @@ Aquest tema en parla
     :maxdepth: 2
     :titlesonly:
 
-    estructures.intro.rst
-    estructures.codi_duplicat.rst
-    estructures.agrupacio.rst
-    estructures.classes.rst
+    estructures_intro.rst
+    estructures_codi_duplicat.rst
+    estructures_agrupacio.rst
+    estructures_classes.rst
 

@@ -21,17 +21,17 @@ treballat amb Python.
     :maxdepth: 1
     :titlesonly:
 
-    java.versio.rst
-    java.holamon.rst
-    java.variables.rst
-    java.tipus.rst
-    java.operadors.rst
-    java.strings.rst
-    java.expressions.rst
-    java.basicinout.rst
-    java.condicionals.rst
-    java.repeticions.rst
-    java.salts.rst
-    java.moduls.rst
-    java.sequencies.rst
+    java_versio.rst
+    java_holamon.rst
+    java_variables.rst
+    java_tipus.rst
+    java_operadors.rst
+    java_strings.rst
+    java_expressions.rst
+    java_basicinout.rst
+    java_condicionals.rst
+    java_repeticions.rst
+    java_salts.rst
+    java_moduls.rst
+    java_sequencies.rst
 

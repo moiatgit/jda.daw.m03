@@ -421,6 +421,6 @@ docent) per arribar a entendre'l. És a dir, **no val** dir, que un
 exercici no l'has entès! Entesos?
 
 Redacta aquest exercici en un document de text pla. Et recomano que facis servir
-algun format de text de marques com ara :doc:`reStructuredText <rst.intro>`
+algun format de text de marques com ara :doc:`reStructuredText <rst_intro>`
 o `markdown
 <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>`_.

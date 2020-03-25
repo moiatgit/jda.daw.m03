@@ -1,0 +1,83 @@
+####################
+Instruccions de salt
+####################
+
+En aquesta secció veurem les instruccions per saltar el flux que ens ofereix
+Java: ``return``, ``break`` i ``continue``.
+
+No esperis gaire novetats respecte a que :doc:`ja has vist
+<control_bucles>` amb Python.  
+
+La instrucció ``return``
+========================
+
+La instrucció ``return`` finalitza immediatament l'execució del mòdul en
+el que ens trobem.
+
+Per exemple, considera el mòdul ``main()``:
+
+.. code-block:: java
+
+    public static void main(String[] args) {
+        int n = demanaQuantsAUsuari();  // retornarà un enter que demanarà a l'usuari
+        if (n <= 1) {
+            System.out.println("Per tants pocs, ni em molesto!");
+            return;                     // Finalitza l'execució del main()
+        }
+        // Només s'executarà aquest codi si n és prou gran
+        for (int i=0; i<n; i++) {
+            System.out.println((char)('a' + i));
+        }
+    }
+
+.. caution::
+
+    En cas que afegim instruccions a continuació de ``return`` i en el
+    mateix bloc on estigui aquest, el compilador ens avisarà amb l'error:
+    ``error: unreachable statement``
+
+La instrucció ``return`` pot retornar un valor. Això serà útil quan
+apareix en el bloc d'una funció. Estudiarem amb més detall els mòduls a
+:doc:`java_moduls`.
+
+Una diferència important respecte el ``return`` a Python és que el
+compilador de Java ens avisarà si calia i ens el descuidem o retornem
+quelcom que no toca.
+
+
+El ``continue`` i el ``break``
+==============================
+
+El funcionament d'aquestes dues instruccions a Java és pràcticament el
+mateix que el de Python. Únicament assegura't que no oblides el ``;`` al
+final.
+
+Fem servir ``continue`` dins d'un bucle quan hem trobat una iteració que no
+hem de seguir processant i volem que passi a la següent iteració:
+
+.. code-block:: java
+
+    for (int i=0; i < 5; i++) {
+        if (i == valor_a_ignorar) {
+            continue;
+        }
+        System.out.println(i);
+    }
+
+Fem servir el ``break`` també dins d'un bucle, quan hem trobat una
+iteració que fa que no tingui sentit continuar iterant:
+
+.. code-block:: java
+
+    while (true) {
+        String resposta = entrada.readLine();
+        if (resposta.equals("prou") {
+            break;
+        }
+        System.out.println("Segur que no vols dir prou?");
+    }
+
+Recorda, però, que ``break`` també es fa servir a Java amb l'estructura
+condicional :doc:`switch <java_condicionals>` per evitar que un cop ha
+entrat en un cas, continuï amb la resta.
+

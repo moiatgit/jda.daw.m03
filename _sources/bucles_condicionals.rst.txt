@@ -30,6 +30,6 @@ Descobrim el ``while``!
     :titlesonly:
     :maxdepth: 1
 
-    while.visio_general.rst
-    while.recorreguts.rst
-    while.juguem.rst
+    while_visio_general.rst
+    while_recorreguts.rst
+    while_juguem.rst
