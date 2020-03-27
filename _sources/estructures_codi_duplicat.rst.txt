@@ -63,7 +63,7 @@ Exercici 2. ☞ Unes quantes fitxes de persones
 Crea una nova versió del programa ``InformePersona`` que vas desenvolupar a
 :ref:`aquest exercici <exercici_fitxa_persona>`
 
-Afegeix-hi un nou mòdul anomenat ``mostraFitxes()`` que rebi, en aquest ordre, els
+Afegeix-hi un nou mòdul anomenat ``composaFitxes()`` que rebi, en aquest ordre, els
 següents paràmetres:
 
 * ``String[] noms``
@@ -72,6 +72,6 @@ següents paràmetres:
 
 * ``int[] edats``
 
-Pots suposar que tots tres arrays són de la mateixa longitud.
+Pots suposar que tots tres *arrays* són de la mateixa longitud.
 
 No cal que modifiquis el ``main()`` de la versió original.
