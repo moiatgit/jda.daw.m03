@@ -254,6 +254,7 @@ estirat``. El següent diagrama mostra la seqüència d'intercanvis entre els di
 d'aquesta interacció.
 
 .. uml::
+   :align: center
 
     @startuml
         actor usuari

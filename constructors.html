@@ -404,20 +404,22 @@ mètode <code class="docutils literal notranslate"><span class="pre">GatRenat.ge
 <code class="docutils literal notranslate"><span class="pre">estic</span> <span class="pre">«estat»</span></code>. Per exemple, si el gat respon <code class="docutils literal notranslate"><span class="pre">estirat</span></code>, la resposta de l’entorn serà <code class="docutils literal notranslate"><span class="pre">estic</span>
 <span class="pre">estirat</span></code>. El següent diagrama mostra la seqüència d’intercanvis entre els diferents actors
 d’aquesta interacció.</p>
+<div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-7735e376e7725552c5f434b7d23bce9c8159602c.png" alt="&#64;startuml
-    actor usuari
-    usuari -&gt; entorn: com estàs?
-    entorn -&gt; renat: getEstatComString()
-    renat --&gt; entorn: &quot;estirat&quot;
-    entorn --&gt; usuari: &quot;estic estirat&quot;
+<img src="_images/plantuml-48b824f0e3fd755e5732cf8af9503bf8cbf2d658.png" alt=" &#64;startuml
+     actor usuari
+     usuari -&gt; entorn: com estàs?
+     entorn -&gt; renat: getEstatComString()
+     renat --&gt; entorn: &quot;estirat&quot;
+     entorn --&gt; usuari: &quot;estic estirat&quot;
 
-    skinparam sequence {
-        ParticipantBackgroundColor white
-        ActorBackgroundColor white
-    }
-&#64;enduml"/>
+     skinparam sequence {
+         ParticipantBackgroundColor white
+         ActorBackgroundColor white
+     }
+ &#64;enduml"/>
 </p>
+</div>
 <p>Quan se li digui <code class="docutils literal notranslate"><span class="pre">adéu</span></code>, respondrà amb <code class="docutils literal notranslate"><span class="pre">adéu</span></code> i finalitzarà.</p>
 <p>Per la resta de comandes, el programa respondrà amb el que respongui el gat.</p>
 <p>Per facilitar la prova d’aquest programa, caldrà que respecti algunes condicions addicionals.
