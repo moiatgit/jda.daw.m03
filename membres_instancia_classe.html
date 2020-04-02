@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programació Orientada a Objectes &mdash; Introducció a la programació 2019-20 documentació</title>
+  <title>Membres d’instància i de classe &mdash; Introducció a la programació 2019-20 documentació</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Classes i objectes" href="classes_i_objectes.html" />
-    <link rel="prev" title="Agrupacions en classes" href="estructures_classes.html" />
+    <link rel="next" title="Mètodes de classe" href="metodes_de_classe.html" />
+    <link rel="prev" title="Constructors" href="constructors.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -95,10 +95,15 @@
 <li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programació Orientada a Objectes</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constructors.html">Constructors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Membres d’instància i de classe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metodes_de_classe.html">Mètodes de classe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propietats_de_classe.html">Propietats de classe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propietats_finals.html">Propietats finals</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -146,7 +151,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Programació Orientada a Objectes</li>
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Membres d’instància i de classe</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,32 +171,19 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="programacio-orientada-a-objectes">
-<h1>Programació Orientada a Objectes<a class="headerlink" href="#programacio-orientada-a-objectes" title="Link permanent a aquest títol">¶</a></h1>
-<p>Ens endinsem ara al descobriment d’un nou paradigma de programació: la
-programació orientada a objectes</p>
-<p>Darrera de la paraulota <em>paradigma</em> s’amaga la idea de «manera d’entendre
-quelcom». Així, un paradigma de programació seria una manera d’entendre la
-programació.</p>
-<p>Fins ara, hem aprés a desenvolupar amb el paradigma de la programació
-estructurada i modular. Així, hem aprés que estructurem el nostre codi a
-partir de:</p>
-<ul class="simple">
-<li><p>dades: instruccions d’assignació, entrada/sortida, tipus, estructures</p></li>
-<li><p>estructures de control de flux: condicionals (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">switch</span></code>) i de
-repetició (<code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>)</p></li>
-<li><p>mòduls: procediments, funcions, crides</p></li>
-<li><p>i, més recentment, dades agrupades</p></li>
-</ul>
-<p>El paradigma de la programació orientada a objectes també inclou els
-elements anteriors, però presenta una particularitat: les dades i els
-mòduls apareixeran agrupats en el que coneixerem com <em>objectes</em>.</p>
-<p>Aquest tema es desglossa en les següents entrades:</p>
+  <div class="section" id="membres-d-instancia-i-de-classe">
+<h1>Membres d’instància i de classe<a class="headerlink" href="#membres-d-instancia-i-de-classe" title="Link permanent a aquest títol">¶</a></h1>
+<p>Tot i que habitualment els membres que definim a les nostres classes, estan orientats a cada
+instància concreta de la classe, hi ha ocasions en que ens cal disposar de mètodes o/i propietats
+que facin referència a tota la classe i no a una instància concreta d’aquesta.</p>
+<p>En aquest document es discuteix aquesta possibilitat en forma de membres d’instància i de classe.</p>
+<p>Com a <em>extra</em> se li afegeix el concepte de <em>final</em> què, simplificant-ho molt, permet indicar que
+quelcom és constant.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constructors.html">Constructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="membres_instancia_classe.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metodes_de_classe.html">Mètodes de classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="propietats_de_classe.html">Propietats de classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="propietats_finals.html">Propietats finals</a></li>
 </ul>
 </div>
 </div>
@@ -225,10 +219,10 @@ mòduls apareixeran agrupats en el que coneixerem com <em>objectes</em>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="classes_i_objectes.html" class="btn btn-neutral float-right" title="Classes i objectes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="metodes_de_classe.html" class="btn btn-neutral float-right" title="Mètodes de classe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="estructures_classes.html" class="btn btn-neutral float-left" title="Agrupacions en classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constructors.html" class="btn btn-neutral float-left" title="Constructors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
