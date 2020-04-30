@@ -1,0 +1,69 @@
+############################
+Una aplicació més "flexible"
+############################
+
+D'acord. Tenim una aplicació Web funcionant, però… no fa gaire cosa, oi?
+De fet, sempre ens respon el mateix.
+
+Considera aquesta nova versió de ``Main.java``:
+
+.. literalinclude:: _recursos/holaspark/v2/Main.java
+   :linenos:
+   :lines: 7-
+   :lineno-start: 7
+   :language: java
+   :caption: :download:`src/main/java/Main.java <_recursos/holaspark/v2/Main.java>`
+
+El canvi és molt petit respecte la versió anterior. En concret:
+
+* el nostre mètode ``composaSalutacio()`` ara espera un paràmetre de tipus
+  String. Inicialment comprova que ``nom`` no sigui ``null``,
+  altrament li posa un valor per defecte. Finalment retorna un missatge
+  fent servir el valor de ``nom``.
+
+  Atenció: el nom el posa entre etiquetes HTML ``<b>``. Recorda que tot
+  plegat està pensat per ser mostrat per un navegador.
+
+* el ``main()`` passa com a argument de la crida a ``composaSalutacio()``
+  el resultat de cridar a ``rq.queryParams("nom")``. Fins ara no havíem
+  fet servir ``rq``. Aquesta variable correspon a una instància de tipus
+  ``spark.Request`` que, entre d'altres coses, ens ofereix la possibilitat
+  de saber paràmetres de la petició que ens ha fet el nostre client.
+
+  ``queryParams()`` retornarà ``null`` si no troba cap paràmetre anomenat
+  ``"nom"``, però el nostre
+
+Si tornem a arrencar el servidor i provar http://localhost:4567/holaspark,
+veurem que ens mostra el mateix que abans. Únicament canvia que ara
+``món`` apareix en negretes.
+
+Fixa't, però, que passa si li
+passem un argument a la url: http://localhost:4567/holaspark?nom=Wendel
+
+.. code-block:: bash
+
+   $ gradle run
+   $ curl localhost:4567/holaspark?nom=Wendel
+   Hola <b>Wendel</b> des de Spark
+
+Això ens obre el camí per fer que les nostres aplicacions puguin
+reaccionar al que ens demanin des del navegador!
+
+Exercici 5. Capicua amb paràmetres
+==================================
+
+Tornem al projecte de capicua.
+
+En aquesta ocasió realitzarem les modificacions necessàries de manera que
+els usuaris puguin indicar la paraula capicua.
+
+Les següents interaccions haurien de generar les respostes esperades.
+
+.. code-block:: bash
+
+   $ curl localhost:4567/capicua
+   La paraula capicua és anna
+   $ curl localhost:4567/capicua?paraula=tururut
+   La paraula capicua és tururut
+   $ curl localhost:4567/capicua?paraula=roma
+   La paraula capicua és romamor

@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+
+b {
+    border: 2px solid orangered;
+    border-radius: 10px;
+    background: orange;
+    box-shadow: 2px 2px 1px orangered;
+    padding: 1em;
+}
+
+img {
+    width: 4em;
+    height: 4em;
+    position: relative;
+    top: 1.2em;
+}
+
+input[type="text"] {
+    margin: 3em 0 1em;
+    width: 50%;
+    box-shadow: 2px 2px 1px;
+}
+
+input[type="submit"] {
+    box-shadow: 2px 2px 1px;
+}
+

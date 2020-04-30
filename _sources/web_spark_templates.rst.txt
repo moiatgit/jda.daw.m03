@@ -1,0 +1,119 @@
+#################
+Afegim plantilles
+#################
+
+Recapitulem. Fins ara hem estat capaços de crear una applicació Web que és
+capaç de saludar al nom especificat a la url. També som capaços de
+realitzar proves sobre el nostre codi. No està malament.
+
+Clar, el missatge que composa ``composaSalutacio()`` és molt bàsic.
+Probablement ens agradaria crear una pàgina una mica més sofisticada. No
+ens tallem, fem-ho!
+
+.. literalinclude:: _recursos/holaspark/v4/Main.java
+   :linenos:
+   :lines: 7-
+   :lineno-start: 7
+   :language: java
+   :caption: :download:`src/main/java/Main.java <_recursos/holaspark/v4/Main.java>`
+
+En executar un altre cop l'aplicació i carregar la pàgina al
+nostre navegador, només notem com a canvi que ara apareix el títol *Hola
+Spark* a la finestra del navegador, tal i com hem especificat a la línia
+18.
+
+És possible que t'estiguis preguntant *i hauré de fer totes les pàgines
+tan manualment?*. La resposta sortosament és *No. Hi ha maneres molt més
+fàcils*. Aquí explorarem una de molt habitual: les plantilles o
+*templates*.
+
+*Spark* ens ofereix la possibilitat de treballar amb diferents gestor de
+*templates*. Aquí farem servir `freemarker
+<https://freemarker.apache.org/>`_ bàsicament perquè és prou senzill i
+està avalat per `Apache.org <http://apache.org/>`_.
+
+Un gestor de *templates* és bàsicament una funció que rep una plantilla,
+per exemple un codi HTML amb anotacions especials, i una col·lecció de
+valors, i retorna el codi HTML on les anotacions han estat reemplaçades
+pels valors corresponents. Si has fet servir la funcionalitat de combinar
+correspondència a un processador de texts, és bàsicament això.
+
+Ja vam definir la dependència de *freemarker* al nostre ``build.gradle``
+així que ja el tenim disponible per a ser utilitzat.
+
+Per defecte, espera les plantilles a la carpeta
+``src/main/resources/spark/template/freemarker/``, amb el que ens caldrà
+una jerarquia de carpetes com ara:
+
+.. code-block:: none
+
+   .
+   ├── …
+   ├── build.gradle
+   └── src
+       ├── main
+       │   ├── java
+       │   │   └── Main.java
+       │   └── resources
+       │       └── spark
+       │           └── template
+       │               └── freemarker
+       │                   └── holaspark.html
+       └── test
+           └── java
+               └── TestMain.java
+
+El fitxer ``holaspark.html`` contindrà de moment el següent:
+
+.. literalinclude:: _recursos/holaspark/v5/holaspark.html
+   :linenos:
+   :language: html
+   :caption: :download:`src/main/resources/spark/templates/freemarker/holaspark.html <_recursos/holaspark/v5/holaspark.html>`
+
+Fixa't que és bàsicament el mateix que el que retornava el nostre darrer
+``composaSalutacio()``. El punt més important és que tot és un fitxer
+perfectament HTML excepte pel ``${nom}`` que apareix a la línia 7. Aquesta
+és una anotació de *freemarker* que indica que aquí s'ha de posar el valor
+de la variable ``nom`` que d'alguna manera rebrà el gestor de *templates*.
+
+Anem a veure com executem aquest gestor i com li diem quin valor té
+``nom``.
+
+Tornem a editar el nostre ``Main.java``:
+
+.. literalinclude:: _recursos/holaspark/v5/Main.java
+   :linenos:
+   :lines: 7-
+   :lineno-start: 7
+   :language: java
+   :caption: :download:`src/main/java/Main.java <_recursos/holaspark/v5/Main.java>`
+
+Hem modificat el nostre ``composaSalutacio()`` doncs ara ja només
+necessitem el nom "corregit".
+
+El canvi més important, però, apareix al ``main()``. No entrarem en gaire
+detall amb la sintaxi. Simplement veure que:
+
+* guardem el *nom* en una estructura de tipus *Map* associant-li el valor
+  retornat per ``composaSalutacio()`` al string *"nom"*. Aquest string és
+  exàctament el que la plantilla espera quan diu ``${nom}``.
+
+* Composem el resultat a partir d'una instància de la classe
+  ``ModelAndView`` que rep els paràmetres i el nom de la plantilla, i que
+  serà processada pel ``FreeMarkerEngine``.
+
+Si executem la nova versió, no veurem cap canvi respecte la versió
+anterior. Això sí, la pàgina resultant ha estat construïda a partir d'una
+plantilla i resulta molt més fàcil
+
+
+Exercici 7. Una plantilla per l'aplicació de capicua
+====================================================
+
+Tornem al projecte de capicua.
+
+En aquesta ocasió farem que l'aplicació generi la pàgina a partir
+d'una plantilla (*template*) de *freemarker*.
+
+Posa-hi un títol adequat i que la paraula capicua aparegui en negreta.
+

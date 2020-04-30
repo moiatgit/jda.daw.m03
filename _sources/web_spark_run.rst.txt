@@ -1,0 +1,52 @@
+####################
+Per fi, hola a Spark
+####################
+
+Vinga, veiem com funciona la nostra aplicació Web.
+
+El *Gradle* ens ho farà molt fàcil per executar-ho:
+
+.. code-block:: bash
+
+   $ gradle run
+
+Després d'una estoneta més o menys curta, en la que *Gradle* descarregarà
+les dependències i compilarà el nostre programa, si tot ha anat bé, ens
+acabarà amb un missatge dient que ha arrencat un ``ServerConnector`` i si
+et fixes una mica indica que el port és el ``4567``.
+
+Doncs apa, arrenca un navegador i carrega la pàgina
+http://localhost:4567/holaspark
+
+.. image:: _recursos/holaspark/holasparkfirefox.png
+   :align: center
+
+Eh! Ho hem aconseguit! Tenim el nostre servidor Web funcionant amb la
+nostra aplicació!
+
+No cal que arrenquem un navegador cada cop que volem fer una prova. Per
+exemple, la utilitat ``curl`` ens permet descarregar-nos el contingut de
+la pàgina des de línia de comandes:
+
+.. code-block:: bash
+
+   $ curl localhost:4567/holaspark
+   Hola món des de Spark
+
+Per finalitzar l'execució, farem ``ctrl-c`` a la consola on hem arrencat
+el servidor.
+
+Exercici 4. Programa principal
+==============================
+
+Toca treballar en el projecte de capicua.
+
+En aquesta ocasió tenim una mica de feina. L'objectiu és que afegeixis la
+ruta necessària perquè la següent comanda tingui el resultat esperat:
+
+.. code-block:: bash
+
+   $ curl localhost:4567/capicua
+   La paraula capicua és anna
+
+

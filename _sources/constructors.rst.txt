@@ -222,7 +222,7 @@ continuï fent-ho amb aquesta.
 Per defecte, el gat Renat *naixerà* estirat com fins ara, a menys que es
 faci servir el nou constructor.
 
-.. _constructors_i_exercici_entorn_operatiu:
+.. _exercici_entornoperatiugatrenat:
 
 Exercici 14. ☞ L’entorn operatiu del gat Renat
 ==============================================

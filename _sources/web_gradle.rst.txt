@@ -1,0 +1,58 @@
+####################################
+Gradle: una ajuda amb la complexitat
+####################################
+
+El desenvolupament d'una aplicació Web aporta un tipus de complexitat de
+la que ens hem anat escapant fins ara: les dependències de llibreries
+externes.
+
+Fins ara, havíem aconseguit sortir-nos-en descarregant-nos algun ``.jar``
+i configurant variables d'entorn. Per exemple, recorda quan vam instal·lar
+el JUnit.
+
+Si bé ens podríem mantenir en aquesta línia, ara la complexitat és molt
+superior. Ens trobem que de seguida canvien versions dels paquets que farà
+servir la nostra aplicació i gestionar-ho a ma no és trivial ni tampoc
+gaire gratificant per la majoria dels mortals. Així que delegarem aquesta
+tasca en algun programa que ho faci per nosaltres. En concret, farem
+servir `Gradle <https://gradle.org/>`_ doncs resulta més fàcil de llegir
+que les seves alternatives.
+
+Abans de continuar, potser que comprovis si ja tens instal·lat *gradle* al
+teu equip.
+
+.. code-block:: bash
+
+    $ gradle -v | grep Gradle
+    Gradle 6.3
+
+Si la comanda anterior et respon que no troba *gradle* o bé la versió que
+tens és molt anterior a la meva, et recomano que realitzis la instal·lació
+que et proposo. Si et cal, desinstal·la previament la versió antiga.
+
+Podem trobar *Gradle* als repositoris de Debian/Ubuntu, amb la qual cosa,
+hauria de ser molt fàcil la seva instal·lació amb ``apt``. Malauradament,
+la versió que es troba als repositoris serà molt probablement antiga, així
+que et proposo la següent manera *no tan fàcil*:
+
+En primer lloc descarrega la darrera versió (*binary-only*) de
+`https://gradle.org/releases/`.
+Aconseguiràs un fitxer comprimit anomenat aproximadament com ``gradle-6.3-bin.zip``.
+
+Bàsicament haurem de descomprimir el fitxer i col·locar una de les seves
+carpetes dins de la variable d'entorn ``PATH`` del nostre sistema.
+
+Una manera que et permetrà anar variant fàcilment de versió quan vinguin
+les noves, podria ser:
+
+.. code-block:: bash
+
+    $ mkdir -p ~/soft/gradle.versions
+    $ unzip -d ~/soft/gradle.versions ~/Baixades/gradle-6.3-bin.zip
+    $ ln -s ~/soft/gradle.versions/gradle-6.3/bin/ ~/soft/gradle
+    $ echo "PATH=$PATH:$HOME/soft/gradle/bin" >> ~/.bashrc
+    $ source ~/.bashrc
+
+Vigila sobretot de no repetir la penúltima línia o finalitzaràs amb un
+``PATH`` ple de redundàncies!
+

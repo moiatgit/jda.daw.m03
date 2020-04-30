@@ -1,0 +1,77 @@
+#############################
+Configurem el nostre projecte
+#############################
+
+Ara que ja tenim *Gradle*, podem fer la nostra aplicació *holamón* per
+*Spark*.
+
+En primer lloc, crea una carpeta on construirem el projecte. Per exemple:
+
+.. code-block:: bash
+
+   $ mkdir -p ~/tmp/holaspark
+   $ cd ~/tmp/holaspark
+
+A la nova carpeta, hi crearem un fitxer anomenat
+``build.gradle`` amb el següent contingut:
+
+.. literalinclude:: _recursos/holaspark/build.gradle
+   :linenos:
+   :lines: 9-
+   :lineno-start: 9
+   :language: groovy
+   :caption: :download:`build.gradle <_recursos/holaspark/build.gradle>`
+
+☼ Contingut del ``build.gradle``
+================================
+
+T'he afegit aquesta breu descripció per si tens interès en entendre una
+mica el seu contingut. Altrament, queda't simplement amb que aquest fitxer
+ha d'incloure les especificacions del teu projecte.
+
+Al contingut del fitxer ``build.gradle`` que hem instal·lat, hi trobem:
+
+* a la secció ``plugins`` indica que construirem una aplicació Java. Amb
+  *Gradle* podem construir altres coses com ara una biblioteca Java.
+
+* a la secció ``repositories`` indiquem on ha d'anar a cercar les
+  biblioteques necessàries.
+
+* ``dependencies`` defineix les dependències de la nostra apliació. En el
+  nostre cas, hi ha dos grups: les dependències per la part Web i les
+  dependències per fer proves.
+
+* la resta de seccions defineixen el nom de la classe principal de la
+  nostra aplicació i com volem que es realitzin les proves.
+
+En realitat, el contingut d'aquest fitxer hauria d'anar canviant a mida
+que anem necessitant noves dependències. Per simplicitat he posat la
+versió final que permet construir tots els exemples d'aquesta secció.
+
+
+Exercici 3. Iniciem el projecte capicua
+=======================================
+
+Per anar practicant els conceptes a mida que els descobrim, desenvoluparem
+paral·lelament una aplicació que ens permetrà jugar amb texts capicua.
+
+Bàsicament els usuaris ens indicaran una paraula i, si és capicua, la
+retornarem tal qual, altrament construirem una nova paraula que començarà
+com la donada i es completarà perquè sigui capicua.
+
+Per exemple, si ens envien *anna*, respondrem *anna*. En canvi, si ens
+envien *Manel* respondrem *manelenam*. És molt forçat però sí, és capicua.
+
+De moment, simplement afegirem el ``build.gradle`` a la nostra carpeta.
+Als següents exercicis et caldrà anar copiant el contingut de l'exercici
+anterior.
+
+Per exemple, 
+
+.. code-block:: bash
+
+   $ cp -vr 09_03_iniciemprojecte/* 09_04_programaprincipal
+
+
+Per a aquest exercici, però, només caldrà que hi copiïs el fitxer
+``build.gradle``.
