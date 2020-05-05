@@ -296,7 +296,7 @@ recollir la comanda.
 
 L'aspecte que et proposo serà quelcom similar a la següent captura:
 
-.. image:: _recursos/webrenat/v3/webrenatformseu.png
+.. image:: _recursos/webrenat/formseu.png
    :align: center
 
 Per descomptat, serà convenient fer servir una plantilla i, probablement,
@@ -320,7 +320,7 @@ un quadre de text a una aplicació Web. No trobes?
 Per sort, HTML ens ofereix multitud de maneres de millorar la situació. Et
 proposo un parell amb ``<input>`` de tipus "radio" i amb botons.
 
-.. image:: _recursos/webrenat/v3/webrenatformseu.png
+.. image:: _recursos/webrenat/propostesforms.png
    :align: center
 
 Pista: en ambdós casos, pots codificar el valor de la comanda a l'atribut

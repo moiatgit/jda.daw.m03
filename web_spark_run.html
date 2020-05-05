@@ -193,7 +193,40 @@
 <p>Després d’una estoneta més o menys curta, en la que <em>Gradle</em> descarregarà
 les dependències i compilarà el nostre programa, si tot ha anat bé, ens
 acabarà amb un missatge dient que ha arrencat un <code class="docutils literal notranslate"><span class="pre">ServerConnector</span></code> i si
-et fixes una mica indica que el port és el <code class="docutils literal notranslate"><span class="pre">4567</span></code>.</p>
+et fixes una mica indica que està escoltant a <code class="docutils literal notranslate"><span class="pre">0.0.0.0:4567</span></code>.</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ gradle run
+
+&gt; Task :run
+[Thread-0] INFO org.eclipse.jetty.util.log - Logging initialized @131ms to org.eclipse.jetty.util.log.Slf4jLog
+[Thread-0] WARN org.eclipse.jetty.server.AbstractConnector - Ignoring deprecated socket close linger time
+[Thread-0] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - == Spark has ignited ...
+<span class="hll">[Thread-0] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - &gt;&gt; Listening on 0.0.0.0:4567
+</span>[Thread-0] INFO org.eclipse.jetty.server.Server - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 11.0.7+10-post-Debian-3deb10u1
+[Thread-0] INFO org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+[Thread-0] INFO org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+[Thread-0] INFO org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+[Thread-0] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@3671597a{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+[Thread-0] INFO org.eclipse.jetty.server.Server - Started @257ms
+&lt;=========----&gt; 75% EXECUTING [30s]
+&gt; :run
+</pre></div>
+</td></tr></table></div>
+<p>La consola es quedarà així, incrementant el temps d’execució, esperant
+peticions a l’adreça <code class="docutils literal notranslate"><span class="pre">0.0.0.0:4567</span></code> o també <code class="docutils literal notranslate"><span class="pre">localhost:4567</span></code>.</p>
 <p>Doncs apa, arrenca un navegador i carrega la pàgina
 <a class="reference external" href="http://localhost:4567/holaspark">http://localhost:4567/holaspark</a></p>
 <img alt="_images/holasparkfirefox.png" class="align-center" src="_images/holasparkfirefox.png" />

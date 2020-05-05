@@ -56,7 +56,7 @@ Exercici 1. A veure si ho he entès bé
 
 Respon a les següents preguntes el millor que siguis capaç
 
-1. Com es comunica normalment cada *actors* del :ref:`diagrama
+1. Com es comunica normalment cadascun dels *actors* del :ref:`diagrama
    <diagrama_esquema_basic_aplicacio_web>`? Amb actors, has d'entendre la
    *Usuària*, el *Navegador* i resta de caixetes.
 

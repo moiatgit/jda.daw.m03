@@ -36,7 +36,7 @@ la versió que es troba als repositoris serà molt probablement antiga, així
 que et proposo la següent manera *no tan fàcil*:
 
 En primer lloc descarrega la darrera versió (*binary-only*) de
-`https://gradle.org/releases/`.
+https://gradle.org/releases/.
 Aconseguiràs un fitxer comprimit anomenat aproximadament com ``gradle-6.3-bin.zip``.
 
 Bàsicament haurem de descomprimir el fitxer i col·locar una de les seves

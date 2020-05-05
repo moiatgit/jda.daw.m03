@@ -13,7 +13,30 @@ El *Gradle* ens ho farà molt fàcil per executar-ho:
 Després d'una estoneta més o menys curta, en la que *Gradle* descarregarà
 les dependències i compilarà el nostre programa, si tot ha anat bé, ens
 acabarà amb un missatge dient que ha arrencat un ``ServerConnector`` i si
-et fixes una mica indica que el port és el ``4567``.
+et fixes una mica indica que està escoltant a ``0.0.0.0:4567``.
+
+.. code-block:: none
+    :linenos:
+    :emphasize-lines: 7
+
+    $ gradle run
+
+    > Task :run
+    [Thread-0] INFO org.eclipse.jetty.util.log - Logging initialized @131ms to org.eclipse.jetty.util.log.Slf4jLog
+    [Thread-0] WARN org.eclipse.jetty.server.AbstractConnector - Ignoring deprecated socket close linger time
+    [Thread-0] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - == Spark has ignited ...
+    [Thread-0] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:4567
+    [Thread-0] INFO org.eclipse.jetty.server.Server - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 11.0.7+10-post-Debian-3deb10u1
+    [Thread-0] INFO org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+    [Thread-0] INFO org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+    [Thread-0] INFO org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+    [Thread-0] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@3671597a{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+    [Thread-0] INFO org.eclipse.jetty.server.Server - Started @257ms
+    <=========----> 75% EXECUTING [30s]
+    > :run
+
+La consola es quedarà així, incrementant el temps d'execució, esperant
+peticions a l'adreça ``0.0.0.0:4567`` o també ``localhost:4567``.
 
 Doncs apa, arrenca un navegador i carrega la pàgina
 http://localhost:4567/holaspark
