@@ -9,7 +9,7 @@ import static spark.Spark.get;
 public class Main {
 
     static String composaSalutacio(String nom) {
-        if (nom == null)) {
+        if (nom == null) {
             nom = "món";
         }
         return "Hola <b>" + nom + "</b> des de Spark";
