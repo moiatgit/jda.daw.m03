@@ -75,7 +75,7 @@ Finalment ens caldrà indicar a *Spark* on pot trobar els fitxers:
    :lines: 7-
    :lineno-start: 7
    :language: java
-   :caption: :download:`src/main/java/Main.java <_recursos/holaspark/v5/Main.java>`
+   :caption: :download:`src/main/java/Main.java <_recursos/holaspark/v6/Main.java>`
 
 Bàsicament introduïm la línia 25 per indicar a *Spark* que pot trobar els
 fitxers estàtics a l'arrel del projecte. Aquesta arrel es correspon per
