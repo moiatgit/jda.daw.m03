@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -192,14 +192,14 @@ fa:</p>
 5
 6
 7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>                <span class="c1">// vides disponibles del gat Renat</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>           <span class="c1">// declarem la referència al gat</span>
-<span class="hll">        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>   <span class="c1">// creem la instància del gat Renat.</span>
-</span>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Al gat Renat li queden &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span>                <span class="c1">// vides disponibles del gat Renat</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="o">;</span>           <span class="c1">// declarem la referència al gat</span>
+<span class="hll">        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>   <span class="c1">// creem la instància del gat Renat.</span>
+</span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Al gat Renat li queden &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>A la línia 5 estem creant o <em>construint</em> una instància de <em>GatRenat</em>. Un cop executada, sabem que
@@ -274,9 +274,9 @@ Considera el següent exemple:</p>
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// «…»</span>
-<span class="n">ClasseGrossa</span> <span class="n">cg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClasseGrossa</span><span class="p">();</span> <span class="c1">// instància que ocupa molt</span>
+<span class="n">ClasseGrossa</span> <span class="n">cg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClasseGrossa</span><span class="o">();</span> <span class="c1">// instància que ocupa molt</span>
 <span class="c1">// «…»        // usem la instància tot el que la necessitem</span>
-<span class="n">cg</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>      <span class="c1">// eliminem la referència a la instància</span>
+<span class="n">cg</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>      <span class="c1">// eliminem la referència a la instància</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -313,37 +313,37 @@ Considera el següent exemple:</p>
 28
 29
 30
-31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>   <span class="c1">// vides disponibles del gat Renat</span>
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="o">;</span>   <span class="c1">// vides disponibles del gat Renat</span>
 
     <span class="c1">// constructor per defecte</span>
-    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="o">()</span> <span class="o">{</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span> <span class="o">}</span>
 
     <span class="c1">// constructor específic</span>
-    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="o">(</span><span class="kt">int</span> <span class="n">vides</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">vides</span><span class="o">;</span> <span class="o">}</span>
 
     <span class="c1">// canvia el nombre de vides si el nou valor és vàlid</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="o">(</span><span class="kt">int</span> <span class="n">vides</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Al Renat li queden &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-        <span class="n">GatRenat</span> <span class="n">megaRenat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A Mega Renat li queden &quot;</span> <span class="o">+</span> <span class="n">megaRenat</span><span class="p">.</span><span class="na">getVides</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Al Renat li queden &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="o">.</span><span class="na">getVides</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">);</span>
+        <span class="n">GatRenat</span> <span class="n">megaRenat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;A Mega Renat li queden &quot;</span> <span class="o">+</span> <span class="n">megaRenat</span><span class="o">.</span><span class="na">getVides</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Executa el programa i respon a les següents preguntes:</p>
@@ -362,10 +362,10 @@ de la línia 8 pel següent i descriu què passa a l’hora d’executar:</p>
 3
 4
 5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// constructor específic</span>
-<span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">();</span>
-    <span class="n">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>     <span class="c1">// o també this.setVides(vides);</span>
-<span class="p">}</span>
+<span class="kd">public</span> <span class="nf">GatRenat</span><span class="o">(</span><span class="kt">int</span> <span class="n">vides</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">();</span>
+    <span class="n">setVides</span><span class="o">(</span><span class="n">vides</span><span class="o">);</span>     <span class="c1">// o també this.setVides(vides);</span>
+<span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 </li>

@@ -49,7 +49,7 @@ les noves, podria ser:
 
     $ mkdir -p ~/soft/gradle.versions
     $ unzip -d ~/soft/gradle.versions ~/Baixades/gradle-6.3-bin.zip
-    $ ln -s ~/soft/gradle.versions/gradle-6.3/bin/ ~/soft/gradle
+    $ ln -s ~/soft/gradle.versions/gradle-6.3/ ~/soft/gradle
     $ echo "PATH=$PATH:$HOME/soft/gradle/bin" >> ~/.bashrc
     $ source ~/.bashrc
 

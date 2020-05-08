@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -195,8 +195,8 @@ consola de Python simplement fent:</p>
 </div>
 <p>Java requereix fer les coses de manera més explícita. Així, faríem:</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">nom</span><span class="p">;</span>
-<span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Maite Li Romeu&quot;</span><span class="p">;</span>
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Maite Li Romeu&quot;</span><span class="o">;</span>
 </pre></div>
 </td></tr></table></div>
 <p>La principal diferència entre els dos codis és que, a Java la declaració
@@ -204,7 +204,7 @@ es realitza independentment de la inicialització. De fet, en línies
 separades!</p>
 <p>De fet, Java permet la possibilitat d’inicialitzar en el mateix moment en
 que es declara la variable:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Maite Li Romeu&quot;</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Maite Li Romeu&quot;</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>El que és important aquí és que Python <strong>no</strong> ho permet!</p>
@@ -218,11 +218,11 @@ el tipus a partir del valor que hi assignem<a class="footnote-reference brackets
 </ul>
 <p>La declaració de variables en un bloc de codi de Java és es realitza primer
 indicant el tipus i després el nom de la variable.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span><span class="p">;</span>
-<span class="kt">char</span> <span class="n">unCaracter</span><span class="p">;</span>
-<span class="kt">boolean</span> <span class="n">unBoolean</span><span class="p">;</span>
-<span class="n">String</span> <span class="n">unString</span><span class="p">;</span>
-<span class="kt">byte</span> <span class="n">un</span><span class="p">,</span> <span class="n">dos</span><span class="p">,</span> <span class="n">tres</span><span class="p">;</span> <span class="c1">// sí, també podem declarar més d&#39;una variable en la mateixa línia.</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">unCaracter</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">unBoolean</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">unString</span><span class="o">;</span>
+<span class="kt">byte</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">,</span> <span class="n">tres</span><span class="o">;</span> <span class="c1">// sí, també podem declarar més d&#39;una variable en la mateixa línia.</span>
 </pre></div>
 </div>
 <p>Quan declarem una variable com ho hem fet en els exemples anteriors, únicament
@@ -234,13 +234,13 @@ exemple, el següent codi no compilarà:</p>
 <span class="cm"> * Aquest programa no compila, doncs intenta utilitzar el valor d&#39;una variable que no ha estat</span>
 <span class="cm"> * inicialitzada.</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VariableNoInicialitzada</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">noInicialitzada</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Quin serà el valor de la variable sense inicialitzar?:&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">noInicialitzada</span><span class="p">);</span>    <span class="c1">// aquesta línia no compilarà</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VariableNoInicialitzada</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">noInicialitzada</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Quin serà el valor de la variable sense inicialitzar?:&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">noInicialitzada</span><span class="o">);</span>    <span class="c1">// aquesta línia no compilarà</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>En intentar compilar-lo, rebem el següent missatge del compilador:</p>
@@ -253,22 +253,22 @@ VariableNoInicialitzada.java:9: error: variable noInicialitzada might not have b
 </div>
 <p>La inicialització d’una variable es realitza en el moment que li assignem
 un valor, per exemple, amb l’operador d’assignació <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span><span class="p">;</span>          <span class="c1">// declaració</span>
-<span class="n">unEnter</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>         <span class="c1">// inicialització amb el valor 42</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span><span class="o">;</span>          <span class="c1">// declaració</span>
+<span class="n">unEnter</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>         <span class="c1">// inicialització amb el valor 42</span>
 </pre></div>
 </div>
 <p>Com ja hem vist, en Java també podem fer la declaració i la inicialització
 en una sola línia:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>               <span class="c1">// declaració i assignació en una línia.</span>
-<span class="kt">char</span> <span class="n">unCaracter</span> <span class="o">=</span> <span class="sc">&#39;@&#39;</span><span class="p">;</span>
-<span class="kt">boolean</span> <span class="n">unBoolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="n">String</span> <span class="n">unString</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
-<span class="kt">byte</span> <span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">tres</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// declaracions i assignacions múltiples.</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">unEnter</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>               <span class="c1">// declaració i assignació en una línia.</span>
+<span class="kt">char</span> <span class="n">unCaracter</span> <span class="o">=</span> <span class="sc">&#39;@&#39;</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">unBoolean</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">unString</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="o">;</span>
+<span class="kt">byte</span> <span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">2</span><span class="o">,</span> <span class="n">tres</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>  <span class="c1">// declaracions i assignacions múltiples.</span>
 </pre></div>
 </div>
 <p>En cas que vulguem indicar que un valor serà constant, en Java precedirem
 la declaració amb <code class="docutils literal notranslate"><span class="pre">final</span></code>. Com a l’exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="kt">int</span> <span class="n">UNA_CONSTANT</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="kt">int</span> <span class="n">UNA_CONSTANT</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>A diferència de Python, Java <strong>no</strong> ens permetrà canviar el valor d’una
@@ -314,9 +314,9 @@ informació <code class="docutils literal notranslate"><span class="pre">nombreD
 <li><p>En Java, quina diferència hi ha entre declarar una variable de tipus
 primitiu o de tipus objecte?</p></li>
 <li><p>Quin valor es guardarà en la variable <code class="docutils literal notranslate"><span class="pre">y</span></code> del següent codi?:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
 </pre></div>
 </div>
 </li>

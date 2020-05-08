@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -288,8 +288,8 @@ Unicode, cosa que ens estalvia molts problemes als que fem servir
 caràcters com la <em>ç</em>.</p>
 <p>Podem assignar literals de tipus <em>char</em> envoltant-los entre cometes
 simples, com als exemples:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;à&#39;</span><span class="p">;</span>
-<span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;\u00e0&#39;</span><span class="p">;</span>   <span class="c1">// és el codi Unicode per à o sigui que c continua valent el mateix!</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;à&#39;</span><span class="o">;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;\u00e0&#39;</span><span class="o">;</span>   <span class="c1">// és el codi Unicode per à o sigui que c continua valent el mateix!</span>
 </pre></div>
 </div>
 <p>Podem fer servir alguns caràcters especials, com ara: \t (tab), \n
@@ -300,9 +300,9 @@ simples, com als exemples:</p>
 troba fora dels límits, el compilador ens donarà un error. Sempre podem
 fer servir <em>cast</em> per a informar al compilador que pot acceptar
 l’assignació, malgrat es pugui perdre informació:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span><span class="p">;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>   <span class="c1">// error en compilació: incompatible types: possible lossy conversion from int to byte</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span> <span class="mi">1000</span><span class="p">;</span>    <span class="c1">// el compilador ho accepta, però b guardarà 16 en comptes de 1000!</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span><span class="o">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>   <span class="c1">// error en compilació: incompatible types: possible lossy conversion from int to byte</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="mi">1000</span><span class="o">;</span>    <span class="c1">// el compilador ho accepta, però b guardarà 16 en comptes de 1000!</span>
 </pre></div>
 </div>
 </li>

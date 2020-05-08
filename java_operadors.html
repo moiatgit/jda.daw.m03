@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -198,17 +198,17 @@ el següent programa:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * Exemple d&#39;ús de l&#39;operador mòdul</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModul</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">2345</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">5432</span><span class="p">;</span>
-        <span class="kt">boolean</span> <span class="n">esParell1</span> <span class="o">=</span> <span class="p">(</span><span class="n">num1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">// false</span>
-        <span class="kt">boolean</span> <span class="n">esParell2</span> <span class="o">=</span> <span class="p">(</span><span class="n">num2</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">// true</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModul</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">2345</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">5432</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">esParell1</span> <span class="o">=</span> <span class="o">(</span><span class="n">num1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>    <span class="c1">// false</span>
+        <span class="kt">boolean</span> <span class="n">esParell2</span> <span class="o">=</span> <span class="o">(</span><span class="n">num2</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>    <span class="c1">// true</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell1</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell2</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell1</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;El nombre &quot;</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">&quot; és parell? &quot;</span> <span class="o">+</span> <span class="n">esParell2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -233,9 +233,9 @@ retorna el valor original de var i després l’incrementa.</p>
 </ul>
 <p>Tots els operadors unaris tenen precedència respecte els operadors
 aritmètics. Així, l’expressió:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="p">,</span> <span class="n">dos</span><span class="p">;</span>
-<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">dos</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="o">++</span><span class="n">un</span> <span class="o">+</span> <span class="n">un</span> <span class="o">*</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">dos</span> <span class="o">=</span> <span class="o">-(++</span><span class="n">un</span> <span class="o">+</span> <span class="n">un</span> <span class="o">*</span> <span class="o">-</span><span class="mi">2</span><span class="o">);</span>
 <span class="c1">//      ^^ primer incrementa en 1 el valor de un</span>
 <span class="c1">//                  ^ canvia el signe a 2</span>
 <span class="c1">//                ^ multiplica un (que val 2) per -2. És a dir -4.</span>
@@ -263,11 +263,11 @@ retorn.</p>
 variable. Ha aparegut ja en diferents exemples i, és molt semblant al
 d’altres llenguatges de programació com ara el Python.</p>
 <p>Considera els següents exemples:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="p">,</span> <span class="n">dos</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
 
-<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// assigna 1 a la variable 1</span>
-<span class="n">dos</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// assigna el resultat de l&#39;expressió 1 + 1 a la variable dos</span>
-<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// assigna el valor 3 a les variables dos i un</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>          <span class="c1">// assigna 1 a la variable 1</span>
+<span class="n">dos</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// assigna el resultat de l&#39;expressió 1 + 1 a la variable dos</span>
+<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>    <span class="c1">// assigna el valor 3 a les variables dos i un</span>
 </pre></div>
 </div>
 <p>Potser el més interessant és el darrer exemple. Donat que en Java, <code class="docutils literal notranslate"><span class="pre">=</span></code>
@@ -284,9 +284,9 @@ algun altre operador binari.  És tracta més d’una compactació de notació
 que d’operadors nous.  Entre els exemples més habituals hi trobem: <code class="docutils literal notranslate"><span class="pre">+=</span></code>,
 <code class="docutils literal notranslate"><span class="pre">-=</span></code>, i <code class="docutils literal notranslate"><span class="pre">*=</span></code>, que ja coneixem de Python.</p>
 <p>Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="p">,</span> <span class="n">dos</span><span class="p">;</span>
-<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">dos</span> <span class="o">+=</span> <span class="n">un</span><span class="p">;</span>  <span class="c1">// equival a dos = dos + 1;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="n">dos</span><span class="o">;</span>
+<span class="n">un</span> <span class="o">=</span> <span class="n">dos</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">dos</span> <span class="o">+=</span> <span class="n">un</span><span class="o">;</span>  <span class="c1">// equival a dos = dos + 1;</span>
 </pre></div>
 </div>
 <p>Els operadors d’assignació són els que menys precedència tenen. Així, en
@@ -327,7 +327,7 @@ dos strings.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">?:</span></code>: L’operador condicional ternari. Té tres operands. Avalua el
 primer i si és cert avalua el segon. Altrament avalua el tercer.</p>
 <p>Exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">temperatura</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="o">?</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">30</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">temperatura</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="o">?</span> <span class="n">temperatura</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">30</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Si <code class="docutils literal notranslate"><span class="pre">temperatura</span></code> s’avalua a menys de 30, retornarà <code class="docutils literal notranslate"><span class="pre">temperatura</span> <span class="pre">+</span>

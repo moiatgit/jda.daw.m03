@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -206,7 +206,7 @@ final d’aquesta unitat formativa, indicar si l’estudiant ha superat o no la 
 20
 21
 22
-23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV01</span> <span class="p">{</span>
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV01</span> <span class="o">{</span>
     <span class="cm">/**</span>
 <span class="cm">     * A partir de l&#39;estudiant i la nota, composa un missatge indicant si l&#39;estudiant </span>
 <span class="cm">     * aprova o no la UF</span>
@@ -215,20 +215,20 @@ final d’aquesta unitat formativa, indicar si l’estudiant ha superat o no la 
 <span class="cm">     * @param nota: nota de l&#39;estudiant</span>
 <span class="cm">     * @return missatge composat</span>
 <span class="cm">     */</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="p">(</span><span class="n">String</span> <span class="n">estudiant</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nota</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span>
-                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="p">,</span>
-                <span class="n">estudiant</span><span class="p">,</span> 
-                <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="p">:</span> <span class="s">&quot;aprova&quot;</span><span class="p">,</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="o">(</span><span class="n">String</span> <span class="n">estudiant</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nota</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
+                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="o">,</span>
+                <span class="n">estudiant</span><span class="o">,</span> 
+                <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="o">:</span> <span class="s">&quot;aprova&quot;</span><span class="o">,</span>
                 <span class="n">nota</span>
-                <span class="p">);</span>
-    <span class="p">}</span>
+                <span class="o">);</span>
+    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">missatge</span>  <span class="o">=</span> <span class="n">composaResultat</span><span class="p">(</span> <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="p">,</span> <span class="mi">6</span> <span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">missatge</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">missatge</span>  <span class="o">=</span> <span class="n">composaResultat</span><span class="o">(</span> <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="o">,</span> <span class="mi">6</span> <span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">missatge</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>El codi anterior defineix la funció <code class="docutils literal notranslate"><span class="pre">composaResultat(String,</span> <span class="pre">int)</span></code> que

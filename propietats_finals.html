@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -213,17 +213,17 @@ la referència canviï a una altra instància. Per exemple:</p>
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="p">}</span>
-<span class="kd">class</span> <span class="nc">B</span> <span class="p">{</span>
-    <span class="kd">final</span> <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="p">();</span>
-    <span class="kt">void</span> <span class="nf">canviaI</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">a</span><span class="p">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">canviaA</span><span class="p">(</span><span class="n">A</span> <span class="n">nova</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">nova</span><span class="p">;</span>   <span class="c1">// error de compilació</span>
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">A</span> <span class="o">{</span> <span class="kt">int</span> <span class="n">i</span><span class="o">;</span> <span class="o">}</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">canviaI</span><span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">a</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">void</span> <span class="nf">canviaA</span><span class="o">(</span><span class="n">A</span> <span class="n">nova</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">nova</span><span class="o">;</span>   <span class="c1">// error de compilació</span>
                     <span class="c1">// &quot;error: cannot assign a value to final variable a&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </td></tr></table></div>
 <div class="section" id="exercici-19-propietats-finals">
