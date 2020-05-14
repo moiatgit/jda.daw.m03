@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -107,6 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -214,49 +215,49 @@
 33
 34
 35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Demostració d&#39;ús de membres de classe */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numInstancies</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="o">()</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numInstancies</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// constructor per defecte incrementa el nombre d&#39;instàncies</span>
-        <span class="n">GatRenat</span><span class="o">.</span><span class="na">numInstancies</span><span class="o">++;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Creat un nou gat Renat. Ja van &quot;</span> <span class="o">+</span> <span class="n">numInstancies</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumInstancies</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">GatRenat</span><span class="p">.</span><span class="na">numInstancies</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Creat un nou gat Renat. Ja van &quot;</span> <span class="o">+</span> <span class="n">numInstancies</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumInstancies</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// retorna el nombre d&#39;instàncies creades fins el moment</span>
-        <span class="k">return</span> <span class="n">numInstancies</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">vides</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="o">(</span><span class="kt">int</span> <span class="n">vides</span><span class="o">)</span> <span class="o">{</span> <span class="k">if</span> <span class="o">(</span><span class="n">vides</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">)</span> <span class="k">this</span><span class="o">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="s">&quot;Gat Renat amb &quot;</span> <span class="o">+</span> <span class="n">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="o">;</span> <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Inicialment el nombre d&#39;instàncies és: &quot;</span> <span class="o">+</span>
-            <span class="n">GatRenat</span><span class="o">.</span><span class="na">getNumInstancies</span><span class="o">());</span>
+        <span class="k">return</span> <span class="n">numInstancies</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="n">vides</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Gat Renat amb &quot;</span> <span class="o">+</span> <span class="n">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inicialment el nombre d&#39;instàncies és: &quot;</span> <span class="o">+</span>
+            <span class="n">GatRenat</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">());</span>
         <span class="c1">// crea uns quants GatRenat per demostrar l&#39;ús de membres estàtics</span>
-        <span class="n">GatRenat</span><span class="o">[]</span> <span class="n">gats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">();</span>
-            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">setVides</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>    <span class="c1">// canviem les vides només per distingir-los</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">toStering</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
-                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getNumInstancies</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
+        <span class="n">GatRenat</span><span class="o">[]</span> <span class="n">gats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>    <span class="c1">// canviem les vides només per distingir-los</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">toStering</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
         <span class="c1">// tornem a demanar a cadascun quants germans té</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;I si tornem a demanar-los quants germans tenen, ens diuen:&quot;</span><span class="o">);</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">toString</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
-                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getNumInstancies</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I si tornem a demanar-los quants germans tenen, ens diuen:&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Les crides a <code class="docutils literal notranslate"><span class="pre">println()</span></code> (línies 25 i 31) es podrien escriure de manera més simple, sense
 necessitat de cridar explícitament al mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. Considera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
-                   <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getNumInstancies</span><span class="o">()</span> <span class="o">+</span>
-                   <span class="s">&quot; germanets&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+                   <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span>
+                   <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>El mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> té la particularitat de ser cridat (implícitament) en alguns contextos
@@ -273,11 +274,11 @@ ordre va néixer respecte els seus germans.</p></li>
 <li><p>Aquest identificador es podrà demanar (amb el mètode <code class="docutils literal notranslate"><span class="pre">getId()</span></code>) i no es podrà modificar</p></li>
 <li><p>L’identificador apareixerà a la cadena retornada pel mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. Per exemple, el
 següent codi mostraria «Gat Renat (1) amb 7 vides»:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Demo</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Demo</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>

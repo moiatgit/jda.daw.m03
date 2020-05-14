@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -107,6 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -183,23 +184,23 @@ mètode» o, des del codi d’un mètode de la classe també podíem
 directament cridar el nom del mètode.</p>
 <p>Per exemple, a la classe Hora, el mètode d’incrementar un segon
 requeria una instància d’hora a qui aplicar-lo. Dèiem</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Hora</span> <span class="n">h</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="o">();</span>
-<span class="n">h</span><span class="o">.</span><span class="na">incrSeg</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Hora</span> <span class="n">h</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+<span class="n">h</span><span class="p">.</span><span class="na">incrSeg</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Ara bé, imagina que volguéssim comprovar que els valors d’una hora són
 vàlids abans d’assignar-los a una instància de Hora. El mètode podria
 ser quelcom semblant a</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">esValida</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{...}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">esValida</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{...}</span>
 </pre></div>
 </div>
 <p>Aquest mètode, però, no requeriria l’accés a l’estat de cap instància
 de Hora, i amb qualsevol instància de Hora hauria de donar el mateix
 resultat. Per a poder-lo usar, ens caldria, però, crear una instància
 que probablement no la voldrem per res més. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="k">new</span> <span class="n">Hora</span><span class="o">().</span><span class="na">esValida</span><span class="o">(</span><span class="mi">14</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">21</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="o">(</span><span class="mi">14</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">21</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="k">new</span> <span class="n">Hora</span><span class="p">().</span><span class="na">esValida</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Per a solucionar aquest tipus de situacions, la POO ens ofereix la
@@ -208,14 +209,14 @@ Aquest de esValida() seria clarament un mètode de classe ja que no depèn
 de cap instància per a ser executat.</p>
 <p>Java ens permet indicar que un mètode és de classe amb la paraula
 reservada static. Així, el mètode <code class="docutils literal notranslate"><span class="pre">esValida()</span></code> tindria el següent aspecte</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esValida</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{...}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esValida</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{...}</span>
 </pre></div>
 </div>
 <p>Per a ser utilitzat, a banda de com abans, també podríem fer-ho d’una
 manera més eficient amb:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">Hora</span><span class="o">.</span><span class="na">esValida</span><span class="o">(</span><span class="mi">14</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">21</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="o">(</span><span class="mi">14</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">21</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Hora</span><span class="p">.</span><span class="na">esValida</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Fixa’t que ara, en comptes de cridar al mètode des d’una instància, ho

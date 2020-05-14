@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -195,7 +196,7 @@ elements d’una expressió sempre s’avaluen en el mateix ordre. Si no ens
 interessa l’ordre de precedència <em>natural</em> o bé, ens interessa
 remarcar-ho, podem fer servir parèntesis <code class="docutils literal notranslate"><span class="pre">()</span></code> per definir l’ordre en que
 volem que s’avaluïn. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">64</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
 <span class="c1">//     ^ inici de l&#39;expressió</span>
 <span class="c1">//                    ^ (1) primer càlcul (3.1 * 4.3)</span>
 <span class="c1">//                            ^ (2) avaluació de l&#39;arrel quadrada de 5.2</span>
@@ -214,11 +215,11 @@ volem que s’avaluïn. Per exemple:</p>
 }" class="graphviz" /></div>
 </div>
 <p>Podem explicitar l’ordre d’avaluació de l’expressió anterior amb els parèntesis:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span> <span class="o">(</span><span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span><span class="o">)</span> <span class="o">+</span> <span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mf">64.0</span><span class="o">)</span> <span class="o">)</span> <span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mf">3.1</span> <span class="o">*</span> <span class="mf">4.3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mf">64.0</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>I, per suposat, també podem alterar aquest ordre amb els parèntesis:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="o">(</span><span class="mf">4.3</span> <span class="o">+</span> <span class="o">(</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mf">64.0</span><span class="o">)</span> <span class="o">)</span> <span class="o">)</span> <span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">resultat</span> <span class="o">=</span> <span class="p">(</span> <span class="mf">3.1</span> <span class="o">*</span> <span class="p">(</span><span class="mf">4.3</span> <span class="o">+</span> <span class="p">(</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mf">64.0</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 <span class="c1">//                             ^ la suma es calcularà abans que el producte!</span>
 </pre></div>
 </div>
@@ -238,22 +239,22 @@ haver de tenir present les regles de precedència.</p>
 <p>Les instruccions d’expressió es poden construir finalitzant amb un punt i coma alguna de les següents expressions:</p>
 <ul>
 <li><p>expressions amb assignació</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>expressions amb un operador unari d’increment o decrement (<code class="docutils literal notranslate"><span class="pre">++</span></code> o <code class="docutils literal notranslate"><span class="pre">--</span></code>)</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">a</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>una crida a una funció</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hola Món!&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola Món!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p>una expressió de creació d’objectes</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesAlumne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesAlumne</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
 <span class="c1">//            ^ inici de l&#39;expressió amb l&#39;operador new</span>
 </pre></div>
 </div>
@@ -261,7 +262,7 @@ haver de tenir present les regles de precedència.</p>
 </ul>
 <p>Les instruccions de declaració són les declaren un element (com per
 exemple una variable):</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesAlumne</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesAlumne</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Més endavant veurem altres tipus d’instruccions de declaració i les
@@ -280,25 +281,25 @@ una única instrucció i, per exemple, pot formar part d’un bloc superior.</p>
 <p>Així, el bloc mínim seria <code class="docutils literal notranslate"><span class="pre">{}</span></code> (bloc amb zero instruccions), el que
 Python ens requeriria fer servir <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p>
 <p>Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaBlocs</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaBlocs</span> <span class="p">{</span>
 <span class="c1">//                     ^ inici bloc 0</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 <span class="c1">//                                         ^ inici bloc 1</span>
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;El valor &quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;El valor &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
 <span class="c1">//                      ^ inici bloc 2</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; és parell&quot;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; és parell&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 <span class="c1">//      ^ final bloc 2</span>
 <span class="c1">//             ^ inici bloc 3</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;és senar&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;és senar&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
 <span class="c1">//      ^ final bloc 3</span>
-    <span class="o">}</span>
+    <span class="p">}</span>
 <span class="c1">//  ^ final bloc 1</span>
-<span class="o">}</span>   <span class="c1">// final bloc 0</span>
+<span class="p">}</span>   <span class="c1">// final bloc 0</span>
 </pre></div>
 </div>
 <p>El codi anterior, en Python seria quelcom similar a:</p>
@@ -306,14 +307,14 @@ Python ens requeriria fer servir <code class="docutils literal notranslate"><spa
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1"># inici bloc 1</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;El valor {n} és &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El valor </span><span class="si">{n}</span><span class="s2"> és &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># inici bloc 2</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;parell&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parell&quot;</span><span class="p">)</span>
         <span class="c1"># final bloc 2</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># inici bloc 3</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;senar&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;senar&quot;</span><span class="p">)</span>
         <span class="c1"># final bloc 3</span>
     <span class="c1"># final bloc 1</span>
 <span class="c1"># final bloc 0</span>
@@ -342,7 +343,7 @@ obligatòria en Java, encara que <strong>sí</strong> per a aquest curs i
 per qualsevol producció que vulguis realitzar amb qualitat.</p>
 <p>Pensa que el codi de l’exemple anterior seria igual de
 vàlid si hagués estat escrit de la següent manera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaBlocs</span><span class="o">{</span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="o">;</span><span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">){</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;El valor &quot;</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">n</span><span class="o">);</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; és parell&quot;</span><span class="o">);}</span><span class="k">else</span><span class="o">{</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;és senar&quot;</span><span class="o">);}}}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaBlocs</span><span class="p">{</span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;El valor &quot;</span><span class="p">);</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; és parell&quot;</span><span class="p">);}</span><span class="k">else</span><span class="p">{</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;és senar&quot;</span><span class="p">);}}}</span>
 </pre></div>
 </div>
 <p>Com et sentiries si haguessis de llegir aquest codi?</p>

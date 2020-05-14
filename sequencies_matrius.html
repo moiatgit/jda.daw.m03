@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -249,17 +250,17 @@ nota per cada alumne?</p>
     <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">notes_ruth</span> <span class="o">=</span> <span class="n">notes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>           <span class="c1"># són (3, 6, 7)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Les notes de la Ruth són </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sequencia_maca</span><span class="p">(</span><span class="n">notes_ruth</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Les notes de la Ruth són </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sequencia_maca</span><span class="p">(</span><span class="n">notes_ruth</span><span class="p">))</span>
 <span class="n">nota_ruth_UF1</span> <span class="o">=</span> <span class="n">notes_ruth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># és 3</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;La nota de la UF1 de la Ruth és </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nota_ruth_UF1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La nota de la UF1 de la Ruth és </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nota_ruth_UF1</span><span class="p">)</span>
 <span class="n">nota_ruth_UF2</span> <span class="o">=</span> <span class="n">notes</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>     <span class="c1"># és 6</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;La nota de la UF2 de la Ruth és </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nota_ruth_UF2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La nota de la UF2 de la Ruth és </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nota_ruth_UF2</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
 <span class="c1"># Es mostra per sortida estàndard</span>
 <span class="c1"># 8,7,9</span>
 <span class="c1"># 5,4,2</span>

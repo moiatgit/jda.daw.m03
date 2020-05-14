@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -252,14 +253,14 @@ fitxer i hi afegirem els comentaris de capçalera i l’esquema bàsic:</p>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="c1"># obtenir quants triangles</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
     <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">resposta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
         <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resposta</span><span class="p">)</span>
         <span class="c1"># dibuixar num triangles</span>
         <span class="k">pass</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixa’t que aquest programa es pot executar i és capaç d’obtenir les dades
@@ -301,13 +302,13 @@ nombre de triangles.</p>
     <span class="k">pass</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
     <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">resposta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
         <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resposta</span><span class="p">)</span>
         <span class="n">dibuixa_triangles</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixa’t que:</p>
@@ -455,13 +456,13 @@ els parèntesis no li <em>passem</em> cap <em>argument</em>.</p></li>
         <span class="n">dibuixa_un_triangle</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
     <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">resposta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
         <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resposta</span><span class="p">)</span>
         <span class="n">dibuixa_triangles</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -568,7 +569,7 @@ exemple, cridant el mòdul <code class="docutils literal notranslate"><span clas
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">linia</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">dibuixa_linia</span><span class="p">(</span><span class="n">linia</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -661,7 +662,7 @@ número de línia:</p>
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_punts_inicials</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els punts inicials de la línia &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">punt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linia</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>O, ja que estem fent servir un llenguatge tant interessant com el Python:</p>
@@ -669,7 +670,7 @@ número de línia:</p>
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_punts_inicials</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els punts inicials de la línia &quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -686,7 +687,7 @@ des del número fins el 9. Un <code class="docutils literal notranslate"><span c
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_nombres_creixents</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els nombres creixents de la línia &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">linia</span><span class="p">,</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -701,7 +702,7 @@ ràpidament una solució adequada. Per exemple:</p>
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_nombres_decreixents</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els nombres creixents de la línia &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">linia</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -714,7 +715,7 @@ ràpidament una solució adequada. Per exemple:</p>
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_punts_finals</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els punts finals de la línia &quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fer-ho així, però, seria una <em>aberració</em>! Si ja tenim
@@ -736,7 +737,7 @@ anomenat simplement <code class="docutils literal notranslate"><span class="pre"
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_punts_finals</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els punts finals de la línia &quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fer-ho així, però, seria una <em>aberració</em>! Si ja tenim
@@ -769,7 +770,7 @@ fer:</p>
 10
 11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibuixa_punts</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa una de les seqüencies de punts de la linia &quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">dibuixa_punts_inicials</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els punts inicials de la línia &quot;&quot;&quot;</span>
@@ -917,17 +918,17 @@ redundants. Així, el mòdul <code class="docutils literal notranslate"><span cl
 
 <span class="k">def</span> <span class="nf">dibuixa_punts</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa una de les seqüencies de punts de la linia &quot;&quot;&quot;</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span> <span class="o">*</span> <span class="n">linia</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">dibuixa_nombres_creixents</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els nombres creixents de la línia &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">linia</span><span class="p">,</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">dibuixa_nombres_decreixents</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; dibuixa els nombres creixents de la línia &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">linia</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">dibuixa_linia</span><span class="p">(</span><span class="n">linia</span><span class="p">):</span>
@@ -953,7 +954,7 @@ redundants. Així, el mòdul <code class="docutils literal notranslate"><span cl
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">linia</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">dibuixa_linia</span><span class="p">(</span><span class="n">linia</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">dibuixa_triangles</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -963,13 +964,13 @@ redundants. Així, el mòdul <code class="docutils literal notranslate"><span cl
         <span class="n">dibuixa_un_triangle</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;quants?&quot;</span><span class="p">)</span>
     <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">resposta</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
         <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resposta</span><span class="p">)</span>
         <span class="n">dibuixa_triangles</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cal un nombre enter&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>Com ho veus? T’atreveixes a fer-ho tu?</p>

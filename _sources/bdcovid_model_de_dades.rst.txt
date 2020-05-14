@@ -1,0 +1,92 @@
+#################
+El model de dades
+#################
+
+En primer lloc, presentem el model de dades que farem servir:
+
+.. uml::
+    :align: center
+    :caption: Diagrama de classes
+
+    @startuml
+        class Animal {
+            bdId: int
+            nom: String
+            categoria: Categoria
+
+            Animal(nom:String, categoria:Categoria)
+            Animal(id:int, nom:String, categoria:Categoria)
+            getId(): int
+            setId(int)
+            getNom(): String
+            getCategoria(): Categoria
+        }
+
+        class Categoria {
+            bdId: int
+            nom: String
+        }
+
+        class Zoo {
+            conn: Connection
+            connecta()
+            desconnecta()
+            creaTaula()
+            eliminaTaula()
+            consulta()
+            comptaAnimals()
+            afegeixAnimal()
+            afegeixMoltsAnimals()
+            corregeixAnimals()
+            eliminaOcells()
+        }
+
+        Animal *-up- Categoria
+        Zoo -right-> Animal
+        Zoo o-up- java.sql.Connection
+        Zoo o-up- java.sql.ResultSet
+        Zoo o-up- java.sql.Statement
+        Zoo o-up- java.sql.PreparedStatement
+
+
+
+        hide circle
+        hide empty members
+        skinparam class {
+            BackgroundColor White
+            BorderColor Black
+            ArrowColor Black
+        }
+    @enduml
+
+.. --* per renormalitzar highlighting a vim
+
+
+En aquest model de dades distingim els següents elements:
+
+* la classe *Animal*
+
+  És tracta de la classe que defineix els objectes que manipularem en la
+  nostra demostració.
+
+  Disposa de dos camps: el nom i la categoria
+
+  A banda, inclou un identificador de base de dades. Serà un valor que
+  generarà el nostre *SGBD* i que ens permetrà vincular les instàncies
+  d'Animal amb la taula corresponent.
+
+* la classe *Categoria*
+
+  Una classe molt bàsica que ens permetrà veure el concepte de *clau
+  forana* (*foreign key*)
+
+  A banda de guardar l'identificador a la base de dades, només disposa
+  d'un nom.
+
+* la classe *Zoo*
+
+  Una classe *contenidor* que simplement realitzarà accessos a la base de
+  dades.
+
+Per la funció *main()* mantindrem la classe *Main.java* però canviarem el
+seu contingut.

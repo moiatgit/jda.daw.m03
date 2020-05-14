@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -197,7 +198,7 @@ agrupar-les en el que coneixem com</p>
 <p>A Java ja hem vist un mòdul en tots els programes que hem treballat fins
 ara. Es deia <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
 <p>Analitzem l’estructura bàsica del mòdul <code class="docutils literal notranslate"><span class="pre">main()</span></code> que ja coneixem:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="n">instruccions</span><span class="o">();</span> <span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="n">instruccions</span><span class="p">();</span> <span class="p">}</span>
 </pre></div>
 </div>
 <p>Alguns dels elements que formen l’estructura anterior no els entendrem
@@ -245,23 +246,23 @@ funció no poden repetir el nom.</p></li>
 20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * Exemple de definició de funcions</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoFuncio</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoFuncio</span> <span class="p">{</span>
     <span class="c1">// Calcula el resultat de sumar dos enters i el retorna</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">suma</span><span class="o">(</span><span class="kt">int</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s2</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">valor</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="o">;</span>
-        <span class="k">return</span> <span class="n">valor</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">suma</span><span class="p">(</span><span class="kt">int</span> <span class="n">s1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">valor</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">valor</span><span class="p">;</span>
+    <span class="p">}</span>
     <span class="c1">// Mostra un missatge amb de càlcul de dos sumands i el seu resultat</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraResultatsSuma</span><span class="o">(</span><span class="kt">int</span> <span class="n">sumand1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sumand2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultat</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%d + %d = %d%n&quot;</span><span class="o">,</span> <span class="n">sumand1</span><span class="o">,</span> <span class="n">sumand2</span><span class="o">,</span> <span class="n">resultat</span><span class="o">);</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraResultatsSuma</span><span class="p">(</span><span class="kt">int</span> <span class="n">sumand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sumand2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">resultat</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%d + %d = %d%n&quot;</span><span class="p">,</span> <span class="n">sumand1</span><span class="p">,</span> <span class="n">sumand2</span><span class="p">,</span> <span class="n">resultat</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">suma</span><span class="o">(</span><span class="n">val</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span>
-        <span class="n">mostraResultatsSuma</span><span class="o">(</span><span class="n">val</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="n">resultat</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+        <span class="n">mostraResultatsSuma</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">resultat</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Aquest codi defineix dos mòduls a banda de <code class="docutils literal notranslate"><span class="pre">main()</span></code>:</p>
@@ -272,10 +273,10 @@ Fixa’t en la instrucció <code class="docutils literal notranslate"><span clas
 dir <code class="docutils literal notranslate"><span class="pre">void</span></code>).
 Fixa’t que no té cap instrucció <code class="docutils literal notranslate"><span class="pre">return</span></code>, tot i que podria
 tenir-la (sense cap valor a continuació) com a darrera instrucció del bloc.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraResultatsSuma</span><span class="o">(</span><span class="kt">int</span> <span class="n">sumand1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sumand2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultat</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%d + %d = %d%n&quot;</span><span class="o">,</span> <span class="n">sumand1</span><span class="o">,</span> <span class="n">sumand2</span><span class="o">,</span> <span class="n">resultat</span><span class="o">);</span>
-    <span class="k">return</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraResultatsSuma</span><span class="p">(</span><span class="kt">int</span> <span class="n">sumand1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sumand2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">resultat</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%d + %d = %d%n&quot;</span><span class="p">,</span> <span class="n">sumand1</span><span class="p">,</span> <span class="n">sumand2</span><span class="p">,</span> <span class="n">resultat</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -325,25 +326,25 @@ arguments que li passin:</p>
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">TestOverloading</span> <span class="o">{</span>
-    <span class="kd">static</span> <span class="kt">int</span> <span class="nf">suma</span><span class="o">(</span><span class="kt">int</span> <span class="n">un</span><span class="o">,</span> <span class="kt">int</span> <span class="n">dos</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">un</span> <span class="o">+</span> <span class="n">dos</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">static</span> <span class="kt">double</span> <span class="nf">suma</span><span class="o">(</span><span class="kt">double</span> <span class="n">un</span><span class="o">,</span> <span class="kt">double</span> <span class="n">dos</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">un</span> <span class="o">+</span> <span class="n">dos</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="nf">suma</span><span class="o">(</span><span class="n">String</span> <span class="n">un</span><span class="o">,</span> <span class="n">String</span> <span class="n">dos</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="o">(</span><span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">un</span><span class="o">)</span> <span class="o">+</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">dos</span><span class="o">));</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">resultatInt</span> <span class="o">=</span> <span class="n">suma</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
-        <span class="kt">double</span> <span class="n">resultatDouble</span> <span class="o">=</span> <span class="n">suma</span><span class="o">(</span><span class="mf">10.01</span><span class="o">,</span> <span class="mf">2.2</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">resultatString</span> <span class="o">=</span> <span class="n">suma</span><span class="o">(</span><span class="s">&quot;10.01&quot;</span><span class="o">,</span> <span class="s">&quot;2.2&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;integer: &quot;</span> <span class="o">+</span> <span class="n">resultatInt</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;double : &quot;</span> <span class="o">+</span> <span class="n">resultatDouble</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;string : &quot;</span> <span class="o">+</span> <span class="n">resultatString</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">TestOverloading</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="nf">suma</span><span class="p">(</span><span class="kt">int</span> <span class="n">un</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dos</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">un</span> <span class="o">+</span> <span class="n">dos</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">static</span> <span class="kt">double</span> <span class="nf">suma</span><span class="p">(</span><span class="kt">double</span> <span class="n">un</span><span class="p">,</span> <span class="kt">double</span> <span class="n">dos</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">un</span> <span class="o">+</span> <span class="n">dos</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">suma</span><span class="p">(</span><span class="n">String</span> <span class="n">un</span><span class="p">,</span> <span class="n">String</span> <span class="n">dos</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">un</span><span class="p">)</span> <span class="o">+</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">dos</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">resultatInt</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="kt">double</span> <span class="n">resultatDouble</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="mf">10.01</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">resultatString</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="s">&quot;10.01&quot;</span><span class="p">,</span> <span class="s">&quot;2.2&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;integer: &quot;</span> <span class="o">+</span> <span class="n">resultatInt</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;double : &quot;</span> <span class="o">+</span> <span class="n">resultatDouble</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;string : &quot;</span> <span class="o">+</span> <span class="n">resultatString</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Per aquesta raó, sovint trobaràs que a l’hora d’indicar quin mòdul hem de
@@ -356,18 +357,18 @@ a <em>signatura</em> del mòdul.</p>
 <p>Java ofereix la possibilitat de definir paràmetres variables.  Per
 exemple, considera el següent mòdul que mostra per sortida estàndard els
 seus paràmetres enters:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraEnters</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valors</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">:</span> <span class="n">valors</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Valor &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraEnters</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span> <span class="n">valors</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">:</span> <span class="n">valors</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Fixa’t en els <code class="docutils literal notranslate"><span class="pre">...</span></code> després del tipus del paràmetre.</p>
 <p>Podem cridar a aquest mòdul amb diferent nombre de paràmetres. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mostraEnters</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>    <span class="c1">// mostra els valors del 1 al 5 en l&#39;ordre rebut</span>
-<span class="n">mostraEnters</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>                <span class="c1">// mostra el valor 1</span>
-<span class="n">mostraEnters</span><span class="o">();</span>                 <span class="c1">// no mostra cap valor</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">mostraEnters</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>    <span class="c1">// mostra els valors del 1 al 5 en l&#39;ordre rebut</span>
+<span class="n">mostraEnters</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>                <span class="c1">// mostra el valor 1</span>
+<span class="n">mostraEnters</span><span class="p">();</span>                 <span class="c1">// no mostra cap valor</span>
 </pre></div>
 </div>
 </div>

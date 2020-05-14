@@ -1,0 +1,893 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ca" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>La classe Categoria &mdash; Introducció a la programació 2019-20 documentació</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="La classe Animal" href="bdcovid_classe_animal.html" />
+    <link rel="prev" title="Connexió i desconnexió" href="bdcovid_connecta_i_desconnecta.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Introducció a la programació
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1920
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iteracions.html">Iteracions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programacio_modular.html">Programació Modular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python2java.html">De Python a Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bdcovid_sqlite.html">SQLite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdcovid_model_de_dades.html">El model de dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdcovid_connecta_i_desconnecta.html">Connexió i desconnexió</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">La classe <em>Categoria</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdcovid_classe_animal.html">La classe <em>Animal</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdcovid_altresoperacions.html">Resta d’operacions <em>CRUD</em></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="bdcovid.html">Persistència amb bases de dades (2019-20)</a> &raquo;</li>
+        
+      <li>La classe <em>Categoria</em></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="la-classe-categoria">
+<h1>La classe <em>Categoria</em><a class="headerlink" href="#la-classe-categoria" title="Link permanent a aquest títol">¶</a></h1>
+<p>Comencem amb la implementació de les categories.</p>
+<div class="section" id="id1">
+<h2>La classe <em>Categoria</em><a class="headerlink" href="#id1" title="Link permanent a aquest títol">¶</a></h2>
+<p>La implementació de la classe <em>Categoria</em> serà:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference download internal" download="" href="_downloads/7729f6088dbd30eb82a95b9fb5d9e975/Categoria.java"><code class="xref download docutils literal notranslate"><span class="pre">src/main/java/Categoria.java</span></code></a></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Categoria</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">bdId</span><span class="p">;</span>         <span class="c1">// identificador a la base de dades</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">nom</span><span class="p">;</span>       <span class="c1">// nom de la categoria</span>
+
+    <span class="kd">public</span> <span class="nf">Categoria</span><span class="p">(</span><span class="n">String</span> <span class="n">nom</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">bdId</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">Categoria</span><span class="p">(</span><span class="kt">int</span> <span class="n">bdId</span><span class="p">,</span> <span class="n">String</span> <span class="n">nom</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bdId</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;L&#39;identificador ha de ser positiu&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">bdId</span> <span class="o">=</span> <span class="n">bdId</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">idIndefinit</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bdId</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bdId</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNom</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Categoria(id:&quot;</span> <span class="o">+</span>
+            <span class="p">(</span><span class="n">bdId</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">&quot;indefinit&quot;</span> <span class="p">:</span> <span class="n">bdId</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s">&quot;, &quot;</span> <span class="o">+</span> 
+            <span class="n">nom</span> <span class="o">+</span>
+            <span class="s">&quot;)&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Aquesta classe ofereix dues maneres de construir instàncies: amb o sense
+identificador. Quan la instància és creada al nostre programa, no disposem
+d’identificador de la base de dades, clar, encara no ha estat inserida! En
+canvi, quan creem la instància a partir de les dades d’un registre de la
+base de dades, sí que sabem el seu <em>id</em>.</p>
+<p>El mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> mostrarà com a indefinit l’identificador de les
+instàncies que no en disposin.</p>
+<p>El mètode <code class="docutils literal notranslate"><span class="pre">idIndefinit()</span></code> ens permet saber si l’identificador ha estat o
+no definit a la categoria. En fer-ho d’aquesta manera, ens permetrà que
+els usuaris de <em>Categoria</em> no hagin de saber que internament fem servir el
+-1 per indicar que està indefinit l’identificador.</p>
+</div>
+<div class="section" id="la-taula-categories">
+<h2>La taula <em>CATEGORIES</em><a class="headerlink" href="#la-taula-categories" title="Link permanent a aquest títol">¶</a></h2>
+<p>La taula en la que emmagatzemarem la informació de les instàncies de
+<em>Categoria</em> es dirà <em>CATEGORIES</em> i tindrà la següent definició:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">CATEGORIES</span> <span class="p">(</span>
+    <span class="n">id</span>   <span class="nb">INTEGER</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+    <span class="n">nom</span>  <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="codi-de-creacio-de-la-taula">
+<h2>Codi de creació de la taula<a class="headerlink" href="#codi-de-creacio-de-la-taula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Tot i que podríem crear aquesta taula directament al SGBD, ho farem a
+partir d’un programa en Java.</p>
+<p>El codi que afegim a la classe <em>Zoo</em> per crear la taula és el següent:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference download internal" download="" href="_downloads/4e7be3e6265a85b3f17367452a460f19/Zoo.java"><code class="xref download docutils literal notranslate"><span class="pre">src/main/java/Zoo.java</span></code></a></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">creaTaulaCategories</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;CREATE TABLE  CATEGORIES (&quot;</span> <span class="o">+</span>
+                     <span class="s">&quot;       id        INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span> <span class="o">+</span>
+                     <span class="s">&quot;       nom       VARCHAR(40))&quot;</span><span class="p">;</span>
+        <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+            <span class="n">st</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+            <span class="k">return</span> <span class="s">&quot;Creada taula CATEGORIES&quot;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">st</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">st</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Cridarem aquesta funció des de <em>Main</em>:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference download internal" download="" href="_downloads/f2f75f86395fac914fdb057932b98ea1/Main.java"><code class="xref download docutils literal notranslate"><span class="pre">src/main/java/Main.java</span></code></a></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+        <span class="n">Zoo</span> <span class="n">zoo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Zoo</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Primer connectem amb la base de dades: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">connecta</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Creem la taula CATEGORIES: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">creaTaulaCategories</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Finalment tanquem la connexió amb la base de dades: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">desconnecta</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Fixa’t que he compactat una mica el codi, tot realitzant la crida dins del
+<code class="docutils literal notranslate"><span class="pre">println()</span></code>, però que és el mateix que abans.</p>
+</div>
+<div class="section" id="execucio-i-comprovacio">
+<h2>Execució i comprovació<a class="headerlink" href="#execucio-i-comprovacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Si executem el codi anterior (<code class="docutils literal notranslate"><span class="pre">gradle</span> <span class="pre">run</span></code>) ens mostrarà els següents
+missatges:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Primer connectem amb la base de dades: Connectat a animals.bd
+Creem la taula CATEGORIES: Creada taula CATEGORIES
+Finalment tanquem la connexió amb la base de dades: Desconnectat
+</pre></div>
+</div>
+<p>És a dir, teòricament ens ha creat la taula <em>CATEGORIES</em>. Comprovem-lo
+amb:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sqlite3 animals.bd &quot;.schema CATEGORIES&quot;
+CREATE TABLE CATEGORIES (       id        INTEGER PRIMARY KEY AUTOINCREMENT,       nom       VARCHAR(40));
+</pre></div>
+</div>
+<p>Fa bona pinta, no?</p>
+<p>Per cert, pots veure les opcions disponibles de SQLite fent <code class="docutils literal notranslate"><span class="pre">sqlite3</span> <span class="pre">-help</span></code>, i totes les comandes internes,
+entrant a la shell, i demanant ajuda:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sqlite3
+SQLite version 3.27.2 2019-02-25 16:06:06
+Enter &quot;.help&quot; for usage hints.
+Connected to a transient in-memory database.
+Use &quot;.open FILENAME&quot; to reopen on a persistent database.
+sqlite&gt; .help
+…
+.help ?-all? ?PATTERN?   Show help text for PATTERN
+…
+.quit                    Exit this program
+…
+.schema ?PATTERN?        Show the CREATE statements matching PATTERN
+…
+.tables ?TABLE?          List names of tables matching LIKE pattern TABLE
+…
+</pre></div>
+</div>
+<p>Fixa’t que pots demanar-hi ajut amb <code class="docutils literal notranslate"><span class="pre">.help</span></code> i sortir amb <code class="docutils literal notranslate"><span class="pre">.quit</span></code></p>
+</div>
+<div class="section" id="compactem-el-codi-amb-el-try-with-resources">
+<h2>☼ Compactem el codi amb el <em>try-with-resources</em><a class="headerlink" href="#compactem-el-codi-amb-el-try-with-resources" title="Link permanent a aquest títol">¶</a></h2>
+<p>El codi de <code class="docutils literal notranslate"><span class="pre">creaTaulaCategories()</span></code> es pot simplificar gràcies a una
+ampliació relativament recent del <code class="docutils literal notranslate"><span class="pre">try</span></code> de Java. És el que es coneix com
+<cite>try with resources
+&lt;https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html&gt;</cite></p>
+<p>Bàsicament es un <em>try</em> que indica que s’intenti fer quelcom amb un recurs
+que finalment serà tancat passi el que passi.</p>
+<p>El codi del nostre mètode <code class="docutils literal notranslate"><span class="pre">creaTaulaCategories()</span></code> podria quedar de la
+següent manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">creaTaulaCategories</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;CREATE TABLE  CATEGORIES (&quot;</span> <span class="o">+</span>
+        <span class="s">&quot;                id     INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span> <span class="o">+</span>
+        <span class="s">&quot;                nom    VARCHAR(40))&quot;</span><span class="p">;</span>
+    <span class="n">eliminaTaulaCategories</span><span class="p">();</span> <span class="c1">// eliminem si ja existia</span>
+    <span class="k">try</span> <span class="p">(</span><span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">st</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+        <span class="k">return</span> <span class="s">&quot;Creada taula CATEGORIES&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>A partir d’ara, el codi te’l presentaré d’aquesta manera. Si a tu t’agrada
+més l’altra, tu manes en el teu codi.</p>
+</div>
+<div class="section" id="eliminacio-de-la-taula">
+<h2>Eliminació de la taula<a class="headerlink" href="#eliminacio-de-la-taula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Què passaria si tornéssim a executar el nostre <em>Main</em>?</p>
+<p>Provem-ho!</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ gradle run
+
+&gt; Task :run FAILED
+Primer connectem amb la base de dades: Connectat a animals.bd
+Creem la taula CATEGORIES: Exception in thread &quot;main&quot; java.sql.SQLException: table CATEGORIES already exists
+        at org.sqlite.core.NativeDB.throwex(NativeDB.java:397)
+        at org.sqlite.core.NativeDB._exec(Native Method)
+        at org.sqlite.jdbc3.JDBC3Statement.executeUpdate(JDBC3Statement.java:116)
+        at Zoo.creaTaulaCategories(Zoo.java:46)
+        at Main.main(Main.java:15)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task &#39;:run&#39;.
+&gt; Process &#39;command &#39;/usr/lib/jvm/java-11-openjdk-amd64/bin/java&#39;&#39; finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 667ms
+2 actionable tasks: 1 executed, 1 up-to-date
+</pre></div>
+</td></tr></table></div>
+<p>Ops! Què ha passat? Si tot anava tant bé?</p>
+<p>La línia 5 és prou explícita; <em>la taula CATEGORIES ja existeix</em></p>
+<p>És clar, estem intentant crear una taula que ja existeix. Tenim diferents
+opcions per resoldre aquest problema.
+Potser la més radical és simplement eliminar el fitxer <code class="docutils literal notranslate"><span class="pre">animals.bd</span></code>!
+La que farem servir aquí, donat que
+és un exemple de <em>joguina</em> és eliminar la taula existent abans de
+crear-la.</p>
+<p>És tracta d’un <code class="docutils literal notranslate"><span class="pre">executeUpdate()</span></code> sobre la sentència <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span> <span class="pre">CATEGORIES</span></code>.</p>
+<p>A banda de crear el mètode <code class="docutils literal notranslate"><span class="pre">Zoo.eliminaTaulaCategories()</span></code>, afegeix com a
+primera línia de <code class="docutils literal notranslate"><span class="pre">Zoo.creaTaulaCategories()</span></code> la sentència següent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">creaTaulaCategories</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">eliminaTaulaCategories</span><span class="p">();</span> <span class="c1">// eliminem si ja existia</span>
+    <span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="c1">// …</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-1-elimina-la-taula-categories">
+<h2>Exercici 1. Elimina la taula <em>CATEGORIES</em><a class="headerlink" href="#exercici-1-elimina-la-taula-categories" title="Link permanent a aquest títol">¶</a></h2>
+<p>Implementa el mètode <code class="docutils literal notranslate"><span class="pre">Zoo.eliminaTaulaCategories()</span></code> de manera que es
+pugui executar sense error el <em>Main</em> més d’una vegada.</p>
+</div>
+<div class="section" id="afegir-una-categoria">
+<h2>Afegir una categoria<a class="headerlink" href="#afegir-una-categoria" title="Link permanent a aquest títol">¶</a></h2>
+<p>Ara que ja tenim la taula <em>CATEGORIES</em>, hi podem afegir categories.</p>
+<p>La sentència SQL seria quelcom similar a:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">CATEGORIES</span> <span class="p">(</span><span class="n">nom</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;ocell&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Aquí <code class="docutils literal notranslate"><span class="pre">'ocell'</span></code> és el nom de la categoria que volem crear. El seu
+identificador ens el crearà SQLite.</p>
+<p>El mètode que ens inserirà una categoria en la base de dades serà:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">afegeixCategoria</span><span class="p">(</span><span class="n">Categoria</span> <span class="n">categoria</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;INSERT INTO CATEGORIES (nom) VALUES (&#39;&quot;</span>
+        <span class="o">+</span> <span class="n">categoria</span><span class="p">.</span><span class="na">getNom</span><span class="p">()</span>
+        <span class="o">+</span> <span class="s">&quot;&#39;)&quot;</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">(</span><span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+        <span class="k">return</span> <span class="s">&quot;Nombre de categories afegides: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t com, a la línia composem la sentència SQL, mentre que a la 8 la
+llancem.</p>
+<p>No ho havíem vist fins ara però, <code class="docutils literal notranslate"><span class="pre">executeUpdate()</span></code> ens retorna un valor
+que ens indica el nombre de registres afectats amb l’execució.</p>
+<p>Per cridar-lo, simplement afegirem al nostre <em>Main</em> les següents línies,
+tot just després d’haver creat la taula <em>CATEGORIES</em>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Categoria</span> <span class="n">ocell</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Inserim &quot;</span> <span class="o">+</span> <span class="n">ocell</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">afegeixCategoria</span><span class="p">(</span><span class="n">ocell</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>En executar-lo el primer cop, ens trobem els missatges:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Primer connectem amb la base de dades: Connectat a animals.bd
+Creem la taula CATEGORIES: Creada taula CATEGORIES
+Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+Finalment tanquem la connexió amb la base de dades: Desconnectat
+</pre></div>
+</div>
+<p>Fixa’t que l’identificador apareix com a indefinit. Clar, des del nostre
+programa no sabem quin identificador li ha assignat SQLite,</p>
+<p>Comprovem que ens ha afegit correctament la categoria:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sqlite3 animals.bd &quot;select * from categories&quot;
+1|ocell
+</pre></div>
+</div>
+<p>Fa bona pinta, no?</p>
+</div>
+<div class="section" id="exercici-2-afegir-la-categoria-mamifer">
+<h2>Exercici 2. Afegir la categoria <em>mamífer</em><a class="headerlink" href="#exercici-2-afegir-la-categoria-mamifer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Afegeix el codi necessari per crear la categoria <em>mamífer</em>.</p>
+<p>Pista: només hauries de tocar <em>Main.java</em>.</p>
+</div>
+<div class="section" id="recuperar-les-categories">
+<h2>Recuperar les categories<a class="headerlink" href="#recuperar-les-categories" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per recuperar informació d’una base de dades relacional, el que ens cal és
+composar una consulta, també coneguda com a <em>query</em> o directament <em>SELECT</em>.</p>
+<p>La sentència mínima necessària per recuperar totes les categories seria la
+que ja hem vist abans per comprovar, des de línia de comandes, que havíem
+inserit correctament <em>ocell</em>. Per donar-li una mica més de color, aquí li
+demanarem un cert ordre.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">SELET</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">CATEGORIES</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">nom</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>En primer lloc, implementarem el mètode <code class="docutils literal notranslate"><span class="pre">Zoo.recuperaCategories()</span></code> que
+tindrà el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Categoria</span><span class="o">&gt;</span> <span class="nf">recuperaCategories</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT * FROM CATEGORIES ORDER BY nom&quot;</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">(</span><span class="n">Statement</span> <span class="n">st</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Categoria</span><span class="o">&gt;</span> <span class="n">categories</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">bdId</span> <span class="o">=</span> <span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+            <span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">);</span>
+            <span class="n">Categoria</span> <span class="n">categoria</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="n">bdId</span><span class="p">,</span> <span class="n">nom</span><span class="p">);</span>
+            <span class="n">categories</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">categoria</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">rs</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">categories</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>El codi presenta les següents particularitats:</p>
+<ul>
+<li><p>Fa servir la clase <em>ResultSet</em> que encapsula, com bé indica el seu nom,
+un conjunt de resultats obtinguts a partir d’una consulta. Malgrat
+indiqui el nom <em>conjunt</em>, en aquest cas, sí hi ha un ordre. Per exemple,
+en el nostre cas, la clàusula <em>ORDER BY</em> defineix que sigui ordenat de
+manera creixent per nom de categoria.</p></li>
+<li><p>En comptes de <code class="docutils literal notranslate"><span class="pre">executeUpdate()</span></code> ara fem <code class="docutils literal notranslate"><span class="pre">executeQuery()</span></code>. És el
+mètode específic de JDBC quan el que volem és executar una consulta. En
+fer-ho, ens retornarà un <em>ResultSet</em>.</p></li>
+<li><p>Per poder mostrar els valors recuperats, hem d’anar recorrent els
+diferents valors del <em>ResultSet</em>.</p>
+<p><em>ResultSet</em> també es sol conèixer com a <em>cursor</em> donat que funciona com
+un cursor o índex a una llista.</p>
+<p>El primer cop que cridem al mètode <code class="docutils literal notranslate"><span class="pre">next()</span></code>, el cursor es col·loca al
+primer resultat. A mida que anem fent crides a <code class="docutils literal notranslate"><span class="pre">next()</span></code> el cursor va
+passant al següent resultat disponible fins arribar al darrer; moment en
+que retornarà <em>false</em>.</p>
+<p>El resultat que hi ha al cursor es pot accedir directament a partir de
+la variable <em>rs</em>. Fixa’t com obté el primer camp que esperem que sigui
+enter doncs és l’identificador, i el segon, de tipus String, doncs és el
+nom.</p>
+</li>
+<li><p>Per cada resultat, el codi crea una nova instància de <em>Categoria</em> amb
+els valors d’identificador i nom trobats, i l’afegeix a la llista de
+categories trobades, que retornarem finalment si no hi ha cap problema.</p></li>
+<li><p>Fixa’t que finalment tanquem el <em>ResultSet</em>. És una bona pràctica, quan
+ja no necessitem el <em>ResultSet</em> el tancar-lo. Pensa que el resultat pot
+ser un nombre realment gran de registres i que, per qüestions
+pràctiques, sovint el SGBD no ens els enviarà tots de cop. Si ja sabem
+que no ens cal més, en tancar el <em>ResultSet</em> estem dient-li al SGBD que
+no cal que continuï mantenint els recursos associats a aquest.</p>
+<p>En aquest exemple concret, no és gaire important, doncs de seguida
+tancarem el <em>Statement</em> amb el que quedaran tancats tots els <em>ResultSet</em>
+oberts.</p>
+</li>
+</ul>
+<p>La teva llista d”<em>imports</em> a <em>Zoo.java</em> passarà a ser:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.ResultSet</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Per realitzar la crida a aquest nou mètode, i també per mostrar els
+resultats, ens resultarà còmode crear un mètode a <em>Main</em> que ho faci. Per
+exemple:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraCategories</span><span class="p">(</span><span class="n">Zoo</span> <span class="n">zoo</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Recupera les categories: &quot;</span><span class="p">);</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Categoria</span><span class="o">&gt;</span> <span class="n">categories</span> <span class="o">=</span> <span class="n">zoo</span><span class="p">.</span><span class="na">recuperaCategories</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">categories</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cap categoria trobada&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre de categories trobades = &quot;</span> <span class="o">+</span> <span class="n">categories</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Categoria</span> <span class="n">categoria</span><span class="p">:</span> <span class="n">categories</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">categoria</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>No oblidis afegir el <em>import</em> que falta ni la crida a
+<code class="docutils literal notranslate"><span class="pre">mostraCategories()</span></code> al <code class="docutils literal notranslate"><span class="pre">main()</span></code> tot just després d’afegir
+<em>mamífer</em>.</p>
+<p>El resultat d’executar-ho, t’hauria de donar el següent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Primer connectem amb la base de dades: Connectat a animals.bd
+Creem la taula CATEGORIES: Creada taula CATEGORIES
+Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+Recupera les categories: Nombre de categories trobades = 2
+        Categoria(id:2, mamífer)
+        Categoria(id:1, ocell)
+Finalment tanquem la connexió amb la base de dades: Desconnectat
+</pre></div>
+</div>
+<p>Fixa’t que aquestes categories <strong>sí</strong> tenen identificador!</p>
+</div>
+<div class="section" id="insercions-multiples">
+<h2>Insercions múltiples<a class="headerlink" href="#insercions-multiples" title="Link permanent a aquest títol">¶</a></h2>
+<p>Cada cop que executem una sentència SQL, el SGBD ha de fer una certa
+quantitat de feina. Per exemple, l’ha d’interpretar, optimitzar, etc.
+Això comporta una càrrega que, de tenir molts <em>clients</em> demanant, pot
+significar endarreriments o fallades de servei.</p>
+<p>Per aquesta raó, a banda de tancar recursos quan ja no els necessitem,
+també es realitzen d’altres optimitzacions. Una de molt típica és la
+inserció múltiple.</p>
+<p>Aquí tens una demostració. Considera aquest nou mètode</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">afegeixCategories</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Categoria</span><span class="o">&gt;</span> <span class="n">categories</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;INSERT INTO CATEGORIES (nom) values (?)&quot;</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">(</span><span class="n">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// obté l&#39;estat anterior de l&#39;autocommit.</span>
+        <span class="kt">boolean</span> <span class="n">anteriorAutoCommit</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="na">getAutoCommit</span><span class="p">();</span>
+        <span class="c1">// fem que no faci autocommit a cada execució</span>
+        <span class="n">conn</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="c1">// afegeix cada categoria de la llista</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">Categoria</span> <span class="n">categoria</span><span class="p">:</span> <span class="n">categories</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">ps</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">categoria</span><span class="p">.</span><span class="na">getNom</span><span class="p">());</span>
+                <span class="n">ps</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="c1">// si no hi ha problemes accepta tot</span>
+            <span class="n">conn</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
+            <span class="k">return</span> <span class="s">&quot;Nombre de categories afegides: &quot;</span> <span class="o">+</span> <span class="n">categories</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// trobat problemes amb la inserció: tot enrere</span>
+            <span class="n">conn</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="c1">// tornem l&#39;estat de autocomit tal i com estava</span>
+            <span class="n">conn</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="n">anteriorAutoCommit</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En aquesta ocasió, en comptes d’un <em>Statement</em>, fem servir un
+<em>PreparedStatement</em>. La diferència és que la sentència SQL deixa amb
+interrogants (<code class="docutils literal notranslate"><span class="pre">?</span></code>) els valors a inserir.</p>
+<p>Aquests valors són afegits dins d’un bucle per cada instància que rebem de
+<em>Categoria</em>.</p>
+<p>Aquest codi afegeix una complexitat addicional: la inserció es fa de
+manera atòmica o com a transacció. Això fa que, si falla alguna de les
+insercions, anul·lem totes les anteriors (<em>rollback</em>).</p>
+<p>El codi per cridar aquest nou mètode des de <em>Main</em> podria ser:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Categoria</span><span class="o">&gt;</span> <span class="n">novesCategories</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span>
+        <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;peix&quot;</span><span class="p">),</span>
+        <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;rèptil&quot;</span><span class="p">)</span>
+        <span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Inserim més categories: &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">afegeixCategories</span><span class="p">(</span><span class="n">novesCategories</span><span class="p">));</span>
+
+<span class="n">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquest codi fa servir <code class="docutils literal notranslate"><span class="pre">java.util.Arrays</span></code> perquè ens simplifica la
+creació de la llista, i finalment torna a cridar <code class="docutils literal notranslate"><span class="pre">mostraCategories()</span></code>
+per mostrar que s’han inserit totes.</p>
+<p>El resultat de l’execució és:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Primer connectem amb la base de dades: Connectat a animals.bd
+Creem la taula CATEGORIES: Creada taula CATEGORIES
+Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+Recupera les categories: Nombre de categories trobades = 2
+        Categoria(id:2, mamífer)
+        Categoria(id:1, ocell)
+Inserim més categories: Nombre de categories afegides: 2
+Recupera les categories: Nombre de categories trobades = 4
+        Categoria(id:2, mamífer)
+        Categoria(id:1, ocell)
+        Categoria(id:3, peix)
+        Categoria(id:4, rèptil)
+Finalment tanquem la connexió amb la base de dades: Desconnectat
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercici-3-fes-funcionar-el-codi-fins-aqui">
+<h2>Exercici 3. Fes funcionar el codi fins aquí<a class="headerlink" href="#exercici-3-fes-funcionar-el-codi-fins-aqui" title="Link permanent a aquest títol">¶</a></h2>
+<p>Acaba de composar tot el codi que tenim fins ara, de manera que en
+executar <em>Main</em> obtinguis aquesta sortida indicada.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bdcovid_classe_animal.html" class="btn btn-neutral float-right" title="La classe Animal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bdcovid_connecta_i_desconnecta.html" class="btn btn-neutral float-left" title="Connexió i desconnexió" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

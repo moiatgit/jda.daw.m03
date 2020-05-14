@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -207,8 +208,8 @@ el mateix resultat i no té efectes secundaris.</p>
 
 <span class="n">ant</span> <span class="o">=</span> <span class="n">quadrat</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">ant</span> <span class="o">==</span> <span class="n">quadrat</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Sembla que quadrat(5) ha tornat a retornat el mateix!&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aquest missatge no s&#39;escriurà mai&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sembla que quadrat(5) ha tornat a retornat el mateix!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aquest missatge no s&#39;escriurà mai&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -238,7 +239,7 @@ finalitza quan es tanca el bloc de codi on està definida.</p>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">resultat</span> <span class="o">=</span> <span class="n">el_meu_modul</span><span class="p">(</span><span class="n">la_meva_variable_global</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>    <span class="c1"># escriu 111</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>    <span class="c1"># escriu 111</span>
 </pre></div>
 </td></tr></table></div>
 </li>
@@ -248,9 +249,9 @@ quan ha estat definida fora del mòdul però és visible dins del mòdul.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_global</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;des de foo() el valor de variable_global és {variable_global}&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;des de foo() el valor de variable_global és </span><span class="si">{variable_global}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;des de fora de foo() el valor de variable_global és {variable_global}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;des de fora de foo() el valor de variable_global és </span><span class="si">{variable_global}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>A l’exemple, <code class="docutils literal notranslate"><span class="pre">variable_global</span></code> pot ser accedida tant dins com fora del cos
@@ -271,9 +272,9 @@ paraula reservada <code class="docutils literal notranslate"><span class="pre">g
 està definida dins del mòdul i, per tant, no té visibilitat fora d’aquest.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">variable_local</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;des de foo() el valor de variable_local és {variable_local}&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;des de foo() el valor de variable_local és </span><span class="si">{variable_local}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;des de fora de foo() intentar consultar el valor de {variable_local}i dóna error!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;des de fora de foo() intentar consultar el valor de </span><span class="si">{variable_local}</span><span class="s2">i dóna error!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">variable_local</span></code> està definida dins del mòdul <code class="docutils literal notranslate"><span class="pre">foo()</span></code> i
@@ -294,13 +295,13 @@ que una global, es produeix un fenomen anomenat <em>ocultació</em> o <em>overri
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">variable</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
 <span class="gp">... </span>   <span class="n">variable</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
 <span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">()</span>
 <span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
 <span class="go">1</span>
 </pre></div>
 </div>

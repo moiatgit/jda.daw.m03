@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -103,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="estructures.html">Estructures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -227,63 +228,63 @@
 54
 55
 56
-57</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="o">;</span>
+57</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="p">;</span>
+    <span class="kn">import</span> <span class="nn">java.io.FileWriter</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoGestioFitxers</span> <span class="o">{</span>
-        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraElementsCarpetaActual</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">cwd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;.&quot;</span><span class="o">);</span>
-            <span class="n">File</span><span class="o">[]</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">cwd</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Nombre d&#39;elements al directori actual: &quot;</span> <span class="o">+</span> <span class="n">paths</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">path</span><span class="o">:</span> <span class="n">paths</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="na">getCanonicalPath</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoGestioFitxers</span> <span class="p">{</span>
+        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraElementsCarpetaActual</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+            <span class="n">File</span> <span class="n">cwd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+            <span class="n">File</span><span class="o">[]</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">cwd</span><span class="p">.</span><span class="na">listFiles</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre d&#39;elements al directori actual: &quot;</span> <span class="o">+</span> <span class="n">paths</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">File</span> <span class="n">path</span><span class="p">:</span> <span class="n">paths</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">.</span><span class="na">getCanonicalPath</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraFitxersCarpetaActual</span><span class="o">()</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">cwd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;.&quot;</span><span class="o">);</span>
-            <span class="n">File</span><span class="o">[]</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">cwd</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Fitxers al directori actual:&quot;</span><span class="o">);</span>
-            <span class="kt">long</span> <span class="n">totalBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">path</span><span class="o">:</span> <span class="n">paths</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span> <span class="o">(!</span> <span class="n">path</span><span class="o">.</span><span class="na">isFile</span><span class="o">())</span> <span class="o">{</span>
-                    <span class="k">continue</span><span class="o">;</span>   <span class="c1">// no és un fitxer regular</span>
-                <span class="o">}</span>
-                <span class="n">totalBytes</span> <span class="o">+=</span> <span class="n">path</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">path</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;.txt&quot;</span><span class="o">))</span> <span class="o">{</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;\t Un fitxer de text!&quot;</span><span class="o">);</span>
-                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Total bytes: &quot;</span> <span class="o">+</span> <span class="n">totalBytes</span><span class="o">);</span>
-        <span class="o">}</span>
+        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraFitxersCarpetaActual</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">File</span> <span class="n">cwd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+            <span class="n">File</span><span class="o">[]</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">cwd</span><span class="p">.</span><span class="na">listFiles</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fitxers al directori actual:&quot;</span><span class="p">);</span>
+            <span class="kt">long</span> <span class="n">totalBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">File</span> <span class="n">path</span><span class="p">:</span> <span class="n">paths</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">path</span><span class="p">.</span><span class="na">isFile</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="k">continue</span><span class="p">;</span>   <span class="c1">// no és un fitxer regular</span>
+                <span class="p">}</span>
+                <span class="n">totalBytes</span> <span class="o">+=</span> <span class="n">path</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;.txt&quot;</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t Un fitxer de text!&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total bytes: &quot;</span> <span class="o">+</span> <span class="n">totalBytes</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">creaFitxer</span><span class="o">(</span><span class="n">String</span> <span class="n">cami</span><span class="o">,</span> <span class="n">String</span> <span class="n">contingut</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Creant el fitxer &quot;</span><span class="o">+</span> <span class="n">cami</span> <span class="o">+</span> <span class="s">&quot; amb contingut &#39;&quot;</span> <span class="o">+</span> <span class="n">contingut</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="o">);</span>
-            <span class="n">BufferedWriter</span> <span class="n">bufferedWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="n">cami</span><span class="o">));</span>
-            <span class="n">bufferedWriter</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">contingut</span><span class="o">);</span>
-            <span class="n">bufferedWriter</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span>
+        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">creaFitxer</span><span class="p">(</span><span class="n">String</span> <span class="n">cami</span><span class="p">,</span> <span class="n">String</span> <span class="n">contingut</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Creant el fitxer &quot;</span><span class="o">+</span> <span class="n">cami</span> <span class="o">+</span> <span class="s">&quot; amb contingut &#39;&quot;</span> <span class="o">+</span> <span class="n">contingut</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+            <span class="n">BufferedWriter</span> <span class="n">bufferedWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="p">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="p">(</span><span class="n">cami</span><span class="p">));</span>
+            <span class="n">bufferedWriter</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">contingut</span><span class="p">);</span>
+            <span class="n">bufferedWriter</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">eliminaFitxer</span><span class="o">(</span><span class="n">String</span> <span class="n">cami</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Eliminant el fitxer &quot;</span> <span class="o">+</span> <span class="n">cami</span><span class="o">);</span>
-            <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">cami</span><span class="o">);</span>
-            <span class="n">fitxer</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-        <span class="o">}</span>
+        <span class="kd">static</span> <span class="kt">void</span> <span class="nf">eliminaFitxer</span><span class="p">(</span><span class="n">String</span> <span class="n">cami</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Eliminant el fitxer &quot;</span> <span class="o">+</span> <span class="n">cami</span><span class="p">);</span>
+            <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
+            <span class="n">fitxer</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-            <span class="n">mostraElementsCarpetaActual</span><span class="o">();</span>
-            <span class="n">creaFitxer</span><span class="o">(</span><span class="s">&quot;fitxernou.txt&quot;</span><span class="o">,</span> <span class="s">&quot;Continguts del fitxer nou!&quot;</span><span class="o">);</span>
-            <span class="n">mostraElementsCarpetaActual</span><span class="o">();</span>
-            <span class="n">mostraFitxersCarpetaActual</span><span class="o">();</span>
-            <span class="n">eliminaFitxer</span><span class="o">(</span><span class="s">&quot;fitxernou.txt&quot;</span><span class="o">);</span>
-            <span class="n">mostraElementsCarpetaActual</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+            <span class="n">mostraElementsCarpetaActual</span><span class="p">();</span>
+            <span class="n">creaFitxer</span><span class="p">(</span><span class="s">&quot;fitxernou.txt&quot;</span><span class="p">,</span> <span class="s">&quot;Continguts del fitxer nou!&quot;</span><span class="p">);</span>
+            <span class="n">mostraElementsCarpetaActual</span><span class="p">();</span>
+            <span class="n">mostraFitxersCarpetaActual</span><span class="p">();</span>
+            <span class="n">eliminaFitxer</span><span class="p">(</span><span class="s">&quot;fitxernou.txt&quot;</span><span class="p">);</span>
+            <span class="n">mostraElementsCarpetaActual</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Aquest programa bàsicament mostra el contingut de la carpeta actual, hi crea

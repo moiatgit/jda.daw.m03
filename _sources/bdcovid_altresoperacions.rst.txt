@@ -1,0 +1,240 @@
+#########################
+Resta d'operacions *CRUD*
+#########################
+
+Amb el que hem vist fins ara, de *CRUD* ja tenim:
+
+* 'C': hem creat registres a la base de dades. De fet, fins i tot hem
+  creat taules!
+
+* 'R': hem fet consultes a la base de dades
+
+Així, ja tenim *SELECT* i *INSERT*. Anem a completar la resta
+d'operacions. Veuràs que resultarà d'allò més fàcil, després de tot el que
+hem vist!
+
+Modificar un animal
+===================
+
+Potser, si has posat prou atenció te n'hauràs adonat que hi ha un error en
+la categorització d'un dels animals. Els dofins són peixos? Glups!
+
+En aquesta secció actualitzarem els dofins, de manera que passin a
+pertànyer a la categoria que els pertoca.
+
+En primer lloc, desenvoluparem el mètode ``Zoo.modificaCategoriaAnimal()``
+que rebrà un animal i modificarà la seva categoria a la base de dades.
+
+El codi podria ser el següent:
+
+.. code-block:: java
+    :linenos:
+
+    public String modificaCategoriaAnimal(Animal animal) throws SQLException {
+        String sql = "UPDATE Animals set categoria = " +
+            obteIdCategoriaAnimal(animal) +
+            " WHERE id = " +
+            obteIdAnimal(animal);
+        try (Statement st = conn.createStatement()) {
+            int num = st.executeUpdate(sql);
+            return "Nombre d'animals modificats: " + num;
+        }
+    }
+
+Si bé, ``obteIdCategoriaAnimal()`` ja el tenim, el mètode
+``obteIdAnimal()`` és nou (i et tocarà fer-ho aviat com a exercici)
+
+A *Main* no ens molestarem en cercar primer l'animal concret a la base de
+dades. Per contra, en tornarem a crear una instància de dofí, aquest cop
+amb la categoria correcta i cridarem el mètode
+``modificaCategoriaAnimal()``.
+
+El codi a *Main* tindrà el següent aspecte tot just després de la part en
+que mostrem el resultat d'inserir els animals:
+
+.. code-block:: java
+    :linenos:
+
+        Animal dofi = new Animal("dofí", mamifer);
+        System.out.print("Corregim " + dofi + ": ");
+        System.out.println(zoo.modificaCategoriaAnimal(dofi));
+
+        mostraAnimals(zoo);
+
+I la sortida, en ser executat el codi serà:
+
+.. code-block:: none
+    :linenos:
+
+    Primer connectem amb la base de dades: Connectat a animals.bd
+    Creem la taula CATEGORIES: Creada taula CATEGORIES
+    Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+    Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+    Recupera les categories: Nombre de categories trobades = 2
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+    Inserim més categories: Nombre de categories afegides: 2
+    Recupera les categories: Nombre de categories trobades = 4
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+            Categoria(id:4, rèptil)
+    Creem la taula ANIMALS: Creada taula ANIMALS
+    Inserim Animal(id:indefinit, Canari, Categoria(id:indefinit, ocell)); Nombre d'animals afegits: 1
+    Recupera els animals: Nombre d'animals trobats = 1
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+    Inserim més animals: Nombre d'animals afegits: 6
+    Recupera els animals: Nombre d'animals trobats = 7
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:3, peix))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:7, gecko, Categoria(id:4, rèptil))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Corregim Animal(id:indefinit, dofí, Categoria(id:indefinit, mamífer)): Nombre d'animals modificats: 1
+    Recupera els animals: Nombre d'animals trobats = 7
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:2, mamífer))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:7, gecko, Categoria(id:4, rèptil))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Finalment tanquem la connexió amb la base de dades: Desconnectat
+
+Exercici 8. Implementa la modificació de la categoria d'animals
+===============================================================
+
+Et toca implementar el codi que falta per completar la part de correcció
+de la categoria dels dofins.
+
+En concret, et caldrà afegir el mètode ``obteIdAnimal()`` que, si
+l'implementes de manera similar al ``obteIdCategoriaAnimal()``, et
+trobaràs que et cal el mètode ``recuperaAnimalPerNom()``. És més, si vols
+reduir la redundància com vam fer amb ``recuperaCategories()``, segurament
+també et caldrà implementar ``recuperaAnimalsAmbSQL()``.
+
+Tots els mètodes que falten requereixen poques modificacions respecte els
+corresponents per les categories.
+
+Eliminar una categoria
+======================
+
+L'eliminació d'un animal és molt fàcil a partir del codi que ja tenim. En
+tenim prou amb el seu nom (tot acceptant que no es pot repetir) i executar
+la sentència SQL ``DELETE FROM ANIMALS WHERE nom = '" + animal.getNom() +
+"'"``.
+
+Eliminar una categoria és una mica més problemàtic. Donat que hem creat
+*ANIMALS* sense indicar què ha de fer quan s'elimina la clau forana
+(sovint ``ON DELETE CASCADE``), el que farem serà eliminar manualment tots
+els animals d'una categoria abans d'eliminar la categoria.
+
+Doncs això serà la teva feina pel següent exercici
+
+Exercici 9. Eliminem els rèptils
+================================
+
+Per alguna raó, hi ha gent que té especial mania als pobres rèptils. Sense
+entrar en discussions, aprofitarem aquesta mania com a excusa per
+codificar la eliminació de registres de la base de dades.
+
+El codi que haurà d'executar-se des de *Main* contindrà, tot just després
+de la correcció de la categoria dels dofins:
+
+.. code-block:: java
+    :linenos:
+
+        System.out.print("Eliminem els rèptils: ");
+        System.out.println(zoo.eliminaCategoria(new Categoria("rèptil")));
+        mostraCategories(zoo);
+        mostraAnimals(zoo);
+
+El resultat d'executar el programa serà:
+
+.. code-block:: none
+    :linenos:
+
+    Primer connectem amb la base de dades: Connectat a animals.bd
+    Creem la taula CATEGORIES: Creada taula CATEGORIES
+    Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+    Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+    Recupera les categories: Nombre de categories trobades = 2
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+    Inserim més categories: Nombre de categories afegides: 2
+    Recupera les categories: Nombre de categories trobades = 4
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+            Categoria(id:4, rèptil)
+    Creem la taula ANIMALS: Creada taula ANIMALS
+    Inserim Animal(id:indefinit, Canari, Categoria(id:indefinit, ocell)); Nombre d'animals afegits: 1
+    Recupera els animals: Nombre d'animals trobats = 1
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+    Inserim més animals: Nombre d'animals afegits: 6
+    Recupera els animals: Nombre d'animals trobats = 7
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:3, peix))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:7, gecko, Categoria(id:4, rèptil))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Corregim Animal(id:indefinit, dofí, Categoria(id:indefinit, mamífer)): Nombre d'animals modificats: 1
+    Recupera els animals: Nombre d'animals trobats = 7
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:2, mamífer))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:7, gecko, Categoria(id:4, rèptil))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Eliminem els rèptils: Animals eliminats: 1. Categories eliminades: 1
+    Recupera les categories: Nombre de categories trobades = 3
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+    Recupera els animals: Nombre d'animals trobats = 6
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:2, mamífer))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Finalment tanquem la connexió amb la base de dades: Desconnectat
+
+
+Les línies interessants aquí són a partir de la 36.
+
+Per si et serveix d'inspiració, aquest és el meu mètode per eliminar
+categories:
+
+.. code-block:: java
+    :linenos:
+
+    public String eliminaCategoria(Categoria categoria) throws SQLException {
+        int idCategoria = obteIdCategoria(categoria);
+        int quantsAnimalsEliminats = eliminaAnimalsDeIdCategoria(idCategoria);
+        int quantesCategoriesEliminades = eliminaCategoriaPerId(idCategoria);
+        return "Animals eliminats: " + quantsAnimalsEliminats + 
+               ". Categories eliminades: " + quantesCategoriesEliminades;
+    }
+
+Sí, falten uns quants mètodes, oi? És la teva feina!
+
+Nota: si decideixes completar el codi a partir del meu, és possible que et
+trobis amb que ``obteIdCategoria()`` és pràcticament el mateix que
+``obteIdCategoriaAnimal()`` i que vulguis fer una petita refacció del
+codi.
+
+Conclusions
+===========
+
+Hem arribat al final d'aquest recorregut per la persistència des de la
+POO. Has vist com hem salvat el salt entre els objectes i les taules d'una
+manera molt explícita. És molt probable que quan desenvolupis et trobis
+amb biblioteques que ja et facin aquestes traduccions per tu. En tot cas,
+és important que entenguis que el que fan no és màgia i que tu ho pots
+també programar, en cas de necessitar-ho.

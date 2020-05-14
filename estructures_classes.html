@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -103,6 +103,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Aplicacions Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdcovid.html">Persistència amb bases de dades (2019-20)</a></li>
 </ul>
 
             
@@ -204,13 +205,13 @@ un resultat fent servir Java?</p>
 29
 30
 31
-32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV04</span> <span class="o">{</span>
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV04</span> <span class="p">{</span>
 
     <span class="cm">/* Encapsula les dades de que es composa la nota d&#39;un estudiant en una UF */</span>
-    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Resultat</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">estudiant</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">nota</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Resultat</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">estudiant</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nota</span><span class="p">;</span>
+    <span class="p">}</span>
 
     <span class="cm">/**</span>
 <span class="cm">     * A partir del resultat d&#39;un estudiant, composa un missatge indicant si l&#39;estudiant</span>
@@ -219,23 +220,23 @@ un resultat fent servir Java?</p>
 <span class="cm">     * @param resultat: resultat de l&#39;estudiant</span>
 <span class="cm">     * @return missatge composat</span>
 <span class="cm">     */</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="o">(</span><span class="n">Resultat</span> <span class="n">resultat</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
-                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">estudiant</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="o">:</span> <span class="s">&quot;aprova&quot;</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span>
-                <span class="o">);</span>
-    <span class="o">}</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="p">(</span><span class="n">Resultat</span> <span class="n">resultat</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span>
+                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">estudiant</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="p">:</span> <span class="s">&quot;aprova&quot;</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span>
+                <span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Resultat</span> <span class="n">resultat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="o">();</span>
-        <span class="n">resultat</span><span class="o">.</span><span class="na">estudiant</span> <span class="o">=</span>  <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="o">;</span>
-        <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="o">;</span>
-        <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">composaResultat</span><span class="o">(</span><span class="n">resultat</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">missatge</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Resultat</span> <span class="n">resultat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="p">();</span>
+        <span class="n">resultat</span><span class="p">.</span><span class="na">estudiant</span> <span class="o">=</span>  <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="p">;</span>
+        <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">composaResultat</span><span class="p">(</span><span class="n">resultat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">missatge</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Fixa’t que hem definit una nova classe anomenada <code class="docutils literal notranslate"><span class="pre">Resultat</span></code> que conté els
@@ -257,12 +258,12 @@ instància.</p></li>
 <li><p>Una <em>variable</em> és una referència a la instància. Per suposat, podem tenir
 moltes variables que facin referència a la mateixa instància. Per exemple:</p></li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Resultat</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="o">();</span>
-<span class="n">r1</span><span class="o">.</span><span class="na">estudiant</span> <span class="o">=</span> <span class="s">&quot;Laia&quot;</span><span class="o">;</span>
-<span class="n">r1</span><span class="o">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="o">;</span>
-<span class="n">Resultat</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">r1</span><span class="o">;</span>
-<span class="n">r1</span><span class="o">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">8</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">r2</span><span class="o">.</span><span class="na">estudiant</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">r2</span><span class="o">.</span><span class="na">nota</span><span class="o">);</span> <span class="c1">// &quot;Laia: 8&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Resultat</span> <span class="n">r1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="p">();</span>
+<span class="n">r1</span><span class="p">.</span><span class="na">estudiant</span> <span class="o">=</span> <span class="s">&quot;Laia&quot;</span><span class="p">;</span>
+<span class="n">r1</span><span class="p">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="n">Resultat</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">r1</span><span class="p">;</span>
+<span class="n">r1</span><span class="p">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">r2</span><span class="p">.</span><span class="na">estudiant</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">r2</span><span class="p">.</span><span class="na">nota</span><span class="p">);</span> <span class="c1">// &quot;Laia: 8&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -274,10 +275,10 @@ en Java es sol anomenar igual que la classe (<code class="docutils literal notra
 <span class="cm">    La classe Resultat encapsula els resultats (la nota) que ha obtingut un</span>
 <span class="cm">    estudiant en una unitat formativa</span>
 <span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Resultat</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">estudiant</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">nota</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Resultat</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">estudiant</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nota</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Fixa’t com la classe <code class="docutils literal notranslate"><span class="pre">Resultat</span></code> ha perdut la paraula <code class="docutils literal notranslate"><span class="pre">static</span></code> i ha
@@ -307,7 +308,7 @@ guanyat <code class="docutils literal notranslate"><span class="pre">public</spa
 22
 23
 24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV05</span> <span class="o">{</span>
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotesEstudiantV05</span> <span class="p">{</span>
     <span class="cm">/**</span>
 <span class="cm">     * A partir del resultat d&#39;un estudiant, composa un missatge indicant si l&#39;estudiant</span>
 <span class="cm">     * aprova o no la UF</span>
@@ -315,23 +316,23 @@ guanyat <code class="docutils literal notranslate"><span class="pre">public</spa
 <span class="cm">     * @param resultat: resultat de l&#39;estudiant</span>
 <span class="cm">     * @return missatge composat</span>
 <span class="cm">     */</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="o">(</span><span class="n">Resultat</span> <span class="n">resultat</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span>
-                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">estudiant</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="o">:</span> <span class="s">&quot;aprova&quot;</span><span class="o">,</span>
-                <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span>
-                <span class="o">);</span>
-    <span class="o">}</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">composaResultat</span><span class="p">(</span><span class="n">Resultat</span> <span class="n">resultat</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span>
+                <span class="s">&quot;L&#39;estudiant %s %s la UF amb un %d.&quot;</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">estudiant</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="s">&quot;suspèn&quot;</span> <span class="p">:</span> <span class="s">&quot;aprova&quot;</span><span class="p">,</span>
+                <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span>
+                <span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Resultat</span> <span class="n">resultat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="o">();</span>
-        <span class="n">resultat</span><span class="o">.</span><span class="na">estudiant</span> <span class="o">=</span>  <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="o">;</span>
-        <span class="n">resultat</span><span class="o">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="o">;</span>
-        <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">composaResultat</span><span class="o">(</span><span class="n">resultat</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">missatge</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Resultat</span> <span class="n">resultat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resultat</span><span class="p">();</span>
+        <span class="n">resultat</span><span class="p">.</span><span class="na">estudiant</span> <span class="o">=</span>  <span class="s">&quot;Laia Sánchez d&#39;Àrgent&quot;</span><span class="p">;</span>
+        <span class="n">resultat</span><span class="p">.</span><span class="na">nota</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">composaResultat</span><span class="p">(</span><span class="n">resultat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">missatge</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Si guardes el fitxer <code class="docutils literal notranslate"><span class="pre">NotesEstudiantV05.java</span></code> en la mateixa carpeta que
@@ -346,12 +347,12 @@ habitual. Java sabrà trobar la definició de la classe <code class="docutils li
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">laLaia</span> <span class="o">=</span> <span class="s">&quot;Laia&quot;</span><span class="o">;</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">noms</span><span class="o">;</span>
-<span class="n">noms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
-<span class="n">noms</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">laLaia</span><span class="o">;</span>
-<span class="n">noms</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Cipriano&quot;</span><span class="o">;</span>
-<span class="n">noms</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Nemèsia&quot;</span><span class="o">;</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">laLaia</span> <span class="o">=</span> <span class="s">&quot;Laia&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">noms</span><span class="p">;</span>
+<span class="n">noms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<span class="n">noms</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">laLaia</span><span class="p">;</span>
+<span class="n">noms</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Cipriano&quot;</span><span class="p">;</span>
+<span class="n">noms</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="s">&quot;Nemèsia&quot;</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
 <p>Crea una taula com la següent i indica quantes variables i instàncies de tipus

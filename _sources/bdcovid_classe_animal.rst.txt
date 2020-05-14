@@ -1,0 +1,381 @@
+##################
+La classe *Animal*
+##################
+
+La classe *Animal*
+==================
+
+Implementarem La classe *Animal* de la següent manera:
+
+.. literalinclude:: _recursos/dbcovid/animals/Animal.java
+   :linenos:
+   :lines: 7-
+   :lineno-start: 7
+   :language: java
+   :caption: :download:`src/main/java/Animal.java <_recursos/dbcovid/animals/Animal.java>`
+
+Com podem veure, res especial. Molt similar a l'estructura de *Categoria*
+però amb un camp addicional (la categoria).
+
+La taula *ANIMALS*
+==================
+
+Emmagatzemarem els valors que composen les instàncies d'*Animal* a la
+taula *ANIMALS* que podem definir de la següent manera:
+
+.. code-block:: sql
+
+    CREATE TABLE ANIMALS (
+        id        INTEGER PRIMARY KEY AUTOINCREMENT,
+        nom       TEXT,
+        categoria INTEGER,
+        FOREIGN KEY(categoria) REFERENCES CATEGORIES(id)
+    )
+
+Exercici 4. Creació i destrucció de la taula *ANIMALS*
+======================================================
+
+Desenvolupa els mètodes de *Zoo*:
+
+* ``creaTaulaAnimals()``
+
+* ``eliminaTaulaAnimals()``
+
+Aquests mètodes són pràcticament idèntics als de la taula *CATEGORIES*.
+Si se t'acut com, pots mirar de reduir el codi duplicat.
+
+Atenció! Hi ha una situació especial. Quan eliminem la taula *CATEGORIES*,
+primer hauríem d'eliminar la taula *ANIMALS*, doncs aquesta depen
+d'aquella. Això ho pots solucionar fàcilment tot cridant
+``eliminaTaulaAnimals()`` a ``eliminaTaulaCategories()``.
+
+
+Inserir un animal
+=================
+
+Inserir un animal a la base de dades no serà tan fàcil com inserir una
+categoria. El problema és que per a poder inserir l'animal, ens caldrà
+disposar de l'identificador de la categoria. 
+
+Considera el codi parcial de *Zoo*:
+
+.. code-block:: java
+    :linenos:
+
+    public class Zoo {
+
+        // …
+
+        public String afegeixAnimal(Animal animal) throws SQLException {
+            int idCategoria = obteIdCategoriaAnimal(animal);
+            String sql = "INSERT INTO ANIMALS (nom, categoria) VALUES ('" +
+                animal.getNom() +
+                "', " +
+                idCategoria +
+                ")";
+            try (Statement st = conn.createStatement()) {
+                int num = st.executeUpdate(sql);
+                return "Nombre d'animals afegits: " + num;
+            }
+        }
+
+        private int obteIdCategoriaAnimal(Animal animal) throws SQLException {
+            Categoria categoria = animal.getCategoria();
+            if (categoria.idIndefinit()) {
+                return recuperaCategoriaPerNom(categoria.getNom()).getId();
+            } else {
+                return categoria.getId();
+            }
+        }
+
+        public List<Categoria> recuperaCategories() throws SQLException {
+            String sql = "SELECT * FROM CATEGORIES ORDER BY nom";
+            return recuperaCategoriesAmbSQL(sql);
+        }
+
+        public Categoria recuperaCategoriaPerNom(String nom) throws SQLException {
+            String sql = "SELECT * FROM CATEGORIES WHERE nom = '" + nom + "'";
+            List<Categoria> categories = recuperaCategoriesAmbSQL(sql);
+            if (categories.size() != 1) {
+                throw new IllegalArgumentException("El nombre de categories amb el nom " + 
+                        nom + " és " + categories.size() + " i hauria de ser 1");
+            }
+            return categories.get(0);
+        }
+
+        public List<Categoria> recuperaCategoriesAmbSQL(String sql) throws SQLException {
+            try (Statement st = conn.createStatement()) {
+                ResultSet rs = st.executeQuery(sql);
+                List<Categoria> categories = new ArrayList<>();
+                while (rs.next()) {
+                    int bdId = rs.getInt("id");
+                    String nom = rs.getString("nom");
+                    Categoria categoria = new Categoria(bdId, nom);
+                    categories.add(categoria);
+                }
+                rs.close();
+                return categories;
+            }
+        }
+
+    }
+
+Comentaris:
+
+* En primer lloc, definim el mètode ``afegeixAnimal()`` que rep una
+  instància d'*Animal*
+
+  Aquest mètode es limita a cridar el mètode privat
+  ``obteIdCategoriaAnimal()`` per obtenir l'identificador de la categoria
+  d'animal, composa la *query* i la llença, tal i com ho feia
+  ``afegeixCategoria()``.
+
+* el mètode ``obteIdCategoriaAnimal()`` preveu dues situacions:
+
+  - si la categoria de l'animal que rep ja està definida, retorna el seu
+    identificador
+
+  - si la categoria no té definit l'identificador, el cerca a la base de
+    dades fent servir la funció ``recuperaCategoriaPerNom()``
+
+* donat que ``recuperaCategoriaPerNom()`` és bàsicament el mateix que
+  ``recrecuperaCategories()``, excepte que només espera un valor,
+  he fet un petit pas de *refacció* (o *refactoring*) de manera que la
+  funcionalitat de recollir el resultat d'una consulta a la taula de
+  *CATEGORIES* sigui realitzada pel mètode privat
+  ``recuperaCategoriesAmbSQL()`` i tant ``recuperaCategoriaPerNom()`` com
+  la ja existent ``recuperaCategories()`` es limiten a passar al nou
+  mètode el SQL corresponent.
+
+  És molt habitual "treure factor comú" del nostre codi per evitar
+  redundàncies com aquesta per millorar la mantenibilitat dels nostres
+  programes. Únicament un consell: *no t'obsessionis refactoritzant* doncs
+  no sempre té sentit
+
+Provem a fer servir la nova funcionalitat d'afegir animals, tot ampliant
+el nostre *Main* amb les següents línies tot just després de la creació de
+la taula d'*ANIMALS*.
+
+.. code-block:: java
+
+        Animal canari = new Animal("Canari", ocell);
+        System.out.print("Inserim " + canari + "; ");
+        System.out.println(zoo.afegeixAnimal(canari));
+
+Recorda que ja disposes de la variable ``canari`` de tipus *Categoria*
+encara que no conté el identificador.
+
+Si ara executem la nostra aplicació, ens trobem la següent sortida:
+
+.. code-block:: none
+
+    Primer connectem amb la base de dades: Connectat a animals.bd
+    Creem la taula CATEGORIES: Creada taula CATEGORIES
+    Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+    Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+    Recupera les categories: Nombre de categories trobades = 2
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+    Inserim més categories: Nombre de categories afegides: 2
+    Recupera les categories: Nombre de categories trobades = 4
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+            Categoria(id:4, rèptil)
+    Creem la taula ANIMALS: Creada taula ANIMALS
+    Inserim Animal(id:indefinit, Canari, Categoria(id:indefinit, ocell)); Nombre d'animals afegits: 1
+    Finalment tanquem la connexió amb la base de dades: Desconnectat
+
+
+Podem comprovar que la base de dades conté l'esperat amb:
+
+.. code-block:: none
+
+    $ sqlite3 animals.bd "select * from animals"
+    1|Canari|1
+
+El primer ``1`` correspon a l'identificador de l'animal, mentre que el
+segon, és el corresponent a la seva categoria ("ocell")
+
+Exercici 5. Fes funcionar el codi fins aquí
+===========================================
+
+Acaba de composar tot el codi que tenim fins ara, de manera que en
+executar *Main* obtinguis aquesta sortida indicada.
+
+Recupera animals
+================
+
+La recuperació dels animals que hi ha a la base de dades, per poder-los
+mostrar, és molt similar a la corresponent a les categories. En aquest
+cas, però, ens caldrà tenir en comptes que els animals a la base de dades,
+tenen l'identificador de la categoria i no la categoria en sí. Això ens
+requerirà una mica més de feina a l'hora de composar els animals.
+
+El codi de ``Zoo.recuperaAnimals()`` pot tenir el següent aspecte:
+
+.. code-block:: java
+    :linenos:
+
+        public List<Animal> recuperaAnimals() throws SQLException {
+            String sql = "SELECT * FROM ANIMALS ORDER BY nom";
+            try (Statement st = conn.createStatement()) {
+                ResultSet rs = st.executeQuery(sql);
+                List<Animal> animals = new ArrayList<>();
+                while (rs.next()) {
+                    int bdId = rs.getInt("id");
+                    String nom = rs.getString("nom");
+                    Categoria categoria = recuperaCategoriaPerId(rs.getInt("categoria"));
+                    Animal animal = new Animal(bdId, nom, categoria);
+                    animals.add(animal);
+                }
+                rs.close();
+                return animals;
+            }
+        }
+
+        private Categoria recuperaCategoriaPerId(int bdId) throws SQLException {
+            String sql = "SELECT * FROM CATEGORIES WHERE id = " + bdId;
+            List<Categoria> categories = recuperaCategoriesAmbSQL(sql);
+            if (categories.size() != 1) {
+                throw new IllegalArgumentException("El nombre de categories amb id " + 
+                        bdId + " és " + categories.size() + " i hauria de ser 1");
+            }
+            return categories.get(0);
+        }
+
+Alguns comentaris:
+
+* el mètode ``recuperaAnimals()`` presenta un codi pràcticament idèntic al
+  de ``recrecuperaCategories()``. Únicament ha de composar una instància
+  de *Categoria* per a poder composar la instància d'*Animal*. (línia 9)
+  Això ho delega en el mètode ``recuperaCategoriaPerId()`` que, gràcies a
+  la refacció que vam fer fa una estona, ens resulta realment fàcil.
+
+* ``recuperaCategoriaPerId()`` en realitat podria estalviar-se la
+  comprovació de que només hi hagi una entrada. En teoria el nostre SGBD
+  se n'encarrega d'assegurar que hi ha una i només una entrada a
+  *CATEGORIES* amb aquest identificador. A alguns desenvolupadors ens
+  agrada afegir aquestes comprovacions quan no són gaire costoses, per si
+  de cas. Amb un SGBD com SQLite, que no força per defecte la integritat
+  referencial, probablement és una bona idea.
+
+Exercici 6. Mostrem els animals
+===============================
+
+Et toca a tu desenvolupar el mètode ``Main.mostraAnimals()``. Serà molt
+similar al de ``Main.mostraCategories()``. No oblidis, cridar a la nova
+funció tot just després d'haver afegit el canari.
+
+El resultat de l'execució haurà de ser:
+
+.. code-block:: none
+
+    Primer connectem amb la base de dades: Connectat a animals.bd
+    Creem la taula CATEGORIES: Creada taula CATEGORIES
+    Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+    Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+    Recupera les categories: Nombre de categories trobades = 2
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+    Inserim més categories: Nombre de categories afegides: 2
+    Recupera les categories: Nombre de categories trobades = 4
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+            Categoria(id:4, rèptil)
+    Creem la taula ANIMALS: Creada taula ANIMALS
+    Inserim Animal(id:indefinit, Canari, Categoria(id:indefinit, ocell)); Nombre d'animals afegits: 1
+    Recupera els animals: Nombre d'animals trobats = 1
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+    Finalment tanquem la connexió amb la base de dades: Desconnectat
+
+
+Exercici 7. Afegim més animals
+==============================
+
+En aquest exercici et toca comprovar que has entès com va el tema de la
+composició d'instàncies d'animals.
+
+Completa el mètode ``Zoo.afegeiAnimals()`` que et mostro (molt) parcialment a continuació:
+
+.. code-block:: java
+
+        public String afegeixAnimals(List<Animal> animals) throws SQLException {
+            String sql = "INSERT INTO ANIMALS (nom, categoria) values (?, ?)";
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                // …
+            }
+        }
+
+La seva estructura és pràcticament la mateixa que ``afegeixCategories()``.
+Únicament has de tenir en consideració què:
+
+* hauràs de composar la categoria a partir d'un identificador. Per això
+  disposes de ``obteIdCategoriaAnimal()`` oi?
+
+* el camp *categoria* dels registres de la taula *ANIMALS* es de tipus
+  enter, per tant, per assignar-li el valor de la categoria, ho farem amb:
+
+  .. code-block:: java
+
+            ps.setInt(2, idCategoria);
+
+  Fixa't que, en comptes de ``setString()`` ara serà ``setInt()`` i que el
+  valor ``2`` és refereix al segon ``?`` de la sentència SQL.
+
+El provaràs amb el següent codi a *Main* (tot just després d'haver mostrat
+el canari.
+
+.. code-block:: java
+    :linenos:
+
+        Categoria peix = zoo.recuperaCategoriaPerNom("peix");
+        Categoria reptil = zoo.recuperaCategoriaPerNom("rèptil");
+        List<Animal> nousAnimals = Arrays.asList(
+                new Animal("estruç", ocell),
+                new Animal("kiwi", ocell),
+                new Animal("gos", mamifer),
+                new Animal("bacallà", peix),
+                new Animal("dofí", peix),
+                new Animal("gecko", reptil)
+                );
+        System.out.print("Inserim més animals: ");
+        System.out.println(zoo.afegeixAnimals(nousAnimals));
+
+Fixa't que ens toca recuperar les categories de peixos i rèptils, doncs
+les havíem creades directament dins d'una llista.
+
+El resultat d'executar el programa serà:
+
+.. code-block:: none
+
+    Primer connectem amb la base de dades: Connectat a animals.bd
+    Creem la taula CATEGORIES: Creada taula CATEGORIES
+    Inserim Categoria(id:indefinit, ocell): Nombre de categories afegides: 1
+    Inserim Categoria(id:indefinit, mamífer): Nombre de categories afegides: 1
+    Recupera les categories: Nombre de categories trobades = 2
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+    Inserim més categories: Nombre de categories afegides: 2
+    Recupera les categories: Nombre de categories trobades = 4
+            Categoria(id:2, mamífer)
+            Categoria(id:1, ocell)
+            Categoria(id:3, peix)
+            Categoria(id:4, rèptil)
+    Creem la taula ANIMALS: Creada taula ANIMALS
+    Inserim Animal(id:indefinit, Canari, Categoria(id:indefinit, ocell)); Nombre d'animals afegits: 1
+    Recupera els animals: Nombre d'animals trobats = 1
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+    Inserim més animals: Nombre d'animals afegits: 6
+    Recupera els animals: Nombre d'animals trobats = 7
+            Animal(id:1, Canari, Categoria(id:1, ocell))
+            Animal(id:5, bacallà, Categoria(id:3, peix))
+            Animal(id:6, dofí, Categoria(id:3, peix))
+            Animal(id:2, estruç, Categoria(id:1, ocell))
+            Animal(id:7, gecko, Categoria(id:4, rèptil))
+            Animal(id:4, gos, Categoria(id:2, mamífer))
+            Animal(id:3, kiwi, Categoria(id:1, ocell))
+    Finalment tanquem la connexió amb la base de dades: Desconnectat
+
+

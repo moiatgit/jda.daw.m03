@@ -28,4 +28,5 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     estructures.rst
     poo.rst
     web.rst
+    bdcovid.rst
 
