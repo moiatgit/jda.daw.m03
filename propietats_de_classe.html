@@ -238,13 +238,13 @@
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
             <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>    <span class="c1">// canviem les vides només per distingir-los</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">toStering</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
                 <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="c1">// tornem a demanar a cadascun quants germans té</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I si tornem a demanar-los quants germans tenen, ens diuen:&quot;</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
                 <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -253,15 +253,11 @@
 </td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Les crides a <code class="docutils literal notranslate"><span class="pre">println()</span></code> (línies 25 i 31) es podrien escriure de manera més simple, sense
-necessitat de cridar explícitament al mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. Considera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
-                   <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span>
-                   <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>El mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> té la particularitat de ser cridat (implícitament) en alguns contextos
-on s’espera un String, com ara en aquesta concatenació de Strings que passem a <code class="docutils literal notranslate"><span class="pre">println()</span></code>.</p>
+<p>Fixa’t que <code class="docutils literal notranslate"><span class="pre">System.out.println(gats[i]);</span></code> ens mostra el resultat de
+cridar el mètode <code class="docutils literal notranslate"><span class="pre">Gat.toString()</span></code> definit a la línia 16.</p>
+<p>El mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> té la particularitat de ser cridat
+(implícitament) en alguns contextos on s’espera un String, com ara en
+aquesta concatenació de Strings que passem a <code class="docutils literal notranslate"><span class="pre">println()</span></code>.</p>
 </div>
 <div class="section" id="exercici-18-propietats-de-classe">
 <span id="propietats-de-classe-exercici"></span><h2>Exercici 18. ☞ Propietats de classe<a class="headerlink" href="#exercici-18-propietats-de-classe" title="Link permanent a aquest títol">¶</a></h2>
